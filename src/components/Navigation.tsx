@@ -16,12 +16,19 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // 暗色模式初始化
+  // 暗色模式初始化：localStorage > prefers-color-scheme > 默认浅色
   useEffect(() => {
-    const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefers) {
-      setDark(true);
-      document.documentElement.classList.add('dark');
+    const stored = localStorage.getItem('x2ya-theme');
+    if (stored === 'dark' || stored === 'light') {
+      const isDark = stored === 'dark';
+      setDark(isDark);
+      document.documentElement.classList.toggle('dark', isDark);
+    } else {
+      const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefers) {
+        setDark(true);
+        document.documentElement.classList.add('dark');
+      }
     }
   }, []);
 
@@ -29,6 +36,7 @@ export default function Navigation() {
     setDark(prev => {
       const next = !prev;
       document.documentElement.classList.toggle('dark', next);
+      localStorage.setItem('x2ya-theme', next ? 'dark' : 'light');
       return next;
     });
   };
@@ -47,11 +55,23 @@ export default function Navigation() {
     window.history.pushState(null, '', `/#${sectionId}`);
   }, []);
 
+  // 路由变化时确保 body overflow 恢复（防止浏览器后退时菜单关闭但页面仍被锁定）
+  useEffect(() => {
+    const handleRouteChange = () => {
+      if (mobileOpen) {
+        setMobileOpen(false);
+        document.body.style.overflow = '';
+      }
+    };
+    window.addEventListener('popstate', handleRouteChange);
+    return () => window.removeEventListener('popstate', handleRouteChange);
+  }, [mobileOpen]);
+
   const navLinks = [
-    { id: 'about', label: '关于' },
-    { id: 'interests', label: '志趣' },
-    { id: 'work', label: '行迹' },
-    { id: 'contact', label: '联系' },
+    { id: 'about', label: '认识', type: 'anchor' as const },
+    { id: '/blog', label: '博客', type: 'route' as const },
+    { id: 'work', label: '行迹', type: 'anchor' as const },
+    { id: 'contact', label: '联系', type: 'anchor' as const },
   ];
 
   return (
@@ -64,25 +84,37 @@ export default function Navigation() {
         }`}
       >
         <div className="max-w-[1200px] mx-auto flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Logo：角色形象 + 文字 */}
           <Link
             to="/"
-            className="text-[1.4rem] font-bold text-[#313131] dark:text-[#E8E4E1] tracking-wider font-['PingFang_SC','Noto_Serif_SC',serif]"
+            className="flex items-center gap-2.5 group"
           >
-            玄<span className="text-[#DA583F]">牙</span>
+            <img src="/images/logo.png" alt="玄牙" className="w-8 h-8 rounded-full object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-200" />
+            <span className="text-[1.2rem] font-bold text-[#313131] dark:text-[#E8E4E1] tracking-wider font-['PingFang_SC','Noto_Serif_SC',serif] group-hover:text-[#DA583F] transition-colors">
+              玄牙
+            </span>
           </Link>
 
           {/* Desktop links */}
           <ul className="hidden sm:flex items-center gap-8 list-none">
             {navLinks.map(link => (
               <li key={link.id}>
-                <a
-                  href={`/#${link.id}`}
-                  onClick={(e) => handleNavClick(e, link.id)}
-                  className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#B8B4B0] hover:text-[#DA583F] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] after:transition-[width] after:duration-300 hover:after:w-full cursor-pointer"
-                >
-                  {link.label}
-                </a>
+                {link.type === 'route' ? (
+                  <Link
+                    to={link.id}
+                    className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#B8B4B0] hover:text-[#DA583F] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] after:transition-[width] after:duration-300 hover:after:w-full"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    href={`/#${link.id}`}
+                    onClick={(e) => handleNavClick(e, link.id)}
+                    className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#B8B4B0] hover:text-[#DA583F] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] after:transition-[width] after:duration-300 hover:after:w-full cursor-pointer"
+                  >
+                    {link.label}
+                  </a>
+                )}
               </li>
             ))}
             {/* 暗色模式 */}
@@ -143,18 +175,29 @@ export default function Navigation() {
         }`}
       >
         {navLinks.map(link => (
-          <a
-            key={link.id}
-            href={`/#${link.id}`}
-            onClick={(e) => {
-              handleNavClick(e, link.id);
-              setMobileOpen(false);
-              document.body.style.overflow = '';
-            }}
-            className="text-[1.3rem] font-semibold text-[#313131] dark:text-[#E8E4E1] tracking-wider hover:text-[#DA583F] transition-colors cursor-pointer"
-          >
-            {link.label}
-          </a>
+          link.type === 'route' ? (
+            <Link
+              key={link.id}
+              to={link.id}
+              onClick={() => { setMobileOpen(false); document.body.style.overflow = ''; }}
+              className="text-[1.3rem] font-semibold text-[#313131] dark:text-[#E8E4E1] tracking-wider hover:text-[#DA583F] transition-colors"
+            >
+              {link.label}
+            </Link>
+          ) : (
+            <a
+              key={link.id}
+              href={`/#${link.id}`}
+              onClick={(e) => {
+                handleNavClick(e, link.id);
+                setMobileOpen(false);
+                document.body.style.overflow = '';
+              }}
+              className="text-[1.3rem] font-semibold text-[#313131] dark:text-[#E8E4E1] tracking-wider hover:text-[#DA583F] transition-colors cursor-pointer"
+            >
+              {link.label}
+            </a>
+          )
         ))}
         <button
           onClick={() => { toggleTheme(); setMobileOpen(false); document.body.style.overflow = ''; }}

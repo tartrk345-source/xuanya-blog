@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=1200"/>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width: 1200px; height: 630px;
+    background: linear-gradient(135deg, #FEFAF9 0%, #FEF3F0 40%, #F5E6E0 100%);
+    font-family: 'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .deco-1 {
+    position: absolute; top: -120px; right: -80px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(218,88,63,0.12) 0%, transparent 70%);
+  }
+  .deco-2 {
+    position: absolute; bottom: -150px; left: -100px;
+    width: 450px; height: 450px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(97,111,211,0.08) 0%, transparent 70%);
+  }
+  .content {
+    display: flex; align-items: center; gap: 56px;
+    position: relative; z-index: 1;
+  }
+  .mascot {
+    width: 240px; height: 240px; border-radius: 50%;
+    object-cover;
+    flex-shrink: 0;
+    box-shadow:
+      0 4px 20px rgba(218,88,63,0.15),
+      0 12px 40px rgba(218,88,63,0.1);
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .text { text-align: left; }
+  .title {
+    font-family: 'PingFang SC','Noto Serif SC',serif;
+    font-size: 64px; font-weight: 900; color: #313131;
+    letter-spacing: 0.1em; line-height: 1.2;
+  }
+  .title span { color: #DA583F; }
+  .tagline {
+    font-size: 24px; color: #6E6A7C; margin-top: 16px;
+    letter-spacing: 0.08em; line-height: 1.6;
+  }
+  .identity {
+    display: inline-block; margin-top: 20px;
+    padding: 8px 20px; background: rgba(97,111,211,0.08);
+    border-radius: 20px; font-size: 16px; color: #616FD3;
+    font-weight: 600; letter-spacing: 0.15em;
+  }
+  .url {
+    position: absolute; bottom: 40px; right: 60px;
+    font-size: 18px; color: #B8B4B0; letter-spacing: 0.1em;
+  }
+</style>
+</head>
+<body>
+  <div class="deco-1"></div>
+  <div class="deco-2"></div>
+  <div class="content">
+    <img src="logo.png" alt="玄牙" class="mascot" />
+    <div class="text">
+      <div class="title">玄<span>牙</span>个人世界</div>
+      <div class="tagline">知无不言，正直之极。<br/>以理性观照心灵，以热忱探索未知。</div>
+      <div class="identity">精神科医师 · 心灵探索者</div>
+    </div>
+  </div>
+  <div class="url">www.x2ya.com</div>
+</body>
+</html>

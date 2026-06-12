@@ -19,16 +19,14 @@ export default function ArticlePage() {
   if (!article) return <Navigate to="/" replace />;
 
   const goBack = () => {
-    navigate('/');
-    setTimeout(() => document.getElementById('interests')?.scrollIntoView({ behavior: 'smooth' }), 80);
+    navigate('/blog');
   };
 
   const handleDelete = () => {
     if (!id) return;
     deleteArticle(id);
     setShowDeleteConfirm(false);
-    navigate('/', { replace: true });
-    setTimeout(() => document.getElementById('interests')?.scrollIntoView({ behavior: 'smooth' }), 80);
+    navigate('/blog', { replace: true });
   };
 
   const catInfo = article.category ? getCategoryInfo(article.category) : null;
@@ -40,7 +38,7 @@ export default function ArticlePage() {
         {/* 顶部导航 */}
         <div className="mb-12">
           <button onClick={goBack} className="inline-flex items-center gap-1.5 text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
-            <span>←</span> 返回志趣
+            <span>←</span> 返回博客
           </button>
         </div>
 
@@ -78,7 +76,7 @@ export default function ArticlePage() {
         {/* 底部操作 */}
         <div className="mt-16 pt-8 border-t border-[#ECD8D9] dark:border-[#2A2020] flex items-center justify-between">
           <button onClick={goBack} className="text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
-            ← 返回志趣
+            ← 返回博客
           </button>
           {isAdmin && (
             <div className="flex items-center gap-4">
