@@ -6,7 +6,7 @@ import { getPublishedArticles } from '../storage/articleStore';
 import { getCategories, addCategory, updateCategory, deleteCategory, onCategoriesChange, type CategoryItem } from '../storage/categoryStore';
 import { downloadBackup, importArticles, parseBackupFile, hasExportedToday, markExportedToday } from '../utils/export';
 import { syncToGist, restoreFromGist } from '../utils/gistSync';
-import { formatDate, getExcerpt, getCategoryInfo } from '../utils/helpers';
+import { formatDate, getExcerpt } from '../utils/helpers';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 import Navigation from '../components/Navigation';
 import AdminLogin from '../components/AdminLogin';
@@ -242,156 +242,153 @@ export default function BlogPage() {
         </div>
       )}
 
-      {/* 卡片网格 */}
-      <div className="max-w-[1100px] mx-auto px-4 sm:px-8 pb-8">
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-4 sm:gap-6 mb-8">
+      {/* 分类列表（纵向手风琴） */}
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-8 pb-16">
+        <div className="space-y-3">
           {categories.map((cat, i) => {
-            const count = articlesByCategory[cat.key]?.length ?? 0;
+            const articles = articlesByCategory[cat.key] ?? [];
             const isActive = activeCategory === cat.key;
             return (
               <RevealOnScroll key={cat.key}>
-                <div className="relative group/cat">
+                <div
+                  className={`group/cat rounded-xl border transition-all duration-300 ${
+                    isActive
+                      ? 'bg-white dark:bg-[#1C1818] border-[#DA583F] shadow-[0_8px_30px_rgba(218,88,63,0.08)]'
+                      : 'bg-white dark:bg-[#1C1818] border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] hover:shadow-[0_4px_20px_rgba(218,88,63,0.06)]'
+                  }`}
+                >
+                  {/* 分类头部（始终可见） */}
                   <button
                     onClick={() => toggleCategory(cat.key)}
-                    className={`w-full text-left bg-white dark:bg-[#1C1818] rounded-xl p-5 sm:p-8 border transition-all duration-300 cursor-pointer ${
-                      isActive
-                        ? 'border-[#DA583F] shadow-[0_12px_40px_rgba(218,88,63,0.12)] -translate-y-1'
-                        : 'border-transparent hover:border-[#DA583F] hover:shadow-[0_12px_40px_rgba(218,88,63,0.08)] hover:-translate-y-1'
-                    }`}
+                    className="w-full text-left px-5 sm:px-6 py-4 sm:py-5 flex items-center gap-4 cursor-pointer"
                   >
+                    {/* 图标 */}
                     <div
-                      className="w-12 h-12 rounded-lg flex items-center justify-center text-[1.4rem] mb-4"
+                      className="w-11 h-11 rounded-lg flex items-center justify-center text-[1.3rem] flex-shrink-0 transition-transform duration-300"
                       style={{ background: bgColors[i % bgColors.length] }}
                     >
                       {cat.icon}
                     </div>
-                    <h3 className="text-base font-bold text-[#313131] dark:text-[#E8E4E1] mb-1.5 flex items-center gap-2">
-                      {cat.label}
-                      {count > 0 && (
-                        <span className="text-[11px] font-medium bg-[#FEF3F0] dark:bg-[#1A1516] text-[#DA583F] rounded-full px-2 py-0.5">
-                          {count}篇
-                        </span>
-                      )}
-                    </h3>
-                    <p className="text-sm text-[#767693] dark:text-[#8A8688] leading-relaxed">{cat.desc}</p>
+                    {/* 文字 */}
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-sm font-bold text-[#313131] dark:text-[#E8E4E1] flex items-center gap-2">
+                        {cat.label}
+                        {articles.length > 0 && (
+                          <span className="text-[10px] font-medium bg-[#FEF3F0] dark:bg-[#1A1516] text-[#DA583F] rounded-full px-2 py-0.5">
+                            {articles.length}篇
+                          </span>
+                        )}
+                      </h3>
+                      <p className="text-xs text-[#767693] dark:text-[#8A8688] mt-0.5 truncate">{cat.desc}</p>
+                    </div>
+                    {/* 展开箭头 */}
+                    <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 ${
+                      isActive ? 'bg-[#DA583F] text-white rotate-180' : 'bg-[#FEF3F0] dark:bg-[#1A1516] text-[#B8B4B0] group-hover/cat:bg-[#DA583F] group-hover/cat:text-white'
+                    }`}>
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    {/* 管理员：编辑/删除 */}
+                    {isAdmin && (
+                      <div className="flex gap-1 flex-shrink-0 ml-1 opacity-0 group-hover/cat:opacity-100 transition-opacity">
+                        <button
+                          onClick={(e) => { e.stopPropagation(); openEditCat(cat); }}
+                          className="w-7 h-7 flex items-center justify-center rounded-md bg-[#FEFAF9] dark:bg-[#0F0D0E] border border-[#ECD8D9] dark:border-[#2A2020] text-xs text-[#767693] hover:text-[#DA583F] hover:border-[#DA583F] transition-all"
+                          title="编辑版块"
+                        >✎</button>
+                        <button
+                          onClick={(e) => { e.stopPropagation(); setCatDeleteKey(cat.key); }}
+                          className="w-7 h-7 flex items-center justify-center rounded-md bg-[#FEFAF9] dark:bg-[#0F0D0E] border border-[#ECD8D9] dark:border-[#2A2020] text-xs text-[#767693] hover:text-red-500 hover:border-red-300 transition-all"
+                          title="删除版块"
+                        >✕</button>
+                      </div>
+                    )}
                   </button>
-                  {/* 管理员：编辑/删除按钮 */}
-                  {isAdmin && (
-                    <div className="absolute top-3 right-3 flex gap-1 opacity-0 group-hover/cat:opacity-100 transition-opacity">
-                      <button
-                        onClick={(e) => { e.stopPropagation(); openEditCat(cat); }}
-                        className="w-7 h-7 flex items-center justify-center rounded-md bg-white dark:bg-[#2A2020] border border-[#ECD8D9] dark:border-[#2A2020] text-xs text-[#767693] hover:text-[#DA583F] hover:border-[#DA583F] transition-all"
-                        title="编辑版块"
-                      >✎</button>
-                      <button
-                        onClick={(e) => { e.stopPropagation(); setCatDeleteKey(cat.key); }}
-                        className="w-7 h-7 flex items-center justify-center rounded-md bg-white dark:bg-[#2A2020] border border-[#ECD8D9] dark:border-[#2A2020] text-xs text-[#767693] hover:text-red-500 hover:border-red-300 transition-all"
-                        title="删除版块"
-                      >✕</button>
+
+                  {/* 展开的文章列表 */}
+                  {isActive && (
+                    <div className="px-5 sm:px-6 pb-5 animate-[fadeIn_0.25s_ease-out]">
+                      {articles.length > 0 ? (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {articles.map(a => (
+                            <Link
+                              key={a.id}
+                              to={`/article/${a.id}`}
+                              className="block bg-[#FEFAF9] dark:bg-[#0F0D0E] rounded-lg p-4 border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] transition-all duration-300 hover:-translate-y-0.5 group"
+                            >
+                              <div className="flex items-center gap-2 mb-1">
+                                <span className="text-base">{a.emoji}</span>
+                                <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-1">
+                                  {a.title}
+                                </span>
+                              </div>
+                              <p className="text-xs text-[#767693] dark:text-[#8A8688] line-clamp-2 ml-6 mb-1.5">
+                                {getExcerpt(a.content, 80)}
+                              </p>
+                              <p className="text-[10px] text-[#B8B4B0] ml-6">
+                                {formatDate(a.createdAt)}
+                              </p>
+                            </Link>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="text-sm text-[#8A8688] py-4 text-center">
+                          {searchQuery ? '该版块无匹配文章' : '该领域暂无文章，'}
+                          {isAdmin ? (
+                            <Link to="/write" className="text-[#DA583F] hover:underline">写一篇</Link>
+                          ) : (
+                            <span>敬请期待</span>
+                          )}
+                        </p>
+                      )}
                     </div>
                   )}
                 </div>
               </RevealOnScroll>
             );
           })}
+
           {/* 管理员：新增版块 */}
           {isAdmin && (
             <button
               onClick={openAddCat}
-              className="flex flex-col items-center justify-center gap-2 bg-white/50 dark:bg-[#1C1818]/50 rounded-xl p-8 border-2 border-dashed border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] hover:bg-[#FEF3F0]/50 dark:hover:bg-[#1A1516]/50 transition-all cursor-pointer min-h-[200px]"
+              className="w-full flex items-center justify-center gap-2 py-5 rounded-xl border-2 border-dashed border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] hover:bg-[#FEF3F0]/50 dark:hover:bg-[#1A1516]/50 transition-all cursor-pointer text-[#B8B4B0] hover:text-[#DA583F]"
             >
-              <span className="text-2xl text-[#B8B4B0] group-hover:text-[#DA583F]">+</span>
-              <span className="text-sm text-[#767693] dark:text-[#8A8688]">新增版块</span>
+              <span className="text-lg">+</span>
+              <span className="text-sm">新增版块</span>
             </button>
           )}
         </div>
 
-        {/* 展开的文章列表 */}
-        {activeCategory && (
-          <div className="mt-6 animate-[fadeIn_0.25s_ease-out]">
-            <div className="flex items-center justify-between mb-4">
-              <h4 className="text-sm font-semibold text-[#4F4F4F] dark:text-[#B8B4B0]">
-                {getCategoryInfo(activeCategory).icon} {getCategoryInfo(activeCategory).label}
-                {articlesByCategory[activeCategory].length > 0 && (
-                  <span className="ml-2 text-xs text-[#B8B4B0]">· {articlesByCategory[activeCategory].length} 篇</span>
-                )}
-              </h4>
-              <button
-                onClick={() => setActiveCategory(null)}
-                className="text-xs text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors"
-              >
-                收起 ↑
-              </button>
-            </div>
-
-            {articlesByCategory[activeCategory].length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {articlesByCategory[activeCategory].map(a => (
-                  <Link
-                    key={a.id}
-                    to={`/article/${a.id}`}
-                    className="block bg-white dark:bg-[#1C1818] rounded-lg p-5 border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] transition-all duration-300 hover:-translate-y-0.5 group"
-                  >
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <span className="text-lg">{a.emoji}</span>
-                      <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-1">
-                        {a.title}
-                      </span>
-                    </div>
-                    <p className="text-xs text-[#767693] dark:text-[#8A8688] line-clamp-2 ml-7 mb-2">
-                      {getExcerpt(a.content, 80)}
-                    </p>
-                    <p className="text-[11px] text-[#B8B4B0] ml-7">
-                      {formatDate(a.createdAt)}
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            ) : (
-              <p className="text-sm text-[#8A8688] dark:text-[#8A8688] py-6 text-center">
-                {searchQuery ? '该版块无匹配文章' : '该领域暂无文章，'}
-                {isAdmin ? (
-                  <Link to="/write" className="text-[#DA583F] hover:underline">写一篇</Link>
-                ) : (
-                  <span>敬请期待</span>
-                )}
-              </p>
-            )}
-          </div>
-        )}
-
-        {/* 搜索但未选分类时：按分类展示搜索结果 */}
+        {/* 搜索但未选分类时：全局搜索结果 */}
         {searchQuery && !activeCategory && filteredArticles.length > 0 && (
-          <div className="mt-8 space-y-10">
-            {categories.filter(c => (articlesByCategory[c.key]?.length ?? 0) > 0).map(cat => (
-              <div key={cat.key}>
-                <h4 className="text-sm font-semibold text-[#4F4F4F] dark:text-[#B8B4B0] mb-3">
-                  {cat.icon} {cat.label} · {(articlesByCategory[cat.key]?.length ?? 0)} 篇
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {(articlesByCategory[cat.key] ?? []).map(a => (
-                    <Link
-                      key={a.id}
-                      to={`/article/${a.id}`}
-                      className="block bg-white dark:bg-[#1C1818] rounded-lg p-5 border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] transition-all duration-300 hover:-translate-y-0.5 group"
-                    >
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <span className="text-lg">{a.emoji}</span>
-                        <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-1">
-                          {a.title}
-                        </span>
-                      </div>
-                      <p className="text-xs text-[#767693] dark:text-[#8A8688] line-clamp-2 ml-7 mb-2">
-                        {getExcerpt(a.content, 80)}
-                      </p>
-                      <p className="text-[11px] text-[#B8B4B0] ml-7">
-                        {formatDate(a.createdAt)}
-                      </p>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
+          <div className="mt-8 animate-[fadeIn_0.25s_ease-out]">
+            <h4 className="text-sm font-semibold text-[#4F4F4F] dark:text-[#B8B4B0] mb-4">
+              「{searchQuery}」的搜索结果 · {filteredArticles.length} 篇
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {filteredArticles.map(a => (
+                <Link
+                  key={a.id}
+                  to={`/article/${a.id}`}
+                  className="block bg-white dark:bg-[#1C1818] rounded-lg p-5 border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] transition-all duration-300 hover:-translate-y-0.5 group"
+                >
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="text-lg">{a.emoji}</span>
+                    <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-1">
+                      {a.title}
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#767693] dark:text-[#8A8688] line-clamp-2 ml-7 mb-2">
+                    {getExcerpt(a.content, 80)}
+                  </p>
+                  <p className="text-[11px] text-[#B8B4B0] ml-7">
+                    {formatDate(a.createdAt)}
+                  </p>
+                </Link>
+              ))}
+            </div>
           </div>
         )}
 
