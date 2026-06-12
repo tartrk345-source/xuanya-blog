@@ -1,37 +1,34 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
-// 首页优先加载，其他页面懒加载
+const LandingPage = lazy(() => import('./pages/LandingPage'));
 const HomePage = lazy(() => import('./pages/HomePage'));
 const ArticlePage = lazy(() => import('./pages/ArticlePage'));
 const WritePage = lazy(() => import('./pages/WritePage'));
 
 function LoadingSpinner() {
   return (
-    <div className="flex items-center justify-center min-h-[60vh]">
+    <div className="flex items-center justify-center min-h-[60vh] bg-[#FEFAF9] dark:bg-[#0F0D0E]">
       <div className="flex flex-col items-center gap-4">
-        <div className="w-8 h-8 border-2 border-indigo-200 border-t-indigo-600 rounded-full animate-spin" />
-        <span className="text-sm text-gray-400">加载中…</span>
+        <div className="w-8 h-8 border-2 border-[#DA583F]/20 border-t-[#DA583F] rounded-full animate-spin" />
+        <span className="text-sm text-[#767693] dark:text-[#8A8688]">加载中…</span>
       </div>
     </div>
   );
 }
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-[#fafafa]">
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/article/:id" element={<ArticlePage />} />
-            <Route path="/write" element={<WritePage />} />
-            <Route path="/write/:id" element={<WritePage />} />
-          </Routes>
-        </Suspense>
-      </div>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/blog" element={<HomePage />} />
+          <Route path="/article/:id" element={<ArticlePage />} />
+          <Route path="/write" element={<WritePage />} />
+          <Route path="/write/:id" element={<WritePage />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }
-
-export default App;

@@ -2,6 +2,8 @@
  * 工具函数集合
  */
 
+import type { CategoryKey } from '../types/article';
+
 /** 生成唯一 ID：时间戳 + 6位随机十六进制 */
 export function generateId(): string {
   const timestamp = Date.now().toString(36);
@@ -53,3 +55,18 @@ export const EMOJI_PRESETS = [
   '🎯', '💡', '🌟', '🕊️',
   '🧠', '🏥', '⛩️', '☯️',
 ] as const;
+
+/** 志趣分类定义 */
+export const CATEGORIES: { key: CategoryKey; label: string; icon: string; desc: string }[] = [
+  { key: 'psychiatry', label: '精神心理', icon: '🧠', desc: '精神分裂症、抑郁障碍、dTMS神经调控——深耕临床一线，以实证回应困惑。' },
+  { key: 'bci', label: '脑机接口', icon: '🔬', desc: '神经调控与工程技术的交叉地带，探索精神科治疗的下一站。' },
+  { key: 'positive-psychology', label: '积极心理', icon: '🌿', desc: '积极心理治疗、心理韧性与幸福感研究——从疗愈疾病到滋养幸福的视角转换。' },
+  { key: 'sinology', label: '国学玄学', icon: '🌏', desc: '国学经典、传统智慧——以理性之眼观照古老学问，在古今之间寻找共鸣。' },
+  { key: 'aromatherapy', label: '芳香疗法', icon: '🌸', desc: '精油的科学应用与临床推广——让自然疗愈力触达更多人。' },
+  { key: 'misc', label: '万象', icon: '✨', desc: '其余热爱——它们散落在生活的缝隙里，静默发光。' },
+];
+
+/** 根据 category key 获取分类信息 */
+export function getCategoryInfo(key: CategoryKey) {
+  return CATEGORIES.find(c => c.key === key) ?? CATEGORIES[5]; // 默认万象
+}

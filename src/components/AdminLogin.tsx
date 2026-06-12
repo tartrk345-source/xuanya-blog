@@ -25,8 +25,9 @@ export default function AdminLogin() {
 
   return (
     <>
-      {/* 隐藏触发按钮：右下角小齿轮 */}
+      {/* 隐藏触发按钮：Navigation 的齿轮图标通过此元素触发 */}
       <button
+        id="admin-login-trigger"
         onClick={() => {
           if (isAdmin) {
             handleLogout();
@@ -35,11 +36,22 @@ export default function AdminLogin() {
             setError(false);
           }
         }}
-        title={isAdmin ? '退出管理员模式' : '管理员登录'}
-        className="fixed bottom-4 right-4 w-8 h-8 flex items-center justify-center text-gray-300 hover:text-gray-500 hover:bg-gray-100 rounded-full transition-all text-xs"
-      >
-        ⚙
-      </button>
+        className="hidden"
+      />
+
+      {/* 右下角齿轮（在 LandingPage 上不可见，仅 blog 页面 fallback）*/}
+      {!isAdmin && (
+        <button
+          onClick={() => {
+            setShowDialog(true);
+            setError(false);
+          }}
+          title="管理员登录"
+          className="fixed bottom-4 right-4 w-8 h-8 flex items-center justify-center text-[#B8B4B0] hover:text-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] rounded-full transition-all text-xs z-50"
+        >
+          ⚙
+        </button>
+      )}
 
       {/* 登录弹窗 */}
       {showDialog && (
