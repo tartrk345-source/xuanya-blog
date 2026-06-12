@@ -29,8 +29,7 @@ let categoriesCache: CategoryItem[] | null = null;
 async function loadCategoriesFromSupabase(): Promise<CategoryItem[]> {
   const { data, error } = await supabase
     .from('categories')
-    .select('key, label, icon, description')
-    .order('key');
+    .select('key, label, icon, description');
 
   if (error) {
     console.error('[categoryStore] 加载分类失败', error);
@@ -50,7 +49,11 @@ async function loadCategoriesFromSupabase(): Promise<CategoryItem[]> {
     return categoriesCache;
   }
 
-  categoriesCache = data as CategoryItem[];
+  // 按 DEFAULT_CATEGORIES 的顺序排列（保证前端展示顺序一致）
+  const orderMap = new Map(DEFAULT_CATEGORIES.map((c, i) => [c.key, i]));
+  const sorted = [...(data as CategoryItem[])]
+    .sort((a, b) => (orderMap.get(a.key) ?? 99) - (orderMap.get(b.key) ?? 99));
+  categoriesCache = sorted;
   return categoriesCache;
 }
 
