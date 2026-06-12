@@ -66,7 +66,7 @@ function InterestSection() {
   const articlesByCategory: Record<CategoryKey, Article[]> = {} as any;
   for (const c of CATEGORIES) {
     articlesByCategory[c.key] = filteredArticles
-      .filter(a => a.category === c.key)
+      .filter(a => (a.category || 'misc') === c.key)
       .sort((a, b) => b.updatedAt - a.updatedAt);
   }
 

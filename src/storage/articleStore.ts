@@ -44,7 +44,7 @@ const SEED_ARTICLES: Article[] = [
   },
 ];
 
-/** 读取全部文章 */
+/** 读取全部文章（自动迁移补全 category 字段） */
 function loadAll(): Article[] {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -52,7 +52,19 @@ function loadAll(): Article[] {
       saveAll(SEED_ARTICLES);
       return SEED_ARTICLES;
     }
-    return JSON.parse(raw) as Article[];
+    const articles = JSON.parse(raw) as any[];
+
+    // 数据迁移：为没有 category 的旧文章补全为 'misc'
+    let patched = false;
+    for (const a of articles) {
+      if (!a.category) {
+        a.category = 'misc';
+        patched = true;
+      }
+    }
+    if (patched) saveAll(articles);
+
+    return articles as Article[];
   } catch {
     return [];
   }
