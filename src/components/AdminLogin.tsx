@@ -110,11 +110,15 @@ export default function AdminLogin() {
         </div>
       )}
 
-      {/* 管理员模式标识 */}
+      {/* 管理员模式标识 — 点击可退出 */}
       {isAdmin && (
-        <div className="fixed bottom-14 right-4 text-[10px] text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full select-none">
-          管理员模式
-        </div>
+        <button
+          onClick={handleLogout}
+          title="点击退出管理模式"
+          className="fixed bottom-14 right-4 text-[10px] text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1A1516] px-2 py-0.5 rounded-full cursor-pointer hover:bg-[#ECD8D9] dark:hover:bg-[#2A2020] transition-all select-none border border-[#DA583F]/15"
+        >
+          管理员模式 · 退出
+        </button>
       )}
     </>
   );

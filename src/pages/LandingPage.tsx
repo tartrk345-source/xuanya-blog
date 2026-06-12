@@ -464,6 +464,20 @@ function InterestSection() {
    主组件：LandingPage
    ============================== */
 export default function LandingPage() {
+  // 挂载时处理 hash：从其他页面跳转过来或直接访问 /#xxx 时滚动到对应区块
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (!hash) return;
+    // 等待 DOM 渲染完成
+    const timer = setTimeout(() => {
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E] text-[#313131] dark:text-[#E8E4E1] font-['PingFang_SC','Microsoft_YaHei','Noto_Sans_SC',sans-serif] transition-colors duration-300">
       <Navigation />

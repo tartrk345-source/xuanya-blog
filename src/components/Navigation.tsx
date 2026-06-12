@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 
 /** 全局导航栏：首页全屏时玻璃质感，滚动后加边框 */
 export default function Navigation() {
-  const { isAdmin } = useAdminAuth();
+  const { isAdmin, logout } = useAdminAuth();
   const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -33,11 +33,25 @@ export default function Navigation() {
     });
   };
 
+  // 滚动到对应区块（同时兼容同页和跨页导航）
+  const handleNavClick = useCallback((e: React.MouseEvent, sectionId: string) => {
+    e.preventDefault();
+    if (window.location.pathname !== '/') {
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+    window.history.pushState(null, '', `/#${sectionId}`);
+  }, []);
+
   const navLinks = [
-    { href: '/#about', label: '关于' },
-    { href: '/#interests', label: '志趣' },
-    { href: '/#work', label: '行迹' },
-    { href: '/#contact', label: '联系' },
+    { id: 'about', label: '关于' },
+    { id: 'interests', label: '志趣' },
+    { id: 'work', label: '行迹' },
+    { id: 'contact', label: '联系' },
   ];
 
   return (
@@ -61,13 +75,14 @@ export default function Navigation() {
           {/* Desktop links */}
           <ul className="hidden sm:flex items-center gap-8 list-none">
             {navLinks.map(link => (
-              <li key={link.href}>
-                <Link
-                  to={link.href}
-                  className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#B8B4B0] hover:text-[#DA583F] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] after:transition-[width] after:duration-300 hover:after:w-full"
+              <li key={link.id}>
+                <a
+                  href={`/#${link.id}`}
+                  onClick={(e) => handleNavClick(e, link.id)}
+                  className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#B8B4B0] hover:text-[#DA583F] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] after:transition-[width] after:duration-300 hover:after:w-full cursor-pointer"
                 >
                   {link.label}
-                </Link>
+                </a>
               </li>
             ))}
             {/* 暗色模式 */}
@@ -80,21 +95,29 @@ export default function Navigation() {
                 {dark ? '☀' : '☽'}
               </button>
             </li>
-            {/* 管理员入口：极简齿轮 */}
+            {/* 管理员入口 */}
             <li>
-              <Link
-                to={isAdmin ? '#' : '#'}
-                onClick={(e) => {
-                  if (isAdmin) return;
-                  e.preventDefault();
-                  // 触发 AdminLogin
-                  document.getElementById('admin-login-trigger')?.click();
-                }}
-                title={isAdmin ? '管理员模式' : '管理员登录'}
-                className="text-xs text-[#B8B4B0] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors px-1"
-              >
-                ⚙
-              </Link>
+              {isAdmin ? (
+                <button
+                  onClick={() => { logout(); }}
+                  className="text-xs font-medium text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1A1516] hover:bg-[#ECD8D9] dark:hover:bg-[#2A2020] px-2.5 py-1 rounded-md transition-all cursor-pointer whitespace-nowrap"
+                  title="退出管理模式"
+                >
+                  退出
+                </button>
+              ) : (
+                <Link
+                  to="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('admin-login-trigger')?.click();
+                  }}
+                  title="管理员登录"
+                  className="text-xs text-[#B8B4B0] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors px-1"
+                >
+                  ⚙
+                </Link>
+              )}
             </li>
           </ul>
 
@@ -120,17 +143,18 @@ export default function Navigation() {
         }`}
       >
         {navLinks.map(link => (
-          <Link
-            key={link.href}
-            to={link.href}
-            onClick={() => {
+          <a
+            key={link.id}
+            href={`/#${link.id}`}
+            onClick={(e) => {
+              handleNavClick(e, link.id);
               setMobileOpen(false);
               document.body.style.overflow = '';
             }}
-            className="text-[1.3rem] font-semibold text-[#313131] dark:text-[#E8E4E1] tracking-wider hover:text-[#DA583F] transition-colors"
+            className="text-[1.3rem] font-semibold text-[#313131] dark:text-[#E8E4E1] tracking-wider hover:text-[#DA583F] transition-colors cursor-pointer"
           >
             {link.label}
-          </Link>
+          </a>
         ))}
         <button
           onClick={() => { toggleTheme(); setMobileOpen(false); document.body.style.overflow = ''; }}
@@ -138,6 +162,22 @@ export default function Navigation() {
         >
           {dark ? '☀' : '☽'}
         </button>
+        {/* 移动端管理员 */}
+        {isAdmin ? (
+          <button
+            onClick={() => { logout(); setMobileOpen(false); document.body.style.overflow = ''; }}
+            className="mt-2 px-5 py-2 text-sm font-medium text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1A1516] rounded-lg border border-[#DA583F]/20 hover:bg-[#ECD8D9] dark:hover:bg-[#2A2020] transition-all cursor-pointer"
+          >
+            退出管理模式
+          </button>
+        ) : (
+          <button
+            onClick={() => { document.getElementById('admin-login-trigger')?.click(); setMobileOpen(false); document.body.style.overflow = ''; }}
+            className="mt-2 text-xs text-[#B8B4B0] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors cursor-pointer"
+          >
+            ⚙ 管理员登录
+          </button>
+        )}
       </div>
 
       {/* 占位 */}
