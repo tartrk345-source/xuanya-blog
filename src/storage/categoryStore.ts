@@ -50,6 +50,7 @@ export function addCategory(item: CategoryItem): CategoryItem[] {
   const items = loadCategories();
   items.push(item);
   saveCategories(items);
+  emitCategoriesChange();
   return items;
 }
 
@@ -60,6 +61,7 @@ export function updateCategory(key: string, updates: Partial<Omit<CategoryItem, 
   if (idx === -1) return items;
   items[idx] = { ...items[idx], ...updates };
   saveCategories(items);
+  emitCategoriesChange();
   return items;
 }
 
@@ -69,6 +71,7 @@ export function deleteCategory(key: string): CategoryItem[] {
   const filtered = items.filter(c => c.key !== key);
   if (filtered.length === items.length) return items;
   saveCategories(filtered);
+  emitCategoriesChange();
   return filtered;
 }
 
