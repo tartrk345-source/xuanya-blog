@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "x2ya.com"
+        }
+      ],
+      "destination": "https://www.x2ya.com/",
+      "permanent": true
+    }
+  ]
+}
