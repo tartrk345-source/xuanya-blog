@@ -89,7 +89,7 @@ export default function Navigation() {
             to="/"
             className="flex items-center gap-2.5 group"
           >
-            <img src="/images/logo.png" alt="玄牙" className="w-8 h-8 rounded-full object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-200" />
+            <img src="/images/logo.webp" alt="玄牙" className="w-8 h-8 rounded-full object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-200" />
             <span className="text-[1.2rem] font-bold text-[#313131] dark:text-[#E8E4E1] tracking-wider font-['PingFang_SC','Noto_Serif_SC',serif] group-hover:text-[#DA583F] transition-colors">
               玄牙
             </span>

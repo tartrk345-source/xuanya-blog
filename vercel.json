@@ -1,15 +1,28 @@
 {
-  "redirects": [
+  "headers": [
     {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "x2ya.com"
-        }
-      ],
-      "destination": "https://www.x2ya.com/",
-      "permanent": true
+      "source": "/images/(.*\\.(webp|png|jpg|jpeg|gif|svg|ico|avif))",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/assets/(.*\\.(js|css|woff2|woff|ttf))",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
     }
   ]
 }

@@ -131,7 +131,7 @@ export default function LandingPage() {
         <div className="text-center relative z-10 max-w-[720px] w-full">
           {/* 角色形象 Logo */}
           <div className="flex justify-center mb-6">
-            <img src="/images/logo.png" alt="玄牙" className="w-20 h-20 rounded-full object-cover opacity-90" />
+            <img src="/images/logo.webp" alt="玄牙" className="w-20 h-20 rounded-full object-cover opacity-90" />
           </div>
           <h1 className="text-[clamp(3rem,8vw,6rem)] font-black text-[#313131] dark:text-[#E8E4E1] leading-tight mb-2 tracking-wider font-['PingFang_SC','Noto_Serif_SC',serif] max-sm:text-[2.5rem]">
             玄<span className="text-[#DA583F]">牙</span>
@@ -189,7 +189,7 @@ export default function LandingPage() {
               <div className="flex flex-col items-center md:items-start">
                 <div className="flex flex-col items-center gap-2 mb-8">
                   <img
-                    src="/images/avatar.png"
+                    src="/images/avatar.webp"
                     alt="玄牙"
                     className="w-[120px] h-[120px] rounded-full object-cover border-[3px] border-white dark:border-[#1C1818] shadow-[0_4px_20px_rgba(218,88,63,0.15)]"
                     loading="lazy"
