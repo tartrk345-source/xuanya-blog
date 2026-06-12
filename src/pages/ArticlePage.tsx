@@ -6,6 +6,7 @@ import { getArticleById, deleteArticle } from '../storage/articleStore';
 import { formatDate, getCategoryInfo } from '../utils/helpers';
 import ConfirmDialog from '../components/ConfirmDialog';
 import Navigation from '../components/Navigation';
+import AdminLogin from '../components/AdminLogin';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 
 export default function ArticlePage() {
@@ -15,13 +16,13 @@ export default function ArticlePage() {
   const article = id ? getArticleById(id) : undefined;
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
-  if (!article) return <Navigate to="/blog" replace />;
+  if (!article) return <Navigate to="/" replace />;
 
   const handleDelete = () => {
     if (!id) return;
     deleteArticle(id);
     setShowDeleteConfirm(false);
-    navigate('/blog', { replace: true });
+    navigate('/', { replace: true });
   };
 
   const catInfo = article.category ? getCategoryInfo(article.category) : null;
@@ -32,8 +33,8 @@ export default function ArticlePage() {
       <div className="max-w-3xl mx-auto px-6 py-16">
         {/* 顶部导航 */}
         <div className="mb-12">
-          <Link to="/blog" className="inline-flex items-center gap-1.5 text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
-            <span>←</span> 返回博客
+          <Link to="/" className="inline-flex items-center gap-1.5 text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
+            <span>←</span> 返回首页
           </Link>
         </div>
 
@@ -70,8 +71,8 @@ export default function ArticlePage() {
 
         {/* 底部操作 */}
         <div className="mt-16 pt-8 border-t border-[#ECD8D9] dark:border-[#2A2020] flex items-center justify-between">
-          <Link to="/blog" className="text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
-            ← 返回博客
+          <Link to="/" className="text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
+            ← 返回首页
           </Link>
           {isAdmin && (
             <div className="flex items-center gap-4">
@@ -95,6 +96,8 @@ export default function ArticlePage() {
           onCancel={() => setShowDeleteConfirm(false)}
         />
       </div>
+
+      <AdminLogin />
     </div>
   );
 }

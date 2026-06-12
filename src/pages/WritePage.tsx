@@ -7,6 +7,7 @@ import { EMOJI_PRESETS, CATEGORIES } from '../utils/helpers';
 import type { CategoryKey } from '../types/article';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 import Navigation from '../components/Navigation';
+import AdminLogin from '../components/AdminLogin';
 
 export default function WritePage() {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ export default function WritePage() {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
   useEffect(() => {
-    if (!isAdmin) navigate('/blog', { replace: true });
+    if (!isAdmin) navigate('/', { replace: true });
   }, [isAdmin, navigate]);
 
   useEffect(() => {
@@ -34,7 +35,7 @@ export default function WritePage() {
         setCategory(article.category || '');
         setContent(article.content);
       } else {
-        navigate('/blog', { replace: true });
+        navigate('/', { replace: true });
       }
     }
   }, [id, navigate]);
@@ -50,7 +51,7 @@ export default function WritePage() {
       setTimeout(() => { setSaving(false); navigate(`/article/${id}`); }, 100);
     } else {
       createArticle({ title: title.trim(), emoji, content: content.trim(), status, category: catValue });
-      setTimeout(() => { setSaving(false); navigate('/blog'); }, 100);
+      setTimeout(() => { setSaving(false); navigate('/'); }, 100);
     }
   };
 
@@ -58,7 +59,7 @@ export default function WritePage() {
     if (!id) return;
     deleteArticle(id);
     setShowDeleteConfirm(false);
-    navigate('/blog', { replace: true });
+    navigate('/', { replace: true });
   };
 
   return (
@@ -67,8 +68,8 @@ export default function WritePage() {
       <div className="max-w-3xl mx-auto px-6 py-12">
         {/* 顶部工具栏 */}
         <div className="flex items-center justify-between mb-8">
-          <Link to="/blog" className="text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
-            ← 返回博客
+          <Link to="/" className="text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
+            ← 返回首页
           </Link>
           <div className="flex gap-3">
             {isEditing ? (
@@ -159,6 +160,8 @@ export default function WritePage() {
           onCancel={() => setShowDeleteConfirm(false)}
         />
       </div>
+
+      <AdminLogin />
     </div>
   );
 }
