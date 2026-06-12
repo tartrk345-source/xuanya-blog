@@ -18,11 +18,17 @@ export default function ArticlePage() {
 
   if (!article) return <Navigate to="/" replace />;
 
+  const goBack = () => {
+    navigate('/');
+    setTimeout(() => document.getElementById('interests')?.scrollIntoView({ behavior: 'smooth' }), 80);
+  };
+
   const handleDelete = () => {
     if (!id) return;
     deleteArticle(id);
     setShowDeleteConfirm(false);
     navigate('/', { replace: true });
+    setTimeout(() => document.getElementById('interests')?.scrollIntoView({ behavior: 'smooth' }), 80);
   };
 
   const catInfo = article.category ? getCategoryInfo(article.category) : null;
@@ -33,9 +39,9 @@ export default function ArticlePage() {
       <div className="max-w-3xl mx-auto px-6 py-16">
         {/* 顶部导航 */}
         <div className="mb-12">
-          <Link to="/" className="inline-flex items-center gap-1.5 text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
-            <span>←</span> 返回首页
-          </Link>
+          <button onClick={goBack} className="inline-flex items-center gap-1.5 text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
+            <span>←</span> 返回志趣
+          </button>
         </div>
 
         {/* 文章头部 */}
@@ -71,9 +77,9 @@ export default function ArticlePage() {
 
         {/* 底部操作 */}
         <div className="mt-16 pt-8 border-t border-[#ECD8D9] dark:border-[#2A2020] flex items-center justify-between">
-          <Link to="/" className="text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
-            ← 返回首页
-          </Link>
+          <button onClick={goBack} className="text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
+            ← 返回志趣
+          </button>
           {isAdmin && (
             <div className="flex items-center gap-4">
               <Link to={`/write/${article.id}`} className="text-sm text-[#4F4F4F] dark:text-[#B8B4B0] hover:text-[#DA583F] transition-colors">

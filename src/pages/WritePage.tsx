@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams, Link } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import MarkdownEditor from '../components/MarkdownEditor';
 import ConfirmDialog from '../components/ConfirmDialog';
 import { createArticle, updateArticle, deleteArticle, getArticleById } from '../storage/articleStore';
-import { EMOJI_PRESETS, CATEGORIES } from '../utils/helpers';
+import { EMOJI_PRESETS } from '../utils/helpers';
+import { getCategories } from '../storage/categoryStore';
 import type { CategoryKey } from '../types/article';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 import Navigation from '../components/Navigation';
@@ -21,6 +22,7 @@ export default function WritePage() {
   const [content, setContent] = useState('');
   const [saving, setSaving] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const categories = getCategories();
 
   useEffect(() => {
     if (!isAdmin) navigate('/', { replace: true });
@@ -51,7 +53,7 @@ export default function WritePage() {
       setTimeout(() => { setSaving(false); navigate(`/article/${id}`); }, 100);
     } else {
       createArticle({ title: title.trim(), emoji, content: content.trim(), status, category: catValue });
-      setTimeout(() => { setSaving(false); navigate('/'); }, 100);
+      setTimeout(() => { setSaving(false); navigate('/'); setTimeout(() => document.getElementById('interests')?.scrollIntoView({ behavior: 'smooth' }), 80); }, 100);
     }
   };
 
@@ -60,6 +62,12 @@ export default function WritePage() {
     deleteArticle(id);
     setShowDeleteConfirm(false);
     navigate('/', { replace: true });
+    setTimeout(() => document.getElementById('interests')?.scrollIntoView({ behavior: 'smooth' }), 80);
+  };
+
+  const goBack = () => {
+    navigate('/');
+    setTimeout(() => document.getElementById('interests')?.scrollIntoView({ behavior: 'smooth' }), 80);
   };
 
   return (
@@ -68,9 +76,9 @@ export default function WritePage() {
       <div className="max-w-3xl mx-auto px-6 py-12">
         {/* 顶部工具栏 */}
         <div className="flex items-center justify-between mb-8">
-          <Link to="/" className="text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
-            ← 返回首页
-          </Link>
+          <button onClick={goBack} className="text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
+            ← 返回志趣
+          </button>
           <div className="flex gap-3">
             {isEditing ? (
               <>
@@ -101,7 +109,7 @@ export default function WritePage() {
         <div className="mb-6">
           <label className="block text-xs font-medium text-[#767693] dark:text-[#8A8688] mb-2">选择志趣分类</label>
           <div className="flex flex-wrap gap-2">
-            {CATEGORIES.map(cat => (
+            {categories.map(cat => (
               <button
                 key={cat.key}
                 onClick={() => setCategory(prev => prev === cat.key ? '' : cat.key)}

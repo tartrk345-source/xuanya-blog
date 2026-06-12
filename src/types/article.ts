@@ -1,8 +1,8 @@
 /** 文章状态：草稿 / 已发布 */
 export type ArticleStatus = 'draft' | 'published';
 
-/** 志趣分类标识 */
-export type CategoryKey = 'psychiatry' | 'bci' | 'positive-psychology' | 'sinology' | 'aromatherapy' | 'misc';
+/** 志趣分类标识（支持自定义） */
+export type CategoryKey = string;
 
 /** 文章数据结构 */
 export interface Article {
