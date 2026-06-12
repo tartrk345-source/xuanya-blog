@@ -1,6 +1,8 @@
 import { exportAllArticles, importArticles } from '../storage/articleStore';
 import type { Article } from '../types/article';
 
+export { exportAllArticles, importArticles };
+
 /**
  * 一键导出全部文章为 JSON 文件并触发浏览器下载
  * 文件命名格式：xuanya-blog-backup-YYYY-MM-DD.json
@@ -84,8 +86,22 @@ export function parseBackupFile(): Promise<ParseResult> {
   });
 }
 
-/**
- * 执行导入：将解析后的文章合并到 localStorage。
- * 返回 { imported, skipped }，跳过已有 ID。
- */
-export { importArticles };
+const EXPORT_DATE_KEY = 'xuanya-blog-last-export-date';
+
+/** 检查今天是否已导出过 */
+export function hasExportedToday(): boolean {
+  try {
+    const last = localStorage.getItem(EXPORT_DATE_KEY);
+    if (!last) return false;
+    return last === new Date().toISOString().slice(0, 10);
+  } catch {
+    return false;
+  }
+}
+
+/** 标记今天已导出 */
+export function markExportedToday(): void {
+  try {
+    localStorage.setItem(EXPORT_DATE_KEY, new Date().toISOString().slice(0, 10));
+  } catch { /* ignore */ }
+}

@@ -4,17 +4,26 @@ import MarkdownEditor from '../components/MarkdownEditor';
 import ConfirmDialog from '../components/ConfirmDialog';
 import { createArticle, updateArticle, deleteArticle, getArticleById } from '../storage/articleStore';
 import { EMOJI_PRESETS } from '../utils/helpers';
+import { useAdminAuth } from '../hooks/useAdminAuth';
 
 export default function WritePage() {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const isEditing = Boolean(id);
+  const { isAdmin } = useAdminAuth();
 
   const [title, setTitle] = useState('');
   const [emoji, setEmoji] = useState('📝');
   const [content, setContent] = useState('');
   const [saving, setSaving] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+
+  // 未登录管理员，跳转首页
+  useEffect(() => {
+    if (!isAdmin) {
+      navigate('/', { replace: true });
+    }
+  }, [isAdmin, navigate]);
 
   // 编辑模式：加载已有文章数据
   useEffect(() => {
@@ -37,7 +46,6 @@ export default function WritePage() {
     setSaving(true);
 
     if (isEditing && id) {
-      // 编辑模式：更新已有文章
       updateArticle(id, {
         title: title.trim(),
         emoji,
@@ -49,7 +57,6 @@ export default function WritePage() {
         navigate(`/article/${id}`);
       }, 100);
     } else {
-      // 新建模式
       createArticle({
         title: title.trim(),
         emoji,

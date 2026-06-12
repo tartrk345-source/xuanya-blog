@@ -5,10 +5,12 @@ import remarkGfm from 'remark-gfm';
 import { getArticleById, deleteArticle } from '../storage/articleStore';
 import { formatDate } from '../utils/helpers';
 import ConfirmDialog from '../components/ConfirmDialog';
+import { useAdminAuth } from '../hooks/useAdminAuth';
 
 export default function ArticlePage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { isAdmin } = useAdminAuth();
   const article = id ? getArticleById(id) : undefined;
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
@@ -75,20 +77,22 @@ export default function ArticlePage() {
         >
           ← 返回首页
         </Link>
-        <div className="flex items-center gap-4">
-          <Link
-            to={`/write/${article.id}`}
-            className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
-          >
-            编辑
-          </Link>
-          <button
-            onClick={() => setShowDeleteConfirm(true)}
-            className="text-sm text-red-400 hover:text-red-600 transition-colors"
-          >
-            删除
-          </button>
-        </div>
+        {isAdmin && (
+          <div className="flex items-center gap-4">
+            <Link
+              to={`/write/${article.id}`}
+              className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
+            >
+              编辑
+            </Link>
+            <button
+              onClick={() => setShowDeleteConfirm(true)}
+              className="text-sm text-red-400 hover:text-red-600 transition-colors"
+            >
+              删除
+            </button>
+          </div>
+        )}
       </div>
 
       {/* 删除确认弹窗 */}

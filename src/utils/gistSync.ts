@@ -1,15 +1,24 @@
 /**
  * GitHub Gist 同步工具
  *
+ * PAT 优先级：
+ * 1. import.meta.env.VITE_GITHUB_PAT（Vercel 环境变量，生产环境）
+ * 2. localStorage（本地开发手动设置，或覆盖用）
+ *
  * 将文章数据同步到私有 Gist，实现跨设备恢复。
- * PAT（Personal Access Token）和 Gist ID 存储在 localStorage。
  */
+
+import { getAllArticles, importArticles } from '../storage/articleStore';
 
 const STORAGE_KEY_PAT = 'xuanya-blog-github-pat';
 const STORAGE_KEY_GIST_ID = 'xuanya-blog-gist-id';
 
+function getEnvPat(): string | null {
+  return (import.meta as any).env.VITE_GITHUB_PAT || null;
+}
+
 export function getPat(): string | null {
-  return localStorage.getItem(STORAGE_KEY_PAT);
+  return getEnvPat() || localStorage.getItem(STORAGE_KEY_PAT);
 }
 
 export function setPat(pat: string): void {
@@ -18,14 +27,13 @@ export function setPat(pat: string): void {
 
 export function clearPat(): void {
   localStorage.removeItem(STORAGE_KEY_PAT);
-  localStorage.removeItem(STORAGE_KEY_GIST_ID);
 }
 
-function getGistId(): string | null {
+export function getGistId(): string | null {
   return localStorage.getItem(STORAGE_KEY_GIST_ID);
 }
 
-function setGistId(id: string): void {
+export function setGistId(id: string): void {
   localStorage.setItem(STORAGE_KEY_GIST_ID, id);
 }
 
@@ -33,7 +41,7 @@ interface GistFile {
   content: string;
 }
 
-interface GistUploadBody {
+interface GistData {
   description: string;
   public: boolean;
   files: Record<string, GistFile>;
@@ -42,83 +50,79 @@ interface GistUploadBody {
 interface GistResponse {
   id: string;
   files: Record<string, { content: string }>;
-  updated_at: string;
 }
 
-export async function uploadToGist(
-  articlesJson: string,
-  pat: string
-): Promise<{ success: boolean; gistId?: string; error?: string }> {
-  const gistId = getGistId();
-  const url = gistId
-    ? `https://api.github.com/gists/${gistId}`
-    : 'https://api.github.com/gists';
-  const method = gistId ? 'PATCH' : 'POST';
+async function gistFetch(path: string, options?: RequestInit): Promise<Response> {
+  const pat = getPat();
+  if (!pat) {
+    throw new Error('未配置 GitHub Token，请在 Vercel 环境变量中设置 VITE_GITHUB_PAT');
+  }
+  return fetch(`https://api.github.com${path}`, {
+    ...options,
+    headers: {
+      ...options?.headers,
+      Authorization: `token ${pat}`,
+      Accept: 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json',
+    },
+  });
+}
 
-  const body: GistUploadBody = {
-    description: '玄牙个人世界 - 文章备份（自动同步，请勿手动编辑）',
+export async function syncToGist(): Promise<string> {
+  const articles = getAllArticles();
+  const now = new Date().toISOString().split('T')[0];
+  const gistId = getGistId();
+  const body: GistData = {
+    description: `玄牙个人世界文章备份 ${now}`,
     public: false,
     files: {
-      'xuanya-blog-articles.json': { content: articlesJson },
+      'xuanya-blog-articles.json': {
+        content: JSON.stringify({ exportedAt: now, articles }, null, 2),
+      },
     },
   };
 
-  try {
-    const res = await fetch(url, {
-      method,
-      headers: {
-        Authorization: `token ${pat}`,
-        'Content-Type': 'application/json',
-        Accept: 'application/vnd.github.v3+json',
-      },
+  if (gistId) {
+    const resp = await gistFetch(`/gists/${gistId}`, {
+      method: 'PATCH',
       body: JSON.stringify(body),
     });
-
-    if (!res.ok) {
-      const err = await res.json().catch(() => null);
-      const msg = err?.message || res.statusText;
-      if (res.status === 401) return { success: false, error: 'Token 无效或已过期，请重新设置' };
-      if (res.status === 403) return { success: false, error: 'Token 权限不足，需要 gist 权限' };
-      return { success: false, error: `GitHub API 错误：${msg}` };
+    if (!resp.ok) {
+      const err = await resp.json().catch(() => null);
+      throw new Error(err?.message || `更新 Gist 失败（${resp.status}）`);
     }
-
-    const data: GistResponse = await res.json();
-    if (!gistId) setGistId(data.id);
-
-    return { success: true, gistId: data.id };
-  } catch (e) {
-    return { success: false, error: `网络错误：${(e as Error).message}` };
+    return `已更新云端备份，共 ${articles.length} 篇文章`;
+  } else {
+    const resp = await gistFetch('/gists', {
+      method: 'POST',
+      body: JSON.stringify(body),
+    });
+    if (!resp.ok) {
+      const err = await resp.json().catch(() => null);
+      throw new Error(err?.message || `创建 Gist 失败（${resp.status}）`);
+    }
+    const data: GistResponse = await resp.json();
+    setGistId(data.id);
+    return `已创建云端备份，共 ${articles.length} 篇文章`;
   }
 }
 
-export async function downloadFromGist(
-  pat: string
-): Promise<{ success: boolean; data?: string; error?: string }> {
+export async function restoreFromGist(): Promise<string> {
   const gistId = getGistId();
-  if (!gistId) return { success: false, error: '未找到同步记录，请先同步到云端' };
-
-  try {
-    const res = await fetch(`https://api.github.com/gists/${gistId}`, {
-      headers: {
-        Authorization: `token ${pat}`,
-        Accept: 'application/vnd.github.v3+json',
-      },
-    });
-
-    if (!res.ok) {
-      if (res.status === 404) {
-        setGistId('');
-        return { success: false, error: '云端备份不存在，可能已被删除' };
-      }
-      return { success: false, error: `GitHub API 错误：${res.statusText}` };
-    }
-
-    const data: GistResponse = await res.json();
-    const file = data.files['xuanya-blog-articles.json'];
-    if (!file) return { success: false, error: 'Gist 文件格式异常' };
-
-    return { success: true, data: file.content };
-  } catch (e) {
-    return { success: false, error: `网络错误：${(e as Error).message}` };
+  if (!gistId) {
+    throw new Error('未找到云端备份 ID，请先执行一次同步');
   }
+  const resp = await gistFetch(`/gists/${gistId}`);
+  if (!resp.ok) {
+    const err = await resp.json().catch(() => null);
+    throw new Error(err?.message || `获取 Gist 失败（${resp.status}）`);
+  }
+  const data: GistResponse = await resp.json();
+  const file = data.files['xuanya-blog-articles.json'];
+  if (!file) throw new Error('Gist 中未找到文章数据');
+  const parsed = JSON.parse(file.content);
+  if (!Array.isArray(parsed.articles)) throw new Error('云端数据格式异常');
+
+  importArticles(parsed.articles);
+  return `已从云端恢复 ${parsed.articles.length} 篇文章`;
 }
