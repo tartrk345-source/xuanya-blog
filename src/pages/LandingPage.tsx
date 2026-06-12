@@ -214,7 +214,8 @@ export default function LandingPage() {
           <div className="flex gap-4 justify-center flex-wrap">
             <a
               href="#about"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-[0.95rem] font-bold tracking-wider bg-[#DA583F] text-[#ffffff] shadow-[0_4px_20px_rgba(218,88,63,0.25)] hover:bg-[#C43F30] hover:-translate-y-0.5 hover:shadow-[0_6px_28px_rgba(218,88,63,0.35)] transition-all drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-[0.95rem] font-bold tracking-wider bg-[#DA583F] !text-white shadow-[0_4px_20px_rgba(218,88,63,0.25)] hover:bg-[#C43F30] hover:-translate-y-0.5 hover:shadow-[0_6px_28px_rgba(218,88,63,0.35)] transition-all"
+              style={{ color: '#ffffff' }}
             >
               了解更多
             </a>
