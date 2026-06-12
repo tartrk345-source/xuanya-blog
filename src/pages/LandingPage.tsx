@@ -100,7 +100,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E] text-[#313131] dark:text-[#E8E4E1] font-['PingFang_SC','Microsoft_YaHei','Noto_Sans_SC',sans-serif] transition-colors duration-300">
       <Helmet>
         <title>玄牙个人世界 — 知无不言，正直之极</title>
-        <meta name="description" content="玄牙个人世界——精神科医师的心灵博客。探索精神医学、积极心理、国学玄学与芳香疗法的交汇处。" />
+        <meta name="description" content="玄牙个人世界——精神科医师的心灵志趣。探索精神医学、积极心理、国学玄学与芳香疗法的交汇处。" />
         <meta property="og:title" content="玄牙个人世界" />
         <meta property="og:description" content="知无不言，正直之极。以理性观照心灵，以热忱探索未知。" />
         <meta property="og:url" content="https://www.x2ya.com" />

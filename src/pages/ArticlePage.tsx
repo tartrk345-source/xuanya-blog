@@ -52,7 +52,7 @@ export default function ArticlePage() {
         {/* 顶部导航 */}
         <div className="mb-12">
           <button onClick={goBack} className="inline-flex items-center gap-1.5 text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
-            <span>←</span> 返回博客
+            <span>←</span> 返回志趣
           </button>
         </div>
 

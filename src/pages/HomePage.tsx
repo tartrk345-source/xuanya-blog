@@ -88,7 +88,7 @@ export default function HomePage() {
         {/* 顶部：标题 + 操作 */}
         <div className="flex items-end justify-between mb-8">
           <div>
-            <h1 className="text-2xl font-bold text-[#313131] dark:text-[#E8E4E1] tracking-tight">博客</h1>
+            <h1 className="text-2xl font-bold text-[#313131] dark:text-[#E8E4E1] tracking-tight">志趣</h1>
             <p className="mt-1.5 text-sm text-[#767693] dark:text-[#8A8688]">记录思考，分享洞察</p>
           </div>
           {isAdmin && (

@@ -69,7 +69,7 @@ export default function Navigation() {
 
   const navLinks = [
     { id: 'about', label: '认识', type: 'anchor' as const },
-    { id: '/blog', label: '博客', type: 'route' as const },
+    { id: '/blog', label: '志趣', type: 'route' as const },
     { id: 'work', label: '行迹', type: 'anchor' as const },
     { id: 'contact', label: '联系', type: 'anchor' as const },
   ];
