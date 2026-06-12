@@ -44,20 +44,22 @@ export default function BlogPage() {
   const { isAdmin } = useAdminAuth();
   const [activeCategory, setActiveCategory] = useState<CategoryKey | null>(null);
   const [articles, setArticles] = useState<Article[]>([]);
-  const [categories, setCategories] = useState<CategoryItem[]>(() => getCategories());
+  const [categories, setCategories] = useState<CategoryItem[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSyncing, setIsSyncing] = useState(false);
   const [syncMessage, setSyncMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
-  const refreshArticles = useCallback(() => {
-    setArticles(getPublishedArticles());
+  const refreshArticles = useCallback(async () => {
+    const list = await getPublishedArticles();
+    setArticles(list);
   }, []);
 
   useEffect(() => {
     refreshArticles();
+    getCategories().then(setCategories);
     const h1 = () => refreshArticles();
     window.addEventListener('articles-changed', h1);
-    const h2 = onCategoriesChange(() => setCategories(getCategories()));
+    const h2 = onCategoriesChange(async () => { const list = await getCategories(); setCategories(list); });
     return () => {
       window.removeEventListener('articles-changed', h1);
       h2();
@@ -122,20 +124,20 @@ export default function BlogPage() {
   const clearSyncMsg = () => setSyncMessage(null);
 
   // 分类管理
-  const [catDialog, setCatDialog] = useState<{ open: boolean; key?: string; label: string; icon: string; desc: string }>({ open: false, label: '', icon: '📌', desc: '' });
+  const [catDialog, setCatDialog] = useState<{ open: boolean; key?: string; label: string; icon: string; description: string }>({ open: false, label: '', icon: '📌', description: '' });
   const [catDeleteKey, setCatDeleteKey] = useState<string | null>(null);
 
-  const openAddCat = () => setCatDialog({ open: true, label: '', icon: '📌', desc: '' });
-  const openEditCat = (c: CategoryItem) => setCatDialog({ open: true, key: c.key, label: c.label, icon: c.icon, desc: c.desc });
-  const closeCatDialog = () => setCatDialog({ open: false, label: '', icon: '📌', desc: '' });
+  const openAddCat = () => setCatDialog({ open: true, label: '', icon: '📌', description: '' });
+  const openEditCat = (c: CategoryItem) => setCatDialog({ open: true, key: c.key, label: c.label, icon: c.icon, description: c.description });
+  const closeCatDialog = () => setCatDialog({ open: false, label: '', icon: '📌', description: '' });
 
   const handleSaveCat = () => {
     if (!catDialog.label.trim()) return;
     const key = catDialog.key || catDialog.label.trim().toLowerCase().replace(/\s+/g, '-');
     if (catDialog.key) {
-      updateCategory(catDialog.key, { label: catDialog.label.trim(), icon: catDialog.icon, desc: catDialog.desc });
+      updateCategory(catDialog.key, { label: catDialog.label.trim(), icon: catDialog.icon, description: catDialog.description });
     } else {
-      addCategory({ key, label: catDialog.label.trim(), icon: catDialog.icon, desc: catDialog.desc });
+      addCategory({ key, label: catDialog.label.trim(), icon: catDialog.icon, description: catDialog.description });
     }
     closeCatDialog();
   };
@@ -279,7 +281,7 @@ export default function BlogPage() {
                           </span>
                         )}
                       </h3>
-                      <p className="text-xs text-[#767693] dark:text-[#8A8688] mt-0.5 truncate">{cat.desc}</p>
+                      <p className="text-xs text-[#767693] dark:text-[#8A8688] mt-0.5 truncate">{cat.description}</p>
                     </div>
                     {/* 展开箭头 */}
                     <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 ${
@@ -454,8 +456,8 @@ export default function BlogPage() {
               <div>
                 <label className="block text-xs font-medium text-[#767693] dark:text-[#8A8688] mb-1">版块简介</label>
                 <textarea
-                  value={catDialog.desc}
-                  onChange={e => setCatDialog(prev => ({ ...prev, desc: e.target.value }))}
+                  value={catDialog.description}
+                  onChange={e => setCatDialog(prev => ({ ...prev, description: e.target.value }))}
                   placeholder="一两句话描述这个版块…"
                   rows={2}
                   className="w-full px-4 py-2.5 text-sm border border-[#ECD8D9] dark:border-[#2A2020] rounded-lg bg-white dark:bg-[#1C1818] text-[#313131] dark:text-[#E8E4E1] focus:border-[#DA583F] outline-none transition-all placeholder-[#B8B4B0] resize-none"

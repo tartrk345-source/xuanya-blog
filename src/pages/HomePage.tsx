@@ -1,8 +1,8 @@
 import { useState, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import type { Article } from '../types/article';
-import { getPublishedArticles, getAllArticles } from '../storage/articleStore';
-import { downloadBackup, importArticles, parseBackupFile, hasExportedToday, markExportedToday } from '../utils/export';
+import { getAllArticles, importArticles } from '../storage/articleStore';
+import { downloadBackup, parseBackupFile, hasExportedToday, markExportedToday } from '../utils/export';
 import { syncToGist, restoreFromGist, getGistId } from '../utils/gistSync';
 import ArticleCard from '../components/ArticleCard';
 import AdminLogin from '../components/AdminLogin';
@@ -17,6 +17,7 @@ export default function HomePage() {
   const [importDialog, setImportDialog] = useState<{ open: boolean; articles: Article[] }>({ open: false, articles: [] });
   const [isSyncing, setIsSyncing] = useState(false);
   const [syncMessage, setSyncMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [allArticles, setAllArticles] = useState<Article[]>([]);
 
   const refreshList = () => setRefreshKey(prev => prev + 1);
 
@@ -26,7 +27,14 @@ export default function HomePage() {
     return () => window.removeEventListener('articles-changed', onRefresh);
   }, []);
 
-  // 页面加载时自动从 Gist 恢复最新数据（合并模式，不覆盖本地文章）
+  // 加载文章列表
+  useEffect(() => {
+    let mounted = true;
+    getAllArticles().then((list: Article[]) => { if (mounted) setAllArticles(list); }).catch(() => {});
+    return () => { mounted = false; };
+  }, [refreshKey]);
+
+  // 自动从 Gist 恢复
   useEffect(() => {
     const autoRestore = async () => {
       if (!getGistId()) return;
@@ -49,12 +57,9 @@ export default function HomePage() {
     );
   };
 
-  const allArticles = getAllArticles();
-  // 强制刷新依赖
-  const key = refreshKey;
-  void key;
+  // 文章列表由 useEffect 加载，存在 allArticles state 中
   const draftCount = allArticles.filter(a => a.status === 'draft').length;
-  const publishedArticles = getPublishedArticles();
+  const publishedArticles = allArticles.filter(a => a.status === 'published');
   const displayedArticles = filterBySearch(
     viewMode === 'published' ? publishedArticles : allArticles.filter(a => a.status === 'draft')
   );

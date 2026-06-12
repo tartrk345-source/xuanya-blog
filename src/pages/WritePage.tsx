@@ -4,7 +4,7 @@ import MarkdownEditor from '../components/MarkdownEditor';
 import ConfirmDialog from '../components/ConfirmDialog';
 import { createArticle, updateArticle, deleteArticle, getArticleById } from '../storage/articleStore';
 import { EMOJI_PRESETS } from '../utils/helpers';
-import { getCategories } from '../storage/categoryStore';
+import { getCategories, type CategoryItem } from '../storage/categoryStore';
 import type { CategoryKey } from '../types/article';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 import Navigation from '../components/Navigation';
@@ -17,21 +17,34 @@ export default function WritePage() {
   const isEditing = Boolean(id);
   const { isAdmin } = useAdminAuth();
 
-  const categories = getCategories();
+  const [categories, setCategories] = useState<CategoryItem[]>([]);
   const [title, setTitle] = useState('');
   const [emoji, setEmoji] = useState('📝');
-  const [category, setCategory] = useState<CategoryKey | ''>(categories[0]?.key ?? '');
+  const [category, setCategory] = useState<CategoryKey | ''>('');
   const [content, setContent] = useState('');
   const [saving, setSaving] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+
+  useEffect(() => {
+    getCategories().then(setCategories);
+  }, []);
+
+  // 分类加载后初始化默认分类
+  useEffect(() => {
+    if (categories.length > 0 && !category) {
+      setCategory(categories[0]?.key ?? '');
+    }
+  }, [categories]);
 
   useEffect(() => {
     if (!isAdmin) navigate('/', { replace: true });
   }, [isAdmin, navigate]);
 
   useEffect(() => {
-    if (id) {
-      const article = getArticleById(id);
+    if (!id) return;
+    let mounted = true;
+    getArticleById(id).then(article => {
+      if (!mounted) return;
       if (article) {
         setTitle(article.title);
         setEmoji(article.emoji);
@@ -40,34 +53,42 @@ export default function WritePage() {
       } else {
         navigate('/', { replace: true });
       }
-    }
+    }).catch(() => {
+      if (mounted) navigate('/', { replace: true });
+    });
+    return () => { mounted = false; };
   }, [id, navigate]);
 
   const canSave = title.trim() && content.trim() && category;
   const catValue = category || undefined;
 
-  const handleSave = (status: 'draft' | 'published') => {
+  const handleSave = async (status: 'draft' | 'published') => {
     if (!canSave) return;
     setSaving(true);
-    if (isEditing && id) {
-      updateArticle(id, { title: title.trim(), emoji, content: content.trim(), status, category: catValue });
-      // 后台自动同步到 Gist（不阻塞跳转）
-      syncToGist().catch(() => {});
-      setTimeout(() => { setSaving(false); navigate(`/article/${id}`); }, 100);
-    } else {
-      createArticle({ title: title.trim(), emoji, content: content.trim(), status, category: catValue });
-      // 后台自动同步到 Gist（不阻塞跳转）
-      syncToGist().catch(() => {});
-      setTimeout(() => { setSaving(false); navigate('/'); setTimeout(() => document.getElementById('interests')?.scrollIntoView({ behavior: 'smooth' }), 80); }, 100);
+    try {
+      if (isEditing && id) {
+        await updateArticle(id, { title: title.trim(), emoji, content: content.trim(), status, category: catValue });
+        await syncToGist().catch(() => {});
+        setSaving(false);
+        navigate(`/article/${id}`);
+      } else {
+        await createArticle({ title: title.trim(), emoji, content: content.trim(), status, category: catValue });
+        await syncToGist().catch(() => {});
+        setSaving(false);
+        navigate('/');
+        setTimeout(() => document.getElementById('interests')?.scrollIntoView({ behavior: 'smooth' }), 80);
+      }
+    } catch {
+      setSaving(false);
+      alert('保存失败，请重试');
     }
   };
 
-  const handleDelete = () => {
+  const handleDelete = async () => {
     if (!id) return;
-    deleteArticle(id);
+    await deleteArticle(id);
     setShowDeleteConfirm(false);
-    navigate('/', { replace: true });
-    setTimeout(() => document.getElementById('interests')?.scrollIntoView({ behavior: 'smooth' }), 80);
+    navigate('/blog', { replace: true });
   };
 
   const goBack = () => {

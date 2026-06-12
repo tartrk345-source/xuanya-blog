@@ -37,8 +37,23 @@ function RevealOnScroll({ children, className = '' }: { children: React.ReactNod
    子组件：最新文章预览卡片（Hero 区底部）
    ============================== */
 function LatestArticles() {
-  const [articles] = useState<Article[]>(() => getPublishedArticles().slice(0, 3));
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    let mounted = true;
+    getPublishedArticles().then(list => {
+      if (mounted) {
+        setArticles(list.slice(0, 3));
+        setLoading(false);
+      }
+    }).catch(() => {
+      if (mounted) setLoading(false);
+    });
+    return () => { mounted = false; };
+  }, []);
+
+  if (loading) return null;
   if (articles.length === 0) return null;
 
   return (

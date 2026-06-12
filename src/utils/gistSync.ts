@@ -69,7 +69,7 @@ async function gistFetch(path: string, options?: RequestInit): Promise<Response>
 }
 
 export async function syncToGist(): Promise<string> {
-  const articles = getAllArticles();
+  const articles = await getAllArticles();
   const now = new Date().toISOString().split('T')[0];
   const gistId = getGistId();
   const body: GistData = {

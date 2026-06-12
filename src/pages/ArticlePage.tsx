@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import type { Article } from '../types/article';
 import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import ReactMarkdown from 'react-markdown';
@@ -15,24 +16,46 @@ export default function ArticlePage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { isAdmin } = useAdminAuth();
-  const article = id ? getArticleById(id) : undefined;
+  const [article, setArticle] = useState<Article | undefined>(undefined);
+  const [catInfo, setCatInfo] = useState<{ icon: string; label: string } | null>(null);
+  const [loading, setLoading] = useState(true);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
-  if (!article) return <Navigate to="/" replace />;
+  useEffect(() => {
+    if (!id) { setLoading(false); return; }
+    let mounted = true;
+    getArticleById(id).then(a => {
+      if (mounted) { setArticle(a); setLoading(false); }
+    }).catch(() => { if (mounted) setLoading(false); });
+    return () => { mounted = false; };
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E] flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-[#DA583F]/20 border-t-[#DA583F] rounded-full animate-spin" />
+      </div>
+    );
+  }
+
+  if (!article) return <Navigate to="/blog" replace />;
 
   const goBack = () => {
     navigate('/blog');
   };
 
-  const handleDelete = () => {
+  useEffect(() => {
+    if (!article?.category) { setCatInfo(null); return; }
+    getCategoryInfo(article.category).then(setCatInfo);
+  }, [article]);
+
+  const handleDelete = async () => {
     if (!id) return;
-    deleteArticle(id);
+    await deleteArticle(id);
     setShowDeleteConfirm(false);
     syncToGist().catch(() => {});
     navigate('/blog', { replace: true });
   };
-
-  const catInfo = article.category ? getCategoryInfo(article.category) : null;
 
   return (
     <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E] transition-colors duration-300">
