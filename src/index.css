@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+/* === 全局样式：学术风 + 杂志美感 === */
+
+body {
+  margin: 0;
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  color: #1a1a2e;
+  background: #fafafa;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 文章阅读区容器 */
+.prose-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Markdown 渲染样式 */
+.prose-container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: #0d0d1a;
+}
+
+.prose-container h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.75rem;
+  line-height: 1.35;
+  color: #1a1a2e;
+}
+
+.prose-container h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: #2a2a3e;
+}
+
+.prose-container p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 0 0 1.25rem;
+  text-align: justify;
+}
+
+.prose-container ul,
+.prose-container ol {
+  padding-left: 1.5rem;
+  margin: 0 0 1.25rem;
+}
+
+.prose-container li {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+.prose-container blockquote {
+  border-left: 3px solid #9ca3af;
+  padding-left: 1rem;
+  margin: 0 0 1.25rem;
+  color: #4b5563;
+  font-style: italic;
+}
+
+.prose-container code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 15px;
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #1f2937;
+}
+
+.prose-container pre {
+  background: #f3f4f6;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0 0 1.25rem;
+}
+
+.prose-container pre code {
+  background: none;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.prose-container a {
+  color: #2563eb;
+  text-decoration: none;
+  border-bottom: 1px solid #93c5fd;
+}
+
+.prose-container a:hover {
+  border-bottom-color: #2563eb;
+}
+
+.prose-container img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.prose-container hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 2rem 0;
+}
+
+.prose-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.25rem;
+}
+
+.prose-container th,
+.prose-container td {
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.prose-container th {
+  background: #f9fafb;
+  font-weight: 600;
+}
