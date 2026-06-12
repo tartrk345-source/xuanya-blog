@@ -214,7 +214,7 @@ export default function LandingPage() {
           <div className="flex gap-4 justify-center flex-wrap">
             <a
               href="#about"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-[0.95rem] font-semibold tracking-wider bg-[#DA583F] text-white shadow-[0_4px_20px_rgba(218,88,63,0.25)] hover:bg-[#C43F30] hover:-translate-y-0.5 hover:shadow-[0_6px_28px_rgba(218,88,63,0.35)] transition-all"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-[0.95rem] font-bold tracking-wider bg-[#DA583F] text-[#ffffff] shadow-[0_4px_20px_rgba(218,88,63,0.25)] hover:bg-[#C43F30] hover:-translate-y-0.5 hover:shadow-[0_6px_28px_rgba(218,88,63,0.35)] transition-all drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]"
             >
               了解更多
             </a>
@@ -266,7 +266,7 @@ export default function LandingPage() {
                   <span className="text-xs text-[#767693] dark:text-[#8A8688] tracking-wider">字博謇</span>
                 </div>
                 <p className="text-[0.98rem] text-[#4F4F4F] dark:text-[#B8B4B0] mb-4 leading-relaxed">
-                  精神科医师，INTP人格。一个对心灵世界永远好奇的探索者——在理性与直觉、科学与人文的边界游走。
+                  精神科医师，ENTP人格。一个对心灵世界永远好奇的探索者——在理性与直觉、科学与人文的边界游走。
                 </p>
                 <p className="text-[0.98rem] text-[#4F4F4F] dark:text-[#B8B4B0] leading-relaxed">
                   对积极心理、国学玄学同样深感兴趣，相信古老智慧与现代科学可以相互观照。
@@ -277,7 +277,7 @@ export default function LandingPage() {
             {/* 右侧：数据卡片 */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { num: 'INTP', label: 'MBTI 人格类型' },
+                { num: 'ENTP', label: 'MBTI 人格类型' },
                 { num: 'SCI', label: '霍兰德职业类型' },
                 { num: '精神科', label: '临床深耕领域' },
                 { num: '科研', label: '学术探索方向', color: '#616FD3' },
