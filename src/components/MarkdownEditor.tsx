@@ -162,7 +162,6 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
               onChange={(e) => onChange(e.target.value)}
               placeholder="在这里写 Markdown…&#10;&#10;支持：标题、加粗、**粗体**、*斜体*、> 引用、```代码块```、[链接](url)、![图片](url)"
               className="w-full flex-1 min-h-[460px] p-4 resize-none outline-none font-mono text-[14px] leading-[1.8] text-[#313131] dark:text-[#E8E4E1] placeholder-[#B8B4B0] bg-transparent"
-              style={{ fontFamily: "'JetBrains Mono', 'Fira Code', monospace" }}
             />
           </div>
         )}
