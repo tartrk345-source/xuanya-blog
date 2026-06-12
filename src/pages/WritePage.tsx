@@ -9,6 +9,7 @@ import type { CategoryKey } from '../types/article';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 import Navigation from '../components/Navigation';
 import AdminLogin from '../components/AdminLogin';
+import { syncToGist } from '../utils/gistSync';
 
 export default function WritePage() {
   const navigate = useNavigate();
@@ -16,13 +17,13 @@ export default function WritePage() {
   const isEditing = Boolean(id);
   const { isAdmin } = useAdminAuth();
 
+  const categories = getCategories();
   const [title, setTitle] = useState('');
   const [emoji, setEmoji] = useState('📝');
-  const [category, setCategory] = useState<CategoryKey | ''>('');
+  const [category, setCategory] = useState<CategoryKey | ''>(categories[0]?.key ?? '');
   const [content, setContent] = useState('');
   const [saving, setSaving] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
-  const categories = getCategories();
 
   useEffect(() => {
     if (!isAdmin) navigate('/', { replace: true });
@@ -42,7 +43,7 @@ export default function WritePage() {
     }
   }, [id, navigate]);
 
-  const canSave = title.trim() && content.trim();
+  const canSave = title.trim() && content.trim() && category;
   const catValue = category || undefined;
 
   const handleSave = (status: 'draft' | 'published') => {
@@ -50,9 +51,13 @@ export default function WritePage() {
     setSaving(true);
     if (isEditing && id) {
       updateArticle(id, { title: title.trim(), emoji, content: content.trim(), status, category: catValue });
+      // 后台自动同步到 Gist（不阻塞跳转）
+      syncToGist().catch(() => {});
       setTimeout(() => { setSaving(false); navigate(`/article/${id}`); }, 100);
     } else {
       createArticle({ title: title.trim(), emoji, content: content.trim(), status, category: catValue });
+      // 后台自动同步到 Gist（不阻塞跳转）
+      syncToGist().catch(() => {});
       setTimeout(() => { setSaving(false); navigate('/'); setTimeout(() => document.getElementById('interests')?.scrollIntoView({ behavior: 'smooth' }), 80); }, 100);
     }
   };
@@ -109,6 +114,9 @@ export default function WritePage() {
         <div className="mb-6">
           <label className="block text-xs font-medium text-[#767693] dark:text-[#8A8688] mb-2">选择志趣分类</label>
           <div className="flex flex-wrap gap-2">
+            {!category && (
+              <p className="w-full text-xs text-amber-500 mb-1">请选择一个分类再保存</p>
+            )}
             {categories.map(cat => (
               <button
                 key={cat.key}

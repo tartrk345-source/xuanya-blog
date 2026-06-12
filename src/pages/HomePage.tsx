@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import type { Article } from '../types/article';
 import { getPublishedArticles, getAllArticles } from '../storage/articleStore';
 import { downloadBackup, importArticles, parseBackupFile, hasExportedToday, markExportedToday } from '../utils/export';
-import { syncToGist, restoreFromGist } from '../utils/gistSync';
+import { syncToGist, restoreFromGist, getGistId } from '../utils/gistSync';
 import ArticleCard from '../components/ArticleCard';
 import AdminLogin from '../components/AdminLogin';
 import Navigation from '../components/Navigation';
@@ -18,13 +18,28 @@ export default function HomePage() {
   const [isSyncing, setIsSyncing] = useState(false);
   const [syncMessage, setSyncMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
+  const refreshList = () => setRefreshKey(prev => prev + 1);
+
   useEffect(() => {
     const onRefresh = () => setRefreshKey(prev => prev + 1);
     window.addEventListener('articles-changed', onRefresh);
     return () => window.removeEventListener('articles-changed', onRefresh);
   }, []);
 
-  const refreshList = () => setRefreshKey(prev => prev + 1);
+  // 页面加载时自动从 Gist 恢复最新数据（合并模式，不覆盖本地文章）
+  useEffect(() => {
+    const autoRestore = async () => {
+      if (!getGistId()) return;
+      try {
+        const result = await restoreFromGist();
+        console.log('[AutoSync]', result);
+        refreshList();
+      } catch {
+        // 未配置 Gist 或无备份时静默失败
+      }
+    };
+    autoRestore();
+  }, [refreshList]);
 
   const searchLower = searchQuery.toLowerCase();
   const filterBySearch = (articles: Article[]) => {

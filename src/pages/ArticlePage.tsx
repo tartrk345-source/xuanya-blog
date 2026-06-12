@@ -9,6 +9,7 @@ import ConfirmDialog from '../components/ConfirmDialog';
 import Navigation from '../components/Navigation';
 import AdminLogin from '../components/AdminLogin';
 import { useAdminAuth } from '../hooks/useAdminAuth';
+import { syncToGist } from '../utils/gistSync';
 
 export default function ArticlePage() {
   const { id } = useParams<{ id: string }>();
@@ -27,6 +28,7 @@ export default function ArticlePage() {
     if (!id) return;
     deleteArticle(id);
     setShowDeleteConfirm(false);
+    syncToGist().catch(() => {});
     navigate('/blog', { replace: true });
   };
 
