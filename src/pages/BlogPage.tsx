@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import type { Article, CategoryKey } from '../types/article';
 import { getPublishedArticles } from '../storage/articleStore';
 import { getCategories, addCategory, updateCategory, deleteCategory, onCategoriesChange, type CategoryItem } from '../storage/categoryStore';
@@ -151,6 +152,18 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-[#FEF3F0] dark:bg-[#1A1516] text-[#313131] dark:text-[#E8E4E1] font-['PingFang_SC','Microsoft_YaHei','Noto_Sans_SC',sans-serif] transition-colors duration-300">
+      <Helmet>
+        <title>志趣所在 — 玄牙个人世界</title>
+        <meta name="description" content="玄牙的志趣所在——精神医学、积极心理治疗、国学玄学、芳香疗法、写作随笔等多领域探索。" />
+        <meta property="og:title" content="志趣所在 — 玄牙个人世界" />
+        <meta property="og:description" content="医学是主干，但枝叶蔓延至多个领域——它们共同构成了玄牙的精神世界。" />
+        <meta property="og:url" content="https://www.x2ya.com/blog" />
+        <meta property="og:image" content="https://www.x2ya.com/images/og-image.svg" />
+        <meta name="twitter:title" content="志趣所在 — 玄牙个人世界" />
+        <meta name="twitter:description" content="医学是主干，但枝叶蔓延至多个领域——它们共同构成了玄牙的精神世界。" />
+        <meta name="twitter:image" content="https://www.x2ya.com/images/og-image.svg" />
+        <link rel="canonical" href="https://www.x2ya.com/blog" />
+      </Helmet>
       <Navigation />
 
       {/* 页面标题区 */}

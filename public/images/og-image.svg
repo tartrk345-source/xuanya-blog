@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FEFAF9"/>
+      <stop offset="40%" style="stop-color:#FEF3F0"/>
+      <stop offset="100%" style="stop-color:#F5E6E0"/>
+    </linearGradient>
+    <radialGradient id="deco1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#DA583F;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#DA583F;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="deco2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#616FD3;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#616FD3;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Decorative circles -->
+  <circle cx="1050" cy="150" r="250" fill="url(#deco1)"/>
+  <circle cx="150" cy="530" r="225" fill="url(#deco2)"/>
+  <!-- Title -->
+  <text x="600" y="270" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',serif" font-size="80" font-weight="900" fill="#313131" letter-spacing="10">
+    玄<tspan fill="#DA583F">牙</tspan>个人世界
+  </text>
+  <!-- Tagline -->
+  <text x="600" y="340" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="26" fill="#6E6A7C" letter-spacing="4">
+    知无不言，正直之极。以理性观照心灵，以热忱探索未知。
+  </text>
+  <!-- Identity tag -->
+  <rect x="440" y="370" width="320" height="40" rx="20" fill="#616FD3" fill-opacity="0.08"/>
+  <text x="600" y="397" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="18" fill="#616FD3" font-weight="600" letter-spacing="4">
+    精神科医师 · 心灵探索者
+  </text>
+  <!-- URL -->
+  <text x="1140" y="590" text-anchor="end" font-family="'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif" font-size="18" fill="#B8B4B0" letter-spacing="2">
+    www.x2ya.com
+  </text>
+</svg>

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import type { Article } from '../types/article';
 import { getPublishedArticles } from '../storage/articleStore';
 import { formatDate, getExcerpt } from '../utils/helpers';
@@ -97,6 +98,18 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E] text-[#313131] dark:text-[#E8E4E1] font-['PingFang_SC','Microsoft_YaHei','Noto_Sans_SC',sans-serif] transition-colors duration-300">
+      <Helmet>
+        <title>玄牙个人世界 — 知无不言，正直之极</title>
+        <meta name="description" content="玄牙个人世界——精神科医师的心灵博客。探索精神医学、积极心理、国学玄学与芳香疗法的交汇处。" />
+        <meta property="og:title" content="玄牙个人世界" />
+        <meta property="og:description" content="知无不言，正直之极。以理性观照心灵，以热忱探索未知。" />
+        <meta property="og:url" content="https://www.x2ya.com" />
+        <meta property="og:image" content="https://www.x2ya.com/images/og-image.svg" />
+        <meta name="twitter:title" content="玄牙个人世界" />
+        <meta name="twitter:description" content="知无不言，正直之极。以理性观照心灵，以热忱探索未知。" />
+        <meta name="twitter:image" content="https://www.x2ya.com/images/og-image.svg" />
+        <link rel="canonical" href="https://www.x2ya.com" />
+      </Helmet>
       <Navigation />
 
       {/* ===== Hero ===== */}

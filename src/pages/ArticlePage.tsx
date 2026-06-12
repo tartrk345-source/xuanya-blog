@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getArticleById, deleteArticle } from '../storage/articleStore';
-import { formatDate, getCategoryInfo } from '../utils/helpers';
+import { formatDate, getCategoryInfo, getExcerpt } from '../utils/helpers';
 import ConfirmDialog from '../components/ConfirmDialog';
 import Navigation from '../components/Navigation';
 import AdminLogin from '../components/AdminLogin';
@@ -33,6 +34,19 @@ export default function ArticlePage() {
 
   return (
     <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E] transition-colors duration-300">
+      <Helmet>
+        <title>{article.title} — 玄牙个人世界</title>
+        <meta name="description" content={getExcerpt(article.content, 120)} />
+        <meta property="og:title" content={`${article.title} — 玄牙个人世界`} />
+        <meta property="og:description" content={getExcerpt(article.content, 120)} />
+        <meta property="og:url" content={`https://www.x2ya.com/article/${article.id}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="https://www.x2ya.com/images/og-image.svg" />
+        <meta name="twitter:title" content={`${article.title} — 玄牙个人世界`} />
+        <meta name="twitter:description" content={getExcerpt(article.content, 120)} />
+        <meta name="twitter:image" content="https://www.x2ya.com/images/og-image.svg" />
+        <link rel="canonical" href={`https://www.x2ya.com/article/${article.id}`} />
+      </Helmet>
       <Navigation />
       <div className="max-w-3xl mx-auto px-6 py-16">
         {/* 顶部导航 */}
