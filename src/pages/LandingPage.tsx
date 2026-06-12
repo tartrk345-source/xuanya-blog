@@ -2,9 +2,12 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import type { Article, CategoryKey } from '../types/article';
 import { getPublishedArticles } from '../storage/articleStore';
+import { downloadBackup, importArticles, parseBackupFile, hasExportedToday, markExportedToday } from '../utils/export';
+import { syncToGist, restoreFromGist } from '../utils/gistSync';
 import { CATEGORIES, formatDate, getExcerpt, getCategoryInfo } from '../utils/helpers';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 import Navigation from '../components/Navigation';
+import AdminLogin from '../components/AdminLogin';
 
 /* ==============================
    子组件：滚动渐显包装
@@ -33,14 +36,16 @@ function RevealOnScroll({ children, className = '' }: { children: React.ReactNod
 }
 
 /* ==============================
-   子组件：兴趣卡片 + 文章展开
+   子组件：兴趣卡片 + 搜索 + 文章展开
    ============================== */
 function InterestSection() {
   const { isAdmin } = useAdminAuth();
   const [activeCategory, setActiveCategory] = useState<CategoryKey | null>(null);
   const [articles, setArticles] = useState<Article[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSyncing, setIsSyncing] = useState(false);
+  const [syncMessage, setSyncMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
-  // 刷新文章（响应编辑/删除等事件）
   const refreshArticles = useCallback(() => {
     setArticles(getPublishedArticles());
   }, []);
@@ -52,9 +57,15 @@ function InterestSection() {
     return () => window.removeEventListener('articles-changed', handler);
   }, [refreshArticles]);
 
+  // 搜索过滤 + 分类分组
+  const searchLower = searchQuery.toLowerCase();
+  const filteredArticles = searchLower
+    ? articles.filter(a => a.title.toLowerCase().includes(searchLower) || a.content.toLowerCase().includes(searchLower))
+    : articles;
+
   const articlesByCategory: Record<CategoryKey, Article[]> = {} as any;
   for (const c of CATEGORIES) {
-    articlesByCategory[c.key] = articles
+    articlesByCategory[c.key] = filteredArticles
       .filter(a => a.category === c.key)
       .sort((a, b) => b.updatedAt - a.updatedAt);
   }
@@ -62,6 +73,46 @@ function InterestSection() {
   const toggleCategory = (key: CategoryKey) => {
     setActiveCategory(prev => (prev === key ? null : key));
   };
+
+  // 管理员：同步/导出/导入
+  const handleSync = useCallback(async () => {
+    setIsSyncing(true); setSyncMessage(null);
+    try {
+      const result = await syncToGist();
+      setSyncMessage({ type: 'success', text: result });
+    } catch (e: any) {
+      setSyncMessage({ type: 'error', text: e.message || '同步失败' });
+    } finally { setIsSyncing(false); }
+  }, []);
+
+  const handleRestore = useCallback(async () => {
+    if (!confirm('将从云端恢复文章，本地新增的文章会被合并，确定继续？')) return;
+    setIsSyncing(true); setSyncMessage(null);
+    try {
+      const result = await restoreFromGist();
+      setSyncMessage({ type: 'success', text: result });
+      refreshArticles();
+    } catch (e: any) {
+      setSyncMessage({ type: 'error', text: e.message || '恢复失败' });
+    } finally { setIsSyncing(false); }
+  }, [refreshArticles]);
+
+  const [importDialog, setImportDialog] = useState<{ open: boolean; items: Article[] }>({ open: false, items: [] });
+
+  const handleImport = useCallback(async () => {
+    const result = await parseBackupFile();
+    if (result.error) { alert(result.error); return; }
+    if (result.articles.length === 0) return;
+    setImportDialog({ open: true, items: result.articles });
+  }, []);
+
+  const handleImportConfirm = useCallback(() => {
+    importArticles(importDialog.items);
+    setImportDialog({ open: false, items: [] });
+    refreshArticles();
+  }, [importDialog.items, refreshArticles]);
+
+  const clearSyncMsg = () => setSyncMessage(null);
 
   return (
     <section className="relative py-32 px-4 sm:px-8 bg-[#FEF3F0] dark:bg-[#1A1516]" id="interests">
@@ -77,9 +128,59 @@ function InterestSection() {
       <div className="max-w-[1100px] mx-auto relative z-[1]">
         <div className="text-xs font-bold tracking-[0.12em] text-[#DA583F] uppercase mb-2">Interests</div>
         <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E8E4E1] mb-4 tracking-wider leading-tight font-['PingFang_SC','Noto_Serif_SC',serif]">志趣所在</h2>
-        <p className="text-[1.05rem] text-[#6E6A7C] dark:text-[#A09CA8] max-w-[560px] mb-12">
+        <p className="text-[1.05rem] text-[#6E6A7C] dark:text-[#A09CA8] max-w-[560px] mb-8">
           医学是主干，但枝叶蔓延至多个领域——它们共同构成了玄牙的精神世界。
         </p>
+
+        {/* 搜索框 + 管理员操作 */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-10">
+          <div className="relative flex-1 max-w-[420px]">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-[#B8B4B0]">🔍</span>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              placeholder="搜索文章标题或内容…"
+              className="w-full pl-9 pr-9 py-2.5 text-sm border border-[#ECD8D9] dark:border-[#2A2020] rounded-lg bg-white dark:bg-[#1C1818] text-[#313131] dark:text-[#E8E4E1] focus:border-[#DA583F] outline-none transition-all placeholder-[#B8B4B0]"
+            />
+            {searchQuery && (
+              <button onClick={() => setSearchQuery('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-[#B8B4B0] hover:text-[#DA583F] text-sm">✕</button>
+            )}
+          </div>
+
+          {isAdmin && (
+            <div className="flex items-center gap-2 flex-wrap">
+              <Link to="/write" className="px-4 py-2 text-sm font-medium text-white bg-[#DA583F] rounded-lg hover:bg-[#C43F30] transition-all whitespace-nowrap">
+                + 写文章
+              </Link>
+              <button onClick={() => { downloadBackup(); markExportedToday(); }} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#B8B4B0] bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] hover:border-[#DA583F] transition-all whitespace-nowrap">
+                ↓ 导出{!hasExportedToday() && <span className="ml-1 text-[10px] text-[#DA583F]">·未备份</span>}
+              </button>
+              <button onClick={handleImport} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#B8B4B0] bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] hover:border-[#DA583F] transition-all whitespace-nowrap">
+                ↑ 导入
+              </button>
+              <button onClick={handleSync} disabled={isSyncing} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#B8B4B0] bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] hover:border-[#DA583F] transition-all disabled:opacity-40 whitespace-nowrap">
+                {isSyncing ? '同步中…' : '☁ 同步'}
+              </button>
+              <button onClick={handleRestore} disabled={isSyncing} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#B8B4B0] bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] hover:border-[#DA583F] transition-all disabled:opacity-40 whitespace-nowrap">
+                ↳ 恢复
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* 同步提示 */}
+        {syncMessage && (
+          <div className={`mb-6 px-4 py-3 rounded-lg text-sm ${syncMessage.type === 'success' ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800' : 'bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800'}`}>
+            {syncMessage.text}
+            <button onClick={clearSyncMsg} className="ml-3 text-xs underline">关闭</button>
+          </div>
+        )}
+
+        {/* 搜索匹配数 */}
+        {searchQuery && (
+          <p className="mb-5 text-xs text-[#767693] dark:text-[#8A8688]">找到 {filteredArticles.length} 篇匹配文章</p>
+        )}
 
         {/* 卡片网格 */}
         <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-6 mb-8">
@@ -126,16 +227,11 @@ function InterestSection() {
           <div className="mt-6 animate-[fadeIn_0.25s_ease-out]">
             <div className="flex items-center justify-between mb-4">
               <h4 className="text-sm font-semibold text-[#4F4F4F] dark:text-[#B8B4B0]">
-                {getCategoryInfo(activeCategory).icon} {getCategoryInfo(activeCategory).label} · 相关文章
+                {getCategoryInfo(activeCategory).icon} {getCategoryInfo(activeCategory).label}
+                {articlesByCategory[activeCategory].length > 0 && (
+                  <span className="ml-2 text-xs text-[#B8B4B0]">· {articlesByCategory[activeCategory].length} 篇</span>
+                )}
               </h4>
-              {isAdmin && (
-                <Link
-                  to="/write"
-                  className="text-xs text-[#DA583F] hover:text-[#C43F30] font-medium transition-colors"
-                >
-                  + 写文章
-                </Link>
-              )}
             </div>
 
             {articlesByCategory[activeCategory].length > 0 ? (
@@ -163,15 +259,75 @@ function InterestSection() {
               </div>
             ) : (
               <p className="text-sm text-[#8A8688] dark:text-[#8A8688] py-6 text-center">
-                该领域暂无文章，{isAdmin ? '去' : '敬请期待'}
-                {isAdmin && (
-                  <Link to="/write" className="text-[#DA583F] hover:underline ml-1">写一篇</Link>
+                {searchQuery ? '该版块无匹配文章' : '该领域暂无文章，'}
+                {isAdmin ? (
+                  <Link to="/write" className="text-[#DA583F] hover:underline">写一篇</Link>
+                ) : (
+                  <span>敬请期待</span>
                 )}
               </p>
             )}
           </div>
         )}
+
+        {/* 搜索但未选分类时：按分类展示搜索结果 */}
+        {searchQuery && !activeCategory && filteredArticles.length > 0 && (
+          <div className="mt-8 space-y-10">
+            {CATEGORIES.filter(c => articlesByCategory[c.key].length > 0).map(cat => (
+              <div key={cat.key}>
+                <h4 className="text-sm font-semibold text-[#4F4F4F] dark:text-[#B8B4B0] mb-3">
+                  {cat.icon} {cat.label} · {articlesByCategory[cat.key].length} 篇
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {articlesByCategory[cat.key].map(a => (
+                    <Link
+                      key={a.id}
+                      to={`/article/${a.id}`}
+                      className="block bg-white dark:bg-[#1C1818] rounded-lg p-5 border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] transition-all duration-300 hover:-translate-y-0.5 group"
+                    >
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <span className="text-lg">{a.emoji}</span>
+                        <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-1">
+                          {a.title}
+                        </span>
+                      </div>
+                      <p className="text-xs text-[#767693] dark:text-[#8A8688] line-clamp-2 ml-7 mb-2">
+                        {getExcerpt(a.content, 80)}
+                      </p>
+                      <p className="text-[11px] text-[#B8B4B0] ml-7">
+                        {formatDate(a.createdAt)}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* 搜索结果为空 */}
+        {searchQuery && !activeCategory && filteredArticles.length === 0 && (
+          <p className="text-sm text-[#8A8688] dark:text-[#8A8688] py-8 text-center">未找到匹配文章</p>
+        )}
       </div>
+
+      {/* 导入确认弹窗 */}
+      {importDialog.open && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/20 backdrop-blur-xs" onClick={() => setImportDialog({ open: false, items: [] })} />
+          <div className="relative bg-white dark:bg-[#1C1818] rounded-2xl shadow-2xl w-full max-w-md p-8">
+            <h3 className="text-lg font-semibold text-[#313131] dark:text-[#E8E4E1] mb-2">确认导入</h3>
+            <p className="text-sm text-[#767693] dark:text-[#8A8688] mb-4">即将导入 {importDialog.items.length} 篇文章：</p>
+            <ul className="text-sm text-[#4F4F4F] dark:text-[#B8B4B0] mb-6 max-h-40 overflow-y-auto">
+              {importDialog.items.map(a => <li key={a.id} className="py-1">· {a.title} <span className="text-xs text-[#B8B4B0]">[{a.status === 'published' ? '已发布' : '草稿'}]</span></li>)}
+            </ul>
+            <div className="flex gap-3">
+              <button onClick={() => setImportDialog({ open: false, items: [] })} className="flex-1 px-4 py-2.5 text-sm font-medium text-[#767693] bg-[#FEF3F0] dark:bg-[#1A1516] rounded-lg hover:bg-[#ECD8D9] dark:hover:bg-[#2A2020] transition-all">取消</button>
+              <button onClick={handleImportConfirm} className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-[#DA583F] rounded-lg hover:bg-[#C43F30] transition-all">确认导入</button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
@@ -389,6 +545,9 @@ export default function LandingPage() {
           </a>
         </div>
       </footer>
+
+      {/* 管理员登录（全局齿轮入口） */}
+      <AdminLogin />
     </div>
   );
 }

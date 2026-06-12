@@ -38,7 +38,6 @@ export default function Navigation() {
     { href: '/#interests', label: '志趣' },
     { href: '/#work', label: '行迹' },
     { href: '/#contact', label: '联系' },
-    { href: '/blog', label: '博客' },
   ];
 
   return (

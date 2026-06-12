@@ -1,8 +1,7 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
 const LandingPage = lazy(() => import('./pages/LandingPage'));
-const HomePage = lazy(() => import('./pages/HomePage'));
 const ArticlePage = lazy(() => import('./pages/ArticlePage'));
 const WritePage = lazy(() => import('./pages/WritePage'));
 
@@ -23,7 +22,7 @@ export default function App() {
       <Suspense fallback={<LoadingSpinner />}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/blog" element={<HomePage />} />
+          <Route path="/blog" element={<Navigate to="/#interests" replace />} />
           <Route path="/article/:id" element={<ArticlePage />} />
           <Route path="/write" element={<WritePage />} />
           <Route path="/write/:id" element={<WritePage />} />
