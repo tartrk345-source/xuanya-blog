@@ -4,9 +4,46 @@ import { v4 as uuidv4 } from 'uuid';
 
 // 内存缓存（减少重复请求）
 let cache: Article[] = [];
+let listCache: Article[] = [];  // 轻量列表缓存（不含 content）
 let cacheTime = 0;
-const CACHE_TTL = 10_000; // 10秒内复用缓存
+let listCacheTime = 0;
+const CACHE_TTL = 60_000; // 60秒内复用缓存（之前10秒太短）
 
+/** 轻量查询：只拉列表页需要的字段，不含 content（大幅减少数据传输） */
+async function fetchList(): Promise<Article[]> {
+  const now = Date.now();
+  if (listCache.length > 0 && now - listCacheTime < CACHE_TTL) return listCache;
+
+  const { data, error } = await supabase
+    .from('articles')
+    .select('id, title, content, emoji, status, category, created_at, updated_at, tags, cover_image, is_pinned, is_featured, series')
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    console.error('[Supabase] 加载文章列表失败', error);
+    return listCache;
+  }
+
+  listCache = (data ?? []).map(row => ({
+    id: row.id,
+    title: row.title,
+    content: '',  // 列表页不需要正文
+    emoji: row.emoji ?? '📝',
+    status: row.status as 'draft' | 'published',
+    category: row.category as CategoryKey | undefined,
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
+    tags: row.tags ?? [],
+    coverImage: row.cover_image ?? '',
+    isPinned: row.is_pinned ?? false,
+    isFeatured: row.is_featured ?? false,
+    series: row.series ?? '',
+  }));
+  listCacheTime = now;
+  return listCache;
+}
+
+/** 全量查询（含 content，仅文章详情页使用） */
 async function fetchAll(): Promise<Article[]> {
   const now = Date.now();
   if (cache.length > 0 && now - cacheTime < CACHE_TTL) return cache;
@@ -40,15 +77,20 @@ async function fetchAll(): Promise<Article[]> {
   return cache;
 }
 
-/** 获取所有文章（含草稿） */
+/** 获取所有文章（含草稿，列表用轻量查询） */
 export async function getAllArticles(): Promise<Article[]> {
-  return fetchAll();
+  return fetchList();
 }
 
-/** 获取已发布文章 */
+/** 获取已发布文章（列表用轻量查询） */
 export async function getPublishedArticles(): Promise<Article[]> {
-  const all = await fetchAll();
+  const all = await fetchList();
   return all.filter(a => a.status === 'published');
+}
+
+/** 获取已发布文章（含正文，用于文章详情页和编辑） */
+export async function getPublishedArticlesFull(): Promise<Article[]> {
+  return fetchAll();
 }
 
 /** 按分类分组（仅已发布） */
@@ -64,7 +106,7 @@ export async function getArticlesByCategory(): Promise<Partial<Record<CategoryKe
   return result;
 }
 
-/** 根据 ID 获取文章 */
+/** 根据 ID 获取文章（含正文，用全量查询） */
 export async function getArticleById(id: string): Promise<Article | undefined> {
   const all = await fetchAll();
   return all.find(a => a.id === id);
