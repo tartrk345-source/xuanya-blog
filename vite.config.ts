@@ -15,9 +15,6 @@ export default defineConfig({
           if (id.includes('node_modules/react-markdown') || id.includes('node_modules/remark-gfm')) {
             return 'vendor-markdown'
           }
-          if (id.includes('node_modules/@supabase')) {
-            return 'vendor-supabase'
-          }
         },
       },
     },

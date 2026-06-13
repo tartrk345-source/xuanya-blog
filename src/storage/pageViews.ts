@@ -9,15 +9,14 @@ export async function recordPageView(articleId: string): Promise<void> {
     const today = new Date().toISOString().slice(0, 10);
     const clientIp = await getClientFingerprint();
 
-    const { data: existing } = await supabase
+    const { data: rows } = await supabase
       .from(TABLE_NAME)
       .select('id')
       .eq('article_id', articleId)
       .eq('view_date', today)
-      .eq('client_hash', clientIp)
-      .maybeSingle();
+      .eq('client_hash', clientIp);
 
-    if (!existing) {
+    if (!rows || rows.length === 0) {
       await supabase.from(TABLE_NAME).insert({
         article_id: articleId,
         view_date: today,

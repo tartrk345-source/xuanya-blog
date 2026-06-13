@@ -394,3 +394,20 @@ html.dark .prose-container hr {
 html.dark .prose-container a {
   border-bottom-color: #2A2020;
 }
+
+/* === 移动端优化 === */
+@media (max-width: 640px) {
+  /* 防止 iOS 输入框自动缩放 */
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+  /* 触控优化 */
+  a, button, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* 减小正文间距 */
+  .prose-container {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
