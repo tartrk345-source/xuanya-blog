@@ -4,9 +4,7 @@ import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import rehypeHighlight from 'rehype-highlight';
 import { getArticleById, deleteArticle, getPublishedArticles, getRelatedArticles, getArticlesBySeries } from '../storage/articleStore';
-import { formatDate, getCategoryInfo, getExcerpt, EMOJI_MEANINGS, estimateReadingTime } from '../utils/helpers';
 import ConfirmDialog from '../components/ConfirmDialog';
 import Navigation from '../components/Navigation';
 import AdminLogin from '../components/AdminLogin';
@@ -264,7 +262,6 @@ export default function ArticlePage() {
           <div ref={articleRef} className="prose-container flex-1 min-w-0">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeHighlight]}
             >
               {article.content}
             </ReactMarkdown>
