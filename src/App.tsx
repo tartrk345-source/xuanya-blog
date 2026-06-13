@@ -6,7 +6,7 @@ import { ArticleImageLightbox } from './components/CodeBlock';
 
 const LandingPage = lazy(() => import('./pages/LandingPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
-const ArticlePage = lazy(() => import('./pages/ArticlePage'));
+import ArticlePage from './pages/ArticlePage';
 const WritePage = lazy(() => import('./pages/WritePage'));
 
 // RSS 不需要 lazy（体积小）

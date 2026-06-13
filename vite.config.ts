@@ -12,7 +12,7 @@ export default defineConfig({
           // React 核心单独分包（不常变，利于缓存）
           'vendor-react': ['react', 'react-dom', 'react-router-dom'],
           // Markdown 渲染独立分包（只在文章页需要）
-          'vendor-markdown': ['react-markdown', 'remark-gfm', 'rehype-highlight', 'highlight.js'],
+          'vendor-markdown': ['react-markdown', 'remark-gfm'],
           // Supabase 独立分包
           'vendor-supabase': ['@supabase/supabase-js'],
         },
