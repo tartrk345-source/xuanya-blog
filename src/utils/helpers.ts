@@ -67,6 +67,34 @@ export const CATEGORY_ICON_PRESETS = [
   '📜', '🫀', '💊', '🏥',
 ] as const;
 
+/** 估算阅读时间（分钟）- 中文按 300字/分钟，英文按 200词/分钟 */
+export function estimateReadingTime(content: string): number {
+  // 去掉 Markdown 语法标记
+  const plain = content
+    .replace(/```[\s\S]*?```/g, '')       // 代码块
+    .replace(/`[^`]*`/g, '')               // 行内代码
+    .replace(/^#{1,6}\s+/gm, '')          // 标题
+    .replace(/!\[.*?\]\(.*?\)/g, '')       // 图片
+    .replace(/\[([^\]]*?)\]\(.*?\)/g, '$1') // 链接
+    .replace(/[*_]{1,3}/g, '')            // 加粗/斜体
+    .replace(/^[>\-|]\s*/gm, '')           // 引用/列表/表格
+    .replace(/\n+/g, ' ')
+    .trim();
+
+  if (!plain) return 1;
+
+  // 中文字符数
+  const chineseChars = (plain.match(/[\u4e00-\u9fff]/g) || []).length;
+  // 英文单词数（去掉中文字符后的英文部分）
+  const englishWords = plain
+    .replace(/[\u4e00-\u9fff]/g, ' ')
+    .split(/\s+/)
+    .filter(w => w.length > 0).length;
+
+  const minutes = Math.ceil(chineseChars / 300 + englishWords / 200);
+  return Math.max(1, minutes);
+}
+
 /** 获取志趣分类（从 localStorage 动态读取） */
 export { getCategories as CATEGORIES } from '../storage/categoryStore';
 

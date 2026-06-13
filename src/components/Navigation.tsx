@@ -119,6 +119,16 @@ export default function Navigation() {
             ))}
             {/* 暗色模式 */}
             <li>
+              <a
+                href="/rss.xml"
+                target="_blank"
+                className="w-10 h-10 rounded-full border-[1.5px] border-[#ECD8D9] dark:border-[#2A2020] bg-white dark:bg-[#1C1818] flex items-center justify-center text-sm cursor-pointer hover:border-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] transition-all"
+                title="RSS 订阅"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1" fill="currentColor"/></svg>
+              </a>
+            </li>
+            <li>
               <button
                 onClick={toggleTheme}
                 className="w-10 h-10 rounded-full border-[1.5px] border-[#ECD8D9] dark:border-[#2A2020] bg-white dark:bg-[#1C1818] flex items-center justify-center text-lg cursor-pointer hover:border-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] transition-all"

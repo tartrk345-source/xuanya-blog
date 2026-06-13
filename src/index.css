@@ -52,6 +52,11 @@ a:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes lightboxIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 /* === 文章阅读区 === */
 .prose-container {
   max-width: 700px;
@@ -111,7 +116,7 @@ a:hover {
 }
 
 .prose-container code {
-  font-family: ui-monospace, Consolas, monospace;
+  font-family: ui-monospace, Consolas, "Courier New", monospace;
   font-size: 15px;
   background: #FEF3F0;
   padding: 2px 6px;
@@ -119,12 +124,21 @@ a:hover {
   color: #DA583F;
 }
 
+/* === 骨架屏脉冲动画 === */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.15; }
+}
+
 .prose-container pre {
-  background: #FEF3F0;
+  background: #F5EDEA;
   padding: 1rem;
   border-radius: 8px;
   overflow-x: auto;
   margin: 0 0 1.25rem;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .prose-container pre code {
@@ -174,6 +188,159 @@ a:hover {
 .prose-container th {
   background: #FEF3F0;
   font-weight: 600;
+}
+
+/* === highlight.js 代码高亮主题（珊瑚暖色调） === */
+.hljs {
+  background: transparent !important;
+  color: #313131 !important;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #8A8688 !important;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #DA583F !important;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #2D8B4E !important;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #C43F30 !important;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #616FD3 !important;
+  font-weight: bold;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #2E4964 !important;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #DA583F !important;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #E77B61 !important;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #6E6A7C !important;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #2E4964 !important;
+}
+
+.hljs-meta {
+  color: #767693 !important;
+}
+
+.hljs-deletion {
+  color: #DA583F !important;
+  background: rgba(218, 88, 63, 0.08) !important;
+}
+
+.hljs-addition {
+  color: #2D8B4E !important;
+  background: rgba(45, 139, 78, 0.08) !important;
+}
+
+/* 暗色模式 - 代码高亮 */
+html.dark .hljs {
+  color: #B8B4B0 !important;
+}
+
+html.dark .hljs-comment,
+html.dark .hljs-quote {
+  color: #5A5860 !important;
+}
+
+html.dark .hljs-keyword,
+html.dark .hljs-selector-tag,
+html.dark .hljs-subst {
+  color: #E77B61 !important;
+}
+
+html.dark .hljs-string,
+html.dark .hljs-doctag {
+  color: #6BCB77 !important;
+}
+
+html.dark .hljs-number,
+html.dark .hljs-literal,
+html.dark .hljs-variable,
+html.dark .hljs-template-variable,
+html.dark .hljs-tag .hljs-attr {
+  color: #E77B61 !important;
+}
+
+html.dark .hljs-title,
+html.dark .hljs-section,
+html.dark .hljs-selector-id {
+  color: #8B9AE8 !important;
+}
+
+html.dark .hljs-type,
+html.dark .hljs-class .hljs-title {
+  color: #7A9CC6 !important;
+}
+
+html.dark .hljs-tag,
+html.dark .hljs-name,
+html.dark .hljs-attribute {
+  color: #E77B61 !important;
+}
+
+html.dark .hljs-regexp,
+html.dark .hljs-link {
+  color: #F0A58C !important;
+}
+
+html.dark .hljs-symbol,
+html.dark .hljs-bullet {
+  color: #A09CA8 !important;
+}
+
+html.dark .hljs-built_in,
+html.dark .hljs-builtin-name {
+  color: #7A9CC6 !important;
+}
+
+html.dark .hljs-meta {
+  color: #6A6870 !important;
+}
+
+html.dark .hljs-deletion {
+  color: #E77B61 !important;
+  background: rgba(231, 123, 97, 0.12) !important;
+}
+
+html.dark .hljs-addition {
+  color: #6BCB77 !important;
+  background: rgba(107, 203, 119, 0.12) !important;
 }
 
 /* === 暗色模式 === */

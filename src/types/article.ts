@@ -22,7 +22,24 @@ export interface Article {
   createdAt: number;
   /** 最后修改时间戳 */
   updatedAt: number;
+  /** 标签列表（最多 8 个） */
+  tags?: string[];
+  /** 封面图 URL */
+  coverImage?: string;
+  /** 是否置顶 */
+  isPinned?: boolean;
+  /** 是否精选 */
+  isFeatured?: boolean;
+  /** 系列名称（同系列文章关联） */
+  series?: string;
 }
 
 /** 新建文章时的输入（不含自动生成字段） */
-export type ArticleInput = Pick<Article, 'title' | 'content' | 'emoji' | 'status'> & { category?: CategoryKey };
+export type ArticleInput = Pick<Article, 'title' | 'content' | 'emoji' | 'status'> & {
+  category?: CategoryKey;
+  tags?: string[];
+  coverImage?: string;
+  isPinned?: boolean;
+  isFeatured?: boolean;
+  series?: string;
+};

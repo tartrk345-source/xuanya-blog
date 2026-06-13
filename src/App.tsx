@@ -1,12 +1,16 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { restoreFromGist, getGistId } from './utils/gistSync';
+import { ArticleImageLightbox } from './components/CodeBlock';
 
 const LandingPage = lazy(() => import('./pages/LandingPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
 const ArticlePage = lazy(() => import('./pages/ArticlePage'));
 const WritePage = lazy(() => import('./pages/WritePage'));
+
+// RSS 不需要 lazy（体积小）
+import RssFeedPage from './pages/RssPage';
 
 /**
  * 应用启动时自动从 Gist 恢复数据（仅当有 Gist ID 时）
@@ -33,7 +37,10 @@ function SyncInitializer({ children }: { children: React.ReactNode }) {
   if (!ready) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E]">
-        <div className="w-8 h-8 border-2 border-[#DA583F]/20 border-t-[#DA583F] rounded-full animate-spin" />
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-10 h-10 border-2 border-[#DA583F]/20 border-t-[#DA583F] rounded-full animate-spin" />
+          <span className="text-sm text-[#767693] dark:text-[#8A8688] animate-pulse">加载中…</span>
+        </div>
       </div>
     );
   }
@@ -52,11 +59,22 @@ function LoadingSpinner() {
   );
 }
 
+/** 页面切换时自动滚回顶部 */
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+  }, [pathname]);
+  return null;
+}
+
 export default function App() {
   return (
     <HelmetProvider>
       <SyncInitializer>
         <BrowserRouter>
+        <ScrollToTop />
+        <ArticleImageLightbox />
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/" element={<LandingPage />} />
@@ -64,6 +82,7 @@ export default function App() {
             <Route path="/article/:id" element={<ArticlePage />} />
             <Route path="/write" element={<WritePage />} />
             <Route path="/write/:id" element={<WritePage />} />
+            <Route path="/rss.xml" element={<RssFeedPage />} />
           </Routes>
         </Suspense>
       </BrowserRouter>

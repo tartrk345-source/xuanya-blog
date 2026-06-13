@@ -30,6 +30,11 @@ async function fetchAll(): Promise<Article[]> {
     category: row.category as CategoryKey | undefined,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
+    tags: row.tags ?? [],
+    coverImage: row.cover_image ?? '',
+    isPinned: row.is_pinned ?? false,
+    isFeatured: row.is_featured ?? false,
+    series: row.series ?? '',
   }));
   cacheTime = now;
   return cache;
@@ -65,6 +70,51 @@ export async function getArticleById(id: string): Promise<Article | undefined> {
   return all.find(a => a.id === id);
 }
 
+/** 根据标签获取相关文章（排除当前文章） */
+export async function getRelatedArticles(articleId: string, tags?: string[], category?: string, limit = 5): Promise<Article[]> {
+  const published = await getPublishedArticles();
+  if (!tags || tags.length === 0) {
+    // 没有标签时按分类推荐
+    if (!category) return [];
+    return published
+      .filter(a => a.id !== articleId && a.category === category)
+      .slice(0, limit);
+  }
+  // 按标签匹配度排序
+  const scored = published
+    .filter(a => a.id !== articleId)
+    .map(a => {
+      const overlap = (a.tags ?? []).filter(t => tags!.includes(t)).length;
+      const catBonus = a.category === category ? 1 : 0;
+      return { article: a, score: overlap + catBonus };
+    })
+    .filter(s => s.score > 0)
+    .sort((a, b) => b.score - a.score);
+  return scored.slice(0, limit).map(s => s.article);
+}
+
+/** 根据系列获取文章列表 */
+export async function getArticlesBySeries(seriesName: string): Promise<Article[]> {
+  const published = await getPublishedArticles();
+  return published
+    .filter(a => a.series === seriesName)
+    .sort((a, b) => a.createdAt - b.createdAt);
+}
+
+/** 获取所有标签（聚合） */
+export async function getAllTags(): Promise<{ tag: string; count: number }[]> {
+  const published = await getPublishedArticles();
+  const tagMap = new Map<string, number>();
+  for (const a of published) {
+    for (const t of (a.tags ?? [])) {
+      tagMap.set(t, (tagMap.get(t) ?? 0) + 1);
+    }
+  }
+  return [...tagMap.entries()]
+    .map(([tag, count]) => ({ tag, count }))
+    .sort((a, b) => b.count - a.count);
+}
+
 /** 创建文章 */
 export async function createArticle(input: {
   title: string;
@@ -72,6 +122,11 @@ export async function createArticle(input: {
   emoji?: string;
   status?: 'draft' | 'published';
   category?: CategoryKey;
+  tags?: string[];
+  coverImage?: string;
+  isPinned?: boolean;
+  isFeatured?: boolean;
+  series?: string;
 }): Promise<Article> {
   const now = Date.now();
   const article: Article = {
@@ -83,6 +138,11 @@ export async function createArticle(input: {
     category: input.category,
     createdAt: now,
     updatedAt: now,
+    tags: input.tags ?? [],
+    coverImage: input.coverImage ?? '',
+    isPinned: input.isPinned ?? false,
+    isFeatured: input.isFeatured ?? false,
+    series: input.series ?? '',
   };
 
   const { error } = await supabase.from('articles').insert({
@@ -94,6 +154,11 @@ export async function createArticle(input: {
     category: article.category ?? null,
     created_at: article.createdAt,
     updated_at: article.updatedAt,
+    tags: article.tags,
+    cover_image: article.coverImage || null,
+    is_pinned: article.isPinned,
+    is_featured: article.isFeatured,
+    series: article.series || null,
   });
 
   if (error) {
@@ -115,6 +180,11 @@ export async function updateArticle(id: string, input: Partial<Article>): Promis
   if (input.emoji !== undefined) updates.emoji = input.emoji;
   if (input.status !== undefined) updates.status = input.status;
   if (input.category !== undefined) updates.category = input.category ?? null;
+  if (input.tags !== undefined) updates.tags = input.tags;
+  if (input.coverImage !== undefined) updates.cover_image = input.coverImage || null;
+  if (input.isPinned !== undefined) updates.is_pinned = input.isPinned;
+  if (input.isFeatured !== undefined) updates.is_featured = input.isFeatured;
+  if (input.series !== undefined) updates.series = input.series || null;
 
   const { error } = await supabase
     .from('articles')
@@ -171,6 +241,11 @@ export async function importArticles(articles: Article[]): Promise<void> {
     category: a.category ?? null,
     created_at: a.createdAt,
     updated_at: a.updatedAt,
+    tags: a.tags ?? [],
+    cover_image: a.coverImage || null,
+    is_pinned: a.isPinned ?? false,
+    is_featured: a.isFeatured ?? false,
+    series: a.series || null,
   }));
   const { error: insError } = await supabase.from('articles').insert(rows);
   if (insError) {

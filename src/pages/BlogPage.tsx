@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import type { Article, CategoryKey } from '../types/article';
-import { getPublishedArticles } from '../storage/articleStore';
+import { getPublishedArticles, getAllTags } from '../storage/articleStore';
 import { getCategories, addCategory, updateCategory, deleteCategory, onCategoriesChange, type CategoryItem } from '../storage/categoryStore';
 import { downloadBackup, importArticles, parseBackupFile, hasExportedToday, markExportedToday } from '../utils/export';
 import { syncToGist, restoreFromGist } from '../utils/gistSync';
@@ -43,8 +43,10 @@ function RevealOnScroll({ children, className = '' }: { children: React.ReactNod
 export default function BlogPage() {
   const { isAdmin } = useAdminAuth();
   const [activeCategory, setActiveCategory] = useState<CategoryKey | null>(null);
+  const [activeTag, setActiveTag] = useState<string | null>(null);
   const [articles, setArticles] = useState<Article[]>([]);
   const [categories, setCategories] = useState<CategoryItem[]>([]);
+  const [tags, setTags] = useState<{ tag: string; count: number }[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSyncing, setIsSyncing] = useState(false);
   const [syncMessage, setSyncMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
@@ -52,6 +54,8 @@ export default function BlogPage() {
   const refreshArticles = useCallback(async () => {
     const list = await getPublishedArticles();
     setArticles(list);
+    const tagList = await getAllTags();
+    setTags(tagList);
   }, []);
 
   useEffect(() => {
@@ -66,16 +70,30 @@ export default function BlogPage() {
     };
   }, [refreshArticles]);
 
-  // 搜索过滤 + 分类分组
+  // 搜索过滤
   const searchLower = searchQuery.toLowerCase();
   const filteredArticles = searchLower
     ? articles.filter(a => a.title.toLowerCase().includes(searchLower) || a.content.toLowerCase().includes(searchLower))
     : articles;
 
+  // 标签过滤
+  const tagFiltered = activeTag
+    ? filteredArticles.filter(a => (a.tags ?? []).includes(activeTag))
+    : filteredArticles;
+
+  // 置顶文章（只在未搜索、未选标签时显示）
+  const pinnedArticles = !searchLower && !activeTag
+    ? tagFiltered.filter(a => a.isPinned).sort((a, b) => b.updatedAt - a.updatedAt)
+    : [];
+  // 精选文章（除置顶外的精选）
+  const featuredArticles = !searchLower && !activeTag
+    ? tagFiltered.filter(a => a.isFeatured && !a.isPinned).sort((a, b) => b.updatedAt - a.updatedAt)
+    : [];
+
   const articlesByCategory: Record<string, Article[]> = {};
   for (const c of categories) {
-    articlesByCategory[c.key] = filteredArticles
-      .filter(a => (a.category || 'misc') === c.key)
+    articlesByCategory[c.key] = tagFiltered
+      .filter(a => a.category === c.key)
       .sort((a, b) => b.updatedAt - a.updatedAt);
   }
 
@@ -188,7 +206,7 @@ export default function BlogPage() {
             </p>
 
             {/* 搜索框 + 管理员操作 */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-10">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-8">
               <div className="relative flex-1 w-full sm:max-w-[420px]">
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-[#B8B4B0]">🔍</span>
                 <input
@@ -223,6 +241,29 @@ export default function BlogPage() {
                 </div>
               )}
             </div>
+
+            {/* 标签云 */}
+            {tags.length > 0 && (
+              <div className="mb-8 animate-[fadeIn_0.4s_ease-out]">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-xs text-[#B8B4B0] dark:text-[#8A8688] mr-1">🏷️</span>
+                  {tags.slice(0, 20).map(({ tag, count }) => (
+                    <button
+                      key={tag}
+                      onClick={() => setActiveTag(prev => prev === tag ? null : tag)}
+                      className={`inline-flex items-center gap-1 px-2.5 py-1 text-xs rounded-full border transition-all cursor-pointer ${
+                        activeTag === tag
+                          ? 'bg-[#DA583F] text-white border-[#DA583F] font-medium'
+                          : 'bg-white dark:bg-[#1C1818] text-[#767693] dark:text-[#8A8688] border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] hover:text-[#DA583F]'
+                      }`}
+                    >
+                      {tag}
+                      <span className={`text-[10px] ${activeTag === tag ? 'text-white/70' : 'text-[#B8B4B0]'}`}>({count})</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -240,12 +281,101 @@ export default function BlogPage() {
       {/* 搜索匹配数 */}
       {searchQuery && (
         <div className="max-w-[1100px] mx-auto px-4 sm:px-8">
-          <p className="mb-5 text-xs text-[#767693] dark:text-[#8A8688]">找到 {filteredArticles.length} 篇匹配文章</p>
+          <p className="mb-5 text-xs text-[#767693] dark:text-[#8A8688]">找到 {tagFiltered.length} 篇匹配文章</p>
         </div>
       )}
 
-      {/* 分类列表（纵向手风琴） */}
+      {/* 标签筛选提示 */}
+      {activeTag && !searchQuery && (
+        <div className="max-w-[1100px] mx-auto px-4 sm:px-8">
+          <p className="mb-5 text-xs text-[#DA583F]">
+            标签筛选：#{activeTag} · {tagFiltered.length} 篇
+            <button onClick={() => setActiveTag(null)} className="ml-2 text-[#767693] hover:text-[#DA583F] cursor-pointer">✕ 清除</button>
+          </p>
+        </div>
+      )}
+
       <div className="max-w-[1100px] mx-auto px-4 sm:px-8 pb-16">
+        {/* 置顶文章区域 */}
+        {pinnedArticles.length > 0 && (
+          <div className="mb-8">
+            <div className="text-xs font-bold text-[#DA583F] tracking-widest mb-4 flex items-center gap-2">
+              📌 置顶文章
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {pinnedArticles.map(a => (
+                <Link
+                  key={a.id}
+                  to={`/article/${a.id}`}
+                  className="block bg-white dark:bg-[#1C1818] rounded-xl p-5 border border-[#DA583F]/30 dark:border-[#DA583F]/20 hover:border-[#DA583F] shadow-[0_4px_20px_rgba(218,88,63,0.06)] transition-all duration-300 hover:-translate-y-0.5 group"
+                >
+                  {a.coverImage && (
+                    <div className="mb-3 rounded-lg overflow-hidden h-28">
+                      <img src={a.coverImage} alt={a.title} className="w-full h-full object-cover" />
+                    </div>
+                  )}
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="text-lg">{a.emoji}</span>
+                    <span className="text-sm font-bold text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-1">
+                      {a.title}
+                    </span>
+                    <span className="text-[10px] text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1A1516] rounded-full px-1.5 py-0.5">置顶</span>
+                  </div>
+                  <p className="text-xs text-[#767693] dark:text-[#8A8688] line-clamp-2 ml-7 mb-1.5">
+                    {getExcerpt(a.content, 80)}
+                  </p>
+                  <div className="flex items-center gap-2 ml-7">
+                    <p className="text-[10px] text-[#B8B4B0]">{formatDate(a.createdAt)}</p>
+                    {a.tags && a.tags.slice(0, 3).map(t => (
+                      <span key={t} className="text-[10px] text-[#B8B4B0]">#{t}</span>
+                    ))}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* 精选文章区域 */}
+        {featuredArticles.length > 0 && (
+          <div className="mb-8">
+            <div className="text-xs font-bold text-[#DA583F] tracking-widest mb-4 flex items-center gap-2">
+              ⭐ 精选文章
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {featuredArticles.slice(0, 4).map(a => (
+                <Link
+                  key={a.id}
+                  to={`/article/${a.id}`}
+                  className="block bg-white dark:bg-[#1C1818] rounded-xl p-5 border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] hover:shadow-[0_4px_20px_rgba(218,88,63,0.06)] transition-all duration-300 hover:-translate-y-0.5 group"
+                >
+                  {a.coverImage && (
+                    <div className="mb-3 rounded-lg overflow-hidden h-28">
+                      <img src={a.coverImage} alt={a.title} className="w-full h-full object-cover" />
+                    </div>
+                  )}
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="text-lg">{a.emoji}</span>
+                    <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-1">
+                      {a.title}
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#767693] dark:text-[#8A8688] line-clamp-2 ml-7 mb-1.5">
+                    {getExcerpt(a.content, 80)}
+                  </p>
+                  <div className="flex items-center gap-2 ml-7">
+                    <p className="text-[10px] text-[#B8B4B0]">{formatDate(a.createdAt)}</p>
+                    {a.tags && a.tags.slice(0, 3).map(t => (
+                      <span key={t} className="text-[10px] text-[#B8B4B0]">#{t}</span>
+                    ))}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* 分类列表（纵向手风琴） */}
         <div className="space-y-3">
           {categories.map((cat, i) => {
             const articles = articlesByCategory[cat.key] ?? [];
@@ -319,24 +449,37 @@ export default function BlogPage() {
                               to={`/article/${a.id}`}
                               className="block bg-[#FEFAF9] dark:bg-[#0F0D0E] rounded-lg p-4 border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] transition-all duration-300 hover:-translate-y-0.5 group"
                             >
+                              {a.coverImage && (
+                                <div className="mb-2 rounded-md overflow-hidden h-24">
+                                  <img src={a.coverImage} alt={a.title} className="w-full h-full object-cover" />
+                                </div>
+                              )}
                               <div className="flex items-center gap-2 mb-1">
                                 <span className="text-base" title={EMOJI_MEANINGS[a.emoji] || ''}>{a.emoji}</span>
                                 <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-1">
                                   {a.title}
                                 </span>
+                                {a.isFeatured && (
+                                  <span className="text-[10px] text-[#DA583F]">⭐</span>
+                                )}
                               </div>
                               <p className="text-xs text-[#767693] dark:text-[#8A8688] line-clamp-2 ml-6 mb-1.5">
                                 {getExcerpt(a.content, 80)}
                               </p>
-                              <p className="text-[10px] text-[#B8B4B0] ml-6">
-                                {formatDate(a.createdAt)}
-                              </p>
+                              <div className="flex items-center gap-2 ml-6">
+                                <p className="text-[10px] text-[#B8B4B0]">
+                                  {formatDate(a.createdAt)}
+                                </p>
+                                {a.tags && a.tags.slice(0, 2).map(t => (
+                                  <span key={t} className="text-[10px] text-[#B8B4B0]">#{t}</span>
+                                ))}
+                              </div>
                             </Link>
                           ))}
                         </div>
                       ) : (
                         <p className="text-sm text-[#8A8688] py-4 text-center">
-                          {searchQuery ? '该版块无匹配文章' : '该领域暂无文章，'}
+                          {searchQuery || activeTag ? '该版块无匹配文章' : '该领域暂无文章，'}
                           {isAdmin ? (
                             <Link to="/write" className="text-[#DA583F] hover:underline">写一篇</Link>
                           ) : (
@@ -364,20 +507,20 @@ export default function BlogPage() {
         </div>
 
         {/* 搜索但未选分类时：全局搜索结果 */}
-        {searchQuery && !activeCategory && filteredArticles.length > 0 && (
+        {searchQuery && !activeCategory && tagFiltered.length > 0 && (
           <div className="mt-8 animate-[fadeIn_0.25s_ease-out]">
             <h4 className="text-sm font-semibold text-[#4F4F4F] dark:text-[#B8B4B0] mb-4">
-              「{searchQuery}」的搜索结果 · {filteredArticles.length} 篇
+              「{searchQuery}」的搜索结果 · {tagFiltered.length} 篇
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {filteredArticles.map(a => (
+              {tagFiltered.map(a => (
                 <Link
                   key={a.id}
                   to={`/article/${a.id}`}
                   className="block bg-white dark:bg-[#1C1818] rounded-lg p-5 border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] transition-all duration-300 hover:-translate-y-0.5 group"
                 >
                   <div className="flex items-center gap-2 mb-1.5">
-                    <span className="text-lg" title={EMOJI_MEANINGS[a.emoji] || ''}>{a.emoji}</span>
+                    <span className="text-lg">{a.emoji}</span>
                     <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-1">
                       {a.title}
                     </span>
@@ -395,7 +538,7 @@ export default function BlogPage() {
         )}
 
         {/* 搜索结果为空 */}
-        {searchQuery && !activeCategory && filteredArticles.length === 0 && (
+        {(searchQuery || activeTag) && !activeCategory && tagFiltered.length === 0 && (
           <p className="text-sm text-[#8A8688] dark:text-[#8A8688] py-8 text-center">未找到匹配文章</p>
         )}
       </div>

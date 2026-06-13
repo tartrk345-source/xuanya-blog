@@ -149,10 +149,10 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
       </div>
 
       {/* 编辑区域 */}
-      <div className={`flex ${previewOnly ? 'hidden' : ''} ${editOnly ? '' : 'md:border-r md:border-[#ECD8D9] dark:md:border-[#2A2020]'} ${editOnly || activeTab === 'split' ? 'min-h-[500px]' : ''}`}>
+      <div className="flex">
         {/* 编辑区 */}
         {(!previewOnly) && (
-          <div className={`${activeTab === 'split' ? 'w-1/2' : 'w-full'} flex flex-col`}>
+          <div className={`${activeTab === 'split' ? 'w-1/2' : 'w-full'} flex flex-col ${editOnly ? '' : 'md:border-r md:border-[#ECD8D9] dark:md:border-[#2A2020]'}`}>
             <div className="px-4 py-2 bg-[#FDF7F6] dark:bg-[#1A1516] border-b border-[#ECD8D9] dark:border-[#2A2020]">
               <span className="text-xs text-[#767693] dark:text-[#8A8688] font-medium">Markdown</span>
             </div>
@@ -168,11 +168,11 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
 
         {/* 预览区 */}
         {(!editOnly) && (
-          <div className={`${activeTab === 'split' ? 'w-1/2' : 'w-full'} flex flex-col`}>
+          <div className={`${activeTab === 'split' ? 'w-1/2' : 'w-full'} flex flex-col`} style={{ minHeight: '460px' }}>
             <div className="px-4 py-2 bg-[#FDF7F6] dark:bg-[#1A1516] border-b border-[#ECD8D9] dark:border-[#2A2020]">
               <span className="text-xs text-[#767693] dark:text-[#8A8688] font-medium">预览</span>
             </div>
-            <div className="flex-1 min-h-[460px] p-4 overflow-y-auto markdown-preview">
+            <div className="flex-1 p-4 overflow-y-auto markdown-preview" style={{ minHeight: '420px' }}>
               {content.trim() ? (
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
@@ -184,8 +184,13 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
                     a: ({ href, children }) => <a href={href} className="text-[#DA583F] hover:underline" target="_blank" rel="noreferrer">{children}</a>,
                     strong: ({ children }) => <strong className="font-semibold text-[#313131] dark:text-[#E8E4E1]">{children}</strong>,
                     em: ({ children }) => <em className="text-[#4F4F4F] dark:text-[#B8B4B0]">{children}</em>,
-                    code: ({ children }) => <code className="text-[#DA583F] bg-[#FDF7F6] dark:bg-[#1A1516] px-1.5 py-0.5 rounded text-sm font-mono">{children}</code>,
-                    pre: ({ children }) => <pre className="bg-[#1A1516] dark:bg-[#0F0D0E] rounded-lg p-4 overflow-x-auto mb-3 text-sm">{children}</pre>,
+                    code: ({ children, className }) => {
+                      // 代码块内的 code（有 hljs 类）不加背景和内边距
+                      const isBlock = className?.includes('hljs') || className?.includes('language-');
+                      if (isBlock) return <code className={className}>{children}</code>;
+                      return <code className="text-[#DA583F] bg-[#FDF7F6] dark:bg-[#1A1516] px-1.5 py-0.5 rounded text-sm font-mono">{children}</code>;
+                    },
+                    pre: ({ children }) => <pre className="bg-[#F5EDEA] dark:bg-[#1A1516] rounded-lg p-4 overflow-x-auto mb-3 text-sm">{children}</pre>,
                     blockquote: ({ children }) => <blockquote className="border-l-4 border-[#DA583F] pl-4 py-1 my-3 text-[#767693] dark:text-[#8A8688] italic">{children}</blockquote>,
                     ul: ({ children }) => <ul className="list-disc pl-6 mb-3 text-[#4F4F4F] dark:text-[#B8B4B0]">{children}</ul>,
                     ol: ({ children }) => <ol className="list-decimal pl-6 mb-3 text-[#4F4F4F] dark:text-[#B8B4B0]">{children}</ol>,
