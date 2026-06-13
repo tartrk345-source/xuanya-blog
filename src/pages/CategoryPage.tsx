@@ -78,7 +78,7 @@ export default function CategoryPage() {
       <Navigation />
 
       {/* 页头 */}
-      <div className="pt-20 pb-8 px-4 sm:px-8">
+      <div className="pt-16 sm:pt-20 pb-8 px-4 sm:px-8">
         <div className="max-w-[1100px] mx-auto">
           {/* 返回 */}
           <Link
@@ -130,7 +130,7 @@ export default function CategoryPage() {
               <Link
                 key={a.id}
                 to={`/article/${a.id}`}
-                className="group bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-2xl p-6 hover:border-[#DA583F] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(218,88,63,0.06)] transition-all duration-300 flex flex-col"
+                className="group bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-2xl p-4 sm:p-6 hover:border-[#DA583F] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(218,88,63,0.06)] transition-all duration-300 flex flex-col"
               >
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-xl" title={EMOJI_MEANINGS[a.emoji] || ''}>{a.emoji}</span>

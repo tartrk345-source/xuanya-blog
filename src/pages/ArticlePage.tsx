@@ -175,7 +175,7 @@ export default function ArticlePage() {
       <ReadingProgress />
 
       <Navigation />
-      <div className="max-w-3xl mx-auto px-6 py-16 animate-[fadeIn_0.4s_ease-out]">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16 animate-[fadeIn_0.4s_ease-out]">
         {/* 顶部导航 */}
         <div className="mb-12">
           <button onClick={goBack} className="inline-flex items-center gap-1.5 text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">

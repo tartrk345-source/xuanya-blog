@@ -401,13 +401,82 @@ html.dark .prose-container a {
   input, textarea, select {
     font-size: 16px !important;
   }
-  /* 触控优化 */
+  /* 触控优化：去掉点击高亮 + 确保触控区域足够大 */
   a, button, [role="button"] {
     -webkit-tap-highlight-color: transparent;
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
-  /* 减小正文间距 */
+  /* 链接和纯文字按钮不强制 min-height */
+  a.inline-link, button.inline-btn {
+    min-height: auto;
+    min-width: auto;
+  }
+
+  /* --- 正文排版优化 --- */
   .prose-container {
+    padding: 0 16px;
+  }
+  .prose-container h1 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .prose-container h2 {
+    font-size: 1.25rem;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .prose-container h3 {
+    font-size: 1.1rem;
+  }
+  .prose-container p,
+  .prose-container li {
+    font-size: 16px;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .prose-container blockquote {
+    margin-bottom: 1rem;
+    padding-left: 0.75rem;
+  }
+  .prose-container pre {
+    padding: 0.75rem;
+    font-size: 13px;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+  }
+  .prose-container pre code {
+    font-size: 13px;
+  }
+  .prose-container code {
+    font-size: 13px;
+    padding: 1px 4px;
+  }
+  .prose-container th,
+  .prose-container td {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+  .prose-container img {
+    margin: 1rem 0;
+  }
+
+  /* --- iframe 适配 --- */
+  iframe {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* --- 超小屏 (< 375px) 额外优化 --- */
+@media (max-width: 374px) {
+  .prose-container {
+    padding: 0 12px;
+  }
+  .prose-container p,
+  .prose-container li {
     font-size: 15px;
-    line-height: 1.7;
   }
 }

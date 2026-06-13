@@ -312,7 +312,7 @@ export default function LandingPage() {
 
       {/* ===== Hero ===== */}
       <section
-        className="min-h-[70vh] flex items-center justify-center relative overflow-hidden px-8 py-24"
+        className="min-h-[70vh] flex items-center justify-center relative overflow-hidden px-4 sm:px-8 py-16 sm:py-24"
         id="home"
       >
         {/* 背景装饰 */}
@@ -342,17 +342,17 @@ export default function LandingPage() {
             知无不言，正直之极。<br />
             以理性观照心灵，以热忱探索未知。
           </p>
-          <div className="flex gap-4 justify-center flex-wrap">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center flex-wrap">
             <Link
               to="/blog"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-[0.95rem] font-bold tracking-wider bg-[#DA583F] !text-white shadow-[0_4px_20px_rgba(218,88,63,0.25)] hover:bg-[#C43F30] hover:-translate-y-0.5 hover:shadow-[0_6px_28px_rgba(218,88,63,0.35)] transition-all"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-[0.95rem] font-bold tracking-wider bg-[#DA583F] !text-white shadow-[0_4px_20px_rgba(218,88,63,0.25)] hover:bg-[#C43F30] hover:-translate-y-0.5 hover:shadow-[0_6px_28px_rgba(218,88,63,0.35)] transition-all w-full sm:w-auto"
               style={{ color: '#ffffff' }}
             >
               浏览文章
             </Link>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-[0.95rem] font-semibold tracking-wider bg-transparent text-[#313131] dark:text-[#E8E4E1] border-[1.5px] border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] hover:text-[#DA583F] hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-[0.95rem] font-semibold tracking-wider bg-transparent text-[#313131] dark:text-[#E8E4E1] border-[1.5px] border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] hover:text-[#DA583F] hover:-translate-y-0.5 transition-all w-full sm:w-auto"
             >
               取得联系
             </a>
@@ -361,7 +361,7 @@ export default function LandingPage() {
       </section>
 
       {/* ===== About ===== */}
-      <section className="relative py-32 px-4 sm:px-8 overflow-hidden" id="about">
+      <section className="relative py-20 sm:py-32 px-4 sm:px-8 overflow-hidden" id="about">
         {/* 装饰 */}
         <div
           className="absolute -bottom-[5%] -right-[12%] w-[380px] h-[280px] rounded-xl pointer-events-none opacity-30 dark:opacity-18 z-0 max-sm:w-[200px] max-sm:h-[160px] max-sm:-right-[15%]"
@@ -378,7 +378,7 @@ export default function LandingPage() {
             字博謇，取《楚辞》「汝何博謇而好修兮，纷独有此姱节」——知无不言，此心光明。
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
             {/* 左侧：头像 + 简介 */}
             <RevealOnScroll>
               <div className="flex flex-col items-center md:items-start">
@@ -429,7 +429,7 @@ export default function LandingPage() {
       <ArticleExplorer />
 
       {/* ===== 行迹 Timeline ===== */}
-      <section className="py-32 px-4 sm:px-8" id="work">
+      <section className="py-20 sm:py-32 px-4 sm:px-8" id="work">
         <div className="max-w-[1100px] mx-auto">
           <div className="text-xs font-bold tracking-[0.12em] text-[#DA583F] uppercase mb-2">Journey</div>
           <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E8E4E1] mb-4 tracking-wider leading-tight font-['PingFang_SC','Noto_Serif_SC',serif]">学医行迹</h2>
@@ -461,7 +461,7 @@ export default function LandingPage() {
           <RevealOnScroll>
             <Link
               to="/travels"
-              className="mt-12 group flex items-center gap-5 bg-[#FEF3F0] dark:bg-[#1A1516] border border-[#ECD8D9] dark:border-[#2A2020] rounded-2xl p-6 sm:p-8 hover:border-[#DA583F] hover:shadow-[0_8px_30px_rgba(218,88,63,0.08)] transition-all duration-300"
+              className="mt-12 group flex items-center gap-3 sm:gap-5 bg-[#FEF3F0] dark:bg-[#1A1516] border border-[#ECD8D9] dark:border-[#2A2020] rounded-2xl p-4 sm:p-8 hover:border-[#DA583F] hover:shadow-[0_8px_30px_rgba(218,88,63,0.08)] transition-all duration-300"
             >
               <div className="text-4xl flex-shrink-0">🏜️</div>
               <div className="flex-1 min-w-0">
@@ -481,16 +481,16 @@ export default function LandingPage() {
       </section>
 
       {/* ===== Contact ===== */}
-      <section className="py-32 px-4 sm:px-8 bg-[#FEF3F0] dark:bg-[#1A1516]" id="contact">
+      <section className="py-20 sm:py-32 px-4 sm:px-8 bg-[#FEF3F0] dark:bg-[#1A1516]" id="contact">
         <div className="max-w-[1100px] mx-auto">
           <div className="text-xs font-bold tracking-[0.12em] text-[#DA583F] uppercase mb-2">Contact</div>
           <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E8E4E1] mb-4 tracking-wider leading-tight text-center font-['PingFang_SC','Noto_Serif_SC',serif]">取得联系</h2>
           <RevealOnScroll>
-            <div className="bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-3xl p-16 text-center max-w-[600px] mx-auto hover:border-[#DA583F] hover:shadow-[0_16px_50px_rgba(218,88,63,0.06)] transition-all">
+            <div className="bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-3xl p-8 sm:p-16 text-center max-w-[600px] mx-auto hover:border-[#DA583F] hover:shadow-[0_16px_50px_rgba(218,88,63,0.06)] transition-all">
               <p className="text-[1.05rem] text-[#4F4F4F] dark:text-[#B8B4B0] mb-8">
                 来玄牙的世界坐坐，聊聊你最近在想的事。
               </p>
-              <div className="flex gap-8 justify-center flex-wrap">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center">
                 <a
                   href="https://www.x2ya.com"
                   className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#FEFAF9] dark:bg-[#0F0D0E] text-[#313131] dark:text-[#E8E4E1] font-medium text-[0.92rem] hover:bg-[#FEF3F0] hover:text-[#DA583F] transition-all"
@@ -510,7 +510,7 @@ export default function LandingPage() {
       </section>
 
       {/* ===== Footer ===== */}
-      <footer className="text-center py-16 px-8 text-[0.85rem] text-[#767693] dark:text-[#8A8688] border-t border-[#ECD8D9] dark:border-[#2A2020]">
+      <footer className="text-center py-12 sm:py-16 px-4 sm:px-8 text-[0.85rem] text-[#767693] dark:text-[#8A8688] border-t border-[#ECD8D9] dark:border-[#2A2020]">
         <p>
           <span className="text-[#DA583F] font-semibold">玄牙</span> — 玄牙个人世界
         </p>
