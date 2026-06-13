@@ -269,35 +269,37 @@ export function exportAllArticles(): Article[] {
   return [...cache];
 }
 
-/** 导入文章（覆盖模式） */
+/** 导入文章（安全 upsert 模式，不删现有数据） */
 export async function importArticles(articles: Article[]): Promise<void> {
-  // 1. 清空 Supabase
-  const { error: delError } = await supabase.from('articles').delete().neq('id', '');
-  if (delError) console.error('[Supabase] 清空文章失败', delError);
+  for (const a of articles) {
+    const row = {
+      id: a.id,
+      title: a.title,
+      content: a.content,
+      emoji: a.emoji ?? '📝',
+      status: a.status,
+      category: a.category ?? null,
+      created_at: a.createdAt,
+      updated_at: a.updatedAt,
+      tags: a.tags ?? [],
+      cover_image: a.coverImage || null,
+      is_pinned: a.isPinned ?? false,
+      is_featured: a.isFeatured ?? false,
+      series: a.series || null,
+    };
 
-  // 2. 插入新文章
-  const rows = articles.map(a => ({
-    id: a.id,
-    title: a.title,
-    content: a.content,
-    emoji: a.emoji ?? '📝',
-    status: a.status,
-    category: a.category ?? null,
-    created_at: a.createdAt,
-    updated_at: a.updatedAt,
-    tags: a.tags ?? [],
-    cover_image: a.coverImage || null,
-    is_pinned: a.isPinned ?? false,
-    is_featured: a.isFeatured ?? false,
-    series: a.series || null,
-  }));
-  const { error: insError } = await supabase.from('articles').insert(rows);
-  if (insError) {
-    console.error('[Supabase] 导入文章失败', insError);
-    throw new Error('导入文章失败');
+    // 先尝试插入，如果 ID 冲突则更新
+    const { error } = await supabase
+      .from('articles')
+      .upsert(row, { onConflict: 'id' });
+
+    if (error) {
+      console.error(`[Supabase] 导入文章 ${a.id} 失败`, error);
+    }
   }
 
-  // 3. 刷新缓存
+  // 刷新缓存
   cacheTime = 0;
+  listCacheTime = 0;
   await fetchAll();
 }

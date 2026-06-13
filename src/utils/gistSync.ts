@@ -8,7 +8,7 @@
  * 将文章数据同步到私有 Gist，实现跨设备恢复。
  */
 
-import { getAllArticles, importArticles } from '../storage/articleStore';
+import { getPublishedArticlesFull, importArticles } from '../storage/articleStore';
 
 const STORAGE_KEY_PAT = 'xuanya-blog-github-pat';
 const STORAGE_KEY_GIST_ID = 'xuanya-blog-gist-id';
@@ -69,7 +69,8 @@ async function gistFetch(path: string, options?: RequestInit): Promise<Response>
 }
 
 export async function syncToGist(): Promise<string> {
-  const articles = await getAllArticles();
+  // ⚠️ 必须用 getPublishedArticlesFull()（含 content），不能用 getAllArticles()（content 为空）
+  const articles = await getPublishedArticlesFull();
   const now = new Date().toISOString().split('T')[0];
   const gistId = getGistId();
   const body: GistData = {

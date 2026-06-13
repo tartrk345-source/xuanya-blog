@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
-import { restoreFromGist, getGistId } from './utils/gistSync';
+import { getGistId } from './utils/gistSync';
 import { ArticleImageLightbox } from './components/CodeBlock';
 import ErrorBoundary from './components/ErrorBoundary';
 
@@ -16,25 +16,18 @@ const WritePage = lazy(() => import('./pages/WritePage'));
 import RssFeedPage from './pages/RssPage';
 
 /**
- * 应用启动时自动从 Gist 恢复数据（仅当有 Gist ID 时）
- * 恢复完成后才渲染路由，避免闪烁
+ * 应用启动时检查 Gist 配置状态（不再自动恢复，避免覆盖数据库）
  */
 function SyncInitializer({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const run = async () => {
-      if (getGistId()) {
-        try {
-          await restoreFromGist();
-          console.log('[AutoSync] 已从云端恢复数据');
-        } catch {
-          // 静默失败
-        }
-      }
-      setReady(true);
-    };
-    run();
+    // 仅检查 Gist 是否已配置，不执行恢复
+    // 恢复操作由用户在设置中手动触发
+    if (getGistId()) {
+      console.log('[AutoSync] 检测到云端备份配置，如需恢复请在设置中手动操作');
+    }
+    setReady(true);
   }, []);
 
   if (!ready) {
