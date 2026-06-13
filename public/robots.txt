@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.x2ya.com/sitemap.xml
+<!-- deploy: Sat Jun 13 23:06:21     2026 -->
+Disallow: /write
