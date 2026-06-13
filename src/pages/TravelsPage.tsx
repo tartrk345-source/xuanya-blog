@@ -103,23 +103,41 @@ function TravelCard({ travel, onClick }: { travel: Travel; onClick: () => void }
 
 function TravelDetail({ travel, onBack }: { travel: Travel; onBack: () => void }) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [iframeHeight, setIframeHeight] = useState(600);
+  const [iframeHeight, setIframeHeight] = useState(3000); // 高初始值防止闪烁
 
-  // 自适应 iframe 高度
+  // 自适应 iframe 高度：加载后测量真实内容高度
   useEffect(() => {
     const iframe = iframeRef.current;
     if (!iframe) return;
 
-    const handleLoad = () => {
+    const measureHeight = () => {
       try {
-        const body = iframe.contentDocument?.body;
-        if (body) {
-          setIframeHeight(body.scrollHeight + 60);
-        }
+        const doc = iframe.contentDocument;
+        if (!doc) return;
+        const body = doc.body;
+        const de = doc.documentElement;
+        // 取所有高度测量中的最大值，确保不截断内容
+        const h = Math.max(
+          body.scrollHeight,
+          body.offsetHeight,
+          de.scrollHeight,
+          de.offsetHeight,
+          body.getBoundingClientRect().height,
+        );
+        if (h > 0) setIframeHeight(h + 20);
       } catch {
-        // 跨域时 fallback
-        setIframeHeight(Math.max(window.innerHeight, 1200));
+        // 跨域 fallback：保持较大初始值
       }
+    };
+
+    const handleLoad = () => {
+      // 延迟一帧确保布局完成
+      requestAnimationFrame(() => {
+        measureHeight();
+        // 再次延迟测量（处理图片等异步资源）
+        setTimeout(measureHeight, 500);
+        setTimeout(measureHeight, 1500);
+      });
     };
 
     iframe.addEventListener('load', handleLoad);
@@ -156,21 +174,20 @@ function TravelDetail({ travel, onBack }: { travel: Travel; onBack: () => void }
           <p className="text-sm text-[#6E6A7C] dark:text-[#A09CA8]">{travel.subtitle}</p>
         </div>
 
-        {/* iframe 嵌入 */}
-        <div className="rounded-2xl overflow-hidden border border-[#ECD8D9] dark:border-[#2A2020] shadow-[0_4px_24px_rgba(0,0,0,0.06)]">
-          <iframe
-            ref={iframeRef}
-            src={travel.file}
-            title={travel.title}
-            style={{
-              width: '100%',
-              height: `${iframeHeight}px`,
-              border: 'none',
-              display: 'block',
-            }}
-            loading="lazy"
-          />
-        </div>
+        {/* 无缝嵌入：无边框、无阴影、高度自适应、禁止内部滚动 */}
+        <iframe
+          ref={iframeRef}
+          src={travel.file}
+          title={travel.title}
+          scrolling="no"
+          style={{
+            width: '100%',
+            height: `${iframeHeight}px`,
+            border: 'none',
+            display: 'block',
+            background: 'transparent',
+          }}
+        />
       </div>
     </div>
   );
