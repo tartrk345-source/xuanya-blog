@@ -7,7 +7,8 @@ import ErrorBoundary from './components/ErrorBoundary';
 
 const LandingPage = lazy(() => import('./pages/LandingPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
-const ArticlePage = lazy(() => import('./pages/ArticlePage'));
+// ArticlePage 不用 lazy——手机上动态 chunk 下载经常失败导致白屏
+import ArticlePage from './pages/ArticlePage';
 const WritePage = lazy(() => import('./pages/WritePage'));
 
 // RSS 不需要 lazy（体积小）
