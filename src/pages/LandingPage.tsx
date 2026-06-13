@@ -273,6 +273,27 @@ export default function LandingPage() {
               </RevealOnScroll>
             ))}
           </div>
+
+          {/* 旅行记录入口卡片 */}
+          <RevealOnScroll>
+            <Link
+              to="/travels"
+              className="mt-12 group flex items-center gap-5 bg-[#FEF3F0] dark:bg-[#1A1516] border border-[#ECD8D9] dark:border-[#2A2020] rounded-2xl p-6 sm:p-8 hover:border-[#DA583F] hover:shadow-[0_8px_30px_rgba(218,88,63,0.08)] transition-all duration-300"
+            >
+              <div className="text-4xl flex-shrink-0">🏜️</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[1.1rem] font-bold text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors tracking-wide">
+                  旅行记录
+                </div>
+                <div className="text-sm text-[#767693] dark:text-[#8A8688] mt-1 truncate">
+                  西北+青海环线 14 日 · 银川·河西走廊·北疆·独库公路·青海湖
+                </div>
+              </div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 text-[#B8B4B0] group-hover:text-[#DA583F] group-hover:translate-x-1 transition-all">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </RevealOnScroll>
         </div>
       </section>
 

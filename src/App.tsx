@@ -7,6 +7,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 
 const LandingPage = lazy(() => import('./pages/LandingPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
+const TravelsPage = lazy(() => import('./pages/TravelsPage'));
 // ArticlePage 不用 lazy——手机上动态 chunk 下载经常失败导致白屏
 import ArticlePage from './pages/ArticlePage';
 const WritePage = lazy(() => import('./pages/WritePage'));
@@ -82,6 +83,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/travels" element={<TravelsPage />} />
             <Route path="/article/:id" element={<ArticlePage />} />
             <Route path="/write" element={<WritePage />} />
             <Route path="/write/:id" element={<WritePage />} />
