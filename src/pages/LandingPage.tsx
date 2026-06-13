@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import type { Article } from '../types/article';
-import { getPublishedArticles } from '../storage/articleStore';
+import { getPublishedArticles, getAllTags } from '../storage/articleStore';
+import { getCategories, type CategoryItem } from '../storage/categoryStore';
 import { formatDate, getExcerpt, EMOJI_MEANINGS } from '../utils/helpers';
 import Navigation from '../components/Navigation';
 import AdminLogin from '../components/AdminLogin';
@@ -34,63 +35,176 @@ function RevealOnScroll({ children, className = '' }: { children: React.ReactNod
 }
 
 /* ==============================
-   子组件：最新文章预览卡片（Hero 区底部）
+   子组件：文章探索区（搜索 + 标签云 + 分类文章）
    ============================== */
-function LatestArticles() {
+function ArticleExplorer() {
   const [articles, setArticles] = useState<Article[]>([]);
+  const [categories, setCategories] = useState<CategoryItem[]>([]);
+  const [tags, setTags] = useState<{ tag: string; count: number }[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeTag, setActiveTag] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let mounted = true;
-    getPublishedArticles().then(list => {
+    Promise.all([
+      getPublishedArticles(),
+      getCategories(),
+      getAllTags(),
+    ]).then(([list, cats, tgs]) => {
       if (mounted) {
-        setArticles(list.slice(0, 3));
+        setArticles(list);
+        setCategories(cats);
+        setTags(tgs);
         setLoading(false);
       }
-    }).catch(() => {
-      if (mounted) setLoading(false);
     });
     return () => { mounted = false; };
   }, []);
 
+  // 按分类分组
+  const categoryArticles = new Map<string, Article[]>();
+  for (const a of articles) {
+    const cat = a.category || 'misc';
+    if (!categoryArticles.has(cat)) categoryArticles.set(cat, []);
+    categoryArticles.get(cat)!.push(a);
+  }
+
+  // 搜索 + 标签过滤
+  const searchLower = searchQuery.toLowerCase();
+  const filteredBySearch = searchLower
+    ? articles.filter(a => a.title.toLowerCase().includes(searchLower) || (a.content || '').toLowerCase().includes(searchLower))
+    : articles;
+
+  const filtered = activeTag
+    ? filteredBySearch.filter(a => (a.tags ?? []).includes(activeTag))
+    : filteredBySearch;
+
   if (loading) return null;
-  if (articles.length === 0) return null;
 
   return (
-    <div className="mt-14 w-full">
-      <div className="flex items-center gap-3 mb-5">
-        <span className="text-xs font-bold tracking-[0.12em] text-[#DA583F] uppercase">Latest</span>
-        <span className="flex-1 h-px bg-[#ECD8D9] dark:bg-[#2A2020]" />
-        <Link
-          to="/blog"
-          className="text-xs text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors"
-        >
-          查看全部 →
-        </Link>
+    <section id="interests" className="scroll-mt-20">
+      {/* 搜索栏 */}
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-8 pt-28 pb-10">
+        <div className="text-xs font-bold tracking-[0.12em] text-[#DA583F] uppercase mb-2">Explore</div>
+        <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E8E4E1] mb-4 tracking-wider leading-tight font-['PingFang_SC','Noto_Serif_SC',serif]">
+          志趣探索
+        </h2>
+
+        {/* 搜索输入 */}
+        <div className="relative max-w-[480px] mb-6">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+            placeholder="搜索文章…"
+            className="w-full h-11 pl-10 pr-4 rounded-xl border border-[#ECD8D9] dark:border-[#2A2020] bg-white dark:bg-[#1C1818] text-sm text-[#313131] dark:text-[#E8E4E1] placeholder-[#B8B4B0] outline-none focus:border-[#DA583F] transition-colors"
+          />
+          <div className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#B8B4B0] pointer-events-none">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+        </div>
+
+        {/* 标签云 */}
+        {tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-2">
+            {activeTag && (
+              <button
+                onClick={() => setActiveTag(null)}
+                className="text-xs px-3 py-1.5 rounded-full bg-[#DA583F] text-white font-medium hover:bg-[#C43F30] transition-colors"
+              >
+                全部 ✕
+              </button>
+            )}
+            {tags.slice(0, 12).map(t => (
+              <button
+                key={t.tag}
+                onClick={() => setActiveTag(activeTag === t.tag ? null : t.tag)}
+                className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
+                  activeTag === t.tag
+                    ? 'border-[#DA583F] bg-[#FEF3F0] dark:bg-[#1A1516] text-[#DA583F] font-semibold'
+                    : 'border-[#ECD8D9] dark:border-[#2A2020] text-[#767693] dark:text-[#8A8688] hover:border-[#DA583F] hover:text-[#DA583F]'
+                }`}
+              >
+                #{t.tag} <span className="opacity-40 text-[10px]">{t.count}</span>
+              </button>
+            ))}
+          </div>
+        )}
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {articles.map(a => (
-          <Link
-            key={a.id}
-            to={`/article/${a.id}`}
-            className="group bg-white/70 dark:bg-[#1C1818]/70 backdrop-blur-sm rounded-xl p-5 border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(218,88,63,0.08)] transition-all duration-300"
-          >
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-lg" title={EMOJI_MEANINGS[a.emoji] || ''}>{a.emoji}</span>
-              <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-1">
-                {a.title}
-              </span>
+
+      {/* 有搜索/标签过滤时：全局结果 */}
+      {(searchQuery || activeTag) ? (
+        <div className="max-w-[1100px] mx-auto px-4 sm:px-8 pb-20">
+          {filtered.length === 0 ? (
+            <div className="text-center py-16 text-[#B8B4B0] dark:text-[#8A8688]">没有找到匹配的文章</div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {filtered.map(a => (
+                <ArticleCard key={a.id} article={a} />
+              ))}
             </div>
-            <p className="text-xs text-[#767693] dark:text-[#8A8688] line-clamp-2 mb-2 ml-7">
-              {getExcerpt(a.content, 60)}
-            </p>
-            <p className="text-[11px] text-[#B8B4B0] ml-7">
-              {formatDate(a.createdAt)}
-            </p>
-          </Link>
-        ))}
+          )}
+        </div>
+      ) : (
+        /* 无过滤时：按分类展示 */
+        <>
+          {categories.map(cat => {
+            const items = (categoryArticles.get(cat.key) || []);
+            if (items.length === 0) return null;
+            return (
+              <div key={cat.key} className="py-16 px-4 sm:px-8 border-t border-[#ECD8D9] dark:border-[#2A2020] first:border-t-0">
+                <div className="max-w-[1100px] mx-auto">
+                  <CategorySectionHeader cat={cat} count={items.length} />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
+                    {items.slice(0, 3).map(a => (
+                      <ArticleCard key={a.id} article={a} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </>
+      )}
+    </section>
+  );
+}
+
+function CategorySectionHeader({ cat, count }: { cat: CategoryItem; count: number }) {
+  return (
+    <div className="flex items-center gap-3 mb-2">
+      <span className="text-2xl">{cat.icon}</span>
+      <div>
+        <h3 className="text-[1.2rem] font-bold text-[#313131] dark:text-[#E8E4E1]">{cat.label}</h3>
+        <p className="text-xs text-[#B8B4B0] dark:text-[#8A8688]">{count} 篇文章 · {cat.description}</p>
       </div>
     </div>
+  );
+}
+
+function ArticleCard({ article }: { article: Article }) {
+  return (
+    <Link
+      to={`/article/${article.id}`}
+      className="group bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-2xl p-5 hover:border-[#DA583F] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(218,88,63,0.06)] transition-all duration-300 flex flex-col"
+    >
+      <div className="flex items-center gap-2 mb-2">
+        <span className="text-lg" title={EMOJI_MEANINGS[article.emoji] || ''}>{article.emoji}</span>
+        <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-1">
+          {article.title}
+        </span>
+      </div>
+      <p className="text-xs text-[#767693] dark:text-[#8A8688] line-clamp-2 mb-3 ml-7 flex-1">
+        {getExcerpt(article.content, 80)}
+      </p>
+      <div className="flex items-center gap-3 ml-7">
+        <span className="text-[11px] text-[#B8B4B0]">{formatDate(article.createdAt)}</span>
+        {article.tags && article.tags.length > 0 && (
+          <span className="text-[10px] text-[#B8B4B0]/70">#{(article.tags as string[])[0]}</span>
+        )}
+      </div>
+    </Link>
   );
 }
 
@@ -174,9 +288,6 @@ export default function LandingPage() {
               取得联系
             </a>
           </div>
-
-          {/* 最新文章预览 */}
-          <LatestArticles />
         </div>
       </section>
 
@@ -245,46 +356,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ===== 兴趣领域 ===== */}
-      <section className="py-32 px-4 sm:px-8 bg-[#FEFAF9] dark:bg-[#0F0D0E]" id="interests">
-        <div className="max-w-[1100px] mx-auto">
-          <div className="text-xs font-bold tracking-[0.12em] text-[#DA583F] uppercase mb-2">Interests</div>
-          <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E8E4E1] mb-4 tracking-wider leading-tight font-['PingFang_SC','Noto_Serif_SC',serif]">兴趣领域</h2>
-          <p className="text-[1.05rem] text-[#6E6A7C] dark:text-[#A09CA8] max-w-[560px] mb-12">
-            精神、心理、传统、科技——在多条河流的交汇处，找到自己的航道。
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[
-              { icon: '🧠', title: '精神医学', desc: '临床一线，以科学照护心灵', cat: 'psychiatry' },
-              { icon: '🌿', title: '积极心理治疗', desc: '东方智慧与现代心理学的融合', cat: 'positive-psychology' },
-              { icon: '☯️', title: '国学玄学', desc: '古老典籍中的心性智慧', cat: 'sinology' },
-              { icon: '🌸', title: '芳香疗法', desc: '借草木之力，调身心之气', cat: 'aromatherapy' },
-              { icon: '⚡', title: '脑机接口', desc: '技术前沿与神经科学的交汇', cat: 'bci' },
-              { icon: '✨', title: '书房万象', desc: '其余热爱，散落生活的缝隙里', cat: 'misc' },
-            ].map(item => (
-              <RevealOnScroll key={item.title}>
-                <Link
-                  to={`/blog?category=${item.cat}`}
-                  className="group block bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-2xl p-6 hover:border-[#DA583F] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(218,88,63,0.06)] transition-all duration-300"
-                >
-                  <div className="text-3xl mb-4">{item.icon}</div>
-                  <h3 className="text-[1.05rem] font-bold text-[#313131] dark:text-[#E8E4E1] mb-1.5 group-hover:text-[#DA583F] transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-[#767693] dark:text-[#8A8688] leading-relaxed">
-                    {item.desc}
-                  </p>
-                  <div className="mt-4 flex items-center gap-2 text-xs text-[#B8B4B0] group-hover:text-[#DA583F] transition-colors">
-                    <span>浏览文章</span>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                  </div>
-                </Link>
-              </RevealOnScroll>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ===== 志趣探索（文章总览）===== */}
+      <ArticleExplorer />
 
       {/* ===== 行迹 Timeline ===== */}
       <section className="py-32 px-4 sm:px-8" id="work">

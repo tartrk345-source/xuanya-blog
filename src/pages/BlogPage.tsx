@@ -187,6 +187,19 @@ export default function BlogPage() {
       </Helmet>
       <Navigation />
 
+      {/* 导航提示：引导回首页志趣区 */}
+      <div className="pt-20 px-4 sm:px-8">
+        <div className="max-w-[1100px] mx-auto">
+          <Link
+            to="/#interests"
+            className="inline-flex items-center gap-2 text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-full px-4 py-2"
+          >
+            ← 前往首页志趣区浏览全部文章
+          </Link>
+          <span className="ml-4 text-xs text-[#B8B4B0] tracking-wider">此页面用于管理员操作</span>
+        </div>
+      </div>
+
       {/* 页面标题区 */}
       <div className="pt-16 pb-8 px-4 sm:px-8">
         <div className="max-w-[1100px] mx-auto">

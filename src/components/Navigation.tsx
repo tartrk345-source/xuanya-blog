@@ -83,7 +83,7 @@ export default function Navigation() {
 
   const navLinks = [
     { id: 'about', label: '认识', type: 'anchor' as const },
-    { id: '/blog', label: '志趣', type: 'route' as const },
+    { id: 'interests', label: '志趣', type: 'anchor' as const },
     { id: 'work', label: '行迹', type: 'dropdown' as const,
       children: [
         { id: 'work', label: '学医行迹', type: 'anchor' as const },
@@ -118,14 +118,7 @@ export default function Navigation() {
           <ul className="hidden sm:flex items-center gap-8 list-none">
             {navLinks.map(link => (
               <li key={link.id}>
-                {link.type === 'route' ? (
-                  <Link
-                    to={link.id}
-                    className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#B8B4B0] hover:text-[#DA583F] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] after:transition-[width] after:duration-300 hover:after:w-full"
-                  >
-                    {link.label}
-                  </Link>
-                ) : link.type === 'dropdown' ? (
+                {link.type === 'dropdown' ? (
                   <div
                     ref={dropdownRef}
                     className="relative"
@@ -292,15 +285,6 @@ export default function Navigation() {
                 ))}
               </div>
             </div>
-          ) : link.type === 'route' ? (
-            <Link
-              key={link.id}
-              to={link.id}
-              onClick={() => { setMobileOpen(false); document.body.style.overflow = ''; }}
-              className="text-[1.3rem] font-semibold text-[#313131] dark:text-[#E8E4E1] tracking-wider hover:text-[#DA583F] transition-colors"
-            >
-              {link.label}
-            </Link>
           ) : (
             <a
               key={link.id}
