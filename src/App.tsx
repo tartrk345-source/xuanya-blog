@@ -3,10 +3,11 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { restoreFromGist, getGistId } from './utils/gistSync';
 import { ArticleImageLightbox } from './components/CodeBlock';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const LandingPage = lazy(() => import('./pages/LandingPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
-import ArticlePage from './pages/ArticlePage';
+const ArticlePage = lazy(() => import('./pages/ArticlePage'));
 const WritePage = lazy(() => import('./pages/WritePage'));
 
 // RSS 不需要 lazy（体积小）
@@ -75,6 +76,7 @@ export default function App() {
         <BrowserRouter>
         <ScrollToTop />
         <ArticleImageLightbox />
+        <ErrorBoundary>
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/" element={<LandingPage />} />
@@ -85,6 +87,7 @@ export default function App() {
             <Route path="/rss.xml" element={<RssFeedPage />} />
           </Routes>
         </Suspense>
+        </ErrorBoundary>
       </BrowserRouter>
       </SyncInitializer>
     </HelmetProvider>
