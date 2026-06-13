@@ -295,7 +295,7 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E] text-[#313131] dark:text-[#E8E4E1] font-['PingFang_SC','Microsoft_YaHei','Noto_Sans_SC',sans-serif] transition-colors duration-300">
+    <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E] text-[#313131] dark:text-[#E8E4E1] font-['PingFang_SC','Microsoft_YaHei','Noto_Sans_SC',sans-serif] transition-colors duration-300 overflow-x-hidden">
       <Helmet>
         <title>玄牙个人世界 — 知无不言，正直之极</title>
         <meta name="description" content="玄牙个人世界——精神科医师的心灵志趣。探索精神医学、积极心理、国学玄学与芳香疗法的交汇处。" />
@@ -312,7 +312,7 @@ export default function LandingPage() {
 
       {/* ===== Hero ===== */}
       <section
-        className="min-h-[70vh] flex items-center justify-center relative overflow-hidden px-4 sm:px-8 py-16 sm:py-24"
+        className="min-h-[100svh] md:min-h-[70vh] flex items-center justify-center relative overflow-hidden px-4 sm:px-8 py-16 sm:py-24"
         id="home"
       >
         {/* 背景装饰 */}
@@ -357,6 +357,14 @@ export default function LandingPage() {
               取得联系
             </a>
           </div>
+        </div>
+
+        {/* 下滑指示器（仅手机端可见） */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 sm:hidden animate-bounce opacity-40">
+          <span className="text-[10px] tracking-[0.15em] text-[#767693] dark:text-[#8A8688]">上滑探索</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#767693] dark:text-[#8A8688]">
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
         </div>
       </section>
 
