@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { uploadImage } from '../storage/imageUpload';
 
 interface MarkdownEditorProps {
   content: string;
@@ -28,6 +29,8 @@ const TOOLBAR_ACTIONS = [
 export default function MarkdownEditor({ content, onChange }: MarkdownEditorProps) {
   const [activeTab, setActiveTab] = useState<'edit' | 'preview' | 'split'>('split');
   const [showCheatsheet, setShowCheatsheet] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleToolbarAction = (actionFn: (sel: string) => string) => {
     const textarea = document.querySelector('textarea[data-markdown-editor]') as HTMLTextAreaElement;
@@ -75,6 +78,33 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
     });
   };
 
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploading(true);
+    try {
+      const url = await uploadImage(file);
+      const textarea = document.querySelector('textarea[data-markdown-editor]') as HTMLTextAreaElement;
+      const insert = `![${file.name}](${url})\n`;
+      if (textarea) {
+        const pos = textarea.selectionStart;
+        const newContent = content.substring(0, pos) + insert + content.substring(pos);
+        onChange(newContent);
+        requestAnimationFrame(() => {
+          textarea.focus();
+          textarea.setSelectionRange(pos + insert.length, pos + insert.length);
+        });
+      } else {
+        onChange(content + insert);
+      }
+    } catch (err) {
+      alert(err instanceof Error ? err.message : '上传失败');
+    } finally {
+      setUploading(false);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+    }
+  };
+
   const previewOnly = activeTab === 'preview';
   const editOnly = activeTab === 'edit';
 
@@ -110,6 +140,23 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
             {btn.icon}
           </button>
         ))}
+
+        {/* 图片上传按钮 */}
+        <button
+          onClick={() => fileInputRef.current?.click()}
+          disabled={uploading}
+          title={uploading ? '上传中…' : '上传图片'}
+          className="w-8 h-8 flex items-center justify-center rounded-lg text-sm text-[#4F4F4F] dark:text-[#B8B4B0] hover:bg-[#F4EAE8] dark:hover:bg-[#231D1E] hover:text-[#DA583F] transition-all disabled:opacity-50"
+        >
+          {uploading ? '⏳' : '📁'}
+        </button>
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="image/jpeg,image/png,image/gif,image/webp,image/svg+xml"
+          className="hidden"
+          onChange={handleImageUpload}
+        />
 
         <div className="w-px h-5 bg-[#ECD8D9] dark:bg-[#2A2020] mx-1" />
 

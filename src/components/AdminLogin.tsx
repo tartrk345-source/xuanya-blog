@@ -6,16 +6,22 @@ export default function AdminLogin() {
   const [showDialog, setShowDialog] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const ok = login(password);
-    if (ok) {
-      setShowDialog(false);
-      setPassword('');
-      setError(false);
-    } else {
-      setError(true);
+    setSubmitting(true);
+    try {
+      const ok = await login(password);
+      if (ok) {
+        setShowDialog(false);
+        setPassword('');
+        setError(false);
+      } else {
+        setError(true);
+      }
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -100,9 +106,10 @@ export default function AdminLogin() {
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-all"
+                  disabled={submitting}
+                  className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-all disabled:opacity-50"
                 >
-                  确认
+                  {submitting ? '验证中…' : '确认'}
                 </button>
               </div>
             </form>

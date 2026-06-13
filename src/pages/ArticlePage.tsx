@@ -16,6 +16,7 @@ import TableOfContents from '../components/TableOfContents';
 import { ArticleImageLightbox, useCodeBlockCopy } from '../components/CodeBlock';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 import { syncToGist } from '../utils/gistSync';
+import { recordPageView, getPageViews } from '../storage/pageViews';
 
 export default function ArticlePage() {
   const { id } = useParams<{ id: string }>();
@@ -30,6 +31,7 @@ export default function ArticlePage() {
   const [relatedArticles, setRelatedArticles] = useState<Article[]>([]);
   const [seriesArticles, setSeriesArticles] = useState<Article[]>([]);
   const [tocVisible, setTocVisible] = useState(false);
+  const [viewCount, setViewCount] = useState(0);
 
   // 文章容器 ref — 用于代码块复制按钮、图片灯箱
   const articleRef = useRef<HTMLDivElement>(null);
@@ -62,6 +64,9 @@ export default function ArticlePage() {
         if (a.series) {
           getArticlesBySeries(a.series).then(setSeriesArticles);
         }
+        // 记录访问 + 获取浏览量
+        recordPageView(id);
+        getPageViews(id).then(setViewCount);
       }
 
       setLoading(false);
@@ -183,6 +188,7 @@ export default function ArticlePage() {
             </time>
             <span className="text-sm text-[#B8B4B0] dark:text-[#8A8688]">
               · {readingTime} 分钟阅读
+              {viewCount > 0 && <> · {viewCount} 次阅读</>}
             </span>
             {catInfo && (
               <span className="text-xs text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1A1516] border border-[#ECD8D9] dark:border-[#2A2020] rounded-full px-2 py-0.5" title={EMOJI_MEANINGS[catInfo.icon] || ''}>
