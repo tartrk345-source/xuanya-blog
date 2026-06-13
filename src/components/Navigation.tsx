@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 
@@ -9,6 +9,19 @@ export default function Navigation() {
   const [dark, setDark] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // 点击外部关闭下拉
+  useEffect(() => {
+    if (!dropdownOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, [dropdownOpen]);
 
   // 滚动检测
   useEffect(() => {
@@ -114,17 +127,16 @@ export default function Navigation() {
                   </Link>
                 ) : link.type === 'dropdown' ? (
                   <div
+                    ref={dropdownRef}
                     className="relative"
-                    onMouseEnter={() => setDropdownOpen(true)}
-                    onMouseLeave={() => setDropdownOpen(false)}
                   >
                     <a
                       href={`/#${link.id}`}
                       onClick={(e) => {
-                        handleNavClick(e, link.id);
-                        setDropdownOpen(false);
+                        e.preventDefault();
+                        setDropdownOpen(!dropdownOpen);
                       }}
-                      className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#B8B4B0] hover:text-[#DA583F] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] after:transition-[width] after:duration-300 hover:after:w-full cursor-pointer flex items-center gap-1"
+                      className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#B8B4B0] hover:text-[#DA583F] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] after:transition-[width] after:duration-300 hover:after:w-full cursor-pointer flex items-center gap-1 select-none"
                     >
                       {link.label}
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`}>
@@ -132,7 +144,7 @@ export default function Navigation() {
                       </svg>
                     </a>
                     {dropdownOpen && link.children && (
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 py-2 px-1 bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] min-w-[130px] z-50 animate-[fadeIn_0.15s_ease-out]">
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 py-2 px-1 bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.1)] min-w-[130px] z-50 animate-[fadeIn_0.15s_ease-out]">
                         {link.children.map(child => (
                           child.type === 'route' ? (
                             <Link
