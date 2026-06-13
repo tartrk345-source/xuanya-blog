@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getArticleById, deleteArticle } from '../storage/articleStore';
-import { formatDate, getCategoryInfo, getExcerpt } from '../utils/helpers';
+import { formatDate, getCategoryInfo, getExcerpt, EMOJI_MEANINGS } from '../utils/helpers';
 import ConfirmDialog from '../components/ConfirmDialog';
 import Navigation from '../components/Navigation';
 import AdminLogin from '../components/AdminLogin';
@@ -84,7 +84,7 @@ export default function ArticlePage() {
         {/* 文章头部 */}
         <header className="mb-10 pb-10 border-b border-[#ECD8D9] dark:border-[#2A2020]">
           <div className="flex items-baseline gap-3 mb-4">
-            <span className="text-3xl select-none">{article.emoji}</span>
+            <span className="text-3xl select-none" title={EMOJI_MEANINGS[article.emoji] || ''}>{article.emoji}</span>
             <h1 className="text-3xl font-bold text-[#313131] dark:text-[#E8E4E1] leading-tight tracking-tight">
               {article.title}
             </h1>
@@ -95,7 +95,7 @@ export default function ArticlePage() {
               {article.updatedAt !== article.createdAt && ' · 已编辑'}
             </time>
             {catInfo && (
-              <span className="text-xs text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1A1516] border border-[#ECD8D9] dark:border-[#2A2020] rounded-full px-2 py-0.5">
+              <span className="text-xs text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1A1516] border border-[#ECD8D9] dark:border-[#2A2020] rounded-full px-2 py-0.5" title={EMOJI_MEANINGS[catInfo.icon] || ''}>
                 {catInfo.icon} {catInfo.label}
               </span>
             )}

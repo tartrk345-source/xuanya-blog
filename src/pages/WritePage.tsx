@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import MarkdownEditor from '../components/MarkdownEditor';
 import ConfirmDialog from '../components/ConfirmDialog';
 import { createArticle, updateArticle, deleteArticle, getArticleById } from '../storage/articleStore';
-import { EMOJI_PRESETS } from '../utils/helpers';
+import { EMOJI_PRESETS, EMOJI_MEANINGS } from '../utils/helpers';
 import { getCategories, type CategoryItem } from '../storage/categoryStore';
 import type { CategoryKey } from '../types/article';
 import { useAdminAuth } from '../hooks/useAdminAuth';
@@ -148,7 +148,7 @@ export default function WritePage() {
                     : 'bg-white dark:bg-[#1C1818] border-[#ECD8D9] dark:border-[#2A2020] text-[#4F4F4F] dark:text-[#B8B4B0] hover:border-[#DA583F] hover:text-[#DA583F]'
                 }`}
               >
-                <span className="text-base">{cat.icon}</span>
+                <span className="text-base" title={EMOJI_MEANINGS[cat.icon] || ''}>{cat.icon}</span>
                 {cat.label}
               </button>
             ))}
@@ -163,6 +163,7 @@ export default function WritePage() {
               <button
                 key={e}
                 onClick={() => setEmoji(e)}
+                title={EMOJI_MEANINGS[e] || ''}
                 className={`w-10 h-10 flex items-center justify-center text-lg rounded-lg transition-all border ${
                   e === emoji
                     ? 'bg-[#DA583F] text-white border-[#DA583F]'

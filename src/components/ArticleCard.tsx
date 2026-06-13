@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import type { Article } from '../types/article';
-import { formatDate, getExcerpt } from '../utils/helpers';
+import { formatDate, getExcerpt, EMOJI_MEANINGS } from '../utils/helpers';
 
 interface ArticleCardProps {
   article: Article;
@@ -17,7 +17,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
       >
         <div className="flex items-baseline gap-3 mb-2">
           {/* emoji 标识 */}
-          <span className="text-2xl leading-none select-none" role="img" aria-label="文章标识">
+          <span className="text-2xl leading-none select-none" role="img" aria-label={EMOJI_MEANINGS[article.emoji] || '文章标识'} title={EMOJI_MEANINGS[article.emoji] || ''}>
             {article.emoji}
           </span>
 

@@ -6,7 +6,7 @@ import { getPublishedArticles } from '../storage/articleStore';
 import { getCategories, addCategory, updateCategory, deleteCategory, onCategoriesChange, type CategoryItem } from '../storage/categoryStore';
 import { downloadBackup, importArticles, parseBackupFile, hasExportedToday, markExportedToday } from '../utils/export';
 import { syncToGist, restoreFromGist } from '../utils/gistSync';
-import { formatDate, getExcerpt } from '../utils/helpers';
+import { formatDate, getExcerpt, CATEGORY_ICON_PRESETS, EMOJI_MEANINGS } from '../utils/helpers';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 import Navigation from '../components/Navigation';
 import AdminLogin from '../components/AdminLogin';
@@ -269,7 +269,7 @@ export default function BlogPage() {
                       className="w-11 h-11 rounded-lg flex items-center justify-center text-[1.3rem] flex-shrink-0 transition-transform duration-300"
                       style={{ background: bgColors[i % bgColors.length] }}
                     >
-                      {cat.icon}
+                      <span title={EMOJI_MEANINGS[cat.icon] || ''}>{cat.icon}</span>
                     </div>
                     {/* 文字 */}
                     <div className="flex-1 min-w-0">
@@ -320,7 +320,7 @@ export default function BlogPage() {
                               className="block bg-[#FEFAF9] dark:bg-[#0F0D0E] rounded-lg p-4 border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] transition-all duration-300 hover:-translate-y-0.5 group"
                             >
                               <div className="flex items-center gap-2 mb-1">
-                                <span className="text-base">{a.emoji}</span>
+                                <span className="text-base" title={EMOJI_MEANINGS[a.emoji] || ''}>{a.emoji}</span>
                                 <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-1">
                                   {a.title}
                                 </span>
@@ -377,7 +377,7 @@ export default function BlogPage() {
                   className="block bg-white dark:bg-[#1C1818] rounded-lg p-5 border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] transition-all duration-300 hover:-translate-y-0.5 group"
                 >
                   <div className="flex items-center gap-2 mb-1.5">
-                    <span className="text-lg">{a.emoji}</span>
+                    <span className="text-lg" title={EMOJI_MEANINGS[a.emoji] || ''}>{a.emoji}</span>
                     <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-1">
                       {a.title}
                     </span>
@@ -430,10 +430,11 @@ export default function BlogPage() {
               <div>
                 <label className="block text-xs font-medium text-[#767693] dark:text-[#8A8688] mb-1">图标 (Emoji)</label>
                 <div className="grid grid-cols-8 gap-1.5 mb-2">
-                  {['🧠','🔬','🌿','🌏','🌸','✨','📌','💡','🎯','📖','🎨','⚡','🫀','🔮','🎵','🏛️'].map(e => (
+                  {CATEGORY_ICON_PRESETS.map(e => (
                     <button
                       key={e}
                       onClick={() => setCatDialog(prev => ({ ...prev, icon: e }))}
+                      title={EMOJI_MEANINGS[e] || ''}
                       className={`w-8 h-8 flex items-center justify-center text-sm rounded-md border transition-all ${
                         catDialog.icon === e
                           ? 'border-[#DA583F] bg-[#FEF3F0] dark:bg-[#1A1516]'

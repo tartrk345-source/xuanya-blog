@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import type { Article } from '../types/article';
 import { getPublishedArticles } from '../storage/articleStore';
-import { formatDate, getExcerpt } from '../utils/helpers';
+import { formatDate, getExcerpt, EMOJI_MEANINGS } from '../utils/helpers';
 import Navigation from '../components/Navigation';
 import AdminLogin from '../components/AdminLogin';
 
@@ -76,7 +76,7 @@ function LatestArticles() {
             className="group bg-white/70 dark:bg-[#1C1818]/70 backdrop-blur-sm rounded-xl p-5 border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(218,88,63,0.08)] transition-all duration-300"
           >
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-lg">{a.emoji}</span>
+              <span className="text-lg" title={EMOJI_MEANINGS[a.emoji] || ''}>{a.emoji}</span>
               <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-1">
                 {a.title}
               </span>
