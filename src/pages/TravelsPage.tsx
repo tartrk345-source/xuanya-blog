@@ -102,47 +102,46 @@ function TravelCard({ travel, onClick }: { travel: Travel; onClick: () => void }
 }
 
 function TravelDetail({ travel, onBack }: { travel: Travel; onBack: () => void }) {
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [iframeHeight, setIframeHeight] = useState(3000); // 高初始值防止闪烁
+  const [htmlContent, setHtmlContent] = useState<string | null>(null);
+  const [loadError, setLoadError] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
-  // 自适应 iframe 高度：加载后测量真实内容高度
   useEffect(() => {
-    const iframe = iframeRef.current;
-    if (!iframe) return;
+    let cancelled = false;
+    fetch(travel.file)
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.text();
+      })
+      .then(raw => {
+        if (cancelled) return;
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(raw, 'text/html');
 
-    const measureHeight = () => {
-      try {
-        const doc = iframe.contentDocument;
-        if (!doc) return;
-        const body = doc.body;
-        const de = doc.documentElement;
-        // 取所有高度测量中的最大值，确保不截断内容
-        const h = Math.max(
-          body.scrollHeight,
-          body.offsetHeight,
-          de.scrollHeight,
-          de.offsetHeight,
-          body.getBoundingClientRect().height,
-        );
-        if (h > 0) setIframeHeight(h + 20);
-      } catch {
-        // 跨域 fallback：保持较大初始值
-      }
-    };
+        // 提取所有 <style> 块，过滤全局重置规则避免破坏页面布局
+        const styles = Array.from(doc.querySelectorAll('style'))
+          .map(s => {
+            let css = s.textContent || '';
+            // 移除全局通配符重置（会被 wrapper 限制，仅保留 box-sizing）
+            css = css.replace(/\*\s*\{[^}]*\}/g, '');
+            // 移除 body/html 全局样式
+            css = css.replace(/body\s*\{[^}]*\}/g, '');
+            css = css.replace(/html\s*\{[^}]*\}/g, '');
+            // 移除 container 的 margin/padding（由 wrapper 控制）
+            css = css.replace(/\.container\s*\{[^}]*\}/g, '.container { padding: 0; }');
+            return css.trim();
+          })
+          .filter(css => css.length > 0)
+          .join('\n');
 
-    const handleLoad = () => {
-      // 延迟一帧确保布局完成
-      requestAnimationFrame(() => {
-        measureHeight();
-        // 再次延迟测量（处理图片等异步资源）
-        setTimeout(measureHeight, 500);
-        setTimeout(measureHeight, 1500);
+        const bodyHTML = doc.body.innerHTML;
+        setHtmlContent(`<style>${styles}</style>${bodyHTML}`);
+      })
+      .catch(() => {
+        if (!cancelled) setLoadError(true);
       });
-    };
-
-    iframe.addEventListener('load', handleLoad);
-    return () => iframe.removeEventListener('load', handleLoad);
-  }, []);
+    return () => { cancelled = true; };
+  }, [travel.file]);
 
   return (
     <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E]">
@@ -174,20 +173,25 @@ function TravelDetail({ travel, onBack }: { travel: Travel; onBack: () => void }
           <p className="text-sm text-[#6E6A7C] dark:text-[#A09CA8]">{travel.subtitle}</p>
         </div>
 
-        {/* 无缝嵌入：无边框、无阴影、高度自适应、禁止内部滚动 */}
-        <iframe
-          ref={iframeRef}
-          src={travel.file}
-          title={travel.title}
-          scrolling="no"
-          style={{
-            width: '100%',
-            height: `${iframeHeight}px`,
-            border: 'none',
-            display: 'block',
-            background: 'transparent',
-          }}
-        />
+        {/* 内联渲染旅行内容 */}
+        {loadError ? (
+          <div className="text-center py-16 text-[#B8B4B0] dark:text-[#8A8688]">
+            <p>无法加载旅行内容，请稍后重试。</p>
+          </div>
+        ) : htmlContent ? (
+          <div
+            ref={contentRef}
+            className="travel-content-wrapper"
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+          />
+        ) : (
+          <div className="space-y-4 animate-pulse">
+            <div className="h-6 w-48 bg-[#ECD8D9]/40 dark:bg-[#2A2020]/40 rounded" />
+            <div className="h-4 w-full bg-[#ECD8D9]/20 dark:bg-[#2A2020]/20 rounded" />
+            <div className="h-4 w-3/4 bg-[#ECD8D9]/20 dark:bg-[#2A2020]/20 rounded" />
+            <div className="h-4 w-5/6 bg-[#ECD8D9]/20 dark:bg-[#2A2020]/20 rounded" />
+          </div>
+        )}
       </div>
     </div>
   );
