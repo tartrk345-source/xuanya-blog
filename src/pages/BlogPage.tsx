@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import type { Article, CategoryKey } from '../types/article';
 import { getPublishedArticles, getAllTags } from '../storage/articleStore';
@@ -42,7 +42,8 @@ function RevealOnScroll({ children, className = '' }: { children: React.ReactNod
    ============================== */
 export default function BlogPage() {
   const { isAdmin } = useAdminAuth();
-  const [activeCategory, setActiveCategory] = useState<CategoryKey | null>(null);
+  const [searchParams] = useSearchParams();
+  const [activeCategory, setActiveCategory] = useState<CategoryKey | null>(() => searchParams.get('category'));
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [articles, setArticles] = useState<Article[]>([]);
   const [categories, setCategories] = useState<CategoryItem[]>([]);

@@ -256,15 +256,18 @@ export default function LandingPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { icon: '🧠', title: '精神医学', desc: '临床一线，以科学照护心灵', color: '#DA583F' },
-              { icon: '🌿', title: '积极心理治疗', desc: '东方智慧与现代心理学的融合', color: '#5BA890' },
-              { icon: '📜', title: '国学玄学', desc: '古老典籍中的心性智慧', color: '#8B6BAE' },
-              { icon: '🌸', title: '芳香疗法', desc: '借草木之力，调身心之气', color: '#C88A3D' },
-              { icon: '⚡', title: '脑机接口', desc: '技术前沿与神经科学的交汇', color: '#616FD3' },
-              { icon: '✍️', title: '写作随笔', desc: '以文字记录思考与觉察', color: '#6E6A7C' },
+              { icon: '🧠', title: '精神医学', desc: '临床一线，以科学照护心灵', cat: 'psychiatry' },
+              { icon: '🌿', title: '积极心理治疗', desc: '东方智慧与现代心理学的融合', cat: 'positive-psychology' },
+              { icon: '☯️', title: '国学玄学', desc: '古老典籍中的心性智慧', cat: 'sinology' },
+              { icon: '🌸', title: '芳香疗法', desc: '借草木之力，调身心之气', cat: 'aromatherapy' },
+              { icon: '⚡', title: '脑机接口', desc: '技术前沿与神经科学的交汇', cat: 'bci' },
+              { icon: '✨', title: '书房万象', desc: '其余热爱，散落生活的缝隙里', cat: 'misc' },
             ].map(item => (
               <RevealOnScroll key={item.title}>
-                <div className="group bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-2xl p-6 hover:border-[#DA583F] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(218,88,63,0.06)] transition-all duration-300">
+                <Link
+                  to={`/blog?category=${item.cat}`}
+                  className="group block bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-2xl p-6 hover:border-[#DA583F] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(218,88,63,0.06)] transition-all duration-300"
+                >
                   <div className="text-3xl mb-4">{item.icon}</div>
                   <h3 className="text-[1.05rem] font-bold text-[#313131] dark:text-[#E8E4E1] mb-1.5 group-hover:text-[#DA583F] transition-colors">
                     {item.title}
@@ -272,8 +275,11 @@ export default function LandingPage() {
                   <p className="text-sm text-[#767693] dark:text-[#8A8688] leading-relaxed">
                     {item.desc}
                   </p>
-                  <div className="mt-4 h-0.5 w-8 rounded-full transition-all duration-300 group-hover:w-12" style={{ background: item.color }} />
-                </div>
+                  <div className="mt-4 flex items-center gap-2 text-xs text-[#B8B4B0] group-hover:text-[#DA583F] transition-colors">
+                    <span>浏览文章</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </div>
+                </Link>
               </RevealOnScroll>
             ))}
           </div>
