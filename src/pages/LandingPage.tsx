@@ -87,9 +87,20 @@ function ArticleExplorer() {
       {/* 搜索栏 */}
       <div className="max-w-[1100px] mx-auto px-4 sm:px-8 pt-28 pb-10">
         <div className="text-xs font-bold tracking-[0.12em] text-[#DA583F] uppercase mb-2">Explore</div>
-        <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E8E4E1] mb-4 tracking-wider leading-tight font-['PingFang_SC','Noto_Serif_SC',serif]">
-          志趣探索
-        </h2>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E8E4E1] tracking-wider leading-tight font-['PingFang_SC','Noto_Serif_SC',serif]">
+            志趣探索
+          </h2>
+          <Link
+            to="/blog"
+            className="flex items-center gap-2 text-sm font-medium text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-full px-4 py-2.5 hover:border-[#DA583F] flex-shrink-0"
+          >
+            志趣所在
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
 
         {/* 搜索输入 */}
         <div className="relative max-w-[480px] mb-6">
@@ -151,16 +162,24 @@ function ArticleExplorer() {
         <>
           {categories.map(cat => {
             const items = (categoryArticles.get(cat.key) || []);
-            if (items.length === 0) return null;
+            const hasArticles = items.length > 0;
             return (
               <div key={cat.key} className="py-16 px-4 sm:px-8 border-t border-[#ECD8D9] dark:border-[#2A2020] first:border-t-0">
                 <div className="max-w-[1100px] mx-auto">
                   <CategorySectionHeader cat={cat} count={items.length} />
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
-                    {items.slice(0, 3).map(a => (
-                      <ArticleCard key={a.id} article={a} />
-                    ))}
-                  </div>
+                  {hasArticles ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
+                      {items.slice(0, 3).map(a => (
+                        <ArticleCard key={a.id} article={a} />
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="mt-8 p-10 text-center bg-white dark:bg-[#1C1818] border border-dashed border-[#ECD8D9] dark:border-[#2A2020] rounded-2xl">
+                      <p className="text-sm text-[#B8B4B0] dark:text-[#8A8688]">
+                        来日方长——「{cat.label}」领域的内容正在酝酿中。
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             );
