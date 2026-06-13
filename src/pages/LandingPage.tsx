@@ -175,8 +175,16 @@ function CategorySectionHeader({ cat, count }: { cat: CategoryItem; count: numbe
   return (
     <div className="flex items-center gap-3 mb-2">
       <span className="text-2xl">{cat.icon}</span>
-      <div>
-        <h3 className="text-[1.2rem] font-bold text-[#313131] dark:text-[#E8E4E1]">{cat.label}</h3>
+      <div className="flex-1 min-w-0">
+        <Link
+          to={`/category/${cat.key}`}
+          className="inline-flex items-center gap-2 text-[1.2rem] font-bold text-[#313131] dark:text-[#E8E4E1] hover:text-[#DA583F] transition-colors group"
+        >
+          {cat.label}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </Link>
         <p className="text-xs text-[#B8B4B0] dark:text-[#8A8688]">{count} 篇文章 · {cat.description}</p>
       </div>
     </div>
