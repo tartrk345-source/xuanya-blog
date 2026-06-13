@@ -4,7 +4,7 @@
 -- 1. 创建 pageviews 表（访问统计）
 CREATE TABLE IF NOT EXISTS pageviews (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  article_id UUID NOT NULL REFERENCES articles(id) ON DELETE CASCADE,
+  article_id TEXT NOT NULL REFERENCES articles(id) ON DELETE CASCADE,
   view_date DATE NOT NULL DEFAULT CURRENT_DATE,
   client_hash TEXT NOT NULL,
   created_at TIMESTAMPTZ DEFAULT NOW(),
