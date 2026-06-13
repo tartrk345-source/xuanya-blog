@@ -220,7 +220,14 @@ export async function createArticle(input: {
 export async function updateArticle(id: string, input: Partial<Article>): Promise<void> {
   const updates: any = { updated_at: Date.now() };
   if (input.title !== undefined) updates.title = input.title;
-  if (input.content !== undefined) updates.content = input.content;
+  if (input.content !== undefined) {
+    // 🛡️ 安全阀：拒绝写入空正文
+    if (!input.content || input.content.trim().length === 0) {
+      console.warn('[Supabase] 拒绝更新: content 为空');
+    } else {
+      updates.content = input.content;
+    }
+  }
   if (input.emoji !== undefined) updates.emoji = input.emoji;
   if (input.status !== undefined) updates.status = input.status;
   if (input.category !== undefined) updates.category = input.category ?? null;
@@ -269,9 +276,15 @@ export function exportAllArticles(): Article[] {
   return [...cache];
 }
 
-/** 导入文章（安全 upsert 模式，不删现有数据） */
+/** 导入文章（安全 upsert 模式，不删现有数据，拒绝空 content） */
 export async function importArticles(articles: Article[]): Promise<void> {
   for (const a of articles) {
+    // 🛡️ 安全阀：拒绝写入空正文（防止 Gist 空数据覆盖数据库）
+    if (!a.content || a.content.trim().length === 0) {
+      console.warn(`[Supabase] 跳过文章 ${a.id}: content 为空，拒绝写入`);
+      continue;
+    }
+
     const row = {
       id: a.id,
       title: a.title,
@@ -288,7 +301,6 @@ export async function importArticles(articles: Article[]): Promise<void> {
       series: a.series || null,
     };
 
-    // 先尝试插入，如果 ID 冲突则更新
     const { error } = await supabase
       .from('articles')
       .upsert(row, { onConflict: 'id' });
@@ -298,7 +310,6 @@ export async function importArticles(articles: Article[]): Promise<void> {
     }
   }
 
-  // 刷新缓存
   cacheTime = 0;
   listCacheTime = 0;
   await fetchAll();
