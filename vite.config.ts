@@ -8,19 +8,20 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          // React 核心单独分包（不常变，利于缓存）
-          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          // Markdown 渲染独立分包（只在文章页需要）
-          'vendor-markdown': ['react-markdown', 'remark-gfm'],
-          // Supabase 独立分包
-          'vendor-supabase': ['@supabase/supabase-js'],
+        manualChunks(id) {
+          if (id.includes('node_modules/react-dom') || id.includes('node_modules/react/') || id.includes('node_modules/react-router')) {
+            return 'vendor-react'
+          }
+          if (id.includes('node_modules/react-markdown') || id.includes('node_modules/remark-gfm')) {
+            return 'vendor-markdown'
+          }
+          if (id.includes('node_modules/@supabase')) {
+            return 'vendor-supabase'
+          }
         },
       },
     },
-    // 启用 CSS 代码分割
     cssCodeSplit: true,
-    // 设置 chunk 大小警告阈值
     chunkSizeWarningLimit: 300,
   },
 })

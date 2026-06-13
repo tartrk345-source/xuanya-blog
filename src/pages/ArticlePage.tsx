@@ -14,7 +14,7 @@ import TableOfContents from '../components/TableOfContents';
 import { ArticleImageLightbox, useCodeBlockCopy } from '../components/CodeBlock';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 import { syncToGist } from '../utils/gistSync';
-import { getCategoryInfo } from '../utils/helpers';
+import { getCategoryInfo, formatDate, getExcerpt, EMOJI_MEANINGS, estimateReadingTime } from '../utils/helpers';
 import { recordPageView, getPageViews } from '../storage/pageViews';
 
 export default function ArticlePage() {
@@ -151,9 +151,6 @@ export default function ArticlePage() {
   };
 
   const readingTime = estimateReadingTime(article.content);
-  const currentSeriesIdx = seriesArticles.findIndex(a => a.id === id);
-  const prevSeries = currentSeriesIdx > 0 ? seriesArticles[currentSeriesIdx - 1] : undefined;
-  const nextSeries = currentSeriesIdx < seriesArticles.length - 1 ? seriesArticles[currentSeriesIdx + 1] : undefined;
 
   // OG 图片优先使用封面图
   const ogImage = article.coverImage || 'https://www.x2ya.com/images/og-image.svg';

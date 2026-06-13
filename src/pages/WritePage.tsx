@@ -106,7 +106,7 @@ export default function WritePage() {
   const [series, setSeries] = useState('');
 
   // 自动保存草稿
-  const draftTimerRef = useRef<ReturnType<typeof setTimeout>>();
+  const draftTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useEffect(() => {
     getCategories().then(setCategories);
