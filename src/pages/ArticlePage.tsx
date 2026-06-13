@@ -14,6 +14,7 @@ import TableOfContents from '../components/TableOfContents';
 import { ArticleImageLightbox, useCodeBlockCopy } from '../components/CodeBlock';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 import { syncToGist } from '../utils/gistSync';
+import { getCategoryInfo } from '../utils/helpers';
 import { recordPageView, getPageViews } from '../storage/pageViews';
 
 export default function ArticlePage() {
