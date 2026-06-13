@@ -134,11 +134,14 @@
     transform: rotate(180deg);
   }
   .day-num {
-    font-size: 40px;
+    font-size: 24px;
     font-weight: 800;
     color: var(--accent);
     line-height: 1;
+    min-width: 36px;
+    text-align: center;
   }
+  @media(max-width:560px) { .day-num { font-size: 20px; min-width: 28px; } }
   .day-meta h3 {
     font-size: 17px;
     font-weight: 600;
@@ -169,6 +172,49 @@
   .day-card.open .day-card-body {
     max-height: 6000px;
     padding: 16px 28px 28px;
+  }
+
+  /* Nested sub-toggle — for subsections inside day-card bodies */
+  .sub-toggle {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin: 12px 0;
+    overflow: hidden;
+  }
+  .sub-toggle-header {
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-mid);
+    background: var(--bg);
+    transition: background 0.2s;
+  }
+  .sub-toggle-header:hover { background: #eeebe6; }
+  .sub-toggle-header::after {
+    content: '▸';
+    font-size: 11px;
+    color: var(--muted);
+    margin-left: auto;
+    transition: transform 0.3s ease;
+  }
+  .sub-toggle.open .sub-toggle-header::after {
+    transform: rotate(90deg);
+  }
+  .sub-toggle-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .sub-toggle.open .sub-toggle-body {
+    max-height: 4000px;
+  }
+  @media(max-width:560px) {
+    .sub-toggle-header { padding: 8px 12px; font-size: 12px; }
   }
 
   /* Timeline */
@@ -2417,8 +2463,15 @@
 <!-- ============================================ -->
 <!-- 已预订汇总 -->
 <!-- ============================================ -->
-<div class="section-card">
-  <h2>🎫 已预订汇总</h2>
+<div class="day-card">
+  <div class="day-card-header">
+    <div class="day-num">🎫</div>
+    <div class="day-meta">
+      <h3>已预订汇总</h3>
+      <div class="day-date">机票 · 火车 · 酒店 · 景区 · 演艺 · 租车</div>
+    </div>
+  </div>
+  <div class="day-card-body">
   <table class="booked-table">
     <thead><tr><th>项目</th><th>详情</th><th style="width:70px">状态</th></tr></thead>
     <tbody>
@@ -2508,13 +2561,21 @@
       </tr>
     </tbody>
   </table>
+  </div>
 </div>
 
 <!-- ============================================ -->
 <!-- 出发前必做 -->
 <!-- ============================================ -->
-<div class="section-card">
-  <h2>✅ 出发前必做清单</h2>
+<div class="day-card">
+  <div class="day-card-header">
+    <div class="day-num">✅</div>
+    <div class="day-meta">
+      <h3>出发前必做清单</h3>
+      <div class="day-date">提前准备 · 预约 · 购票 · 确认</div>
+    </div>
+  </div>
+  <div class="day-card-body">
   <ul class="checklist">
     <li class="done">深圳→银川机票已订 MF8221 ¥768（经济舱Z · 46A · 免费托运20KG）</li>
     <li class="done">看见贺兰夜游门票已订 ¥108</li>
@@ -2547,6 +2608,7 @@
     <li>山东航空APP → 提前值机 SC8724（起飞前24h开放）</li>
     <li>查 6/28–6/30 西宁/青海湖天气</li>
   </ul>
+  </div>
 </div>
 
 <footer>
@@ -2557,13 +2619,41 @@
 </div>
 <script>
 (function(){
-  const cards = document.querySelectorAll('.day-card');
-  cards.forEach(card => {
+  // Day-card 折叠
+  document.querySelectorAll('.day-card').forEach(card => {
     const header = card.querySelector('.day-card-header');
     if (!header) return;
-    header.addEventListener('click', () => {
-      card.classList.toggle('open');
+    header.addEventListener('click', () => card.classList.toggle('open'));
+  });
+
+  // 自动创建子折叠：把「当天避坑」区块 + 紧跟的费用小结包进 sub-toggle
+  document.querySelectorAll('.day-card-body').forEach(body => {
+    const tips = body.querySelectorAll('div[style*="border-left:3px solid var(--amber)"]');
+    tips.forEach(tipDiv => {
+      if (tipDiv.closest('.sub-toggle')) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'sub-toggle';
+      const hdr = document.createElement('div');
+      hdr.className = 'sub-toggle-header';
+      hdr.textContent = '⚠️ 避坑提醒';
+      const inner = document.createElement('div');
+      inner.className = 'sub-toggle-body';
+      tipDiv.parentNode.insertBefore(wrap, tipDiv);
+      wrap.appendChild(hdr);
+      wrap.appendChild(inner);
+      inner.appendChild(tipDiv);
+      const next = wrap.nextElementSibling;
+      if (next && next.classList && next.classList.contains('day-cost')) {
+        inner.appendChild(next);
+      }
     });
+  });
+
+  // 子折叠点击
+  document.addEventListener('click', e => {
+    const hdr = e.target.closest('.sub-toggle-header');
+    if (!hdr) return;
+    hdr.closest('.sub-toggle')?.classList.toggle('open');
   });
 })();
 </script>
