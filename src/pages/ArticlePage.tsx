@@ -30,6 +30,7 @@ export default function ArticlePage() {
   const [seriesArticles, setSeriesArticles] = useState<Article[]>([]);
   const [tocVisible, setTocVisible] = useState(false);
   const [viewCount, setViewCount] = useState(0);
+  const [loadError, setLoadError] = useState<string>('');
 
   // 文章容器 ref — 用于代码块复制按钮、图片灯箱
   const articleRef = useRef<HTMLDivElement>(null);
@@ -68,7 +69,13 @@ export default function ArticlePage() {
       }
 
       setLoading(false);
-    }).catch(() => { if (mounted) setLoading(false); });
+    }).catch((err) => {
+      console.error('[ArticlePage] 加载失败:', err);
+      if (mounted) {
+        setLoadError(err?.message || String(err));
+        setLoading(false);
+      }
+    });
     return () => { mounted = false; };
   }, [id]);
 
@@ -110,7 +117,25 @@ export default function ArticlePage() {
     );
   }
 
-  if (!article) return <Navigate to="/blog" replace />;
+  if (!article) {
+    if (loadError) {
+      return (
+        <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E] flex items-center justify-center px-6">
+          <div className="max-w-md w-full text-center space-y-4">
+            <div className="text-4xl">⚠️</div>
+            <h2 className="text-lg font-bold text-[#313131] dark:text-[#E8E4E1]">文章加载失败</h2>
+            <p className="text-sm text-[#767693] dark:text-[#8A8688] break-all">{loadError}</p>
+            <p className="text-xs text-[#B8B4B0]">ID: {id}</p>
+            <button onClick={() => window.location.reload()} className="px-5 py-2 text-sm bg-[#DA583F] text-white rounded-lg hover:bg-[#C44A35] transition-colors">
+              重新加载
+            </button>
+          </div>
+        </div>
+      );
+    }
+    // 没有错误但也没数据 → 重定向（兼容旧行为）
+    return <Navigate to="/blog" replace />;
+  }
 
   const goBack = () => {
     navigate('/blog');

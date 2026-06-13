@@ -24,6 +24,7 @@ async function fetchList(): Promise<Article[]> {
     return listCache;
   }
 
+  console.log('[Supabase] fetchList 返回', data?.length, '篇文章');
   listCache = (data ?? []).map(row => ({
     id: row.id,
     title: row.title,
@@ -58,6 +59,7 @@ async function fetchAll(): Promise<Article[]> {
     return cache;
   }
 
+  console.log('[Supabase] fetchAll 返回', data?.length, '篇文章');
   cache = (data ?? []).map(row => ({
     id: row.id,
     title: row.title,
