@@ -102,123 +102,36 @@ function TravelCard({ travel, onClick }: { travel: Travel; onClick: () => void }
 }
 
 function TravelDetail({ travel, onBack }: { travel: Travel; onBack: () => void }) {
-  const [htmlContent, setHtmlContent] = useState<string | null>(null);
-  const [loadError, setLoadError] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const accordionSetup = useRef(false);
-
-  // 1. 加载 HTML
-  useEffect(() => {
-    let cancelled = false;
-    fetch(travel.file)
-      .then(res => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.text();
-      })
-      .then(raw => {
-        if (cancelled) return;
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(raw, 'text/html');
-
-        // 提取所有 <style> 块，只过滤会污染全局页面的 body/html 选择器
-        const styles = Array.from(doc.querySelectorAll('style'))
-          .map(s => {
-            let css = s.textContent || '';
-            // body { ... } — 会污染全局页面 body
-            css = css.replace(/\bbody\s*\{/g, '.travel-body-fake {');
-            // html { ... } — 会污染全局 html
-            css = css.replace(/\bhtml\s*\{/g, '.travel-html-fake {');
-            // container — 由外部 wrapper 控制布局
-            css = css.replace(/\.container\s*\{/g, '.travel-container {');
-            return css.trim();
-          })
-          .filter(css => css.length > 0)
-          .join('\n');
-
-        const bodyHTML = doc.body.innerHTML;
-        // 替换 class="container" 避免与 Tailwind 冲突
-        const fixedHTML = bodyHTML.replace(/class="container"/g, 'class="travel-container"');
-        setHtmlContent(`<style>${styles}</style>${fixedHTML}`);
-      })
-      .catch(() => {
-        if (!cancelled) setLoadError(true);
-      });
-    return () => { cancelled = true; };
-  }, [travel.file]);
-
-  // 2. 手风琴折叠：内容挂载后绑定 click 事件，默认第一张卡片展开
-  useEffect(() => {
-    if (!htmlContent || accordionSetup.current) return;
-    const el = contentRef.current;
-    if (!el) return;
-    // 等待 DOM 渲染完成
-    const timer = setTimeout(() => {
-      const cards = el.querySelectorAll<HTMLElement>('.day-card');
-      if (cards.length === 0) return;
-      // 默认展开第一张
-      cards[0].classList.add('open');
-      cards.forEach(card => {
-        const header = card.querySelector<HTMLElement>('.day-card-header');
-        if (!header) return;
-        header.addEventListener('click', () => {
-          card.classList.toggle('open');
-        });
-      });
-      accordionSetup.current = true;
-    }, 100);
-    return () => clearTimeout(timer);
-  }, [htmlContent]);
-
   return (
-    <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E]">
+    <div className="h-screen flex flex-col bg-[#FEFAF9] dark:bg-[#0F0D0E]">
       <Navigation />
 
-      <div className="max-w-[820px] mx-auto px-4 sm:px-8 pt-8 pb-16">
-        {/* 返回按钮 */}
-        <button
-          onClick={onBack}
-          className="flex items-center gap-2 text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors mb-8 group cursor-pointer"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-x-1 transition-transform">
-            <path d="M19 12H5M12 19l-7-7 7-7" />
-          </svg>
-          <span>返回旅行记录</span>
-        </button>
-
-        {/* 标题区 */}
-        <div className="mb-6">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-3xl">{travel.emoji}</span>
-            <div>
-              <h1 className="text-[1.6rem] font-bold text-[#313131] dark:text-[#E8E4E1] tracking-wider">
-                {travel.title}
-              </h1>
-              <p className="text-xs text-[#B8B4B0] dark:text-[#8A8688] tracking-wider">{travel.date}</p>
-            </div>
+      {/* 顶栏：返回按钮 + 标题 */}
+      <div className="flex-shrink-0 px-4 sm:px-8 pt-3 pb-2 border-b border-[#ECD8D9] dark:border-[#2A2020]">
+        <div className="flex items-center gap-3">
+          <button
+            onClick={onBack}
+            className="flex items-center gap-1.5 text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors cursor-pointer flex-shrink-0"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            <span className="hidden sm:inline">返回</span>
+          </button>
+          <div className="flex-1 min-w-0">
+            <h1 className="text-sm font-bold text-[#313131] dark:text-[#E8E4E1] truncate">
+              {travel.emoji} {travel.title}
+            </h1>
           </div>
-          <p className="text-sm text-[#6E6A7C] dark:text-[#A09CA8]">{travel.subtitle}</p>
         </div>
-
-        {/* 内联渲染旅行内容 */}
-        {loadError ? (
-          <div className="text-center py-16 text-[#B8B4B0] dark:text-[#8A8688]">
-            <p>无法加载旅行内容，请稍后重试。</p>
-          </div>
-        ) : htmlContent ? (
-          <div
-            ref={contentRef}
-            className="travel-content-wrapper"
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-          />
-        ) : (
-          <div className="space-y-4 animate-pulse">
-            <div className="h-6 w-48 bg-[#ECD8D9]/40 dark:bg-[#2A2020]/40 rounded" />
-            <div className="h-4 w-full bg-[#ECD8D9]/20 dark:bg-[#2A2020]/20 rounded" />
-            <div className="h-4 w-3/4 bg-[#ECD8D9]/20 dark:bg-[#2A2020]/20 rounded" />
-            <div className="h-4 w-5/6 bg-[#ECD8D9]/20 dark:bg-[#2A2020]/20 rounded" />
-          </div>
-        )}
       </div>
+
+      {/* iframe 全屏嵌入，原生 CSS/JS 完整运行 */}
+      <iframe
+        src={travel.file}
+        title={travel.title}
+        className="flex-1 w-full border-none"
+      />
     </div>
   );
 }
