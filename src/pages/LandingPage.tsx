@@ -100,7 +100,7 @@ function ArticleExplorer() {
   if (!hydrated) {
     // 滚动前只渲染轻量占位，不加载 Supabase，加速首屏
     return (
-      <section ref={sectionRef} id="interests" className="scroll-mt-20 py-20">
+      <section ref={sectionRef} id="interests" className="scroll-mt-20 py-20 snap-section snap-overflow">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-8">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E8E4E1] tracking-wider leading-tight font-['PingFang_SC','Noto_Serif_SC',serif]">
@@ -312,7 +312,7 @@ export default function LandingPage() {
 
       {/* ===== Hero ===== */}
       <section
-        className="min-h-[100svh] md:min-h-[70vh] flex items-center justify-center relative overflow-hidden px-4 sm:px-8 py-16 sm:py-24"
+        className="snap-section min-h-[100svh] md:min-h-[70vh] flex items-center justify-center relative overflow-hidden px-4 sm:px-8 py-16 sm:py-24"
         id="home"
       >
         {/* 背景装饰 */}
@@ -369,7 +369,7 @@ export default function LandingPage() {
       </section>
 
       {/* ===== About ===== */}
-      <section className="relative py-20 sm:py-32 px-4 sm:px-8 overflow-hidden" id="about">
+      <section className="snap-section snap-overflow relative py-20 sm:py-32 px-4 sm:px-8 overflow-hidden" id="about">
         {/* 装饰 */}
         <div
           className="absolute -bottom-[5%] -right-[12%] w-[380px] h-[280px] rounded-xl pointer-events-none opacity-30 dark:opacity-18 z-0 max-sm:w-[200px] max-sm:h-[160px] max-sm:-right-[15%]"
@@ -437,7 +437,7 @@ export default function LandingPage() {
       <ArticleExplorer />
 
       {/* ===== 行迹 Timeline ===== */}
-      <section className="py-20 sm:py-32 px-4 sm:px-8" id="work">
+      <section className="snap-section snap-overflow py-20 sm:py-32 px-4 sm:px-8" id="work">
         <div className="max-w-[1100px] mx-auto">
           <div className="text-xs font-bold tracking-[0.12em] text-[#DA583F] uppercase mb-2">Journey</div>
           <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E8E4E1] mb-4 tracking-wider leading-tight font-['PingFang_SC','Noto_Serif_SC',serif]">学医行迹</h2>
@@ -489,7 +489,7 @@ export default function LandingPage() {
       </section>
 
       {/* ===== Contact ===== */}
-      <section className="py-20 sm:py-32 px-4 sm:px-8 bg-[#FEF3F0] dark:bg-[#1A1516]" id="contact">
+      <section className="snap-section py-20 sm:py-32 px-4 sm:px-8 bg-[#FEF3F0] dark:bg-[#1A1516]" id="contact">
         <div className="max-w-[1100px] mx-auto">
           <div className="text-xs font-bold tracking-[0.12em] text-[#DA583F] uppercase mb-2">Contact</div>
           <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E8E4E1] mb-4 tracking-wider leading-tight text-center font-['PingFang_SC','Noto_Serif_SC',serif]">取得联系</h2>

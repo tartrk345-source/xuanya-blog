@@ -24,10 +24,12 @@ html {
 
 body {
   margin: 0;
-  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Noto Sans CJK SC", Roboto, system-ui, sans-serif;
   color: #313131;
   background: #FEFAF9;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   line-height: 1.7;
 }
 
@@ -397,6 +399,38 @@ html.dark .prose-container a {
 
 /* === 移动端优化 === */
 @media (max-width: 640px) {
+  /* --- 分页滚动（scroll-snap） --- */
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-y: none;
+    scroll-padding-top: 56px; /* 导航栏高度，防止 section 顶部被遮挡 */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* 内容超过一屏的 section 不强制居中 */
+  .snap-section.snap-overflow {
+    justify-content: flex-start;
+    padding-top: calc(56px + 2rem);
+  }
+
+  /* --- 安卓安全区域适配 --- */
+  body {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    padding-top: env(safe-area-inset-top, 0px);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
   /* 防止 iOS 输入框自动缩放 */
   input, textarea, select {
     font-size: 16px !important;
