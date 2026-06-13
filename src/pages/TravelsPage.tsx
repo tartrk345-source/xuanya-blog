@@ -105,7 +105,9 @@ function TravelDetail({ travel, onBack }: { travel: Travel; onBack: () => void }
   const [htmlContent, setHtmlContent] = useState<string | null>(null);
   const [loadError, setLoadError] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
+  const accordionSetup = useRef(false);
 
+  // 1. 加载 HTML
   useEffect(() => {
     let cancelled = false;
     fetch(travel.file)
@@ -118,30 +120,54 @@ function TravelDetail({ travel, onBack }: { travel: Travel; onBack: () => void }
         const parser = new DOMParser();
         const doc = parser.parseFromString(raw, 'text/html');
 
-        // 提取所有 <style> 块，过滤全局重置规则避免破坏页面布局
+        // 提取所有 <style> 块，只过滤会污染全局页面的 body/html 选择器
         const styles = Array.from(doc.querySelectorAll('style'))
           .map(s => {
             let css = s.textContent || '';
-            // 移除全局通配符重置（会被 wrapper 限制，仅保留 box-sizing）
-            css = css.replace(/\*\s*\{[^}]*\}/g, '');
-            // 移除 body/html 全局样式
-            css = css.replace(/body\s*\{[^}]*\}/g, '');
-            css = css.replace(/html\s*\{[^}]*\}/g, '');
-            // 移除 container 的 margin/padding（由 wrapper 控制）
-            css = css.replace(/\.container\s*\{[^}]*\}/g, '.container { padding: 0; }');
+            // body { ... } — 会污染全局页面 body
+            css = css.replace(/\bbody\s*\{/g, '.travel-body-fake {');
+            // html { ... } — 会污染全局 html
+            css = css.replace(/\bhtml\s*\{/g, '.travel-html-fake {');
+            // container — 由外部 wrapper 控制布局
+            css = css.replace(/\.container\s*\{/g, '.travel-container {');
             return css.trim();
           })
           .filter(css => css.length > 0)
           .join('\n');
 
         const bodyHTML = doc.body.innerHTML;
-        setHtmlContent(`<style>${styles}</style>${bodyHTML}`);
+        // 替换 class="container" 避免与 Tailwind 冲突
+        const fixedHTML = bodyHTML.replace(/class="container"/g, 'class="travel-container"');
+        setHtmlContent(`<style>${styles}</style>${fixedHTML}`);
       })
       .catch(() => {
         if (!cancelled) setLoadError(true);
       });
     return () => { cancelled = true; };
   }, [travel.file]);
+
+  // 2. 手风琴折叠：内容挂载后绑定 click 事件，默认第一张卡片展开
+  useEffect(() => {
+    if (!htmlContent || accordionSetup.current) return;
+    const el = contentRef.current;
+    if (!el) return;
+    // 等待 DOM 渲染完成
+    const timer = setTimeout(() => {
+      const cards = el.querySelectorAll<HTMLElement>('.day-card');
+      if (cards.length === 0) return;
+      // 默认展开第一张
+      cards[0].classList.add('open');
+      cards.forEach(card => {
+        const header = card.querySelector<HTMLElement>('.day-card-header');
+        if (!header) return;
+        header.addEventListener('click', () => {
+          card.classList.toggle('open');
+        });
+      });
+      accordionSetup.current = true;
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [htmlContent]);
 
   return (
     <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E]">

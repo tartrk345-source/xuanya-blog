@@ -518,8 +518,10 @@ html.dark .prose-container a {
 /* === 旅行内容嵌入式渲染 === */
 .travel-content-wrapper {
   font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Noto Sans CJK SC", Roboto, sans-serif;
-  color: var(--color-charcoal);
+  font-size: 15px;
   line-height: 1.75;
+  color: #2d2d2d;
+  word-break: break-word;
 }
 .travel-content-wrapper * {
   box-sizing: border-box;
@@ -537,14 +539,54 @@ html.dark .prose-container a {
   overflow-x: auto;
   max-width: 100%;
   font-size: 13px;
+  -webkit-overflow-scrolling: touch;
 }
 .travel-content-wrapper th,
 .travel-content-wrapper td {
   white-space: nowrap;
   padding: 6px 10px;
 }
+
+/* 移动端：旅行卡片折叠区字号/间距优化 */
+@media (max-width: 640px) {
+  .travel-content-wrapper {
+    font-size: 14px;
+  }
+  .travel-content-wrapper .day-card-header {
+    padding: 14px 16px;
+  }
+  .travel-content-wrapper .day-card-body {
+    padding: 0 16px;
+  }
+  .travel-content-wrapper .day-card.open .day-card-body {
+    padding: 12px 16px 20px;
+  }
+  .travel-content-wrapper .day-num {
+    font-size: 32px;
+  }
+  .travel-content-wrapper .day-meta h3 {
+    font-size: 15px;
+  }
+  .travel-content-wrapper .tl-time {
+    min-width: 48px;
+    font-size: 11px;
+  }
+  .travel-content-wrapper .tl-content {
+    font-size: 13px;
+  }
+  .travel-content-wrapper .stat-card {
+    padding: 14px 10px;
+  }
+  .travel-content-wrapper .stat-card .num {
+    font-size: 22px;
+  }
+  .travel-content-wrapper .header h1 {
+    font-size: 24px;
+  }
+}
+
 html.dark .travel-content-wrapper {
-  color: var(--color-warm-pink);
+  color: #d3d1c7;
 }
 html.dark .travel-content-wrapper a {
   color: #D4955A;
