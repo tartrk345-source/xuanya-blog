@@ -44,8 +44,25 @@ function ArticleExplorer() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [hydrated, setHydrated] = useState(false); // 延迟加载
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // 滚动触发数据加载，避免首屏被 Supabase 请求阻塞
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) { setHydrated(true); obs.disconnect(); }
+      },
+      { rootMargin: '400px' } // 提前 400px 触发
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   useEffect(() => {
+    if (!hydrated) return;
     let mounted = true;
     Promise.all([
       getPublishedArticles(),
@@ -60,7 +77,7 @@ function ArticleExplorer() {
       }
     });
     return () => { mounted = false; };
-  }, []);
+  }, [hydrated]);
 
   // 按分类分组
   const categoryArticles = new Map<string, Article[]>();
@@ -80,10 +97,35 @@ function ArticleExplorer() {
     ? filteredBySearch.filter(a => (a.tags ?? []).includes(activeTag))
     : filteredBySearch;
 
+  if (!hydrated) {
+    // 滚动前只渲染轻量占位，不加载 Supabase，加速首屏
+    return (
+      <section ref={sectionRef} id="interests" className="scroll-mt-20 py-20">
+        <div className="max-w-[1100px] mx-auto px-4 sm:px-8">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E8E4E1] tracking-wider leading-tight font-['PingFang_SC','Noto_Serif_SC',serif]">
+              志趣探索
+            </h2>
+            <Link to="/blog" className="flex items-center gap-2 text-sm font-medium text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-full px-4 py-2.5 hover:border-[#DA583F] flex-shrink-0">
+              志趣所在
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </Link>
+          </div>
+          <div className="h-3 w-56 bg-[#ECD8D9]/40 dark:bg-[#2A2020]/40 rounded animate-pulse mb-6" />
+          <div className="space-y-4 mt-8">
+            {[1,2,3].map(i => (
+              <div key={i} className="h-20 bg-[#ECD8D9]/20 dark:bg-[#2A2020]/20 rounded-xl animate-pulse" />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   if (loading) return null;
 
   return (
-    <section id="interests" className="scroll-mt-20">
+    <section ref={sectionRef} id="interests" className="scroll-mt-20">
       {/* 搜索栏 */}
       <div className="max-w-[1100px] mx-auto px-4 sm:px-8 pt-28 pb-10">
         <div className="text-xs font-bold tracking-[0.12em] text-[#DA583F] uppercase mb-2">Explore</div>
