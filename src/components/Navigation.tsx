@@ -8,6 +8,7 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // 滚动检测
   useEffect(() => {
@@ -70,8 +71,12 @@ export default function Navigation() {
   const navLinks = [
     { id: 'about', label: '认识', type: 'anchor' as const },
     { id: '/blog', label: '志趣', type: 'route' as const },
-    { id: 'work', label: '行迹', type: 'anchor' as const },
-    { id: '/travels', label: '旅行', type: 'route' as const },
+    { id: 'work', label: '行迹', type: 'dropdown' as const,
+      children: [
+        { id: 'work', label: '学医行迹', type: 'anchor' as const },
+        { id: '/travels', label: '旅行记录', type: 'route' as const },
+      ],
+    },
     { id: 'contact', label: '联系', type: 'anchor' as const },
   ];
 
@@ -107,6 +112,54 @@ export default function Navigation() {
                   >
                     {link.label}
                   </Link>
+                ) : link.type === 'dropdown' ? (
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setDropdownOpen(true)}
+                    onMouseLeave={() => setDropdownOpen(false)}
+                  >
+                    <a
+                      href={`/#${link.id}`}
+                      onClick={(e) => {
+                        handleNavClick(e, link.id);
+                        setDropdownOpen(false);
+                      }}
+                      className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#B8B4B0] hover:text-[#DA583F] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] after:transition-[width] after:duration-300 hover:after:w-full cursor-pointer flex items-center gap-1"
+                    >
+                      {link.label}
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`}>
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
+                    </a>
+                    {dropdownOpen && link.children && (
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 py-2 px-1 bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] min-w-[130px] z-50 animate-[fadeIn_0.15s_ease-out]">
+                        {link.children.map(child => (
+                          child.type === 'route' ? (
+                            <Link
+                              key={child.id}
+                              to={child.id}
+                              onClick={() => setDropdownOpen(false)}
+                              className="block px-4 py-2.5 text-sm text-[#4F4F4F] dark:text-[#B8B4B0] hover:text-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] rounded-lg transition-colors whitespace-nowrap"
+                            >
+                              {child.label}
+                            </Link>
+                          ) : (
+                            <a
+                              key={child.id}
+                              href={`/#${child.id}`}
+                              onClick={(e) => {
+                                handleNavClick(e, child.id);
+                                setDropdownOpen(false);
+                              }}
+                              className="block px-4 py-2.5 text-sm text-[#4F4F4F] dark:text-[#B8B4B0] hover:text-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] rounded-lg transition-colors whitespace-nowrap cursor-pointer"
+                            >
+                              {child.label}
+                            </a>
+                          )
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ) : (
                   <a
                     href={`/#${link.id}`}
@@ -181,12 +234,53 @@ export default function Navigation() {
 
       {/* 移动端菜单 */}
       <div
-        className={`sm:hidden fixed inset-0 z-[98] bg-[#FEFAF9]/95 dark:bg-[#0F0D0E]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-16 transition-opacity duration-300 ${
+        className={`sm:hidden fixed inset-0 z-[98] bg-[#FEFAF9]/95 dark:bg-[#0F0D0E]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10 transition-opacity duration-300 ${
           mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
         {navLinks.map(link => (
-          link.type === 'route' ? (
+          link.type === 'dropdown' ? (
+            <div key={link.id} className="flex flex-col items-center gap-4">
+              <a
+                href={`/#${link.id}`}
+                onClick={(e) => {
+                  handleNavClick(e, link.id);
+                  setMobileOpen(false);
+                  document.body.style.overflow = '';
+                }}
+                className="text-[1.3rem] font-semibold text-[#313131] dark:text-[#E8E4E1] tracking-wider hover:text-[#DA583F] transition-colors cursor-pointer"
+              >
+                {link.label}
+              </a>
+              <div className="flex flex-col items-center gap-3">
+                {link.children?.map(child => (
+                  child.type === 'route' ? (
+                    <Link
+                      key={child.id}
+                      to={child.id}
+                      onClick={() => { setMobileOpen(false); document.body.style.overflow = ''; }}
+                      className="text-[1.05rem] text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors pl-2 border-l-2 border-[#ECD8D9] dark:border-[#2A2020]"
+                    >
+                      {child.label}
+                    </Link>
+                  ) : (
+                    <a
+                      key={child.id}
+                      href={`/#${child.id}`}
+                      onClick={(e) => {
+                        handleNavClick(e, child.id);
+                        setMobileOpen(false);
+                        document.body.style.overflow = '';
+                      }}
+                      className="text-[1.05rem] text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors pl-2 border-l-2 border-[#ECD8D9] dark:border-[#2A2020] cursor-pointer"
+                    >
+                      {child.label}
+                    </a>
+                  )
+                ))}
+              </div>
+            </div>
+          ) : link.type === 'route' ? (
             <Link
               key={link.id}
               to={link.id}
