@@ -1,22 +1,21 @@
 @import "tailwindcss";
-
 /* Tailwind dark mode: respond to html.dark class, not system preference */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* === 明蓝色主题 === */
+/* === 珊瑚色主题 === */
 @theme {
-  --color-blue: #3B82F6;
-  --color-blue-deep: #2563EB;
-  --color-blue-warm: #60A5FA;
-  --color-purple-blue: #6366F1;
-  --color-warm-bg: #F8FAFC;
-  --color-warm-pink: #EFF6FF;
-  --color-soft-pink: #CBD5E1;
-  --color-charcoal: #1E293B;
-  --color-gray-dark: #475569;
-  --color-gray-mid: #64748B;
-  --color-muted-purple: #64748B;
-  --color-navy-dark: #1E40AF;
+  --color-coral: #DA583F;
+  --color-coral-deep: #C43F30;
+  --color-coral-warm: #E77B61;
+  --color-purple-blue: #616FD3;
+  --color-warm-bg: #FEFAF9;
+  --color-warm-pink: #FEF3F0;
+  --color-soft-pink: #ECD8D9;
+  --color-charcoal: #313131;
+  --color-gray-dark: #4F4F4F;
+  --color-gray-mid: #767693;
+  --color-muted-purple: #6E6A7C;
+  --color-navy-dark: #2E4964;
 }
 
 /* === 全局基础 === */
@@ -28,8 +27,8 @@ html {
 body {
   margin: 0;
   font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Noto Sans CJK SC", Roboto, system-ui, sans-serif;
-  color: #1E293B;
-  background: #F8FAFC;
+  color: #313131;
+  background: #FEFAF9;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -37,13 +36,13 @@ body {
 }
 
 a {
-  color: #3B82F6;
+  color: #DA583F;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 a:hover {
-  color: #2563EB;
+  color: #C43F30;
 }
 
 /* === 动画 === */
@@ -75,7 +74,7 @@ a:hover {
   margin: 2rem 0 1rem;
   line-height: 1.3;
   letter-spacing: -0.02em;
-  color: #1E293B;
+  color: #313131;
 }
 
 .prose-container h2 {
@@ -83,14 +82,14 @@ a:hover {
   font-weight: 600;
   margin: 1.75rem 0 0.75rem;
   line-height: 1.35;
-  color: #1E293B;
+  color: #313131;
 }
 
 .prose-container h3 {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 1.5rem 0 0.5rem;
-  color: #475569;
+  color: #4F4F4F;
 }
 
 .prose-container p {
@@ -113,20 +112,20 @@ a:hover {
 }
 
 .prose-container blockquote {
-  border-left: 3px solid #CBD5E1;
+  border-left: 3px solid #ECD8D9;
   padding-left: 1rem;
   margin: 0 0 1.25rem;
-  color: #475569;
+  color: #4F4F4F;
   font-style: italic;
 }
 
 .prose-container code {
   font-family: ui-monospace, Consolas, "Courier New", monospace;
   font-size: 15px;
-  background: #EFF6FF;
+  background: #FEF3F0;
   padding: 2px 6px;
   border-radius: 4px;
-  color: #3B82F6;
+  color: #DA583F;
 }
 
 /* === 骨架屏脉冲动画 === */
@@ -136,7 +135,7 @@ a:hover {
 }
 
 .prose-container pre {
-  background: #E2E8F0;
+  background: #F5EDEA;
   padding: 1rem;
   border-radius: 8px;
   overflow-x: auto;
@@ -151,17 +150,17 @@ a:hover {
   padding: 0;
   font-size: 14px;
   line-height: 1.6;
-  color: #1E293B;
+  color: #313131;
 }
 
 .prose-container a {
-  color: #3B82F6;
+  color: #DA583F;
   text-decoration: none;
-  border-bottom: 1px solid #CBD5E1;
+  border-bottom: 1px solid #ECD8D9;
 }
 
 .prose-container a:hover {
-  border-bottom-color: #3B82F6;
+  border-bottom-color: #DA583F;
 }
 
 .prose-container img {
@@ -172,7 +171,7 @@ a:hover {
 
 .prose-container hr {
   border: none;
-  border-top: 1px solid #CBD5E1;
+  border-top: 1px solid #ECD8D9;
   margin: 2rem 0;
 }
 
@@ -184,33 +183,33 @@ a:hover {
 
 .prose-container th,
 .prose-container td {
-  border: 1px solid #CBD5E1;
+  border: 1px solid #ECD8D9;
   padding: 8px 12px;
   text-align: left;
   font-size: 16px;
 }
 
 .prose-container th {
-  background: #EFF6FF;
+  background: #FEF3F0;
   font-weight: 600;
 }
 
 /* === highlight.js 代码高亮主题（珊瑚暖色调） === */
 .hljs {
   background: transparent !important;
-  color: #1E293B !important;
+  color: #313131 !important;
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: #94A3B8 !important;
+  color: #8A8688 !important;
   font-style: italic;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-subst {
-  color: #3B82F6 !important;
+  color: #DA583F !important;
 }
 
 .hljs-string,
@@ -223,48 +222,48 @@ a:hover {
 .hljs-variable,
 .hljs-template-variable,
 .hljs-tag .hljs-attr {
-  color: #2563EB !important;
+  color: #C43F30 !important;
 }
 
 .hljs-title,
 .hljs-section,
 .hljs-selector-id {
-  color: #6366F1 !important;
+  color: #616FD3 !important;
   font-weight: bold;
 }
 
 .hljs-type,
 .hljs-class .hljs-title {
-  color: #1E40AF !important;
+  color: #2E4964 !important;
 }
 
 .hljs-tag,
 .hljs-name,
 .hljs-attribute {
-  color: #3B82F6 !important;
+  color: #DA583F !important;
 }
 
 .hljs-regexp,
 .hljs-link {
-  color: #60A5FA !important;
+  color: #E77B61 !important;
 }
 
 .hljs-symbol,
 .hljs-bullet {
-  color: #64748B !important;
+  color: #6E6A7C !important;
 }
 
 .hljs-built_in,
 .hljs-builtin-name {
-  color: #1E40AF !important;
+  color: #2E4964 !important;
 }
 
 .hljs-meta {
-  color: #64748B !important;
+  color: #767693 !important;
 }
 
 .hljs-deletion {
-  color: #3B82F6 !important;
+  color: #DA583F !important;
   background: rgba(218, 88, 63, 0.08) !important;
 }
 
@@ -275,7 +274,7 @@ a:hover {
 
 /* 暗色模式 - 代码高亮 */
 html.dark .hljs {
-  color: #94A3B8 !important;
+  color: #B8B4B0 !important;
 }
 
 html.dark .hljs-comment,
@@ -286,7 +285,7 @@ html.dark .hljs-quote {
 html.dark .hljs-keyword,
 html.dark .hljs-selector-tag,
 html.dark .hljs-subst {
-  color: #60A5FA !important;
+  color: #E77B61 !important;
 }
 
 html.dark .hljs-string,
@@ -299,7 +298,7 @@ html.dark .hljs-literal,
 html.dark .hljs-variable,
 html.dark .hljs-template-variable,
 html.dark .hljs-tag .hljs-attr {
-  color: #60A5FA !important;
+  color: #E77B61 !important;
 }
 
 html.dark .hljs-title,
@@ -316,7 +315,7 @@ html.dark .hljs-class .hljs-title {
 html.dark .hljs-tag,
 html.dark .hljs-name,
 html.dark .hljs-attribute {
-  color: #60A5FA !important;
+  color: #E77B61 !important;
 }
 
 html.dark .hljs-regexp,
@@ -326,7 +325,7 @@ html.dark .hljs-link {
 
 html.dark .hljs-symbol,
 html.dark .hljs-bullet {
-  color: #94A3B8 !important;
+  color: #A09CA8 !important;
 }
 
 html.dark .hljs-built_in,
@@ -339,7 +338,7 @@ html.dark .hljs-meta {
 }
 
 html.dark .hljs-deletion {
-  color: #60A5FA !important;
+  color: #E77B61 !important;
   background: rgba(231, 123, 97, 0.12) !important;
 }
 
@@ -350,54 +349,54 @@ html.dark .hljs-addition {
 
 /* === 暗色模式 === */
 html.dark body {
-  background: #0A0E1A;
-  color: #E2E8F0;
+  background: #0F0D0E;
+  color: #E8E4E1;
 }
 
 html.dark .prose-container h1,
 html.dark .prose-container h2,
 html.dark .prose-container h3 {
-  color: #E2E8F0;
+  color: #E8E4E1;
 }
 
 html.dark .prose-container p,
 html.dark .prose-container li {
-  color: #94A3B8;
+  color: #B8B4B0;
 }
 
 html.dark .prose-container blockquote {
-  border-left-color: #334155;
-  color: #94A3B8;
+  border-left-color: #2A2020;
+  color: #8A8688;
 }
 
 html.dark .prose-container code {
-  background: #1E293B;
-  color: #3B82F6;
+  background: #1A1516;
+  color: #DA583F;
 }
 
 html.dark .prose-container pre {
-  background: #1E293B;
+  background: #1A1516;
 }
 
 html.dark .prose-container pre code {
-  color: #94A3B8;
+  color: #B8B4B0;
 }
 
 html.dark .prose-container table th,
 html.dark .prose-container table td {
-  border-color: #334155;
+  border-color: #2A2020;
 }
 
 html.dark .prose-container table th {
-  background: #1E293B;
+  background: #1A1516;
 }
 
 html.dark .prose-container hr {
-  border-top-color: #334155;
+  border-top-color: #2A2020;
 }
 
 html.dark .prose-container a {
-  border-bottom-color: #334155;
+  border-bottom-color: #2A2020;
 }
 
 /* === 移动端优化 === */
@@ -516,4 +515,131 @@ html.dark .prose-container a {
   .prose-container li {
     font-size: 15px;
   }
+}
+
+/* === 暗色模式蓝色调 === */
+html.dark body {
+  background: #0A0E1A;
+  color: #E2E8F0;
+}
+
+html.dark .prose-container h1,
+html.dark .prose-container h2,
+html.dark .prose-container h3 {
+  color: #E2E8F0;
+}
+
+html.dark .prose-container p,
+html.dark .prose-container li {
+  color: #94A3B8;
+}
+
+html.dark .prose-container blockquote {
+  border-left-color: #334155;
+  color: #94A3B8;
+}
+
+html.dark .prose-container code {
+  background: #1E293B;
+  color: #3B82F6;
+}
+
+html.dark .prose-container pre {
+  background: #1E293B;
+}
+
+html.dark .prose-container pre code {
+  color: #94A3B8;
+}
+
+html.dark .prose-container table th,
+html.dark .prose-container table td {
+  border-color: #334155;
+}
+
+html.dark .prose-container table th {
+  background: #1E293B;
+}
+
+html.dark .prose-container hr {
+  border-top-color: #334155;
+}
+
+html.dark .prose-container a {
+  border-bottom-color: #334155;
+}
+
+/* === HLJS 暗色代码高亮（蓝色调） === */
+html.dark .hljs {
+  color: #94A3B8 !important;
+}
+
+html.dark .hljs-comment,
+html.dark .hljs-quote {
+  color: #5A5860 !important;
+}
+
+html.dark .hljs-keyword,
+html.dark .hljs-selector-tag,
+html.dark .hljs-subst {
+  color: #60A5FA !important;
+}
+
+html.dark .hljs-string,
+html.dark .hljs-doctag {
+  color: #6BCB77 !important;
+}
+
+html.dark .hljs-number,
+html.dark .hljs-literal,
+html.dark .hljs-variable,
+html.dark .hljs-template-variable,
+html.dark .hljs-tag .hljs-attr {
+  color: #60A5FA !important;
+}
+
+html.dark .hljs-title,
+html.dark .hljs-section,
+html.dark .hljs-selector-id {
+  color: #8B9AE8 !important;
+}
+
+html.dark .hljs-type,
+html.dark .hljs-class .hljs-title {
+  color: #7A9CC6 !important;
+}
+
+html.dark .hljs-tag,
+html.dark .hljs-name,
+html.dark .hljs-attribute {
+  color: #60A5FA !important;
+}
+
+html.dark .hljs-regexp,
+html.dark .hljs-link {
+  color: #F0A58C !important;
+}
+
+html.dark .hljs-symbol,
+html.dark .hljs-bullet {
+  color: #A09CA8 !important;
+}
+
+html.dark .hljs-built_in,
+html.dark .hljs-builtin-name {
+  color: #7A9CC6 !important;
+}
+
+html.dark .hljs-meta {
+  color: #6A6870 !important;
+}
+
+html.dark .hljs-deletion {
+  color: #60A5FA !important;
+  background: rgba(96, 165, 250, 0.12) !important;
+}
+
+html.dark .hljs-addition {
+  color: #6BCB77 !important;
+  background: rgba(107, 203, 119, 0.12) !important;
 }

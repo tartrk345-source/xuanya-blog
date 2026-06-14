@@ -50,7 +50,7 @@ function TravelCard({ travel, onClick }: { travel: Travel; onClick: () => void }
       onClick={onClick}
       className={`group cursor-pointer rounded-2xl border transition-all duration-400 overflow-hidden ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      } bg-white dark:bg-[#1E293B] border-[#CBD5E1] dark:border-[#334155] hover:border-[#3B82F6] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(218,88,63,0.08)]`}
+      } bg-white dark:bg-[#1E293B] border-[#ECD8D9] dark:border-[#334155] hover:border-[#DA583F] hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(218,88,63,0.08)]`}
     >
       {/* 顶部色带 */}
       <div className="h-2" style={{ background: travel.color }} />
@@ -59,16 +59,16 @@ function TravelCard({ travel, onClick }: { travel: Travel; onClick: () => void }
         {/* Emoji + 日期 */}
         <div className="flex items-center justify-between mb-4">
           <span className="text-3xl">{travel.emoji}</span>
-          <span className="text-xs text-[#94A3B8] dark:text-[#94A3B8] tracking-wider font-medium">
+          <span className="text-xs text-[#B8B4B0] dark:text-[#94A3B8] tracking-wider font-medium">
             {travel.date}
           </span>
         </div>
 
         {/* 标题 */}
-        <h3 className="text-[1.3rem] font-bold text-[#1E293B] dark:text-[#E2E8F0] mb-2 tracking-wide group-hover:text-[#3B82F6] transition-colors">
+        <h3 className="text-[1.3rem] font-bold text-[#313131] dark:text-[#E2E8F0] mb-2 tracking-wide group-hover:text-[#DA583F] transition-colors">
           {travel.title}
         </h3>
-        <p className="text-sm text-[#64748B] dark:text-[#94A3B8] mb-4 leading-relaxed">
+        <p className="text-sm text-[#6E6A7C] dark:text-[#94A3B8] mb-4 leading-relaxed">
           {travel.subtitle}
         </p>
 
@@ -90,7 +90,7 @@ function TravelCard({ travel, onClick }: { travel: Travel; onClick: () => void }
         </div>
 
         {/* 查看提示 */}
-        <div className="mt-6 flex items-center gap-2 text-xs font-medium text-[#64748B] dark:text-[#94A3B8] group-hover:text-[#3B82F6] transition-colors">
+        <div className="mt-6 flex items-center gap-2 text-xs font-medium text-[#767693] dark:text-[#94A3B8] group-hover:text-[#DA583F] transition-colors">
           <span>查看行程攻略</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
             <path d="M5 12h14M12 5l7 7-7 7" />
@@ -103,15 +103,15 @@ function TravelCard({ travel, onClick }: { travel: Travel; onClick: () => void }
 
 function TravelDetail({ travel, onBack }: { travel: Travel; onBack: () => void }) {
   return (
-    <div className="h-screen flex flex-col bg-[#F8FAFC] dark:bg-[#0A0E1A]">
+    <div className="h-screen flex flex-col bg-[#FEFAF9] dark:bg-[#0A0E1A]">
       <Navigation />
 
       {/* 顶栏：返回按钮 + 标题 */}
-      <div className="flex-shrink-0 px-4 sm:px-8 pt-3 pb-2 border-b border-[#CBD5E1] dark:border-[#334155]">
+      <div className="flex-shrink-0 px-4 sm:px-8 pt-3 pb-2 border-b border-[#ECD8D9] dark:border-[#334155]">
         <div className="flex items-center gap-3">
           <button
             onClick={onBack}
-            className="flex items-center gap-1.5 text-sm text-[#64748B] dark:text-[#94A3B8] hover:text-[#3B82F6] transition-colors cursor-pointer flex-shrink-0"
+            className="flex items-center gap-1.5 text-sm text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors cursor-pointer flex-shrink-0"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -119,7 +119,7 @@ function TravelDetail({ travel, onBack }: { travel: Travel; onBack: () => void }
             <span className="hidden sm:inline">返回</span>
           </button>
           <div className="flex-1 min-w-0">
-            <h1 className="text-sm font-bold text-[#1E293B] dark:text-[#E2E8F0] truncate">
+            <h1 className="text-sm font-bold text-[#313131] dark:text-[#E2E8F0] truncate">
               {travel.emoji} {travel.title}
             </h1>
           </div>
@@ -159,15 +159,15 @@ export default function TravelsPage() {
       </Helmet>
       <Navigation />
 
-      <main className="min-h-screen bg-[#F8FAFC] dark:bg-[#0A0E1A]">
+      <main className="min-h-screen bg-[#FEFAF9] dark:bg-[#0A0E1A]">
         <div className="max-w-[820px] mx-auto px-4 sm:px-8 pt-16 pb-20">
           {/* 页头 */}
           <div className="mb-12">
-            <div className="text-xs font-bold tracking-[0.12em] text-[#3B82F6] uppercase mb-2">Travel Records</div>
-            <h1 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#1E293B] dark:text-[#E2E8F0] mb-3 tracking-wider leading-tight">
+            <div className="text-xs font-bold tracking-[0.12em] text-[#DA583F] uppercase mb-2">Travel Records</div>
+            <h1 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E2E8F0] mb-3 tracking-wider leading-tight">
               旅行记录
             </h1>
-            <p className="text-[1.05rem] text-[#64748B] dark:text-[#94A3B8] max-w-[500px]">
+            <p className="text-[1.05rem] text-[#6E6A7C] dark:text-[#94A3B8] max-w-[500px]">
               脚步不停，记录每一段旅途——行程攻略、避坑指南、沿途见闻。
             </p>
           </div>
@@ -190,7 +190,7 @@ export default function TravelsPage() {
           {travels.length === 0 && (
             <div className="text-center py-20">
               <div className="text-4xl mb-4">🎒</div>
-              <p className="text-[#94A3B8] dark:text-[#94A3B8]">还没有旅行记录，未来可期。</p>
+              <p className="text-[#B8B4B0] dark:text-[#94A3B8]">还没有旅行记录，未来可期。</p>
             </div>
           )}
         </div>
