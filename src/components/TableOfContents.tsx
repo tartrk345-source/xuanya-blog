@@ -76,7 +76,7 @@ export default function TableOfContents({ content, className = '' }: TableOfCont
 
   return (
     <nav className={`toc-nav ${className}`}>
-      <div className="text-xs font-bold text-[#767693] dark:text-[#8A8688] uppercase tracking-widest mb-3">
+      <div className="text-xs font-bold text-[#64748B] dark:text-[#94A3B8] uppercase tracking-widest mb-3">
         目录
       </div>
       <ul className="space-y-1.5">
@@ -87,15 +87,15 @@ export default function TableOfContents({ content, className = '' }: TableOfCont
             <li key={item.id}>
               <button
                 onClick={() => handleClick(item.id)}
-                className={`block w-full text-left text-[13px] leading-relaxed transition-all duration-200 hover:text-[#DA583F] cursor-pointer ${
+                className={`block w-full text-left text-[13px] leading-relaxed transition-all duration-200 hover:text-[#3B82F6] cursor-pointer ${
                   isActive
-                    ? 'text-[#DA583F] font-semibold'
-                    : 'text-[#767693] dark:text-[#8A8688]'
+                    ? 'text-[#3B82F6] font-semibold'
+                    : 'text-[#64748B] dark:text-[#94A3B8]'
                 }`}
                 style={{ paddingLeft: `${indent * 16}px` }}
               >
                 <span className={`inline-block w-1.5 h-1.5 rounded-full mr-2 transition-colors duration-200 ${
-                  isActive ? 'bg-[#DA583F]' : 'bg-[#ECD8D9] dark:bg-[#2A2020]'
+                  isActive ? 'bg-[#3B82F6]' : 'bg-[#CBD5E1] dark:bg-[#334155]'
                 }`} style={{ marginTop: '-2px' }} />
                 {item.text}
               </button>

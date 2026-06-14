@@ -40,8 +40,8 @@ export default function CategoryPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#FEF3F0] dark:bg-[#1A1516] flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-[#DA583F]/20 border-t-[#DA583F] rounded-full animate-spin" />
+      <div className="min-h-screen bg-[#EFF6FF] dark:bg-[#1E293B] flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-[#3B82F6]/20 border-t-[#3B82F6] rounded-full animate-spin" />
       </div>
     );
   }
@@ -49,13 +49,13 @@ export default function CategoryPage() {
   // 分类不存在 → 404
   if (!catInfo) {
     return (
-      <div className="min-h-screen bg-[#FEF3F0] dark:bg-[#1A1516]">
+      <div className="min-h-screen bg-[#EFF6FF] dark:bg-[#1E293B]">
         <Navigation />
         <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4">
           <div className="text-4xl">🔍</div>
-          <h2 className="text-xl font-bold text-[#313131] dark:text-[#E8E4E1]">分类不存在</h2>
-          <p className="text-sm text-[#767693] dark:text-[#8A8688]">找不到 {catKey} 对应的分类</p>
-          <Link to="/#interests" className="mt-4 px-5 py-2.5 text-sm font-medium bg-[#DA583F] text-white rounded-full hover:bg-[#C43F30] transition-colors">
+          <h2 className="text-xl font-bold text-[#1E293B] dark:text-[#E2E8F0]">分类不存在</h2>
+          <p className="text-sm text-[#64748B] dark:text-[#94A3B8]">找不到 {catKey} 对应的分类</p>
+          <Link to="/#interests" className="mt-4 px-5 py-2.5 text-sm font-medium bg-[#3B82F6] text-white rounded-full hover:bg-[#2563EB] transition-colors">
             返回志趣区
           </Link>
         </div>
@@ -66,7 +66,7 @@ export default function CategoryPage() {
   const isEmpty = articles.length === 0;
 
   return (
-    <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E] text-[#313131] dark:text-[#E8E4E1] font-['PingFang_SC','Microsoft_YaHei','Noto_Sans_SC',sans-serif] transition-colors duration-300">
+    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#0A0E1A] text-[#1E293B] dark:text-[#E2E8F0] font-['PingFang_SC','Microsoft_YaHei','Noto_Sans_SC',sans-serif] transition-colors duration-300">
       <Helmet>
         <title>{catInfo.label} — 玄牙志趣</title>
         <meta name="description" content={`玄牙在「${catInfo.label}」领域的探索——${catInfo.description}`} />
@@ -83,7 +83,7 @@ export default function CategoryPage() {
           {/* 返回 */}
           <Link
             to="/#interests"
-            className="inline-flex items-center gap-2 text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-[#64748B] dark:text-[#94A3B8] hover:text-[#3B82F6] transition-colors mb-8"
           >
             ← 回到志趣区
           </Link>
@@ -92,19 +92,19 @@ export default function CategoryPage() {
           <div className="flex items-center gap-4 mb-4">
             <span className="text-4xl">{catInfo.icon}</span>
             <div>
-              <h1 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E8E4E1] tracking-wider leading-tight font-['PingFang_SC','Noto_Serif_SC',serif]">
+              <h1 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#1E293B] dark:text-[#E2E8F0] tracking-wider leading-tight font-['PingFang_SC','Noto_Serif_SC',serif]">
                 {catInfo.label}
               </h1>
-              <p className="text-[1.05rem] text-[#6E6A7C] dark:text-[#A09CA8] mt-2">{catInfo.description}</p>
+              <p className="text-[1.05rem] text-[#64748B] dark:text-[#94A3B8] mt-2">{catInfo.description}</p>
             </div>
           </div>
 
           <div className="flex items-center gap-4 pt-2">
-            <span className="text-xs text-[#B8B4B0] dark:text-[#8A8688]">{articles.length} 篇文章</span>
-            <span className="flex-1 h-px bg-[#ECD8D9] dark:bg-[#2A2020]" />
+            <span className="text-xs text-[#94A3B8] dark:text-[#94A3B8]">{articles.length} 篇文章</span>
+            <span className="flex-1 h-px bg-[#CBD5E1] dark:bg-[#334155]" />
             <Link
               to="/#interests"
-              className="text-xs text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors"
+              className="text-xs text-[#64748B] dark:text-[#94A3B8] hover:text-[#3B82F6] transition-colors"
             >
               查看全部分类
             </Link>
@@ -115,10 +115,10 @@ export default function CategoryPage() {
       {/* 文章列表 */}
       {isEmpty ? (
         <div className="max-w-[1100px] mx-auto px-4 sm:px-8 pb-32">
-          <div className="text-center py-20 bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-3xl">
+          <div className="text-center py-20 bg-white dark:bg-[#1E293B] border border-[#CBD5E1] dark:border-[#334155] rounded-3xl">
             <div className="text-4xl mb-4">{catInfo.icon}</div>
-            <h3 className="text-lg font-bold text-[#313131] dark:text-[#E8E4E1] mb-2">还没有文章</h3>
-            <p className="text-sm text-[#767693] dark:text-[#8A8688]">
+            <h3 className="text-lg font-bold text-[#1E293B] dark:text-[#E2E8F0] mb-2">还没有文章</h3>
+            <p className="text-sm text-[#64748B] dark:text-[#94A3B8]">
               来日方长——「{catInfo.label}」领域的内容正在酝酿中。
             </p>
           </div>
@@ -130,21 +130,21 @@ export default function CategoryPage() {
               <Link
                 key={a.id}
                 to={`/article/${a.id}`}
-                className="group bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-2xl p-4 sm:p-6 hover:border-[#DA583F] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(218,88,63,0.06)] transition-all duration-300 flex flex-col"
+                className="group bg-white dark:bg-[#1E293B] border border-[#CBD5E1] dark:border-[#334155] rounded-2xl p-4 sm:p-6 hover:border-[#3B82F6] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(218,88,63,0.06)] transition-all duration-300 flex flex-col"
               >
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-xl" title={EMOJI_MEANINGS[a.emoji] || ''}>{a.emoji}</span>
-                  <span className="text-sm font-semibold text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-2 leading-snug">
+                  <span className="text-sm font-semibold text-[#1E293B] dark:text-[#E2E8F0] group-hover:text-[#3B82F6] transition-colors line-clamp-2 leading-snug">
                     {a.title}
                   </span>
                 </div>
-                <p className="text-xs text-[#767693] dark:text-[#8A8688] line-clamp-2 mb-4 ml-8 flex-1">
+                <p className="text-xs text-[#64748B] dark:text-[#94A3B8] line-clamp-2 mb-4 ml-8 flex-1">
                   {getExcerpt(a.content, 100)}
                 </p>
                 <div className="flex items-center justify-between ml-8">
-                  <span className="text-[11px] text-[#B8B4B0]">{formatDate(a.createdAt)}</span>
+                  <span className="text-[11px] text-[#94A3B8]">{formatDate(a.createdAt)}</span>
                   {a.tags && a.tags.length > 0 && (
-                    <span className="text-[10px] text-[#B8B4B0]/60">#{(a.tags as string[])[0]}</span>
+                    <span className="text-[10px] text-[#94A3B8]/60">#{(a.tags as string[])[0]}</span>
                   )}
                 </div>
               </Link>

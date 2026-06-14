@@ -27,12 +27,12 @@ export function useCodeBlockCopy(containerRef: React.RefObject<HTMLDivElement | 
         padding: 4px 10px; border-radius: 6px;
         font-size: 11px; font-weight: 500;
         background: rgba(255,255,255,0.7); backdrop-filter: blur(4px);
-        border: 1px solid #ECD8D9; color: #767693;
+        border: 1px solid #CBD5E1; color: #64748B;
         cursor: pointer; transition: all 0.2s;
       `;
       // hover 样式用 JS 处理
-      btn.onmouseenter = () => { btn.style.borderColor = '#DA583F'; btn.style.color = '#DA583F'; };
-      btn.onmouseleave = () => { btn.style.borderColor = '#ECD8D9'; btn.style.color = '#767693'; };
+      btn.onmouseenter = () => { btn.style.borderColor = '#3B82F6'; btn.style.color = '#3B82F6'; };
+      btn.onmouseleave = () => { btn.style.borderColor = '#CBD5E1'; btn.style.color = '#64748B'; };
 
       const doCopy = async () => {
         const code = pre.querySelector('code');

@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
-/* === 珊瑚色主题 === */
+/* === 明蓝色主题 === */
 @theme {
-  --color-coral: #DA583F;
-  --color-coral-deep: #C43F30;
-  --color-coral-warm: #E77B61;
-  --color-purple-blue: #616FD3;
-  --color-warm-bg: #FEFAF9;
-  --color-warm-pink: #FEF3F0;
-  --color-soft-pink: #ECD8D9;
-  --color-charcoal: #313131;
-  --color-gray-dark: #4F4F4F;
-  --color-gray-mid: #767693;
-  --color-muted-purple: #6E6A7C;
-  --color-navy-dark: #2E4964;
+  --color-blue: #3B82F6;
+  --color-blue-deep: #2563EB;
+  --color-blue-warm: #60A5FA;
+  --color-purple-blue: #6366F1;
+  --color-warm-bg: #F8FAFC;
+  --color-warm-pink: #EFF6FF;
+  --color-soft-pink: #CBD5E1;
+  --color-charcoal: #1E293B;
+  --color-gray-dark: #475569;
+  --color-gray-mid: #64748B;
+  --color-muted-purple: #64748B;
+  --color-navy-dark: #1E40AF;
 }
 
 /* === 全局基础 === */
@@ -25,8 +25,8 @@ html {
 body {
   margin: 0;
   font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Noto Sans CJK SC", Roboto, system-ui, sans-serif;
-  color: #313131;
-  background: #FEFAF9;
+  color: #1E293B;
+  background: #F8FAFC;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -34,13 +34,13 @@ body {
 }
 
 a {
-  color: #DA583F;
+  color: #3B82F6;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 a:hover {
-  color: #C43F30;
+  color: #2563EB;
 }
 
 /* === 动画 === */
@@ -72,7 +72,7 @@ a:hover {
   margin: 2rem 0 1rem;
   line-height: 1.3;
   letter-spacing: -0.02em;
-  color: #313131;
+  color: #1E293B;
 }
 
 .prose-container h2 {
@@ -80,14 +80,14 @@ a:hover {
   font-weight: 600;
   margin: 1.75rem 0 0.75rem;
   line-height: 1.35;
-  color: #313131;
+  color: #1E293B;
 }
 
 .prose-container h3 {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 1.5rem 0 0.5rem;
-  color: #4F4F4F;
+  color: #475569;
 }
 
 .prose-container p {
@@ -110,20 +110,20 @@ a:hover {
 }
 
 .prose-container blockquote {
-  border-left: 3px solid #ECD8D9;
+  border-left: 3px solid #CBD5E1;
   padding-left: 1rem;
   margin: 0 0 1.25rem;
-  color: #4F4F4F;
+  color: #475569;
   font-style: italic;
 }
 
 .prose-container code {
   font-family: ui-monospace, Consolas, "Courier New", monospace;
   font-size: 15px;
-  background: #FEF3F0;
+  background: #EFF6FF;
   padding: 2px 6px;
   border-radius: 4px;
-  color: #DA583F;
+  color: #3B82F6;
 }
 
 /* === 骨架屏脉冲动画 === */
@@ -133,7 +133,7 @@ a:hover {
 }
 
 .prose-container pre {
-  background: #F5EDEA;
+  background: #E2E8F0;
   padding: 1rem;
   border-radius: 8px;
   overflow-x: auto;
@@ -148,17 +148,17 @@ a:hover {
   padding: 0;
   font-size: 14px;
   line-height: 1.6;
-  color: #313131;
+  color: #1E293B;
 }
 
 .prose-container a {
-  color: #DA583F;
+  color: #3B82F6;
   text-decoration: none;
-  border-bottom: 1px solid #ECD8D9;
+  border-bottom: 1px solid #CBD5E1;
 }
 
 .prose-container a:hover {
-  border-bottom-color: #DA583F;
+  border-bottom-color: #3B82F6;
 }
 
 .prose-container img {
@@ -169,7 +169,7 @@ a:hover {
 
 .prose-container hr {
   border: none;
-  border-top: 1px solid #ECD8D9;
+  border-top: 1px solid #CBD5E1;
   margin: 2rem 0;
 }
 
@@ -181,33 +181,33 @@ a:hover {
 
 .prose-container th,
 .prose-container td {
-  border: 1px solid #ECD8D9;
+  border: 1px solid #CBD5E1;
   padding: 8px 12px;
   text-align: left;
   font-size: 16px;
 }
 
 .prose-container th {
-  background: #FEF3F0;
+  background: #EFF6FF;
   font-weight: 600;
 }
 
 /* === highlight.js 代码高亮主题（珊瑚暖色调） === */
 .hljs {
   background: transparent !important;
-  color: #313131 !important;
+  color: #1E293B !important;
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: #8A8688 !important;
+  color: #94A3B8 !important;
   font-style: italic;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-subst {
-  color: #DA583F !important;
+  color: #3B82F6 !important;
 }
 
 .hljs-string,
@@ -220,48 +220,48 @@ a:hover {
 .hljs-variable,
 .hljs-template-variable,
 .hljs-tag .hljs-attr {
-  color: #C43F30 !important;
+  color: #2563EB !important;
 }
 
 .hljs-title,
 .hljs-section,
 .hljs-selector-id {
-  color: #616FD3 !important;
+  color: #6366F1 !important;
   font-weight: bold;
 }
 
 .hljs-type,
 .hljs-class .hljs-title {
-  color: #2E4964 !important;
+  color: #1E40AF !important;
 }
 
 .hljs-tag,
 .hljs-name,
 .hljs-attribute {
-  color: #DA583F !important;
+  color: #3B82F6 !important;
 }
 
 .hljs-regexp,
 .hljs-link {
-  color: #E77B61 !important;
+  color: #60A5FA !important;
 }
 
 .hljs-symbol,
 .hljs-bullet {
-  color: #6E6A7C !important;
+  color: #64748B !important;
 }
 
 .hljs-built_in,
 .hljs-builtin-name {
-  color: #2E4964 !important;
+  color: #1E40AF !important;
 }
 
 .hljs-meta {
-  color: #767693 !important;
+  color: #64748B !important;
 }
 
 .hljs-deletion {
-  color: #DA583F !important;
+  color: #3B82F6 !important;
   background: rgba(218, 88, 63, 0.08) !important;
 }
 
@@ -272,7 +272,7 @@ a:hover {
 
 /* 暗色模式 - 代码高亮 */
 html.dark .hljs {
-  color: #B8B4B0 !important;
+  color: #94A3B8 !important;
 }
 
 html.dark .hljs-comment,
@@ -283,7 +283,7 @@ html.dark .hljs-quote {
 html.dark .hljs-keyword,
 html.dark .hljs-selector-tag,
 html.dark .hljs-subst {
-  color: #E77B61 !important;
+  color: #60A5FA !important;
 }
 
 html.dark .hljs-string,
@@ -296,7 +296,7 @@ html.dark .hljs-literal,
 html.dark .hljs-variable,
 html.dark .hljs-template-variable,
 html.dark .hljs-tag .hljs-attr {
-  color: #E77B61 !important;
+  color: #60A5FA !important;
 }
 
 html.dark .hljs-title,
@@ -313,7 +313,7 @@ html.dark .hljs-class .hljs-title {
 html.dark .hljs-tag,
 html.dark .hljs-name,
 html.dark .hljs-attribute {
-  color: #E77B61 !important;
+  color: #60A5FA !important;
 }
 
 html.dark .hljs-regexp,
@@ -323,7 +323,7 @@ html.dark .hljs-link {
 
 html.dark .hljs-symbol,
 html.dark .hljs-bullet {
-  color: #A09CA8 !important;
+  color: #94A3B8 !important;
 }
 
 html.dark .hljs-built_in,
@@ -336,7 +336,7 @@ html.dark .hljs-meta {
 }
 
 html.dark .hljs-deletion {
-  color: #E77B61 !important;
+  color: #60A5FA !important;
   background: rgba(231, 123, 97, 0.12) !important;
 }
 
@@ -347,54 +347,54 @@ html.dark .hljs-addition {
 
 /* === 暗色模式 === */
 html.dark body {
-  background: #0F0D0E;
-  color: #E8E4E1;
+  background: #0A0E1A;
+  color: #E2E8F0;
 }
 
 html.dark .prose-container h1,
 html.dark .prose-container h2,
 html.dark .prose-container h3 {
-  color: #E8E4E1;
+  color: #E2E8F0;
 }
 
 html.dark .prose-container p,
 html.dark .prose-container li {
-  color: #B8B4B0;
+  color: #94A3B8;
 }
 
 html.dark .prose-container blockquote {
-  border-left-color: #2A2020;
-  color: #8A8688;
+  border-left-color: #334155;
+  color: #94A3B8;
 }
 
 html.dark .prose-container code {
-  background: #1A1516;
-  color: #DA583F;
+  background: #1E293B;
+  color: #3B82F6;
 }
 
 html.dark .prose-container pre {
-  background: #1A1516;
+  background: #1E293B;
 }
 
 html.dark .prose-container pre code {
-  color: #B8B4B0;
+  color: #94A3B8;
 }
 
 html.dark .prose-container table th,
 html.dark .prose-container table td {
-  border-color: #2A2020;
+  border-color: #334155;
 }
 
 html.dark .prose-container table th {
-  background: #1A1516;
+  background: #1E293B;
 }
 
 html.dark .prose-container hr {
-  border-top-color: #2A2020;
+  border-top-color: #334155;
 }
 
 html.dark .prose-container a {
-  border-bottom-color: #2A2020;
+  border-bottom-color: #334155;
 }
 
 /* === 移动端优化 === */

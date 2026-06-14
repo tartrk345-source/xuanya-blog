@@ -53,7 +53,7 @@ export default function AdminLogin() {
             setError(false);
           }}
           title="管理员登录"
-          className="fixed bottom-4 right-4 w-8 h-8 flex items-center justify-center text-[#B8B4B0] hover:text-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] rounded-full transition-all text-xs z-50"
+          className="fixed bottom-4 right-4 w-8 h-8 flex items-center justify-center text-[#94A3B8] hover:text-[#3B82F6] hover:bg-[#EFF6FF] dark:hover:bg-[#1E293B] rounded-full transition-all text-xs z-50"
         >
           ⚙
         </button>
@@ -122,7 +122,7 @@ export default function AdminLogin() {
         <button
           onClick={handleLogout}
           title="点击退出管理模式"
-          className="fixed bottom-14 right-4 text-[10px] text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1A1516] px-2 py-0.5 rounded-full cursor-pointer hover:bg-[#ECD8D9] dark:hover:bg-[#2A2020] transition-all select-none border border-[#DA583F]/15"
+          className="fixed bottom-14 right-4 text-[10px] text-[#3B82F6] bg-[#EFF6FF] dark:bg-[#1E293B] px-2 py-0.5 rounded-full cursor-pointer hover:bg-[#CBD5E1] dark:hover:bg-[#334155] transition-all select-none border border-[#3B82F6]/15"
         >
           管理员模式 · 退出
         </button>

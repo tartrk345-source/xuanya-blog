@@ -95,20 +95,20 @@ export default function ArticlePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E] flex items-center justify-center">
+      <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#0A0E1A] flex items-center justify-center">
         {/* 骨架屏 */}
         <div className="w-full max-w-3xl mx-auto px-6 animate-[fadeIn_0.4s_ease-out]">
-          <div className="h-8 w-32 bg-[#ECD8D9]/40 dark:bg-[#2A2020]/40 rounded-lg mb-6" />
-          <div className="h-10 w-3/4 bg-[#ECD8D9]/40 dark:bg-[#2A2020]/40 rounded-lg mb-3" />
-          <div className="h-6 w-1/4 bg-[#ECD8D9]/30 dark:bg-[#2A2020]/30 rounded-lg mb-12" />
+          <div className="h-8 w-32 bg-[#CBD5E1]/40 dark:bg-[#334155]/40 rounded-lg mb-6" />
+          <div className="h-10 w-3/4 bg-[#CBD5E1]/40 dark:bg-[#334155]/40 rounded-lg mb-3" />
+          <div className="h-6 w-1/4 bg-[#CBD5E1]/30 dark:bg-[#334155]/30 rounded-lg mb-12" />
           {Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="mb-3 space-y-2">
               <div
-                className="h-[18px] bg-[#ECD8D9]/25 dark:bg-[#2A2020]/25 rounded"
+                className="h-[18px] bg-[#CBD5E1]/25 dark:bg-[#334155]/25 rounded"
                 style={{ width: `${70 + Math.random() * 30}%` }}
               />
               <div
-                className="h-[18px] bg-[#ECD8D9]/20 dark:bg-[#2A2020]/20 rounded"
+                className="h-[18px] bg-[#CBD5E1]/20 dark:bg-[#334155]/20 rounded"
                 style={{ width: `${85 + Math.random() * 15}%` }}
               />
             </div>
@@ -121,13 +121,13 @@ export default function ArticlePage() {
   if (!article) {
     if (loadError) {
       return (
-        <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E] flex items-center justify-center px-6">
+        <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#0A0E1A] flex items-center justify-center px-6">
           <div className="max-w-md w-full text-center space-y-4">
             <div className="text-4xl">⚠️</div>
-            <h2 className="text-lg font-bold text-[#313131] dark:text-[#E8E4E1]">文章加载失败</h2>
-            <p className="text-sm text-[#767693] dark:text-[#8A8688] break-all">{loadError}</p>
-            <p className="text-xs text-[#B8B4B0]">ID: {id}</p>
-            <button onClick={() => window.location.reload()} className="px-5 py-2 text-sm bg-[#DA583F] text-white rounded-lg hover:bg-[#C44A35] transition-colors">
+            <h2 className="text-lg font-bold text-[#1E293B] dark:text-[#E2E8F0]">文章加载失败</h2>
+            <p className="text-sm text-[#64748B] dark:text-[#94A3B8] break-all">{loadError}</p>
+            <p className="text-xs text-[#94A3B8]">ID: {id}</p>
+            <button onClick={() => window.location.reload()} className="px-5 py-2 text-sm bg-[#3B82F6] text-white rounded-lg hover:bg-[#C44A35] transition-colors">
               重新加载
             </button>
           </div>
@@ -156,7 +156,7 @@ export default function ArticlePage() {
   const ogImage = article.coverImage || 'https://www.x2ya.com/images/og-image.svg';
 
   return (
-    <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E] transition-colors duration-300">
+    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#0A0E1A] transition-colors duration-300">
       <Helmet>
         <title>{article.title} — 玄牙个人世界</title>
         <meta name="description" content={getExcerpt(article.content, 120)} />
@@ -178,14 +178,14 @@ export default function ArticlePage() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16 animate-[fadeIn_0.4s_ease-out]">
         {/* 顶部导航 */}
         <div className="mb-12">
-          <button onClick={goBack} className="inline-flex items-center gap-1.5 text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
+          <button onClick={goBack} className="inline-flex items-center gap-1.5 text-sm text-[#64748B] dark:text-[#94A3B8] hover:text-[#3B82F6] transition-colors">
             <span>←</span> 返回志趣
           </button>
         </div>
 
         {/* 封面图 */}
         {article.coverImage && (
-          <div className="mb-10 rounded-2xl overflow-hidden border border-[#ECD8D9] dark:border-[#2A2020] shadow-sm">
+          <div className="mb-10 rounded-2xl overflow-hidden border border-[#CBD5E1] dark:border-[#334155] shadow-sm">
             <img
               src={article.coverImage}
               alt={article.title}
@@ -195,24 +195,24 @@ export default function ArticlePage() {
         )}
 
         {/* 文章头部 */}
-        <header className="mb-10 pb-10 border-b border-[#ECD8D9] dark:border-[#2A2020]">
+        <header className="mb-10 pb-10 border-b border-[#CBD5E1] dark:border-[#334155]">
           <div className="flex items-baseline gap-3 mb-4">
             <span className="text-3xl select-none" title={EMOJI_MEANINGS[article.emoji] || ''}>{article.emoji}</span>
-            <h1 className="text-3xl font-bold text-[#313131] dark:text-[#E8E4E1] leading-tight tracking-tight">
+            <h1 className="text-3xl font-bold text-[#1E293B] dark:text-[#E2E8F0] leading-tight tracking-tight">
               {article.title}
             </h1>
           </div>
           <div className="flex items-center gap-3 flex-wrap">
-            <time className="text-sm text-[#767693] dark:text-[#8A8688]" dateTime={new Date(article.createdAt).toISOString()}>
+            <time className="text-sm text-[#64748B] dark:text-[#94A3B8]" dateTime={new Date(article.createdAt).toISOString()}>
               {formatDate(article.createdAt)}
               {article.updatedAt !== article.createdAt && ' · 已编辑'}
             </time>
-            <span className="text-sm text-[#B8B4B0] dark:text-[#8A8688]">
+            <span className="text-sm text-[#94A3B8] dark:text-[#94A3B8]">
               · {readingTime} 分钟阅读
               {viewCount > 0 && <> · {viewCount} 次阅读</>}
             </span>
             {catInfo && (
-              <span className="text-xs text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1A1516] border border-[#ECD8D9] dark:border-[#2A2020] rounded-full px-2 py-0.5" title={EMOJI_MEANINGS[catInfo.icon] || ''}>
+              <span className="text-xs text-[#3B82F6] bg-[#EFF6FF] dark:bg-[#1E293B] border border-[#CBD5E1] dark:border-[#334155] rounded-full px-2 py-0.5" title={EMOJI_MEANINGS[catInfo.icon] || ''}>
                 {catInfo.icon} {catInfo.label}
               </span>
             )}
@@ -222,7 +222,7 @@ export default function ArticlePage() {
               </span>
             )}
             {article.isFeatured && (
-              <span className="text-xs text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1A1516] border border-[#ECD8D9] dark:border-[#2A2020] rounded-full px-2 py-0.5">
+              <span className="text-xs text-[#3B82F6] bg-[#EFF6FF] dark:bg-[#1E293B] border border-[#CBD5E1] dark:border-[#334155] rounded-full px-2 py-0.5">
                 ⭐ 精选
               </span>
             )}
@@ -239,7 +239,7 @@ export default function ArticlePage() {
               {article.tags.map(tag => (
                 <span
                   key={tag}
-                  className="text-xs text-[#767693] dark:text-[#8A8688] bg-[#FEFAF9] dark:bg-[#0F0D0E] border border-[#ECD8D9] dark:border-[#2A2020] rounded-full px-2.5 py-0.5 hover:border-[#DA583F] hover:text-[#DA583F] transition-colors"
+                  className="text-xs text-[#64748B] dark:text-[#94A3B8] bg-[#F8FAFC] dark:bg-[#0A0E1A] border border-[#CBD5E1] dark:border-[#334155] rounded-full px-2.5 py-0.5 hover:border-[#3B82F6] hover:text-[#3B82F6] transition-colors"
                 >
                   #{tag}
                 </span>
@@ -250,8 +250,8 @@ export default function ArticlePage() {
 
         {/* 系列导航 */}
         {article.series && seriesArticles.length > 1 && (
-          <div className="mb-8 p-4 bg-[#FEF3F0] dark:bg-[#1A1516] rounded-xl border border-[#ECD8D9] dark:border-[#2A2020]">
-            <div className="text-xs font-bold text-[#DA583F] mb-2 flex items-center gap-1.5">
+          <div className="mb-8 p-4 bg-[#EFF6FF] dark:bg-[#1E293B] rounded-xl border border-[#CBD5E1] dark:border-[#334155]">
+            <div className="text-xs font-bold text-[#3B82F6] mb-2 flex items-center gap-1.5">
               📖 {article.series}
             </div>
             <div className="flex flex-wrap gap-1.5">
@@ -261,8 +261,8 @@ export default function ArticlePage() {
                   to={`/article/${a.id}`}
                   className={`text-xs px-2.5 py-1 rounded-full transition-all ${
                     a.id === id
-                      ? 'bg-[#DA583F] text-white font-semibold'
-                      : 'bg-white dark:bg-[#1C1818] text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] hover:border-[#DA583F] border border-[#ECD8D9] dark:border-[#2A2020]'
+                      ? 'bg-[#3B82F6] text-white font-semibold'
+                      : 'bg-white dark:bg-[#1E293B] text-[#64748B] dark:text-[#94A3B8] hover:text-[#3B82F6] hover:border-[#3B82F6] border border-[#CBD5E1] dark:border-[#334155]'
                   }`}
                 >
                   {idx + 1}. {a.title}
@@ -293,30 +293,30 @@ export default function ArticlePage() {
 
         {/* 相关文章推荐 */}
         {relatedArticles.length > 0 && (
-          <div className="mt-16 pt-8 border-t border-[#ECD8D9] dark:border-[#2A2020]">
-            <h3 className="text-sm font-bold text-[#313131] dark:text-[#E8E4E1] mb-5 flex items-center gap-2">
-              <span className="text-[#DA583F]">📚</span> 推荐阅读
+          <div className="mt-16 pt-8 border-t border-[#CBD5E1] dark:border-[#334155]">
+            <h3 className="text-sm font-bold text-[#1E293B] dark:text-[#E2E8F0] mb-5 flex items-center gap-2">
+              <span className="text-[#3B82F6]">📚</span> 推荐阅读
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {relatedArticles.map(a => (
                 <Link
                   key={a.id}
                   to={`/article/${a.id}`}
-                  className="group flex flex-col p-4 rounded-xl bg-[#FEFAF9] dark:bg-[#0F0D0E] border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] transition-all duration-300 hover:-translate-y-0.5"
+                  className="group flex flex-col p-4 rounded-xl bg-[#F8FAFC] dark:bg-[#0A0E1A] border border-[#CBD5E1] dark:border-[#334155] hover:border-[#3B82F6] transition-all duration-300 hover:-translate-y-0.5"
                 >
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-base">{a.emoji}</span>
-                    <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-1">
+                    <span className="text-sm font-medium text-[#1E293B] dark:text-[#E2E8F0] group-hover:text-[#3B82F6] transition-colors line-clamp-1">
                       {a.title}
                     </span>
                   </div>
-                  <p className="text-xs text-[#767693] dark:text-[#8A8688] line-clamp-2 ml-7 mb-1">
+                  <p className="text-xs text-[#64748B] dark:text-[#94A3B8] line-clamp-2 ml-7 mb-1">
                     {getExcerpt(a.content, 60)}
                   </p>
                   {a.tags && a.tags.length > 0 && (
                     <div className="flex gap-1 ml-7 mt-1">
                       {a.tags.slice(0, 3).map(t => (
-                        <span key={t} className="text-[10px] text-[#B8B4B0]">#{t}</span>
+                        <span key={t} className="text-[10px] text-[#94A3B8]">#{t}</span>
                       ))}
                     </div>
                   )}
@@ -328,15 +328,15 @@ export default function ArticlePage() {
 
         {/* 上下篇导航 */}
         {(prevArticle || nextArticle) && (
-          <div className="mt-12 pt-8 border-t border-[#ECD8D9] dark:border-[#2A2020]">
+          <div className="mt-12 pt-8 border-t border-[#CBD5E1] dark:border-[#334155]">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {prevArticle ? (
                 <Link
                   to={`/article/${prevArticle.id}`}
-                  className="group flex flex-col p-4 rounded-xl bg-[#FEFAF9] dark:bg-[#0F0D0E] border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] transition-all duration-300 hover:-translate-y-0.5"
+                  className="group flex flex-col p-4 rounded-xl bg-[#F8FAFC] dark:bg-[#0A0E1A] border border-[#CBD5E1] dark:border-[#334155] hover:border-[#3B82F6] transition-all duration-300 hover:-translate-y-0.5"
                 >
-                  <span className="text-[11px] text-[#B8B4B0] dark:text-[#8A8688] mb-1">← 上一篇</span>
-                  <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-2">
+                  <span className="text-[11px] text-[#94A3B8] dark:text-[#94A3B8] mb-1">← 上一篇</span>
+                  <span className="text-sm font-medium text-[#1E293B] dark:text-[#E2E8F0] group-hover:text-[#3B82F6] transition-colors line-clamp-2">
                     {prevArticle.emoji} {prevArticle.title}
                   </span>
                 </Link>
@@ -346,10 +346,10 @@ export default function ArticlePage() {
               {nextArticle ? (
                 <Link
                   to={`/article/${nextArticle.id}`}
-                  className="group flex flex-col p-4 rounded-xl bg-[#FEFAF9] dark:bg-[#0F0D0E] border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] transition-all duration-300 hover:-translate-y-0.5 sm:text-right"
+                  className="group flex flex-col p-4 rounded-xl bg-[#F8FAFC] dark:bg-[#0A0E1A] border border-[#CBD5E1] dark:border-[#334155] hover:border-[#3B82F6] transition-all duration-300 hover:-translate-y-0.5 sm:text-right"
                 >
-                  <span className="text-[11px] text-[#B8B4B0] dark:text-[#8A8688] mb-1">下一篇 →</span>
-                  <span className="text-sm font-medium text-[#313131] dark:text-[#E8E4E1] group-hover:text-[#DA583F] transition-colors line-clamp-2">
+                  <span className="text-[11px] text-[#94A3B8] dark:text-[#94A3B8] mb-1">下一篇 →</span>
+                  <span className="text-sm font-medium text-[#1E293B] dark:text-[#E2E8F0] group-hover:text-[#3B82F6] transition-colors line-clamp-2">
                     {nextArticle.emoji} {nextArticle.title}
                   </span>
                 </Link>
@@ -361,13 +361,13 @@ export default function ArticlePage() {
         )}
 
         {/* 底部操作 */}
-        <div className="mt-8 pt-6 border-t border-[#ECD8D9] dark:border-[#2A2020] flex items-center justify-between">
-          <button onClick={goBack} className="text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
+        <div className="mt-8 pt-6 border-t border-[#CBD5E1] dark:border-[#334155] flex items-center justify-between">
+          <button onClick={goBack} className="text-sm text-[#64748B] dark:text-[#94A3B8] hover:text-[#3B82F6] transition-colors">
             ← 返回博客
           </button>
           {isAdmin && (
             <div className="flex items-center gap-4">
-              <Link to={`/write/${article.id}`} className="text-sm text-[#4F4F4F] dark:text-[#B8B4B0] hover:text-[#DA583F] transition-colors">
+              <Link to={`/write/${article.id}`} className="text-sm text-[#475569] dark:text-[#94A3B8] hover:text-[#3B82F6] transition-colors">
                 编辑
               </Link>
               <button onClick={() => setShowDeleteConfirm(true)} className="text-sm text-red-400 hover:text-red-600 transition-colors">

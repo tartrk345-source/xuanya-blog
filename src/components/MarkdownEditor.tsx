@@ -109,9 +109,9 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
   const editOnly = activeTab === 'edit';
 
   return (
-    <div className="border border-[#ECD8D9] dark:border-[#2A2020] rounded-xl overflow-hidden bg-white dark:bg-[#141012] shadow-sm">
+    <div className="border border-[#CBD5E1] dark:border-[#334155] rounded-xl overflow-hidden bg-white dark:bg-[#141012] shadow-sm">
       {/* 顶部工具栏 */}
-      <div className="flex items-center gap-1 px-3 py-2 border-b border-[#ECD8D9] dark:border-[#2A2020] bg-[#FDF7F6] dark:bg-[#1A1516] flex-wrap">
+      <div className="flex items-center gap-1 px-3 py-2 border-b border-[#CBD5E1] dark:border-[#334155] bg-[#FDF7F6] dark:bg-[#1E293B] flex-wrap">
         {/* 移动端 Tab 切换 */}
         <div className="flex md:hidden mr-2 bg-[#F4EAE8] dark:bg-[#231D1E] rounded-lg p-0.5">
           {(['edit', 'split', 'preview'] as const).map(tab => (
@@ -120,8 +120,8 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
               onClick={() => setActiveTab(tab)}
               className={`px-2.5 py-1 text-xs rounded-md transition-all ${
                 activeTab === tab
-                  ? 'bg-white dark:bg-[#2A2020] text-[#DA583F] shadow-sm'
-                  : 'text-[#767693] dark:text-[#8A8688]'
+                  ? 'bg-white dark:bg-[#334155] text-[#3B82F6] shadow-sm'
+                  : 'text-[#64748B] dark:text-[#94A3B8]'
               }`}
             >
               {tab === 'edit' ? '编辑' : tab === 'split' ? '分屏' : '预览'}
@@ -135,7 +135,7 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
             key={i}
             onClick={() => handleToolbarAction(btn.action)}
             title={btn.label}
-            className="w-8 h-8 flex items-center justify-center rounded-lg text-sm text-[#4F4F4F] dark:text-[#B8B4B0] hover:bg-[#F4EAE8] dark:hover:bg-[#231D1E] hover:text-[#DA583F] transition-all"
+            className="w-8 h-8 flex items-center justify-center rounded-lg text-sm text-[#475569] dark:text-[#94A3B8] hover:bg-[#F4EAE8] dark:hover:bg-[#231D1E] hover:text-[#3B82F6] transition-all"
           >
             {btn.icon}
           </button>
@@ -146,7 +146,7 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
           onClick={() => fileInputRef.current?.click()}
           disabled={uploading}
           title={uploading ? '上传中…' : '上传图片'}
-          className="w-8 h-8 flex items-center justify-center rounded-lg text-sm text-[#4F4F4F] dark:text-[#B8B4B0] hover:bg-[#F4EAE8] dark:hover:bg-[#231D1E] hover:text-[#DA583F] transition-all disabled:opacity-50"
+          className="w-8 h-8 flex items-center justify-center rounded-lg text-sm text-[#475569] dark:text-[#94A3B8] hover:bg-[#F4EAE8] dark:hover:bg-[#231D1E] hover:text-[#3B82F6] transition-all disabled:opacity-50"
         >
           {uploading ? '⏳' : '📁'}
         </button>
@@ -158,7 +158,7 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
           onChange={handleImageUpload}
         />
 
-        <div className="w-px h-5 bg-[#ECD8D9] dark:bg-[#2A2020] mx-1" />
+        <div className="w-px h-5 bg-[#CBD5E1] dark:bg-[#334155] mx-1" />
 
         {/* Markdown 语法参考按钮 */}
         <button
@@ -166,8 +166,8 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
           title="Markdown 语法参考"
           className={`w-8 h-8 flex items-center justify-center rounded-lg text-sm transition-all ${
             showCheatsheet
-              ? 'bg-[#DA583F] text-white'
-              : 'text-[#4F4F4F] dark:text-[#B8B4B0] hover:bg-[#F4EAE8] dark:hover:bg-[#231D1E] hover:text-[#DA583F]'
+              ? 'bg-[#3B82F6] text-white'
+              : 'text-[#475569] dark:text-[#94A3B8] hover:bg-[#F4EAE8] dark:hover:bg-[#231D1E] hover:text-[#3B82F6]'
           }`}
         >
           ?
@@ -185,8 +185,8 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
               onClick={() => setActiveTab(tab.key)}
               className={`px-3 py-1 text-xs rounded-md transition-all ${
                 activeTab === tab.key
-                  ? 'bg-white dark:bg-[#2A2020] text-[#DA583F] shadow-sm'
-                  : 'text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F]'
+                  ? 'bg-white dark:bg-[#334155] text-[#3B82F6] shadow-sm'
+                  : 'text-[#64748B] dark:text-[#94A3B8] hover:text-[#3B82F6]'
               }`}
             >
               {tab.label}
@@ -199,16 +199,16 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
       <div className="flex">
         {/* 编辑区 */}
         {(!previewOnly) && (
-          <div className={`${activeTab === 'split' ? 'w-1/2' : 'w-full'} flex flex-col ${editOnly ? '' : 'md:border-r md:border-[#ECD8D9] dark:md:border-[#2A2020]'}`}>
-            <div className="px-4 py-2 bg-[#FDF7F6] dark:bg-[#1A1516] border-b border-[#ECD8D9] dark:border-[#2A2020]">
-              <span className="text-xs text-[#767693] dark:text-[#8A8688] font-medium">Markdown</span>
+          <div className={`${activeTab === 'split' ? 'w-1/2' : 'w-full'} flex flex-col ${editOnly ? '' : 'md:border-r md:border-[#CBD5E1] dark:md:border-[#334155]'}`}>
+            <div className="px-4 py-2 bg-[#FDF7F6] dark:bg-[#1E293B] border-b border-[#CBD5E1] dark:border-[#334155]">
+              <span className="text-xs text-[#64748B] dark:text-[#94A3B8] font-medium">Markdown</span>
             </div>
             <textarea
               data-markdown-editor
               value={content}
               onChange={(e) => onChange(e.target.value)}
               placeholder="在这里写 Markdown…&#10;&#10;支持：标题、加粗、**粗体**、*斜体*、> 引用、```代码块```、[链接](url)、![图片](url)"
-              className="w-full flex-1 min-h-[460px] p-4 resize-none outline-none font-mono text-[14px] leading-[1.8] text-[#313131] dark:text-[#E8E4E1] placeholder-[#B8B4B0] bg-transparent"
+              className="w-full flex-1 min-h-[460px] p-4 resize-none outline-none font-mono text-[14px] leading-[1.8] text-[#1E293B] dark:text-[#E2E8F0] placeholder-[#94A3B8] bg-transparent"
             />
           </div>
         )}
@@ -216,44 +216,44 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
         {/* 预览区 */}
         {(!editOnly) && (
           <div className={`${activeTab === 'split' ? 'w-1/2' : 'w-full'} flex flex-col`} style={{ minHeight: '460px' }}>
-            <div className="px-4 py-2 bg-[#FDF7F6] dark:bg-[#1A1516] border-b border-[#ECD8D9] dark:border-[#2A2020]">
-              <span className="text-xs text-[#767693] dark:text-[#8A8688] font-medium">预览</span>
+            <div className="px-4 py-2 bg-[#FDF7F6] dark:bg-[#1E293B] border-b border-[#CBD5E1] dark:border-[#334155]">
+              <span className="text-xs text-[#64748B] dark:text-[#94A3B8] font-medium">预览</span>
             </div>
             <div className="flex-1 p-4 overflow-y-auto markdown-preview" style={{ minHeight: '420px' }}>
               {content.trim() ? (
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={{
-                    h1: ({ children }) => <h1 className="text-2xl font-bold text-[#313131] dark:text-[#E8E4E1] mb-4 mt-6 first:mt-0">{children}</h1>,
-                    h2: ({ children }) => <h2 className="text-xl font-bold text-[#313131] dark:text-[#E8E4E1] mb-3 mt-5">{children}</h2>,
-                    h3: ({ children }) => <h3 className="text-lg font-semibold text-[#313131] dark:text-[#E8E4E1] mb-2 mt-4">{children}</h3>,
-                    p: ({ children }) => <p className="text-[#4F4F4F] dark:text-[#B8B4B0] leading-relaxed mb-3">{children}</p>,
-                    a: ({ href, children }) => <a href={href} className="text-[#DA583F] hover:underline" target="_blank" rel="noreferrer">{children}</a>,
-                    strong: ({ children }) => <strong className="font-semibold text-[#313131] dark:text-[#E8E4E1]">{children}</strong>,
-                    em: ({ children }) => <em className="text-[#4F4F4F] dark:text-[#B8B4B0]">{children}</em>,
+                    h1: ({ children }) => <h1 className="text-2xl font-bold text-[#1E293B] dark:text-[#E2E8F0] mb-4 mt-6 first:mt-0">{children}</h1>,
+                    h2: ({ children }) => <h2 className="text-xl font-bold text-[#1E293B] dark:text-[#E2E8F0] mb-3 mt-5">{children}</h2>,
+                    h3: ({ children }) => <h3 className="text-lg font-semibold text-[#1E293B] dark:text-[#E2E8F0] mb-2 mt-4">{children}</h3>,
+                    p: ({ children }) => <p className="text-[#475569] dark:text-[#94A3B8] leading-relaxed mb-3">{children}</p>,
+                    a: ({ href, children }) => <a href={href} className="text-[#3B82F6] hover:underline" target="_blank" rel="noreferrer">{children}</a>,
+                    strong: ({ children }) => <strong className="font-semibold text-[#1E293B] dark:text-[#E2E8F0]">{children}</strong>,
+                    em: ({ children }) => <em className="text-[#475569] dark:text-[#94A3B8]">{children}</em>,
                     code: ({ children, className }) => {
                       // 代码块内的 code（有 hljs 类）不加背景和内边距
                       const isBlock = className?.includes('hljs') || className?.includes('language-');
                       if (isBlock) return <code className={className}>{children}</code>;
-                      return <code className="text-[#DA583F] bg-[#FDF7F6] dark:bg-[#1A1516] px-1.5 py-0.5 rounded text-sm font-mono">{children}</code>;
+                      return <code className="text-[#3B82F6] bg-[#FDF7F6] dark:bg-[#1E293B] px-1.5 py-0.5 rounded text-sm font-mono">{children}</code>;
                     },
-                    pre: ({ children }) => <pre className="bg-[#F5EDEA] dark:bg-[#1A1516] rounded-lg p-4 overflow-x-auto mb-3 text-sm">{children}</pre>,
-                    blockquote: ({ children }) => <blockquote className="border-l-4 border-[#DA583F] pl-4 py-1 my-3 text-[#767693] dark:text-[#8A8688] italic">{children}</blockquote>,
-                    ul: ({ children }) => <ul className="list-disc pl-6 mb-3 text-[#4F4F4F] dark:text-[#B8B4B0]">{children}</ul>,
-                    ol: ({ children }) => <ol className="list-decimal pl-6 mb-3 text-[#4F4F4F] dark:text-[#B8B4B0]">{children}</ol>,
+                    pre: ({ children }) => <pre className="bg-[#E2E8F0] dark:bg-[#1E293B] rounded-lg p-4 overflow-x-auto mb-3 text-sm">{children}</pre>,
+                    blockquote: ({ children }) => <blockquote className="border-l-4 border-[#3B82F6] pl-4 py-1 my-3 text-[#64748B] dark:text-[#94A3B8] italic">{children}</blockquote>,
+                    ul: ({ children }) => <ul className="list-disc pl-6 mb-3 text-[#475569] dark:text-[#94A3B8]">{children}</ul>,
+                    ol: ({ children }) => <ol className="list-decimal pl-6 mb-3 text-[#475569] dark:text-[#94A3B8]">{children}</ol>,
                     li: ({ children }) => <li className="mb-1">{children}</li>,
                     img: ({ src, alt }) => <img src={src} alt={alt} className="rounded-lg shadow-sm my-3 max-w-full" />,
-                    hr: () => <hr className="border-[#ECD8D9] dark:border-[#2A2020] my-4" />,
-                    table: ({ children }) => <table className="border border-[#ECD8D9] dark:border-[#2A2020] rounded-lg overflow-hidden my-3 w-full">{children}</table>,
-                    thead: ({ children }) => <thead className="bg-[#FDF7F6] dark:bg-[#1A1516]">{children}</thead>,
-                    th: ({ children }) => <th className="px-3 py-2 text-left text-sm font-semibold text-[#313131] dark:text-[#E8E4E1] border-b border-[#ECD8D9] dark:border-[#2A2020]">{children}</th>,
-                    td: ({ children }) => <td className="px-3 py-2 text-sm border-t border-[#ECD8D9] dark:border-[#2A2020] text-[#4F4F4F] dark:text-[#B8B4B0]">{children}</td>,
+                    hr: () => <hr className="border-[#CBD5E1] dark:border-[#334155] my-4" />,
+                    table: ({ children }) => <table className="border border-[#CBD5E1] dark:border-[#334155] rounded-lg overflow-hidden my-3 w-full">{children}</table>,
+                    thead: ({ children }) => <thead className="bg-[#FDF7F6] dark:bg-[#1E293B]">{children}</thead>,
+                    th: ({ children }) => <th className="px-3 py-2 text-left text-sm font-semibold text-[#1E293B] dark:text-[#E2E8F0] border-b border-[#CBD5E1] dark:border-[#334155]">{children}</th>,
+                    td: ({ children }) => <td className="px-3 py-2 text-sm border-t border-[#CBD5E1] dark:border-[#334155] text-[#475569] dark:text-[#94A3B8]">{children}</td>,
                   }}
                 >
                   {content}
                 </ReactMarkdown>
               ) : (
-                <p className="text-[#B8B4B0] italic">在左侧输入 Markdown，这里会实时预览…</p>
+                <p className="text-[#94A3B8] italic">在左侧输入 Markdown，这里会实时预览…</p>
               )}
             </div>
           </div>
@@ -262,12 +262,12 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
 
       {/* Markdown 语法参考面板 */}
       {showCheatsheet && (
-        <div className="border-t border-[#ECD8D9] dark:border-[#2A2020] bg-[#FDF9F8] dark:bg-[#110E0F] p-4">
+        <div className="border-t border-[#CBD5E1] dark:border-[#334155] bg-[#FDF9F8] dark:bg-[#110E0F] p-4">
           <div className="flex items-center justify-between mb-3">
-            <h4 className="text-sm font-semibold text-[#313131] dark:text-[#E8E4E1]">Markdown 语法速查</h4>
+            <h4 className="text-sm font-semibold text-[#1E293B] dark:text-[#E2E8F0]">Markdown 语法速查</h4>
             <button
               onClick={() => setShowCheatsheet(false)}
-              className="text-xs text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors"
+              className="text-xs text-[#64748B] dark:text-[#94A3B8] hover:text-[#3B82F6] transition-colors"
             >
               ✕ 收起
             </button>
@@ -296,16 +296,16 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
                 onClick={() => {
                   onChange(content + '\n' + item.syntax + '\n');
                 }}
-                className="flex items-start gap-2 px-2.5 py-1.5 rounded-lg bg-white dark:bg-[#1A1516] border border-[#ECD8D9] dark:border-[#2A2020] hover:border-[#DA583F] hover:bg-[#FDF7F6] dark:hover:bg-[#1A1516] cursor-pointer transition-all group"
+                className="flex items-start gap-2 px-2.5 py-1.5 rounded-lg bg-white dark:bg-[#1E293B] border border-[#CBD5E1] dark:border-[#334155] hover:border-[#3B82F6] hover:bg-[#FDF7F6] dark:hover:bg-[#1E293B] cursor-pointer transition-all group"
               >
-                <code className="text-[#DA583F] text-xs whitespace-nowrap font-mono group-hover:text-[#C43F30]">{item.syntax}</code>
-                <span className="text-[#767693] dark:text-[#8A8688] text-xs">{item.desc}</span>
+                <code className="text-[#3B82F6] text-xs whitespace-nowrap font-mono group-hover:text-[#2563EB]">{item.syntax}</code>
+                <span className="text-[#64748B] dark:text-[#94A3B8] text-xs">{item.desc}</span>
               </div>
             ))}
           </div>
-          <div className="mt-3 p-3 bg-white dark:bg-[#1A1516] rounded-lg border border-[#ECD8D9] dark:border-[#2A2020]">
-            <span className="text-xs text-[#767693] dark:text-[#8A8688]">表格示例：</span>
-            <pre className="mt-1 text-xs text-[#4F4F4F] dark:text-[#B8B4B0] font-mono whitespace-pre-wrap">{"| 左对齐 | 居中 | 右对齐 |\n| :--- | :---: | ---: |\n| 内容 | 内容 | 内容 |"}</pre>
+          <div className="mt-3 p-3 bg-white dark:bg-[#1E293B] rounded-lg border border-[#CBD5E1] dark:border-[#334155]">
+            <span className="text-xs text-[#64748B] dark:text-[#94A3B8]">表格示例：</span>
+            <pre className="mt-1 text-xs text-[#475569] dark:text-[#94A3B8] font-mono whitespace-pre-wrap">{"| 左对齐 | 居中 | 右对齐 |\n| :--- | :---: | ---: |\n| 内容 | 内容 | 内容 |"}</pre>
           </div>
         </div>
       )}

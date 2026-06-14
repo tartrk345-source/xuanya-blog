@@ -34,12 +34,12 @@ function TagInput({ tags, onChange }: { tags: string[]; onChange: (tags: string[
         {tags.map(tag => (
           <span
             key={tag}
-            className="inline-flex items-center gap-1 px-2.5 py-1 text-xs rounded-full bg-[#FEF3F0] dark:bg-[#1A1516] text-[#DA583F] border border-[#ECD8D9] dark:border-[#2A2020]"
+            className="inline-flex items-center gap-1 px-2.5 py-1 text-xs rounded-full bg-[#EFF6FF] dark:bg-[#1E293B] text-[#3B82F6] border border-[#CBD5E1] dark:border-[#334155]"
           >
             {tag}
             <button
               onClick={() => removeTag(tag)}
-              className="w-3.5 h-3.5 flex items-center justify-center rounded-full text-[#DA583F] hover:bg-[#DA583F] hover:text-white transition-colors cursor-pointer"
+              className="w-3.5 h-3.5 flex items-center justify-center rounded-full text-[#3B82F6] hover:bg-[#3B82F6] hover:text-white transition-colors cursor-pointer"
             >×</button>
           </span>
         ))}
@@ -54,11 +54,11 @@ function TagInput({ tags, onChange }: { tags: string[]; onChange: (tags: string[
               if (e.key === 'Backspace' && !input && tags.length > 0) removeTag(tags[tags.length - 1]);
             }}
             placeholder={tags.length === 0 ? '输入标签后回车添加…' : ''}
-            className="px-2.5 py-1 text-xs border border-[#ECD8D9] dark:border-[#2A2020] rounded-full bg-transparent text-[#313131] dark:text-[#E8E4E1] outline-none focus:border-[#DA583F] transition-all placeholder-[#B8B4B0] w-[140px]"
+            className="px-2.5 py-1 text-xs border border-[#CBD5E1] dark:border-[#334155] rounded-full bg-transparent text-[#1E293B] dark:text-[#E2E8F0] outline-none focus:border-[#3B82F6] transition-all placeholder-[#94A3B8] w-[140px]"
           />
         )}
       </div>
-      {tags.length > 0 && <p className="text-[10px] text-[#B8B4B0]">最多 8 个标签，回车添加</p>}
+      {tags.length > 0 && <p className="text-[10px] text-[#94A3B8]">最多 8 个标签，回车添加</p>}
     </div>
   );
 }
@@ -70,7 +70,7 @@ function Toggle({ label, checked, onChange }: { label: string; checked: boolean;
       <div
         onClick={() => onChange(!checked)}
         className={`relative w-9 h-5 rounded-full transition-colors duration-200 ${
-          checked ? 'bg-[#DA583F]' : 'bg-[#ECD8D9] dark:bg-[#2A2020]'
+          checked ? 'bg-[#3B82F6]' : 'bg-[#CBD5E1] dark:bg-[#334155]'
         }`}
       >
         <div
@@ -79,7 +79,7 @@ function Toggle({ label, checked, onChange }: { label: string; checked: boolean;
           }`}
         />
       </div>
-      <span className="text-sm text-[#4F4F4F] dark:text-[#B8B4B0]">{label}</span>
+      <span className="text-sm text-[#475569] dark:text-[#94A3B8]">{label}</span>
     </label>
   );
 }
@@ -237,33 +237,33 @@ export default function WritePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E] transition-colors duration-300">
+    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#0A0E1A] transition-colors duration-300">
       <Navigation />
       <div className="max-w-3xl mx-auto px-6 py-12">
         {/* 顶部工具栏 */}
         <div className="flex items-center justify-between mb-8">
-          <button onClick={goBack} className="text-sm text-[#767693] dark:text-[#8A8688] hover:text-[#DA583F] transition-colors">
+          <button onClick={goBack} className="text-sm text-[#64748B] dark:text-[#94A3B8] hover:text-[#3B82F6] transition-colors">
             ← 返回志趣
           </button>
           <div className="flex gap-3">
             {isEditing ? (
               <>
-                <button onClick={() => setShowDeleteConfirm(true)} disabled={saving} className="px-5 py-2 text-sm font-medium text-red-600 bg-white dark:bg-[#1C1818] border border-red-200 dark:border-red-800 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 hover:border-red-300 transition-all disabled:opacity-40">
+                <button onClick={() => setShowDeleteConfirm(true)} disabled={saving} className="px-5 py-2 text-sm font-medium text-red-600 bg-white dark:bg-[#1E293B] border border-red-200 dark:border-red-800 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 hover:border-red-300 transition-all disabled:opacity-40">
                   删除
                 </button>
-                <button onClick={() => handleSave('draft')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#B8B4B0] bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] hover:border-[#DA583F] transition-all disabled:opacity-40">
+                <button onClick={() => handleSave('draft')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-[#475569] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#CBD5E1] dark:border-[#334155] rounded-lg hover:bg-[#EFF6FF] dark:hover:bg-[#1E293B] hover:border-[#3B82F6] transition-all disabled:opacity-40">
                   {saving ? '保存中…' : '存为草稿'}
                 </button>
-                <button onClick={() => handleSave('published')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-white bg-[#DA583F] rounded-lg hover:bg-[#C43F30] transition-all disabled:opacity-40">
+                <button onClick={() => handleSave('published')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-white bg-[#3B82F6] rounded-lg hover:bg-[#2563EB] transition-all disabled:opacity-40">
                   {saving ? '保存中…' : '保存修改'}
                 </button>
               </>
             ) : (
               <>
-                <button onClick={() => handleSave('draft')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#B8B4B0] bg-white dark:bg-[#1C1818] border border-[#ECD8D9] dark:border-[#2A2020] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] hover:border-[#DA583F] transition-all disabled:opacity-40">
+                <button onClick={() => handleSave('draft')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-[#475569] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#CBD5E1] dark:border-[#334155] rounded-lg hover:bg-[#EFF6FF] dark:hover:bg-[#1E293B] hover:border-[#3B82F6] transition-all disabled:opacity-40">
                   {saving ? '保存中…' : '存为草稿'}
                 </button>
-                <button onClick={() => handleSave('published')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-white bg-[#DA583F] rounded-lg hover:bg-[#C43F30] transition-all disabled:opacity-40">
+                <button onClick={() => handleSave('published')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-white bg-[#3B82F6] rounded-lg hover:bg-[#2563EB] transition-all disabled:opacity-40">
                   {saving ? '发布中…' : '发布'}
                 </button>
               </>
@@ -273,7 +273,7 @@ export default function WritePage() {
 
         {/* 分类选择器 */}
         <div className="mb-5">
-          <label className="block text-xs font-medium text-[#767693] dark:text-[#8A8688] mb-2">选择志趣分类</label>
+          <label className="block text-xs font-medium text-[#64748B] dark:text-[#94A3B8] mb-2">选择志趣分类</label>
           <div className="flex flex-wrap gap-2">
             {!category && (
               <p className="w-full text-xs text-amber-500 mb-1">请选择一个分类再保存</p>
@@ -284,8 +284,8 @@ export default function WritePage() {
                 onClick={() => setCategory(prev => prev === cat.key ? '' : cat.key)}
                 className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-sm transition-all border ${
                   category === cat.key
-                    ? 'bg-[#DA583F] text-white border-[#DA583F]'
-                    : 'bg-white dark:bg-[#1C1818] border-[#ECD8D9] dark:border-[#2A2020] text-[#4F4F4F] dark:text-[#B8B4B0] hover:border-[#DA583F] hover:text-[#DA583F]'
+                    ? 'bg-[#3B82F6] text-white border-[#3B82F6]'
+                    : 'bg-white dark:bg-[#1E293B] border-[#CBD5E1] dark:border-[#334155] text-[#475569] dark:text-[#94A3B8] hover:border-[#3B82F6] hover:text-[#3B82F6]'
                 }`}
               >
                 <span className="text-base" title={EMOJI_MEANINGS[cat.icon] || ''}>{cat.icon}</span>
@@ -297,7 +297,7 @@ export default function WritePage() {
 
         {/* emoji 选择器 */}
         <div className="mb-5">
-          <label className="block text-xs font-medium text-[#767693] dark:text-[#8A8688] mb-2">选择标识</label>
+          <label className="block text-xs font-medium text-[#64748B] dark:text-[#94A3B8] mb-2">选择标识</label>
           <div className="flex flex-wrap gap-2">
             {EMOJI_PRESETS.map(e => (
               <button
@@ -306,8 +306,8 @@ export default function WritePage() {
                 title={EMOJI_MEANINGS[e] || ''}
                 className={`w-10 h-10 flex items-center justify-center text-lg rounded-lg transition-all border ${
                   e === emoji
-                    ? 'bg-[#DA583F] text-white border-[#DA583F]'
-                    : 'bg-white dark:bg-[#1C1818] border-[#ECD8D9] dark:border-[#2A2020] text-[#4F4F4F] dark:text-[#B8B4B0] hover:border-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516]'
+                    ? 'bg-[#3B82F6] text-white border-[#3B82F6]'
+                    : 'bg-white dark:bg-[#1E293B] border-[#CBD5E1] dark:border-[#334155] text-[#475569] dark:text-[#94A3B8] hover:border-[#3B82F6] hover:bg-[#EFF6FF] dark:hover:bg-[#1E293B]'
                 }`}
               >
                 {e}
@@ -322,29 +322,29 @@ export default function WritePage() {
           value={title}
           onChange={e => setTitle(e.target.value)}
           placeholder="文章标题…"
-          className="w-full text-2xl font-bold text-[#313131] dark:text-[#E8E4E1] placeholder-[#B8B4B0] outline-none mb-6 bg-transparent"
+          className="w-full text-2xl font-bold text-[#1E293B] dark:text-[#E2E8F0] placeholder-[#94A3B8] outline-none mb-6 bg-transparent"
         />
 
         {/* === Phase 2 新增字段区域 === */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6 p-5 bg-[#FEFAF9] dark:bg-[#0F0D0E] rounded-xl border border-[#ECD8D9] dark:border-[#2A2020]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6 p-5 bg-[#F8FAFC] dark:bg-[#0A0E1A] rounded-xl border border-[#CBD5E1] dark:border-[#334155]">
           {/* 标签 */}
           <div className="md:col-span-2">
-            <label className="block text-xs font-medium text-[#767693] dark:text-[#8A8688] mb-2">🏷️ 标签</label>
+            <label className="block text-xs font-medium text-[#64748B] dark:text-[#94A3B8] mb-2">🏷️ 标签</label>
             <TagInput tags={tags} onChange={setTags} />
           </div>
 
           {/* 封面图 */}
           <div>
-            <label className="block text-xs font-medium text-[#767693] dark:text-[#8A8688] mb-2">🖼️ 封面图 URL</label>
+            <label className="block text-xs font-medium text-[#64748B] dark:text-[#94A3B8] mb-2">🖼️ 封面图 URL</label>
             <input
               type="text"
               value={coverImage}
               onChange={e => setCoverImage(e.target.value)}
               placeholder="https://example.com/cover.jpg"
-              className="w-full px-3 py-2 text-sm border border-[#ECD8D9] dark:border-[#2A2020] rounded-lg bg-white dark:bg-[#1C1818] text-[#313131] dark:text-[#E8E4E1] focus:border-[#DA583F] outline-none transition-all placeholder-[#B8B4B0]"
+              className="w-full px-3 py-2 text-sm border border-[#CBD5E1] dark:border-[#334155] rounded-lg bg-white dark:bg-[#1E293B] text-[#1E293B] dark:text-[#E2E8F0] focus:border-[#3B82F6] outline-none transition-all placeholder-[#94A3B8]"
             />
             {coverImage && (
-              <div className="mt-2 w-full h-20 rounded-lg overflow-hidden border border-[#ECD8D9] dark:border-[#2A2020]">
+              <div className="mt-2 w-full h-20 rounded-lg overflow-hidden border border-[#CBD5E1] dark:border-[#334155]">
                 <img src={coverImage} alt="封面预览" className="w-full h-full object-cover" onError={e => (e.currentTarget.style.display = 'none')} />
               </div>
             )}
@@ -352,13 +352,13 @@ export default function WritePage() {
 
           {/* 系列 */}
           <div>
-            <label className="block text-xs font-medium text-[#767693] dark:text-[#8A8688] mb-2">📖 系列/专栏</label>
+            <label className="block text-xs font-medium text-[#64748B] dark:text-[#94A3B8] mb-2">📖 系列/专栏</label>
             <input
               type="text"
               value={series}
               onChange={e => setSeries(e.target.value)}
               placeholder="如：积极心理治疗入门"
-              className="w-full px-3 py-2 text-sm border border-[#ECD8D9] dark:border-[#2A2020] rounded-lg bg-white dark:bg-[#1C1818] text-[#313131] dark:text-[#E8E4E1] focus:border-[#DA583F] outline-none transition-all placeholder-[#B8B4B0]"
+              className="w-full px-3 py-2 text-sm border border-[#CBD5E1] dark:border-[#334155] rounded-lg bg-white dark:bg-[#1E293B] text-[#1E293B] dark:text-[#E2E8F0] focus:border-[#3B82F6] outline-none transition-all placeholder-[#94A3B8]"
             />
           </div>
 

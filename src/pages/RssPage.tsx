@@ -48,8 +48,8 @@ export default function RssFeedPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0F0D0E] flex items-center justify-center">
-      <div className="w-8 h-8 border-2 border-[#DA583F]/20 border-t-[#DA583F] rounded-full animate-spin" />
+    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#0A0E1A] flex items-center justify-center">
+      <div className="w-8 h-8 border-2 border-[#3B82F6]/20 border-t-[#3B82F6] rounded-full animate-spin" />
     </div>
   );
 }
