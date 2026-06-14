@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Tailwind dark mode: respond to html.dark class, not system preference */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* === 明蓝色主题 === */
 @theme {
   --color-blue: #3B82F6;
