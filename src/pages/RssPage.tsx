@@ -49,7 +49,7 @@ export default function RssFeedPage() {
 
   return (
     <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0A0E1A] flex items-center justify-center">
-      <div className="w-8 h-8 border-2 border-[#DA583F]/20 border-t-[#DA583F] rounded-full animate-spin" />
+      <div className="w-8 h-8 border-2 border-[#DA583F]/20 dark:border-[#3B82F6]/20 border-t-[#DA583F] dark:border-t-[#60A5FA] rounded-full animate-spin" />
     </div>
   );
 }

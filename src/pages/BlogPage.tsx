@@ -192,7 +192,7 @@ export default function BlogPage() {
         <div className="max-w-[1100px] mx-auto">
           <Link
             to="/#interests"
-            className="inline-flex items-center gap-2 text-sm text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-full px-4 py-2"
+            className="inline-flex items-center gap-2 text-sm text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-full px-4 py-2"
           >
             ← 前往首页志趣区浏览全部文章
           </Link>
@@ -213,7 +213,7 @@ export default function BlogPage() {
             }}
           />
           <div className="relative z-[1] pt-12">
-            <div className="text-xs font-bold tracking-[0.12em] text-[#DA583F] uppercase mb-2">Blog</div>
+            <div className="text-xs font-bold tracking-[0.12em] text-[#DA583F] dark:text-[#60A5FA] uppercase mb-2">Blog</div>
             <h1 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E2E8F0] mb-4 tracking-wider leading-tight font-['PingFang_SC','Noto_Serif_SC',serif]">志趣所在</h1>
             <p className="text-[1.05rem] text-[#6E6A7C] dark:text-[#94A3B8] max-w-[560px] mb-8">
               医学是主干，但枝叶蔓延至多个领域——它们共同构成了玄牙的精神世界。
@@ -231,17 +231,17 @@ export default function BlogPage() {
                   className="w-full pl-9 pr-9 py-2.5 text-sm border border-[#ECD8D9] dark:border-[#334155] rounded-lg bg-white dark:bg-[#1E293B] text-[#313131] dark:text-[#E2E8F0] focus:border-[#DA583F] outline-none transition-all placeholder-[#B8B4B0]"
                 />
                 {searchQuery && (
-                  <button onClick={() => setSearchQuery('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-[#B8B4B0] hover:text-[#DA583F] text-sm cursor-pointer">✕</button>
+                  <button onClick={() => setSearchQuery('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-[#B8B4B0] hover:text-[#DA583F] dark:text-[#60A5FA] text-sm cursor-pointer">✕</button>
                 )}
               </div>
 
               {isAdmin && (
                 <div className="flex items-center gap-2 flex-wrap">
-                  <Link to="/write" className="px-4 py-2 text-sm font-bold text-white bg-[#DA583F] rounded-lg hover:bg-[#C43F30] transition-all whitespace-nowrap" style={{ color: '#ffffff' }}>
+                  <Link to="/write" className="px-4 py-2 text-sm font-bold text-white bg-[#DA583F] dark:bg-[#3B82F6] rounded-lg hover:bg-[#C43F30] dark:hover:bg-[#2563EB] transition-all whitespace-nowrap" style={{ color: '#ffffff' }}>
                     + 写文章
                   </Link>
                   <button onClick={() => { downloadBackup(); markExportedToday(); }} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] hover:border-[#DA583F] transition-all whitespace-nowrap">
-                    ↓ 导出{!hasExportedToday() && <span className="ml-1 text-[10px] text-[#DA583F]">·未备份</span>}
+                    ↓ 导出{!hasExportedToday() && <span className="ml-1 text-[10px] text-[#DA583F] dark:text-[#60A5FA]">·未备份</span>}
                   </button>
                   <button onClick={handleImport} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] hover:border-[#DA583F] transition-all whitespace-nowrap">
                     ↑ 导入
@@ -267,8 +267,8 @@ export default function BlogPage() {
                       onClick={() => setActiveTag(prev => prev === tag ? null : tag)}
                       className={`inline-flex items-center gap-1 px-2.5 py-1 text-xs rounded-full border transition-all cursor-pointer ${
                         activeTag === tag
-                          ? 'bg-[#DA583F] text-white border-[#DA583F] font-medium'
-                          : 'bg-white dark:bg-[#1E293B] text-[#767693] dark:text-[#94A3B8] border-[#ECD8D9] dark:border-[#334155] hover:border-[#DA583F] hover:text-[#DA583F]'
+                          ? 'bg-[#DA583F] text-white border-[#DA583F] dark:border-[#3B82F6] font-medium'
+                          : 'bg-white dark:bg-[#1E293B] text-[#767693] dark:text-[#94A3B8] border-[#ECD8D9] dark:border-[#334155] hover:border-[#DA583F] hover:text-[#DA583F] dark:text-[#60A5FA]'
                       }`}
                     >
                       {tag}
@@ -302,9 +302,9 @@ export default function BlogPage() {
       {/* 标签筛选提示 */}
       {activeTag && !searchQuery && (
         <div className="max-w-[1100px] mx-auto px-4 sm:px-8">
-          <p className="mb-5 text-xs text-[#DA583F]">
+          <p className="mb-5 text-xs text-[#DA583F] dark:text-[#60A5FA]">
             标签筛选：#{activeTag} · {tagFiltered.length} 篇
-            <button onClick={() => setActiveTag(null)} className="ml-2 text-[#767693] hover:text-[#DA583F] cursor-pointer">✕ 清除</button>
+            <button onClick={() => setActiveTag(null)} className="ml-2 text-[#767693] hover:text-[#DA583F] dark:text-[#60A5FA] cursor-pointer">✕ 清除</button>
           </p>
         </div>
       )}
@@ -313,7 +313,7 @@ export default function BlogPage() {
         {/* 置顶文章区域 */}
         {pinnedArticles.length > 0 && (
           <div className="mb-8">
-            <div className="text-xs font-bold text-[#DA583F] tracking-widest mb-4 flex items-center gap-2">
+            <div className="text-xs font-bold text-[#DA583F] dark:text-[#60A5FA] tracking-widest mb-4 flex items-center gap-2">
               📌 置顶文章
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -321,7 +321,7 @@ export default function BlogPage() {
                 <Link
                   key={a.id}
                   to={`/article/${a.id}`}
-                  className="block bg-white dark:bg-[#1E293B] rounded-xl p-5 border border-[#DA583F]/30 dark:border-[#3B82F6]/20 hover:border-[#DA583F] shadow-[0_4px_20px_rgba(218,88,63,0.06)] transition-all duration-300 hover:-translate-y-0.5 group"
+                  className="block bg-white dark:bg-[#1E293B] rounded-xl p-5 border border-[#DA583F]/30 dark:border-[#3B82F6]/30 dark:border-[#3B82F6]/20 hover:border-[#DA583F] shadow-[0_4px_20px_rgba(218,88,63,0.06)] transition-all duration-300 hover:-translate-y-0.5 group"
                 >
                   {a.coverImage && (
                     <div className="mb-3 rounded-lg overflow-hidden h-28">
@@ -330,10 +330,10 @@ export default function BlogPage() {
                   )}
                   <div className="flex items-center gap-2 mb-1.5">
                     <span className="text-lg">{a.emoji}</span>
-                    <span className="text-sm font-bold text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] transition-colors line-clamp-1">
+                    <span className="text-sm font-bold text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors line-clamp-1">
                       {a.title}
                     </span>
-                    <span className="text-[10px] text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1E293B] rounded-full px-1.5 py-0.5">置顶</span>
+                    <span className="text-[10px] text-[#DA583F] dark:text-[#60A5FA] bg-[#FEF3F0] dark:bg-[#1E293B] rounded-full px-1.5 py-0.5">置顶</span>
                   </div>
                   <p className="text-xs text-[#767693] dark:text-[#94A3B8] line-clamp-2 ml-7 mb-1.5">
                     {getExcerpt(a.content, 80)}
@@ -353,7 +353,7 @@ export default function BlogPage() {
         {/* 精选文章区域 */}
         {featuredArticles.length > 0 && (
           <div className="mb-8">
-            <div className="text-xs font-bold text-[#DA583F] tracking-widest mb-4 flex items-center gap-2">
+            <div className="text-xs font-bold text-[#DA583F] dark:text-[#60A5FA] tracking-widest mb-4 flex items-center gap-2">
               ⭐ 精选文章
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -370,7 +370,7 @@ export default function BlogPage() {
                   )}
                   <div className="flex items-center gap-2 mb-1.5">
                     <span className="text-lg">{a.emoji}</span>
-                    <span className="text-sm font-medium text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] transition-colors line-clamp-1">
+                    <span className="text-sm font-medium text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors line-clamp-1">
                       {a.title}
                     </span>
                   </div>
@@ -399,7 +399,7 @@ export default function BlogPage() {
                 <div
                   className={`group/cat rounded-xl border transition-all duration-300 ${
                     isActive
-                      ? 'bg-white dark:bg-[#1E293B] border-[#DA583F] shadow-[0_8px_30px_rgba(218,88,63,0.08)]'
+                      ? 'bg-white dark:bg-[#1E293B] border-[#DA583F] dark:border-[#3B82F6] shadow-[0_8px_30px_rgba(218,88,63,0.08)]'
                       : 'bg-white dark:bg-[#1E293B] border-[#ECD8D9] dark:border-[#334155] hover:border-[#DA583F] hover:shadow-[0_4px_20px_rgba(218,88,63,0.06)]'
                   }`}
                 >
@@ -420,7 +420,7 @@ export default function BlogPage() {
                       <h3 className="text-sm font-bold text-[#313131] dark:text-[#E2E8F0] flex items-center gap-2">
                         {cat.label}
                         {articles.length > 0 && (
-                          <span className="text-[10px] font-medium bg-[#FEF3F0] dark:bg-[#1E293B] text-[#DA583F] rounded-full px-2 py-0.5">
+                          <span className="text-[10px] font-medium bg-[#FEF3F0] dark:bg-[#1E293B] text-[#DA583F] dark:text-[#60A5FA] rounded-full px-2 py-0.5">
                             {articles.length}篇
                           </span>
                         )}
@@ -440,7 +440,7 @@ export default function BlogPage() {
                       <div className="flex gap-1 flex-shrink-0 ml-1 opacity-0 group-hover/cat:opacity-100 transition-opacity">
                         <button
                           onClick={(e) => { e.stopPropagation(); openEditCat(cat); }}
-                          className="w-7 h-7 flex items-center justify-center rounded-md bg-[#FEFAF9] dark:bg-[#0A0E1A] border border-[#ECD8D9] dark:border-[#334155] text-xs text-[#767693] hover:text-[#DA583F] hover:border-[#DA583F] transition-all"
+                          className="w-7 h-7 flex items-center justify-center rounded-md bg-[#FEFAF9] dark:bg-[#0A0E1A] border border-[#ECD8D9] dark:border-[#334155] text-xs text-[#767693] hover:text-[#DA583F] dark:text-[#60A5FA] hover:border-[#DA583F] transition-all"
                           title="编辑版块"
                         >✎</button>
                         <button
@@ -470,11 +470,11 @@ export default function BlogPage() {
                               )}
                               <div className="flex items-center gap-2 mb-1">
                                 <span className="text-base" title={EMOJI_MEANINGS[a.emoji] || ''}>{a.emoji}</span>
-                                <span className="text-sm font-medium text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] transition-colors line-clamp-1">
+                                <span className="text-sm font-medium text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors line-clamp-1">
                                   {a.title}
                                 </span>
                                 {a.isFeatured && (
-                                  <span className="text-[10px] text-[#DA583F]">⭐</span>
+                                  <span className="text-[10px] text-[#DA583F] dark:text-[#60A5FA]">⭐</span>
                                 )}
                               </div>
                               <p className="text-xs text-[#767693] dark:text-[#94A3B8] line-clamp-2 ml-6 mb-1.5">
@@ -495,7 +495,7 @@ export default function BlogPage() {
                         <p className="text-sm text-[#8A8688] py-4 text-center">
                           {searchQuery || activeTag ? '该版块无匹配文章' : '该领域暂无文章，'}
                           {isAdmin ? (
-                            <Link to="/write" className="text-[#DA583F] hover:underline">写一篇</Link>
+                            <Link to="/write" className="text-[#DA583F] dark:text-[#60A5FA] hover:underline">写一篇</Link>
                           ) : (
                             <span>敬请期待</span>
                           )}
@@ -512,7 +512,7 @@ export default function BlogPage() {
           {isAdmin && (
             <button
               onClick={openAddCat}
-              className="w-full flex items-center justify-center gap-2 py-5 rounded-xl border-2 border-dashed border-[#ECD8D9] dark:border-[#334155] hover:border-[#DA583F] hover:bg-[#FEF3F0]/50 dark:hover:bg-[#1E293B]/50 transition-all cursor-pointer text-[#B8B4B0] hover:text-[#DA583F]"
+              className="w-full flex items-center justify-center gap-2 py-5 rounded-xl border-2 border-dashed border-[#ECD8D9] dark:border-[#334155] hover:border-[#DA583F] hover:bg-[#FEF3F0]/50 dark:hover:bg-[#1E293B]/50 transition-all cursor-pointer text-[#B8B4B0] hover:text-[#DA583F] dark:text-[#60A5FA]"
             >
               <span className="text-lg">+</span>
               <span className="text-sm">新增版块</span>
@@ -535,7 +535,7 @@ export default function BlogPage() {
                 >
                   <div className="flex items-center gap-2 mb-1.5">
                     <span className="text-lg">{a.emoji}</span>
-                    <span className="text-sm font-medium text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] transition-colors line-clamp-1">
+                    <span className="text-sm font-medium text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors line-clamp-1">
                       {a.title}
                     </span>
                   </div>
@@ -569,7 +569,7 @@ export default function BlogPage() {
             </ul>
             <div className="flex gap-3">
               <button onClick={() => setImportDialog({ open: false, items: [] })} className="flex-1 px-4 py-2.5 text-sm font-medium text-[#767693] bg-[#FEF3F0] dark:bg-[#1E293B] rounded-lg hover:bg-[#ECD8D9] dark:hover:bg-[#334155] transition-all">取消</button>
-              <button onClick={handleImportConfirm} className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-[#DA583F] rounded-lg hover:bg-[#C43F30] transition-all">确认导入</button>
+              <button onClick={handleImportConfirm} className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-[#DA583F] dark:bg-[#3B82F6] rounded-lg hover:bg-[#C43F30] dark:hover:bg-[#2563EB] transition-all">确认导入</button>
             </div>
           </div>
         </div>
@@ -624,7 +624,7 @@ export default function BlogPage() {
             </div>
             <div className="flex gap-3 mt-6">
               <button onClick={closeCatDialog} className="flex-1 px-4 py-2.5 text-sm font-medium text-[#767693] bg-[#FEF3F0] dark:bg-[#1E293B] rounded-lg hover:bg-[#ECD8D9] dark:hover:bg-[#334155] transition-all">取消</button>
-              <button onClick={handleSaveCat} disabled={!catDialog.label.trim()} className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-[#DA583F] rounded-lg hover:bg-[#C43F30] transition-all disabled:opacity-40">保存</button>
+              <button onClick={handleSaveCat} disabled={!catDialog.label.trim()} className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-[#DA583F] dark:bg-[#3B82F6] rounded-lg hover:bg-[#C43F30] dark:hover:bg-[#2563EB] transition-all disabled:opacity-40">保存</button>
             </div>
           </div>
         </div>

@@ -109,7 +109,7 @@ export default function Navigation() {
             className="flex items-center gap-2.5 group"
           >
             <img src="/images/logo.webp" alt="玄牙" className="w-8 h-8 rounded-full object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-200" />
-            <span className="text-[1.2rem] font-bold text-[#313131] dark:text-[#E2E8F0] tracking-wider font-['PingFang_SC','Noto_Serif_SC',serif] group-hover:text-[#DA583F] transition-colors">
+            <span className="text-[1.2rem] font-bold text-[#313131] dark:text-[#E2E8F0] tracking-wider font-['PingFang_SC','Noto_Serif_SC',serif] group-hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors">
               玄牙
             </span>
           </Link>
@@ -129,7 +129,7 @@ export default function Navigation() {
                         e.preventDefault();
                         setDropdownOpen(!dropdownOpen);
                       }}
-                      className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] after:transition-[width] after:duration-300 hover:after:w-full cursor-pointer flex items-center gap-1 select-none"
+                      className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] dark:after:bg-[#60A5FA] after:transition-[width] after:duration-300 hover:after:w-full cursor-pointer flex items-center gap-1 select-none"
                     >
                       {link.label}
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`}>
@@ -144,7 +144,7 @@ export default function Navigation() {
                               key={child.id}
                               to={child.id}
                               onClick={() => setDropdownOpen(false)}
-                              className="block px-4 py-2.5 text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] rounded-lg transition-colors whitespace-nowrap"
+                              className="block px-4 py-2.5 text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] rounded-lg transition-colors whitespace-nowrap"
                             >
                               {child.label}
                             </Link>
@@ -156,7 +156,7 @@ export default function Navigation() {
                                 handleNavClick(e, child.id);
                                 setDropdownOpen(false);
                               }}
-                              className="block px-4 py-2.5 text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] rounded-lg transition-colors whitespace-nowrap cursor-pointer"
+                              className="block px-4 py-2.5 text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] rounded-lg transition-colors whitespace-nowrap cursor-pointer"
                             >
                               {child.label}
                             </a>
@@ -169,7 +169,7 @@ export default function Navigation() {
                   <a
                     href={`/#${link.id}`}
                     onClick={(e) => handleNavClick(e, link.id)}
-                    className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] after:transition-[width] after:duration-300 hover:after:w-full cursor-pointer"
+                    className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] dark:after:bg-[#60A5FA] after:transition-[width] after:duration-300 hover:after:w-full cursor-pointer"
                   >
                     {link.label}
                   </a>
@@ -201,7 +201,7 @@ export default function Navigation() {
               {isAdmin ? (
                 <button
                   onClick={() => { logout(); }}
-                  className="text-xs font-medium text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1E293B] hover:bg-[#ECD8D9] dark:hover:bg-[#334155] px-2.5 py-1 rounded-md transition-all cursor-pointer whitespace-nowrap"
+                  className="text-xs font-medium text-[#DA583F] dark:text-[#60A5FA] bg-[#FEF3F0] dark:bg-[#1E293B] hover:bg-[#ECD8D9] dark:hover:bg-[#334155] px-2.5 py-1 rounded-md transition-all cursor-pointer whitespace-nowrap"
                   title="退出管理模式"
                 >
                   退出
@@ -214,7 +214,7 @@ export default function Navigation() {
                     document.getElementById('admin-login-trigger')?.click();
                   }}
                   title="管理员登录"
-                  className="text-xs text-[#B8B4B0] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors px-1"
+                  className="text-xs text-[#B8B4B0] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors px-1"
                 >
                   ⚙
                 </Link>
@@ -253,7 +253,7 @@ export default function Navigation() {
                   setMobileOpen(false);
                   document.body.style.overflow = '';
                 }}
-                className="text-[1.3rem] font-semibold text-[#313131] dark:text-[#E2E8F0] tracking-wider hover:text-[#DA583F] transition-colors cursor-pointer"
+                className="text-[1.3rem] font-semibold text-[#313131] dark:text-[#E2E8F0] tracking-wider hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors cursor-pointer"
               >
                 {link.label}
               </a>
@@ -264,7 +264,7 @@ export default function Navigation() {
                       key={child.id}
                       to={child.id}
                       onClick={() => { setMobileOpen(false); document.body.style.overflow = ''; }}
-                      className="text-[1.05rem] text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors pl-2 border-l-2 border-[#ECD8D9] dark:border-[#334155]"
+                      className="text-[1.05rem] text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors pl-2 border-l-2 border-[#ECD8D9] dark:border-[#334155]"
                     >
                       {child.label}
                     </Link>
@@ -277,7 +277,7 @@ export default function Navigation() {
                         setMobileOpen(false);
                         document.body.style.overflow = '';
                       }}
-                      className="text-[1.05rem] text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors pl-2 border-l-2 border-[#ECD8D9] dark:border-[#334155] cursor-pointer"
+                      className="text-[1.05rem] text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors pl-2 border-l-2 border-[#ECD8D9] dark:border-[#334155] cursor-pointer"
                     >
                       {child.label}
                     </a>
@@ -294,7 +294,7 @@ export default function Navigation() {
                 setMobileOpen(false);
                 document.body.style.overflow = '';
               }}
-              className="text-[1.3rem] font-semibold text-[#313131] dark:text-[#E2E8F0] tracking-wider hover:text-[#DA583F] transition-colors cursor-pointer"
+              className="text-[1.3rem] font-semibold text-[#313131] dark:text-[#E2E8F0] tracking-wider hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors cursor-pointer"
             >
               {link.label}
             </a>
@@ -320,14 +320,14 @@ export default function Navigation() {
         {isAdmin ? (
           <button
             onClick={() => { logout(); setMobileOpen(false); document.body.style.overflow = ''; }}
-            className="mt-2 px-5 py-2 text-sm font-medium text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1E293B] rounded-lg border border-[#DA583F]/20 hover:bg-[#ECD8D9] dark:hover:bg-[#334155] transition-all cursor-pointer"
+            className="mt-2 px-5 py-2 text-sm font-medium text-[#DA583F] dark:text-[#60A5FA] bg-[#FEF3F0] dark:bg-[#1E293B] rounded-lg border border-[#DA583F]/20 dark:border-[#3B82F6]/20 hover:bg-[#ECD8D9] dark:hover:bg-[#334155] transition-all cursor-pointer"
           >
             退出管理模式
           </button>
         ) : (
           <button
             onClick={() => { document.getElementById('admin-login-trigger')?.click(); setMobileOpen(false); document.body.style.overflow = ''; }}
-            className="mt-2 text-xs text-[#B8B4B0] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors cursor-pointer"
+            className="mt-2 text-xs text-[#B8B4B0] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors cursor-pointer"
           >
             ⚙ 管理员登录
           </button>

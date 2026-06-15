@@ -87,9 +87,9 @@ export default function TableOfContents({ content, className = '' }: TableOfCont
             <li key={item.id}>
               <button
                 onClick={() => handleClick(item.id)}
-                className={`block w-full text-left text-[13px] leading-relaxed transition-all duration-200 hover:text-[#DA583F] cursor-pointer ${
+                className={`block w-full text-left text-[13px] leading-relaxed transition-all duration-200 hover:text-[#DA583F] dark:text-[#60A5FA] cursor-pointer ${
                   isActive
-                    ? 'text-[#DA583F] font-semibold'
+                    ? 'text-[#DA583F] dark:text-[#60A5FA] font-semibold'
                     : 'text-[#767693] dark:text-[#94A3B8]'
                 }`}
                 style={{ paddingLeft: `${indent * 16}px` }}

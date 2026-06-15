@@ -30,7 +30,7 @@ export default function BackToTop() {
       className="fixed bottom-8 right-8 z-50 w-11 h-11 flex items-center justify-center
         rounded-full bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155]
         shadow-[0_4px_16px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.3)]
-        text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] hover:border-[#DA583F]
+        text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] hover:border-[#DA583F]
         transition-all duration-300 hover:-translate-y-0.5
         animate-[fadeIn_0.3s_ease-out]"
       aria-label="返回顶部"

@@ -41,7 +41,7 @@ export default function CategoryPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#FEF3F0] dark:bg-[#1E293B] flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-[#DA583F]/20 border-t-[#DA583F] rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-[#DA583F]/20 dark:border-[#3B82F6]/20 border-t-[#DA583F] dark:border-t-[#60A5FA] rounded-full animate-spin" />
       </div>
     );
   }
@@ -55,7 +55,7 @@ export default function CategoryPage() {
           <div className="text-4xl">🔍</div>
           <h2 className="text-xl font-bold text-[#313131] dark:text-[#E2E8F0]">分类不存在</h2>
           <p className="text-sm text-[#767693] dark:text-[#94A3B8]">找不到 {catKey} 对应的分类</p>
-          <Link to="/#interests" className="mt-4 px-5 py-2.5 text-sm font-medium bg-[#DA583F] text-white rounded-full hover:bg-[#C43F30] transition-colors">
+          <Link to="/#interests" className="mt-4 px-5 py-2.5 text-sm font-medium bg-[#DA583F] dark:bg-[#3B82F6] text-white rounded-full hover:bg-[#C43F30] dark:hover:bg-[#2563EB] transition-colors">
             返回志趣区
           </Link>
         </div>
@@ -83,7 +83,7 @@ export default function CategoryPage() {
           {/* 返回 */}
           <Link
             to="/#interests"
-            className="inline-flex items-center gap-2 text-sm text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors mb-8"
           >
             ← 回到志趣区
           </Link>
@@ -104,7 +104,7 @@ export default function CategoryPage() {
             <span className="flex-1 h-px bg-[#ECD8D9] dark:bg-[#334155]" />
             <Link
               to="/#interests"
-              className="text-xs text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors"
+              className="text-xs text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors"
             >
               查看全部分类
             </Link>
@@ -134,7 +134,7 @@ export default function CategoryPage() {
               >
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-xl" title={EMOJI_MEANINGS[a.emoji] || ''}>{a.emoji}</span>
-                  <span className="text-sm font-semibold text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] transition-colors line-clamp-2 leading-snug">
+                  <span className="text-sm font-semibold text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors line-clamp-2 leading-snug">
                     {a.title}
                   </span>
                 </div>

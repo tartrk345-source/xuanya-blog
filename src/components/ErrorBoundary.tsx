@@ -40,7 +40,7 @@ export default class ErrorBoundary extends Component<Props, State> {
                 this.setState({ hasError: false, error: null });
                 window.location.reload();
               }}
-              className="px-5 py-2 text-sm bg-[#DA583F] text-white rounded-lg hover:bg-[#C44A35] transition-colors"
+              className="px-5 py-2 text-sm bg-[#DA583F] dark:bg-[#3B82F6] text-white rounded-lg hover:bg-[#C44A35] transition-colors"
             >
               重新加载
             </button>

@@ -34,7 +34,7 @@ function SyncInitializer({ children }: { children: React.ReactNode }) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-[#FEFAF9] dark:bg-[#0A0E1A]">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-10 h-10 border-2 border-[#DA583F]/20 border-t-[#DA583F] rounded-full animate-spin" />
+          <div className="w-10 h-10 border-2 border-[#DA583F]/20 dark:border-[#3B82F6]/20 border-t-[#DA583F] dark:border-t-[#60A5FA] rounded-full animate-spin" />
           <span className="text-sm text-[#767693] dark:text-[#94A3B8] animate-pulse">加载中…</span>
         </div>
       </div>
@@ -48,7 +48,7 @@ function LoadingSpinner() {
   return (
     <div className="flex items-center justify-center min-h-[60vh] bg-[#FEFAF9] dark:bg-[#0A0E1A]">
       <div className="flex flex-col items-center gap-4">
-        <div className="w-8 h-8 border-2 border-[#DA583F]/20 border-t-[#DA583F] rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-[#DA583F]/20 dark:border-[#3B82F6]/20 border-t-[#DA583F] dark:border-t-[#60A5FA] rounded-full animate-spin" />
         <span className="text-sm text-[#767693] dark:text-[#94A3B8]">加载中…</span>
       </div>
     </div>

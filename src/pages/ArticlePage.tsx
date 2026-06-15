@@ -127,7 +127,7 @@ export default function ArticlePage() {
             <h2 className="text-lg font-bold text-[#313131] dark:text-[#E2E8F0]">文章加载失败</h2>
             <p className="text-sm text-[#767693] dark:text-[#94A3B8] break-all">{loadError}</p>
             <p className="text-xs text-[#B8B4B0]">ID: {id}</p>
-            <button onClick={() => window.location.reload()} className="px-5 py-2 text-sm bg-[#DA583F] text-white rounded-lg hover:bg-[#C44A35] transition-colors">
+            <button onClick={() => window.location.reload()} className="px-5 py-2 text-sm bg-[#DA583F] dark:bg-[#3B82F6] text-white rounded-lg hover:bg-[#C44A35] transition-colors">
               重新加载
             </button>
           </div>
@@ -178,7 +178,7 @@ export default function ArticlePage() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16 animate-[fadeIn_0.4s_ease-out]">
         {/* 顶部导航 */}
         <div className="mb-12">
-          <button onClick={goBack} className="inline-flex items-center gap-1.5 text-sm text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors">
+          <button onClick={goBack} className="inline-flex items-center gap-1.5 text-sm text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors">
             <span>←</span> 返回志趣
           </button>
         </div>
@@ -212,7 +212,7 @@ export default function ArticlePage() {
               {viewCount > 0 && <> · {viewCount} 次阅读</>}
             </span>
             {catInfo && (
-              <span className="text-xs text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-full px-2 py-0.5" title={EMOJI_MEANINGS[catInfo.icon] || ''}>
+              <span className="text-xs text-[#DA583F] dark:text-[#60A5FA] bg-[#FEF3F0] dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-full px-2 py-0.5" title={EMOJI_MEANINGS[catInfo.icon] || ''}>
                 {catInfo.icon} {catInfo.label}
               </span>
             )}
@@ -222,7 +222,7 @@ export default function ArticlePage() {
               </span>
             )}
             {article.isFeatured && (
-              <span className="text-xs text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-full px-2 py-0.5">
+              <span className="text-xs text-[#DA583F] dark:text-[#60A5FA] bg-[#FEF3F0] dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-full px-2 py-0.5">
                 ⭐ 精选
               </span>
             )}
@@ -239,7 +239,7 @@ export default function ArticlePage() {
               {article.tags.map(tag => (
                 <span
                   key={tag}
-                  className="text-xs text-[#767693] dark:text-[#94A3B8] bg-[#FEFAF9] dark:bg-[#0A0E1A] border border-[#ECD8D9] dark:border-[#334155] rounded-full px-2.5 py-0.5 hover:border-[#DA583F] hover:text-[#DA583F] transition-colors"
+                  className="text-xs text-[#767693] dark:text-[#94A3B8] bg-[#FEFAF9] dark:bg-[#0A0E1A] border border-[#ECD8D9] dark:border-[#334155] rounded-full px-2.5 py-0.5 hover:border-[#DA583F] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors"
                 >
                   #{tag}
                 </span>
@@ -251,7 +251,7 @@ export default function ArticlePage() {
         {/* 系列导航 */}
         {article.series && seriesArticles.length > 1 && (
           <div className="mb-8 p-4 bg-[#FEF3F0] dark:bg-[#1E293B] rounded-xl border border-[#ECD8D9] dark:border-[#334155]">
-            <div className="text-xs font-bold text-[#DA583F] mb-2 flex items-center gap-1.5">
+            <div className="text-xs font-bold text-[#DA583F] dark:text-[#60A5FA] mb-2 flex items-center gap-1.5">
               📖 {article.series}
             </div>
             <div className="flex flex-wrap gap-1.5">
@@ -262,7 +262,7 @@ export default function ArticlePage() {
                   className={`text-xs px-2.5 py-1 rounded-full transition-all ${
                     a.id === id
                       ? 'bg-[#DA583F] text-white font-semibold'
-                      : 'bg-white dark:bg-[#1E293B] text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] hover:border-[#DA583F] border border-[#ECD8D9] dark:border-[#334155]'
+                      : 'bg-white dark:bg-[#1E293B] text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] hover:border-[#DA583F] border border-[#ECD8D9] dark:border-[#334155]'
                   }`}
                 >
                   {idx + 1}. {a.title}
@@ -295,7 +295,7 @@ export default function ArticlePage() {
         {relatedArticles.length > 0 && (
           <div className="mt-16 pt-8 border-t border-[#ECD8D9] dark:border-[#334155]">
             <h3 className="text-sm font-bold text-[#313131] dark:text-[#E2E8F0] mb-5 flex items-center gap-2">
-              <span className="text-[#DA583F]">📚</span> 推荐阅读
+              <span className="text-[#DA583F] dark:text-[#60A5FA]">📚</span> 推荐阅读
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {relatedArticles.map(a => (
@@ -306,7 +306,7 @@ export default function ArticlePage() {
                 >
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-base">{a.emoji}</span>
-                    <span className="text-sm font-medium text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] transition-colors line-clamp-1">
+                    <span className="text-sm font-medium text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors line-clamp-1">
                       {a.title}
                     </span>
                   </div>
@@ -336,7 +336,7 @@ export default function ArticlePage() {
                   className="group flex flex-col p-4 rounded-xl bg-[#FEFAF9] dark:bg-[#0A0E1A] border border-[#ECD8D9] dark:border-[#334155] hover:border-[#DA583F] transition-all duration-300 hover:-translate-y-0.5"
                 >
                   <span className="text-[11px] text-[#B8B4B0] dark:text-[#94A3B8] mb-1">← 上一篇</span>
-                  <span className="text-sm font-medium text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] transition-colors line-clamp-2">
+                  <span className="text-sm font-medium text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors line-clamp-2">
                     {prevArticle.emoji} {prevArticle.title}
                   </span>
                 </Link>
@@ -349,7 +349,7 @@ export default function ArticlePage() {
                   className="group flex flex-col p-4 rounded-xl bg-[#FEFAF9] dark:bg-[#0A0E1A] border border-[#ECD8D9] dark:border-[#334155] hover:border-[#DA583F] transition-all duration-300 hover:-translate-y-0.5 sm:text-right"
                 >
                   <span className="text-[11px] text-[#B8B4B0] dark:text-[#94A3B8] mb-1">下一篇 →</span>
-                  <span className="text-sm font-medium text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] transition-colors line-clamp-2">
+                  <span className="text-sm font-medium text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors line-clamp-2">
                     {nextArticle.emoji} {nextArticle.title}
                   </span>
                 </Link>
@@ -362,12 +362,12 @@ export default function ArticlePage() {
 
         {/* 底部操作 */}
         <div className="mt-8 pt-6 border-t border-[#ECD8D9] dark:border-[#334155] flex items-center justify-between">
-          <button onClick={goBack} className="text-sm text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors">
+          <button onClick={goBack} className="text-sm text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors">
             ← 返回博客
           </button>
           {isAdmin && (
             <div className="flex items-center gap-4">
-              <Link to={`/write/${article.id}`} className="text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors">
+              <Link to={`/write/${article.id}`} className="text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors">
                 编辑
               </Link>
               <button onClick={() => setShowDeleteConfirm(true)} className="text-sm text-red-400 hover:text-red-600 transition-colors">

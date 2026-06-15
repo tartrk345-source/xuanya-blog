@@ -120,7 +120,7 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
               onClick={() => setActiveTab(tab)}
               className={`px-2.5 py-1 text-xs rounded-md transition-all ${
                 activeTab === tab
-                  ? 'bg-white dark:bg-[#334155] text-[#DA583F] shadow-sm'
+                  ? 'bg-white dark:bg-[#334155] text-[#DA583F] dark:text-[#60A5FA] shadow-sm'
                   : 'text-[#767693] dark:text-[#94A3B8]'
               }`}
             >
@@ -135,7 +135,7 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
             key={i}
             onClick={() => handleToolbarAction(btn.action)}
             title={btn.label}
-            className="w-8 h-8 flex items-center justify-center rounded-lg text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:bg-[#F4EAE8] dark:hover:bg-[#1E293B] hover:text-[#DA583F] transition-all"
+            className="w-8 h-8 flex items-center justify-center rounded-lg text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:bg-[#F4EAE8] dark:hover:bg-[#1E293B] hover:text-[#DA583F] dark:text-[#60A5FA] transition-all"
           >
             {btn.icon}
           </button>
@@ -146,7 +146,7 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
           onClick={() => fileInputRef.current?.click()}
           disabled={uploading}
           title={uploading ? '上传中…' : '上传图片'}
-          className="w-8 h-8 flex items-center justify-center rounded-lg text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:bg-[#F4EAE8] dark:hover:bg-[#1E293B] hover:text-[#DA583F] transition-all disabled:opacity-50"
+          className="w-8 h-8 flex items-center justify-center rounded-lg text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:bg-[#F4EAE8] dark:hover:bg-[#1E293B] hover:text-[#DA583F] dark:text-[#60A5FA] transition-all disabled:opacity-50"
         >
           {uploading ? '⏳' : '📁'}
         </button>
@@ -167,7 +167,7 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
           className={`w-8 h-8 flex items-center justify-center rounded-lg text-sm transition-all ${
             showCheatsheet
               ? 'bg-[#DA583F] text-white'
-              : 'text-[#4F4F4F] dark:text-[#94A3B8] hover:bg-[#F4EAE8] dark:hover:bg-[#1E293B] hover:text-[#DA583F]'
+              : 'text-[#4F4F4F] dark:text-[#94A3B8] hover:bg-[#F4EAE8] dark:hover:bg-[#1E293B] hover:text-[#DA583F] dark:text-[#60A5FA]'
           }`}
         >
           ?
@@ -185,8 +185,8 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
               onClick={() => setActiveTab(tab.key)}
               className={`px-3 py-1 text-xs rounded-md transition-all ${
                 activeTab === tab.key
-                  ? 'bg-white dark:bg-[#334155] text-[#DA583F] shadow-sm'
-                  : 'text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F]'
+                  ? 'bg-white dark:bg-[#334155] text-[#DA583F] dark:text-[#60A5FA] shadow-sm'
+                  : 'text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA]'
               }`}
             >
               {tab.label}
@@ -228,17 +228,17 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
                     h2: ({ children }) => <h2 className="text-xl font-bold text-[#313131] dark:text-[#E2E8F0] mb-3 mt-5">{children}</h2>,
                     h3: ({ children }) => <h3 className="text-lg font-semibold text-[#313131] dark:text-[#E2E8F0] mb-2 mt-4">{children}</h3>,
                     p: ({ children }) => <p className="text-[#4F4F4F] dark:text-[#94A3B8] leading-relaxed mb-3">{children}</p>,
-                    a: ({ href, children }) => <a href={href} className="text-[#DA583F] hover:underline" target="_blank" rel="noreferrer">{children}</a>,
+                    a: ({ href, children }) => <a href={href} className="text-[#DA583F] dark:text-[#60A5FA] hover:underline" target="_blank" rel="noreferrer">{children}</a>,
                     strong: ({ children }) => <strong className="font-semibold text-[#313131] dark:text-[#E2E8F0]">{children}</strong>,
                     em: ({ children }) => <em className="text-[#4F4F4F] dark:text-[#94A3B8]">{children}</em>,
                     code: ({ children, className }) => {
                       // 代码块内的 code（有 hljs 类）不加背景和内边距
                       const isBlock = className?.includes('hljs') || className?.includes('language-');
                       if (isBlock) return <code className={className}>{children}</code>;
-                      return <code className="text-[#DA583F] bg-[#FDF7F6] dark:bg-[#1E293B] px-1.5 py-0.5 rounded text-sm font-mono">{children}</code>;
+                      return <code className="text-[#DA583F] dark:text-[#60A5FA] bg-[#FDF7F6] dark:bg-[#1E293B] px-1.5 py-0.5 rounded text-sm font-mono">{children}</code>;
                     },
                     pre: ({ children }) => <pre className="bg-[#F5EDEA] dark:bg-[#1E293B] rounded-lg p-4 overflow-x-auto mb-3 text-sm">{children}</pre>,
-                    blockquote: ({ children }) => <blockquote className="border-l-4 border-[#DA583F] pl-4 py-1 my-3 text-[#767693] dark:text-[#94A3B8] italic">{children}</blockquote>,
+                    blockquote: ({ children }) => <blockquote className="border-l-4 border-[#DA583F] dark:border-[#3B82F6] pl-4 py-1 my-3 text-[#767693] dark:text-[#94A3B8] italic">{children}</blockquote>,
                     ul: ({ children }) => <ul className="list-disc pl-6 mb-3 text-[#4F4F4F] dark:text-[#94A3B8]">{children}</ul>,
                     ol: ({ children }) => <ol className="list-decimal pl-6 mb-3 text-[#4F4F4F] dark:text-[#94A3B8]">{children}</ol>,
                     li: ({ children }) => <li className="mb-1">{children}</li>,
@@ -267,7 +267,7 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
             <h4 className="text-sm font-semibold text-[#313131] dark:text-[#E2E8F0]">Markdown 语法速查</h4>
             <button
               onClick={() => setShowCheatsheet(false)}
-              className="text-xs text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors"
+              className="text-xs text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors"
             >
               ✕ 收起
             </button>
@@ -298,7 +298,7 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
                 }}
                 className="flex items-start gap-2 px-2.5 py-1.5 rounded-lg bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] hover:border-[#DA583F] hover:bg-[#FDF7F6] dark:hover:bg-[#1E293B] cursor-pointer transition-all group"
               >
-                <code className="text-[#DA583F] text-xs whitespace-nowrap font-mono group-hover:text-[#C43F30]">{item.syntax}</code>
+                <code className="text-[#DA583F] dark:text-[#60A5FA] text-xs whitespace-nowrap font-mono group-hover:text-[#C43F30]">{item.syntax}</code>
                 <span className="text-[#767693] dark:text-[#94A3B8] text-xs">{item.desc}</span>
               </div>
             ))}

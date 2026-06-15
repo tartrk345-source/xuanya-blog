@@ -65,7 +65,7 @@ function TravelCard({ travel, onClick }: { travel: Travel; onClick: () => void }
         </div>
 
         {/* 标题 */}
-        <h3 className="text-[1.3rem] font-bold text-[#313131] dark:text-[#E2E8F0] mb-2 tracking-wide group-hover:text-[#DA583F] transition-colors">
+        <h3 className="text-[1.3rem] font-bold text-[#313131] dark:text-[#E2E8F0] mb-2 tracking-wide group-hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors">
           {travel.title}
         </h3>
         <p className="text-sm text-[#6E6A7C] dark:text-[#94A3B8] mb-4 leading-relaxed">
@@ -90,7 +90,7 @@ function TravelCard({ travel, onClick }: { travel: Travel; onClick: () => void }
         </div>
 
         {/* 查看提示 */}
-        <div className="mt-6 flex items-center gap-2 text-xs font-medium text-[#767693] dark:text-[#94A3B8] group-hover:text-[#DA583F] transition-colors">
+        <div className="mt-6 flex items-center gap-2 text-xs font-medium text-[#767693] dark:text-[#94A3B8] group-hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors">
           <span>查看行程攻略</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
             <path d="M5 12h14M12 5l7 7-7 7" />
@@ -111,7 +111,7 @@ function TravelDetail({ travel, onBack }: { travel: Travel; onBack: () => void }
         <div className="flex items-center gap-3">
           <button
             onClick={onBack}
-            className="flex items-center gap-1.5 text-sm text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors cursor-pointer flex-shrink-0"
+            className="flex items-center gap-1.5 text-sm text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors cursor-pointer flex-shrink-0"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -163,7 +163,7 @@ export default function TravelsPage() {
         <div className="max-w-[820px] mx-auto px-4 sm:px-8 pt-16 pb-20">
           {/* 页头 */}
           <div className="mb-12">
-            <div className="text-xs font-bold tracking-[0.12em] text-[#DA583F] uppercase mb-2">Travel Records</div>
+            <div className="text-xs font-bold tracking-[0.12em] text-[#DA583F] dark:text-[#60A5FA] uppercase mb-2">Travel Records</div>
             <h1 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E2E8F0] mb-3 tracking-wider leading-tight">
               旅行记录
             </h1>

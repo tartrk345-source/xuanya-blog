@@ -34,12 +34,12 @@ function TagInput({ tags, onChange }: { tags: string[]; onChange: (tags: string[
         {tags.map(tag => (
           <span
             key={tag}
-            className="inline-flex items-center gap-1 px-2.5 py-1 text-xs rounded-full bg-[#FEF3F0] dark:bg-[#1E293B] text-[#DA583F] border border-[#ECD8D9] dark:border-[#334155]"
+            className="inline-flex items-center gap-1 px-2.5 py-1 text-xs rounded-full bg-[#FEF3F0] dark:bg-[#1E293B] text-[#DA583F] dark:text-[#60A5FA] border border-[#ECD8D9] dark:border-[#334155]"
           >
             {tag}
             <button
               onClick={() => removeTag(tag)}
-              className="w-3.5 h-3.5 flex items-center justify-center rounded-full text-[#DA583F] hover:bg-[#DA583F] hover:text-white transition-colors cursor-pointer"
+              className="w-3.5 h-3.5 flex items-center justify-center rounded-full text-[#DA583F] dark:text-[#60A5FA] hover:bg-[#DA583F] hover:text-white transition-colors cursor-pointer"
             >×</button>
           </span>
         ))}
@@ -242,7 +242,7 @@ export default function WritePage() {
       <div className="max-w-3xl mx-auto px-6 py-12">
         {/* 顶部工具栏 */}
         <div className="flex items-center justify-between mb-8">
-          <button onClick={goBack} className="text-sm text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] transition-colors">
+          <button onClick={goBack} className="text-sm text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors">
             ← 返回志趣
           </button>
           <div className="flex gap-3">
@@ -254,7 +254,7 @@ export default function WritePage() {
                 <button onClick={() => handleSave('draft')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] hover:border-[#DA583F] transition-all disabled:opacity-40">
                   {saving ? '保存中…' : '存为草稿'}
                 </button>
-                <button onClick={() => handleSave('published')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-white bg-[#DA583F] rounded-lg hover:bg-[#C43F30] transition-all disabled:opacity-40">
+                <button onClick={() => handleSave('published')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-white bg-[#DA583F] dark:bg-[#3B82F6] rounded-lg hover:bg-[#C43F30] dark:hover:bg-[#2563EB] transition-all disabled:opacity-40">
                   {saving ? '保存中…' : '保存修改'}
                 </button>
               </>
@@ -263,7 +263,7 @@ export default function WritePage() {
                 <button onClick={() => handleSave('draft')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] hover:border-[#DA583F] transition-all disabled:opacity-40">
                   {saving ? '保存中…' : '存为草稿'}
                 </button>
-                <button onClick={() => handleSave('published')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-white bg-[#DA583F] rounded-lg hover:bg-[#C43F30] transition-all disabled:opacity-40">
+                <button onClick={() => handleSave('published')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-white bg-[#DA583F] dark:bg-[#3B82F6] rounded-lg hover:bg-[#C43F30] dark:hover:bg-[#2563EB] transition-all disabled:opacity-40">
                   {saving ? '发布中…' : '发布'}
                 </button>
               </>
@@ -285,7 +285,7 @@ export default function WritePage() {
                 className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-sm transition-all border ${
                   category === cat.key
                     ? 'bg-[#DA583F] text-white border-[#DA583F]'
-                    : 'bg-white dark:bg-[#1E293B] border-[#ECD8D9] dark:border-[#334155] text-[#4F4F4F] dark:text-[#94A3B8] hover:border-[#DA583F] hover:text-[#DA583F]'
+                    : 'bg-white dark:bg-[#1E293B] border-[#ECD8D9] dark:border-[#334155] text-[#4F4F4F] dark:text-[#94A3B8] hover:border-[#DA583F] hover:text-[#DA583F] dark:text-[#60A5FA]'
                 }`}
               >
                 <span className="text-base" title={EMOJI_MEANINGS[cat.icon] || ''}>{cat.icon}</span>
