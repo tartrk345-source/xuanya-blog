@@ -113,7 +113,7 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
       {/* 顶部工具栏 */}
       <div className="flex items-center gap-1 px-3 py-2 border-b border-[#ECD8D9] dark:border-[#334155] bg-[#FDF7F6] dark:bg-[#1E293B] flex-wrap">
         {/* 移动端 Tab 切换 */}
-        <div className="flex md:hidden mr-2 bg-[#F4EAE8] dark:bg-[#231D1E] rounded-lg p-0.5">
+        <div className="flex md:hidden mr-2 bg-[#F4EAE8] dark:bg-[#1E293B] rounded-lg p-0.5">
           {(['edit', 'split', 'preview'] as const).map(tab => (
             <button
               key={tab}
@@ -135,7 +135,7 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
             key={i}
             onClick={() => handleToolbarAction(btn.action)}
             title={btn.label}
-            className="w-8 h-8 flex items-center justify-center rounded-lg text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:bg-[#F4EAE8] dark:hover:bg-[#231D1E] hover:text-[#DA583F] transition-all"
+            className="w-8 h-8 flex items-center justify-center rounded-lg text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:bg-[#F4EAE8] dark:hover:bg-[#1E293B] hover:text-[#DA583F] transition-all"
           >
             {btn.icon}
           </button>
@@ -146,7 +146,7 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
           onClick={() => fileInputRef.current?.click()}
           disabled={uploading}
           title={uploading ? '上传中…' : '上传图片'}
-          className="w-8 h-8 flex items-center justify-center rounded-lg text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:bg-[#F4EAE8] dark:hover:bg-[#231D1E] hover:text-[#DA583F] transition-all disabled:opacity-50"
+          className="w-8 h-8 flex items-center justify-center rounded-lg text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:bg-[#F4EAE8] dark:hover:bg-[#1E293B] hover:text-[#DA583F] transition-all disabled:opacity-50"
         >
           {uploading ? '⏳' : '📁'}
         </button>
@@ -167,14 +167,14 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
           className={`w-8 h-8 flex items-center justify-center rounded-lg text-sm transition-all ${
             showCheatsheet
               ? 'bg-[#DA583F] text-white'
-              : 'text-[#4F4F4F] dark:text-[#94A3B8] hover:bg-[#F4EAE8] dark:hover:bg-[#231D1E] hover:text-[#DA583F]'
+              : 'text-[#4F4F4F] dark:text-[#94A3B8] hover:bg-[#F4EAE8] dark:hover:bg-[#1E293B] hover:text-[#DA583F]'
           }`}
         >
           ?
         </button>
 
         {/* 桌面端 Tab 切换 */}
-        <div className="hidden md:flex ml-auto bg-[#F4EAE8] dark:bg-[#231D1E] rounded-lg p-0.5">
+        <div className="hidden md:flex ml-auto bg-[#F4EAE8] dark:bg-[#1E293B] rounded-lg p-0.5">
           {([
             { key: 'edit' as const, label: '编辑' },
             { key: 'split' as const, label: '分屏' },
@@ -199,7 +199,7 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
       <div className="flex">
         {/* 编辑区 */}
         {(!previewOnly) && (
-          <div className={`${activeTab === 'split' ? 'w-1/2' : 'w-full'} flex flex-col ${editOnly ? '' : 'md:border-r md:border-[#ECD8D9] dark:md:border-[#2A2020]'}`}>
+          <div className={`${activeTab === 'split' ? 'w-1/2' : 'w-full'} flex flex-col ${editOnly ? '' : 'md:border-r md:border-[#ECD8D9] dark:md:border-[#334155]'}`}>
             <div className="px-4 py-2 bg-[#FDF7F6] dark:bg-[#1E293B] border-b border-[#ECD8D9] dark:border-[#334155]">
               <span className="text-xs text-[#767693] dark:text-[#94A3B8] font-medium">Markdown</span>
             </div>
@@ -296,7 +296,7 @@ export default function MarkdownEditor({ content, onChange }: MarkdownEditorProp
                 onClick={() => {
                   onChange(content + '\n' + item.syntax + '\n');
                 }}
-                className="flex items-start gap-2 px-2.5 py-1.5 rounded-lg bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] hover:border-[#DA583F] hover:bg-[#FDF7F6] dark:hover:bg-[#1A1516] cursor-pointer transition-all group"
+                className="flex items-start gap-2 px-2.5 py-1.5 rounded-lg bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] hover:border-[#DA583F] hover:bg-[#FDF7F6] dark:hover:bg-[#1E293B] cursor-pointer transition-all group"
               >
                 <code className="text-[#DA583F] text-xs whitespace-nowrap font-mono group-hover:text-[#C43F30]">{item.syntax}</code>
                 <span className="text-[#767693] dark:text-[#94A3B8] text-xs">{item.desc}</span>

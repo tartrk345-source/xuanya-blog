@@ -394,7 +394,7 @@ export default function LandingPage() {
                   <img
                     src="/images/avatar.webp"
                     alt="玄牙"
-                    className="w-[120px] h-[120px] rounded-full object-cover border-[3px] border-white dark:border-[#1C1818] shadow-[0_4px_20px_rgba(218,88,63,0.15)]"
+                    className="w-[120px] h-[120px] rounded-full object-cover border-[3px] border-white dark:border-[#1E293B] shadow-[0_4px_20px_rgba(218,88,63,0.15)]"
                     loading="lazy"
                   />
                   <span className="text-xs text-[#767693] dark:text-[#94A3B8] tracking-wider">字博謇</span>
@@ -445,7 +445,7 @@ export default function LandingPage() {
             从课堂到临床，从理论到实践——每一步都在靠近那个想成为的精神科医师。
           </p>
 
-          <div className="relative pl-16 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-2 before:w-[2px] before:bg-[#ECD8D9] dark:before:bg-[#2A2020]">
+          <div className="relative pl-16 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-2 before:w-[2px] before:bg-[#ECD8D9] dark:before:bg-[#334155]">
             {[
               { year: '此刻', title: '精神科临床一线', desc: '完成住院医师规范化培训，正式开启精神科医师执业之路。', dotColor: '#DA583F' },
               { year: '硕士阶段', title: '医学硕士 · 精神卫生方向', desc: '系统深入精神医学研究，建立临床与科研双线并行的思维框架。', dotColor: '#616FD3' },
@@ -454,7 +454,7 @@ export default function LandingPage() {
               <RevealOnScroll key={item.title}>
                 <div className="relative mb-16 last:mb-0">
                   <div
-                    className="absolute left-[-57px] top-1 w-[14px] h-[14px] rounded-full border-[3px] border-[#FEF3F0] dark:border-[#1A1516]"
+                    className="absolute left-[-57px] top-1 w-[14px] h-[14px] rounded-full border-[3px] border-[#FEF3F0] dark:border-[#334155]"
                     style={{ background: item.dotColor }}
                   />
                   <div className="text-xs font-bold text-[#DA583F] tracking-[0.08em] mb-1">{item.year}</div>

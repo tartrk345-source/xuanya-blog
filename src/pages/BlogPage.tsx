@@ -240,16 +240,16 @@ export default function BlogPage() {
                   <Link to="/write" className="px-4 py-2 text-sm font-bold text-white bg-[#DA583F] rounded-lg hover:bg-[#C43F30] transition-all whitespace-nowrap" style={{ color: '#ffffff' }}>
                     + 写文章
                   </Link>
-                  <button onClick={() => { downloadBackup(); markExportedToday(); }} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] hover:border-[#DA583F] transition-all whitespace-nowrap">
+                  <button onClick={() => { downloadBackup(); markExportedToday(); }} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] hover:border-[#DA583F] transition-all whitespace-nowrap">
                     ↓ 导出{!hasExportedToday() && <span className="ml-1 text-[10px] text-[#DA583F]">·未备份</span>}
                   </button>
-                  <button onClick={handleImport} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] hover:border-[#DA583F] transition-all whitespace-nowrap">
+                  <button onClick={handleImport} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] hover:border-[#DA583F] transition-all whitespace-nowrap">
                     ↑ 导入
                   </button>
-                  <button onClick={handleSync} disabled={isSyncing} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] hover:border-[#DA583F] transition-all disabled:opacity-40 whitespace-nowrap">
+                  <button onClick={handleSync} disabled={isSyncing} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] hover:border-[#DA583F] transition-all disabled:opacity-40 whitespace-nowrap">
                     {isSyncing ? '同步中…' : '☁ 同步'}
                   </button>
-                  <button onClick={handleRestore} disabled={isSyncing} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] hover:border-[#DA583F] transition-all disabled:opacity-40 whitespace-nowrap">
+                  <button onClick={handleRestore} disabled={isSyncing} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] hover:border-[#DA583F] transition-all disabled:opacity-40 whitespace-nowrap">
                     ↳ 恢复
                   </button>
                 </div>
@@ -512,7 +512,7 @@ export default function BlogPage() {
           {isAdmin && (
             <button
               onClick={openAddCat}
-              className="w-full flex items-center justify-center gap-2 py-5 rounded-xl border-2 border-dashed border-[#ECD8D9] dark:border-[#334155] hover:border-[#DA583F] hover:bg-[#FEF3F0]/50 dark:hover:bg-[#1A1516]/50 transition-all cursor-pointer text-[#B8B4B0] hover:text-[#DA583F]"
+              className="w-full flex items-center justify-center gap-2 py-5 rounded-xl border-2 border-dashed border-[#ECD8D9] dark:border-[#334155] hover:border-[#DA583F] hover:bg-[#FEF3F0]/50 dark:hover:bg-[#1E293B]/50 transition-all cursor-pointer text-[#B8B4B0] hover:text-[#DA583F]"
             >
               <span className="text-lg">+</span>
               <span className="text-sm">新增版块</span>
@@ -568,7 +568,7 @@ export default function BlogPage() {
               {importDialog.items.map(a => <li key={a.id} className="py-1">· {a.title} <span className="text-xs text-[#B8B4B0]">[{a.status === 'published' ? '已发布' : '草稿'}]</span></li>)}
             </ul>
             <div className="flex gap-3">
-              <button onClick={() => setImportDialog({ open: false, items: [] })} className="flex-1 px-4 py-2.5 text-sm font-medium text-[#767693] bg-[#FEF3F0] dark:bg-[#1E293B] rounded-lg hover:bg-[#ECD8D9] dark:hover:bg-[#2A2020] transition-all">取消</button>
+              <button onClick={() => setImportDialog({ open: false, items: [] })} className="flex-1 px-4 py-2.5 text-sm font-medium text-[#767693] bg-[#FEF3F0] dark:bg-[#1E293B] rounded-lg hover:bg-[#ECD8D9] dark:hover:bg-[#334155] transition-all">取消</button>
               <button onClick={handleImportConfirm} className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-[#DA583F] rounded-lg hover:bg-[#C43F30] transition-all">确认导入</button>
             </div>
           </div>
@@ -623,7 +623,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="flex gap-3 mt-6">
-              <button onClick={closeCatDialog} className="flex-1 px-4 py-2.5 text-sm font-medium text-[#767693] bg-[#FEF3F0] dark:bg-[#1E293B] rounded-lg hover:bg-[#ECD8D9] dark:hover:bg-[#2A2020] transition-all">取消</button>
+              <button onClick={closeCatDialog} className="flex-1 px-4 py-2.5 text-sm font-medium text-[#767693] bg-[#FEF3F0] dark:bg-[#1E293B] rounded-lg hover:bg-[#ECD8D9] dark:hover:bg-[#334155] transition-all">取消</button>
               <button onClick={handleSaveCat} disabled={!catDialog.label.trim()} className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-[#DA583F] rounded-lg hover:bg-[#C43F30] transition-all disabled:opacity-40">保存</button>
             </div>
           </div>
@@ -640,7 +640,7 @@ export default function BlogPage() {
               该版块下的文章不会丢失，将被移至「万象」分类。确定要删除吗？
             </p>
             <div className="flex gap-3">
-              <button onClick={() => setCatDeleteKey(null)} className="flex-1 px-4 py-2.5 text-sm font-medium text-[#767693] bg-[#FEF3F0] dark:bg-[#1E293B] rounded-lg hover:bg-[#ECD8D9] dark:hover:bg-[#2A2020] transition-all">取消</button>
+              <button onClick={() => setCatDeleteKey(null)} className="flex-1 px-4 py-2.5 text-sm font-medium text-[#767693] bg-[#FEF3F0] dark:bg-[#1E293B] rounded-lg hover:bg-[#ECD8D9] dark:hover:bg-[#334155] transition-all">取消</button>
               <button onClick={() => handleDeleteCat(catDeleteKey)} className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-red-500 rounded-lg hover:bg-red-600 transition-all">删除</button>
             </div>
           </div>

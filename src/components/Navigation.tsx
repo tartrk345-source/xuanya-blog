@@ -144,7 +144,7 @@ export default function Navigation() {
                               key={child.id}
                               to={child.id}
                               onClick={() => setDropdownOpen(false)}
-                              className="block px-4 py-2.5 text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] rounded-lg transition-colors whitespace-nowrap"
+                              className="block px-4 py-2.5 text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] rounded-lg transition-colors whitespace-nowrap"
                             >
                               {child.label}
                             </Link>
@@ -156,7 +156,7 @@ export default function Navigation() {
                                 handleNavClick(e, child.id);
                                 setDropdownOpen(false);
                               }}
-                              className="block px-4 py-2.5 text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] rounded-lg transition-colors whitespace-nowrap cursor-pointer"
+                              className="block px-4 py-2.5 text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] rounded-lg transition-colors whitespace-nowrap cursor-pointer"
                             >
                               {child.label}
                             </a>
@@ -181,7 +181,7 @@ export default function Navigation() {
               <a
                 href="/rss.xml"
                 target="_blank"
-                className="w-10 h-10 rounded-full border-[1.5px] border-[#ECD8D9] dark:border-[#334155] bg-white dark:bg-[#1E293B] flex items-center justify-center text-sm cursor-pointer hover:border-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] transition-all"
+                className="w-10 h-10 rounded-full border-[1.5px] border-[#ECD8D9] dark:border-[#334155] bg-white dark:bg-[#1E293B] flex items-center justify-center text-sm cursor-pointer hover:border-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] transition-all"
                 title="RSS 订阅"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1" fill="currentColor"/></svg>
@@ -190,7 +190,7 @@ export default function Navigation() {
             <li>
               <button
                 onClick={toggleTheme}
-                className="w-10 h-10 rounded-full border-[1.5px] border-[#ECD8D9] dark:border-[#334155] bg-white dark:bg-[#1E293B] flex items-center justify-center text-lg cursor-pointer hover:border-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] transition-all"
+                className="w-10 h-10 rounded-full border-[1.5px] border-[#ECD8D9] dark:border-[#334155] bg-white dark:bg-[#1E293B] flex items-center justify-center text-lg cursor-pointer hover:border-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] transition-all"
                 title={dark ? '切换浅色模式' : '切换深色模式'}
               >
                 {dark ? '☀' : '☽'}
@@ -201,7 +201,7 @@ export default function Navigation() {
               {isAdmin ? (
                 <button
                   onClick={() => { logout(); }}
-                  className="text-xs font-medium text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1E293B] hover:bg-[#ECD8D9] dark:hover:bg-[#2A2020] px-2.5 py-1 rounded-md transition-all cursor-pointer whitespace-nowrap"
+                  className="text-xs font-medium text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1E293B] hover:bg-[#ECD8D9] dark:hover:bg-[#334155] px-2.5 py-1 rounded-md transition-all cursor-pointer whitespace-nowrap"
                   title="退出管理模式"
                 >
                   退出
@@ -230,9 +230,9 @@ export default function Navigation() {
             }}
             className="sm:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px] bg-transparent border-none cursor-pointer z-[101]"
           >
-            <span className={`block w-[22px] h-[2px] bg-[#313131] dark:bg-[#E8E4E1] rounded-sm transition-all ${mobileOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
-            <span className={`block w-[22px] h-[2px] bg-[#313131] dark:bg-[#E8E4E1] rounded-sm transition-all ${mobileOpen ? 'opacity-0' : ''}`} />
-            <span className={`block w-[22px] h-[2px] bg-[#313131] dark:bg-[#E8E4E1] rounded-sm transition-all ${mobileOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+            <span className={`block w-[22px] h-[2px] bg-[#313131] dark:bg-[#E2E8F0] rounded-sm transition-all ${mobileOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+            <span className={`block w-[22px] h-[2px] bg-[#313131] dark:bg-[#E2E8F0] rounded-sm transition-all ${mobileOpen ? 'opacity-0' : ''}`} />
+            <span className={`block w-[22px] h-[2px] bg-[#313131] dark:bg-[#E2E8F0] rounded-sm transition-all ${mobileOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
           </button>
         </div>
       </nav>
@@ -310,7 +310,7 @@ export default function Navigation() {
         <a
           href="/rss.xml"
           target="_blank"
-          className="w-12 h-12 rounded-full border-[1.5px] border-[#ECD8D9] dark:border-[#334155] bg-white dark:bg-[#1E293B] flex items-center justify-center text-sm cursor-pointer hover:border-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] transition-all"
+          className="w-12 h-12 rounded-full border-[1.5px] border-[#ECD8D9] dark:border-[#334155] bg-white dark:bg-[#1E293B] flex items-center justify-center text-sm cursor-pointer hover:border-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] transition-all"
           title="RSS 订阅"
           onClick={() => { setMobileOpen(false); document.body.style.overflow = ''; }}
         >
@@ -320,7 +320,7 @@ export default function Navigation() {
         {isAdmin ? (
           <button
             onClick={() => { logout(); setMobileOpen(false); document.body.style.overflow = ''; }}
-            className="mt-2 px-5 py-2 text-sm font-medium text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1E293B] rounded-lg border border-[#DA583F]/20 hover:bg-[#ECD8D9] dark:hover:bg-[#2A2020] transition-all cursor-pointer"
+            className="mt-2 px-5 py-2 text-sm font-medium text-[#DA583F] bg-[#FEF3F0] dark:bg-[#1E293B] rounded-lg border border-[#DA583F]/20 hover:bg-[#ECD8D9] dark:hover:bg-[#334155] transition-all cursor-pointer"
           >
             退出管理模式
           </button>

@@ -251,7 +251,7 @@ export default function WritePage() {
                 <button onClick={() => setShowDeleteConfirm(true)} disabled={saving} className="px-5 py-2 text-sm font-medium text-red-600 bg-white dark:bg-[#1E293B] border border-red-200 dark:border-red-800 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 hover:border-red-300 transition-all disabled:opacity-40">
                   删除
                 </button>
-                <button onClick={() => handleSave('draft')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] hover:border-[#DA583F] transition-all disabled:opacity-40">
+                <button onClick={() => handleSave('draft')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] hover:border-[#DA583F] transition-all disabled:opacity-40">
                   {saving ? '保存中…' : '存为草稿'}
                 </button>
                 <button onClick={() => handleSave('published')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-white bg-[#DA583F] rounded-lg hover:bg-[#C43F30] transition-all disabled:opacity-40">
@@ -260,7 +260,7 @@ export default function WritePage() {
               </>
             ) : (
               <>
-                <button onClick={() => handleSave('draft')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516] hover:border-[#DA583F] transition-all disabled:opacity-40">
+                <button onClick={() => handleSave('draft')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] hover:border-[#DA583F] transition-all disabled:opacity-40">
                   {saving ? '保存中…' : '存为草稿'}
                 </button>
                 <button onClick={() => handleSave('published')} disabled={!canSave || saving} className="px-5 py-2 text-sm font-medium text-white bg-[#DA583F] rounded-lg hover:bg-[#C43F30] transition-all disabled:opacity-40">
@@ -307,7 +307,7 @@ export default function WritePage() {
                 className={`w-10 h-10 flex items-center justify-center text-lg rounded-lg transition-all border ${
                   e === emoji
                     ? 'bg-[#DA583F] text-white border-[#DA583F]'
-                    : 'bg-white dark:bg-[#1E293B] border-[#ECD8D9] dark:border-[#334155] text-[#4F4F4F] dark:text-[#94A3B8] hover:border-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1A1516]'
+                    : 'bg-white dark:bg-[#1E293B] border-[#ECD8D9] dark:border-[#334155] text-[#4F4F4F] dark:text-[#94A3B8] hover:border-[#DA583F] hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B]'
                 }`}
               >
                 {e}
