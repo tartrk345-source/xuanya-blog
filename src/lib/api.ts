@@ -65,6 +65,13 @@ class QueryBuilder {
 
   delete() { this.method = 'DELETE'; return this; }
 
+  /** 返回单行对象（非数组）。PostgREST 需 Prefer: return=representation + Accept: application/vnd.pgrst.object+json */
+  single<T = any>() {
+    this.extra['Accept'] = 'application/vnd.pgrst.object+json';
+    this.params.set('limit', '1');
+    return this as unknown as QueryBuilder & { then: (onFulfill: (v: { data: T | null; error: any }) => any, onReject: (e: any) => any) => any };
+  }
+
   private async _exec() {
     const qs = this.params.toString();
     const url = qs ? `${BASE_URL}/rest/v1/${this.table}?${qs}` : `${BASE_URL}/rest/v1/${this.table}`;

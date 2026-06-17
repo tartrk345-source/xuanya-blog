@@ -134,14 +134,11 @@
     transform: rotate(180deg);
   }
   .day-num {
-    font-size: 24px;
+    font-size: 40px;
     font-weight: 800;
     color: var(--accent);
     line-height: 1;
-    min-width: 36px;
-    text-align: center;
   }
-  @media(max-width:560px) { .day-num { font-size: 20px; min-width: 28px; } }
   .day-meta h3 {
     font-size: 17px;
     font-weight: 600;
@@ -172,49 +169,6 @@
   .day-card.open .day-card-body {
     max-height: 6000px;
     padding: 16px 28px 28px;
-  }
-
-  /* Nested sub-toggle — for subsections inside day-card bodies */
-  .sub-toggle {
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    margin: 12px 0;
-    overflow: hidden;
-  }
-  .sub-toggle-header {
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    user-select: none;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-mid);
-    background: var(--bg);
-    transition: background 0.2s;
-  }
-  .sub-toggle-header:hover { background: #eeebe6; }
-  .sub-toggle-header::after {
-    content: '▸';
-    font-size: 11px;
-    color: var(--muted);
-    margin-left: auto;
-    transition: transform 0.3s ease;
-  }
-  .sub-toggle.open .sub-toggle-header::after {
-    transform: rotate(90deg);
-  }
-  .sub-toggle-body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-  }
-  .sub-toggle.open .sub-toggle-body {
-    max-height: 4000px;
-  }
-  @media(max-width:560px) {
-    .sub-toggle-header { padding: 8px 12px; font-size: 12px; }
   }
 
   /* Timeline */
@@ -1257,117 +1211,68 @@
 </div>
 
 <!-- ============================================ -->
-<!-- DAY 5 · 北疆 Day 1：S101+安集海 -->
+<!-- ============================================ -->
+<!-- DAY 5 · 北疆 Day 1：S101+安集海（朋友整合版） -->
 <!-- ============================================ -->
 <div class="day-card">
   <div class="day-card-header">
     <div class="day-num">05</div>
     <div class="day-meta">
-      <h3>乌鲁木齐 → 奎屯 · S101国防公路 + 安集海大峡谷 <span class="status-badge status-pending">待预订</span></h3>
-      <div class="day-date">6/21 周日 · 4人自驾 Day 1 · 约 420km</div>
+      <h3>乌鲁木齐 → S101国防公路 → 安集海 → 奎屯 <span class="status-badge status-pending">朋友攻略版</span></h3>
+      <div class="day-date">6/21 周日 · 4人自驾 Day 1 · 约 420km / 7.5h（边走边玩）</div>
     </div>
   </div>
   <div class="day-card-body">
 
     <div class="alert alert-blue" style="margin-bottom:14px;">
-      <span class="alert-title">🚙 北疆自驾正式开始 · 哈弗H6 · 4人一车</span>
-      今日主题：<strong>S101 国防公路（百里丹霞）→ 肯斯瓦特水库 → 安集海大峡谷</strong><br>
-      全程约 420km · 行车约 7h+游玩 · 新疆时间出发（9:00 相当于内地 7:00）
+      <span class="alert-title">🚙 S101 国防公路详细路线</span>
+      今日主题：<strong>S101 国防公路（百里丹霞）→ 肯斯瓦特水库 → 鹿角湾 → 安集海大峡谷</strong><br>
+      核心景点：肯斯瓦特水库、乌沙安集海大峡谷
     </div>
 
-    <div class="timeline-wrap">
-      <div class="tl-row">
-        <div class="tl-time">08:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🍜 <strong>酒店早餐</strong> + 退房<span class="tl-note">桔子酒店含2份早餐，补给：买馕+水+零食放车上（今天路上餐厅少）</span></div>
+    <table>
+      <thead><tr><th>段落</th><th>路线</th><th>里程</th><th>时间</th></tr></thead>
+      <tbody>
+        <tr><td>①</td><td>乌鲁木齐 → 呼图壁县</td><td>80km</td><td>~1h</td></tr>
+        <tr><td>②</td><td>呼图壁县 → 康家石门子岩画</td><td>100km</td><td>~2h</td></tr>
+        <tr><td>③</td><td>康家石门子岩画 → 肯斯瓦特水库</td><td>45km</td><td>~1h</td></tr>
+        <tr><td>④</td><td>肯斯瓦特水库 → 鹿角湾旅游风景区</td><td>85km</td><td>~1.5h</td></tr>
+        <tr><td>⑤</td><td>鹿角湾 → 乌沙安集海大峡谷（走外面）</td><td>56km</td><td>~1h</td></tr>
+        <tr><td>⑥</td><td>安集海大峡谷 → 奎屯市</td><td>56km</td><td>~1h</td></tr>
+      </tbody>
+    </table>
+
+    <div class="sub-toggle" style="margin-top:14px;">
+      <div class="sub-toggle-header" onclick="this.parentElement.classList.toggle('open')">
+        🔀 S101 封路备选方案（点击展开）
       </div>
-      <div class="tl-row">
-        <div class="tl-time">09:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🚙 <strong>出发！</strong> 乌鲁木齐 → S101公路入口<span class="tl-note">导航「S101国防公路」· 约60km，1h · 从亚洲大陆地理中心附近进入</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">10:00<br>｜<br>12:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">
-          🏜️ <strong>S101 国防公路 · 百里丹霞</strong>（2h）⭐
-          <span class="tl-note">
-            🔥 <strong>新疆最美景观公路之一</strong>，被称为"天山地理风光走廊"<br>
-            沿途看点：七彩丹霞地貌 → 石门子岩画 → 康家石门子水库<br>
-            📸 每个观景台停车拍照，无人机可飞（非禁飞区）<br>
-            ⚠️ 路况：部分砂石路面，SUV 无压力，注意大车
-          </span>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">12:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🏞️ <strong>肯斯瓦特水库</strong> 短暂停留<span class="tl-note">S101 沿线 · 碧蓝水库+红色丹霞山体，强烈色彩对比 · 停留 30min 拍照</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">12:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🍞 <strong>车上简餐</strong><span class="tl-note">馕+酸奶+水果，路上没有像样餐厅</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">14:00<br>｜<br>15:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">
-          🕳️ <strong>安集海大峡谷</strong>（1.5h）⭐⭐⭐
-          <span class="tl-note">
-            🔥 <strong>今日核心！</strong>中国版"科罗拉多大峡谷"<br>
-            红色峡谷深达300米，辫状河流在谷底蜿蜒——航拍炸裂<br>
-            🆓 免费（非正式景区，无门票但有护栏）<br>
-            📸 最佳机位：鹰嘴崖观景台（经典网红角度）<br>
-            ⚠️ 崖边无护栏处<strong>不要靠近</strong>，土质松软易塌
-          </span>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">16:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🚙 安集海 → <strong>奎屯</strong><span class="tl-note">约60km，1h · 全程高速G30</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">17:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🏨 <strong>全季酒店(奎屯汇嘉时代店)</strong> 入住<span class="tl-note">奎屯市中心，靠近商场，补给方便</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">19:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🍖 <strong>奎屯晚餐</strong><span class="tl-note">推荐：奎屯夜市烧烤 / 沙湾大盘鸡（奎屯离沙湾很近，吃正宗大盘鸡！）· 人均¥50–70</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">21:00</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">🛒 汇嘉时代超市补给（水/零食/日用品）→ 休息<span class="tl-note">明日：奎屯→温泉县 350km</span></div>
+      <div class="sub-toggle-body">
+        <table style="margin-top:8px;">
+          <thead><tr><th>方案</th><th>路线</th><th>推荐度</th></tr></thead>
+          <tbody>
+            <tr><td><strong>A. 封路绕行版 ★</strong></td><td>乌鲁木齐→呼图壁→齐古大桥→雀儿沟镇→百里丹霞丽景→康家石门子岩画→肯斯瓦特水库→鹿角湾→观音沟→乌沙安集海大峡谷→奎屯</td><td><strong>最常用备选，保留核心景点</strong></td></tr>
+            <tr><td>B. 全线完整版</td><td>S101-G216交叉口→亚洲大陆地理中心→硫磺沟起点→石门子水库→江山多娇观景台→锦绣河山观景台→凤凰湖→肯斯瓦特水库→151牧场→呼图壁温泉→鹿角湾→乌拉斯台→安集海大峡谷→独山子→乌苏郡</td><td>全程完整但耗时更长</td></tr>
+            <tr><td>C. 绕路 X147</td><td>绕行 X147 省道</td><td>最快但风景一般</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
+
+    <h4 style="margin-top:16px;">🍜 吃</h4>
+    <ul>
+      <li><strong>早餐/出发前</strong>：开帝锐抓饭（乌鲁木齐）</li>
+      <li><strong>晚餐</strong>：沙氏大盘鸡（奎屯下高速附近）</li>
+    </ul>
+
+    <h4>📍 住</h4>
+    <p><strong>全季酒店 · 奎屯汇嘉时代店</strong></p>
 
     <div class="alert alert-amber" style="margin-top:14px;">
-      <span class="alert-title">⚠️ S101 + 安集海 注意事项</span>
+      <span class="alert-title">⚠️ S101 注意事项</span>
       ▪ S101部分路段无手机信号，提前下载离线地图<br>
-      ▪ 安集海峡谷崖边土质松，拍照至少离崖边2米<br>
       ▪ 全程加油站少，出乌市前加满油<br>
-      ▪ 今天午餐靠干粮解决，早餐多买几个馕
-    </div>
-
-    <!-- 📸 拍照指南 -->
-    <div style="background:linear-gradient(135deg,#e8f4f8,#d0ebf5);border-left:3px solid #0ea5e9;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;">
-      <span style="font-weight:700;color:#0284c7;">📸 拍照指南 · ZV-E10 + Pocket 3</span><br>
-      <span style="color:var(--text-mid);">▪ <b>S101百里丹霞</b> — <b>Pocket 3</b> 车载POV拍窗外流动风景，<b>ZV-E10</b> 停车拍丹霞大场景<br>
-      ▪ <b>肯斯瓦特水库</b> — <b>ZV-E10</b> 碧蓝湖水+红色丹霞，强烈色彩对比<br>
-      ▪ <b>安集海大峡谷</b> — <b>ZV-E10</b> 广角端拍峡谷纵深，注意安全距离！<br>
-      💡 今天全程是自驾风光大片日，两个设备轮着用</span>
-    </div>
-
-    <!-- ⚠️ 当天避坑 -->
-    <div style="background:var(--amber-bg);border-left:3px solid var(--amber);border-radius:10px;padding:12px 16px;margin-top:10px;font-size:13px;">
-      <span style="font-weight:700;color:var(--amber);">⚠️ 当天避坑</span><br>
-      <span style="color:var(--text-mid);">▪ 📡 S101大部分路段无手机信号，提前下载离线地图！<br>
-      ▪ ⛔ 安集海大峡谷崖边土质松，拍照离崖边至少2米，勿翻越护栏<br>
-      ▪ ⛽ 北疆加油站间隔远，出乌市前加满油</span>
+      ▪ 今天午餐靠干粮解决，早餐多买几个馕<br>
+      ▪ 安集海峡谷崖边土质松，拍照至少离崖边2米
     </div>
 
     <div class="day-cost">
@@ -1382,98 +1287,57 @@
 </div>
 
 <!-- ============================================ -->
-<!-- DAY 6 · 北疆 Day 2：奎屯→温泉县 -->
+<!-- DAY 6 · 北疆 Day 2：奎屯→温泉县（朋友整合版） -->
 <!-- ============================================ -->
 <div class="day-card">
   <div class="day-card-header">
     <div class="day-num">06</div>
     <div class="day-meta">
-      <h3>奎屯 → 温泉县 · 戈壁公路 + 温泉放松 <span class="status-badge status-pending">待预订</span></h3>
-      <div class="day-date">6/22 周一 · 4人自驾 Day 2 · 约 350km</div>
+      <h3>奎屯 → 温泉县 · 朋友攻略版 <span class="status-badge status-pending">朋友攻略版</span></h3>
+      <div class="day-date">6/22 周一 · 4人自驾 Day 2 · 约 350km / 5h · 充分休息</div>
     </div>
   </div>
   <div class="day-card-body">
 
     <div class="alert alert-blue" style="margin-bottom:14px;">
-      <span class="alert-title">♨️ 温泉县 · 中国温泉之乡</span>
-      今日以赶路为主，穿越戈壁进入博尔塔拉。温泉县是全国唯一以"温泉"命名的县城，天然地热温泉含硫/偏硅酸等矿物质，泡个温泉正好缓解前两天旅途疲劳。
+      <span class="alert-title">♨️ 温泉县 · 充分休息，明早赶赛里木湖</span>
+      今日以赶路为主，穿越戈壁进入博尔塔拉。
     </div>
 
-    <div class="timeline-wrap">
-      <div class="tl-row">
-        <div class="tl-time">08:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🍜 <strong>奎屯早餐</strong> + 退房<span class="tl-note">酒店早餐或周边小店 · 加满油出发</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">09:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🚙 奎屯 → 温泉县<span class="tl-note">G30连霍高速转G219，经精河县 · 约350km，5–6h</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">11:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🏜️ <strong>戈壁公路景观</strong><span class="tl-note">精河→博乐段，开阔戈壁+远眺阿拉套山 · 途中找合适地点停车拍照</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">12:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🍜 <strong>精河县/博乐午餐</strong><span class="tl-note">精河枸杞有名，路过可买点 · 推荐：拌面/丸子汤 ¥25–35</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">15:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🏨 <strong>圣缘山酒店</strong> 入住<span class="tl-note">温泉县城内 · 放行李后直奔温泉</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">15:30<br>｜<br>18:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">
-          ♨️ <strong>泡！温！泉！</strong>（2.5h）⭐
-          <span class="tl-note">
-            温泉县温泉水质：含硫、偏硅酸、氡等矿物质，水温42–60℃<br>
-            可选：县城温泉疗养院 或 圣缘山酒店自带温泉池<br>
-            💆 连坐两天火车+开车两天，泡个温泉太有必要了
-          </span>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">19:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🍖 <strong>温泉县晚餐</strong><span class="tl-note">小县城餐厅不多，推荐：蒙古族风干肉/手抓肉 · 人均¥40–60</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">21:00</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">🌙 早休息，明日重头戏：<strong>赛里木湖！</strong></div>
-      </div>
-    </div>
+    <h4>🍜 吃</h4>
+    <p><strong>味佳餐饮店</strong>（温泉县）— 馕坑肉好吃，其他一般</p>
 
-    <!-- 📸 拍照指南 -->
-    <div style="background:linear-gradient(135deg,#e8f4f8,#d0ebf5);border-left:3px solid #0ea5e9;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;">
-      <span style="font-weight:700;color:#0284c7;">📸 拍照指南 · ZV-E10 + Pocket 3</span><br>
-      <span style="color:var(--text-mid);">▪ <b>戈壁公路</b> — <b>Pocket 3</b> 车载POV，广袤戈壁+远眺阿拉套山<br>
-      ▪ <b>温泉县</b> — <b>ZV-E10</b> 安静小城，傍晚街景+阿尔夏提草原</span>
+    <h4>📍 住</h4>
+    <table>
+      <thead><tr><th>酒店</th><th>价格备注</th><th>推荐度</th></tr></thead>
+      <tbody>
+        <tr><td><strong>云水涧酒店 ★</strong></td><td>额外加 <strong>¥100 送四人门票 + 自驾票</strong></td><td><strong>强烈推荐！送票省事又省钱</strong></td></tr>
+        <tr><td>圣缘山酒店</td><td>网站原定方案</td><td>备选</td></tr>
+      </tbody>
+    </table>
+
+    <div class="alert alert-green" style="margin-top:12px;">
+      <span class="alert-title">💡 住宿选择建议</span>
+      住<strong>云水涧酒店</strong>加¥100送赛里木湖四人门票+自驾票，比单独买票省很多！
     </div>
 
     <div class="day-cost">
-      <span class="tag tag-amber">圣缘山酒店 ¥200–300/间</span>
-      <span class="tag tag-amber">温泉 ¥50–100/人</span>
+      <span class="tag tag-amber">云水涧酒店 +¥100（送门票）</span>
       <span class="tag tag-amber">油费 ¥150–200/人均¥40–50</span>
-      <span class="tag tag-amber">餐饮 ¥65–95</span>
-      <span class="cost-total">Day 6 人均约 ¥250–400</span>
+      <span class="tag tag-amber">餐饮 ¥50–70</span>
+      <span class="cost-total">Day 6 人均约 ¥200–350</span>
     </div>
   </div>
 </div>
 
 <!-- ============================================ -->
-<!-- DAY 7 · 北疆 Day 3：赛里木湖 → 果子沟 → 伊宁 -->
+<!-- DAY 7 · 北疆 Day 3：赛里木湖→果子沟→霍城→伊宁（朋友整合版） -->
 <!-- ============================================ -->
 <div class="day-card">
   <div class="day-card-header">
     <div class="day-num">07</div>
     <div class="day-meta">
-      <h3>温泉县 → 赛里木湖 → 果子沟大桥 → 霍城薰衣草 → 伊宁 <span class="status-badge status-pending">待预订</span></h3>
+      <h3>温泉县 → 赛里木湖 → 果子沟 → 霍城薰衣草 → 伊宁 <span class="status-badge status-pending">朋友攻略版</span></h3>
       <div class="day-date">6/23 周二 · 4人自驾 Day 3 · 北疆颜值巅峰日 ⭐</div>
     </div>
   </div>
@@ -1481,117 +1345,95 @@
 
     <div class="alert alert-blue" style="margin-bottom:14px;">
       <span class="alert-title">💎 今日主题：大西洋最后一滴眼泪 + 果子沟大桥 + 薰衣草</span>
-      赛里木湖自驾环湖（东门进南门出，约90km）→ 果子沟大桥观景 → 霍城薰衣草（6月正季！）→ 伊宁。全天高光，相机内存清好！
+      温泉县酒店 → 赛里木湖<strong>东门进</strong> → <strong>南门出</strong> → 果子沟大桥 → 霍城（225km / 5h）→ 伊宁（43km / 1h）
     </div>
 
-    <div class="timeline-wrap">
-      <div class="tl-row">
-        <div class="tl-time">07:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🍞 <strong>早餐</strong> + 退房<span class="tl-note">温泉县出发要早，赛里木湖值得一整天</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">08:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🚙 温泉县 → <strong>赛里木湖东门</strong><span class="tl-note">约80km，1.5h · 途经G219 · 路上风景就很美</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">09:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🎫 <strong>赛里木湖东门</strong> 购票入园<span class="tl-note">自驾套票 ¥144/人（含门票+自驾车票），24h有效 · 东门进，逆时针环湖</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">09:45<br>｜<br>14:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">
-          💎 <strong>赛里木湖 · 环湖自驾</strong>（4h+）⭐⭐⭐
-          <span class="tl-note">
-            🔥 <strong>北疆第一颜值担当！</strong>逆时针环湖约90km，随停随拍<br>
-            <strong>必停观景台（逆时针顺序）：</strong><br>
-            ① <strong>月亮湾</strong> — 第一个观景台，开阔湖面+雪山背景，经典机位<br>
-            ② <strong>亲水滩</strong> — 可以走到湖边，夏天野花盛开<br>
-            ③ <strong>点将台</strong> — 登高俯瞰湖面全景（爬上去15分钟）<br>
-            ④ <strong>克勒涌珠</strong> — 天鹅聚集地！带点面包喂天鹅🦢<br>
-            ⑤ <strong>松树头</strong> — 南门附近，S弯公路+湖面，网红机位<br>
-            ⑥ <strong>金花紫卉</strong> — 6月底野花满地（金莲花/紫苑）<br>
-            🍜 景区内有餐饮（高白鲑餐车 ¥38–68），也可以自带馕+水果野餐<br>
-            📸 无人机可飞！湖面+雪山+花海 — 随便拍都是壁纸
-          </span>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">14:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🚙 <strong>赛里木湖南门出</strong> → 果子沟方向<span class="tl-note">出南门即上G30连霍高速，几分钟就到果子沟大桥</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">14:10</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🌉 <strong>果子沟大桥</strong> 观景台停车拍照<span class="tl-note">南门出来第一个停车区 · 俯瞰大桥横跨峡谷，背景雪山 · 停留30min</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">15:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🚙 果子沟 → <strong>霍城薰衣草</strong><span class="tl-note">约50km，1h · 进入伊犁河谷</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">16:00<br>｜<br>17:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">
-          💜 <strong>霍城薰衣草</strong>（1.5h）⭐
-          <span class="tl-note">
-            🔥 <strong>6月底正是薰衣草盛花期！</strong>中国的"普罗旺斯"<br>
-            推荐：<strong>解忧公主薰衣草农场</strong>（¥35/人）或 四宫村薰衣草田（免费/¥10）<br>
-            📸 穿白色/浅色衣服，紫色花海+蓝天，出片率100%<br>
-            🛍️ 薰衣草精油/干花/香包可买（¥20–80）
-          </span>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">17:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🚙 霍城 → <strong>伊宁</strong><span class="tl-note">约50km，1h</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">18:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🏨 <strong>桔子酒店(伊宁万容广场汉宾公园店)</strong> 入住<span class="tl-note">伊宁市区 · 放行李休息</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">20:00</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">🍖 <strong>伊宁晚餐</strong> · 喀赞其/六星街<span class="tl-note">伊宁必逛：喀赞其民俗街区（蓝色房子拍照圣地）+ 六星街夜市 · 推荐：手工冰淇淋、烤包子、面肺子 · 人均¥50–80</span></div>
-      </div>
-    </div>
+    <h3>🏞️ 赛里木湖游玩攻略</h3>
+
+    <h4>🔄 环湖方向选择</h4>
+    <table>
+      <thead><tr><th>方向</th><th>适用时段</th><th>光线优势</th><th>推荐度</th></tr></thead>
+      <tbody>
+        <tr><td><strong>顺时针 ★</strong></td><td><strong>10:00–14:00</strong></td><td>上午光线最佳方向</td><td><strong>朋友推荐主方案</strong></td></tr>
+        <tr><td>逆时针</td><td>17:00–21:00</td><td>日落光线配合</td><td>备选</td></tr>
+      </tbody>
+    </table>
+
+    <h4>🎫 门票方案</h4>
+    <table>
+      <thead><tr><th>方案</th><th>价格</th><th>说明</th><th>推荐度</th></tr></thead>
+      <tbody>
+        <tr><td><strong>自驾套票（酒店送）★</strong></td><td>含在云水涧房费+100中</td><td>四人门票 + 自驾票</td><td><strong>最省心</strong></td></tr>
+        <tr><td>自驾套票（自行购买）</td><td>¥144/人</td><td>24h 有效</td><td>备选</td></tr>
+      </tbody>
+    </table>
+
+    <h4>📍 必去点位</h4>
+    <ul>
+      <li><strong>松树头</strong>：体力差爬到半山腰即可；体力好可到顶看果子沟大桥全景（约 <strong>2h</strong>）</li>
+      <li><strong>看夕阳</strong>：东门附近</li>
+      <li><strong>看日出</strong>：北门附近</li>
+    </ul>
+
+    <h3>🌸 霍城 · 世界三大薰衣草产区之一</h3>
+    <ul>
+      <li><strong>霍城金山手抓肉</strong></li>
+      <li><strong>木炭烧烤</strong></li>
+      <li><strong>晃晃村</strong> — 村民自种，制作薰衣草精油、香包（产自新疆 65 团）</li>
+    </ul>
+
+    <h3>🌉 果子沟大桥</h3>
+    <ul>
+      <li>出南门右转，导航"果子沟观景平台"</li>
+      <li><strong>悬崖机位</strong>：停车场出口木栈道</li>
+    </ul>
+
+    <h3>🏙️ 伊宁攻略</h3>
+
+    <h4>景点</h4>
+    <ul>
+      <li><strong>六星街</strong> — 买艳干果（本地人购买地）</li>
+      <li><strong>汉人街大巴扎</strong></li>
+      <li><strong>解放路八巷巷口</strong> — 半夜小吃圣地</li>
+      <li><strong>喀赞其</strong> — 铸锅手工匠人；我国面积最大、保存最完整的多民族聚居建筑群</li>
+    </ul>
+
+    <h4>🍜 伊宁美食清单</h4>
+    <table>
+      <thead><tr><th>类别</th><th>推荐</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td>早午餐</td><td><strong>老哈早午茶 ★</strong></td><td>哈萨克族早餐：包尔萨克+果酱、哈萨克土豆片、白菜粉条</td></tr>
+        <tr><td>手抓</td><td><strong>美丽家乡一把抓</strong>（伊宁六中斜对面）</td><td>—</td></tr>
+        <tr><td>配馕</td><td><strong>隔壁皮牙子囊</strong></td><td>—</td></tr>
+        <tr><td>酸奶</td><td><strong>阿忆澜酸奶</strong></td><td>—</td></tr>
+        <tr><td>水果</td><td><strong>农四师菜市场</strong></td><td>—</td></tr>
+        <tr><td>奶制品</td><td><strong>烤奶皮</strong></td><td>—</td></tr>
+        <tr><td>拌面</td><td><strong>吾力坎拌面</strong></td><td>—</td></tr>
+        <tr><td>拌面</td><td><strong>碎肉拌面</strong>：米吉提快餐厅 / 疆见面</td><td>—</td></tr>
+        <tr><td>冰淇淋</td><td><strong>古兰丹姆冰淇淋</strong></td><td>必试</td></tr>
+      </tbody>
+    </table>
+
+    <h4>🍜 早餐（温泉县出发前）</h4>
+    <ul>
+      <li><strong>喜马乡包子</strong>（辣皮子肉）</li>
+      <li><strong>阿布拉馕</strong>（辣皮子馕）</li>
+    </ul>
+
+    <h4>📍 住</h4>
+    <p><strong>全季酒店 · 伊宁山东路万容壹号街</strong></p>
 
     <div class="alert alert-amber" style="margin-top:14px;">
       <span class="alert-title">⚠️ 赛里木湖注意事项</span>
       ▪ 赛里木湖天气多变（海拔2073m），带冲锋衣/薄羽绒服，湖边风大<br>
-      ▪ 自驾套票 ¥144/人，提前在「一部手机游赛湖」小程序购买<br>
-      ▪ 景区内加油站在东门和南门，进园前确认油量<br>
-      ▪ 东门进南门出是经典路线，不要走回头路
-    </div>
-
-    <!-- 📸 拍照指南 -->
-    <div style="background:linear-gradient(135deg,#e8f4f8,#d0ebf5);border-left:3px solid #0ea5e9;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;">
-      <span style="font-weight:700;color:#0284c7;">📸 拍照指南 · ZV-E10 + Pocket 3</span><br>
-      <span style="color:var(--text-mid);">▪ <b>赛里木湖环湖</b> — <b>ZV-E10</b> 广角拍蓝湖+雪山+草原，<b>Pocket 3</b> 湖边漫步vlog<br>
-      ▪ <b>果子沟大桥</b> — <b>ZV-E10</b> 长焦压缩大桥+峡谷+雪山，南门出来第一个停车区拍<br>
-      ▪ <b>喀赞其蓝房子</b> — <b>ZV-E10</b> 人像+色彩，蓝色墙壁配民族服饰超上镜<br>
-      💡 今天是一路风景的重头戏，两个设备交替拍</span>
-    </div>
-
-    <!-- ⚠️ 当天避坑 -->
-    <div style="background:var(--amber-bg);border-left:3px solid var(--amber);border-radius:10px;padding:12px 16px;margin-top:10px;font-size:13px;">
-      <span style="font-weight:700;color:var(--amber);">⚠️ 当天避坑</span><br>
-      <span style="color:var(--text-mid);">▪ 🌬️ 赛里木湖天气多变（海拔2073m），冲锋衣/薄羽绒必备，湖边风大<br>
-      ▪ ⛽ 景区加油站在东门和南门，进园前确认油量</span>
+      ▪ 环湖方向：上午走顺时针（光线更好），下午逆时针适合拍日落<br>
+      ▪ 自驾套票住云水涧酒店+¥100最省心，否则需小程序自行购买 ¥144/人
     </div>
 
     <div class="day-cost">
-      <span class="tag tag-green">赛里木湖 ¥144/人</span>
+      <span class="tag tag-green">赛里木湖 ¥0（酒店送票）或 ¥144/人</span>
       <span class="tag tag-amber">薰衣草 ¥0–35/人</span>
-      <span class="tag tag-amber">桔子酒店(伊宁) ¥250–350/间</span>
+      <span class="tag tag-amber">全季酒店(伊宁) ¥250–350/间</span>
       <span class="tag tag-amber">油费+过路费 ¥150/人均¥40</span>
       <span class="tag tag-amber">餐饮 ¥60–100</span>
       <span class="cost-total">Day 7 人均约 ¥350–500</span>
@@ -1600,112 +1442,66 @@
 </div>
 
 <!-- ============================================ -->
-<!-- DAY 8 · 北疆 Day 4：伊宁→特克斯→夏塔 -->
+<!-- DAY 8 · 北疆 Day 4：伊宁→特克斯→夏塔（朋友整合版） -->
 <!-- ============================================ -->
 <div class="day-card">
   <div class="day-card-header">
     <div class="day-num">08</div>
     <div class="day-meta">
-      <h3>伊宁 → 特克斯八卦城 → 夏塔古道 <span class="status-badge status-pending">待预订</span></h3>
-      <div class="day-date">6/24 周三 · 4人自驾 Day 4 · 约 266km</div>
+      <h3>伊宁 → 特克斯 → 夏塔古道 <span class="status-badge status-pending">朋友攻略版</span></h3>
+      <div class="day-date">6/24 周三 · 4人自驾 Day 4 · 约 266km / 5h</div>
     </div>
   </div>
   <div class="day-card-body">
 
     <div class="alert alert-blue" style="margin-bottom:14px;">
-      <span class="alert-title">🗺️ 八卦城 + 夏塔古道</span>
-      上午穿越特克斯（世界最大八卦城，无红绿灯！），下午抵达夏塔古道国家森林公园——雪山+草原+野花的徒步天堂。
+      <span class="alert-title">🗺️ 途径路线</span>
+      导航：阔克铁热克村 / 喀夏加尔镇，途径 X766、296 乡道、249 乡道
     </div>
 
-    <div class="timeline-wrap">
-      <div class="tl-row">
-        <div class="tl-time">08:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🍜 <strong>伊宁早餐</strong> + 退房<span class="tl-note">推荐：锡伯大饼+奶茶 · 加满油出发</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">09:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🚙 伊宁 → <strong>特克斯八卦城</strong><span class="tl-note">约120km，2h · G577国道 · 沿途伊犁河谷风光</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">11:00<br>｜<br>12:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">
-          ☯️ <strong>特克斯八卦城</strong>（1.5h）⭐
-          <span class="tl-note">
-            🏙️ 世界唯一保存完整的八卦城，全城<strong>没有红绿灯</strong>！<br>
-            ① <strong>八卦城中心太极坛</strong> — 免费，城市按八卦方位布局<br>
-            ② <strong>摩天轮/观景塔</strong>（¥30–50）— 登高俯瞰八卦布局（无人机拍效果更好）<br>
-            ③ <strong>离街</strong> — 文创街区，民族手工艺品，彩色墙壁好拍照<br>
-            📸 无人机航拍八卦城全景绝佳（非禁飞区，注意敏感建筑）
-          </span>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">12:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🍜 <strong>特克斯午餐</strong><span class="tl-note">推荐：椒麻鸡/拌面 · 特克斯美食街 · ¥25–40</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">13:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🚙 特克斯 → <strong>夏塔古道</strong><span class="tl-note">约146km，2.5h · 路况一般，后半段山路</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">16:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🎫 <strong>夏塔古道国家森林公园</strong> 入园<span class="tl-note">门票+区间车 ¥80–100/人 · 16:00后光线柔和，适合徒步+拍照</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">16:30<br>｜<br>20:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">
-          🏔️ <strong>夏塔徒步/骑马</strong>（3.5h）⭐⭐
-          <span class="tl-note">
-            🔥 <strong>雪山脚下的徒步天堂！</strong>木扎尔特冰川近在眼前<br>
-            徒步路线（选一段即可）：<br>
-            ① 温泉酒店→青蛙泉（1.5km，轻松）<br>
-            ② 青蛙泉→卡拉房子2号（4km，经典，雪山+草原+野花）<br>
-            ③ 卡拉房子→冰川脚下（需骑马或徒步高手，往返6h）<br>
-            🐴 景区可租马（¥80/h），节约体力<br>
-            📸 夏季（6月）野花盛开：金莲花、紫苑、雪莲
-          </span>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">20:30</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">🏕️ <strong>夏塔帐篷/毡房</strong> 入住<span class="tl-note">住景区内或景区门口 · 晚上看星空！光污染极少，银河清晰可见 ✨</span></div>
-      </div>
-    </div>
+    <h3>🏔️ 夏塔古道森林公园攻略</h3>
+    <blockquote><p>夏季唯一可以看到冰山的草原！</p></blockquote>
 
-    <div class="alert alert-amber" style="margin-top:14px;">
-      <span class="alert-title">⚠️ 夏塔注意事项</span>
-      ▪ 夏塔海拔2000–3500m，注意防晒+保暖（晚上冷）<br>
-      ▪ 景区内住宿条件简陋（毡房/帐篷），提前做好心理准备<br>
-      ▪ 如果时间不够，青蛙泉→卡拉房子2号段足够出片<br>
-      ▪ 夏塔天气多变，雨衣/冲锋衣必带
-    </div>
+    <table>
+      <thead><tr><th>项目</th><th>详情</th></tr></thead>
+      <tbody>
+        <tr><td>开园时间</td><td><strong>9:00</strong></td></tr>
+        <tr><td>门票 + 大巴</td><td><strong>¥100/人</strong></td></tr>
+        <tr><td>自驾</td><td>❌ <strong>不建议自驾</strong>（景区内路况复杂）</td></tr>
+        <tr><td>信号</td><td>⚠️ <strong>无信号！务必带现金</strong></td></tr>
+      </tbody>
+    </table>
 
-    <!-- 📸 拍照指南 -->
-    <div style="background:linear-gradient(135deg,#e8f4f8,#d0ebf5);border-left:3px solid #0ea5e9;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;">
-      <span style="font-weight:700;color:#0284c7;">📸 拍照指南 · ZV-E10 + Pocket 3</span><br>
-      <span style="color:var(--text-mid);">▪ <b>特克斯离街</b> — <b>ZV-E10</b> 彩色墙壁+民族手工艺品，色彩丰富<br>
-      ▪ <b>夏塔古道</b> — <b>ZV-E10</b> 广角拍雪山+草原+古道，16:00后光线柔和，长焦拉近雪峰<br>
-      💡 夏塔是新疆颜值最高的雪山草原之一，ZV-E10 主力输出</span>
-    </div>
+    <h4>🔀 夏塔替代方案</h4>
+    <table>
+      <thead><tr><th>方案</th><th>特点</th><th>推荐度</th></tr></thead>
+      <tbody>
+        <tr><td><strong>夏塔古道 ★</strong></td><td>冰山草原景观独特</td><td>朋友首选</td></tr>
+        <tr><td>库尔德宁</td><td>替代选项</td><td>备选</td></tr>
+        <tr><td>琼库什台</td><td>替代选项</td><td>备选</td></tr>
+      </tbody>
+    </table>
 
-    <!-- ⚠️ 当天避坑 -->
-    <div style="background:var(--amber-bg);border-left:3px solid var(--amber);border-radius:10px;padding:12px 16px;margin-top:10px;font-size:13px;">
-      <span style="font-weight:700;color:var(--amber);">⚠️ 当天避坑</span><br>
-      <span style="color:var(--text-mid);">▪ 🏕️ 夏塔帐篷/毡房住宿条件简陋，做好心理准备，睡袋/洗漱自带</span>
+    <h4>🍜 吃</h4>
+    <ul>
+      <li><strong>早餐</strong>：新疆菜 / 手抓肉</li>
+      <li><strong>阿迪拉蜜之风味馕店</strong></li>
+      <li><strong>8点半烤肉</strong></li>
+    </ul>
+
+    <h4>📍 住</h4>
+    <p><strong>昭苏草居驿民宿</strong></p>
+
+    <div class="alert alert-red" style="margin-top:12px;">
+      <span class="alert-title">⚠️ 夏塔景区注意</span>
+      ▪ 无信号！务必带现金！<br>
+      ▪ 不建议自驾进景区，停外面坐大巴<br>
+      ▪ 夏塔海拔2000–3500m，注意防晒+保暖
     </div>
 
     <div class="day-cost">
-      <span class="tag tag-amber">夏塔门票+区间车 ¥80–100/人</span>
-      <span class="tag tag-amber">毡房/帐篷 ¥100–200/人</span>
-      <span class="tag tag-amber">骑马 ¥80–160/人（可选）</span>
+      <span class="tag tag-amber">夏塔门票+大巴 ¥100/人</span>
+      <span class="tag tag-amber">昭苏草居驿民宿 ¥200–350/间</span>
       <span class="tag tag-amber">油费 ¥120/人均¥30</span>
       <span class="tag tag-amber">餐饮 ¥50–80</span>
       <span class="cost-total">Day 8 人均约 ¥260–450</span>
@@ -1714,187 +1510,152 @@
 </div>
 
 <!-- ============================================ -->
-<!-- DAY 9 · 北疆 Day 5：夏塔→喀拉峻 -->
+<!-- DAY 9 · 北疆 Day 5：夏塔→喀拉峻（朋友整合版） -->
 <!-- ============================================ -->
 <div class="day-card">
   <div class="day-card-header">
     <div class="day-num">09</div>
     <div class="day-meta">
-      <h3>夏塔 → 喀拉峻草原 · 人体草原+鲜花台 <span class="status-badge status-pending">待预订</span></h3>
-      <div class="day-date">6/25 周四 · 4人自驾 Day 5 · 约 177km</div>
+      <h3>夏塔 → 喀拉峻草原 · 人体草原+鲜花台 <span class="status-badge status-pending">朋友攻略版</span></h3>
+      <div class="day-date">6/25 周四 · 4人自驾 Day 5 · 约 177km / 3h</div>
     </div>
   </div>
   <div class="day-card-body">
 
     <div class="alert alert-blue" style="margin-bottom:14px;">
-      <span class="alert-title">🌿 喀拉峻 = "黑色的莽原"（哈萨克语）</span>
-      世界自然遗产，被《中国国家地理》评为"中国最美立体草原"。特色：人体草原（起伏如人体曲线）+ 五色花海 + 雪山背景。今日车程短，留给草原充足时间。
+      <span class="alert-title">🌿 喀拉峻 = "立体草原"</span>
+      世界自然遗产，被《中国国家地理》评为"中国最美立体草原"。今日车程短，留给草原充足时间。
     </div>
 
-    <div class="timeline-wrap">
-      <div class="tl-row">
-        <div class="tl-time">07:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🌅 <strong>夏塔日出</strong>（可选）<span class="tl-note">早起看日照金山（木扎尔特冰川），毡房门口就能看，值！</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">08:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🍞 <strong>简单早餐</strong> + 收拾<span class="tl-note">毡房条件有限，泡面/馕解决</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">09:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🚙 夏塔 → <strong>喀拉峻草原</strong><span class="tl-note">约177km，3–3.5h · 经特克斯方向</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">12:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🎫 <strong>喀拉峻草原</strong> 购票入园<span class="tl-note">全景游 ¥275/人（东西喀拉峻+阔克苏峡谷+索道+游船）· 或草原单票 ¥140</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">12:30<br>｜<br>19:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">
-          🌿 <strong>喀拉峻草原 · 全天深度游</strong>（6h+）⭐⭐⭐
-          <span class="tl-note">
-            <strong>东喀拉峻（草原精华）：</strong><br>
-            ① <strong>鲜花台</strong> — 6月底正是野花盛花期，金莲花/紫苑/蒲公英铺成花毯<br>
-            ② <strong>猎鹰台</strong> — 俯瞰库尔代大峡谷，雪山+草原+峡谷三层景观<br>
-            ③ <strong>军马场</strong> — 哈萨克牧民的马群驰骋草原，像电影画面<br><br>
-            <strong>西喀拉峻/阔克苏峡谷（可选，全景票含）：</strong><br>
-            ④ <strong>人体草原</strong> — 起伏的草坡曲线如女性身体，下午光线最佳<br>
-            ⑤ <strong>九曲十八弯</strong> — 阔克苏河蜿蜒穿行峡谷<br><br>
-            🍜 景区内餐饮少，带干粮野餐（草原野餐！）<br>
-            📸 下午4–6点光线最柔美，人体草原必拍
-          </span>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">19:30</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">🏕️ <strong>加撒干营地帐篷</strong> 入住<span class="tl-note">草原深处营地 · 晚上篝火+星空 · 条件简陋但体验独特</span></div>
-      </div>
+    <h3>🎫 门票</h3>
+    <table>
+      <thead><tr><th>方案</th><th>价格</th><th>有效期</th><th>推荐度</th></tr></thead>
+      <tbody>
+        <tr><td><strong>景区自驾票 ★</strong></td><td><strong>¥160/人</strong></td><td><strong>48h</strong></td><td><strong>性价比最高，时间充裕</strong></td></tr>
+        <tr><td>全景票</td><td>¥275</td><td>—</td><td>网站原定（较贵）</td></tr>
+      </tbody>
+    </table>
+
+    <h3>🚠 景区游览路线（自驾 + 区间车）</h3>
+    <pre style="background:var(--bg);padding:12px 16px;border-radius:8px;font-size:13px;line-height:1.8;overflow-x:auto;">自驾入口 → 游客服务中心
+  ↓ (盘山公路)
+万纳服务区 → [换乘区间车 ~1h]
+  ↓
+鲜花台 ↔ 猎鹰台（区间车 10min）
+  ↓
+猎鹰台 → 加纳服务区
+  ↓
+巴旦木观景台 → 神木森林 → 花海瑶池 → 神鹰部落 → 巴塔祈福台
+  ↓
+乌苏夏郡 → 石泉服务区 → 布拉克服务区（出口）</pre>
+
+    <h3>🥾 徒步路线详解（精华段）</h3>
+    <table>
+      <thead><tr><th>路线</th><th>距离</th><th>时长</th><th>难度</th><th>推荐度</th></tr></thead>
+      <tbody>
+        <tr><td><strong>鲜花台 → 猎鹰台</strong></td><td><strong>5km</strong></td><td><strong>~3h</strong></td><td>中等</td><td><strong>经典徒步，必走 ★</strong></td></tr>
+        <tr><td>猎鹰台 → 猎鹰台观景台</td><td>往返 4km</td><td>~1.5h</td><td>简单</td><td>近距离观景</td></tr>
+        <tr><td>鲜花台 → 加撒干营地</td><td>4km 单程</td><td>~2h</td><td>中等</td><td>露营向</td></tr>
+        <tr><td><strong>猎鹰台 → 三级夷平面</strong></td><td><strong>往返 6km</strong></td><td><strong>&lt;2h</strong></td><td>中等</td><td><strong>视野最好 ★</strong></td></tr>
+        <tr><td>猎鹰台 → 库尔岱大峡谷</td><td>往返 8km</td><td>2h+</td><td>较难</td><td>峡谷探秘</td></tr>
+        <tr><td>同上（骑马）</td><td>8km</td><td>~1.5h</td><td>—</td><td>走到假树木→沿右边马道和悬崖→后半段有木栈道</td></tr>
+      </tbody>
+    </table>
+
+    <div class="alert alert-green" style="margin-top:12px;">
+      <span class="alert-title">⭐ 精华推荐组合 ★</span>
+      鲜花台下车 → 徒步到猎鹰台（5km/3h）→ 猎鹰台徒步到三级夷平面白色天幕观景台（往返6km/&lt;2h）→ 区间车返回
     </div>
 
-    <!-- 📸 拍照指南 -->
-    <div style="background:linear-gradient(135deg,#e8f4f8,#d0ebf5);border-left:3px solid #0ea5e9;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;">
-      <span style="font-weight:700;color:#0284c7;">📸 拍照指南 · ZV-E10 + Pocket 3</span><br>
-      <span style="color:var(--text-mid);">▪ <b>喀拉峻人体草原</b> — <b>ZV-E10</b> 侧光拍草坡曲线纹理，下午光影最佳<br>
-      ▪ <b>鲜花台/猎鹰台</b> — <b>ZV-E10</b> 广角拍花海+雪山背景（6月底野花季！）<br>
-      ▪ <b>营地星空</b> — <b>ZV-E10</b> 三脚架长曝光拍银河，光污染几乎为零</span>
-    </div>
+    <h4>🍜 吃</h4>
+    <p><strong>喜洋洋蒸饺</strong></p>
 
-    <!-- ⚠️ 当天避坑 -->
-    <div style="background:var(--amber-bg);border-left:3px solid var(--amber);border-radius:10px;padding:12px 16px;margin-top:10px;font-size:13px;">
-      <span style="font-weight:700;color:var(--amber);">⚠️ 当天避坑</span><br>
-      <span style="color:var(--text-mid);">▪ 🏕️ 喀拉峻加撒干营地条件简陋，睡袋/洗漱自带，草原晚上冷</span>
-    </div>
+    <h4>📍 住</h4>
+    <p><strong>喀拉峻原草牧歌牧家乐</strong></p>
 
     <div class="day-cost">
-      <span class="tag tag-amber">喀拉峻全景票 ¥275/人</span>
-      <span class="tag tag-amber">加撒干营地 ¥100–200/人</span>
+      <span class="tag tag-amber">喀拉峻自驾票 ¥160/人（48h）</span>
+      <span class="tag tag-amber">牧家乐 ¥100–200/人</span>
       <span class="tag tag-amber">油费 ¥100/人均¥25</span>
       <span class="tag tag-amber">餐饮 ¥40–60</span>
-      <span class="cost-total">Day 9 人均约 ¥440–560</span>
+      <span class="cost-total">Day 9 人均约 ¥325–445</span>
     </div>
   </div>
 </div>
 
 <!-- ============================================ -->
-<!-- DAY 10 · 北疆 Day 6：喀拉峻→唐布拉/孟克特 -->
+<!-- DAY 10 · 北疆 Day 6：喀拉峻→唐巴拉（朋友整合版） -->
 <!-- ============================================ -->
 <div class="day-card">
   <div class="day-card-header">
     <div class="day-num">10</div>
     <div class="day-meta">
-      <h3>喀拉峻 → 唐布拉百里画廊 → 孟克特古道 <span class="status-badge status-pending">待预订</span></h3>
-      <div class="day-date">6/26 周五 · 4人自驾 Day 6 · 约 278km</div>
+      <h3>喀拉峻 → 唐布拉百里画廊 → 孟克特 <span class="status-badge status-pending">朋友攻略版</span></h3>
+      <div class="day-date">6/26 周五 · 4人自驾 Day 6 · 约 278km / 5h</div>
     </div>
   </div>
   <div class="day-card-body">
 
     <div class="alert alert-blue" style="margin-bottom:14px;">
       <span class="alert-title">🖼️ 唐布拉 = "百里画廊"</span>
-      喀什河沿岸的狭长草原河谷，一步一景如行走在画卷中。唐布拉的精华在<strong>孟克特古道</strong>——未经商业开发的原始秘境，只有当地牧民和少数自驾玩家知道。
+      喀什河沿岸的狭长草原河谷，一步一景如行走在画卷中。
     </div>
 
-    <div class="timeline-wrap">
-      <div class="tl-row">
-        <div class="tl-time">08:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🌅 <strong>喀拉峻草原日出</strong> + 早餐<span class="tl-note">营地早餐，收拾行李</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">09:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🚙 喀拉峻 → <strong>唐布拉百里画廊</strong><span class="tl-note">约200km，4h · 经G218和S315 · 沿途进入伊犁河谷东段</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">13:00</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🍜 <strong>唐布拉/乔尔玛午餐</strong><span class="tl-note">乔尔玛检查站附近有餐厅 · 拌面/抓饭 ¥30–40</span></div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">14:00<br>｜<br>17:30</div>
-        <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">
-          🖼️ <strong>唐布拉百里画廊 + 孟克特古道</strong>（3.5h）⭐⭐
-          <span class="tl-note">
-            <strong>百里画廊 S315 沿线：</strong><br>
-            喀什河蜿蜒流淌，两侧草原+云杉+雪山，随便停车都是画<br><br>
-            <strong>孟克特古道（核心）：</strong><br>
-            从S315岔路口进入土路（约10km），到达<strong>孟克特温泉</strong>/小天池<br>
-            🆓 免费（非景区，无门票）<br>
-            📸 天然温泉+雪山+草原秘境，人极少<br>
-            ⚠️ 土路+碎石路，SUV可以，轿车慎入<br>
-            🐴 可骑马进入更深处的仙女湖（¥100–150/人，往返2h）
-          </span>
-        </div>
-      </div>
-      <div class="tl-row">
-        <div class="tl-time">18:00</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">🏕️ <strong>小满民宿</strong>(林间小住大床帐篷) 入住<span class="tl-note">唐布拉/乔尔玛附近 · 林间帐篷，晚上烤火+看星星</span></div>
-      </div>
+    <h4>路线概况</h4>
+    <ul>
+      <li><strong>尼勒克 → 乔尔玛</strong>：全长 <strong>170km</strong></li>
+      <li><strong>蜜蜂小镇 → 乔尔玛</strong>：<strong>77km 精华路段</strong> ★</li>
+    </ul>
+
+    <h4>🏞️ 三大支沟探索（选去）</h4>
+    <table>
+      <thead><tr><th>沟谷</th><th>导航要点</th><th>特点</th><th>推荐度</th></tr></thead>
+      <tbody>
+        <tr><td><strong>布隆沟 ★</strong></td><td>导航「布隆温泉疗养度假村」，开到柏油路尽头即达</td><td>有温泉，景色好</td><td><strong>首选</strong></td></tr>
+        <tr><td>狗熊沟</td><td>—</td><td>原始森林</td><td>备选</td></tr>
+        <tr><td>坎苏沟</td><td>—</td><td>牧场风光</td><td>备选</td></tr>
+      </tbody>
+    </table>
+
+    <div class="alert alert-red" style="margin-top:12px;">
+      <span class="alert-title">⚠️ 唐布拉注意</span>
+      ▪ 景区内<strong>无加油站</strong>！务必在进入前加满油。
     </div>
 
-    <!-- 📸 拍照指南 -->
-    <div style="background:linear-gradient(135deg,#e8f4f8,#d0ebf5);border-left:3px solid #0ea5e9;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;">
-      <span style="font-weight:700;color:#0284c7;">📸 拍照指南 · ZV-E10 + Pocket 3</span><br>
-      <span style="color:var(--text-mid);">▪ <b>唐布拉百里画廊</b> — <b>ZV-E10</b> 广角拍草原+云杉+雪山长卷<br>
-      ▪ <b>孟克特古道</b> — <b>ZV-E10</b> 野生未开发，徒步+拍照，人少景美<br>
-      ▪ <b>小满民宿林间</b> — <b>ZV-E10</b> 三脚架长曝光拍星空，帐篷灯光氛围</span>
-    </div>
+    <h4>🍜 吃</h4>
+    <p><strong>新源县亚里特色美味烤肉</strong> — 真材实料，性价比高</p>
+
+    <h4>📍 住</h4>
+    <p><strong>伊犁尼勒克 · 云深小住</strong></p>
 
     <div class="day-cost">
       <span class="tag tag-green">孟克特古道 ¥0</span>
-      <span class="tag tag-amber">骑马 ¥100–150/人（可选）</span>
-      <span class="tag tag-amber">小满民宿 ¥200–350/间</span>
+      <span class="tag tag-amber">云深小住 ¥200–350/间</span>
       <span class="tag tag-amber">油费 ¥130/人均¥35</span>
       <span class="tag tag-amber">餐饮 ¥50–70</span>
-      <span class="cost-total">Day 10 人均约 ¥250–450</span>
+      <span class="cost-total">Day 10 人均约 ¥285–455</span>
     </div>
   </div>
 </div>
 
 <!-- ============================================ -->
-<!-- DAY 11 · 北疆 Day 7：唐布拉→独库公路→乌鲁木齐 -->
+<!-- DAY 11 · 北疆 Day 7：唐布拉→独库公路→乌鲁木齐+Z596西宁（朋友整合版+原版solo续程） -->
 <!-- ============================================ -->
 <div class="day-card">
   <div class="day-card-header">
     <div class="day-num">11</div>
     <div class="day-meta">
-      <h3>唐布拉 → 独库公路(北段) → 乌鲁木齐 <span class="status-badge status-pending">待预订</span></h3>
-      <div class="day-date">6/27 周六 · 4人自驾 Day 7 · 约 411km · 🏔️ 独库公路！</div>
+      <h3>唐布拉 → 独库公路(北段) → 乌鲁木齐 → Z596西宁 <span class="status-badge status-locked">Z596已订</span></h3>
+      <div class="day-date">6/27 周六 · 4人自驾 Day 7 + solo 继程 · 约 411km · 🏔️ 独库公路！</div>
     </div>
   </div>
   <div class="day-card-body">
 
     <div class="alert alert-blue" style="margin-bottom:14px;">
       <span class="alert-title">🏔️ 独库公路 · 一生必驾</span>
-      中国最美公路！北起独山子，南至库车，全长 561km，横穿天山。一日之内经历春夏秋冬，戈壁→峡谷→雪山→草原→森林。今日走<strong>北段（乔尔玛→独山子，约200km）</strong>，是独库最精华路段。<br>
-      ⏰ 独库公路通行时间：<strong>8:00–22:00</strong>（夜间封闭）· 6月已全线通车
+      中国最美公路！北起独山子，南至库车，全长 561km，横穿天山。今日走<strong>北段（乔尔玛→独山子，约200km）</strong>，是独库最精华路段。<br>
+      ⏰ 独库公路通行时间：<strong>8:00–22:00</strong>（夜间封闭）· 6月已全线通车<br>
+      ⚠️ 天气问题或落石会<strong>随时管制</strong>，需关注实时路况
     </div>
 
     <div class="timeline-wrap">
@@ -1911,7 +1672,7 @@
       <div class="tl-row">
         <div class="tl-time">08:30</div>
         <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🪦 <strong>乔尔玛烈士陵园</strong> 停留致敬<span class="tl-note">168名筑路官兵长眠于此 · 听守墓人讲述独库公路修建史（感人）· 停留20min</span></div>
+        <div class="tl-content">🪦 <strong>乔尔玛烈士陵园</strong> 停留致敬<span class="tl-note">168名筑路官兵长眠于此 · 停留20min</span></div>
       </div>
       <div class="tl-row">
         <div class="tl-time">09:00<br>｜<br>13:00</div>
@@ -1924,10 +1685,9 @@
             ② <strong>防雪走廊</strong> — 独库标志性路段，像开进雪山隧道<br>
             ③ <strong>天瀑</strong> — 雪山融水形成的瀑布，就在公路边<br>
             ④ <strong>老虎口</strong> — 悬崖峭壁上凿出的路段，惊险震撼<br>
-            ⑤ <strong>守望天山石碑</strong> — 北段标志性打卡点<br><br>
+            ⑤ <strong>守望天山石碑</strong> — 北段标志性打卡点<br>
             📸 每个停车区都值得停，一天之内从冬天开到夏天<br>
-            🍞 路上只有乔尔玛和哈希勒根达坂有小卖部，带足干粮和水<br>
-            ⚠️ 山路急弯多，谨慎驾驶，不要太赶
+            🍞 路上只有乔尔玛和哈希勒根达坂有小卖部，带足干粮和水
           </span>
         </div>
       </div>
@@ -1939,22 +1699,29 @@
       <div class="tl-row">
         <div class="tl-time">13:30</div>
         <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🍜 <strong>独山子午餐</strong><span class="tl-note">连续几天草原+帐篷，终于回到城市！推荐：独山子大盘鸡/拌面 · ¥30–50</span></div>
+        <div class="tl-content">🍜 <strong>独山子午餐</strong><span class="tl-note">推荐：独山子大盘鸡/拌面 · ¥30–50</span></div>
       </div>
       <div class="tl-row">
         <div class="tl-time">14:30</div>
         <div class="tl-dot"><div class="tl-line"></div></div>
         <div class="tl-content">🚙 独山子 → <strong>乌鲁木齐</strong><span class="tl-note">G30连霍高速，约250km，3h</span></div>
       </div>
+    </div>
+
+    <div style="background:var(--amber-bg);border-radius:10px;padding:12px 16px;margin: 14px 0 6px 0;font-size:13px;color:var(--amber);font-weight:600;letter-spacing:0.5px;">
+      🧍 朋友飞深圳，你坐Z596去西宁继续solo
+    </div>
+
+    <div class="timeline-wrap">
       <div class="tl-row">
         <div class="tl-time">17:30</div>
         <div class="tl-dot"><div class="tl-line"></div></div>
-        <div class="tl-content">🏨 <strong>桔子酒店(友好南路红山店)</strong> 入住/还车<span class="tl-note">回到市区，还哈弗H6 · 今晚住市区，方便去火车站</span></div>
+        <div class="tl-content">🏨 <strong>桔子酒店(天山国际机场店)</strong> 入住/还车<span class="tl-note">回到市区，还哈弗H6 · 今晚住市区，方便去火车站</span></div>
       </div>
       <div class="tl-row">
         <div class="tl-time">19:00</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">🍻 <strong>北疆段散伙饭！</strong> 🎉<span class="tl-note">庆祝8天自驾圆满结束 · 推荐：楼兰秘烤/丝路有约 · 人均¥80–120</span></div>
+        <div class="tl-dot"><div class="tl-line"></div></div>
+        <div class="tl-content">🍻 <strong>北疆段散伙饭！</strong> 🎉<span class="tl-note">庆祝8天自驾圆满结束 · 朋友明日飞深圳，你坐火车去西宁 · 推荐：楼兰秘烤/丝路有约 · 人均¥80–120</span></div>
       </div>
       <div class="tl-row">
         <div class="tl-time">21:30</div>
@@ -1975,35 +1742,16 @@
 
     <div class="alert alert-amber" style="margin-top:14px;">
       <span class="alert-title">⚠️ 独库公路注意事项</span>
-      ▪ 独库公路 <strong>8:00–22:00 通行</strong>，夜间封闭，不要晚于 20:00 进入<br>
+      ▪ 独库公路 <strong>8:00–22:00 通行</strong>，可能因天气/落石随时管制，预留缓冲时间<br>
       ▪ 哈希勒根达坂海拔 3390m，可能有高反（轻微头痛），注意保暖<br>
       ▪ 山路多急弯，新手不要在独库驾驶<br>
-      ▪ 全程加油站少，乔尔玛和独山子各有一个，务必加满<br>
-      ▪ 6月仍有路边积雪，不要翻越护栏踩雪（下面是空的！）
-    </div>
-
-    <!-- 📸 拍照指南 -->
-    <div style="background:linear-gradient(135deg,#e8f4f8,#d0ebf5);border-left:3px solid #0ea5e9;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:13px;">
-      <span style="font-weight:700;color:#0284c7;">📸 拍照指南 · ZV-E10 + Pocket 3</span><br>
-      <span style="color:var(--text-mid);">▪ <b>独库公路全程</b> — <b>Pocket 3</b> 车载POV拍蜿蜒山路，绝了！<br>
-      ▪ <b>哈希勒根达坂</b> — <b>ZV-E10</b> 广角拍雪墙（6月仍有2米+），长焦拉近雪山<br>
-      ▪ <b>乔尔玛/烈士陵园</b> — <b>ZV-E10</b> 肃穆记录，致敬筑路人<br>
-      💡 独库是全程最有拍摄价值的公路，Pocket 3 固定在车窗别关</span>
-    </div>
-
-    <!-- ⚠️ 当天避坑 -->
-    <div style="background:var(--amber-bg);border-left:3px solid var(--amber);border-radius:10px;padding:12px 16px;margin-top:10px;font-size:13px;">
-      <span style="font-weight:700;color:var(--amber);">⚠️ 当天避坑</span><br>
-      <span style="color:var(--text-mid);">▪ 🕗 独库公路 8:00–22:00 通行，务必在20:00前进入<br>
-      ▪ 🏔️ 哈希勒根达坂 3390m，可能有轻度高反，注意保暖休息<br>
-      ▪ 📡 独库部分路段无信号，提前下载离线地图<br>
-      ▪ ⛽ 全程加油站少，乔尔玛和独山子各一个，务必加满</span>
+      ▪ 全程加油站少，乔尔玛和独山子各有一个，务必加满
     </div>
 
     <div class="day-cost">
       <span class="tag tag-green">独库公路 ¥0</span>
       <span class="tag tag-green">Z596 硬卧 ¥189.5</span>
-      <span class="tag tag-amber">桔子酒店 ¥0（6/20已住，今住同酒店或朋友分摊）</span>
+      <span class="tag tag-amber">桔子酒店 ¥0（朋友代订 ✅）</span>
       <span class="tag tag-amber">油费+过路费 ¥300/人均¥75</span>
       <span class="tag tag-amber">餐饮 ¥80–150</span>
       <span class="cost-total">Day 11 人均约 ¥265–415（不含酒店）</span>
@@ -2011,7 +1759,6 @@
   </div>
 </div>
 
-<!-- ============================================ -->
 <!-- DAY 12 · 西宁 · 清真寺巡礼+市内精华 -->
 <!-- ============================================ -->
 <div class="day-card">
@@ -2463,15 +2210,8 @@
 <!-- ============================================ -->
 <!-- 已预订汇总 -->
 <!-- ============================================ -->
-<div class="day-card">
-  <div class="day-card-header">
-    <div class="day-num">🎫</div>
-    <div class="day-meta">
-      <h3>已预订汇总</h3>
-      <div class="day-date">机票 · 火车 · 酒店 · 景区 · 演艺 · 租车</div>
-    </div>
-  </div>
-  <div class="day-card-body">
+<div class="section-card">
+  <h2>🎫 已预订汇总</h2>
   <table class="booked-table">
     <thead><tr><th>项目</th><th>详情</th><th style="width:70px">状态</th></tr></thead>
     <tbody>
@@ -2561,21 +2301,13 @@
       </tr>
     </tbody>
   </table>
-  </div>
 </div>
 
 <!-- ============================================ -->
 <!-- 出发前必做 -->
 <!-- ============================================ -->
-<div class="day-card">
-  <div class="day-card-header">
-    <div class="day-num">✅</div>
-    <div class="day-meta">
-      <h3>出发前必做清单</h3>
-      <div class="day-date">提前准备 · 预约 · 购票 · 确认</div>
-    </div>
-  </div>
-  <div class="day-card-body">
+<div class="section-card">
+  <h2>✅ 出发前必做清单</h2>
   <ul class="checklist">
     <li class="done">深圳→银川机票已订 MF8221 ¥768（经济舱Z · 46A · 免费托运20KG）</li>
     <li class="done">看见贺兰夜游门票已订 ¥108</li>
@@ -2608,7 +2340,6 @@
     <li>山东航空APP → 提前值机 SC8724（起飞前24h开放）</li>
     <li>查 6/28–6/30 西宁/青海湖天气</li>
   </ul>
-  </div>
 </div>
 
 <footer>
@@ -2619,41 +2350,13 @@
 </div>
 <script>
 (function(){
-  // Day-card 折叠
-  document.querySelectorAll('.day-card').forEach(card => {
+  const cards = document.querySelectorAll('.day-card');
+  cards.forEach(card => {
     const header = card.querySelector('.day-card-header');
     if (!header) return;
-    header.addEventListener('click', () => card.classList.toggle('open'));
-  });
-
-  // 自动创建子折叠：把「当天避坑」区块 + 紧跟的费用小结包进 sub-toggle
-  document.querySelectorAll('.day-card-body').forEach(body => {
-    const tips = body.querySelectorAll('div[style*="border-left:3px solid var(--amber)"]');
-    tips.forEach(tipDiv => {
-      if (tipDiv.closest('.sub-toggle')) return;
-      const wrap = document.createElement('div');
-      wrap.className = 'sub-toggle';
-      const hdr = document.createElement('div');
-      hdr.className = 'sub-toggle-header';
-      hdr.textContent = '⚠️ 避坑提醒';
-      const inner = document.createElement('div');
-      inner.className = 'sub-toggle-body';
-      tipDiv.parentNode.insertBefore(wrap, tipDiv);
-      wrap.appendChild(hdr);
-      wrap.appendChild(inner);
-      inner.appendChild(tipDiv);
-      const next = wrap.nextElementSibling;
-      if (next && next.classList && next.classList.contains('day-cost')) {
-        inner.appendChild(next);
-      }
+    header.addEventListener('click', () => {
+      card.classList.toggle('open');
     });
-  });
-
-  // 子折叠点击
-  document.addEventListener('click', e => {
-    const hdr = e.target.closest('.sub-toggle-header');
-    if (!hdr) return;
-    hdr.closest('.sub-toggle')?.classList.toggle('open');
   });
 })();
 </script>

@@ -9,6 +9,8 @@ const LandingPage = lazy(() => import('./pages/LandingPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
 const CategoryPage = lazy(() => import('./pages/CategoryPage'));
 const TravelsPage = lazy(() => import('./pages/TravelsPage'));
+const TravelEditPage = lazy(() => import('./pages/TravelEditPage'));
+const TravelJournalPage = lazy(() => import('./pages/TravelJournalPage'));
 const ArticlePage = lazy(() => import('./pages/ArticlePage'));
 const WritePage = lazy(() => import('./pages/WritePage'));
 
@@ -77,10 +79,12 @@ export default function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/travels" element={<TravelsPage />} />
+            <Route path="/travels/:slug/journal/:day" element={<TravelJournalPage />} />
             <Route path="/category/:key" element={<CategoryPage />} />
             <Route path="/article/:id" element={<ArticlePage />} />
             <Route path="/write" element={<WritePage />} />
             <Route path="/write/:id" element={<WritePage />} />
+            <Route path="/admin/travels/:id" element={<TravelEditPage />} />
             <Route path="/rss.xml" element={<RssFeedPage />} />
           </Routes>
         </Suspense>

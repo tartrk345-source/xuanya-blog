@@ -134,6 +134,59 @@ export interface PackingCategory {
   items: string[];
 }
 
+// ============================================================
+// 游记类型定义
+// ============================================================
+
+export interface JournalPhoto {
+  url: string;
+  caption?: string;
+  width?: number;
+  height?: number;
+}
+
+export interface ActualTimelineEntry {
+  planned: string;       // 计划时间+事项（从攻略自动填）
+  actual_time?: string;  // 实际时间
+  note?: string;         // 备注
+}
+
+export interface ExpenseEntry {
+  item: string;
+  planned?: string;
+  actual?: string;
+  category?: string;
+}
+
+export type JournalMood = '😍' | '😊' | '😐' | '😵' | '😡' | '😢';
+
+export interface TravelJournal {
+  id?: string;
+  guide_slug: string;
+  day_number: number;
+  content: string;                 // Markdown 正文
+  photos: JournalPhoto[];
+  actual_timeline: ActualTimelineEntry[];
+  expenses: ExpenseEntry[];
+  mood: JournalMood | '';
+  mood_note: string;
+  weather: string;
+  location: string;
+  visibility: 'public' | 'private';
+  created_at?: string;
+  updated_at?: string;
+}
+
+/** 从攻略数据创建游记模板 */
+export interface JournalTemplate {
+  guide_slug: string;
+  day_number: number;
+  day_title: string;
+  day_date: string;
+  actual_timeline: ActualTimelineEntry[];
+  expenses: ExpenseEntry[];
+}
+
 export interface TravelGuideData {
   meta: {
     title: string;
