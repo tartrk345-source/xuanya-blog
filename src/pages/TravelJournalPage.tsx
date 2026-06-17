@@ -28,7 +28,7 @@ export default function TravelJournalPage() {
 
   const [journal, setJournal] = useState<TravelJournal | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [, setError] = useState('');
 
   // 找到对应 Day 数据生成模板
   const dayData = GUIDE_DATA.days.find(d => parseInt(d.num, 10) === dayNumber);
@@ -195,7 +195,7 @@ export default function TravelJournalPage() {
 
           {/* Journal content */}
           <JournalView
-            journal={journal}
+            journal={journal!}
             dayTitle={`Day ${dayNumber} · ${template?.day_title || ''}`}
           />
         </div>

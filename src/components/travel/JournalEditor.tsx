@@ -12,7 +12,7 @@ import type {
   ActualTimelineEntry,
   ExpenseEntry,
 } from '../../data/travelTypes';
-import { saveJournal, generateJournalTemplate } from '../../lib/journals';
+import { saveJournal } from '../../lib/journals';
 import { uploadJournalPhoto } from '../../lib/uploadPhoto';
 import PhotoUploader from './PhotoUploader';
 import TimelineEditor from './TimelineEditor';

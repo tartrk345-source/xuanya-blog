@@ -7,7 +7,6 @@ import type {
   JournalTemplate,
   ActualTimelineEntry,
   ExpenseEntry,
-  TimelineItem,
   DayData,
 } from '../data/travelTypes';
 
