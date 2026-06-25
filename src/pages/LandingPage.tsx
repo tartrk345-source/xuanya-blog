@@ -541,6 +541,15 @@ export default function LandingPage() {
           >
             沪ICP备2023014300号-1
           </a>
+          <a
+            href="https://beian.mps.gov.cn/#/query/webSearch?code=44030002013783"
+            rel="noreferrer"
+            target="_blank"
+            className="text-[0.82rem] text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors flex items-center gap-1"
+          >
+            <img src="/beian-icon.png" alt="备案图标" className="h-4 w-4 inline-block" />
+            粤公网安备44030002013783号
+          </a>
         </div>
       </footer>
 
