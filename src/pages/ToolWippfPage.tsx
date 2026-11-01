@@ -25,12 +25,15 @@ import {
   conList,
   modList,
   digitsToAnswers,
+  answersToDigits,
   encodeAnswerCode,
   decodeAnswerCode,
   pairHypothesis,
   type NamedScore,
   type WippfScore,
+  WIPPF_SPEC,
 } from '../data/tools/wippf';
+import { downloadCodeFile } from '../lib/answerCode';
 
 type Stage = 'intro' | 'quiz' | 'handoff' | 'result';
 type Turn = 'me' | 'pa';
@@ -46,6 +49,50 @@ function Card({ title, sub, children }: { title: string; sub?: string; children:
       <div className="text-sm font-bold mb-1">{title}</div>
       {sub && <div className="text-[11.5px] text-[#B8B4B0] dark:text-[#64748B] mb-4 leading-relaxed">{sub}</div>}
       <div className={sub ? '' : 'mt-4'}>{children}</div>
+    </div>
+  );
+}
+
+/* ---------- 答案码方块：显示 / 复制 / 存成 txt ---------- */
+function CodeBox({ label, code, kind }: { label: string; code: string; kind: 'me' | 'partner' }) {
+  const [copied, setCopied] = useState(false);
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(code);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
+  };
+
+  return (
+    <div className="rounded-2xl border border-[#ECD8D9] dark:border-[#334155] p-3.5">
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-[12.5px] font-semibold">{label} 的答案码</span>
+        <span className="text-[11px] text-[#B8B4B0] dark:text-[#64748B] tabular-nums">{code.length} 字符</span>
+      </div>
+      <textarea
+        readOnly
+        value={code}
+        onFocus={e => e.currentTarget.select()}
+        className="w-full min-h-[72px] px-3 py-2 rounded-xl border border-[#ECD8D9] dark:border-[#334155] bg-[#F9F6F5] dark:bg-[#0F172A] text-[10.5px] font-mono leading-relaxed outline-none resize-y break-all"
+      />
+      <div className="flex gap-2 mt-2.5">
+        <button
+          onClick={copy}
+          className="flex-1 py-2 rounded-full bg-[#DA583F] dark:bg-[#2563EB] text-white text-[12.5px] font-semibold hover:bg-[#C43F30] dark:hover:bg-[#1D4ED8] transition-colors"
+        >
+          {copied ? '已复制 ✓' : '复制'}
+        </button>
+        <button
+          onClick={() => downloadCodeFile(code, WIPPF_SPEC, label, kind === 'me' ? '我' : '对方')}
+          className="flex-1 py-2 rounded-full border border-[#ECD8D9] dark:border-[#334155] text-[12.5px] font-medium hover:border-[#DA583F] dark:hover:border-[#60A5FA] transition-colors"
+        >
+          存成 .txt
+        </button>
+      </div>
     </div>
   );
 }
@@ -168,6 +215,10 @@ export default function ToolWippfPage() {
   const [codeInput, setCodeInput] = useState('');
   const [codeError, setCodeError] = useState('');
   const [loadedCode, setLoadedCode] = useState<{ name: string; digits: string } | null>(null);
+  /** 自己的答案码（可选）：贴上后不必重答，直接和对方对照 */
+  const [myCodeInput, setMyCodeInput] = useState('');
+  const [myCodeError, setMyCodeError] = useState('');
+  const [myLoaded, setMyLoaded] = useState<{ name: string; digits: string } | null>(null);
   const [turn, setTurn] = useState<Turn>('me');
   const [index, setIndex] = useState(0);
   const [meAns, setMeAns] = useState<Record<string, number>>({});
@@ -200,15 +251,35 @@ export default function ToolWippfPage() {
     () => (WIPPF_ITEMS.every(it => meAns[it.code] !== undefined) ? encodeAnswerCode(meAns, myLabel) : ''),
     [meAns, myLabel],
   );
+  const partnerCode = useMemo(
+    () => (hasPartner && WIPPF_ITEMS.every(it => paAnswers[it.code] !== undefined)
+      ? encodeAnswerCode(paAnswers, partnerLabel)
+      : ''),
+    [hasPartner, paAnswers, partnerLabel],
+  );
 
   const start = () => {
-    if (mode === 'code' && !loadedCode) {
-      setCodeError('请先粘贴对方的答案码，或改选其他方式。');
-      return;
+    if (mode === 'code') {
+      if (!loadedCode) {
+        setCodeError('请先粘贴对方的答案码，或改选其他方式。');
+        return;
+      }
+      if (myCodeInput.trim() && !myLoaded) {
+        setCodeError('你自己的答案码没读出来：清空那一栏，改成自己答一轮也可以。');
+        return;
+      }
     }
     setCodeError('');
     setTurn('me');
     setIndex(0);
+    if (mode === 'code' && myLoaded) {
+      // 两份答案码都齐了：跳过答题，直接出双人对照
+      setMeAns(digitsToAnswers(myLoaded.digits));
+      if (myLoaded.name) setMeName(myLoaded.name);
+      setStage('result');
+      window.scrollTo({ top: 0 });
+      return;
+    }
     setStage('quiz');
     window.scrollTo({ top: 0 });
   };
@@ -294,6 +365,9 @@ export default function ToolWippfPage() {
     setIndex(0);
     setCopied(false);
     setCopiedCode(false);
+    setMyCodeInput('');
+    setMyCodeError('');
+    setMyLoaded(null);
     window.scrollTo({ top: 0 });
   };
 
@@ -305,14 +379,45 @@ export default function ToolWippfPage() {
       return;
     }
     const decoded = decodeAnswerCode(raw);
-    if (!decoded) {
+    if (!decoded.ok) {
       setLoadedCode(null);
-      setCodeError('答案码无法识别：请确认整串都复制进来（含开头的 W1.），且对方 87 题已答完。');
+      setCodeError(decoded.message);
       return;
     }
     setLoadedCode({ name: decoded.name, digits: decoded.digits });
     setCodeError('');
     if (decoded.name) setPaName(decoded.name);
+  };
+
+  const tryDecodeMine = (raw: string) => {
+    setMyCodeInput(raw);
+    if (!raw.trim()) {
+      setMyLoaded(null);
+      setMyCodeError('');
+      return;
+    }
+    const decoded = decodeAnswerCode(raw);
+    if (!decoded.ok) {
+      setMyLoaded(null);
+      setMyCodeError(decoded.message);
+      return;
+    }
+    setMyLoaded({ name: decoded.name, digits: decoded.digits });
+    setMyCodeError('');
+    if (decoded.name) setMeName(decoded.name);
+  };
+
+  /** 想和对方对照但没有双人模式：带着自己的码回开始页，只差对方那一半 */
+  const goPairImport = () => {
+    setStage('intro');
+    setMode('code');
+    setCodeInput('');
+    setCodeError('');
+    setLoadedCode(null);
+    setMyCodeInput(answerCode);
+    setMyLoaded({ name: myLabel, digits: answersToDigits(meAns) });
+    setMyCodeError('');
+    window.scrollTo({ top: 0 });
   };
 
   const copyCode = async () => {
@@ -488,7 +593,7 @@ export default function ToolWippfPage() {
                 {[
                   { key: 'single' as Mode, title: '只做我自己的', desc: '一人一轮，出个人剖面与逐步解读。' },
                   { key: 'device' as Mode, title: '两人一起做 · 同一台设备轮流', desc: '我先答完，把设备交给对方；结束后出双人对照与双线图。' },
-                  { key: 'code' as Mode, title: '我有对方的答案码', desc: '对方在 TA 的设备答完并把码发给你，粘贴后你只答自己这一轮。' },
+                  { key: 'code' as Mode, title: '我有答案码（导入对照）', desc: '对方把码发给你，粘贴后你只答自己这一轮；如果你也有自己的码，两份一起贴就直接出对照，不用重答。' },
                 ].map(opt => (
                   <button
                     key={opt.key}
@@ -508,19 +613,44 @@ export default function ToolWippfPage() {
               </div>
 
               {mode === 'code' && (
-                <div className="mb-5">
-                  <textarea
-                    value={codeInput}
-                    onChange={e => tryDecode(e.target.value)}
-                    placeholder="把对方发来的答案码整串粘贴到这里（以 W1. 开头）"
-                    className="w-full min-h-[86px] px-3 py-2.5 rounded-xl border border-[#ECD8D9] dark:border-[#334155] bg-white dark:bg-[#1E293B] text-[12px] font-mono outline-none focus:border-[#DA583F] dark:focus:border-[#60A5FA] resize-y"
-                  />
-                  {loadedCode && (
-                    <div className="text-[12.5px] text-[#3E9A7E] mt-1.5">
-                      ✓ 已读取 {loadedCode.name} 的答案（87 题齐全），下面只需答你自己这一轮。
+                <div className="mb-5 space-y-4">
+                  <div>
+                    <div className="flex items-baseline gap-2 mb-1.5">
+                      <span className="text-[13px] font-semibold">对方的答案码</span>
+                      <span className="text-[11.5px] text-[#B8B4B0] dark:text-[#64748B]">必填</span>
                     </div>
-                  )}
-                  {codeError && <div className="text-[12.5px] text-[#DA583F] mt-1.5">{codeError}</div>}
+                    <textarea
+                      value={codeInput}
+                      onChange={e => tryDecode(e.target.value)}
+                      placeholder="把对方发来的答案码整串粘贴到这里（以 X2. 开头）"
+                      className="w-full min-h-[76px] px-3 py-2.5 rounded-xl border border-[#ECD8D9] dark:border-[#334155] bg-white dark:bg-[#1E293B] text-[12px] font-mono outline-none focus:border-[#DA583F] dark:focus:border-[#60A5FA] resize-y"
+                    />
+                    {loadedCode && (
+                      <div className="text-[12.5px] text-[#3E9A7E] mt-1.5">
+                        ✓ 已读取 {partnerLabel} 的答案（87 题齐全）
+                      </div>
+                    )}
+                    {codeError && <div className="text-[12.5px] text-[#DA583F] mt-1.5">{codeError}</div>}
+                  </div>
+
+                  <div>
+                    <div className="flex items-baseline gap-2 mb-1.5">
+                      <span className="text-[13px] font-semibold">我自己的答案码</span>
+                      <span className="text-[11.5px] text-[#B8B4B0] dark:text-[#64748B]">可选 · 贴了就不用重答</span>
+                    </div>
+                    <textarea
+                      value={myCodeInput}
+                      onChange={e => tryDecodeMine(e.target.value)}
+                      placeholder="之前做过并导出过答案码？粘在这里，两份齐了直接出双人对照"
+                      className="w-full min-h-[76px] px-3 py-2.5 rounded-xl border border-[#ECD8D9] dark:border-[#334155] bg-white dark:bg-[#1E293B] text-[12px] font-mono outline-none focus:border-[#DA583F] dark:focus:border-[#60A5FA] resize-y"
+                    />
+                    {myLoaded && (
+                      <div className="text-[12.5px] text-[#3E9A7E] mt-1.5">
+                        ✓ 已读取你的答案（87 题齐全）——点下面按钮直接看双人对照
+                      </div>
+                    )}
+                    {myCodeError && <div className="text-[12.5px] text-[#DA583F] mt-1.5">{myCodeError}</div>}
+                  </div>
                 </div>
               )}
 
@@ -528,7 +658,7 @@ export default function ToolWippfPage() {
                 onClick={start}
                 className="w-full py-3.5 rounded-full bg-[#DA583F] dark:bg-[#2563EB] text-white text-[15px] font-semibold hover:bg-[#C43F30] dark:hover:bg-[#1D4ED8] transition-colors"
               >
-                开始作答
+                {mode === 'code' && myLoaded ? '生成双人对照' : '开始作答'}
               </button>
 
               <p className="text-[12px] text-[#B8B4B0] dark:text-[#64748B] mt-8 leading-relaxed">
@@ -965,6 +1095,27 @@ export default function ToolWippfPage() {
                 </div>
               )}
 
+              {/* 8. 导出答案码 */}
+              <div className="mt-4">
+                <Card
+                  title="导出答案码"
+                  sub="存下来随时回到这次结果；发给对方即可做双人对照；以后其他量表也用同一种码"
+                >
+                  <p className="text-[12.5px] text-[#6E6A7C] dark:text-[#94A3B8] leading-relaxed mb-4">
+                    一段码＝称呼＋87 个选项，不含设备、位置或账号。任何设备打开
+                    <span className="font-mono"> x2ya.com/tools/wippf</span>
+                    ，选「我有答案码」，把码贴进去就能还原这次作答——两个人各自的码都贴上，直接出对照，谁都不用重答。
+                    <span className="text-[#B8B4B0] dark:text-[#64748B]">（早期导出的 W1. 老码也还能读。）</span>
+                  </p>
+                  <CodeBox label={myLabel} code={answerCode} kind="me" />
+                  {hasPartner && partnerCode && (
+                    <div className="mt-3">
+                      <CodeBox label={partnerLabel} code={partnerCode} kind="partner" />
+                    </div>
+                  )}
+                </Card>
+              </div>
+
               <div className="flex flex-wrap items-center gap-3 mt-8">
                 <button
                   onClick={restart}
@@ -978,12 +1129,12 @@ export default function ToolWippfPage() {
                 >
                   {copied ? '已复制 ✓' : '复制结果'}
                 </button>
-                {hasPartner && (
+                {!hasPartner && (
                   <button
-                    onClick={copyCode}
+                    onClick={goPairImport}
                     className="px-5 py-2.5 rounded-full border border-[#ECD8D9] dark:border-[#334155] text-sm text-[#4F4F4F] dark:text-[#CBD5E1] hover:border-[#DA583F] dark:hover:border-[#60A5FA] transition-colors"
                   >
-                    {copiedCode ? '已复制 ✓' : `复制${myLabel}的答案码`}
+                    拿去和对方对照 →
                   </button>
                 )}
                 <Link

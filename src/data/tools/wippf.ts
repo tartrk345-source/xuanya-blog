@@ -8,6 +8,14 @@
  * 说明：本工具仅作自评与自我觉察，不作诊断；正式解读需由受训的积极心理治疗师进行。
  */
 
+import {
+  type ScaleSpec,
+  answersToDigits as answersToDigitsOf,
+  digitsToAnswers as digitsToAnswersOf,
+  encodeAnswers,
+  decodeAnswerCode as decodeAnswerCodeFor,
+} from '../../lib/answerCode';
+
 export interface WippfItem {
   no: number;
   text: string;
@@ -284,69 +292,26 @@ export const SUBSCALE_MAX = {
   mod: 72,
 };
 
-/* ---------- 答案码：跨设备传答案用，纯浏览器端编码，不含个人信息 ---------- */
+/* ---------- 答案码（通用格式见 src/lib/answerCode.ts，这里是 WIPPF 的绑定） ---------- */
 
-const CODE_PREFIX = 'W1.';
-
-const toBase64Url = (s: string) =>
-  btoa(String.fromCharCode(...new TextEncoder().encode(s)))
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/=+$/, '');
-
-const fromBase64Url = (s: string) => {
-  const padded = s.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - (s.length % 4)) % 4);
-  const bin = atob(padded);
-  return new TextDecoder().decode(Uint8Array.from(bin, c => c.charCodeAt(0)));
+export const WIPPF_SPEC: ScaleSpec = {
+  id: 'wippf',
+  label: 'WIPPF 威斯巴登问卷',
+  itemIds: WIPPF_ITEMS.map(it => it.code),
+  min: 1,
+  max: 4,
 };
 
-/** 把作答记录按题序压成 87 位数字串（未答为 0） */
-export function answersToDigits(answers: Record<string, number>): string {
-  return WIPPF_ITEMS.map(it => answers[it.code] ?? 0).join('');
-}
+/** 按题序压成 87 位数字串（未答为 0） */
+export const answersToDigits = (answers: Record<string, number>) => answersToDigitsOf(answers, WIPPF_SPEC);
 
-/** 数字串还原为作答记录；长度不足或非法字符会被忽略 */
-export function digitsToAnswers(digits: string): Record<string, number> {
-  const out: Record<string, number> = {};
-  WIPPF_ITEMS.forEach((it, i) => {
-    const v = Number(digits[i]);
-    if (v >= 1 && v <= 4) out[it.code] = v;
-  });
-  return out;
-}
+/** 数字串还原为作答记录 */
+export const digitsToAnswers = (digits: string) => digitsToAnswersOf(digits, WIPPF_SPEC);
 
-export function answeredCountOf(digits: string): number {
-  return [...digits].filter(c => c >= '1' && c <= '4').length;
-}
+export const encodeAnswerCode = (answers: Record<string, number>, name: string) =>
+  encodeAnswers(answers, name, WIPPF_SPEC);
 
-/** 生成答案码：只含昵称与 87 位作答，可安全贴到聊天窗口 */
-export function encodeAnswerCode(answers: Record<string, number>, name: string): string {
-  const payload = { v: 1, n: name.slice(0, 12), d: answersToDigits(answers) };
-  return CODE_PREFIX + toBase64Url(JSON.stringify(payload));
-}
-
-export interface DecodedAnswerCode {
-  name: string;
-  digits: string;
-  answered: number;
-}
-
-/** 解析答案码；格式不对或题数不完整时返回 null */
-export function decodeAnswerCode(raw: string): DecodedAnswerCode | null {
-  try {
-    const cleaned = raw.replace(/\s+/g, '');
-    const body = cleaned.startsWith(CODE_PREFIX) ? cleaned.slice(CODE_PREFIX.length) : cleaned;
-    if (!body) return null;
-    const obj = JSON.parse(fromBase64Url(body)) as { v?: number; n?: string; d?: string };
-    const digits = String(obj.d ?? '');
-    if (digits.length !== WIPPF_ITEMS.length || /[^0-4]/.test(digits)) return null;
-    const answered = answeredCountOf(digits);
-    if (answered < WIPPF_ITEMS.length) return null;
-    return { name: String(obj.n ?? '对方').slice(0, 12) || '对方', digits, answered };
-  } catch {
-    return null;
-  }
-}
+export const decodeAnswerCode = (raw: string) => decodeAnswerCodeFor(raw, WIPPF_SPEC);
 
 /* ---------- 双人对照 ---------- */
 
