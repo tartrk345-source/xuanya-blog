@@ -175,7 +175,7 @@ export default function BlogPage() {
     <div className="min-h-screen bg-[#FEF3F0] dark:bg-[#1E293B] text-[#313131] dark:text-[#E2E8F0] font-['PingFang_SC','Microsoft_YaHei','Noto_Sans_SC',sans-serif] transition-colors duration-300">
       <Helmet>
         <title>志趣所在 — 玄牙个人世界</title>
-        <meta name="description" content="玄牙的志趣所在——精神医学、积极心理治疗、国学玄学、芳香疗法、写作随笔等多领域探索。" />
+        <meta name="description" content="玄牙的志趣所在——临床视角、自助工具与个人叙事：精神医学与神经调控、积极心理治疗、芳香疗法、生活随笔。" />
         <meta property="og:title" content="志趣所在 — 玄牙个人世界" />
         <meta property="og:description" content="医学是主干，但枝叶蔓延至多个领域——它们共同构成了玄牙的精神世界。" />
         <meta property="og:url" content="https://www.x2ya.com/blog" />

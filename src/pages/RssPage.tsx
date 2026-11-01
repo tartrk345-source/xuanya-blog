@@ -8,7 +8,7 @@ export default function RssFeedPage() {
       const articles = await getPublishedArticles();
       const siteUrl = 'https://www.x2ya.com';
       const siteTitle = '玄牙个人世界 — x2ya.com';
-      const siteDesc = '医学是主干，但枝叶蔓延至多个领域——精神医学、积极心理治疗、国学玄学、芳香疗法、写作随笔等多领域探索。';
+      const siteDesc = '医学是主干，但枝叶蔓延至多个领域——精神医学与神经调控、积极心理治疗、芳香疗法、生活随笔。';
       const now = new Date().toISOString();
 
       const items = articles
