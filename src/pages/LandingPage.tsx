@@ -451,8 +451,7 @@ export default function LandingPage() {
           <div className="relative pl-16 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-2 before:w-[2px] before:bg-[#ECD8D9] dark:before:bg-[#334155]">
             {[
               { year: '此刻', title: '精神科医师 · 上海', desc: '现执业于上海市徐汇区精神卫生中心，在临床一线做精神科的门诊与病房工作。', dotColor: '#DA583F' },
-              { year: '2025', title: '住院医师规范化培训 · 结业', desc: '于三甲精神专科医院完成精神科规培，获评优秀住培医师；持续接受 TMS / MST / MECT 规范化技术培训。', dotColor: '#616FD3' },
-              { year: '2023–2025', title: '医学硕士 · 精神病与精神卫生学', desc: '研究方向为 dTMS 治疗精神分裂症；于《The Global Psychotherapist》发表研究，论文入选中华医学会精神医学学术会议汇编交流。', dotColor: '#8B9AE8' },
+              { year: '2023–2026', title: '医学硕士 · 专硕并轨规培', desc: '精神病与精神卫生学专业学位硕士，读研期间同步完成三甲精神专科医院住院医师规范化培训（并轨培养）。研究方向为 dTMS 治疗精神分裂症；获评优秀住培医师、病例大赛一等奖；于《The Global Psychotherapist》发表研究，论文入选中华医学会精神医学学术会议汇编交流。', dotColor: '#616FD3' },
               { year: '2017–2021', title: '本科 · 临床医学 + 应用心理学', desc: '医学之路的起点，也是第一次意识到：治病之外，人还需要被理解。', dotColor: '#767693' },
             ].map(item => (
               <RevealOnScroll key={item.title}>
