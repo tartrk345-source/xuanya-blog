@@ -283,3 +283,98 @@ export const SUBSCALE_MAX = {
   con: 48,
   mod: 72,
 };
+
+/* ---------- 答案码：跨设备传答案用，纯浏览器端编码，不含个人信息 ---------- */
+
+const CODE_PREFIX = 'W1.';
+
+const toBase64Url = (s: string) =>
+  btoa(String.fromCharCode(...new TextEncoder().encode(s)))
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=+$/, '');
+
+const fromBase64Url = (s: string) => {
+  const padded = s.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - (s.length % 4)) % 4);
+  const bin = atob(padded);
+  return new TextDecoder().decode(Uint8Array.from(bin, c => c.charCodeAt(0)));
+};
+
+/** 把作答记录按题序压成 87 位数字串（未答为 0） */
+export function answersToDigits(answers: Record<string, number>): string {
+  return WIPPF_ITEMS.map(it => answers[it.code] ?? 0).join('');
+}
+
+/** 数字串还原为作答记录；长度不足或非法字符会被忽略 */
+export function digitsToAnswers(digits: string): Record<string, number> {
+  const out: Record<string, number> = {};
+  WIPPF_ITEMS.forEach((it, i) => {
+    const v = Number(digits[i]);
+    if (v >= 1 && v <= 4) out[it.code] = v;
+  });
+  return out;
+}
+
+export function answeredCountOf(digits: string): number {
+  return [...digits].filter(c => c >= '1' && c <= '4').length;
+}
+
+/** 生成答案码：只含昵称与 87 位作答，可安全贴到聊天窗口 */
+export function encodeAnswerCode(answers: Record<string, number>, name: string): string {
+  const payload = { v: 1, n: name.slice(0, 12), d: answersToDigits(answers) };
+  return CODE_PREFIX + toBase64Url(JSON.stringify(payload));
+}
+
+export interface DecodedAnswerCode {
+  name: string;
+  digits: string;
+  answered: number;
+}
+
+/** 解析答案码；格式不对或题数不完整时返回 null */
+export function decodeAnswerCode(raw: string): DecodedAnswerCode | null {
+  try {
+    const cleaned = raw.replace(/\s+/g, '');
+    const body = cleaned.startsWith(CODE_PREFIX) ? cleaned.slice(CODE_PREFIX.length) : cleaned;
+    if (!body) return null;
+    const obj = JSON.parse(fromBase64Url(body)) as { v?: number; n?: string; d?: string };
+    const digits = String(obj.d ?? '');
+    if (digits.length !== WIPPF_ITEMS.length || /[^0-4]/.test(digits)) return null;
+    const answered = answeredCountOf(digits);
+    if (answered < WIPPF_ITEMS.length) return null;
+    return { name: String(obj.n ?? '对方').slice(0, 12) || '对方', digits, answered };
+  } catch {
+    return null;
+  }
+}
+
+/* ---------- 双人对照 ---------- */
+
+export interface PairDiff {
+  name: string;
+  a: number;
+  b: number;
+  diff: number;
+}
+
+/** 继发 11 + 原发 8 的逐项对照（差＝我 − 对方） */
+export function pairDiffs(a: WippfScore, b: WippfScore): PairDiff[] {
+  return [...SEC_IDS, ...PRI_IDS].map(id => ({
+    name: ITEM_NAME[id],
+    a: a.cap[id] ?? 0,
+    b: b.cap[id] ?? 0,
+    diff: (a.cap[id] ?? 0) - (b.cap[id] ?? 0),
+  }));
+}
+
+/** 双人互动假设：两人都偏低（≤6）的项、差异最大的 4 项 */
+export function pairHypothesis(a: WippfScore, b: WippfScore) {
+  const diffs = pairDiffs(a, b);
+  const bothLow = diffs.filter(x => x.a <= 6 && x.b <= 6);
+  const biggest = [...diffs]
+    .map(x => ({ ...x, abs: Math.abs(x.diff) }))
+    .filter(x => x.abs > 0)
+    .sort((x, y) => y.abs - x.abs)
+    .slice(0, 4);
+  return { bothLow, biggest };
+}
