@@ -5,9 +5,7 @@
  * QueryBuilder 实现了 thenable 接口，可被 await 直接执行。
  */
 
-import { SUPABASE_BASE, SUPABASE_ANON_KEY } from './config';
-
-const BASE_URL = SUPABASE_BASE;
+import { SUPABASE_ANON_KEY, buildUrl } from './config';
 const ANON_KEY = SUPABASE_ANON_KEY;
 
 // ----------------------------------------------------------------
@@ -76,7 +74,7 @@ class QueryBuilder {
 
   private async _exec() {
     const qs = this.params.toString();
-    const url = qs ? `${BASE_URL}/rest/v1/${this.table}?${qs}` : `${BASE_URL}/rest/v1/${this.table}`;
+    const url = buildUrl(`/rest/v1/${this.table}`, qs || undefined);
     try {
       const h: Record<string,string> = { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}`, ...this.extra };
       if (this.body) h['Content-Type'] = 'application/json';
@@ -113,7 +111,7 @@ class StorageBucket {
       };
       if (opts?.cacheControl) h['Cache-Control'] = `max-age=${opts.cacheControl}`;
       if (opts?.upsert !== false) h['x-upsert'] = 'true';
-      const res = await fetch(`${BASE_URL}/storage/v1/object/${this.bucket}/${path}`, { method: 'POST', headers: h, body: await file.arrayBuffer() });
+      const res = await fetch(buildUrl(`/storage/v1/object/${this.bucket}/${path}`), { method: 'POST', headers: h, body: await file.arrayBuffer() });
       if (!res.ok) return { data: null, error: { message: `${res.status}` } };
       return { data: { path }, error: null };
     } catch (e: any) {
@@ -122,7 +120,7 @@ class StorageBucket {
   }
 
   getPublicUrl(path: string) {
-    return { data: { publicUrl: `${BASE_URL}/storage/v1/object/public/${this.bucket}/${path}` } };
+    return { data: { publicUrl: buildUrl(`/storage/v1/object/public/${this.bucket}/${path}`) } };
   }
 }
 
