@@ -1,20 +1,43 @@
 /**
- * Supabase 同源反代（Vercel Edge Function）
+ * Supabase 同源反代（Vercel Node Function）
  *
  * 浏览器 → https://www.x2ya.com/api/supabase?p=/rest/v1/articles&select=*  →  Supabase
  *
  * 为什么用查询参数而不是子路径：
  *   Vercel 普通 Functions 不支持 Next.js 风格的 catch-all 文件名（api/[...path].ts），
  *   因此把真实上游路径放在 ?p= 里，函数入口固定为 /api/supabase。
+ *
+ * 为什么用 Node 运行时而不是 Edge：
+ *   Edge 运行时访问外部上游时返回 "internal error"，Node 运行时稳定。
  */
-
-export const config = { runtime: 'edge' };
 
 const UPSTREAM = 'https://twuvrrfzlynhehdxxtid.supabase.co';
 
-export default async function handler(request: Request): Promise<Response> {
+const PASS_HEADERS = [
+  'apikey',
+  'authorization',
+  'content-type',
+  'accept',
+  'prefer',
+  'range',
+  'x-upsert',
+  'x-client-info',
+  'cache-control',
+];
+
+function readRaw(req: any): Promise<Buffer> {
+  return new Promise((resolve, reject) => {
+    const chunks: Buffer[] = [];
+    req.on('data', (c: Buffer) => chunks.push(c));
+    req.on('end', () => resolve(Buffer.concat(chunks)));
+    req.on('error', reject);
+  });
+}
+
+export default async function handler(req: any, res: any) {
   try {
-    const url = new URL(request.url);
+    const proto = req.headers['x-forwarded-proto'] || 'https';
+    const url = new URL(req.url || '/', `${proto}://${req.headers.host}`);
 
     let path = url.searchParams.get('p');
     if (!path) {
@@ -29,53 +52,41 @@ export default async function handler(request: Request): Promise<Response> {
 
     const target = UPSTREAM + path + (search ? '?' + search : '');
 
-    const headers = new Headers();
-    // 只转发与 Supabase 相关的请求头，避免边缘平台头干扰上游
-    const pass = [
-      'apikey',
-      'authorization',
-      'content-type',
-      'accept',
-      'prefer',
-      'range',
-      'x-upsert',
-      'x-client-info',
-      'cache-control',
-    ];
-    for (const k of pass) {
-      const v = request.headers.get(k);
-      if (v) headers.set(k, v);
+    const headers: Record<string, string> = {};
+    for (const k of PASS_HEADERS) {
+      const v = req.headers[k];
+      if (v) headers[k] = Array.isArray(v) ? v.join(',') : String(v);
     }
 
-    let body: ArrayBuffer | undefined;
-    if (request.method !== 'GET' && request.method !== 'HEAD') {
-      body = await request.arrayBuffer();
+    const method = (req.method || 'GET').toUpperCase();
+    let body: any;
+    if (method !== 'GET' && method !== 'HEAD') {
+      if (req.body !== undefined && req.body !== null && typeof req.body === 'object' && !Buffer.isBuffer(req.body)) {
+        body = JSON.stringify(req.body);
+      } else if (req.body !== undefined && req.body !== null) {
+        body = req.body;
+      } else {
+        body = await readRaw(req);
+      }
     }
 
-    const upstream = await fetch(target, {
-      method: request.method,
-      headers,
-      body,
-      redirect: 'manual',
-    });
+    const upstream = await fetch(target, { method, headers, body, redirect: 'manual' });
 
-    const res = new Response(upstream.body, {
-      status: upstream.status,
-      statusText: upstream.statusText,
-      headers: upstream.headers,
+    res.status(upstream.status);
+    upstream.headers.forEach((value, key) => {
+      const k = key.toLowerCase();
+      // 交给 Node 重新压缩/计算长度，避免与 undici 解压后的响应体不匹配
+      if (k === 'set-cookie' || k === 'content-encoding' || k === 'content-length' || k === 'transfer-encoding') return;
+      res.setHeader(key, value);
     });
-    res.headers.delete('set-cookie');
-    // 反代响应不缓存，避免数据更新后读到旧内容
-    res.headers.set('cache-control', 'no-store');
-    return res;
+    res.setHeader('cache-control', 'no-store');
+
+    const buf = Buffer.from(await upstream.arrayBuffer());
+    res.send(buf);
   } catch (e: any) {
-    return new Response(
-      JSON.stringify({
-        error: 'proxy_failed',
-        message: e?.message ?? String(e),
-        stack: e?.stack ? String(e.stack).split('\n').slice(0, 3) : undefined,
-      }),
-      { status: 502, headers: { 'content-type': 'application/json' } }
-    );
+    res.status(502).json({
+      error: 'proxy_failed',
+      message: e?.message ?? String(e),
+    });
   }
 }
