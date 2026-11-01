@@ -46,6 +46,26 @@ export default async function handler(req: any, res: any) {
     }
     if (!path.startsWith('/')) path = '/' + path;
 
+    // 诊断入口：/api/supabase?p=/__debug
+    if (path === '/__debug') {
+      const targets = [
+        'https://example.com',
+        'https://supabase.com',
+        UPSTREAM + '/rest/v1/',
+      ];
+      const out: any[] = [];
+      for (const t of targets) {
+        try {
+          const r = await fetch(t, { method: 'GET' });
+          out.push({ target: t, status: r.status });
+        } catch (e: any) {
+          out.push({ target: t, error: e?.message, cause: e?.cause?.code || e?.cause?.message });
+        }
+      }
+      res.status(200).json({ debug: out });
+      return;
+    }
+
     const params = new URLSearchParams(url.search);
     params.delete('p');
     const search = params.toString();
@@ -87,6 +107,8 @@ export default async function handler(req: any, res: any) {
     res.status(502).json({
       error: 'proxy_failed',
       message: e?.message ?? String(e),
+      cause: e?.cause?.code || e?.cause?.message || null,
+      target: e?.url || null,
     });
   }
 }
