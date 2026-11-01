@@ -28,6 +28,22 @@ const TOOLS: ToolMeta[] = [
     desc: '拖动四个滑块，把一周的投入画成一张图，再标出每个领域的满意程度——看见失衡出在哪一块。',
     meta: ['4 个领域', '约 2 分钟', '投入 / 满意对照'],
   },
+  {
+    to: '/tools/resources',
+    title: '资源图谱 · 十种能力',
+    subtitle: '同一个情境，十次里你会这样几次？',
+    icon: '🌿',
+    desc: '把十种常被当成缺点的模式还原成能力：托付、谨慎、尽责、感染、感受、审辨、出彩、曲线坚持、自立、体贴。',
+    meta: ['45 题', '约 6 分钟', '十种能力图谱'],
+  },
+  {
+    to: '/tools/wippf',
+    title: 'WIPPF 威斯巴登问卷',
+    subtitle: '积极心理治疗的核心自评工具',
+    icon: '📐',
+    desc: '87 题的完整量表：继发能力、原发能力、冲突反应与榜样模型，逐项剖面与逐步解读。',
+    meta: ['87 题', '约 10–15 分钟', '24 项剖面'],
+  },
 ];
 
 export default function ToolsPage() {
@@ -35,9 +51,9 @@ export default function ToolsPage() {
     <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0A0E1A] text-[#313131] dark:text-[#E2E8F0] font-['PingFang_SC','Microsoft_YaHei','Noto_Sans_SC',sans-serif] transition-colors duration-300">
       <Helmet>
         <title>自助工具 — 玄牙</title>
-        <meta name="description" content="基于积极心理治疗平衡模型的自助测评工具：压力应对测评、平衡模型自评。可在线填写，即时出结果。" />
+        <meta name="description" content="基于积极心理治疗的自助测评工具：压力应对测评、平衡模型自评、资源图谱（十种能力）、WIPPF 威斯巴登问卷。可在线填写，即时出结果，数据不上传。" />
         <meta property="og:title" content="自助工具 — 玄牙" />
-        <meta property="og:description" content="基于积极心理治疗平衡模型的自助测评工具，可在线填写并即时出结果。" />
+        <meta property="og:description" content="基于积极心理治疗的自助测评工具，可在线填写并即时出结果。" />
         <meta property="og:url" content="https://www.x2ya.com/tools" />
         <link rel="canonical" href="https://www.x2ya.com/tools" />
       </Helmet>

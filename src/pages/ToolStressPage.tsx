@@ -6,7 +6,10 @@ import {
   STRESS_ITEMS,
   STRESS_DOMAINS,
   SCORE_OPTIONS,
+  STRESS_MIN_PER_DOMAIN,
   STRESS_MAX_PER_DOMAIN,
+  STRESS_MIN_TOTAL,
+  STRESS_MAX_TOTAL,
   scoreStress,
   levelOf,
 } from '../data/tools/pptStress';
@@ -50,8 +53,8 @@ export default function ToolStressPage() {
   const copyResult = async () => {
     const lines = [
       '压力应对测评（积极心理治疗版 · PPT-ST）',
-      ...STRESS_DOMAINS.map(d => `${d.name}领域：${result.scores[d.key]} / 9（${LEVEL_LABEL[levelOf(result.scores[d.key])]}）`),
-      `总分：${result.total} / 36`,
+      ...STRESS_DOMAINS.map(d => `${d.name}领域：${result.scores[d.key]} / ${STRESS_MAX_PER_DOMAIN}（${LEVEL_LABEL[levelOf(result.scores[d.key])]}）`),
+      `总分：${result.total} / ${STRESS_MAX_TOTAL}`,
       `压力主要落在：${result.highest.name}领域`,
       '— 来自 x2ya.com/tools/stress',
     ];
@@ -184,7 +187,10 @@ export default function ToolStressPage() {
               </h1>
               <p className="text-[15px] text-[#6E6A7C] dark:text-[#94A3B8] mb-8">
                 压力主要落在 <span className="font-semibold text-[#DA583F] dark:text-[#60A5FA]">{result.highest.name}领域</span>
-                ，相对最空的是 <span className="font-semibold">{result.lowest.name}领域</span>。总分 {result.total} / 36。
+                ，相对最空的是 <span className="font-semibold">{result.lowest.name}领域</span>。总分 {result.total} / {STRESS_MAX_TOTAL}。
+              </p>
+              <p className="text-[12px] text-[#B8B4B0] dark:text-[#64748B] -mt-6 mb-8 leading-relaxed">
+                计分：每题 1–4 分，每个领域 3 题，领域分 {STRESS_MIN_PER_DOMAIN}–{STRESS_MAX_PER_DOMAIN} 分（{STRESS_MIN_PER_DOMAIN}–6 偏低 · 7–9 中等 · 10–{STRESS_MAX_PER_DOMAIN} 偏高），总分 {STRESS_MIN_TOTAL}–{STRESS_MAX_TOTAL} 分。
               </p>
 
               {/* 四领域条形 */}
@@ -192,7 +198,13 @@ export default function ToolStressPage() {
                 {STRESS_DOMAINS.map(d => {
                   const score = result.scores[d.key];
                   const level = levelOf(score);
-                  const pct = (score / STRESS_MAX_PER_DOMAIN) * 100;
+                  const pct = Math.max(
+                    6,
+                    Math.min(
+                      100,
+                      ((score - STRESS_MIN_PER_DOMAIN) / (STRESS_MAX_PER_DOMAIN - STRESS_MIN_PER_DOMAIN)) * 100,
+                    ),
+                  );
                   return (
                     <div key={d.key}>
                       <div className="flex items-baseline justify-between mb-2">
@@ -204,7 +216,7 @@ export default function ToolStressPage() {
                         <div className="flex items-center gap-2">
                           <span className={`text-[11px] px-2 py-0.5 rounded-full ${LEVEL_STYLE[level]}`}>{LEVEL_LABEL[level]}</span>
                           <span className="text-sm font-bold tabular-nums" style={{ color: d.color }}>
-                            {score}<span className="text-[11px] font-normal text-[#B8B4B0] dark:text-[#64748B]"> / 9</span>
+                            {score}<span className="text-[11px] font-normal text-[#B8B4B0] dark:text-[#64748B]"> / {STRESS_MAX_PER_DOMAIN}</span>
                           </span>
                         </div>
                       </div>

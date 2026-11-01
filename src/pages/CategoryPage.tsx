@@ -152,6 +152,34 @@ export default function CategoryPage() {
                 </div>
               </div>
             </Link>
+            <Link
+              to="/tools/resources"
+              className="group bg-[#FEF3F0] dark:bg-[#17233B] border border-[#ECD8D9] dark:border-[#334155] rounded-2xl p-4 sm:p-5 hover:border-[#DA583F] hover:shadow-[0_8px_30px_rgba(218,88,63,0.08)] transition-all duration-300 flex items-start gap-3"
+            >
+              <div className="text-2xl flex-shrink-0">🌿</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[15px] font-bold text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] dark:group-hover:text-[#60A5FA] transition-colors">
+                  资源图谱 · 十种能力
+                </div>
+                <div className="text-[13px] text-[#767693] dark:text-[#94A3B8] mt-1 leading-relaxed">
+                  十种常被当成缺点的模式，还原成十种能力
+                </div>
+              </div>
+            </Link>
+            <Link
+              to="/tools/wippf"
+              className="group bg-[#FEF3F0] dark:bg-[#17233B] border border-[#ECD8D9] dark:border-[#334155] rounded-2xl p-4 sm:p-5 hover:border-[#DA583F] hover:shadow-[0_8px_30px_rgba(218,88,63,0.08)] transition-all duration-300 flex items-start gap-3"
+            >
+              <div className="text-2xl flex-shrink-0">📐</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[15px] font-bold text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] dark:group-hover:text-[#60A5FA] transition-colors">
+                  WIPPF 威斯巴登问卷
+                </div>
+                <div className="text-[13px] text-[#767693] dark:text-[#94A3B8] mt-1 leading-relaxed">
+                  87 题的完整量表，24 项能力剖面与逐步解读
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       )}

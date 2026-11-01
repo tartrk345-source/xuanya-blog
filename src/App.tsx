@@ -13,6 +13,8 @@ const WritePage = lazy(() => import('./pages/WritePage'));
 const ToolsPage = lazy(() => import('./pages/ToolsPage'));
 const ToolStressPage = lazy(() => import('./pages/ToolStressPage'));
 const ToolBalancePage = lazy(() => import('./pages/ToolBalancePage'));
+const ToolResourcesPage = lazy(() => import('./pages/ToolResourcesPage'));
+const ToolWippfPage = lazy(() => import('./pages/ToolWippfPage'));
 
 // RSS 不需要 lazy（体积小）
 import RssFeedPage from './pages/RssPage';
@@ -85,6 +87,8 @@ export default function App() {
             <Route path="/tools" element={<ToolsPage />} />
             <Route path="/tools/stress" element={<ToolStressPage />} />
             <Route path="/tools/balance" element={<ToolBalancePage />} />
+            <Route path="/tools/resources" element={<ToolResourcesPage />} />
+            <Route path="/tools/wippf" element={<ToolWippfPage />} />
             <Route path="/rss.xml" element={<RssFeedPage />} />
           </Routes>
         </Suspense>

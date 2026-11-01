@@ -1,8 +1,8 @@
 /**
  * 压力应对测评量表（积极心理治疗版 · PPT-ST）
  * 依据：Peseschkian 积极心理治疗「平衡模型」四领域
- * 结构：12 题 / 4 领域 × 3 题 / 每题 0–3 分 / 领域分 0–9
- * 判定：原量表以 <3 与 >6 为两端分界，3–6 为中间态
+ * 结构：12 题 / 4 领域 × 3 题 / 每题 1–4 分 / 领域分 4–12 / 总分 12–48
+ * 判定：领域分按 4–12 三等分——4–6 偏低、7–9 中等、10–12 偏高
  */
 
 export type DomainKey = 'body' | 'achievement' | 'relationship' | 'future';
@@ -26,10 +26,10 @@ export interface StressItem {
 }
 
 export const SCORE_OPTIONS = [
-  { value: 3, label: '完全同意' },
-  { value: 2, label: '基本同意' },
-  { value: 1, label: '基本不同意' },
-  { value: 0, label: '完全不同意' },
+  { value: 4, label: '完全同意' },
+  { value: 3, label: '基本同意' },
+  { value: 2, label: '基本不同意' },
+  { value: 1, label: '完全不同意' },
 ] as const;
 
 export const STRESS_DOMAINS: StressDomain[] = [
@@ -94,7 +94,10 @@ export const STRESS_ITEMS: StressItem[] = [
   { id: 12, text: '当我遇到困难时，我常常会想到生命的意义。', domain: 'future' },
 ];
 
-export const STRESS_MAX_PER_DOMAIN = 9;
+export const STRESS_MIN_PER_DOMAIN = 4;
+export const STRESS_MAX_PER_DOMAIN = 12;
+export const STRESS_MIN_TOTAL = 12;
+export const STRESS_MAX_TOTAL = 48;
 
 export function scoreStress(answers: Record<number, number>) {
   const scores: Record<DomainKey, number> = {
@@ -119,7 +122,7 @@ export function scoreStress(answers: Record<number, number>) {
 }
 
 export function levelOf(score: number): 'low' | 'mid' | 'high' {
-  if (score < 3) return 'low';
-  if (score > 6) return 'high';
+  if (score <= 6) return 'low';
+  if (score >= 10) return 'high';
   return 'mid';
 }
