@@ -26,8 +26,20 @@ const HEADERS = {
   Prefer: 'return=representation',
 };
 
+/** 反代模式下走 ?p= 形式；直连时用标准路径 */
+const IS_PROXY = SUPABASE_URL.endsWith('/api/supabase');
+
+function urlFor(path) {
+  const i = path.indexOf('?');
+  const p = i === -1 ? path : path.slice(0, i);
+  const q = i === -1 ? '' : path.slice(i + 1);
+  const full = '/rest/v1/' + p;
+  if (!IS_PROXY) return `${SUPABASE_URL}${full}${q ? '?' + q : ''}`;
+  return `${SUPABASE_URL}?p=${encodeURIComponent(full)}${q ? '&' + q : ''}`;
+}
+
 async function rest(method, path, body) {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
+  const res = await fetch(urlFor(path), {
     method,
     headers: HEADERS,
     body: body === undefined ? undefined : JSON.stringify(body),
