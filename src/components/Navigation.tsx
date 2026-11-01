@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 
@@ -8,20 +8,6 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  // 点击外部关闭下拉
-  useEffect(() => {
-    if (!dropdownOpen) return;
-    const handler = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
-  }, [dropdownOpen]);
 
   // 滚动检测
   useEffect(() => {
@@ -84,12 +70,7 @@ export default function Navigation() {
   const navLinks = [
     { id: 'about', label: '认识', type: 'anchor' as const },
     { id: 'interests', label: '志趣', type: 'anchor' as const },
-    { id: 'work', label: '行迹', type: 'dropdown' as const,
-      children: [
-        { id: 'work', label: '学医行迹', type: 'anchor' as const },
-        { id: '/travels', label: '旅行记录', type: 'route' as const },
-      ],
-    },
+    { id: 'work', label: '行迹', type: 'anchor' as const },
     { id: 'contact', label: '联系', type: 'anchor' as const },
   ];
 
@@ -118,62 +99,13 @@ export default function Navigation() {
           <ul className="hidden sm:flex items-center gap-8 list-none">
             {navLinks.map(link => (
               <li key={link.id}>
-                {link.type === 'dropdown' ? (
-                  <div
-                    ref={dropdownRef}
-                    className="relative"
-                  >
-                    <a
-                      href={`/#${link.id}`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setDropdownOpen(!dropdownOpen);
-                      }}
-                      className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] dark:after:bg-[#60A5FA] after:transition-[width] after:duration-300 hover:after:w-full cursor-pointer flex items-center gap-1 select-none"
-                    >
-                      {link.label}
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`}>
-                        <path d="M6 9l6 6 6-6" />
-                      </svg>
-                    </a>
-                    {dropdownOpen && link.children && (
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 py-2 px-1 bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.1)] min-w-[130px] z-50 animate-[fadeIn_0.15s_ease-out]">
-                        {link.children.map(child => (
-                          child.type === 'route' ? (
-                            <Link
-                              key={child.id}
-                              to={child.id}
-                              onClick={() => setDropdownOpen(false)}
-                              className="block px-4 py-2.5 text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] rounded-lg transition-colors whitespace-nowrap"
-                            >
-                              {child.label}
-                            </Link>
-                          ) : (
-                            <a
-                              key={child.id}
-                              href={`/#${child.id}`}
-                              onClick={(e) => {
-                                handleNavClick(e, child.id);
-                                setDropdownOpen(false);
-                              }}
-                              className="block px-4 py-2.5 text-sm text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] rounded-lg transition-colors whitespace-nowrap cursor-pointer"
-                            >
-                              {child.label}
-                            </a>
-                          )
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <a
-                    href={`/#${link.id}`}
-                    onClick={(e) => handleNavClick(e, link.id)}
-                    className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] dark:after:bg-[#60A5FA] after:transition-[width] after:duration-300 hover:after:w-full cursor-pointer"
-                  >
-                    {link.label}
-                  </a>
-                )}
+                <a
+                  href={`/#${link.id}`}
+                  onClick={(e) => handleNavClick(e, link.id)}
+                  className="relative text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-[#DA583F] dark:after:bg-[#60A5FA] after:transition-[width] after:duration-300 hover:after:w-full cursor-pointer"
+                >
+                  {link.label}
+                </a>
               </li>
             ))}
             {/* 暗色模式 */}
@@ -244,61 +176,18 @@ export default function Navigation() {
         }`}
       >
         {navLinks.map(link => (
-          link.type === 'dropdown' ? (
-            <div key={link.id} className="flex flex-col items-center gap-4">
-              <a
-                href={`/#${link.id}`}
-                onClick={(e) => {
-                  handleNavClick(e, link.id);
-                  setMobileOpen(false);
-                  document.body.style.overflow = '';
-                }}
-                className="text-[1.3rem] font-semibold text-[#313131] dark:text-[#E2E8F0] tracking-wider hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors cursor-pointer"
-              >
-                {link.label}
-              </a>
-              <div className="flex flex-col items-center gap-3">
-                {link.children?.map(child => (
-                  child.type === 'route' ? (
-                    <Link
-                      key={child.id}
-                      to={child.id}
-                      onClick={() => { setMobileOpen(false); document.body.style.overflow = ''; }}
-                      className="text-[1.05rem] text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors pl-2 border-l-2 border-[#ECD8D9] dark:border-[#334155]"
-                    >
-                      {child.label}
-                    </Link>
-                  ) : (
-                    <a
-                      key={child.id}
-                      href={`/#${child.id}`}
-                      onClick={(e) => {
-                        handleNavClick(e, child.id);
-                        setMobileOpen(false);
-                        document.body.style.overflow = '';
-                      }}
-                      className="text-[1.05rem] text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors pl-2 border-l-2 border-[#ECD8D9] dark:border-[#334155] cursor-pointer"
-                    >
-                      {child.label}
-                    </a>
-                  )
-                ))}
-              </div>
-            </div>
-          ) : (
-            <a
-              key={link.id}
-              href={`/#${link.id}`}
-              onClick={(e) => {
-                handleNavClick(e, link.id);
-                setMobileOpen(false);
-                document.body.style.overflow = '';
-              }}
-              className="text-[1.3rem] font-semibold text-[#313131] dark:text-[#E2E8F0] tracking-wider hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors cursor-pointer"
-            >
-              {link.label}
-            </a>
-          )
+          <a
+            key={link.id}
+            href={`/#${link.id}`}
+            onClick={(e) => {
+              handleNavClick(e, link.id);
+              setMobileOpen(false);
+              document.body.style.overflow = '';
+            }}
+            className="text-[1.3rem] font-semibold text-[#313131] dark:text-[#E2E8F0] tracking-wider hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors cursor-pointer"
+          >
+            {link.label}
+          </a>
         ))}
         <button
           onClick={() => { toggleTheme(); setMobileOpen(false); document.body.style.overflow = ''; }}

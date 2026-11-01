@@ -5,8 +5,10 @@
  * QueryBuilder 实现了 thenable 接口，可被 await 直接执行。
  */
 
-const BASE_URL = 'https://twuvrrfzlynhehdxxtid.supabase.co';
-const ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR3dXZycmZ6bHluaGVoZHh4dGlkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyNzg3MzUsImV4cCI6MjA5Njg1NDczNX0.-fPpl84I9IHuT-eAfkMJ6KqLXmeRKO08BDpy1mb7P7o';
+import { SUPABASE_BASE, SUPABASE_ANON_KEY } from './config';
+
+const BASE_URL = SUPABASE_BASE;
+const ANON_KEY = SUPABASE_ANON_KEY;
 
 // ----------------------------------------------------------------
 class QueryBuilder {

@@ -82,7 +82,7 @@ function ArticleExplorer() {
   // 按分类分组
   const categoryArticles = new Map<string, Article[]>();
   for (const a of articles) {
-    const cat = a.category || 'misc';
+    const cat = a.category || 'narrative';
     if (!categoryArticles.has(cat)) categoryArticles.set(cat, []);
     categoryArticles.get(cat)!.push(a);
   }
@@ -298,7 +298,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0A0E1A] text-[#313131] dark:text-[#E2E8F0] font-['PingFang_SC','Microsoft_YaHei','Noto_Sans_SC',sans-serif] transition-colors duration-300 overflow-x-hidden">
       <Helmet>
         <title>玄牙个人世界 — 知无不言，正直之极</title>
-        <meta name="description" content="玄牙个人世界——精神科医师的心灵志趣。探索精神医学、积极心理、国学玄学与芳香疗法的交汇处。" />
+        <meta name="description" content="玄牙个人世界——精神科医师的心灵志趣。记录精神医学、积极心理治疗与芳香疗法的交汇处。" />
         <meta property="og:title" content="玄牙个人世界" />
         <meta property="og:description" content="知无不言，正直之极。以理性观照心灵，以热忱探索未知。" />
         <meta property="og:url" content="https://www.x2ya.com" />
@@ -400,10 +400,13 @@ export default function LandingPage() {
                   <span className="text-xs text-[#767693] dark:text-[#94A3B8] tracking-wider">字博謇</span>
                 </div>
                 <p className="text-[0.98rem] text-[#4F4F4F] dark:text-[#94A3B8] mb-4 leading-relaxed">
-                  精神科医师，ENTP人格。一个对心灵世界永远好奇的探索者——在理性与直觉、科学与人文的边界游走。
+                  精神科医师，临床医学与应用心理学双学位，精神病与精神卫生学硕士。研究方向为经颅磁刺激等神经调控技术在精神疾病中的应用。
+                </p>
+                <p className="text-[0.98rem] text-[#4F4F4F] dark:text-[#94A3B8] mb-4 leading-relaxed">
+                  积极跨文化心理治疗咨询师（WAPP 会员），持国际积极心理治疗认证；世界中医药学会联合会植物精油疗法认证。
                 </p>
                 <p className="text-[0.98rem] text-[#4F4F4F] dark:text-[#94A3B8] leading-relaxed">
-                  对积极心理、国学玄学同样深感兴趣，相信古老智慧与现代科学可以相互观照。
+                  相信身体与心灵本是一体，自我照顾是可以练习的能力——在理性与直觉、科学与人文的边界游走。
                 </p>
               </div>
             </RevealOnScroll>
@@ -411,10 +414,10 @@ export default function LandingPage() {
             {/* 右侧：数据卡片 */}
             <div className="grid grid-cols-2 gap-4">
               {[
+                { num: '精神科', label: '临床执业方向' },
+                { num: 'dTMS', label: '神经调控研究方向', color: '#616FD3' },
+                { num: 'JGP', label: '国际期刊发表' },
                 { num: 'ENTP', label: 'MBTI 人格类型' },
-                { num: 'SCI', label: '霍兰德职业类型' },
-                { num: '精神科', label: '临床深耕领域' },
-                { num: '科研', label: '学术探索方向', color: '#616FD3' },
               ].map(s => (
                 <RevealOnScroll key={s.label}>
                   <div className="bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-xl p-8 text-center hover:border-[#DA583F] hover:shadow-[0_8px_30px_rgba(218,88,63,0.08)] transition-all">
@@ -440,16 +443,17 @@ export default function LandingPage() {
       <section className="snap-section snap-overflow py-20 sm:py-32 px-4 sm:px-8" id="work">
         <div className="max-w-[1100px] mx-auto">
           <div className="text-xs font-bold tracking-[0.12em] text-[#DA583F] dark:text-[#60A5FA] uppercase mb-2">Journey</div>
-          <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E2E8F0] mb-4 tracking-wider leading-tight font-['PingFang_SC','Noto_Serif_SC',serif]">学医行迹</h2>
+          <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold text-[#313131] dark:text-[#E2E8F0] mb-4 tracking-wider leading-tight font-['PingFang_SC','Noto_Serif_SC',serif]">执业行迹</h2>
           <p className="text-[1.05rem] text-[#6E6A7C] dark:text-[#94A3B8] max-w-[560px] mb-12">
-            从课堂到临床，从理论到实践——每一步都在靠近那个想成为的精神科医师。
+            从课堂到临床，从理论到执业——医学是一条没有终点的路，每一步都算数。
           </p>
 
           <div className="relative pl-16 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-2 before:w-[2px] before:bg-[#ECD8D9] dark:before:bg-[#334155]">
             {[
-              { year: '此刻', title: '精神科临床一线', desc: '完成住院医师规范化培训，正式开启精神科医师执业之路。', dotColor: '#DA583F' },
-              { year: '硕士阶段', title: '医学硕士 · 精神卫生方向', desc: '系统深入精神医学研究，建立临床与科研双线并行的思维框架。', dotColor: '#616FD3' },
-              { year: '本科', title: '临床医学', desc: '医学之路的起点，从解剖到病理，从理论到临床的初次跨越。', dotColor: '#767693' },
+              { year: '此刻', title: '精神科医师 · 上海', desc: '现执业于上海市徐汇区精神卫生中心，在临床一线做精神科的门诊与病房工作。', dotColor: '#DA583F' },
+              { year: '2025', title: '住院医师规范化培训 · 结业', desc: '于三甲精神专科医院完成精神科规培，获评优秀住培医师；持续接受 TMS / MST / MECT 规范化技术培训。', dotColor: '#616FD3' },
+              { year: '2023–2025', title: '医学硕士 · 精神病与精神卫生学', desc: '研究方向为 dTMS 治疗精神分裂症；于《The Global Psychotherapist》发表研究，论文入选中华医学会精神医学学术会议汇编交流。', dotColor: '#8B9AE8' },
+              { year: '2017–2021', title: '本科 · 临床医学 + 应用心理学', desc: '医学之路的起点，也是第一次意识到：治病之外，人还需要被理解。', dotColor: '#767693' },
             ].map(item => (
               <RevealOnScroll key={item.title}>
                 <div className="relative mb-16 last:mb-0">
@@ -465,26 +469,6 @@ export default function LandingPage() {
             ))}
           </div>
 
-          {/* 旅行记录入口卡片 */}
-          <RevealOnScroll>
-            <Link
-              to="/travels"
-              className="mt-12 group flex items-center gap-3 sm:gap-5 bg-[#FEF3F0] dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-2xl p-4 sm:p-8 hover:border-[#DA583F] hover:shadow-[0_8px_30px_rgba(218,88,63,0.08)] transition-all duration-300"
-            >
-              <div className="text-4xl flex-shrink-0">🏜️</div>
-              <div className="flex-1 min-w-0">
-                <div className="text-[1.1rem] font-bold text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] dark:text-[#60A5FA] transition-colors tracking-wide">
-                  旅行记录
-                </div>
-                <div className="text-sm text-[#767693] dark:text-[#94A3B8] mt-1 truncate">
-                  西北+青海环线 14 日 · 银川·河西走廊·北疆·独库公路·青海湖
-                </div>
-              </div>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 text-[#B8B4B0] group-hover:text-[#DA583F] dark:text-[#60A5FA] group-hover:translate-x-1 transition-all">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </RevealOnScroll>
         </div>
       </section>
 

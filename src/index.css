@@ -500,7 +500,7 @@ html.dark .prose-container a {
   }
 
   /* --- iframe 适配 --- */
-  iframe:not([title*="旅行"]):not([title*="travel"]) {
+  iframe {
     max-width: 100% !important;
     height: auto !important;
   }

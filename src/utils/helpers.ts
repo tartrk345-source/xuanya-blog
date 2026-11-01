@@ -101,5 +101,5 @@ export { getCategories as CATEGORIES } from '../storage/categoryStore';
 /** 根据 category key 获取分类信息 */
 export async function getCategoryInfo(key: CategoryKey) {
   const cats = await getCategories();
-  return cats.find(c => c.key === key) ?? cats.find(c => c.key === 'misc') ?? cats[0];
+  return cats.find(c => c.key === key) ?? cats.find(c => c.key === 'narrative') ?? cats[0];
 }

@@ -1,8 +1,6 @@
 import { createClient, type LightClient } from './api';
+import { SUPABASE_BASE, SUPABASE_ANON_KEY } from './config';
 
-const supabaseUrl = 'https://twuvrrfzlynhehdxxtid.supabase.co';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR3dXZycmZ6bHluaGVoZHh4dGlkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyNzg3MzUsImV4cCI6MjA5Njg1NDczNX0.-fPpl84I9IHuT-eAfkMJ6KqLXmeRKO08BDpy1mb7P7o';
-
-export const supabase: LightClient = createClient(supabaseUrl, supabaseAnonKey, {
+export const supabase: LightClient = createClient(SUPABASE_BASE, SUPABASE_ANON_KEY, {
   auth: { persistSession: false },
 });
