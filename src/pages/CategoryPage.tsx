@@ -112,6 +112,50 @@ export default function CategoryPage() {
         </div>
       </div>
 
+      {/* 自助工具专用：互动工具入口 */}
+      {catKey === 'self-help' && (
+        <div className="max-w-[1100px] mx-auto px-4 sm:px-8 pb-10">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-xs font-bold tracking-[0.12em] text-[#DA583F] dark:text-[#60A5FA] uppercase">Interactive</span>
+            <span className="text-sm font-semibold text-[#313131] dark:text-[#E2E8F0]">可以自己填的工具</span>
+            <span className="flex-1 h-px bg-[#ECD8D9] dark:bg-[#334155]" />
+            <Link to="/tools" className="text-xs text-[#767693] dark:text-[#94A3B8] hover:text-[#DA583F] dark:hover:text-[#60A5FA] transition-colors">
+              全部工具 →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Link
+              to="/tools/stress"
+              className="group bg-[#FEF3F0] dark:bg-[#17233B] border border-[#ECD8D9] dark:border-[#334155] rounded-2xl p-4 sm:p-5 hover:border-[#DA583F] hover:shadow-[0_8px_30px_rgba(218,88,63,0.08)] transition-all duration-300 flex items-start gap-3"
+            >
+              <div className="text-2xl flex-shrink-0">🌡️</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[15px] font-bold text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] dark:group-hover:text-[#60A5FA] transition-colors">
+                  压力应对测评
+                </div>
+                <div className="text-[13px] text-[#767693] dark:text-[#94A3B8] mt-1 leading-relaxed">
+                  12 道题，看压力落在身体、成就、关系还是未来
+                </div>
+              </div>
+            </Link>
+            <Link
+              to="/tools/balance"
+              className="group bg-[#FEF3F0] dark:bg-[#17233B] border border-[#ECD8D9] dark:border-[#334155] rounded-2xl p-4 sm:p-5 hover:border-[#DA583F] hover:shadow-[0_8px_30px_rgba(218,88,63,0.08)] transition-all duration-300 flex items-start gap-3"
+            >
+              <div className="text-2xl flex-shrink-0">⚖️</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[15px] font-bold text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] dark:group-hover:text-[#60A5FA] transition-colors">
+                  平衡模型自评
+                </div>
+                <div className="text-[13px] text-[#767693] dark:text-[#94A3B8] mt-1 leading-relaxed">
+                  拖动滑块，把一周的时间与精力画成一张图
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      )}
+
       {/* 文章列表 */}
       {isEmpty ? (
         <div className="max-w-[1100px] mx-auto px-4 sm:px-8 pb-32">
