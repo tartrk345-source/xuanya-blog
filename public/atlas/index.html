@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>植物精油文献全景地图 · 玄牙</title>
+<meta name="description" content="全球植物精油学术文献全景地图：年份趋势、精油热度、研究主题、国家分布、Cochrane 证据分级。">
+<script src="theme-init.js?v=20261124w"></script>
+<link rel="stylesheet" href="styles.css?v=20261124v">
+</head>
+<body>
+<div class="eo-page">
+
+  <!-- 全站统一头部 -->
+  <div class="eo-site-head">
+    <div class="eo-site-head-inner">
+      <div class="eo-site-brand">玄牙 · 植物精油文献库</div>
+      <nav class="eo-site-tabs" aria-label="站点导航">
+        <a href="index.html" class="active">全景地图</a>
+        <a href="evidence.html">证据池</a>
+        <a href="oils.html">精油卡片</a>
+        <a href="compounds.html">成分库</a>
+        <a href="game.html">探索模式</a>
+        <a href="safety.html">安全速查</a>
+        <a href="/tools" class="eo-x2ya-back" title="返回自助工具">← 自助工具</a>
+      </nav>
+      <span class="eo-site-ver">v1.0</span>
+    </div>
+  </div>
+
+  <header class="eo-hero" id="top">
+    <div class="eo-hero-inner">
+      <div class="eo-brand">玄牙 · 文献地图 <span class="eo-ver">v1.0</span></div>
+      <h1>植物精油文献全景地图</h1>
+      <p class="eo-sub">从 5 万篇文献里看清领域版图 —— 为「玄沐」芳疗实践与后续精读打底。已上线 <a href="evidence.html" style="color:#bfe6d0;text-decoration:underline">证据池（1216 篇，可检索）→</a></p>
+      <div class="eo-meta" id="eo-meta"></div>
+      <nav class="eo-nav" aria-label="页面导航">
+        <a href="#overview">总览</a>
+        <a href="#trend">增长趋势</a>
+        <a href="#oils">精油热度</a>
+        <a href="#topics">研究主题</a>
+        <a href="#evidence">证据分级</a>
+        <a href="#world">全球版图</a>
+        <a href="#classics">经典文献</a>
+        <a href="#method">方法说明</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="eo-main">
+
+    <!-- 总览 -->
+    <section class="eo-section" id="overview">
+      <div class="eo-sec-head">
+        <span class="eo-sec-num">01</span>
+        <h2>领域总览</h2>
+        <p class="eo-sec-note">两份数据库口径不同，并列呈现，不可替代。计数为检索当日快照。</p>
+      </div>
+      <div class="eo-kpis" id="eo-kpis"></div>
+      <div class="eo-callout">
+        <span class="eo-callout-icon">i</span>
+        <div>
+          <strong>怎么读这张图：</strong>PubMed 是生物医学主池（3.2 万篇），OpenAlex 题名严格检索覆盖农学、食品、化学等更广领域（5.1 万篇）。
+          近五年 PubMed 新增 1.1 万篇，占总量约三分之一 —— 这是必须做增量更新的原因。
+        </div>
+      </div>
+    </section>
+
+    <!-- 趋势 -->
+    <section class="eo-section" id="trend">
+      <div class="eo-sec-head">
+        <span class="eo-sec-num">02</span>
+        <h2>增长趋势</h2>
+        <p class="eo-sec-note">PubMed 按发表年逐年检索；柱状图悬停查看每年篇数。</p>
+      </div>
+      <div class="eo-chart-wrap">
+        <div class="eo-bars" id="eo-years-bars" role="img" aria-label="2000至2026年精油文献年度发表量柱状图"></div>
+      </div>
+      <p class="eo-caption" id="eo-years-caption"></p>
+    </section>
+
+    <!-- 精油热度 -->
+    <section class="eo-section" id="oils">
+      <div class="eo-sec-head">
+        <span class="eo-sec-num">03</span>
+        <h2>精油热度榜</h2>
+        <p class="eo-sec-note">68 种精油在 PubMed 的文献量（32 种首批 + 36 种按多特瑞单方目录扩充）。带「首批」标记的是最初选定优先整理的对象。</p>
+      </div>
+      <div class="eo-filter-row">
+        <button class="eo-chip active" data-oil-filter="top20">文献量 TOP 20</button>
+        <button class="eo-chip" data-oil-filter="starter">首批清单 (20)</button>
+        <button class="eo-chip" data-oil-filter="all">全部 68 种</button>
+        <span class="eo-filter-hint" id="eo-oil-hint"></span>
+      </div>
+      <div class="eo-oil-grid" id="eo-oil-grid"></div>
+    </section>
+
+    <!-- 研究主题 -->
+    <section class="eo-section" id="topics">
+      <div class="eo-sec-head">
+        <span class="eo-sec-num">04</span>
+        <h2>研究主题分布</h2>
+        <p class="eo-sec-note">按主题关键词在 PubMed 题名/摘要中交叉检索，同一文献可落入多个主题。</p>
+      </div>
+      <div class="eo-topic-list" id="eo-topics"></div>
+    </section>
+
+    <!-- 证据分级 -->
+    <section class="eo-section" id="evidence">
+      <div class="eo-sec-head">
+        <span class="eo-sec-num">05</span>
+        <h2>证据金字塔 · Cochrane 视角</h2>
+        <p class="eo-sec-note">GRADE 确定性分级框架。注意：低等级不等于无价值，而是外推到临床时需更谨慎。</p>
+      </div>
+      <div class="eo-evidence" id="eo-evidence"></div>
+      <div class="eo-cochrane-note">
+        <h3>方法学工具链</h3>
+        <div class="eo-tool-grid">
+          <div><strong>PRISMA 2020</strong><span>系统评价报告规范，证据池阶段输出筛选流程图</span></div>
+          <div><strong>RoB 2</strong><span>RCT 偏倚风险，5 个域逐条评估</span></div>
+          <div><strong>ROBINS-I</strong><span>观察性研究偏倚风险，7 个域</span></div>
+          <div><strong>GRADE</strong><span>5 个降级因素 + 3 个升级因素，定证据确定性</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 全球版图 -->
+    <section class="eo-section" id="world">
+      <div class="eo-sec-head">
+        <span class="eo-sec-num">06</span>
+        <h2>全球版图与核心期刊</h2>
+        <p class="eo-sec-note">OpenAlex 按作者机构国家与来源期刊分组，取前 15 位。</p>
+      </div>
+      <div class="eo-two-col">
+        <div>
+          <h3 class="eo-col-title">国家 / 地区 TOP 15</h3>
+          <div class="eo-rank-list" id="eo-countries"></div>
+        </div>
+        <div>
+          <h3 class="eo-col-title">期刊 TOP 15</h3>
+          <div class="eo-rank-list" id="eo-journals"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 经典文献 -->
+    <section class="eo-section" id="classics">
+      <div class="eo-sec-head">
+        <span class="eo-sec-num">07</span>
+        <h2>高被引经典文献</h2>
+        <p class="eo-sec-note">OpenAlex 题名严格检索，按被引次数排序，已剔除主题不符条目。</p>
+      </div>
+      <div class="eo-paper-list" id="eo-papers"></div>
+    </section>
+
+    <!-- 方法 -->
+    <section class="eo-section" id="method">
+      <div class="eo-sec-head">
+        <span class="eo-sec-num">08</span>
+        <h2>方法与局限</h2>
+      </div>
+      <div class="eo-method-grid">
+        <div class="eo-method-card">
+          <h3>数据源</h3>
+          <ul id="eo-sources"></ul>
+        </div>
+        <div class="eo-method-card">
+          <h3>方法学约定</h3>
+          <ul id="eo-methods"></ul>
+        </div>
+      </div>
+      <div class="eo-callout warn">
+        <span class="eo-callout-icon">!</span>
+        <div id="eo-note"></div>
+      </div>
+      <p class="eo-foot-note">完整检索式、检索偏差记录与更新步骤见同目录 <code>queries.md</code>。数据文件 <code>data/atlas.json</code> 可独立更新，页面代码无需改动。</p>
+    </section>
+
+  </main>
+
+  <!-- 滚动时出现的快速导航：桌面右侧竖排 / 移动端底部横排 -->
+  <nav class="eo-floatnav" id="eo-floatnav" aria-label="章节快速导航"></nav>
+  <nav class="eo-bottomnav" id="eo-bottomnav" aria-label="章节快速导航"></nav>
+
+  <footer class="eo-footer">
+    <span>玄牙 · 植物精油文献全景地图</span>
+    <span id="eo-foot-time"></span>
+    <a href="#top">回到顶部 ↑</a>
+  </footer>
+
+</div>
+<script src="app.js?v=20261124v"></script>
+<script src="glossary.js?v=20261124v"></script>
+</body>
+</html>

@@ -1,0 +1,1564 @@
+{
+ "meta": {
+  "generated": "2026-11-24 00:35",
+  "scope": "全球植物精油文献全景地图",
+  "sources": [
+   "PubMed / MEDLINE (E-utilities)",
+   "OpenAlex",
+   "Europe PMC",
+   "Cochrane Library 标识检索",
+   "CNKI 知网（主题检索，含摘要）"
+  ],
+  "method": [
+   "PICO 结构化问题",
+   "PRISMA 2020 报告规范",
+   "RoB 2 / ROBINS-I 偏倚评估",
+   "GRADE 证据分级"
+  ],
+  "note": "计数为检索时点快照；PubMED 与 OpenAlex 口径不同，不可替代。OpenAlex 题名严格检索无外部关键词时需定期重跑。 2026-11-24 新增中文文献层：知网 2421 条（其中期刊 1455、学位 962），PubMed 中文期刊 819 条，合计 3240 条，3160 条含中文摘要。"
+ },
+ "headline": {
+  "pubmed_total": 32049,
+  "openalex_total": 51405,
+  "aromatherapy": 2647,
+  "sr_ma": 495,
+  "rct": 731,
+  "cochrane": 20,
+  "recent5y": 11033,
+  "cn_total": 3240,
+  "cn_cnki": 2421,
+  "cn_pubmed": 819,
+  "cn_journal": 1455,
+  "cn_thesis": 962,
+  "cn_conf": 4,
+  "cn_with_abstract": 3160,
+  "oil_catalog": 76
+ },
+ "years_pubmed": [
+  {
+   "year": 2000,
+   "count": 181
+  },
+  {
+   "year": 2001,
+   "count": 213
+  },
+  {
+   "year": 2002,
+   "count": 223
+  },
+  {
+   "year": 2003,
+   "count": 271
+  },
+  {
+   "year": 2004,
+   "count": 324
+  },
+  {
+   "year": 2005,
+   "count": 344
+  },
+  {
+   "year": 2006,
+   "count": 372
+  },
+  {
+   "year": 2007,
+   "count": 413
+  },
+  {
+   "year": 2008,
+   "count": 454
+  },
+  {
+   "year": 2009,
+   "count": 612
+  },
+  {
+   "year": 2010,
+   "count": 805
+  },
+  {
+   "year": 2011,
+   "count": 922
+  },
+  {
+   "year": 2012,
+   "count": 1061
+  },
+  {
+   "year": 2013,
+   "count": 1051
+  },
+  {
+   "year": 2014,
+   "count": 1213
+  },
+  {
+   "year": 2015,
+   "count": 1241
+  },
+  {
+   "year": 2016,
+   "count": 1371
+  },
+  {
+   "year": 2017,
+   "count": 1486
+  },
+  {
+   "year": 2018,
+   "count": 1499
+  },
+  {
+   "year": 2019,
+   "count": 1681
+  },
+  {
+   "year": 2020,
+   "count": 2177
+  },
+  {
+   "year": 2021,
+   "count": 2552
+  },
+  {
+   "year": 2022,
+   "count": 2859
+  },
+  {
+   "year": 2023,
+   "count": 2829
+  },
+  {
+   "year": 2024,
+   "count": 2817
+  },
+  {
+   "year": 2025,
+   "count": 3120
+  },
+  {
+   "year": 2026,
+   "count": 2711
+  }
+ ],
+ "years_openalex": [
+  {
+   "year": 1990,
+   "count": 162
+  },
+  {
+   "year": 1991,
+   "count": 137
+  },
+  {
+   "year": 1992,
+   "count": 183
+  },
+  {
+   "year": 1993,
+   "count": 180
+  },
+  {
+   "year": 1994,
+   "count": 179
+  },
+  {
+   "year": 1995,
+   "count": 168
+  },
+  {
+   "year": 1996,
+   "count": 188
+  },
+  {
+   "year": 1997,
+   "count": 217
+  },
+  {
+   "year": 1998,
+   "count": 229
+  },
+  {
+   "year": 1999,
+   "count": 305
+  },
+  {
+   "year": 2000,
+   "count": 366
+  },
+  {
+   "year": 2001,
+   "count": 316
+  },
+  {
+   "year": 2002,
+   "count": 429
+  },
+  {
+   "year": 2003,
+   "count": 425
+  },
+  {
+   "year": 2004,
+   "count": 492
+  },
+  {
+   "year": 2005,
+   "count": 631
+  },
+  {
+   "year": 2006,
+   "count": 793
+  },
+  {
+   "year": 2007,
+   "count": 836
+  },
+  {
+   "year": 2008,
+   "count": 978
+  },
+  {
+   "year": 2009,
+   "count": 1232
+  },
+  {
+   "year": 2010,
+   "count": 1326
+  },
+  {
+   "year": 2011,
+   "count": 1459
+  },
+  {
+   "year": 2012,
+   "count": 1620
+  },
+  {
+   "year": 2013,
+   "count": 1641
+  },
+  {
+   "year": 2014,
+   "count": 1860
+  },
+  {
+   "year": 2015,
+   "count": 1774
+  },
+  {
+   "year": 2016,
+   "count": 1919
+  },
+  {
+   "year": 2017,
+   "count": 2131
+  },
+  {
+   "year": 2018,
+   "count": 2147
+  },
+  {
+   "year": 2019,
+   "count": 2252
+  },
+  {
+   "year": 2020,
+   "count": 2747
+  },
+  {
+   "year": 2021,
+   "count": 2912
+  },
+  {
+   "year": 2022,
+   "count": 3067
+  },
+  {
+   "year": 2023,
+   "count": 3203
+  },
+  {
+   "year": 2024,
+   "count": 3430
+  },
+  {
+   "year": 2025,
+   "count": 3823
+  },
+  {
+   "year": 2026,
+   "count": 3808
+  }
+ ],
+ "plants": [
+  {
+   "key": "citrus",
+   "cn": "柑橘属",
+   "latin": "Citrus",
+   "count": 1391,
+   "starter": true,
+   "rank": 1
+  },
+  {
+   "key": "eucalyptus",
+   "cn": "尤加利",
+   "latin": "Eucalyptus",
+   "count": 999,
+   "starter": true,
+   "rank": 2
+  },
+  {
+   "key": "lemongrass",
+   "cn": "柠檬草",
+   "latin": "Cymbopogon",
+   "count": 820,
+   "starter": true,
+   "rank": 3
+  },
+  {
+   "key": "lavender",
+   "cn": "薰衣草",
+   "latin": "Lavandula",
+   "count": 703,
+   "starter": true,
+   "rank": 4
+  },
+  {
+   "key": "cinnamon",
+   "cn": "肉桂",
+   "latin": "Cinnamomum",
+   "count": 673,
+   "starter": true,
+   "rank": 5
+  },
+  {
+   "key": "thyme",
+   "cn": "百里香",
+   "latin": "Thymus vulgaris",
+   "count": 611,
+   "starter": true,
+   "rank": 6
+  },
+  {
+   "key": "oregano",
+   "cn": "牛至",
+   "latin": "Origanum vulgare",
+   "count": 592,
+   "starter": true,
+   "rank": 7
+  },
+  {
+   "key": "rosemary",
+   "cn": "迷迭香",
+   "latin": "Rosmarinus officinalis",
+   "count": 505,
+   "starter": true,
+   "rank": 8
+  },
+  {
+   "key": "basil",
+   "cn": "罗勒",
+   "latin": "Ocimum basilicum",
+   "count": 425,
+   "starter": true,
+   "rank": 9
+  },
+  {
+   "key": "peppermint",
+   "cn": "薄荷",
+   "latin": "Mentha piperita",
+   "count": 419,
+   "starter": true,
+   "rank": 10
+  },
+  {
+   "key": "tea_tree",
+   "cn": "茶树",
+   "latin": "Melaleuca alternifolia",
+   "count": 352,
+   "starter": true,
+   "rank": 11
+  },
+  {
+   "key": "clove",
+   "cn": "丁香",
+   "latin": "Syzygium aromaticum",
+   "count": 332,
+   "starter": true,
+   "rank": 12
+  },
+  {
+   "key": "fennel",
+   "cn": "茴香",
+   "latin": "Foeniculum vulgare",
+   "count": 252,
+   "starter": false,
+   "rank": 13
+  },
+  {
+   "key": "juniper",
+   "cn": "杜松",
+   "latin": "Juniperus",
+   "count": 251,
+   "starter": false,
+   "rank": 14
+  },
+  {
+   "key": "geranium",
+   "cn": "天竺葵",
+   "latin": "Pelargonium",
+   "count": 206,
+   "starter": true,
+   "rank": 15
+  },
+  {
+   "key": "spearmint",
+   "cn": "绿薄荷",
+   "latin": "Mentha spicata",
+   "count": 200,
+   "starter": false,
+   "rank": 16
+  },
+  {
+   "key": "wild_orange",
+   "cn": "甜橙",
+   "latin": "Citrus sinensis",
+   "count": 183,
+   "starter": false,
+   "rank": 17
+  },
+  {
+   "key": "lemon",
+   "cn": "柠檬",
+   "latin": "Citrus limon",
+   "count": 177,
+   "starter": true,
+   "rank": 18
+  },
+  {
+   "key": "litsea",
+   "cn": "山鸡椒",
+   "latin": "Litsea cubeba",
+   "count": 172,
+   "starter": false,
+   "rank": 19
+  },
+  {
+   "key": "ginger",
+   "cn": "姜",
+   "latin": "Zingiber officinale",
+   "count": 170,
+   "starter": true,
+   "rank": 20
+  },
+  {
+   "key": "turmeric",
+   "cn": "姜黄",
+   "latin": "Curcuma longa",
+   "count": 152,
+   "starter": false,
+   "rank": 21
+  },
+  {
+   "key": "melissa",
+   "cn": "香蜂草",
+   "latin": "Melissa officinalis",
+   "count": 149,
+   "starter": false,
+   "rank": 22
+  },
+  {
+   "key": "marjoram",
+   "cn": "马郁兰",
+   "latin": "Origanum majorana",
+   "count": 144,
+   "starter": false,
+   "rank": 23
+  },
+  {
+   "key": "cassia",
+   "cn": "桂皮",
+   "latin": "Cinnamomum cassia",
+   "count": 121,
+   "starter": false,
+   "rank": 24
+  },
+  {
+   "key": "patchouli",
+   "cn": "广藿香",
+   "latin": "Pogostemon cablin",
+   "count": 110,
+   "starter": true,
+   "rank": 25
+  },
+  {
+   "key": "rose",
+   "cn": "玫瑰",
+   "latin": "Rosa damascena",
+   "count": 106,
+   "starter": true,
+   "rank": 26
+  },
+  {
+   "key": "frankincense",
+   "cn": "乳香",
+   "latin": "Boswellia",
+   "count": 97,
+   "starter": true,
+   "rank": 27
+  },
+  {
+   "key": "bergamot",
+   "cn": "佛手柑",
+   "latin": "Citrus bergamia",
+   "count": 97,
+   "starter": true,
+   "rank": 28
+  },
+  {
+   "key": "chamomile",
+   "cn": "洋甘菊",
+   "latin": "Matricaria chamomilla",
+   "count": 92,
+   "starter": false,
+   "rank": 29
+  },
+  {
+   "key": "mandarin",
+   "cn": "柑橘",
+   "latin": "Citrus reticulata",
+   "count": 92,
+   "starter": false,
+   "rank": 30
+  },
+  {
+   "key": "tangerine",
+   "cn": "红橘",
+   "latin": "Citrus reticulata",
+   "count": 92,
+   "starter": false,
+   "rank": 31
+  },
+  {
+   "key": "cypress",
+   "cn": "丝柏",
+   "latin": "Cupressus",
+   "count": 85,
+   "starter": false,
+   "rank": 32
+  },
+  {
+   "key": "clary_sage",
+   "cn": "快乐鼠尾草",
+   "latin": "Salvia sclarea",
+   "count": 84,
+   "starter": false,
+   "rank": 33
+  },
+  {
+   "key": "black_pepper",
+   "cn": "黑胡椒",
+   "latin": "Piper nigrum",
+   "count": 84,
+   "starter": false,
+   "rank": 34
+  },
+  {
+   "key": "perilla",
+   "cn": "紫苏",
+   "latin": "Perilla frutescens",
+   "count": 84,
+   "starter": false,
+   "rank": 35
+  },
+  {
+   "key": "lemon_eucalyptus",
+   "cn": "柠檬桉",
+   "latin": "Eucalyptus citriodora",
+   "count": 83,
+   "starter": false,
+   "rank": 36
+  },
+  {
+   "key": "tulsi",
+   "cn": "圣罗勒",
+   "latin": "Ocimum tenuiflorum",
+   "count": 82,
+   "starter": false,
+   "rank": 37
+  },
+  {
+   "key": "mugwort",
+   "cn": "艾草",
+   "latin": "Artemisia argyi",
+   "count": 78,
+   "starter": false,
+   "rank": 38
+  },
+  {
+   "key": "star_anise",
+   "cn": "八角",
+   "latin": "Illicium verum",
+   "count": 66,
+   "starter": false,
+   "rank": 39
+  },
+  {
+   "key": "helichrysum",
+   "cn": "蜡菊",
+   "latin": "Helichrysum italicum",
+   "count": 63,
+   "starter": false,
+   "rank": 40
+  },
+  {
+   "key": "citronella",
+   "cn": "香茅",
+   "latin": "Cymbopogon winterianus",
+   "count": 63,
+   "starter": false,
+   "rank": 41
+  },
+  {
+   "key": "angelica",
+   "cn": "当归",
+   "latin": "Angelica sinensis",
+   "count": 58,
+   "starter": false,
+   "rank": 42
+  },
+  {
+   "key": "ylang_ylang",
+   "cn": "依兰",
+   "latin": "Cananga odorata",
+   "count": 57,
+   "starter": true,
+   "rank": 43
+  },
+  {
+   "key": "pink_pepper",
+   "cn": "粉红胡椒",
+   "latin": "Schinus molle",
+   "count": 54,
+   "starter": false,
+   "rank": 44
+  },
+  {
+   "key": "sandalwood",
+   "cn": "檀香",
+   "latin": "Santalum album",
+   "count": 53,
+   "starter": false,
+   "rank": 45
+  },
+  {
+   "key": "lime",
+   "cn": "青柠",
+   "latin": "Citrus aurantifolia",
+   "count": 51,
+   "starter": false,
+   "rank": 46
+  },
+  {
+   "key": "grapefruit",
+   "cn": "葡萄柚",
+   "latin": "Citrus paradisi",
+   "count": 49,
+   "starter": false,
+   "rank": 47
+  },
+  {
+   "key": "cardamom",
+   "cn": "小豆蔻",
+   "latin": "Elettaria cardamomum",
+   "count": 42,
+   "starter": false,
+   "rank": 48
+  },
+  {
+   "key": "manuka",
+   "cn": "麦卢卡",
+   "latin": "Leptospermum scoparium",
+   "count": 42,
+   "starter": false,
+   "rank": 49
+  },
+  {
+   "key": "hinoki",
+   "cn": "日本扁柏",
+   "latin": "Chamaecyparis obtusa",
+   "count": 39,
+   "starter": false,
+   "rank": 50
+  },
+  {
+   "key": "copaiba",
+   "cn": "古巴香脂",
+   "latin": "Copaifera",
+   "count": 34,
+   "starter": false,
+   "rank": 51
+  },
+  {
+   "key": "coriander",
+   "cn": "芫荽籽",
+   "latin": "Coriandrum sativum",
+   "count": 34,
+   "starter": false,
+   "rank": 52
+  },
+  {
+   "key": "wintergreen",
+   "cn": "冬青",
+   "latin": "Gaultheria",
+   "count": 32,
+   "starter": false,
+   "rank": 53
+  },
+  {
+   "key": "jasmine",
+   "cn": "茉莉",
+   "latin": "Jasminum",
+   "count": 29,
+   "starter": false,
+   "rank": 54
+  },
+  {
+   "key": "cilantro",
+   "cn": "芫荽叶",
+   "latin": "Coriandrum sativum",
+   "count": 29,
+   "starter": false,
+   "rank": 55
+  },
+  {
+   "key": "schisandra",
+   "cn": "五味子",
+   "latin": "Schisandra chinensis",
+   "count": 26,
+   "starter": false,
+   "rank": 56
+  },
+  {
+   "key": "myrrh",
+   "cn": "没药",
+   "latin": "Commiphora myrrha",
+   "count": 23,
+   "starter": false,
+   "rank": 57
+  },
+  {
+   "key": "celery_seed",
+   "cn": "芹菜籽",
+   "latin": "Apium graveolens",
+   "count": 23,
+   "starter": false,
+   "rank": 58
+  },
+  {
+   "key": "vetiver",
+   "cn": "岩兰草",
+   "latin": "Vetiveria zizanioides",
+   "count": 21,
+   "starter": false,
+   "rank": 59
+  },
+  {
+   "key": "ginseng",
+   "cn": "人参",
+   "latin": "Panax ginseng",
+   "count": 21,
+   "starter": false,
+   "rank": 60
+  },
+  {
+   "key": "neroli",
+   "cn": "橙花",
+   "latin": "Citrus aurantium",
+   "count": 19,
+   "starter": false,
+   "rank": 61
+  },
+  {
+   "key": "spanish_sage",
+   "cn": "西班牙鼠尾草",
+   "latin": "Salvia lavandulifolia",
+   "count": 16,
+   "starter": false,
+   "rank": 62
+  },
+  {
+   "key": "cedarwood",
+   "cn": "雪松",
+   "latin": "Juniperus virginiana",
+   "count": 15,
+   "starter": false,
+   "rank": 63
+  },
+  {
+   "key": "douglas_fir",
+   "cn": "黄杉",
+   "latin": "Pseudotsuga menziesii",
+   "count": 11,
+   "starter": false,
+   "rank": 64
+  },
+  {
+   "key": "siberian_fir",
+   "cn": "西伯利亚冷杉",
+   "latin": "Abies sibirica",
+   "count": 10,
+   "starter": false,
+   "rank": 65
+  },
+  {
+   "key": "spikenard",
+   "cn": "甘松",
+   "latin": "Nardostachys jatamansi",
+   "count": 10,
+   "starter": false,
+   "rank": 66
+  },
+  {
+   "key": "davana",
+   "cn": "印蒿",
+   "latin": "Artemisia pallens",
+   "count": 10,
+   "starter": false,
+   "rank": 67
+  },
+  {
+   "key": "petitgrain",
+   "cn": "苦橙叶",
+   "latin": "Citrus aurantium",
+   "count": 6,
+   "starter": false,
+   "rank": 68
+  },
+  {
+   "key": "arborvitae",
+   "cn": "北美香柏",
+   "latin": "Thuja plicata",
+   "count": 6,
+   "starter": false,
+   "rank": 69
+  },
+  {
+   "key": "sieversiana",
+   "cn": "大籽蒿",
+   "latin": "Artemisia sieversiana",
+   "count": 6,
+   "starter": false,
+   "rank": 70
+  },
+  {
+   "key": "guaiacwood",
+   "cn": "愈创木",
+   "latin": "Bulnesia sarmientoi",
+   "count": 5,
+   "starter": false,
+   "rank": 71
+  },
+  {
+   "key": "green_mandarin",
+   "cn": "绿橘",
+   "latin": "Citrus nobilis",
+   "count": 4,
+   "starter": false,
+   "rank": 72
+  },
+  {
+   "key": "black_spruce",
+   "cn": "黑云杉",
+   "latin": "Picea mariana",
+   "count": 3,
+   "starter": false,
+   "rank": 73
+  },
+  {
+   "key": "blue_tansy",
+   "cn": "蓝艾菊",
+   "latin": "Tanacetum annuum",
+   "count": 2,
+   "starter": false,
+   "rank": 74
+  },
+  {
+   "key": "magnolia",
+   "cn": "玉兰",
+   "latin": "Michelia alba",
+   "count": 2,
+   "starter": false,
+   "rank": 75
+  },
+  {
+   "key": "blue_lotus",
+   "cn": "蓝莲花",
+   "latin": "Nymphaea caerulea",
+   "count": 0,
+   "starter": false,
+   "rank": 76
+  }
+ ],
+ "topics": [
+  {
+   "key": "antimicrobial",
+   "cn": "抗菌 / 抗真菌",
+   "count": 11472
+  },
+  {
+   "key": "chemistry",
+   "cn": "化学成分 / GC-MS",
+   "count": 11050
+  },
+  {
+   "key": "safety",
+   "cn": "安全性 / 毒性",
+   "count": 4752
+  },
+  {
+   "key": "inflammation",
+   "cn": "炎症 / 抗炎",
+   "count": 3293
+  },
+  {
+   "key": "stress",
+   "cn": "压力 / 应激",
+   "count": 2401
+  },
+  {
+   "key": "cancer",
+   "cn": "肿瘤 / 抗癌",
+   "count": 2333
+  },
+  {
+   "key": "skin",
+   "cn": "皮肤 / 伤口",
+   "count": 2065
+  },
+  {
+   "key": "pain",
+   "cn": "疼痛 / 镇痛",
+   "count": 1516
+  },
+  {
+   "key": "anxiety",
+   "cn": "焦虑 / 焦虑缓解",
+   "count": 1023
+  },
+  {
+   "key": "sleep",
+   "cn": "睡眠 / 失眠",
+   "count": 490
+  },
+  {
+   "key": "depression",
+   "cn": "抑郁",
+   "count": 479
+  },
+  {
+   "key": "cognition",
+   "cn": "认知 / 记忆",
+   "count": 438
+  },
+  {
+   "key": "quality",
+   "cn": "掺假 / 质量控制",
+   "count": 358
+  }
+ ],
+ "journals": [
+  {
+   "name": "Journal of Essential Oil Research",
+   "count": 1837
+  },
+  {
+   "name": "Journal of Essential Oil Bearing Plants",
+   "count": 1502
+  },
+  {
+   "name": "Industrial Crops and Products",
+   "count": 854
+  },
+  {
+   "name": "DOAJ (DOAJ: Directory of Open Access Journals)",
+   "count": 771
+  },
+  {
+   "name": "Flavour and Fragrance Journal",
+   "count": 747
+  },
+  {
+   "name": "Molecules",
+   "count": 693
+  },
+  {
+   "name": "Chemistry of Natural Compounds",
+   "count": 622
+  },
+  {
+   "name": "Natural Product Research",
+   "count": 572
+  },
+  {
+   "name": "Natural Product Communications",
+   "count": 571
+  },
+  {
+   "name": "Planta Medica",
+   "count": 565
+  },
+  {
+   "name": "Publons reviews and discussion",
+   "count": 488
+  },
+  {
+   "name": "PubMed",
+   "count": 470
+  },
+  {
+   "name": "Chemistry & Biodiversity",
+   "count": 430
+  },
+  {
+   "name": "International Journal of Biological Macromolecules",
+   "count": 386
+  },
+  {
+   "name": "Food Chemistry",
+   "count": 343
+  },
+  {
+   "name": "Plants",
+   "count": 316
+  },
+  {
+   "name": "Figshare",
+   "count": 304
+  },
+  {
+   "name": "Scientific Reports",
+   "count": 287
+  },
+  {
+   "name": "LA Referencia (Red Federada de Repositorios Institucionales de Publicaciones Científicas)",
+   "count": 286
+  },
+  {
+   "name": "Journal of Ethnopharmacology",
+   "count": 262
+  },
+  {
+   "name": "LWT",
+   "count": 256
+  },
+  {
+   "name": "Foods",
+   "count": 248
+  },
+  {
+   "name": "Acta Horticulturae",
+   "count": 248
+  },
+  {
+   "name": "Zenodo (CERN European Organization for Nuclear Research)",
+   "count": 216
+  },
+  {
+   "name": "SSRN Electronic Journal",
+   "count": 199
+  },
+  {
+   "name": "Journal of Agricultural and Food Chemistry",
+   "count": 195
+  },
+  {
+   "name": "Biochemical Systematics and Ecology",
+   "count": 184
+  },
+  {
+   "name": "Journal of Food Measurement & Characterization",
+   "count": 181
+  },
+  {
+   "name": "Phytochemistry",
+   "count": 159
+  },
+  {
+   "name": "PubMed Central",
+   "count": 158
+  }
+ ],
+ "countries": [
+  {
+   "code": "IR",
+   "name": "伊朗",
+   "count": 5131
+  },
+  {
+   "code": "CN",
+   "name": "中国",
+   "count": 4978
+  },
+  {
+   "code": "BR",
+   "name": "巴西",
+   "count": 4534
+  },
+  {
+   "code": "IN",
+   "name": "印度",
+   "count": 3409
+  },
+  {
+   "code": "TR",
+   "name": "土耳其",
+   "count": 2225
+  },
+  {
+   "code": "IT",
+   "name": "意大利",
+   "count": 1978
+  },
+  {
+   "code": "US",
+   "name": "美国",
+   "count": 1728
+  },
+  {
+   "code": "ID",
+   "name": "印度尼西亚",
+   "count": 1472
+  },
+  {
+   "code": "EG",
+   "name": "埃及",
+   "count": 1289
+  },
+  {
+   "code": "FR",
+   "name": "法国",
+   "count": 1143
+  },
+  {
+   "code": "SA",
+   "name": "沙特阿拉伯",
+   "count": 1004
+  },
+  {
+   "code": "DZ",
+   "name": "阿尔及利亚",
+   "count": 971
+  },
+  {
+   "code": "ES",
+   "name": "西班牙",
+   "count": 815
+  },
+  {
+   "code": "RS",
+   "name": "RS",
+   "count": 806
+  },
+  {
+   "code": "MA",
+   "name": "摩洛哥",
+   "count": 719
+  },
+  {
+   "code": "TN",
+   "name": "突尼斯",
+   "count": 708
+  },
+  {
+   "code": "NG",
+   "name": "尼日利亚",
+   "count": 679
+  },
+  {
+   "code": "MY",
+   "name": "MY",
+   "count": 676
+  },
+  {
+   "code": "KR",
+   "name": "韩国",
+   "count": 653
+  },
+  {
+   "code": "JP",
+   "name": "日本",
+   "count": 652
+  },
+  {
+   "code": "VN",
+   "name": "越南",
+   "count": 621
+  },
+  {
+   "code": "PL",
+   "name": "波兰",
+   "count": 592
+  },
+  {
+   "code": "MX",
+   "name": "墨西哥",
+   "count": 494
+  },
+  {
+   "code": "GR",
+   "name": "希腊",
+   "count": 473
+  },
+  {
+   "code": "DE",
+   "name": "德国",
+   "count": 459
+  },
+  {
+   "code": "TH",
+   "name": "泰国",
+   "count": 458
+  },
+  {
+   "code": "PT",
+   "name": "葡萄牙",
+   "count": 434
+  },
+  {
+   "code": "RU",
+   "name": "俄罗斯",
+   "count": 406
+  },
+  {
+   "code": "PK",
+   "name": "巴基斯坦",
+   "count": 397
+  },
+  {
+   "code": "AR",
+   "name": "AR",
+   "count": 388
+  }
+ ],
+ "graded": [
+  {
+   "level": "Grade 1 · 高确定性",
+   "cn": "Cochrane 系统评价 / 高质量 RCT",
+   "count": 20,
+   "desc": "Cochrane 方法学：预设方案 + 系统检索 + RoB 2 评估 + GRADE 分级",
+   "tone": "high"
+  },
+  {
+   "level": "Grade 2 · 中确定性",
+   "cn": "系统评价 / Meta 分析",
+   "count": 495,
+   "desc": "PRISMA 2020 报告规范，需检查异质性 I² 与发表偏倚",
+   "tone": "mid"
+  },
+  {
+   "level": "Grade 3 · 低确定性",
+   "cn": "随机对照试验",
+   "count": 731,
+   "desc": "需按 RoB 2 五个域评估偏倚风险",
+   "tone": "low"
+  },
+  {
+   "level": "Grade 4 · 极低确定性",
+   "cn": "观察性研究 / 机制与体外实验",
+   "count": 30823,
+   "desc": "ROBINS-I 评估；体外浓度不可直接外推人体",
+   "tone": "verylow"
+  }
+ ],
+ "top_papers": [
+  {
+   "title": "Identification of Essential Oil Components By Gas Chromatography/Mass Spectrometry",
+   "title_zh": "气相色谱/质谱法鉴定精油成分",
+   "year": 2007,
+   "cites": 9706,
+   "journal": "",
+   "doi": ""
+  },
+  {
+   "title": "Identification of essential oil components by gas chromatography/quadrupole mass spectroscopy",
+   "title_zh": "气相色谱/四极杆质谱法鉴定精油成分",
+   "year": 2001,
+   "cites": 3519,
+   "journal": "",
+   "doi": ""
+  },
+  {
+   "title": "A study of the minimum inhibitory concentration and mode of action of oregano essential oil, thymol and carvacrol",
+   "title_zh": "牛至精油最小抑菌浓度与作用机制研究",
+   "year": 2001,
+   "cites": 2950,
+   "journal": "Journal of Applied Microbiology",
+   "doi": "https://doi.org/10.1046/j.1365-2672.2001.01428.x"
+  },
+  {
+   "title": "Antioxidant activity of Nigella sativa essential oil",
+   "title_zh": "黑种草精油的抗氧化活性",
+   "year": 2000,
+   "cites": 2056,
+   "journal": "Phytotherapy Research",
+   "doi": "https://doi.org/10.1002/1099-1573(200008)14:5<323::aid-ptr621>3.0.co;2-q"
+  },
+  {
+   "title": "The mode of antimicrobial action of the essential oil of Melaleuca alternifolia (tea tree oil)",
+   "title_zh": "互生叶白千层（茶树）精油的抗菌作用机制",
+   "year": 2001,
+   "cites": 1354,
+   "journal": "Journal of Applied Microbiology",
+   "doi": "https://doi.org/10.1046/j.1365-2672.2000.00943.x"
+  },
+  {
+   "title": "Antioxidant activity of selected essential oil components in two lipid model systems",
+   "title_zh": "精选精油成分在两种脂质模型体系中的抗氧化活性",
+   "year": 2000,
+   "cites": 1351,
+   "journal": "Food Chemistry",
+   "doi": "https://doi.org/10.1016/s0308-8146(99)00247-2"
+  },
+  {
+   "title": "The chemical composition and biological activity of clove essential oil, Eugenia caryophyllata ( Syzigium aromaticum L. Myrtaceae): a short review",
+   "title_zh": "丁香精油的化学成分与生物活性",
+   "year": 2007,
+   "cites": 1304,
+   "journal": "Phytotherapy Research",
+   "doi": "https://doi.org/10.1002/ptr.2124"
+  },
+  {
+   "title": "Use of different methods for testing antioxidative activity of oregano essential oil",
+   "title_zh": "牛至精油抗氧化活性检测方法比较",
+   "year": 2003,
+   "cites": 1227,
+   "journal": "Food Chemistry",
+   "doi": "https://doi.org/10.1016/j.foodchem.2003.07.024"
+  },
+  {
+   "title": "Biological activities of Lavender essential oil",
+   "title_zh": "薰衣草精油的生物活性",
+   "year": 2002,
+   "cites": 1199,
+   "journal": "Phytotherapy Research",
+   "doi": "https://doi.org/10.1002/ptr.1103"
+  },
+  {
+   "title": "The antimicrobial efficacy of plant essential oil combinations and interactions with food ingredients",
+   "title_zh": "植物精油复配的抗菌效果及其与食品成分的相互作用",
+   "year": 2008,
+   "cites": 1098,
+   "journal": "International Journal of Food Microbiology",
+   "doi": "https://doi.org/10.1016/j.ijfoodmicro.2008.02.028"
+  },
+  {
+   "title": "Regulation of essential oil production in plants",
+   "title_zh": "植物精油合成的调控机制",
+   "year": 2001,
+   "cites": 1070,
+   "journal": "Plant Growth Regulation",
+   "doi": "https://doi.org/10.1023/a:1013386921596"
+  },
+  {
+   "title": "Eucalyptus essential oil as a natural pesticide",
+   "title_zh": "尤加利精油作为天然杀虫剂的研究",
+   "year": 2008,
+   "cites": 1056,
+   "journal": "Forest Ecology and Management",
+   "doi": "https://doi.org/10.1016/j.foreco.2008.08.008"
+  },
+  {
+   "title": "Eugenol (an essential oil of clove) acts as an antibacterial agent against Salmonella typhi by disrupting the cellular membrane",
+   "title_zh": "丁香酚（丁香精油成分）抗伤寒沙门菌的作用机制",
+   "year": 2010,
+   "cites": 1042,
+   "journal": "Journal of Ethnopharmacology",
+   "doi": "https://doi.org/10.1016/j.jep.2010.04.025"
+  },
+  {
+   "title": "Two-step method for encapsulation of oregano essential oil in chitosan nanoparticles: Preparation, characterization and in vitro release study",
+   "title_zh": "壳聚糖纳米颗粒包埋牛至精油的两步法制备",
+   "year": 2013,
+   "cites": 1038,
+   "journal": "Carbohydrate Polymers",
+   "doi": "https://doi.org/10.1016/j.carbpol.2013.02.031"
+  },
+  {
+   "title": "Antibacterial activity and mechanism of cinnamon essential oil against Escherichia coli and Staphylococcus aureus",
+   "title_zh": "肉桂精油对大肠杆菌的抗菌活性及机制",
+   "year": 2015,
+   "cites": 1029,
+   "journal": "Food Control",
+   "doi": "https://doi.org/10.1016/j.foodcont.2015.05.032"
+  }
+ ],
+ "sample": [
+  {
+   "pmid": "42952893",
+   "year": "2026",
+   "journal": "Frontiers in pharmacology",
+   "title": "Phytochemistry, pharmacology, safety, and applications of Buddleja globosa Hope [Scrophulariaceae]: a systematic review from bioactive metabolites and mechanisms to translational perspectives.",
+   "doi": "10.3389/fphar.2026.1940132"
+  },
+  {
+   "pmid": "42929295",
+   "year": "2026",
+   "journal": "Chemistry & biodiversity",
+   "title": "Acorus calamus L. for Cognitive Enhancement: A Systematic Review of Its Ethnobotanical Practices and Scientific Evidence.",
+   "doi": "10.1002/cbdv.71859"
+  },
+  {
+   "pmid": "42865382",
+   "year": "2026",
+   "journal": "Frontiers in oncology",
+   "title": "Topical herbal medicine as treatment for chemotherapy-induced peripheral neuropathy: a systematic review of randomized controlled trials.",
+   "doi": "10.3389/fonc.2026.1920042"
+  },
+  {
+   "pmid": "42680847",
+   "year": "2026",
+   "journal": "Antonie van Leeuwenhoek",
+   "title": "The role of natural products in treatment of non-tuberculous mycobacterial infections: a systematic review.",
+   "doi": "10.1007/s10482-026-02416-5"
+  },
+  {
+   "pmid": "42186869",
+   "year": "2026",
+   "journal": "Journal of midwifery & women's health",
+   "title": "The Effect of Lemon Aromatherapy on Nausea and Vomiting During Pregnancy: A Systematic Review.",
+   "doi": "10.1111/jmwh.70135"
+  },
+  {
+   "pmid": "42008926",
+   "year": "2026",
+   "journal": "Infection, disease & health",
+   "title": "Comparative efficacy of preprocedural mouthwashes in reducing microbial aerosols during dental procedures: A network meta-analysis.",
+   "doi": "10.1016/j.idh.2026.100426"
+  },
+  {
+   "pmid": "42202399",
+   "year": "2026",
+   "journal": "Food chemistry",
+   "title": "Plant-based antifungal active packaging: A systematic review of mechanisms, materials, and food applications.",
+   "doi": "10.1016/j.foodchem.2026.149700"
+  },
+  {
+   "pmid": "42526337",
+   "year": "2026",
+   "journal": "Animal : an international journal of animal bioscience",
+   "title": "Effect of essential oil supplementation on growth and health in preweaning dairy calves: a meta-analysis.",
+   "doi": "10.1016/j.animal.2026.101892"
+  },
+  {
+   "pmid": "42568559",
+   "year": "2026",
+   "journal": "Frontiers in public health",
+   "title": "Non-pharmacological therapies for sleep and occupational stress regulation among nightshift nurses: a systematic review and Bayesian network meta-analysis based on randomized controlled trials.",
+   "doi": "10.3389/fpubh.2026.1882224"
+  },
+  {
+   "pmid": "42564042",
+   "year": "2026",
+   "journal": "Frontiers in medicine",
+   "title": "Essential oil-based interventions for chemotherapy-induced nausea and vomiting in women with breast cancer: a systematic review and meta-analysis.",
+   "doi": "10.3389/fmed.2026.1897656"
+  },
+  {
+   "pmid": "42407021",
+   "year": "2026",
+   "journal": "Chemistry & biodiversity",
+   "title": "Traditional Use, Phytochemistry, and Pharmacological Potential of Centaurea Genus: A Systematic Review.",
+   "doi": "10.1002/cbdv.202502817"
+  },
+  {
+   "pmid": "41936209",
+   "year": "2026",
+   "journal": "Explore (New York, N.Y.)",
+   "title": "Therapeutic potential of Neroli Essential Oil (Citrus aurantium) in obstetrics and gynecology: A systematic review.",
+   "doi": "10.1016/j.explore.2026.103413"
+  },
+  {
+   "pmid": "42318382",
+   "year": "2026",
+   "journal": "Frontiers in medicine",
+   "title": "Effects of aromatherapy on objective physiological outcomes in adult ICU patients: a systematic review.",
+   "doi": "10.3389/fmed.2026.1807990"
+  },
+  {
+   "pmid": "42054713",
+   "year": "2026",
+   "journal": "Animal : an international journal of animal bioscience",
+   "title": "Review: Additives delivery through drinking water to support gut health in swine and poultry - a systematic literature review.",
+   "doi": "10.1016/j.animal.2026.101822"
+  },
+  {
+   "pmid": "41534158",
+   "year": "2026",
+   "journal": "Research in veterinary science",
+   "title": "Comparative effects of monensin and alternative feed additives on productive performance and rumen fermentation in Zebu beef cattle: A systematic review and meta-analysis.",
+   "doi": "10.1016/j.rvsc.2026.106072"
+  },
+  {
+   "pmid": "40600743",
+   "year": "2026 Mar-Apr 01",
+   "journal": "Holistic nursing practice",
+   "title": "The Sleep-Enhancing Effect of Lavender Essential Oil in Adults: A Systematic Review and Meta-Analysis.",
+   "doi": "10.1097/HNP.0000000000000734"
+  },
+  {
+   "pmid": "41737011",
+   "year": "2025",
+   "journal": "Frontiers in pharmacology",
+   "title": "Progress, critical challenges, and translational prospects of intranasal administration of botanical essential oils for the treatment of depression.",
+   "doi": "10.3389/fphar.2025.1748824"
+  },
+  {
+   "pmid": "40987424",
+   "year": "2025",
+   "journal": "Complementary therapies in medicine",
+   "title": "Effects of aromatherapy on sleep quality in hospitalized cardiac patients: A systematic review and meta-analysis of randomized controlled trials.",
+   "doi": "10.1016/j.ctim.2025.103247"
+  },
+  {
+   "pmid": "40552531",
+   "year": "2025",
+   "journal": "ChemistryOpen",
+   "title": "Essential Oil Profiles of Lippia turbinata (Verbenaceae) from Argentina: Insights from a Systematic Review and Meta-Analysis.",
+   "doi": "10.1002/open.202500203"
+  },
+  {
+   "pmid": "41124411",
+   "year": "2025",
+   "journal": "Brazilian journal of biology = Revista brasleira de biologia",
+   "title": "Antibacterial potential of Coriandrum sativum essential oil against foodborne pathogens: A systematic review.",
+   "doi": "10.1590/1519-6984.294958"
+  }
+ ],
+ "starter_keys": [
+  "lavender",
+  "tea_tree",
+  "peppermint",
+  "eucalyptus",
+  "frankincense",
+  "lemon",
+  "geranium",
+  "rosemary",
+  "bergamot",
+  "ylang_ylang",
+  "citrus",
+  "lemongrass",
+  "cinnamon",
+  "thyme",
+  "oregano",
+  "clove",
+  "ginger",
+  "basil",
+  "patchouli",
+  "rose"
+ ]
+}

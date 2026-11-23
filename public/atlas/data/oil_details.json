@@ -1,0 +1,2190 @@
+{
+  "meta": {
+    "updated": "2026-11-23",
+    "scope": "全部首批精油 · 十关档案",
+    "note": "内容由公开文献检索 + 证据池综述通读后撰写。故事区逐条标注证据状态；成分区给范围值而非固定值。"
+  },
+  "oils": [
+    {
+      "key": "lavender",
+      "cn": "真正薰衣草",
+      "en": "True Lavender",
+      "latin": "Lavandula angustifolia Mill.",
+      "family": "唇形科 Lamiaceae",
+      "tagline": "香气最被熟悉的精油，也是循证研究最厚的一种——但「安神」的证据比传说薄。",
+      "evidence_tone": "证据中等 · 研究最多",
+      "scent": {
+        "notes": "清甜花香，带一点木质与草本凉意",
+        "top": "清新、略带樟脑样的清凉感",
+        "heart": "花香主体，甜而不腻",
+        "base": "柔和的木质尾巴",
+        "feeling": "多数人联想到干净、放松、夜晚"
+      },
+      "quick": {
+        "what": "从薰衣草花朵蒸馏出的精油，主成分是芳樟醇与乙酸芳樟酯，传统上用于放松与皮肤舒缓。",
+        "evidence_use": "有一定证据支持的方向：轻度睡眠困扰、围手术期焦虑的辅助舒缓。都属于「辅助」层级，不替代标准治疗。",
+        "who_avoid": "低血压者、孕期前三个月、哺乳期、婴幼儿（尤其 2 岁以下）、正在使用镇静类药物者慎用；癫痫患者避免樟脑含量高的近缘种。",
+        "myth": "误区：把「穗花薰衣草 / 醒目薰衣草」当真正薰衣草用。后者樟脑与 1,8-桉叶素高，提振而非放松，不可混用。"
+      },
+      "story": {
+        "intro": "名字来自拉丁语 lavare（洗涤）——这点是学界共识，古罗马人把薰衣草加进浴水，罗马军队把沐浴习惯带到不列颠。",
+        "items": [
+          {
+            "title": "学名与词源",
+            "text": "Lavandula 源自拉丁语 lavare「洗」，反映其古代清洁用途。中文「薰衣草」得名于薰香衣物的习俗。",
+            "status": "supported",
+            "statusLabel": "有文献支持"
+          },
+          {
+            "title": "古典文献的记载",
+            "text": "古希腊 Theophrastus 的《植物志》提到名为 iphyon 的植物；Dioscorides（公元 40–90 年）在《药物志》中描述 stoichas，称其煎液可用于胸部不适。老普林尼提到它用于忧郁与调经。",
+            "status": "supported",
+            "statusLabel": "有文献支持"
+          },
+          {
+            "title": "「古埃及广泛使用」的说法",
+            "text": "常见说法称埃及人用薰衣草制作木乃伊。但 2025 年考古综述（PMC12172069）明确指出：缺乏支持古埃及使用薰衣草的实质证据，罗马时期卫生用途的一手资料也很稀少——花朵与精油在考古中极难保存，不能据此断言「没有」，但也不应把传说当史实。",
+            "status": "disputed",
+            "statusLabel": "传说 · 证据不足"
+          },
+          {
+            "title": "普罗旺斯与爱情传说",
+            "text": "少女用薰衣草让负心人现形的故事，是流传甚广的地方传说，属于文化叙事，不具史料价值。",
+            "status": "folklore",
+            "statusLabel": "民间传说"
+          },
+          {
+            "title": "现代芳香疗法的起点",
+            "text": "1928 年法国化学家 René-Maurice Gattefossé 因实验室灼伤中使用薰衣草油的事件，被视为现代芳香疗法开端。这个故事的细节在文献中有不同版本，场合与经过需留余地。",
+            "status": "disputed",
+            "statusLabel": "细节存疑"
+          }
+        ]
+      },
+      "chemistry": {
+        "summary": "成分比例随产地、品种、采收期和蒸馏条件大幅波动。以下为文献报告的范围，不是某个具体产品的保证值。",
+        "key": [
+          {
+            "name": "芳樟醇 Linalool",
+            "range": "约 20–49%",
+            "plain": "主要放松相关成分，也是香气主体；氧化后会变成致敏物。",
+            "pmid": "36684478"
+          },
+          {
+            "name": "乙酸芳樟酯 Linalyl acetate",
+            "range": "约 12–40%",
+            "plain": "甜花香的来源，与芳樟醇共同构成薰衣草的特征。",
+            "pmid": "36684478"
+          },
+          {
+            "name": "薰衣草乙酸酯 Lavandulyl acetate",
+            "range": "约 6–16%",
+            "plain": "次要成分，参与香气层次。",
+            "pmid": "16314156"
+          },
+          {
+            "name": "α-萜品醇 / 桉叶素",
+            "range": "少量至微量",
+            "plain": "桉叶素偏高时更接近穗花薰衣草，放松特性会打折。",
+            "pmid": "20923003"
+          }
+        ],
+        "deep": "一项保加利亚研究（PMID 36684478）用 GC-MS 比较有机种植与市售产品：主导地位的是单萜含氧化合物（70–88%），芳樟醇 20–45%、乙酸芳樟酯 20.79–39.91%，其中一款市售样品的乙酸芳樟酯低于欧洲药典建议。动物实验（PMID 17173962）提示芳樟醇而非乙酸芳樟酯，是抗冲突（抗焦虑样）作用的主要活性成分——这是「成分-效果对应」的经典案例，但仍是动物数据。",
+        "chemotype_note": "真正薰衣草（L. angustifolia）芳樟醇+乙酸芳樟酯高；穗花薰衣草（L. latifolia）1,8-桉叶素与樟脑高；醒目薰衣草（L. × intermedia）为两者杂交。三者不可互换。"
+      },
+      "safety": {
+        "topical": "一般外用安全性良好，通常以 1–2% 稀释用于面部、5% 以下用于身体；纯油不建议直接涂抹。",
+        "oxidation": "关键风险：芳樟醇与乙酸芳樟酯接触空气后氧化，生成过氧化物与致敏物。开封后建议 1–2 年内用完，避光、阴凉、密封保存；出现明显氧化气味时停止使用。",
+        "avoid": "孕期前三个月、哺乳期、2 岁以下婴幼儿、低血压者慎用；正在服用镇静催眠药者注意叠加效应。",
+        "pet": "猫对多种精油代谢能力有限，使用扩香时应保证通风并给宠物留出可离开的空间。",
+        "sources": [
+          "欧洲药典（Ph. Eur.）薰衣草油专论：芳樟醇与乙酸芳樟酯的限度规定",
+          "Tisserand & Young《Essential Oil Safety》第 2 版（教科书参考，非本页原始检索）",
+          "氧化致敏机制为精油共性风险，非薰衣草专属研究"
+        ]
+      },
+      "practice": {
+        "aroma": "安神、干净、柔和的花香，常用于睡前扩香与放松按摩。",
+        "blend": "与天竺葵、罗马洋甘菊、佛手柑、岩兰草配伍常见；与柑橘类合用可调和甜度。",
+        "methods": "扩香：睡前 30 分钟低剂量扩香；按摩：1–2% 稀释；泡澡：须先用基础油或浴盐分散，不可直接入水。",
+        "storage": "深色玻璃瓶、避光、阴凉、密封；标记开封日期。",
+        "authenticity": "价格过低、香气刺鼻单一、无批次与产地信息的产品需警惕。有条件时查看 GC-MS 报告，核对芳樟醇/乙酸芳樟酯比例。"
+      },
+      "evidence": {
+        "counts": {
+          "reviews": 57,
+          "cochrane": 2,
+          "rct": 218
+        },
+        "summary": "研究量最大的精油，证据覆盖睡眠、焦虑、术后不适；但高质量专病 RCT 仍有限。",
+        "key_papers": [
+          {
+            "pmid": "32813272",
+            "title": "Aromatherapy for dementia.",
+            "year": "2020",
+            "kind": "cochrane"
+          },
+          {
+            "pmid": "25536022",
+            "title": "Herbal medicine for low-back pain.",
+            "year": "2014",
+            "kind": "cochrane"
+          },
+          {
+            "pmid": "39041491",
+            "title": "Effect of inhaled aromatherapy on sleep quality in critically ill patients: A systematic review and network meta-analysis.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "42318382",
+            "title": "Effects of aromatherapy on objective physiological outcomes in adult ICU patients: a systematic review.",
+            "year": "2026",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tea_tree",
+      "cn": "茶树",
+      "en": "Tea Tree",
+      "latin": "Melaleuca alternifolia (Maiden & Betche) Cheel",
+      "family": "桃金娘科 Myrtaceae",
+      "tagline": "有 ISO 国际标准、抗菌证据最扎实的精油之一——同时也是最常见的接触性致敏原之一。",
+      "evidence_tone": "抗菌证据较强 · 安全需谨慎",
+      "scent": {
+        "notes": "清新、药草感、带一点樟脑与薄荷凉意",
+        "top": "锐利的药草与樟脑气息",
+        "heart": "清凉、消毒水般的干净感",
+        "base": "淡淡的土质与木质感",
+        "feeling": "多数人联想到清洁、急救、运动后的清爽"
+      },
+      "quick": {
+        "what": "从澳洲原生互叶白千层叶片蒸馏的精油，主成分萜品烯-4-醇，以外用抗菌、抗真菌著称。",
+        "evidence_use": "有一定证据支持的方向：轻度痤疮、浅表真菌感染、口腔菌斑的辅助管理。注意多数是体外与小规模临床研究。",
+        "who_avoid": "对精油过敏者、皮肤破损大面积使用者、孕期哺乳期、婴幼儿、猫狗家庭（尤其猫）慎用；绝对不可口服。",
+        "myth": "误区：「茶树」不是山茶属（Camellia sinensis），和喝茶没有任何关系；名字来自库克船员的泡茶替代实验。"
+      },
+      "story": {
+        "intro": "茶树的故事兼具原住民传统知识与殖民时代的科学命名，讲的时候要两条线都给到。",
+        "items": [
+          {
+            "title": "原住民的传统使用",
+            "text": "澳大利亚邦加隆人（Bundjalung）等原住民长期使用互叶白千层叶片：压碎后吸嗅处理咳嗽感冒、撒在伤口上敷贴、浸泡成浸剂。口述历史中还有「疗愈湖」——落叶长期沉积腐化的潟湖。",
+            "status": "supported",
+            "statusLabel": "有文献记载"
+          },
+          {
+            "title": "「茶树」之名的由来",
+            "text": "1770 年库克航行至澳洲东岸，船员用当地桃金娘科灌木的叶子泡水替代茶，由此得名 tea tree；随行博物学家 Joseph Banks 采集了标本。需要说明：当时所指的植物种类并不确定，可能不是今天的互叶白千层。",
+            "status": "supported",
+            "statusLabel": "有文献支持"
+          },
+          {
+            "title": "商业化起点",
+            "text": "1920 年代澳大利亚化学家 Arthur Penfold 系统研究澳洲植物，发表茶树油抗菌力的报告，开启商业化。抗传说版本中「比石碳酸强 11–13 倍」的说法广为流传，具体倍数依实验条件而变，宜标为「显著强于」而非固定数字。",
+            "status": "disputed",
+            "statusLabel": "细节需留余地"
+          },
+          {
+            "title": "二战急救包",
+            "text": "二战期间茶树油被列入澳军热带战场急救用品，用于外伤、烧伤与虫咬。这段历史在行业文献中普遍记载，但一手档案的查阅不在本页范围内。",
+            "status": "folklore",
+            "statusLabel": "行业常述"
+          },
+          {
+            "title": "进入药典",
+            "text": "2001 年前后茶树油被列入欧洲药典，是继桉叶油之后第二种入选的天然精油。ISO 4730 标准对成分比例有明确规定。",
+            "status": "supported",
+            "statusLabel": "有文献支持"
+          }
+        ]
+      },
+      "chemistry": {
+        "summary": "茶树是少数有国际 ISO 标准（ISO 4730:2017）的精油。比例为标准范围，实际产品须看 GC-MS 报告。",
+        "key": [
+          {
+            "name": "萜品烯-4-醇 Terpinen-4-ol",
+            "range": "ISO ≥30%（文献常见 30–48%）",
+            "plain": "核心抗菌活性成分，也是品质指标；低于此值不合格。",
+            "pmid": "35214891"
+          },
+          {
+            "name": "γ-萜品烯 γ-Terpinene",
+            "range": "约 10–28%",
+            "plain": "次要成分，参与抗菌协同。",
+            "pmid": "28815601"
+          },
+          {
+            "name": "1,8-桉叶素 1,8-Cineole",
+            "range": "ISO <15%",
+            "plain": "过高会削弱皮肤温和度，因此标准设上限。",
+            "pmid": "35214891"
+          },
+          {
+            "name": "α-萜品烯 / 对伞花烃",
+            "range": "约 5–13% / 0.5–8%",
+            "plain": "背景成分，比例反映化学型与产地。",
+            "pmid": "27388769"
+          }
+        ],
+        "deep": "文献报告的范围随产地与批次波动很大：斯洛伐克样品萜品烯-4-醇 40.3%、γ-萜品烯 11.7%（PMID 35214891）；另一研究为 38.6% 与 21.7%（PMID 28815601）；也有样品仅约 23%（PMID 27388769）。机制研究显示茶树油通过破坏细菌与真菌的细胞壁/细胞膜发挥抗菌作用，呈浓度与时间依赖（PMID 27388769）。体外 MIC 数据不能直接外推到人体治疗效果。",
+        "chemotype_note": "ISO 4730 规定的是「澳洲茶树油」标准。市面另有「茶树」泛称的其他白千层属植物（如 cajuput oil），成分与安全谱不同，不可混用。"
+      },
+      "safety": {
+        "topical": "化妆品与外用制剂常见浓度 5–10%；在此浓度下已有接触致敏与过敏性接触性皮炎报告。北美接触皮炎研究组（1999 年纳入筛查）最新数据显示约 1.4% 受试斑贴试验阳性。",
+        "oxidation": "最重要风险：茶树油暴露空气后氧化，过氧化物显著增加致敏性。多项研究指出氧化茶树油是更强的致敏原。开封后按期限使用、避光密封。",
+        "oral": "绝对不可口服。吞服有中毒风险，可出现共济失调、意识改变等。EFSA 2024 意见将茶树油列为皮肤/眼刺激物、皮肤与呼吸道致敏物，并按 CLP 标准归为生殖毒性 1B 类（依据 CLP 分类，针对职业暴露与产品安全评估）。",
+        "pet": "猫对精油代谢能力有限，含茶树油产品用于猫狗须极其谨慎并咨询兽医；扩香需通风并允许宠物离开。",
+        "sources": [
+          "PMID 22653070（1.4% 斑贴阳性率）",
+          "PMID 11275586（氧化致敏）",
+          "PMID 39469429（EFSA 2024 安全意见）"
+        ]
+      },
+      "practice": {
+        "aroma": "锐利、药草样、清凉，常用于空间净化感与运动后的清爽配方。",
+        "blend": "与薰衣草、柠檬、薄荷、尤加利配伍常见；在皮肤配方中注意总浓度与个体耐受。",
+        "methods": "局部：5–10% 已属较高浓度，日常护肤建议更低；扩香：低剂量、短时、保持通风；不可用于黏膜、不可入眼。",
+        "storage": "深色密封瓶、避光冷藏最佳；标记开封日期；氧化有明显气味变化时丢弃。",
+        "authenticity": "核对是否有 ISO 4730 符合声明与 GC-MS 报告，重点看萜品烯-4-醇 ≥30%、1,8-桉叶素 <15%。价格异常低需警惕掺假。"
+      },
+      "evidence": {
+        "counts": {
+          "reviews": 10,
+          "cochrane": 0,
+          "rct": 42
+        },
+        "summary": "抗菌证据最集中的精油，皮肤与口腔应用是主线，另有新兴的神经保护探索。",
+        "key_papers": [
+          {
+            "pmid": "37033604",
+            "title": "Efficacy and safety of Melaleuca alternifolia (tea tree) oil for human health-A systematic review of randomized controlled trials.",
+            "year": "2023",
+            "kind": "sr"
+          },
+          {
+            "pmid": "35332625",
+            "title": "Meta-analysis of the antifungal activities of three essential oils as alternative therapies in dermatophytosis infections.",
+            "year": "2022",
+            "kind": "sr"
+          },
+          {
+            "pmid": "38538551",
+            "title": "Antimicrobial activity of essential oils against biofilms formed in dental acrylic resin: a systematic review of in vitro studies.",
+            "year": "2024",
+            "kind": "sr"
+          },
+          {
+            "pmid": "37455134",
+            "title": "Tea tree oil, a vibrant source of neuroprotection via neuroinflammation inhibition: a critical insight into repurposing Melaleuca alternifolia by unfolding its characteristics.",
+            "year": "2023",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "citrus",
+      "cn": "柑橘属",
+      "en": "Citrus",
+      "latin": "Citrus",
+      "family": "芸香科 Rutaceae",
+      "tagline": "研究面很广，但「柑橘属」是个属级标签，不能一概而论。",
+      "evidence": {
+        "counts": {
+          "reviews": 20,
+          "cochrane": 0,
+          "rct": 37
+        },
+        "summary": "属级归类，橙花在妇产科有专门综述，果皮油多用于驱虫与抗菌。",
+        "key_papers": [
+          {
+            "pmid": "42680847",
+            "title": "The role of natural products in treatment of non-tuberculous mycobacterial infections: a systematic review.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "41936209",
+            "title": "Therapeutic potential of Neroli Essential Oil (Citrus aurantium) in obstetrics and gynecology: A systematic review.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "42012462",
+            "title": "Analgesic Effects of Olfactory Stimulation: A Systematic Review of Clinical and Experimental Evidence.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "41900095",
+            "title": "Agri-Food Biowaste Bioactives for Biopesticides: A Circular Economy Solution with Industry 4.0?",
+            "year": "2026",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "eucalyptus",
+      "cn": "尤加利",
+      "en": "Eucalyptus",
+      "latin": "Eucalyptus",
+      "family": "桃金娘科 Myrtaceae",
+      "tagline": "驱蚊和呼吸道的证据最实在，抗菌多半还在体外阶段。",
+      "evidence": {
+        "counts": {
+          "reviews": 9,
+          "cochrane": 0,
+          "rct": 12
+        },
+        "summary": "驱蚊有 PRISMA 系统评价支持，呼吸道的临床证据仍薄。",
+        "key_papers": [
+          {
+            "pmid": "42285396",
+            "title": "Effectiveness of mosquito repellents for human: A systematic review of human-based studies.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "42417796",
+            "title": "The potential of essential oils as mosquito (Diptera: Culicidae) bio-repellents: a systematic review.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "42318382",
+            "title": "Effects of aromatherapy on objective physiological outcomes in adult ICU patients: a systematic review.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "40917836",
+            "title": "Evaluating efficacy, safety, and innovation in skin care applications of essential oils: a systematic review.",
+            "year": "2025",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "lemongrass",
+      "cn": "柠檬草",
+      "en": "Lemongrass",
+      "latin": "Cymbopogon",
+      "family": "禾本科 Poaceae",
+      "tagline": "驱虫和抗真菌的常客，但皮肤刺激性强，稀释要保守。",
+      "evidence": {
+        "counts": {
+          "reviews": 12,
+          "cochrane": 0,
+          "rct": 8
+        },
+        "summary": "驱虫与抗真菌有系统评价支撑，临床人体研究少。",
+        "key_papers": [
+          {
+            "pmid": "42285396",
+            "title": "Effectiveness of mosquito repellents for human: A systematic review of human-based studies.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "42417796",
+            "title": "The potential of essential oils as mosquito (Diptera: Culicidae) bio-repellents: a systematic review.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "39917707",
+            "title": "Antibiofilm efficacy of plant extracts as root canal irrigants in endodontics: a systematic literature review.",
+            "year": "2024",
+            "kind": "sr"
+          },
+          {
+            "pmid": "38538551",
+            "title": "Antimicrobial activity of essential oils against biofilms formed in dental acrylic resin: a systematic review of in vitro studies.",
+            "year": "2024",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "peppermint",
+      "cn": "薄荷",
+      "en": "Peppermint",
+      "latin": "Mentha piperita",
+      "family": "唇形科 Lamiaceae",
+      "tagline": "恶心与头痛的证据最扎实，但婴幼儿要特别当心。",
+      "evidence": {
+        "counts": {
+          "reviews": 13,
+          "cochrane": 1,
+          "rct": 41
+        },
+        "summary": "恶心呕吐方向证据最突出，Cochrane 有直接评价。",
+        "key_papers": [
+          {
+            "pmid": "29523018",
+            "title": "Aromatherapy for treatment of postoperative nausea and vomiting.",
+            "year": "2018",
+            "kind": "cochrane"
+          },
+          {
+            "pmid": "42564042",
+            "title": "Essential oil-based interventions for chemotherapy-induced nausea and vomiting in women with breast cancer: a systematic review and meta-analysis.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "42012462",
+            "title": "Analgesic Effects of Olfactory Stimulation: A Systematic Review of Clinical and Experimental Evidence.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "41192533",
+            "title": "Effectiveness of aromatherapy on physiological and psychological symptoms during pregnancy: a systematic review and meta-analysis.",
+            "year": "2025",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "rosemary",
+      "cn": "迷迭香",
+      "en": "Rosemary",
+      "latin": "Rosmarinus officinalis",
+      "family": "唇形科 Lamiaceae",
+      "tagline": "抗菌抗炎证据在积累，记忆的说法比证据跑得快。",
+      "evidence": {
+        "counts": {
+          "reviews": 10,
+          "cochrane": 0,
+          "rct": 23
+        },
+        "summary": "抗菌抗炎与口腔方向有证据，记忆改善仍属初步。",
+        "key_papers": [
+          {
+            "pmid": "41257434",
+            "title": "Shrubs and trees as natural insect protection for grazing animals in Switzerland and the alpine region: A systematic review of in vitro, in vivo and clinical trials.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "40784036",
+            "title": "Modulating bacterial virulence: The role of food-plant essential oils in counteracting foodborne pathogen threats - A systematic review.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "40917836",
+            "title": "Evaluating efficacy, safety, and innovation in skin care applications of essential oils: a systematic review.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "40077632",
+            "title": "Effectiveness of Herbal Medicines with Anti-Inflammatory, Antimicrobial, and Antioxidant Properties in Improving Oral Health and Treating Gingivitis and Periodontitis: A Systematic Review.",
+            "year": "2025",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "geranium",
+      "cn": "天竺葵",
+      "en": "Geranium",
+      "latin": "Pelargonium",
+      "family": "牻牛儿苗科 Geraniaceae",
+      "tagline": "情绪与术后不适有近期综述，但多为复方研究。",
+      "evidence": {
+        "counts": {
+          "reviews": 5,
+          "cochrane": 0,
+          "rct": 8
+        },
+        "summary": "睡眠与术后疼痛有近期综述，但多为多精油合并研究。",
+        "key_papers": [
+          {
+            "pmid": "42568559",
+            "title": "Non-pharmacological therapies for sleep and occupational stress regulation among nightshift nurses: a systematic review and Bayesian network meta-analysis based on randomized controlled trials.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "39772374",
+            "title": "Effect of Aromatherapy for Postoperative Pain Management in the Postanesthesia Recovery Room: A Systematic Review.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "31679416",
+            "title": "Studies on essential oil from rose-scented geranium, Pelargonium graveolens L'Hérit. (Geraniaceae).",
+            "year": "2021",
+            "kind": "sr"
+          },
+          {
+            "pmid": "31864359",
+            "title": "Effectiveness of plant-based repellents against different Anopheles species: a systematic review.",
+            "year": "2019",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "cinnamon",
+      "cn": "肉桂",
+      "en": "Cinnamon",
+      "latin": "Cinnamomum",
+      "family": "樟科 Lauraceae",
+      "tagline": "抗菌力强，刺激性也强——浓度是它的分水岭。",
+      "evidence": {
+        "counts": {
+          "reviews": 5,
+          "cochrane": 0,
+          "rct": 4
+        },
+        "summary": "抗菌证据扎实但多为体外，抗真菌有 Meta 分析涉及甲真菌病。",
+        "key_papers": [
+          {
+            "pmid": "38538551",
+            "title": "Antimicrobial activity of essential oils against biofilms formed in dental acrylic resin: a systematic review of in vitro studies.",
+            "year": "2024",
+            "kind": "sr"
+          },
+          {
+            "pmid": "37615998",
+            "title": "In vitro antimicrobial activity of extracts and essential oils of Cinnamomum, Salvia, and Mentha spp. against foodborne pathogens: A meta-analysis study.",
+            "year": "2023",
+            "kind": "sr"
+          },
+          {
+            "pmid": "37323050",
+            "title": "Non-Chinese herbal medicines for functional dyspepsia.",
+            "year": "2023",
+            "kind": "sr"
+          },
+          {
+            "pmid": "35332625",
+            "title": "Meta-analysis of the antifungal activities of three essential oils as alternative therapies in dermatophytosis infections.",
+            "year": "2022",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "thyme",
+      "cn": "百里香",
+      "en": "Thyme",
+      "latin": "Thymus vulgaris",
+      "family": "唇形科 Lamiaceae",
+      "tagline": "抗菌力取决于化学型——百里香酚型才够劲。",
+      "evidence": {
+        "counts": {
+          "reviews": 5,
+          "cochrane": 0,
+          "rct": 4
+        },
+        "summary": "抗真菌与畜禽应用证据较集中，人体临床有限。",
+        "key_papers": [
+          {
+            "pmid": "41257434",
+            "title": "Shrubs and trees as natural insect protection for grazing animals in Switzerland and the alpine region: A systematic review of in vitro, in vivo and clinical trials.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "40939106",
+            "title": "Effects of Dietary Thymus vulgaris on Laying Hens: A Systematic Review and Meta-Analysis of Productive Performance and Egg Quality.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "35332625",
+            "title": "Meta-analysis of the antifungal activities of three essential oils as alternative therapies in dermatophytosis infections.",
+            "year": "2022",
+            "kind": "sr"
+          },
+          {
+            "pmid": "35490427",
+            "title": "Native Iranian Medicinal Plants with Anti-Vaginal Infection Properties: A Systematic Review.",
+            "year": "2022",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "oregano",
+      "cn": "牛至",
+      "en": "Oregano",
+      "latin": "Origanum vulgare",
+      "family": "唇形科 Lamiaceae",
+      "tagline": "抗真菌研究最集中的精油之一，但刺激性在常用油里数一数二。",
+      "evidence": {
+        "counts": {
+          "reviews": 5,
+          "cochrane": 0,
+          "rct": 18
+        },
+        "summary": "抗真菌有专门系统评价，但人体临床剂量与安全性数据不足。",
+        "key_papers": [
+          {
+            "pmid": "39948037",
+            "title": "Origanum Essential Oil and Antifungal Activity: A Systematic Review.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "36624949",
+            "title": "Essential Oils Land Footprint: A Sustainability Meta-Analysis of Essential Oils Biopesticides.",
+            "year": "2022",
+            "kind": "sr"
+          },
+          {
+            "pmid": "35490427",
+            "title": "Native Iranian Medicinal Plants with Anti-Vaginal Infection Properties: A Systematic Review.",
+            "year": "2022",
+            "kind": "sr"
+          },
+          {
+            "pmid": "29425655",
+            "title": "Could essential oils enhance biopolymers performance for wound healing? A systematic review.",
+            "year": "2018",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "clove",
+      "cn": "丁香",
+      "en": "Clove",
+      "latin": "Syzygium aromaticum",
+      "family": "桃金娘科 Myrtaceae",
+      "tagline": "丁香酚是它的全部主角，抗菌强、刺激也强。",
+      "evidence": {
+        "counts": {
+          "reviews": 9,
+          "cochrane": 0,
+          "rct": 6
+        },
+        "summary": "丁香酚有专门的抗生物膜系统评价，机制清晰。",
+        "key_papers": [
+          {
+            "pmid": "42353254",
+            "title": "Ethnobotany, Phytochemistry, and Pharmacological Activities of Ocimum Species in Low- and Middle-Income Countries: A Systematic Review.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "40085990",
+            "title": "Dietary essential oil components: A systematic review of preclinical studies on the management of gastrointestinal diseases.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "39293727",
+            "title": "Eugenol as a promising antibiofilm and anti-quorum sensing agent: A systematic review.",
+            "year": "2024",
+            "kind": "sr"
+          },
+          {
+            "pmid": "36708221",
+            "title": "A systematic review on anti-diabetic plant essential oil compounds: Dietary sources, effects, molecular mechanisms, and safety.",
+            "year": "2024",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "fennel",
+      "cn": "茴香",
+      "en": "Fennel",
+      "latin": "Foeniculum vulgare",
+      "family": "伞形科 Apiaceae",
+      "tagline": "消化方向有传统基础，但专门的高质量综述很少。",
+      "evidence": {
+        "counts": {
+          "reviews": 3,
+          "cochrane": 0,
+          "rct": 2
+        },
+        "summary": "消化方向有传统与部分研究基础，专门综述少。",
+        "key_papers": [
+          {
+            "pmid": "36624949",
+            "title": "Essential Oils Land Footprint: A Sustainability Meta-Analysis of Essential Oils Biopesticides.",
+            "year": "2022",
+            "kind": "sr"
+          },
+          {
+            "pmid": "35490427",
+            "title": "Native Iranian Medicinal Plants with Anti-Vaginal Infection Properties: A Systematic Review.",
+            "year": "2022",
+            "kind": "sr"
+          },
+          {
+            "pmid": "31987249",
+            "title": "Western herbal medicines in the treatment of irritable bowel syndrome: A systematic review and meta-analysis.",
+            "year": "2020",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "ginger",
+      "cn": "姜",
+      "en": "Ginger",
+      "latin": "Zingiber officinale",
+      "family": "姜科 Zingiberaceae",
+      "tagline": "证据几乎都来自「吃姜」，不是「闻姜油」。",
+      "evidence": {
+        "counts": {
+          "reviews": 12,
+          "cochrane": 0,
+          "rct": 22
+        },
+        "summary": "口服姜的支持治疗证据较多，精油方向几乎空白。",
+        "key_papers": [
+          {
+            "pmid": "42613614",
+            "title": "Ginger in supportive therapy against side effects of oncological treatment: a systematic review.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "41494611",
+            "title": "Trends and multidisciplinary research of torch ginger [Etlingera elatior (Jack) R.M.Sm.]: A systematic review.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "40077632",
+            "title": "Effectiveness of Herbal Medicines with Anti-Inflammatory, Antimicrobial, and Antioxidant Properties in Improving Oral Health and Treating Gingivitis and Periodontitis: A Systematic Review.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "38538551",
+            "title": "Antimicrobial activity of essential oils against biofilms formed in dental acrylic resin: a systematic review of in vitro studies.",
+            "year": "2024",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "basil",
+      "cn": "罗勒",
+      "en": "Basil",
+      "latin": "Ocimum basilicum",
+      "family": "唇形科 Lamiaceae",
+      "tagline": "证据池里没有专门综述——这本身是个检索局限的样本。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 1
+        },
+        "summary": "证据池中 0 篇专门综述，但 Ocimum 属在民族植物学综述中有大量讨论。",
+        "key_papers": [
+          {
+            "pmid": "26665978",
+            "title": "Potential of native Thai aromatic plant extracts in antiwrinkle body creams.",
+            "year": "2015",
+            "kind": "rct"
+          }
+        ]
+      }
+    },
+    {
+      "key": "juniper",
+      "cn": "杜松",
+      "en": "Juniper",
+      "latin": "Juniperus",
+      "family": "柏科 Cupressaceae",
+      "tagline": "证据几乎都在驱虫与农业，人体芳疗研究近乎空白。",
+      "evidence": {
+        "counts": {
+          "reviews": 4,
+          "cochrane": 0,
+          "rct": 2
+        },
+        "summary": "以驱虫与农业研究为主，人体临床证据近乎空白。",
+        "key_papers": [
+          {
+            "pmid": "42680847",
+            "title": "The role of natural products in treatment of non-tuberculous mycobacterial infections: a systematic review.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "41257434",
+            "title": "Shrubs and trees as natural insect protection for grazing animals in Switzerland and the alpine region: A systematic review of in vitro, in vivo and clinical trials.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "36624949",
+            "title": "Essential Oils Land Footprint: A Sustainability Meta-Analysis of Essential Oils Biopesticides.",
+            "year": "2022",
+            "kind": "sr"
+          },
+          {
+            "pmid": "31864359",
+            "title": "Effectiveness of plant-based repellents against different Anopheles species: a systematic review.",
+            "year": "2019",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "patchouli",
+      "cn": "广藿香",
+      "en": "Patchouli",
+      "latin": "Pogostemon cablin",
+      "family": "唇形科 Lamiaceae",
+      "tagline": "证据池里 0 篇综述，现代循证几乎是空白。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "证据池中 0 篇综述，现代研究几乎空白。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "rose",
+      "cn": "玫瑰",
+      "en": "Rose",
+      "latin": "Rosa damascena",
+      "family": "蔷薇科 Rosaceae",
+      "tagline": "情绪与睡眠有专门的 Meta 分析，但价格与掺假是另一道坎。",
+      "evidence": {
+        "counts": {
+          "reviews": 6,
+          "cochrane": 0,
+          "rct": 18
+        },
+        "summary": "睡眠有专门 Meta 分析，精神障碍有临床前与 RCT 综述。",
+        "key_papers": [
+          {
+            "pmid": "41988841",
+            "title": "Effect of Aromatherapy Oil Applications on Strıae Gravidarum: A Systematic Review.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "40987424",
+            "title": "Effects of aromatherapy on sleep quality in hospitalized cardiac patients: A systematic review and meta-analysis of randomized controlled trials.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "35653142",
+            "title": "Evidence for Rosa damascena efficacy in mental disorders in preclinical animal studies and clinical trials: A systematic review.",
+            "year": "2022",
+            "kind": "sr"
+          },
+          {
+            "pmid": "34508987",
+            "title": "Effect of Rosa damascena on improvement of adults' sleep quality: a systematic review and meta-analysis of randomized controlled trials.",
+            "year": "2021",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "frankincense",
+      "cn": "乳香",
+      "en": "Frankincense",
+      "latin": "Boswellia",
+      "family": "橄榄科 Burseraceae",
+      "tagline": "传统地位极高，但现代综述只有 2 篇。",
+      "evidence": {
+        "counts": {
+          "reviews": 2,
+          "cochrane": 1,
+          "rct": 6
+        },
+        "summary": "现代综述仅 2 篇，研究多散落在草药复方而非单一精油。",
+        "key_papers": [
+          {
+            "pmid": "24848732",
+            "title": "Oral herbal therapies for treating osteoarthritis.",
+            "year": "2014",
+            "kind": "cochrane"
+          },
+          {
+            "pmid": "32936948",
+            "title": "Antimicrobial mouthwashes (gargling) and nasal sprays administered to patients with suspected or confirmed COVID-19 infection to improve patient outcomes and to protect healthcare workers treating them.",
+            "year": "2020",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "bergamot",
+      "cn": "佛手柑",
+      "en": "Bergamot",
+      "latin": "Citrus bergamia",
+      "family": "芸香科 Rutaceae",
+      "tagline": "情绪方向有特色，但光毒性是所有柑橘里最强的之一。",
+      "evidence": {
+        "counts": {
+          "reviews": 4,
+          "cochrane": 0,
+          "rct": 22
+        },
+        "summary": "有专门的临床药理与抗感染系统评价，情绪方向为辅助证据。",
+        "key_papers": [
+          {
+            "pmid": "42012462",
+            "title": "Analgesic Effects of Olfactory Stimulation: A Systematic Review of Clinical and Experimental Evidence.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "27747942",
+            "title": "Clinical Pharmacology of Citrus bergamia: A Systematic Review.",
+            "year": "2017",
+            "kind": "sr"
+          },
+          {
+            "pmid": "27218799",
+            "title": "Anti-infective potential of Citrus bergamia Risso et Poiteau (bergamot) derivatives: a systematic review.",
+            "year": "2016",
+            "kind": "sr"
+          },
+          {
+            "pmid": "26473822",
+            "title": "A Systematic Review of the Anxiolytic-Like Effects of Essential Oils in Animal Models.",
+            "year": "2015",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "chamomile",
+      "cn": "洋甘菊",
+      "en": "Chamomile",
+      "latin": "Matricaria chamomilla",
+      "family": "菊科 Asteraceae",
+      "tagline": "舒缓的经典，但专门针对精油的系统评价很少。",
+      "evidence": {
+        "counts": {
+          "reviews": 8,
+          "cochrane": 0,
+          "rct": 17
+        },
+        "summary": "舒缓与助眠有传统与初步研究，专门综述少。",
+        "key_papers": [
+          {
+            "pmid": "42012462",
+            "title": "Analgesic Effects of Olfactory Stimulation: A Systematic Review of Clinical and Experimental Evidence.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "40917836",
+            "title": "Evaluating efficacy, safety, and innovation in skin care applications of essential oils: a systematic review.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "39041491",
+            "title": "Effect of inhaled aromatherapy on sleep quality in critically ill patients: A systematic review and network meta-analysis.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "39675059",
+            "title": "Effects of aromatherapy on discomfort in mothers undergoing cesarean section: A systematic review and meta-analysis of randomized controlled trials.",
+            "year": "2025",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "ylang_ylang",
+      "cn": "依兰",
+      "en": "Ylang-ylang",
+      "latin": "Cananga odorata",
+      "family": "番荔枝科 Annonaceae",
+      "tagline": "证据池里只有 1 篇，还是讲不良反应的——这是最好的教学案例。",
+      "evidence": {
+        "counts": {
+          "reviews": 1,
+          "cochrane": 0,
+          "rct": 8
+        },
+        "summary": "证据池中仅 1 篇综述，且为不良反应研究。",
+        "key_papers": [
+          {
+            "pmid": "22936057",
+            "title": "Adverse effects of aromatherapy: a systematic review of case reports and case series.",
+            "year": "2012",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "sandalwood",
+      "cn": "檀香",
+      "en": "Sandalwood",
+      "latin": "Santalum album",
+      "family": "檀香科 Santalaceae",
+      "tagline": "文化分量极重，现代临床研究却几乎为零。",
+      "evidence": {
+        "counts": {
+          "reviews": 1,
+          "cochrane": 0,
+          "rct": 3
+        },
+        "summary": "证据池中仅 1 篇综述（植物源驱避剂），临床证据近乎空白。",
+        "key_papers": [
+          {
+            "pmid": "31864359",
+            "title": "Effectiveness of plant-based repellents against different Anopheles species: a systematic review.",
+            "year": "2019",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "lemon",
+      "cn": "柠檬",
+      "en": "Lemon",
+      "latin": "Citrus limon",
+      "family": "芸香科 Rutaceae",
+      "tagline": "恶心与情绪方向有初步研究，但光毒性要记牢。",
+      "evidence": {
+        "counts": {
+          "reviews": 4,
+          "cochrane": 0,
+          "rct": 10
+        },
+        "summary": "孕期恶心与情绪有初步综述，抗菌多为体外。",
+        "key_papers": [
+          {
+            "pmid": "42186869",
+            "title": "The Effect of Lemon Aromatherapy on Nausea and Vomiting During Pregnancy: A Systematic Review.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "40656940",
+            "title": "Neuroprotective effects of essential oils in animal models of Alzheimer's and Parkinson's disease: a systematic review.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "37325306",
+            "title": "Essential oils for treating anxiety: a systematic review of randomized controlled trials and network meta-analysis.",
+            "year": "2023",
+            "kind": "sr"
+          },
+          {
+            "pmid": "36300661",
+            "title": "Integrative and complementary practices to control nausea and vomiting in pregnant women: a systematic review.",
+            "year": "2022",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "mandarin",
+      "cn": "柑橘",
+      "en": "Mandarin",
+      "latin": "Citrus reticulata",
+      "family": "芸香科 Rutaceae",
+      "tagline": "柑橘里最温和的一种，适合入门，但证据几乎为零。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 2
+        },
+        "summary": "证据池中 0 篇综述，属 E 级。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "cypress",
+      "cn": "丝柏",
+      "en": "Cypress",
+      "latin": "Cupressus",
+      "family": "柏科 Cupressaceae",
+      "tagline": "传统用于循环，但证据池零综述——属经验型精油。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 3
+        },
+        "summary": "证据池中 0 篇综述，属 E 级。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "clary_sage",
+      "cn": "快乐鼠尾草",
+      "en": "Clary Sage",
+      "latin": "Salvia sclarea",
+      "family": "唇形科 Lamiaceae",
+      "tagline": "放松方向有研究，但孕期一定要避开。",
+      "evidence": {
+        "counts": {
+          "reviews": 1,
+          "cochrane": 0,
+          "rct": 7
+        },
+        "summary": "放松与术后疼痛方向有初步研究，证据薄但方向一致。",
+        "key_papers": [
+          {
+            "pmid": "39772374",
+            "title": "Effect of Aromatherapy for Postoperative Pain Management in the Postanesthesia Recovery Room: A Systematic Review.",
+            "year": "2025",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "star_anise",
+      "cn": "八角",
+      "en": "Star Anise",
+      "latin": "Illicium verum",
+      "family": "八角科 Illiciaceae",
+      "tagline": "证据池零综述，且极易与有毒的日本八角混淆。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 2
+        },
+        "summary": "证据池中 0 篇综述，属 E 级。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "grapefruit",
+      "cn": "葡萄柚",
+      "en": "Grapefruit",
+      "latin": "Citrus paradisi",
+      "family": "芸香科 Rutaceae",
+      "tagline": "光毒性强，还会干扰药物代谢——服药的人要特别小心。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 4
+        },
+        "summary": "证据池中 0 篇综述，属 E 级。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "wintergreen",
+      "cn": "冬青",
+      "en": "Wintergreen",
+      "latin": "Gaultheria",
+      "family": "杜鹃花科 Ericaceae",
+      "tagline": "本质是水杨酸甲酯——镇痛强，风险也高，儿童禁用。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 3
+        },
+        "summary": "证据池中 0 篇精油综述，属 E 级。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "jasmine",
+      "cn": "茉莉",
+      "en": "Jasmine",
+      "latin": "Jasminum",
+      "family": "木犀科 Oleaceae",
+      "tagline": "情绪方向有 RCT 研究，但价格与掺假是最大门槛。",
+      "evidence": {
+        "counts": {
+          "reviews": 2,
+          "cochrane": 0,
+          "rct": 2
+        },
+        "summary": "焦虑方向有 RCT 综述涉及，证据薄但方向一致。",
+        "key_papers": [
+          {
+            "pmid": "37325306",
+            "title": "Essential oils for treating anxiety: a systematic review of randomized controlled trials and network meta-analysis.",
+            "year": "2023",
+            "kind": "sr"
+          },
+          {
+            "pmid": "31864359",
+            "title": "Effectiveness of plant-based repellents against different Anopheles species: a systematic review.",
+            "year": "2019",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "vetiver",
+      "cn": "岩兰草",
+      "en": "Vetiver",
+      "latin": "Vetiveria zizanioides",
+      "family": "禾本科 Poaceae",
+      "tagline": "定香极佳，循证几乎为零——典型的「感官大于数据」精油。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 5
+        },
+        "summary": "证据池中 0 篇综述，属 E 级。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "cedarwood",
+      "cn": "雪松",
+      "en": "Cedarwood",
+      "latin": "Juniperus virginiana",
+      "family": "柏科 Cupressaceae",
+      "tagline": "镇静证据不弱，但「生发」这件事被讲得比证据大。",
+      "evidence": {
+        "counts": {
+          "reviews": 1,
+          "cochrane": 0,
+          "rct": 3
+        },
+        "summary": "镇静与促睡眠有动物与少量人体研究支持，强度中等偏弱。",
+        "key_papers": [
+          {
+            "pmid": "31864359",
+            "title": "Effectiveness of plant-based repellents against different Anopheles species: a systematic review.",
+            "year": "2019",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "copaiba",
+      "cn": "古巴香脂",
+      "en": "Copaiba",
+      "latin": "Copaifera",
+      "family": "豆科 Fabaceae",
+      "tagline": "成分谱简单到反常——半瓶以上是同一个分子。",
+      "evidence": {
+        "counts": {
+          "reviews": 1,
+          "cochrane": 0,
+          "rct": 1
+        },
+        "summary": "抗炎与抗菌有体外和动物数据，人体证据集中在牙科与皮肤，规模小。",
+        "key_papers": [
+          {
+            "pmid": "32741424",
+            "title": "Effect of essential oils on Leishmania amazonensis: a systematic review.",
+            "year": "2020",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "myrrh",
+      "cn": "没药",
+      "en": "Myrrh",
+      "latin": "Commiphora myrrha",
+      "family": "橄榄科 Burseraceae",
+      "tagline": "古代用于防腐与口腔，今天的证据主要在口腔与抗炎。",
+      "evidence": {
+        "counts": {
+          "reviews": 2,
+          "cochrane": 0,
+          "rct": 3
+        },
+        "summary": "口腔（牙龈炎、黏膜炎）证据相对集中，抗炎以体外与动物为主。",
+        "key_papers": [
+          {
+            "pmid": "40708495",
+            "title": "Ethnomedicine, Botany, Phytochemistry, Pharmacology, Pharmacokinetics, and Toxicity of Rhizoma Corydalis: A Systematic Review.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "37069833",
+            "title": "Effect of mouthwashes on gingival healing after surgical procedures: A systematic review.",
+            "year": "2023",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "marjoram",
+      "cn": "马郁兰",
+      "en": "Marjoram",
+      "latin": "Origanum majorana",
+      "family": "唇形科 Lamiaceae",
+      "tagline": "和牛至同属，但完全是另一种性格——温和、安抚、不刺激。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 7
+        },
+        "summary": "镇静与抗焦虑有小样本研究，抗菌以体外为主。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "wild_orange",
+      "cn": "甜橙",
+      "en": "Wild Orange",
+      "latin": "Citrus sinensis",
+      "family": "芸香科 Rutaceae",
+      "tagline": "气味讨喜、风险很低，也因此最容易被当成「随便用」。",
+      "evidence": {
+        "counts": {
+          "reviews": 2,
+          "cochrane": 0,
+          "rct": 15
+        },
+        "summary": "情绪与焦虑有小样本研究；抗菌以体外为主。",
+        "key_papers": [
+          {
+            "pmid": "39772374",
+            "title": "Effect of Aromatherapy for Postoperative Pain Management in the Postanesthesia Recovery Room: A Systematic Review.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "26473822",
+            "title": "A Systematic Review of the Anxiolytic-Like Effects of Essential Oils in Animal Models.",
+            "year": "2015",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "lime",
+      "cn": "青柠",
+      "en": "Lime",
+      "latin": "Citrus aurantifolia",
+      "family": "芸香科 Rutaceae",
+      "tagline": "气味比柠檬锐利，光毒性却比柠檬更需要留意。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 1
+        },
+        "summary": "单独针对青柠精油的临床研究很少，多数与柑橘属合并讨论。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "spearmint",
+      "cn": "绿薄荷",
+      "en": "Spearmint",
+      "latin": "Mentha spicata",
+      "family": "唇形科 Lamiaceae",
+      "tagline": "和薄荷长得很像，但少了薄荷醇——所以刺激性低得多。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 4
+        },
+        "summary": "没有专门针对绿薄荷的综述，只有零星 RCT。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "black_pepper",
+      "cn": "黑胡椒",
+      "en": "Black Pepper",
+      "latin": "Piper nigrum",
+      "family": "胡椒科 Piperaceae",
+      "tagline": "辛辣感来自蒈烯与胡椒碱，但两者不在同一个地方。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 5
+        },
+        "summary": "没有综述；RCT 集中在局部外用与嗅吸，样本小。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "cardamom",
+      "cn": "小豆蔻",
+      "en": "Cardamom",
+      "latin": "Elettaria cardamomum",
+      "family": "姜科 Zingiberaceae",
+      "tagline": "中文里的「豆蔻」至少指三种植物，这瓶是真正的小豆蔻。",
+      "evidence": {
+        "counts": {
+          "reviews": 1,
+          "cochrane": 0,
+          "rct": 3
+        },
+        "summary": "有 1 篇综述涉及吸入芳香疗法与化疗恶心，但那是泛精油研究。",
+        "key_papers": [
+          {
+            "pmid": "34283916",
+            "title": "Effectiveness of Inhaled Aromatherapy on Chemotherapy-Induced Nausea and Vomiting: A Systematic Review.",
+            "year": "2021",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "helichrysum",
+      "cn": "蜡菊",
+      "en": "Helichrysum",
+      "latin": "Helichrysum italicum",
+      "family": "菊科 Asteraceae",
+      "tagline": "价格常年被掺假盯上，而它对淤青的作用主要是经验而非试验。",
+      "evidence": {
+        "counts": {
+          "reviews": 1,
+          "cochrane": 0,
+          "rct": 2
+        },
+        "summary": "人体证据很薄；证据池里那 1 篇综述研究的是非结核分枝杆菌，属泛天然产物研究。",
+        "key_papers": [
+          {
+            "pmid": "42680847",
+            "title": "The role of natural products in treatment of non-tuberculous mycobacterial infections: a systematic review.",
+            "year": "2026",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "melissa",
+      "cn": "香蜂草",
+      "en": "Melissa",
+      "latin": "Melissa officinalis",
+      "family": "唇形科 Lamiaceae",
+      "tagline": "一吨叶子出不了几瓶油，所以它是掺假重灾区。",
+      "evidence": {
+        "counts": {
+          "reviews": 1,
+          "cochrane": 1,
+          "rct": 6
+        },
+        "summary": "真正针对香蜂草的是吸入抗焦虑与压力的几个小样本试验。",
+        "key_papers": [
+          {
+            "pmid": "32813272",
+            "title": "Aromatherapy for dementia.",
+            "year": "2020",
+            "kind": "cochrane"
+          }
+        ]
+      }
+    },
+    {
+      "key": "neroli",
+      "cn": "橙花",
+      "en": "Neroli",
+      "latin": "Citrus aurantium",
+      "family": "芸香科 Rutaceae",
+      "tagline": "同一棵树，果皮、叶、花做成三种油，脾气完全不同。",
+      "evidence": {
+        "counts": {
+          "reviews": 5,
+          "cochrane": 0,
+          "rct": 4
+        },
+        "summary": "有 1 篇 2026 年专门综述讨论橙花在产科与妇科的应用，其余多为孕期芳疗的泛综述。",
+        "key_papers": [
+          {
+            "pmid": "41936209",
+            "title": "Therapeutic potential of Neroli Essential Oil (Citrus aurantium) in obstetrics and gynecology: A systematic review.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "41192533",
+            "title": "Effectiveness of aromatherapy on physiological and psychological symptoms during pregnancy: a systematic review and meta-analysis.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "40085990",
+            "title": "Dietary essential oil components: A systematic review of preclinical studies on the management of gastrointestinal diseases.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "39041491",
+            "title": "Effect of inhaled aromatherapy on sleep quality in critically ill patients: A systematic review and network meta-analysis.",
+            "year": "2025",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "ginseng",
+      "cn": "人参",
+      "en": "Ginseng",
+      "latin": "Panax ginseng",
+      "family": "五加科 Araliaceae",
+      "tagline": "人参皂苷不在精油里——这是理解它的第一件事。",
+      "evidence": {
+        "counts": {
+          "reviews": 1,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "1 篇综述讨论的是植物学、传统用法与化学成分，不是临床疗效试验。",
+        "key_papers": [
+          {
+            "pmid": "36641105",
+            "title": "Botany, traditional usages, phytochemistry, pharmaceutical analysis, and pharmacology of Eleutherococcus nodiflorus (Dunn) S.Y.Hu: A systematic review.",
+            "year": "2023",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "perilla",
+      "cn": "紫苏",
+      "en": "Perilla",
+      "latin": "Perilla frutescens",
+      "family": "唇形科 Lamiaceae",
+      "tagline": "紫苏醛给了它「紫苏味」，也给了它致敏性。",
+      "evidence": {
+        "counts": {
+          "reviews": 1,
+          "cochrane": 0,
+          "rct": 1
+        },
+        "summary": "1 篇综述涉及精油作为驱蚊生物制剂，对象是多种精油，不是紫苏专属。",
+        "key_papers": [
+          {
+            "pmid": "42417796",
+            "title": "The potential of essential oils as mosquito (Diptera: Culicidae) bio-repellents: a systematic review.",
+            "year": "2026",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "schisandra",
+      "cn": "五味子",
+      "en": "Schisandra",
+      "latin": "Schisandra chinensis",
+      "family": "木兰科 Magnoliaceae",
+      "tagline": "护肝研究做的是木脂素提取物，不是这瓶油。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "证据池里没有专门针对五味子精油的综述，只有零散的化学与药理研究。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "mugwort",
+      "cn": "艾草",
+      "en": "Mugwort",
+      "latin": "Artemisia argyi",
+      "family": "菊科 Asteraceae",
+      "tagline": "侧柏酮让它成为这批里最需要警示的一种。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "证据池里没有艾草精油的专门综述；艾灸的研究不能算作精油证据。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "sieversiana",
+      "cn": "大籽蒿",
+      "en": "Sieversiana",
+      "latin": "Artemisia sieversiana",
+      "family": "菊科 Asteraceae",
+      "tagline": "蒿属植物，最大的注意点不是疗效而是过敏。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "几乎没有临床研究；1 篇综述级别的内容是化学与药理方向。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "davana",
+      "cn": "印蒿",
+      "en": "Davana",
+      "latin": "Artemisia pallens",
+      "family": "菊科 Asteraceae",
+      "tagline": "香气随人而变是真的，但「因体质而变」是营销说法。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "没有针对印蒿精油的临床综述，研究集中在成分分析。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "hinoki",
+      "cn": "日本扁柏",
+      "en": "Hinoki",
+      "latin": "Chamaecyparis obtusa",
+      "family": "柏科 Cupressaceae",
+      "tagline": "日本法律限定只能用倒木与木材边角料萃取。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 2
+        },
+        "summary": "没有针对扁柏精油的临床综述，RCT 只有零散几项。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "angelica",
+      "cn": "当归",
+      "en": "Angelica",
+      "latin": "Angelica sinensis",
+      "family": "伞形科 Apiaceae",
+      "tagline": "当归精油有明确光毒性，这一点比它的「补血」说法重要得多。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 1
+        },
+        "summary": "没有针对当归精油的临床综述；当归的研究集中在提取物与方剂。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "petitgrain",
+      "cn": "苦橙叶",
+      "en": "Petitgrain",
+      "latin": "Citrus aurantium",
+      "family": "芸香科 Rutaceae",
+      "tagline": "同一种树的第三种油，比橙花便宜、比果皮清冽。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 2
+        },
+        "summary": "没有专门综述；只有零星的情绪与抗菌研究。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "turmeric",
+      "cn": "姜黄",
+      "en": "Turmeric",
+      "latin": "Curcuma longa",
+      "family": "姜科 Zingiberaceae",
+      "tagline": "姜黄素是色素也是研究主角，但它几乎不挥发。",
+      "evidence": {
+        "counts": {
+          "reviews": 3,
+          "cochrane": 0,
+          "rct": 3
+        },
+        "summary": "3 篇综述多讨论姜黄素，而非精油本身。",
+        "key_papers": [
+          {
+            "pmid": "43051256",
+            "title": "Curcuma longa (turmeric) or its active ingredients for osteoarthritis.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "37323050",
+            "title": "Non-Chinese herbal medicines for functional dyspepsia.",
+            "year": "2023",
+            "kind": "sr"
+          },
+          {
+            "pmid": "31864359",
+            "title": "Effectiveness of plant-based repellents against different Anopheles species: a systematic review.",
+            "year": "2019",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "coriander",
+      "cn": "芫荽籽",
+      "en": "Coriander",
+      "latin": "Coriandrum sativum",
+      "family": "伞形科 Apiaceae",
+      "tagline": "同一种植物，叶和籽的气味几乎是两个人。",
+      "evidence": {
+        "counts": {
+          "reviews": 3,
+          "cochrane": 0,
+          "rct": 2
+        },
+        "summary": "3 篇综述，但对象多为芫荽提取物或食品，不是精油。",
+        "key_papers": [
+          {
+            "pmid": "41124411",
+            "title": "Antibacterial potential of Coriandrum sativum essential oil against foodborne pathogens: A systematic review.",
+            "year": "2025",
+            "kind": "sr"
+          },
+          {
+            "pmid": "35490427",
+            "title": "Native Iranian Medicinal Plants with Anti-Vaginal Infection Properties: A Systematic Review.",
+            "year": "2022",
+            "kind": "sr"
+          },
+          {
+            "pmid": "25911964",
+            "title": "Antibacterial Activity of Essential Oils and Their Isolated Constituents against Cariogenic Bacteria: A Systematic Review.",
+            "year": "2015",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "cilantro",
+      "cn": "芫荽叶",
+      "en": "Cilantro",
+      "latin": "Coriandrum sativum",
+      "family": "伞形科 Apiaceae",
+      "tagline": "「肥皂味」不是错觉，是受体基因的差异。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "没有针对芫荽叶精油的临床综述。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "blue_tansy",
+      "cn": "蓝艾菊",
+      "en": "Blue Tansy",
+      "latin": "Tanacetum annuum",
+      "family": "菊科 Asteraceae",
+      "tagline": "蓝色来自母菊薁——蒸馏时才生成的产物。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "证据池里没有针对蓝艾菊的综述，PubMed 命中仅个位数。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "manuka",
+      "cn": "麦卢卡",
+      "en": "Manuka",
+      "latin": "Leptospermum scoparium",
+      "family": "桃金娘科 Myrtaceae",
+      "tagline": "麦卢卡蜂蜜的 MGO 与麦卢卡精油不是同一批成分。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 4
+        },
+        "summary": "没有针对麦卢卡精油的综述；抗菌研究多在体外。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "litsea",
+      "cn": "山鸡椒",
+      "en": "Litsea",
+      "latin": "Litsea cubeba",
+      "family": "樟科 Lauraceae",
+      "tagline": "同样是柠檬醛，但配比不同，气味就没那么「冲」。",
+      "evidence": {
+        "counts": {
+          "reviews": 2,
+          "cochrane": 0,
+          "rct": 1
+        },
+        "summary": "2 篇综述涉及抗菌与驱虫，对象多为柠檬醛而非这支油。",
+        "key_papers": [
+          {
+            "pmid": "31864359",
+            "title": "Effectiveness of plant-based repellents against different Anopheles species: a systematic review.",
+            "year": "2019",
+            "kind": "sr"
+          },
+          {
+            "pmid": "28301985",
+            "title": "A review on phytochemical and pharmacological properties of Litsea coreana.",
+            "year": "2017",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "citronella",
+      "cn": "香茅",
+      "en": "Citronella",
+      "latin": "Cymbopogon winterianus",
+      "family": "禾本科 Poaceae",
+      "tagline": "驱蚊有效，但不是靠「杀死」蚊子。",
+      "evidence": {
+        "counts": {
+          "reviews": 3,
+          "cochrane": 0,
+          "rct": 1
+        },
+        "summary": "3 篇综述涉及驱蚊与抗菌，其中驱蚊证据相对最扎实。",
+        "key_papers": [
+          {
+            "pmid": "42285396",
+            "title": "Effectiveness of mosquito repellents for human: A systematic review of human-based studies.",
+            "year": "2026",
+            "kind": "sr"
+          },
+          {
+            "pmid": "32547391",
+            "title": "Antinociceptive Activity of Chemical Components of Essential Oils That Involves Docking Studies: A Review.",
+            "year": "2020",
+            "kind": "sr"
+          },
+          {
+            "pmid": "31864359",
+            "title": "Effectiveness of plant-based repellents against different Anopheles species: a systematic review.",
+            "year": "2019",
+            "kind": "sr"
+          }
+        ]
+      }
+    },
+    {
+      "key": "lemon_eucalyptus",
+      "cn": "柠檬桉",
+      "en": "Lemon Eucalyptus",
+      "latin": "Eucalyptus citriodora",
+      "family": "桃金娘科 Myrtaceae",
+      "tagline": "驱蚊主力是 PMD，一种由香茅醛转化来的成分。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 2
+        },
+        "summary": "无专门综述；驱蚊证据主要来自 PMD 制品，而非精油本身。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "siberian_fir",
+      "cn": "西伯利亚冷杉",
+      "en": "Siberian Fir",
+      "latin": "Abies sibirica",
+      "family": "松科 Pinaceae",
+      "tagline": "冷杉类里最「柔」的一支，含乙酸冰片酯。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 1
+        },
+        "summary": "无专门综述，RCT 仅 1 项（吸入与呼吸道相关）。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "douglas_fir",
+      "cn": "黄杉",
+      "en": "Douglas Fir",
+      "latin": "Pseudotsuga menziesii",
+      "family": "松科 Pinaceae",
+      "tagline": "名字叫 fir，属却是黄杉属。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 1
+        },
+        "summary": "无专门综述，RCT 仅 1 项，样本很小。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "arborvitae",
+      "cn": "北美香柏",
+      "en": "Arborvitae",
+      "latin": "Thuja plicata",
+      "family": "柏科 Cupressaceae",
+      "tagline": "名字温柔，化学上却是这批里最需要小心的一种。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "无临床综述；研究集中在侧柏酮的毒理与药理。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "tulsi",
+      "cn": "圣罗勒",
+      "en": "Tulsi",
+      "latin": "Ocimum tenuiflorum",
+      "family": "唇形科 Lamiaceae",
+      "tagline": "「草药之王」是传统地位，不是临床结论。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 2
+        },
+        "summary": "以体外抗菌、抗氧化和动物实验为主，人体临床研究很少。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "cassia",
+      "cn": "桂皮",
+      "en": "Cassia",
+      "latin": "Cinnamomum cassia",
+      "family": "樟科 Lauraceae",
+      "tagline": "香气更冲更甜，香豆素含量却高出几十倍。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 1
+        },
+        "summary": "抗菌方向有少量临床研究（口腔念珠菌），其余多为体外与动物实验。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "tangerine",
+      "cn": "红橘",
+      "en": "Tangerine",
+      "latin": "Citrus reticulata",
+      "family": "芸香科 Rutaceae",
+      "tagline": "气味讨喜、门槛低，但研究几乎都借了柑橘属的光。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 1
+        },
+        "summary": "红橘自身的临床研究几乎为零，可引的证据多来自柑橘属或柠檬烯。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "pink_pepper",
+      "cn": "粉红胡椒",
+      "en": "Pink Pepper",
+      "latin": "Schinus molle",
+      "family": "漆树科 Anacardiaceae",
+      "tagline": "被当成胡椒卖了几百年，其实来自漆树科。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "几乎没有人体临床研究，以动物实验和体外为主。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "celery_seed",
+      "cn": "芹菜籽",
+      "en": "Celery Seed",
+      "latin": "Apium graveolens",
+      "family": "伞形科 Apiaceae",
+      "tagline": "香气比茎叶浓十倍，光敏与通经两个风险也一起浓缩了。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "以体外与动物实验为主；痛风与关节方向只有基础研究，人体临床极少。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "spanish_sage",
+      "cn": "西班牙鼠尾草",
+      "en": "Spanish Sage",
+      "latin": "Salvia lavandulifolia",
+      "family": "唇形科 Lamiaceae",
+      "tagline": "樟脑比药鼠尾草低，但只是「更低」，不是「没有」。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "认知与情绪方向有少量小样本人体研究，其余为体外与动物。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "spikenard",
+      "cn": "甘松",
+      "en": "Spikenard",
+      "latin": "Nardostachys jatamansi",
+      "family": "忍冬科 Caprifoliaceae",
+      "tagline": "香气沉得住，但它的野生资源比它的疗效更值得关心。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "以动物实验与传统应用记载为主，人体临床几乎空白。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "guaiacwood",
+      "cn": "愈创木",
+      "en": "Guaiacwood",
+      "latin": "Bulnesia sarmientoi",
+      "family": "蒺藜科 Zygophyllaceae",
+      "tagline": "定香一流，但它是 CITES 附录 II 物种。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "几乎没有现代药理研究，主要是成分分析与传统应用记载。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "green_mandarin",
+      "cn": "绿橘",
+      "en": "Green Mandarin",
+      "latin": "Citrus nobilis",
+      "family": "芸香科 Rutaceae",
+      "tagline": "和红橘同种，只是早采了几个月，香气却完全是另一个方向。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "几乎没有专属研究，可引的多是柑橘属的共性结论。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "black_spruce",
+      "cn": "黑云杉",
+      "en": "Black Spruce",
+      "latin": "Picea mariana",
+      "family": "松科 Pinaceae",
+      "tagline": "针叶树里少见地「甜」——因为它的主成分是酯，不是蒎烯。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "几乎没有临床研究，以成分分析与民族植物学为主。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "magnolia",
+      "cn": "玉兰",
+      "en": "Magnolia",
+      "latin": "Michelia alba",
+      "family": "木兰科 Magnoliaceae",
+      "tagline": "中国的白兰花，多数不是蒸馏出来的——它是溶剂萃取的原精。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "几乎没有药理研究，只有少量成分分析。",
+        "key_papers": []
+      }
+    },
+    {
+      "key": "blue_lotus",
+      "cn": "蓝莲花",
+      "en": "Blue Lotus",
+      "latin": "Nymphaea caerulea",
+      "family": "睡莲科 Nymphaeaceae",
+      "tagline": "古埃及的图像是真的，但「神圣催眠」的说法多半是现代想象。",
+      "evidence": {
+        "counts": {
+          "reviews": 0,
+          "cochrane": 0,
+          "rct": 0
+        },
+        "summary": "几乎没有现代药理与临床研究，以民族植物学与考古解读为主。",
+        "key_papers": []
+      }
+    }
+  ]
+}

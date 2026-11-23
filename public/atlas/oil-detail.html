@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>精油档案 · 植物精油文献库</title>
+<meta name="description" content="单种精油的完整档案：故事、成分、证据、实践与安全，含伦理标注与免责声明。">
+<script src="theme-init.js?v=20261124w"></script>
+<link rel="stylesheet" href="styles.css?v=20261124v">
+</head>
+<body>
+<div class="eo-page game-page">
+
+  <div class="eo-site-head">
+    <div class="eo-site-head-inner">
+      <div class="eo-site-brand">玄牙 · 植物精油文献库</div>
+      <nav class="eo-site-tabs" aria-label="站点导航">
+        <a href="index.html">全景地图</a>
+        <a href="evidence.html">证据池</a>
+        <a href="oils.html">精油卡片</a>
+        <a href="compounds.html">成分库</a>
+        <a href="game.html">探索模式</a>
+        <a href="safety.html">安全速查</a>
+        <a href="/tools" class="eo-x2ya-back" title="返回自助工具">← 自助工具</a>
+      </nav>
+      <span class="eo-site-ver">v1.0</span>
+    </div>
+  </div>
+
+  <div class="game-loading" id="game-loading">正在载入…</div>
+
+  <div class="game-shell" id="game-shell" hidden>
+
+    <div class="game-progress">
+      <div class="gp-inner">
+        <a href="game.html" class="gp-back" title="返回探索模式">←</a>
+        <div class="gp-meta">
+          <span class="gp-oil" id="gp-oil"></span>
+          <span class="gp-chapter" id="gp-chapter"></span>
+        </div>
+        <div class="gp-track"><i id="gp-fill"></i></div>
+        <span class="gp-count" id="gp-count"></span>
+      </div>
+      <div class="gp-dots" id="gp-dots"></div>
+    </div>
+
+    <main class="game-stage">
+
+      <!-- 0 -->
+      <section class="scene" data-scene="0">
+        <div class="scene-open">
+          <div class="op-hook" id="s0-hook"></div>
+          <div class="op-name" id="s0-name"></div>
+          <div class="op-latin" id="s0-latin"></div>
+          <div class="op-keys" id="s0-keys"></div>
+          <p class="op-oneline" id="s0-oneline"></p>
+          <button class="gbtn primary big" id="start-btn">开始 →</button>
+        </div>
+      </section>
+
+      <!-- 1 闻香 -->
+      <section class="scene" data-scene="1">
+        <div class="scene-big">
+          <h2 class="big-title" id="s1-hook"></h2>
+          <button class="scent-orb" id="scent-orb" aria-label="点击闻香">
+            <span class="orb-ring"></span>
+            <span class="orb-core">点我</span>
+          </button>
+          <div class="scent-reveal" id="scent-reveal">
+            <p class="scent-note-main" id="s1-note"></p>
+            <div class="scent-tri" id="s1-tri"></div>
+            <p class="scent-feel" id="s1-feel"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 植物档案 -->
+      <section class="scene" data-scene="2">
+        <div class="scene-head">
+          <span class="sc-num">第 2 关</span>
+          <h2>它在野外长什么样</h2>
+          <p class="sc-sub">先认识植物本身，再谈它的油。</p>
+        </div>
+        <div class="botany-hero" id="botany-hero"></div>
+        <div class="botany-grid" id="botany-grid"></div>
+        <p class="botany-note" id="botany-note"></p>
+      </section>
+
+      <!-- 3 辨真伪 -->
+      <section class="scene" data-scene="3">
+        <div class="scene-head">
+          <span class="sc-num">第 2 关</span>
+          <h2>真的还是传说</h2>
+          <p class="sc-sub">每条选一个。选错也没关系。</p>
+        </div>
+        <div class="story-quiz" id="story-quiz"></div>
+      </section>
+
+      <!-- 3 成分 -->
+      <section class="scene" data-scene="4">
+        <div class="scene-head">
+          <span class="sc-num">第 3 关</span>
+          <h2>拆成分</h2>
+          <p class="sc-sub">点卡片，看它干什么。</p>
+        </div>
+        <div class="chem-deck" id="chem-deck"></div>
+      </section>
+
+      <!-- 4 综述 -->
+      <section class="scene" data-scene="5">
+        <div class="scene-head">
+          <span class="sc-num">第 4 关</span>
+          <h2>读完之后</h2>
+        </div>
+        <div class="review-flow" id="review-flow"></div>
+      </section>
+
+      <!-- 5 证据 -->
+      <section class="scene" data-scene="6">
+        <div class="scene-head">
+          <span class="sc-num">第 5 关</span>
+          <h2>证据多硬</h2>
+          <p class="sc-sub">点文献先看简介，再决定要不要去 PubMed。</p>
+        </div>
+        <div class="evi-board" id="evi-board"></div>
+        <div class="evi-papers" id="evi-papers"></div>
+      </section>
+
+      <!-- 6 实践 -->
+      <section class="scene" data-scene="7">
+        <div class="scene-head">
+          <span class="sc-num">第 6 关</span>
+          <h2>怎么用</h2>
+          <p class="sc-sub">经验建议，不是处方。</p>
+        </div>
+        <div class="practice-deck" id="practice-deck"></div>
+      </section>
+
+      <!-- 7 安全 -->
+      <section class="scene" data-scene="8">
+        <div class="scene-head">
+          <span class="sc-num">第 7 关</span>
+          <h2>测安全</h2>
+          <p class="sc-sub">三题，必读。</p>
+        </div>
+        <div class="safety-quiz" id="safety-quiz"></div>
+        <div class="safety-detail" id="safety-detail"></div>
+      </section>
+
+      <!-- 8 通关 -->
+      <section class="scene final-scene" data-scene="9">
+        <div class="final-stage">
+          <div class="fs-deco fs-deco-a"></div>
+          <div class="fs-deco fs-deco-b"></div>
+          <div class="fs-kicker">通关 · ARCHIVE UNLOCKED</div>
+          <div class="fs-badge">
+            <svg class="fs-ring" viewBox="0 0 200 200" aria-hidden="true">
+              <circle cx="100" cy="100" r="92" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+              <circle cx="100" cy="100" r="78" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+            </svg>
+            <div class="fs-badge-inner">
+              <div class="fs-name" id="fs-name"></div>
+              <div class="fs-latin" id="fs-latin"></div>
+            </div>
+          </div>
+          <div class="fs-stars" id="fs-stars"></div>
+          <div class="fs-score" id="fs-score"></div>
+          <div class="fs-stats" id="fs-stats"></div>
+          <div class="fs-actions" id="fs-actions"></div>
+        </div>
+
+        <div class="final-ethics-wrap">
+          <div class="few-head">
+            <span>必读</span>
+            <h3>伦理标注与免责声明</h3>
+          </div>
+          <div class="ethics-grid" id="final-ethics"></div>
+          <div class="disclaimer-full" id="final-disclaimer"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="game-foot">
+      <button class="gbtn ghost" id="btn-prev">← 上一关</button>
+      <div class="foot-dots" id="foot-dots"></div>
+      <button class="gbtn primary" id="btn-next">下一关</button>
+    </footer>
+
+  </div>
+
+  <!-- 文献简介弹层 -->
+  <div class="paper-modal" id="paper-modal" role="dialog" aria-modal="true">
+    <div class="pm-panel">
+      <button class="pm-close" aria-label="关闭">×</button>
+      <div class="pm-head">
+        <span class="pm-kind" id="pm-kind"></span>
+        <span class="pm-year" id="pm-year"></span>
+      </div>
+      <h3 class="pm-title" id="pm-title"></h3>
+      <div class="pm-orig" id="pm-orig"></div>
+      <div class="pm-journal" id="pm-journal"></div>
+      <div class="pm-relevance" id="pm-relevance-box">
+        <div class="pm-rel-label">它和这种精油是什么关系</div>
+        <p class="pm-rel-text" id="pm-relevance"></p>
+      </div>
+      <div class="pm-tags" id="pm-tags"></div>
+      <div class="pm-abs-label">摘要</div>
+      <div class="pm-abstract" id="pm-abstract"></div>
+      <div class="pm-note" id="pm-abstract-note"></div>
+      <div class="pm-foot">
+        <a class="gbtn ghost sm" id="pm-link" target="_blank" rel="noopener">去 PubMed 看原文 ↗</a>
+        <button class="gbtn primary sm" data-close>看完了</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="game.js?v=20261124v"></script>
+<script src="glossary.js?v=20261124v"></script>
+</body>
+</html>

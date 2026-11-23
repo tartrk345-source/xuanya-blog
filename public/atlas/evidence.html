@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>证据池 · 植物精油文献全景地图</title>
+<meta name="description" content="精油与芳香疗法证据池：系统评价、Meta 分析、RCT 与 Cochrane 评价，带 PICO 预筛与 RoB 2 红旗标记。">
+<script src="theme-init.js?v=20261124w"></script>
+<link rel="stylesheet" href="styles.css?v=20261124v">
+</head>
+<body>
+<div class="eo-page ev-page">
+
+  <!-- 全站统一头部 -->
+  <div class="eo-site-head">
+    <div class="eo-site-head-inner">
+      <div class="eo-site-brand">玄牙 · 植物精油文献库</div>
+      <nav class="eo-site-tabs" aria-label="站点导航">
+        <a href="index.html">全景地图</a>
+        <a href="evidence.html" class="active">证据池</a>
+        <a href="oils.html">精油卡片</a>
+        <a href="compounds.html">成分库</a>
+        <a href="game.html">探索模式</a>
+        <a href="safety.html">安全速查</a>
+        <a href="/tools" class="eo-x2ya-back" title="返回自助工具">← 自助工具</a>
+      </nav>
+      <span class="eo-site-ver">v1.0</span>
+    </div>
+  </div>
+
+  <header class="eo-hero ev-hero" id="top">
+    <div class="eo-hero-inner">
+      <div class="eo-brand">玄牙 · 文献地图 <a href="index.html" style="color:rgba(255,255,255,.7);margin-left:12px;font-size:12px">← 全景地图</a></div>
+      <h1>证据池</h1>
+      <p class="eo-sub">系统评价 / Meta 分析 · 随机对照试验 · Cochrane 评价 —— 带 Cochrane 方法学预筛标注。</p>
+      <div class="eo-meta" id="ev-meta"></div>
+      <nav class="eo-nav" aria-label="页面导航">
+        <a href="#prisma">筛选流程</a>
+        <a href="#stats">构成总览</a>
+        <a href="#browser">文献检索</a>
+        <a href="#about">标注说明</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="eo-main">
+
+    <div class="cn-entry">
+      <span>另有一批 <strong>819 篇中文原文期刊文献</strong>（中药挥发油的成分、药理与临床），来自 PubMed 的中文语种记录。</span>
+      <a href="cn.html">查看中文文献 →</a>
+    </div>
+
+    <!-- PRISMA -->
+    <section class="eo-section" id="prisma">
+      <div class="eo-sec-head">
+        <span class="eo-sec-num">01</span>
+        <h2>证据池构建流程</h2>
+        <p class="eo-sec-note">记录识别到纳入的数量变化。这不是传统 PRISMA 系统评价流程，而是结构化证据池的构建记录。</p>
+      </div>
+      <div class="ev-prisma" id="ev-prisma"></div>
+    </section>
+
+    <!-- 统计 -->
+    <section class="eo-section" id="stats">
+      <div class="eo-sec-head">
+        <span class="eo-sec-num">02</span>
+        <h2>构成总览</h2>
+      </div>
+      <div class="eo-kpis" id="ev-kpis"></div>
+      <div class="ev-dist">
+        <div class="ev-dist-card">
+          <h3>按证据等级（GRADE 初分）</h3>
+          <div id="ev-grade-dist"></div>
+        </div>
+        <div class="ev-dist-card">
+          <h3>按研究类型</h3>
+          <div id="ev-kind-dist"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 浏览器 -->
+    <section class="eo-section" id="browser">
+      <div class="eo-sec-head">
+        <span class="eo-sec-num">03</span>
+        <h2>文献检索</h2>
+        <p class="eo-sec-note">支持标题/摘要全文搜索，按证据等级、研究类型、精油、主题、年份、RoB 红旗筛选。</p>
+      </div>
+
+      <div class="ev-controls">
+        <div class="ev-search-row">
+          <input type="search" id="ev-search" placeholder="搜索标题、摘要、作者、期刊…" autocomplete="off">
+          <span class="ev-result-count" id="ev-count"></span>
+        </div>
+        <div class="ev-filters" id="ev-filters"></div>
+        <div class="ev-active-filters" id="ev-active"></div>
+      </div>
+
+      <div class="ev-list" id="ev-list"></div>
+      <div class="ev-more" id="ev-more-wrap"><button id="ev-more">加载更多</button></div>
+      <div class="ev-empty" id="ev-empty" hidden>没有符合条件的文献。试试清空筛选条件。</div>
+    </section>
+
+    <!-- 说明 -->
+    <section class="eo-section" id="about">
+      <div class="eo-sec-head">
+        <span class="eo-sec-num">04</span>
+        <h2>标注说明与局限</h2>
+      </div>
+      <div class="eo-callout warn">
+        <span class="eo-callout-icon">!</span>
+        <div id="ev-disclaimer"></div>
+      </div>
+      <div class="eo-method-grid" style="margin-top:18px">
+        <div class="eo-method-card">
+          <h3>PICO 与植物/主题提取</h3>
+          <ul>
+            <li>植物与主题标签基于标题+摘要的关键词规则匹配</li>
+            <li>多标签：一篇文献可同时属于多个精油和主题</li>
+            <li>未匹配到精油的文献表示摘要未明确写出具体精油名</li>
+          </ul>
+        </div>
+        <div class="eo-method-card">
+          <h3>RoB 2 红旗预筛</h3>
+          <ul>
+            <li>检查摘要是否提及：随机化、盲法、分配隐藏、失访、对照、样本量</li>
+            <li>「未报告」不等于「存在偏倚」，只提示需查全文</li>
+            <li>正式 RoB 2 需评估 5 个域，逐条人工判断</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="eo-floatnav" id="eo-floatnav" aria-label="章节快速导航"></nav>
+  <nav class="eo-bottomnav" id="eo-bottomnav" aria-label="章节快速导航"></nav>
+
+  <footer class="eo-footer">
+    <span>玄牙 · 精油证据池</span>
+    <span id="ev-foot-time"></span>
+    <a href="index.html">← 返回全景地图</a>
+  </footer>
+
+</div>
+<script src="evidence.js?v=20261124v"></script>
+<script src="glossary.js?v=20261124v"></script>
+</body>
+</html>

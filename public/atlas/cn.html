@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中文文献 · 植物精油文献库</title>
+<meta name="description" content="PubMed 收录的中文精油期刊文献 819 篇：中药挥发油的化学成分、药理与临床研究。">
+<script src="theme-init.js?v=20261124w"></script>
+<link rel="stylesheet" href="styles.css?v=20261124v">
+</head>
+<body>
+<div class="eo-page cn-page">
+
+  <div class="eo-site-head">
+    <div class="eo-site-head-inner">
+      <div class="eo-site-brand">玄牙 · 植物精油文献库</div>
+      <nav class="eo-site-tabs" aria-label="站点导航">
+        <a href="index.html">全景地图</a>
+        <a href="evidence.html" class="active">证据池</a>
+        <a href="oils.html">精油卡片</a>
+        <a href="compounds.html">成分库</a>
+        <a href="game.html">探索模式</a>
+        <a href="safety.html">安全速查</a>
+        <a href="/tools" class="eo-x2ya-back" title="返回自助工具">← 自助工具</a>
+      </nav>
+      <span class="eo-site-ver">v1.0</span>
+    </div>
+  </div>
+
+  <header class="cn-hero">
+    <div class="cn-hero-inner">
+      <div class="cn-kicker">CHINESE-LANGUAGE LITERATURE</div>
+      <h1>中文文献</h1>
+      <p class="cn-sub">来自<strong>知网（国内站）主题检索</strong>与 <strong>PubMed 中文原文期刊</strong>两个来源，共 <span id="cn-total">—</span> 篇。每条都标明来源，可点原文核对。</p>
+      <div class="cn-stats" id="cn-stats"></div>
+      <div class="cn-warn">
+        <strong>这是采样，不是全集。</strong>知网部分只跑了 6 组主题检索式的<strong>前 5 页（按相关度）</strong>：精油×失眠/焦虑/睡眠/抑郁、芳香疗法×护理、挥发油×抗菌；每组完整命中量都远大于抓到的条数。PubMed 部分只覆盖被其收录的中文期刊（以中药、药学为主，临床护理期刊多数未收录）。完整检索式与续抓方法见 <a href="cn_queries.md">cn_queries.md</a>。
+      </div>
+    </div>
+  </header>
+
+  <main class="cn-main">
+    <div class="cn-toolbar">
+      <input class="cn-search" id="cn-search" type="search" placeholder="搜题名 / 期刊 / 关键词：荆芥、肉桂、抗菌、护理…" autocomplete="off">
+    </div>
+    <div class="cn-topics" id="cn-topics"></div>
+    <div class="cn-countrow">
+      <span class="cn-count" id="cn-count"></span>
+      <span class="cn-hint">点标题展开摘要</span>
+    </div>
+
+    <div class="cn-list" id="cn-list"></div>
+    <div class="cn-more-wrap"><button class="cn-more" id="cn-more">加载更多</button></div>
+
+    <div class="cn-notes">
+      <div class="cn-note">
+        <strong>知网抓的是什么。</strong>国内站 kns.cnki.net 的<strong>已渲染结果页</strong>——题名、作者、期刊、发表时间、原文链接，逐页翻页取回。没有下载任何全文，没有处理任何验证码，也没有绕开访问限制。知网的付费全文仍需你自己的账号权限。
+      </div>
+      <div class="cn-note">
+        <strong>两个来源的格局完全不同，这本身就是结论。</strong>知网这 432 篇里<strong>临床研究占 37%</strong>（护理、随机对照、临床观察为主），成分分析只有 12%；而 PubMed 那 819 篇里<strong>成分分析占 52%</strong>，临床仅 6%。原因很清楚——PubMed 收录的中文期刊集中在中药与药学类，《全科护理》《中国当代医药》这类临床期刊根本不在其中。<strong>只查 PubMed 会系统性地漏掉中文临床证据</strong>，这是这次补检索最重要的收获。
+      </div>
+      <div class="cn-note warn">
+        <strong>「挥发油」不等于「精油」。</strong>中文文献里的挥发油常来自水蒸气蒸馏的药材提取物，浓度、杂质与市售 CPTG 级精油不同。引用时请核对提取方式与浓度，别把药材挥发油的结论直接套到瓶装精油上。
+      </div>
+      <div class="cn-note">
+        <strong>检索式可复现。</strong>本次抓取式：<code>("essential oil"[tiab] OR "essential oils"[tiab] OR aromatherapy[tiab] OR "volatile oil"[tiab]) AND chi[la]</code>。CNKI / 万方 / 维普 的对应检索式与操作步骤见 <a href="cn_queries.md">cn_queries.md</a>。
+      </div>
+    </div>
+  </main>
+
+  <footer class="eo-footer">
+    <span>玄牙 · 中文文献</span>
+    <span id="cn-time"></span>
+    <a href="evidence.html">← 返回证据池</a>
+  </footer>
+</div>
+
+<script src="cn-lit.js?v=20261124v"></script>
+<script src="glossary.js?v=20261124v"></script>
+</body>
+</html>

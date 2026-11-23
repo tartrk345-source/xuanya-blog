@@ -1,0 +1,818 @@
+{
+  "meta": {
+    "generated": "2026-11-23 22:30",
+    "author": "基于证据池 1216 篇文献的摘要通读后撰写",
+    "disclaimer": "以下综述为人工撰写的证据解读，不是系统评价本身。结论强度受证据池覆盖范围限制，专业判断请核对原文。"
+  },
+  "reviews": [
+    {
+      "key": "citrus",
+      "summary": "柑橘属研究面很广但从属属级归类，橙花等具体种有专门的妇产科证据。",
+      "landscape": "柑橘属（Citrus）在证据池里是属级标签，综述覆盖非结核分枝杆菌感染的天然产物治疗、橙花精油（Citrus aurantium）在妇产科的潜力、嗅觉镇痛、植物源驱蚊以及妊娠期芳香疗法。橙花在妇产科的系统评价是其中指向最明确的一篇。",
+      "practice": "柑橘类精油的研究常被按「属」合并，实际不同种（甜橙、柠檬、橙花、佛手柑）的成分和用途差别很大。选油时要落到具体种与化学型，不能用「柑橘精油」一概而论。",
+      "caveat": "属级归类带来的异质性很高；柑橘类普遍有光毒性问题（尤其佛手柑、柠檬冷压油），外用后日晒需避免。",
+      "featured": [
+        "41936209",
+        "42012462",
+        "41192533"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "41936209",
+          "title": "Therapeutic potential of Neroli Essential Oil (Citrus aurantium) in obstetrics and gynecology: A systematic review.",
+          "title_zh": "橙花精油（Citrus aurantium）在妇产科的治疗潜力：一项系统综述。",
+          "year": "2026",
+          "journal": "Explore (New York, N.Y.)",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "42012462",
+          "title": "Analgesic Effects of Olfactory Stimulation: A Systematic Review of Clinical and Experimental Evidence.",
+          "title_zh": "嗅觉刺激的镇痛作用：对临床和实验证据的系统综述。",
+          "year": "2026",
+          "journal": "FASEB journal : official publication of the Federation of American Societies for Experimental Biology",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "41192533",
+          "title": "Effectiveness of aromatherapy on physiological and psychological symptoms during pregnancy: a systematic review and meta-analysis.",
+          "title_zh": "",
+          "year": "2025",
+          "journal": "Complementary therapies in medicine",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "eucalyptus",
+      "summary": "驱虫与呼吸道方向证据活跃，尤加利在植物源驱避剂研究里占重要位置。",
+      "landscape": "尤加利的综述证据里，昆虫驱避是最大板块——2026 年两篇系统评价分别评估人体驱蚊效果与精油作为生物驱避剂的潜力，均遵循 PRISMA 2020。抗菌方向覆盖牙科生物膜、奶牛乳腺炎和食品防腐。此外在重症监护睡眠质量的系统评价中也常出现。",
+      "practice": "植物源驱蚊是它最有循证支撑的日常用途；呼吸道舒缓更多来自传统应用与复方经验，单独的高质量临床证据仍薄。1,8-桉叶素含量高的化学型对儿童需注意。",
+      "caveat": "驱虫研究多为实验室或短时现场试验，持续时间和防护效力与 DEET 类仍有差距。抗菌证据以体外为主。",
+      "featured": [
+        "42285396",
+        "42417796",
+        "42318382",
+        "37725398"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "42285396",
+          "title": "Effectiveness of mosquito repellents for human: A systematic review of human-based studies.",
+          "title_zh": "驱蚊剂对人类的有效性：对以人为对象的研究的系统综述。",
+          "year": "2026",
+          "journal": "Acta tropica",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "42417796",
+          "title": "The potential of essential oils as mosquito (Diptera: Culicidae) bio-repellents: a systematic review.",
+          "title_zh": "精油作为蚊子（双翅目：蚊科）生物驱避剂的潜力：系统综述。",
+          "year": "2026",
+          "journal": "Revista do Instituto de Medicina Tropical de Sao Paulo",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "42318382",
+          "title": "Effects of aromatherapy on objective physiological outcomes in adult ICU patients: a systematic review.",
+          "title_zh": "芳香疗法对成人ICU患者客观生理结局的影响：系统综述。",
+          "year": "2026",
+          "journal": "Frontiers in medicine",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "37725398",
+          "title": "Antibacterial activity of medicinal plants on the management of mastitis in dairy cows: A systematic review.",
+          "title_zh": "",
+          "year": "2023",
+          "journal": "Veterinary medicine and science",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "lemongrass",
+      "summary": "柠檬草在驱虫与抗真菌方向有系统评价支撑，食品与农业应用也是热点。",
+      "landscape": "柠檬草（Cymbopogon）的综述证据集中在驱虫（含动物体外寄生虫）、抗真菌与食品防腐。它在「精油生物农药土地足迹」这类可持续农业 Meta 分析中也有出现，反映了从医疗向农业延伸的研究趋势。",
+      "practice": "驱虫与抗菌是它的强项，但皮肤刺激性偏高，稀释浓度要比薰衣草保守。香茅醛/柠檬醛含量高的化学型尤其要注意致敏。",
+      "caveat": "临床人体研究少，多数结论来自动物或体外实验；具体种（柠檬草 vs 香茅）在文献里常混用。",
+      "featured": [
+        "36624949",
+        "31864359"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "36624949",
+          "title": "Essential Oils Land Footprint: A Sustainability Meta-Analysis of Essential Oils Biopesticides.",
+          "title_zh": "精油的土地足迹：精油生物农药的可持续性荟萃分析。",
+          "year": "2022",
+          "journal": "Frontiers in bioscience (Landmark edition)",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "31864359",
+          "title": "Effectiveness of plant-based repellents against different Anopheles species: a systematic review.",
+          "title_zh": "",
+          "year": "2019",
+          "journal": "Malaria journal",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "lavender",
+      "summary": "研究量最大的精油，证据覆盖睡眠、焦虑、术后不适；但高质量专病 RCT 仍有限。",
+      "landscape": "薰衣草是芳香疗法循证研究的主角。证据池中有 2 篇 Cochrane 评价涉及它——《芳香疗法用于痴呆》与《草药治疗腰痛》——其中痴呆那篇是芳香疗法领域最常被引用的系统评价之一。近年系统评价集中在睡眠质量（含重症患者、心脏住院患者）、术前/术后焦虑、嗅觉镇痛，以及妊娠期不适。抗菌与驱虫方向也有零星证据。",
+      "practice": "最扎实的落点是睡眠与围手术期焦虑的辅助舒缓，属于「可以建议、但不能替代标准治疗」的层级。真薰衣草（Lavandula angustifolia）与穗花薰衣草不可混为一谈，樟脑含量高的后者不适合放松用途。",
+      "caveat": "多数研究样本量小、干预方式（吸入/按摩/口服）与剂量不统一；Cochrane 评价的结论普遍是「证据不足以支持常规使用」。部分综述只是泛泛讨论精油，并非专门针对薰衣草。",
+      "featured": [
+        "32813272",
+        "25536022",
+        "34508987",
+        "39041491"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "32813272",
+          "title": "Aromatherapy for dementia.",
+          "title_zh": "",
+          "year": "2020",
+          "journal": "The Cochrane database of systematic reviews",
+          "kind": "cochrane",
+          "grade": "high"
+        },
+        {
+          "pmid": "25536022",
+          "title": "Herbal medicine for low-back pain.",
+          "title_zh": "",
+          "year": "2014",
+          "journal": "The Cochrane database of systematic reviews",
+          "kind": "cochrane",
+          "grade": "high"
+        },
+        {
+          "pmid": "34508987",
+          "title": "Effect of Rosa damascena on improvement of adults' sleep quality: a systematic review and meta-analysis of randomized controlled trials.",
+          "title_zh": "",
+          "year": "2021",
+          "journal": "Sleep medicine",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "39041491",
+          "title": "Effect of inhaled aromatherapy on sleep quality in critically ill patients: A systematic review and network meta-analysis.",
+          "title_zh": "吸入式芳香疗法对危重症患者睡眠质量的影响：系统综述和网络荟萃分析。",
+          "year": "2025",
+          "journal": "Journal of clinical nursing",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "cinnamon",
+      "summary": "肉桂的抗菌证据扎实但以体外为主，抗真菌 Meta 分析涉及甲真菌病。",
+      "landscape": "肉桂的综述集中在抗菌（牙科生物膜、食源性病原菌）与抗真菌（三种精油治疗甲真菌病的 Meta 分析）。丁香酚与肉桂醛是其核心活性成分，在抗糖尿病、肠道健康的系统评价里也常与丁香、罗勒等一起出现。",
+      "practice": "肉桂醛抗菌力强，但对黏膜和皮肤刺激性同样强，外用必须低浓度稀释；肉桂皮与肉桂叶精油成分差异大（前者丁香酚/肉桂醛高，后者丁香酚为主），不可混用。",
+      "caveat": "体外抑菌圈与 MIC 数据不能直接外推到人体；口服肉桂提取物与肉桂精油不是一回事。",
+      "featured": [
+        "35332625",
+        "37615998",
+        "38538551"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "35332625",
+          "title": "Meta-analysis of the antifungal activities of three essential oils as alternative therapies in dermatophytosis infections.",
+          "title_zh": "",
+          "year": "2022",
+          "journal": "Journal of applied microbiology",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "37615998",
+          "title": "In vitro antimicrobial activity of extracts and essential oils of Cinnamomum, Salvia, and Mentha spp. against foodborne pathogens: A meta-analysis study.",
+          "title_zh": "",
+          "year": "2023",
+          "journal": "Comprehensive reviews in food science and food safety",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "38538551",
+          "title": "Antimicrobial activity of essential oils against biofilms formed in dental acrylic resin: a systematic review of in vitro studies.",
+          "title_zh": "",
+          "year": "2024",
+          "journal": "Biofouling",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "thyme",
+      "summary": "百里香的抗真菌与畜禽饲料添加证据较集中，人体临床仍有限。",
+      "landscape": "百里香（Thymus vulgaris）在证据池里的综述涉及抗真菌（含甲真菌病 Meta 分析）、产蛋鸡饲料添加的系统评价与 Meta 分析、反刍动物驱虫，以及大西洋地区植物源驱避剂研究。百里香酚是其抗菌活性的主要来源。",
+      "practice": "百里香酚抗菌力强但刺激性也高，外用需谨慎稀释；在畜禽养殖中的应用证据反而比人体芳疗更扎实，这是芳香疗法从业者可以关注的跨领域方向。",
+      "caveat": "人体高质量 RCT 稀缺；香料 / 精油 / 提取物在文献中常不区分。",
+      "featured": [
+        "35332625",
+        "40939106"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "35332625",
+          "title": "Meta-analysis of the antifungal activities of three essential oils as alternative therapies in dermatophytosis infections.",
+          "title_zh": "",
+          "year": "2022",
+          "journal": "Journal of applied microbiology",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "40939106",
+          "title": "Effects of Dietary Thymus vulgaris on Laying Hens: A Systematic Review and Meta-Analysis of Productive Performance and Egg Quality.",
+          "title_zh": "",
+          "year": "2025",
+          "journal": "Veterinary medicine and science",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "oregano",
+      "summary": "牛至是抗真菌研究最集中的精油之一，且有专门的抗真菌系统评价。",
+      "landscape": "牛至（Origanum）的证据池里有专门的系统评价《牛至精油与抗真菌活性》，覆盖人类、动物、食品与植物病原真菌，并讨论耐药菌株与现有抗真菌药的毒性问题。此外在生物农药可持续性 Meta 分析、慢性伤口敷料与伊朗草药抗阴道感染综述中也有出现。",
+      "practice": "香芹酚与百里香酚赋予它强抗菌力，但皮肤刺激性在常用精油里属最高一档，外用务必低浓度；不适合长期大面积使用。",
+      "caveat": "抗真菌证据以体外与动物为主；人体临床剂量与安全性数据不足。",
+      "featured": [
+        "39948037",
+        "29425655",
+        "36624949"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "39948037",
+          "title": "Origanum Essential Oil and Antifungal Activity: A Systematic Review.",
+          "title_zh": "牛至精油和抗真菌活性：系统综述。",
+          "year": "2025",
+          "journal": "Chemistry & biodiversity",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "29425655",
+          "title": "Could essential oils enhance biopolymers performance for wound healing? A systematic review.",
+          "title_zh": "",
+          "year": "2018",
+          "journal": "Phytomedicine : international journal of phytotherapy and phytopharmacology",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "36624949",
+          "title": "Essential Oils Land Footprint: A Sustainability Meta-Analysis of Essential Oils Biopesticides.",
+          "title_zh": "精油的土地足迹：精油生物农药的可持续性荟萃分析。",
+          "year": "2022",
+          "journal": "Frontiers in bioscience (Landmark edition)",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "rosemary",
+      "summary": "迷迭香在抗菌、抗炎与口腔健康方向证据较多，风湿病应用有专门综述。",
+      "landscape": "迷迭香的综述覆盖植物源驱虫、食源性病原菌的群体感应抑制、口腔牙龈炎与牙周病，以及一篇《精油疗法在风湿病中的应用》系统评价。它在抗菌与抗炎两个方向都有机制与临床双重证据，是近年研究热度上升较快的精油。",
+      "practice": "在认知与头皮护理之外，迷迭香的抗炎与口腔应用是值得关注的证据方向。1,8-桉叶素化学型与樟脑化学型用途不同，前者更偏呼吸道与提振。",
+      "caveat": "风湿病综述纳入的研究异质性高；「迷迭香提取物」与精油在文献中常混用。",
+      "featured": [
+        "33865080",
+        "40077632",
+        "40784036"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "33865080",
+          "title": "Essential oil therapy in rheumatic diseases: A systematic review.",
+          "title_zh": "",
+          "year": "2021",
+          "journal": "Complementary therapies in clinical practice",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "40077632",
+          "title": "Effectiveness of Herbal Medicines with Anti-Inflammatory, Antimicrobial, and Antioxidant Properties in Improving Oral Health and Treating Gingivitis and Periodontitis: A Systematic Review.",
+          "title_zh": "",
+          "year": "2025",
+          "journal": "Nutrients",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "40784036",
+          "title": "Modulating bacterial virulence: The role of food-plant essential oils in counteracting foodborne pathogen threats - A systematic review.",
+          "title_zh": "调节细菌毒力：食用植物精油在抵御食源性病原体威胁方面的作用——系统综述。",
+          "year": "2025",
+          "journal": "International journal of food microbiology",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "basil",
+      "summary": "罗勒在证据池中没有专门的综述（0 篇），但泛罗勒属研究较多。",
+      "landscape": "罗勒（Ocimum basilicum）在证据池里没有命中综述类文献，但 Ocimum 属（如圣罗勒 O. tenuiflorum）在低收入国家的民族植物学与药理综述中有大量讨论。这说明「罗勒」这个名称在文献索引中存在分化。",
+      "practice": "罗勒在芳疗里用于提振与呼吸，但循证依据需从 Ocimum 属的 broader 研究里去挖，不能直接套用。",
+      "caveat": "0 篇综述不等于「无效」，只说明证据池的检索词没有覆盖到；这本身是个检索局限的示例。",
+      "featured": [],
+      "featured_articles": []
+    },
+    {
+      "key": "peppermint",
+      "summary": "消化与恶心方向证据突出，Cochrane 支持其在术后恶心呕吐中的辅助地位。",
+      "landscape": "薄荷是恶心呕吐领域研究最深的精油之一。Cochrane 评价《芳香疗法治疗术后恶心呕吐》直接涉及薄荷；近年系统评价延伸到化疗所致恶心呕吐（乳腺癌人群）、妊娠期生理与心理症状、术后镇痛及重症患者睡眠。薄荷脑的镇痛机制也是嗅觉镇痛综述里的常客。",
+      "practice": "以吸入方式缓解恶心、围术期与化疗期不适，是证据与实践契合度最高的场景。注意薄荷脑对婴幼儿呼吸道的刺激风险，2 岁以下不推荐近面部使用。",
+      "caveat": "化疗恶心呕吐的研究多为辅助干预，不能替代止吐药；部分系统评价把多种精油合并分析，难以拆分薄荷的独立贡献。",
+      "featured": [
+        "29523018",
+        "42564042",
+        "42012462",
+        "41192533"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "29523018",
+          "title": "Aromatherapy for treatment of postoperative nausea and vomiting.",
+          "title_zh": "",
+          "year": "2018",
+          "journal": "The Cochrane database of systematic reviews",
+          "kind": "cochrane",
+          "grade": "high"
+        },
+        {
+          "pmid": "42564042",
+          "title": "Essential oil-based interventions for chemotherapy-induced nausea and vomiting in women with breast cancer: a systematic review and meta-analysis.",
+          "title_zh": "针对乳腺癌患者化疗所致恶心和呕吐的精油干预措施：系统综述和荟萃分析。",
+          "year": "2026",
+          "journal": "Frontiers in medicine",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "42012462",
+          "title": "Analgesic Effects of Olfactory Stimulation: A Systematic Review of Clinical and Experimental Evidence.",
+          "title_zh": "嗅觉刺激的镇痛作用：对临床和实验证据的系统综述。",
+          "year": "2026",
+          "journal": "FASEB journal : official publication of the Federation of American Societies for Experimental Biology",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "41192533",
+          "title": "Effectiveness of aromatherapy on physiological and psychological symptoms during pregnancy: a systematic review and meta-analysis.",
+          "title_zh": "",
+          "year": "2025",
+          "journal": "Complementary therapies in medicine",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "tea_tree",
+      "summary": "抗菌证据最集中的精油，皮肤与口腔应用是主线，另有新兴的神经保护探索。",
+      "landscape": "茶树（互生叶白千层）的证据池里有专门针对其人体健康功效的系统评价，覆盖抗菌、抗真菌（含甲真菌病的 Meta 分析）、牙科生物膜与皮肤护理。近年出现神经保护方向的机制综述，关注其通过抑制神经炎症发挥作用的潜力。皮肤应用综述多把茶树与痤疮、特应性皮炎放在一起讨论。",
+      "practice": "External use（外用）是证据最集中的路径，尤其痤疮与浅表真菌感染。氧化后的茶树油致敏风险上升，开封后避光冷藏、不在大面积破损皮肤上使用，是实践里的基本功。",
+      "caveat": "体外抗菌数据远多于高质量临床 RCT；「神经保护」目前主要停留在临床前与机制层面，不宜对来访者做治疗性承诺。",
+      "featured": [
+        "37033604",
+        "35332625",
+        "38538551",
+        "37455134"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "37033604",
+          "title": "Efficacy and safety of Melaleuca alternifolia (tea tree) oil for human health-A systematic review of randomized controlled trials.",
+          "title_zh": "互生叶白千层（茶树）油对人类健康的功效和安全性——对随机对照试验的系统综述。",
+          "year": "2023",
+          "journal": "Frontiers in pharmacology",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "35332625",
+          "title": "Meta-analysis of the antifungal activities of three essential oils as alternative therapies in dermatophytosis infections.",
+          "title_zh": "",
+          "year": "2022",
+          "journal": "Journal of applied microbiology",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "38538551",
+          "title": "Antimicrobial activity of essential oils against biofilms formed in dental acrylic resin: a systematic review of in vitro studies.",
+          "title_zh": "",
+          "year": "2024",
+          "journal": "Biofouling",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "37455134",
+          "title": "Tea tree oil, a vibrant source of neuroprotection via neuroinflammation inhibition: a critical insight into repurposing Melaleuca alternifolia by unfolding its characteristics.",
+          "title_zh": "",
+          "year": "2023",
+          "journal": "Journal of Zhejiang University. Science. B",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "clove",
+      "summary": "丁香的核心成分丁香酚有专门的抗生物膜系统评价，抗菌证据机制清晰。",
+      "landscape": "丁香（Syzygium aromaticum）的证据以丁香酚为主线——2024 年一篇系统评价专门评估丁香酚作为抗生物膜与群体感应抑制剂的作用；另有糖尿病精油成分、肠道健康等系统评价。丁香酚同时存在于丁香与肉桂中，是两种精油抗菌活性的共同基础。",
+      "practice": "丁香酚抗菌力强，但皮肤刺激性高，牙科与外用配方都需严格控制浓度；丁香气味浓烈，少量即可。",
+      "caveat": "抗生物膜证据多为体外研究；含丁香酚精油与纯丁香酚单体不可等同。",
+      "featured": [
+        "39293727",
+        "36708221"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "39293727",
+          "title": "Eugenol as a promising antibiofilm and anti-quorum sensing agent: A systematic review.",
+          "title_zh": "",
+          "year": "2024",
+          "journal": "Microbial pathogenesis",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "36708221",
+          "title": "A systematic review on anti-diabetic plant essential oil compounds: Dietary sources, effects, molecular mechanisms, and safety.",
+          "title_zh": "抗糖尿病植物精油化合物的系统综述：膳食来源、作用、分子机制和安全性。",
+          "year": "2024",
+          "journal": "Critical reviews in food science and nutrition",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "fennel",
+      "summary": "茴香在证据池中综述很少（3 篇），主要出现在驱虫与消化系统草药研究中。",
+      "landscape": "茴香（Foeniculum vulgare）的综述涉及精油生物农药土地足迹、伊朗草药抗阴道感染，以及西方草药治疗肠易激综合征的系统评价。多为泛草药研究，专门针对茴香精油的高质量系统评价未见。",
+      "practice": "茴香在消化方向有传统应用基础，但循证主要来自口服草药提取物。雌激素敏感人群使用前需谨慎评估。",
+      "caveat": "证据池关键词归类可能漏掉以 Foeniculum 为主体的研究；结论强度低。",
+      "featured": [
+        "31987249",
+        "36624949"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "31987249",
+          "title": "Western herbal medicines in the treatment of irritable bowel syndrome: A systematic review and meta-analysis.",
+          "title_zh": "",
+          "year": "2020",
+          "journal": "Complementary therapies in medicine",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "36624949",
+          "title": "Essential Oils Land Footprint: A Sustainability Meta-Analysis of Essential Oils Biopesticides.",
+          "title_zh": "精油的土地足迹：精油生物农药的可持续性荟萃分析。",
+          "year": "2022",
+          "journal": "Frontiers in bioscience (Landmark edition)",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "juniper",
+      "summary": "杜松的综述证据集中在驱虫与植物源防护，医疗方向证据薄弱。",
+      "landscape": "杜松（Juniperus）在证据池里出现于非结核分枝杆菌天然产物治疗、放牧动物驱虫、精油生物农药土地足迹、按蚊植物源驱避剂等综述。整体偏农业与公共卫生方向，人体临床芳疗证据几乎没有。",
+      "practice": "杜松在芳疗里常用于排毒、利尿的传统配方，但这类说法缺乏系统评价支持。可以把它当作「有文化价值、循证薄弱」的精油来教。",
+      "caveat": "俯瞰整个证据池，杜松的高质量临床研究是明显空白。",
+      "featured": [
+        "31864359",
+        "36624949"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "31864359",
+          "title": "Effectiveness of plant-based repellents against different Anopheles species: a systematic review.",
+          "title_zh": "",
+          "year": "2019",
+          "journal": "Malaria journal",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "36624949",
+          "title": "Essential Oils Land Footprint: A Sustainability Meta-Analysis of Essential Oils Biopesticides.",
+          "title_zh": "精油的土地足迹：精油生物农药的可持续性荟萃分析。",
+          "year": "2022",
+          "journal": "Frontiers in bioscience (Landmark edition)",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "geranium",
+      "summary": "天竺葵在睡眠/压力与术后疼痛方向有近期综述，另有专门的化学成分综述。",
+      "landscape": "玫瑰天竺葵（Pelargonium graveolens）的证据包括夜班护士睡眠与职业压力的贝叶斯网络 Meta 分析、术后疼痛芳香疗法系统评价，以及一篇专门梳理其 GC-MS 化学成分的综述（异薄荷酮、表α-杜松醇等为主要成分）。驱蚊与止咳草药综述也有涉及。",
+      "practice": "在情绪与睡眠方向，玫瑰天竺葵常与薰衣草配伍用于放松；但证据多来自复方研究，单独效果难以拆分。花香调在心理层面的价值值得单独记录。",
+      "caveat": "化学成分综述揭示不同产地成分差异大，选油时批次与产地信息很重要。",
+      "featured": [
+        "31679416",
+        "39772374",
+        "42568559"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "31679416",
+          "title": "Studies on essential oil from rose-scented geranium, Pelargonium graveolens L'Hérit. (Geraniaceae).",
+          "title_zh": "",
+          "year": "2021",
+          "journal": "Natural product research",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "39772374",
+          "title": "Effect of Aromatherapy for Postoperative Pain Management in the Postanesthesia Recovery Room: A Systematic Review.",
+          "title_zh": "芳香疗法对麻醉后恢复室术后疼痛管理的作用：一项系统综述。",
+          "year": "2025",
+          "journal": "Journal of perianesthesia nursing : official journal of the American Society of PeriAnesthesia Nurses",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "42568559",
+          "title": "Non-pharmacological therapies for sleep and occupational stress regulation among nightshift nurses: a systematic review and Bayesian network meta-analysis based on randomized controlled trials.",
+          "title_zh": "夜班护士睡眠和职业压力调节的非药物治疗：基于随机对照试验的系统综述和贝叶斯网络荟萃分析。",
+          "year": "2026",
+          "journal": "Frontiers in public health",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "ginger",
+      "summary": "姜的证据主要来自口服姜的肿瘤支持治疗研究，精油方向的综述极少。",
+      "landscape": "证据池里姜（Zingiber / Etlingera）的综述以食用姜为主——2026 年一篇系统评价专门评估姜在肿瘤治疗副作用支持疗法中的作用；另有口腔健康、牙科生物膜等泛植物提取物研究。需要注意这些大多是「姜」作为药食两用植物的证据，不是姜精油。",
+      "practice": "姜精油在芳疗里常用于消化与暖身，但循证依据主要来自口服姜提取物研究，不能直接套用到精油。外用姜精油刺激性强，需低浓度。",
+      "caveat": "「姜」与「姜精油」的证据不可混用，这是解读文献时最容易犯的错。",
+      "featured": [
+        "42613614",
+        "40077632"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "42613614",
+          "title": "Ginger in supportive therapy against side effects of oncological treatment: a systematic review.",
+          "title_zh": "生姜在对抗肿瘤治疗副作用的辅助治疗中的作用：一项系统综述。",
+          "year": "2026",
+          "journal": "BMC complementary medicine and therapies",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "40077632",
+          "title": "Effectiveness of Herbal Medicines with Anti-Inflammatory, Antimicrobial, and Antioxidant Properties in Improving Oral Health and Treating Gingivitis and Periodontitis: A Systematic Review.",
+          "title_zh": "",
+          "year": "2025",
+          "journal": "Nutrients",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "patchouli",
+      "summary": "广藿香在证据池中没有综述（0 篇），属于研究空白。",
+      "landscape": "广藿香（Pogostemon cablin）在证据池里没有命中系统评价。它在传统 aromatherapy 中常用于皮肤与情绪，但现代循证研究几乎是空白。",
+      "practice": "广藿香的价值更多在配方中的定香与感官层面；可以诚实告诉来访者「这一方向目前缺乏系统评价」。",
+      "caveat": "0 篇综述反映的是检索覆盖范围，不等于该精油没有研究。",
+      "featured": [],
+      "featured_articles": []
+    },
+    {
+      "key": "rose",
+      "summary": "玫瑰有专门的睡眠质量 Meta 分析与精神障碍综述，是情绪方向的潜力精油。",
+      "landscape": "大马士革玫瑰（Rosa damascena）的证据包括睡眠质量的系统评价与 Meta 分析、精神障碍的临床前与 RCT 证据综述、心脏住院患者睡眠的芳香疗法系统评价，以及妊娠纹的芳香疗法综述。它在情绪与睡眠方向的证据正在积累。",
+      "practice": "玫瑰在心理层面的价值有传统与初步临床支持，适合情绪支持类配方。价格高、掺假多，选油时要看 GC-MS 报告。",
+      "caveat": "精神障碍综述纳入大量动物实验；睡眠 Meta 分析的研究间异质性需要关注。",
+      "featured": [
+        "34508987",
+        "35653142",
+        "40987424"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "34508987",
+          "title": "Effect of Rosa damascena on improvement of adults' sleep quality: a systematic review and meta-analysis of randomized controlled trials.",
+          "title_zh": "",
+          "year": "2021",
+          "journal": "Sleep medicine",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "35653142",
+          "title": "Evidence for Rosa damascena efficacy in mental disorders in preclinical animal studies and clinical trials: A systematic review.",
+          "title_zh": "",
+          "year": "2022",
+          "journal": "Phytotherapy research : PTR",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "40987424",
+          "title": "Effects of aromatherapy on sleep quality in hospitalized cardiac patients: A systematic review and meta-analysis of randomized controlled trials.",
+          "title_zh": "",
+          "year": "2025",
+          "journal": "Complementary therapies in medicine",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "frankincense",
+      "summary": "证据池里综述很少（2 篇），主要集中在抗炎相关的口服草药与口腔抗菌。",
+      "landscape": "乳香在证据池中的综述数量远少于其传统地位所暗示的。涉及的两篇分别是 Cochrane《口服草药治疗骨关节炎》与一篇 COVID-19 患者口腔抗菌漱口/鼻喷的系统评价。这说明乳香在现代循证文献里仍属边缘，研究多散落在草药复方而非单一精油。",
+      "practice": "乳香树脂的抗炎潜力有传统与机制层面的依据，但目前缺乏以乳香精油为主体的高质量临床系统评价。用于慢性炎症相关的芳疗方案时，应明确标注为经验性辅助。",
+      "caveat": "证据池的关键词归类可能漏掉以拉丁名 Boswellia serrata 或乳香酸（boswellic acid）为主体的研究；结论需谨慎。",
+      "featured": [
+        "24848732",
+        "32936948"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "24848732",
+          "title": "Oral herbal therapies for treating osteoarthritis.",
+          "title_zh": "",
+          "year": "2014",
+          "journal": "The Cochrane database of systematic reviews",
+          "kind": "cochrane",
+          "grade": "high"
+        },
+        {
+          "pmid": "32936948",
+          "title": "Antimicrobial mouthwashes (gargling) and nasal sprays administered to patients with suspected or confirmed COVID-19 infection to improve patient outcomes and to protect healthcare workers treating them.",
+          "title_zh": "",
+          "year": "2020",
+          "journal": "The Cochrane database of systematic reviews",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "bergamot",
+      "summary": "佛手柑有专门的临床药理系统评价，抗感染与抗焦虑是两大主线。",
+      "landscape": "佛手柑（Citrus bergamia）在证据池里有《临床药理学系统评价》与《抗感染潜力系统评价》两篇专门综述。前者指出佛手柑精油传统用于减压、香水与化妆品，果汁则用于高脂血症；后者讨论其在耐药背景下的抗感染潜力。此外在动物模型抗焦虑综述与嗅觉镇痛综述里也有出现。",
+      "practice": "情绪舒缓是佛手柑最有特色的方向，常与柑橘类同时使用。冷压佛手柑油的光毒性是必须提醒的安全点（呋喃香豆素），外用后避免日晒。",
+      "caveat": "临床药理综述涵盖果汁与精油，引用时要区分；抗感染多为体外证据。",
+      "featured": [
+        "27747942",
+        "27218799",
+        "26473822"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "27747942",
+          "title": "Clinical Pharmacology of Citrus bergamia: A Systematic Review.",
+          "title_zh": "",
+          "year": "2017",
+          "journal": "Phytotherapy research : PTR",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "27218799",
+          "title": "Anti-infective potential of Citrus bergamia Risso et Poiteau (bergamot) derivatives: a systematic review.",
+          "title_zh": "",
+          "year": "2016",
+          "journal": "Phytotherapy research : PTR",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "26473822",
+          "title": "A Systematic Review of the Anxiolytic-Like Effects of Essential Oils in Animal Models.",
+          "title_zh": "",
+          "year": "2015",
+          "journal": "Molecules (Basel, Switzerland)",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "chamomile",
+      "summary": "洋甘菊在皮肤、睡眠与术后不适方向有综述，但多为泛精油研究的一部分。",
+      "landscape": "洋甘菊（Matricaria）在证据池中的综述涉及嗅觉镇痛、精油护肤、重症患者吸入芳香疗法改善睡眠、剖宫产术后不适，以及植物源驱避剂。多为多精油合并研究，专门针对洋甘菊的系统评价较少。",
+      "practice": "德国洋甘菊的蓝艾菊（azulene）与母菊薁是抗炎标志物，敏感肌与舒缓配方常用；罗马洋甘菊与德国洋甘菊是不同植物，成分与用途不同，不要混用。",
+      "caveat": "专门针对洋甘菊精油的高质量系统评价仍缺；菊花类植物在文献中名称混乱。",
+      "featured": [
+        "42012462",
+        "40917836",
+        "39041491"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "42012462",
+          "title": "Analgesic Effects of Olfactory Stimulation: A Systematic Review of Clinical and Experimental Evidence.",
+          "title_zh": "嗅觉刺激的镇痛作用：对临床和实验证据的系统综述。",
+          "year": "2026",
+          "journal": "FASEB journal : official publication of the Federation of American Societies for Experimental Biology",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "40917836",
+          "title": "Evaluating efficacy, safety, and innovation in skin care applications of essential oils: a systematic review.",
+          "title_zh": "",
+          "year": "2025",
+          "journal": "Frontiers in medicine",
+          "kind": "sr",
+          "grade": "moderate"
+        },
+        {
+          "pmid": "39041491",
+          "title": "Effect of inhaled aromatherapy on sleep quality in critically ill patients: A systematic review and network meta-analysis.",
+          "title_zh": "吸入式芳香疗法对危重症患者睡眠质量的影响：系统综述和网络荟萃分析。",
+          "year": "2025",
+          "journal": "Journal of clinical nursing",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "ylang_ylang",
+      "summary": "依兰在证据池里综述极少（1 篇，且为不良反应），降压用途缺乏系统评价支持。",
+      "landscape": "依兰（Cananga odorata）的证据池里只有一篇《芳香疗法不良反应：病例报告与病例系列系统评价》提到它。这意味着关于依兰「降压」「放松」的常见说法，在证据池覆盖的综述层面几乎没有支撑。",
+      "practice": "依兰在情绪与亲密关系配方里很受欢迎，但从循证角度看属于「传统应用 > 证据」的典型。可以在教学里作为「如何使用证据分级」的案例。",
+      "caveat": "这篇综述讨论的是不良反应，不能用来证明疗效；阴性证据不等于有害。",
+      "featured": [
+        "22936057"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "22936057",
+          "title": "Adverse effects of aromatherapy: a systematic review of case reports and case series.",
+          "title_zh": "",
+          "year": "2012",
+          "journal": "The International journal of risk & safety in medicine",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    },
+    {
+      "key": "sandalwood",
+      "summary": "檀香证据池里仅 1 篇综述（植物源驱避剂），循证基础薄弱。",
+      "landscape": "檀香（Santalum album）在证据池里只出现在一篇按蚊植物源驱避剂系统评价中。作为高价、文化意义深厚的精油，它在现代临床研究中的存在感极低。",
+      "practice": "檀香在冥想、皮肤舒缓方向的价值更多来自传统与感官体验。资源稀缺与可持续性问题也是选油时必须考虑的伦理维度。",
+      "caveat": "证据池覆盖范围内几乎没有针对檀香的临床系统评价。",
+      "featured": [
+        "31864359"
+      ],
+      "featured_articles": [
+        {
+          "pmid": "31864359",
+          "title": "Effectiveness of plant-based repellents against different Anopheles species: a systematic review.",
+          "title_zh": "",
+          "year": "2019",
+          "journal": "Malaria journal",
+          "kind": "sr",
+          "grade": "moderate"
+        }
+      ]
+    }
+  ]
+}

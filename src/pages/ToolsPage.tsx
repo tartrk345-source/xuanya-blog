@@ -9,6 +9,8 @@ interface ToolMeta {
   icon: string;
   desc: string;
   meta: string[];
+  /** 指向站外静态子站（/atlas/），渲染成 <a> 而非 <Link> */
+  external?: boolean;
 }
 
 const TOOLS: ToolMeta[] = [
@@ -44,6 +46,15 @@ const TOOLS: ToolMeta[] = [
     desc: '87 题的完整量表：继发能力、原发能力、冲突反应与榜样模型，逐项剖面与逐步解读。',
     meta: ['87 题', '约 10–15 分钟', '24 项剖面'],
   },
+  {
+    to: '/atlas/index.html',
+    title: '植物精油文献库',
+    subtitle: '76 种精油的证据，摊开给你看',
+    icon: '🧴',
+    desc: '76 种单方精油、3,240 篇中英文文献，按 Cochrane 证据体系分成 A–E 五级。文献多不等于证据强——这个库把两者分开摆。',
+    meta: ['76 种', '3,240 篇', '十关探索'],
+    external: true,
+  },
 ];
 
 export default function ToolsPage() {
@@ -51,7 +62,7 @@ export default function ToolsPage() {
     <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0A0E1A] text-[#313131] dark:text-[#E2E8F0] font-['PingFang_SC','Microsoft_YaHei','Noto_Sans_SC',sans-serif] transition-colors duration-300">
       <Helmet>
         <title>自助工具 — 玄牙</title>
-        <meta name="description" content="基于积极心理治疗的自助测评工具：压力应对测评、平衡模型自评、资源图谱（十种能力）、WIPPF 威斯巴登问卷。可在线填写，即时出结果，数据不上传。" />
+        <meta name="description" content="基于积极心理治疗的自助测评工具：压力应对测评、平衡模型自评、资源图谱（十种能力）、WIPPF 威斯巴登问卷；另含植物精油文献库（76 种精油、3,240 篇中英文文献）。可在线使用，即时出结果，数据不上传。" />
         <meta property="og:title" content="自助工具 — 玄牙" />
         <meta property="og:description" content="基于积极心理治疗的自助测评工具，可在线填写并即时出结果。" />
         <meta property="og:url" content="https://www.x2ya.com/tools" />
@@ -75,33 +86,46 @@ export default function ToolsPage() {
           <p className="text-[1.05rem] text-[#6E6A7C] dark:text-[#94A3B8] max-w-[620px] leading-relaxed mb-3">
             这些量表与方法来自积极心理治疗（Positive Psychotherapy）的平衡模型。它们不是测验，没有分数高低，只是帮你把「我说不清哪里不对」变成「原来是这一块在紧」。
           </p>
-          <p className="text-sm text-[#B8B4B0] dark:text-[#94A3B8] max-w-[620px] leading-relaxed mb-12">
+          <p className="text-sm text-[#B8B4B0] dark:text-[#94A3B8] max-w-[620px] leading-relaxed mb-3">
             所有作答只留在你自己的浏览器里，不上传、不保存。
+          </p>
+          <p className="text-sm text-[#B8B4B0] dark:text-[#94A3B8] max-w-[620px] leading-relaxed mb-12">
+            最后一个「植物精油文献库」是另一个方向：不填表，用来查证据——每种精油有多少篇文献、证据强不强。
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {TOOLS.map(tool => (
-              <Link
-                key={tool.to}
-                to={tool.to}
-                className="group bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-2xl p-5 sm:p-7 hover:border-[#DA583F] hover:-translate-y-1 hover:shadow-[0_10px_36px_rgba(218,88,63,0.08)] transition-all duration-300 flex flex-col"
-              >
-                <div className="text-3xl mb-4">{tool.icon}</div>
-                <h2 className="text-lg font-bold text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] dark:group-hover:text-[#60A5FA] transition-colors mb-1">
-                  {tool.title}
-                </h2>
-                <div className="text-[13px] text-[#DA583F] dark:text-[#60A5FA] mb-3">{tool.subtitle}</div>
-                <p className="text-sm text-[#6E6A7C] dark:text-[#94A3B8] leading-relaxed mb-5 flex-1">{tool.desc}</p>
-                <div className="flex flex-wrap items-center gap-2">
-                  {tool.meta.map(m => (
-                    <span key={m} className="text-[11px] px-2.5 py-1 rounded-full bg-[#FEF3F0] dark:bg-[#0F172A] text-[#767693] dark:text-[#94A3B8]">
-                      {m}
-                    </span>
-                  ))}
-                  <span className="ml-auto text-[#B8B4B0] group-hover:text-[#DA583F] dark:group-hover:text-[#60A5FA] group-hover:translate-x-1 transition-all">→</span>
-                </div>
-              </Link>
-            ))}
+            {TOOLS.map(tool => {
+              const cardClass =
+                'group bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-2xl p-5 sm:p-7 hover:border-[#DA583F] hover:-translate-y-1 hover:shadow-[0_10px_36px_rgba(218,88,63,0.08)] transition-all duration-300 flex flex-col';
+              const inner = (
+                <>
+                  <div className="text-3xl mb-4">{tool.icon}</div>
+                  <h2 className="text-lg font-bold text-[#313131] dark:text-[#E2E8F0] group-hover:text-[#DA583F] dark:group-hover:text-[#60A5FA] transition-colors mb-1">
+                    {tool.title}
+                  </h2>
+                  <div className="text-[13px] text-[#DA583F] dark:text-[#60A5FA] mb-3">{tool.subtitle}</div>
+                  <p className="text-sm text-[#6E6A7C] dark:text-[#94A3B8] leading-relaxed mb-5 flex-1">{tool.desc}</p>
+                  <div className="flex flex-wrap items-center gap-2">
+                    {tool.meta.map(m => (
+                      <span key={m} className="text-[11px] px-2.5 py-1 rounded-full bg-[#FEF3F0] dark:bg-[#0F172A] text-[#767693] dark:text-[#94A3B8]">
+                        {m}
+                      </span>
+                    ))}
+                    <span className="ml-auto text-[#B8B4B0] group-hover:text-[#DA583F] dark:group-hover:text-[#60A5FA] group-hover:translate-x-1 transition-all">→</span>
+                  </div>
+                </>
+              );
+              // 精油库是独立静态子站，跨应用跳转必须用 <a>，走 <Link> 会 404
+              return tool.external ? (
+                <a key={tool.to} href={tool.to} className={cardClass}>
+                  {inner}
+                </a>
+              ) : (
+                <Link key={tool.to} to={tool.to} className={cardClass}>
+                  {inner}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="mt-12 p-5 rounded-2xl bg-[#FEF3F0] dark:bg-[#0F172A] border border-[#ECD8D9] dark:border-[#334155]">

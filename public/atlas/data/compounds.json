@@ -1,0 +1,3611 @@
+{
+ "meta": {
+  "generated": "2026-11-24",
+  "count": 110,
+  "oil_count": 76,
+  "oil_total": 76,
+  "note": "成分与精油的比例来自各精油档案中标注的文献范围值，随产地、化学型、批次波动，不是产品保证值。2026-11-24 新增 19 个成分，并把成分↔精油关系扩到全部 76 种。"
+ },
+ "compounds": [
+  {
+   "id": "limonene",
+   "cn": "柠檬烯",
+   "en": "d-Limonene",
+   "formula": "C10H16",
+   "cls": "单萜烯",
+   "vol": "top",
+   "effects": "抗氧化、抗炎；体外对多种细菌与真菌有抑制作用；柑橘香气的主体",
+   "mech": "上调谷胱甘肽转移酶等 II 相代谢酶；作为溶剂促进其他成分渗透",
+   "ev": "mixed",
+   "safety": "本身低毒，但**氧化产物**（柠檬烯过氧化物、香芹酮）是明确致敏原——开封久置的柑橘油致敏风险高于新鲜品",
+   "allergen": true,
+   "note": "含量高不代表功效强。柑橘果皮油中可达 90% 以上，但研究里真正做出生物效应的常是微量成分",
+   "ev_label": "人体证据有限",
+   "vol_label": "前调",
+   "oil_count": 34,
+   "oils": [
+    {
+     "key": "grapefruit",
+     "cn": "葡萄柚",
+     "ratio": "88–95%"
+    },
+    {
+     "key": "wild_orange",
+     "cn": "甜橙",
+     "ratio": "85–95%"
+    },
+    {
+     "key": "tangerine",
+     "cn": "tangerine",
+     "ratio": "85–95%"
+    },
+    {
+     "key": "mandarin",
+     "cn": "柑橘",
+     "ratio": "65–75%"
+    },
+    {
+     "key": "green_mandarin",
+     "cn": "green_mandarin",
+     "ratio": "65–80%"
+    },
+    {
+     "key": "citrus",
+     "cn": "柑橘属",
+     "ratio": "60–95%"
+    },
+    {
+     "key": "lemon",
+     "cn": "柠檬",
+     "ratio": "60–75%"
+    },
+    {
+     "key": "celery_seed",
+     "cn": "celery_seed",
+     "ratio": "60–70%"
+    },
+    {
+     "key": "lime",
+     "cn": "青柠",
+     "ratio": "40–60%"
+    },
+    {
+     "key": "bergamot",
+     "cn": "佛手柑",
+     "ratio": "30–50%"
+    },
+    {
+     "key": "litsea",
+     "cn": "山鸡椒",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "perilla",
+     "cn": "紫苏",
+     "ratio": "10–25%"
+    },
+    {
+     "key": "spearmint",
+     "cn": "绿薄荷",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "black_pepper",
+     "cn": "黑胡椒",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "pink_pepper",
+     "cn": "pink_pepper",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "frankincense",
+     "cn": "乳香",
+     "ratio": "5–20%"
+    },
+    {
+     "key": "neroli",
+     "cn": "橙花",
+     "ratio": "5–12%"
+    },
+    {
+     "key": "myrrh",
+     "cn": "没药",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "cypress",
+     "cn": "丝柏",
+     "ratio": "3–10%"
+    },
+    {
+     "key": "cardamom",
+     "cn": "小豆蔻",
+     "ratio": "3–8%"
+    },
+    {
+     "key": "hinoki",
+     "cn": "日本扁柏",
+     "ratio": "3–10%"
+    },
+    {
+     "key": "blue_tansy",
+     "cn": "蓝艾菊",
+     "ratio": "3–8%"
+    },
+    {
+     "key": "siberian_fir",
+     "cn": "西伯利亚冷杉",
+     "ratio": "3–8%"
+    },
+    {
+     "key": "douglas_fir",
+     "cn": "黄杉",
+     "ratio": "3–8%"
+    },
+    {
+     "key": "juniper",
+     "cn": "杜松",
+     "ratio": "2–12%"
+    },
+    {
+     "key": "lemon_eucalyptus",
+     "cn": "柠檬桉",
+     "ratio": "2–6%"
+    },
+    {
+     "key": "coriander",
+     "cn": "芫荽籽",
+     "ratio": "2–5%"
+    },
+    {
+     "key": "petitgrain",
+     "cn": "苦橙叶",
+     "ratio": "2–6%"
+    },
+    {
+     "key": "citronella",
+     "cn": "香茅",
+     "ratio": "2–6%"
+    },
+    {
+     "key": "star_anise",
+     "cn": "八角",
+     "ratio": "1–5%"
+    },
+    {
+     "key": "lemongrass",
+     "cn": "柠檬草",
+     "ratio": "1–5%"
+    },
+    {
+     "key": "fennel",
+     "cn": "茴香",
+     "ratio": "1–5%"
+    },
+    {
+     "key": "wintergreen",
+     "cn": "冬青",
+     "ratio": "少量"
+    },
+    {
+     "key": "eucalyptus",
+     "cn": "尤加利",
+     "ratio": "少量"
+    }
+   ]
+  },
+  {
+   "id": "alpha_pinene",
+   "cn": "α-蒎烯",
+   "en": "α-Pinene",
+   "formula": "C10H16",
+   "cls": "单萜烯",
+   "vol": "top",
+   "effects": "抗炎、抗菌；松木气味的来源",
+   "mech": "抑制 NF-κB 通路；动物研究提示有支气管舒张作用",
+   "ev": "animal",
+   "safety": "高浓度蒸气对眼与呼吸道有刺激；松节油类过敏者慎用",
+   "allergen": false,
+   "note": "针叶与树脂类精油的主成分，也是「森林浴」气味印象的主要来源",
+   "ev_label": "以动物研究为主",
+   "vol_label": "前调",
+   "oil_count": 25,
+   "oils": [
+    {
+     "key": "cypress",
+     "cn": "丝柏",
+     "ratio": "40–60%"
+    },
+    {
+     "key": "frankincense",
+     "cn": "乳香",
+     "ratio": "30–65%"
+    },
+    {
+     "key": "juniper",
+     "cn": "杜松",
+     "ratio": "30–60%"
+    },
+    {
+     "key": "hinoki",
+     "cn": "日本扁柏",
+     "ratio": "20–40%"
+    },
+    {
+     "key": "douglas_fir",
+     "cn": "黄杉",
+     "ratio": "15–25%"
+    },
+    {
+     "key": "siberian_fir",
+     "cn": "西伯利亚冷杉",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "rosemary",
+     "cn": "迷迭香",
+     "ratio": "10–25%"
+    },
+    {
+     "key": "manuka",
+     "cn": "麦卢卡",
+     "ratio": "10–25%"
+    },
+    {
+     "key": "black_spruce",
+     "cn": "black_spruce",
+     "ratio": "10–15%"
+    },
+    {
+     "key": "arborvitae",
+     "cn": "北美香柏",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "eucalyptus",
+     "cn": "尤加利",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "myrrh",
+     "cn": "没药",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "helichrysum",
+     "cn": "蜡菊",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "pink_pepper",
+     "cn": "pink_pepper",
+     "ratio": "5–10%"
+    },
+    {
+     "key": "spanish_sage",
+     "cn": "spanish_sage",
+     "ratio": "5–10%"
+    },
+    {
+     "key": "angelica",
+     "cn": "当归",
+     "ratio": "3–10%"
+    },
+    {
+     "key": "coriander",
+     "cn": "芫荽籽",
+     "ratio": "3–8%"
+    },
+    {
+     "key": "cilantro",
+     "cn": "芫荽叶",
+     "ratio": "2–6%"
+    },
+    {
+     "key": "lime",
+     "cn": "青柠",
+     "ratio": "2–6%"
+    },
+    {
+     "key": "green_mandarin",
+     "cn": "green_mandarin",
+     "ratio": "2–5%"
+    },
+    {
+     "key": "mandarin",
+     "cn": "柑橘",
+     "ratio": "1–3%"
+    },
+    {
+     "key": "tangerine",
+     "cn": "tangerine",
+     "ratio": "1–3%"
+    },
+    {
+     "key": "wintergreen",
+     "cn": "冬青",
+     "ratio": "少量"
+    },
+    {
+     "key": "wild_orange",
+     "cn": "甜橙",
+     "ratio": "0.5–2%"
+    },
+    {
+     "key": "cedarwood",
+     "cn": "雪松",
+     "ratio": "少量"
+    }
+   ]
+  },
+  {
+   "id": "gamma_terpinene",
+   "cn": "γ-萜品烯",
+   "en": "γ-Terpinene",
+   "formula": "C10H16",
+   "cls": "单萜烯",
+   "vol": "top",
+   "effects": "抗氧化（在同类单萜中较强）、抗菌",
+   "mech": "自由基清除；破坏细菌细胞膜完整性",
+   "ev": "vitro",
+   "safety": "低毒；氧化后同样产生致敏性过氧化物",
+   "allergen": false,
+   "note": "茶树、牛至、百里香里都有，但通常不是主成分",
+   "ev_label": "仅体外研究",
+   "vol_label": "前调",
+   "oil_count": 10,
+   "oils": [
+    {
+     "key": "citrus",
+     "cn": "柑橘属",
+     "ratio": "少量–20%"
+    },
+    {
+     "key": "mandarin",
+     "cn": "柑橘",
+     "ratio": "15–20%"
+    },
+    {
+     "key": "tea_tree",
+     "cn": "茶树",
+     "ratio": "10–28%"
+    },
+    {
+     "key": "lime",
+     "cn": "青柠",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "marjoram",
+     "cn": "马郁兰",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "green_mandarin",
+     "cn": "green_mandarin",
+     "ratio": "8–15%"
+    },
+    {
+     "key": "lemon",
+     "cn": "柠檬",
+     "ratio": "5–12%"
+    },
+    {
+     "key": "oregano",
+     "cn": "牛至",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "thyme",
+     "cn": "百里香",
+     "ratio": "5–20%"
+    },
+    {
+     "key": "tangerine",
+     "cn": "tangerine",
+     "ratio": "5–10%"
+    }
+   ]
+  },
+  {
+   "id": "myrcene",
+   "cn": "月桂烯",
+   "en": "Myrcene",
+   "formula": "C10H16",
+   "cls": "单萜烯",
+   "vol": "top",
+   "effects": "镇静、肌肉松弛（动物）；抗炎",
+   "mech": "动物实验提示影响中枢抑制性传递，具体靶点未明",
+   "ev": "animal",
+   "safety": "安全性记录较好；但作为萜烯仍可能氧化致敏",
+   "allergen": false,
+   "note": "啤酒花与芒果里也有——这是「精油成分并非精油独有」的好例子",
+   "ev_label": "以动物研究为主",
+   "vol_label": "前调",
+   "oil_count": 6,
+   "oils": [
+    {
+     "key": "pink_pepper",
+     "cn": "pink_pepper",
+     "ratio": "15–25%"
+    },
+    {
+     "key": "juniper",
+     "cn": "杜松",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "frankincense",
+     "cn": "乳香",
+     "ratio": "2–10%"
+    },
+    {
+     "key": "wild_orange",
+     "cn": "甜橙",
+     "ratio": "2–5%"
+    },
+    {
+     "key": "grapefruit",
+     "cn": "葡萄柚",
+     "ratio": "1–3%"
+    },
+    {
+     "key": "lemongrass",
+     "cn": "柠檬草",
+     "ratio": "少量"
+    }
+   ]
+  },
+  {
+   "id": "delta_3_carene",
+   "cn": "δ-3-蒈烯",
+   "en": "δ-3-Carene",
+   "formula": "C10H16",
+   "cls": "单萜烯",
+   "vol": "top",
+   "effects": "抗菌；是丝柏、松类特征的「干木」气味",
+   "mech": "膜毒性（非特异性）",
+   "ev": "vitro",
+   "safety": "对皮肤与黏膜有刺激性，高浓度更明显；不建议纯油使用",
+   "allergen": false,
+   "note": "丝柏里含量高，这也是丝柏气味「冲」的原因之一",
+   "ev_label": "仅体外研究",
+   "vol_label": "前调",
+   "oil_count": 4,
+   "oils": [
+    {
+     "key": "cypress",
+     "cn": "丝柏",
+     "ratio": "10–25%"
+    },
+    {
+     "key": "black_pepper",
+     "cn": "黑胡椒",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "hinoki",
+     "cn": "日本扁柏",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "douglas_fir",
+     "cn": "黄杉",
+     "ratio": "5–12%"
+    }
+   ]
+  },
+  {
+   "id": "p_cymene",
+   "cn": "对伞花烃",
+   "en": "p-Cymene",
+   "formula": "C10H14",
+   "cls": "单萜烯",
+   "vol": "top",
+   "effects": "抗炎、抗菌；可作为其他成分的增效剂",
+   "mech": "抑制 COX 通路；增强香芹酚等酚类的抗菌活性",
+   "ev": "vitro",
+   "safety": "低毒；本身也是柠檬烯的氧化产物之一",
+   "allergen": false,
+   "note": "常与百里香酚、香芹酚共存，被认为能「带一把」酚类的抗菌力",
+   "ev_label": "仅体外研究",
+   "vol_label": "前调",
+   "oil_count": 3,
+   "oils": [
+    {
+     "key": "oregano",
+     "cn": "牛至",
+     "ratio": "3–10%"
+    },
+    {
+     "key": "eucalyptus",
+     "cn": "尤加利",
+     "ratio": "少量"
+    },
+    {
+     "key": "tea_tree",
+     "cn": "茶树",
+     "ratio": "0.5–8%"
+    }
+   ]
+  },
+  {
+   "id": "beta_pinene",
+   "cn": "β-蒎烯",
+   "en": "β-Pinene",
+   "formula": "C10H16",
+   "cls": "单萜烯",
+   "vol": "top",
+   "effects": "抗炎、抗菌；与 α-蒎烯常共存",
+   "mech": "与 α-蒎烯类似，抑制炎症介质释放",
+   "ev": "vitro",
+   "safety": "同 α-蒎烯，高浓度刺激呼吸道",
+   "allergen": false,
+   "note": "α 与 β 异构体气味接近，GC-MS 上常一起报告",
+   "ev_label": "仅体外研究",
+   "vol_label": "前调",
+   "oil_count": 2,
+   "oils": [
+    {
+     "key": "douglas_fir",
+     "cn": "黄杉",
+     "ratio": "20–35%"
+    },
+    {
+     "key": "lemon",
+     "cn": "柠檬",
+     "ratio": "10–20%"
+    }
+   ]
+  },
+  {
+   "id": "beta_phellandrene",
+   "cn": "β-水芹烯",
+   "en": "β-Phellandrene",
+   "formula": "C10H16",
+   "cls": "单萜烯",
+   "vol": "top",
+   "effects": "香气成分（芹菜、胡椒样的绿意）",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "低毒；氧化后同样产生致敏性过氧化物",
+   "allergen": false,
+   "note": "当归、莳萝、芹菜籽里都能检出，是「药草绿意」的常见来源",
+   "ev_label": "仅体外研究",
+   "vol_label": "前调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "angelica",
+     "cn": "当归",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "beta_caryophyllene",
+   "cn": "β-石竹烯",
+   "en": "β-Caryophyllene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "middle",
+   "effects": "抗炎；是目前少见的、有明确分子靶点的精油成分",
+   "mech": "选择性激动大麻素 CB2 受体（不作用于 CB1，故无精神活性）",
+   "ev": "animal",
+   "safety": "安全性较好；气味偏辛辣木质感",
+   "allergen": false,
+   "note": "几乎所有精油里都能检出一点，被戏称「背景成分」。CB2 机制是它被反复研究的原因",
+   "ev_label": "以动物研究为主",
+   "vol_label": "中调",
+   "oil_count": 18,
+   "oils": [
+    {
+     "key": "copaiba",
+     "cn": "古巴香脂",
+     "ratio": "40–60%"
+    },
+    {
+     "key": "schisandra",
+     "cn": "五味子",
+     "ratio": "10–25%"
+    },
+    {
+     "key": "ginseng",
+     "cn": "人参",
+     "ratio": "10–25%"
+    },
+    {
+     "key": "melissa",
+     "cn": "香蜂草",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "black_pepper",
+     "cn": "黑胡椒",
+     "ratio": "10–25%"
+    },
+    {
+     "key": "clove",
+     "cn": "丁香",
+     "ratio": "5–12%"
+    },
+    {
+     "key": "ylang_ylang",
+     "cn": "依兰",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "davana",
+     "cn": "印蒿",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "chamomile",
+     "cn": "洋甘菊",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "blue_tansy",
+     "cn": "蓝艾菊",
+     "ratio": "5–12%"
+    },
+    {
+     "key": "tulsi",
+     "cn": "tulsi",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "sieversiana",
+     "cn": "大籽蒿",
+     "ratio": "3–8%"
+    },
+    {
+     "key": "clary_sage",
+     "cn": "快乐鼠尾草",
+     "ratio": "3–10%"
+    },
+    {
+     "key": "perilla",
+     "cn": "紫苏",
+     "ratio": "3–10%"
+    },
+    {
+     "key": "mugwort",
+     "cn": "艾草",
+     "ratio": "3–10%"
+    },
+    {
+     "key": "manuka",
+     "cn": "麦卢卡",
+     "ratio": "3–10%"
+    },
+    {
+     "key": "litsea",
+     "cn": "山鸡椒",
+     "ratio": "2–6%"
+    },
+    {
+     "key": "spearmint",
+     "cn": "绿薄荷",
+     "ratio": "1–3%"
+    }
+   ]
+  },
+  {
+   "id": "alpha_humulene",
+   "cn": "α-葎草烯",
+   "en": "α-Humulene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "middle",
+   "effects": "抗炎",
+   "mech": "与 β-石竹烯协同抑制炎症因子；结构仅差一个双键位置",
+   "ev": "vitro",
+   "safety": "低毒",
+   "allergen": false,
+   "note": "啤酒花（Humulus）得名，与石竹烯常成对出现",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 4,
+   "oils": [
+    {
+     "key": "ginseng",
+     "cn": "人参",
+     "ratio": "5–12%"
+    },
+    {
+     "key": "copaiba",
+     "cn": "古巴香脂",
+     "ratio": "5–10%"
+    },
+    {
+     "key": "davana",
+     "cn": "印蒿",
+     "ratio": "3–10%"
+    },
+    {
+     "key": "clove",
+     "cn": "丁香",
+     "ratio": "少量"
+    }
+   ]
+  },
+  {
+   "id": "alpha_cedrene",
+   "cn": "α-雪松烯",
+   "en": "α-Cedrene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "middle",
+   "effects": "香气成分（铅笔屑感的来源）；生物活性研究较少",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "低毒；倍半萜氧化较慢，但仍需避光",
+   "allergen": false,
+   "note": "雪松的「干木」印象主要由它和雪松醇共同撑起",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 2,
+   "oils": [
+    {
+     "key": "cedarwood",
+     "cn": "雪松",
+     "ratio": "20–40%"
+    },
+    {
+     "key": "schisandra",
+     "cn": "五味子",
+     "ratio": "5–12%"
+    }
+   ]
+  },
+  {
+   "id": "delta_cadinene",
+   "cn": "δ-杜松烯",
+   "en": "δ-Cadinene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "middle",
+   "effects": "香气成分；抗菌（体外）",
+   "mech": "膜作用",
+   "ev": "vitro",
+   "safety": "低毒",
+   "allergen": false,
+   "note": "名字来自杜松，但广泛存在于多种精油",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 2,
+   "oils": [
+    {
+     "key": "copaiba",
+     "cn": "古巴香脂",
+     "ratio": "3–8%"
+    },
+    {
+     "key": "hinoki",
+     "cn": "日本扁柏",
+     "ratio": "3–8%"
+    }
+   ]
+  },
+  {
+   "id": "zingiberene",
+   "cn": "姜烯",
+   "en": "Zingiberene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "middle",
+   "effects": "抗氧化、抗炎；姜的特征成分",
+   "mech": "自由基清除；抑制炎症介质",
+   "ev": "vitro",
+   "safety": "低毒",
+   "allergen": false,
+   "note": "姜精油与「吃姜」是两件事——姜烯不负责止吐，姜辣素才相关",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 2,
+   "oils": [
+    {
+     "key": "ginger",
+     "cn": "姜",
+     "ratio": "15–30%"
+    },
+    {
+     "key": "turmeric",
+     "cn": "姜黄",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "alpha_ylangene",
+   "cn": "α-依兰烯",
+   "en": "α-Ylangene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "middle",
+   "effects": "香气成分（木质与果香之间）",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "低毒",
+   "allergen": false,
+   "note": "名字来自依兰，但在五味子、黑胡椒等精油里也能检出",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "schisandra",
+     "cn": "五味子",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "alpha_copaene",
+   "cn": "α-古巴烯",
+   "en": "α-Copaene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "middle",
+   "effects": "香气成分；有昆虫引诱活性（农业上用于诱捕）",
+   "mech": "作用于昆虫嗅觉受体",
+   "ev": "vitro",
+   "safety": "低毒",
+   "allergen": false,
+   "note": "古巴香脂得名于此，也是咖啡香气里的一个关键微量成分",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "copaiba",
+     "cn": "古巴香脂",
+     "ratio": "10–20%"
+    }
+   ]
+  },
+  {
+   "id": "alpha_vetivenene",
+   "cn": "α-岩兰草烯",
+   "en": "α-Vetivenene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "base",
+   "effects": "香气成分；定香",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "低毒",
+   "allergen": false,
+   "note": "岩兰草根系经久不散的「土感」由这类倍半萜共同撑起",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "vetiver",
+     "cn": "岩兰草",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "alpha_guaiene",
+   "cn": "α-愈创木烯",
+   "en": "α-Guaiene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "base",
+   "effects": "香气成分（广藿香的土质底调）",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "低毒",
+   "allergen": false,
+   "note": "愈创木（Guaiacum）得名，是「广藿香味」的骨架之一",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "patchouli",
+     "cn": "广藿香",
+     "ratio": "10–20%"
+    }
+   ]
+  },
+  {
+   "id": "alpha_bergamotene",
+   "cn": "α-香柠檬烯",
+   "en": "α-Bergamotene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "middle",
+   "effects": "香气成分；生物活性研究少",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "未见明确风险报告",
+   "allergen": false,
+   "note": "佛手柑得名。这类「只在 GC-MS 里出现的名字」不必强行赋予功效",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "sandalwood",
+     "cn": "檀香",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "beta_cedrene",
+   "cn": "β-雪松烯",
+   "en": "β-Cedrene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "middle",
+   "effects": "香气成分",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "低毒",
+   "allergen": false,
+   "note": "与 α 异构体共存，气味略更干爽",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "cedarwood",
+     "cn": "雪松",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "gamma_curcumene",
+   "cn": "γ-姜黄烯",
+   "en": "γ-Curcumene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "base",
+   "effects": "香气成分（蜡菊的干草感）",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "低毒",
+   "allergen": false,
+   "note": "名字来自姜黄，但在蜡菊里含量更高",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "helichrysum",
+     "cn": "蜡菊",
+     "ratio": "10–20%"
+    }
+   ]
+  },
+  {
+   "id": "curcumene",
+   "cn": "姜黄烯",
+   "en": "α-Curcumene",
+   "formula": "C15H22",
+   "cls": "倍半萜烯",
+   "vol": "middle",
+   "effects": "香气成分；抗氧化（体外）",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "未见明确风险报告",
+   "allergen": false,
+   "note": "名字来自姜黄，但在姜精油里也有",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "ginger",
+     "cn": "姜",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "patchoulene",
+   "cn": "广藿香烯",
+   "en": "Patchoulene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "base",
+   "effects": "香气成分；定香",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "低毒",
+   "allergen": false,
+   "note": "挥发极慢，所以广藿香能留香数日",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "patchouli",
+     "cn": "广藿香",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "santene",
+   "cn": "檀香萜烯",
+   "en": "Santene",
+   "cls": "倍半萜烯",
+   "vol": "middle",
+   "effects": "香气成分",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "未见明确风险报告",
+   "allergen": false,
+   "note": "含量很低，但对檀香的「木质底」有贡献",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "sandalwood",
+     "cn": "檀香",
+     "ratio": "少量"
+    }
+   ]
+  },
+  {
+   "id": "linalool",
+   "cn": "芳樟醇",
+   "en": "Linalool",
+   "formula": "C10H18O",
+   "cls": "单萜醇",
+   "vol": "middle",
+   "effects": "镇静、抗焦虑（动物与少量人体研究）；抗菌；花香主体",
+   "mech": "动物研究提示抑制谷氨酸能传递、影响 GABA_A 受体功能；人体靶点仍未确立",
+   "ev": "mixed",
+   "safety": "**明确致敏原**，且氧化产物（芳樟醇过氧化物）致敏性显著强于原体——存放不当的旧油比新油更容易致敏",
+   "allergen": true,
+   "note": "薰衣草、玫瑰、天竺葵、甜罗勒、芫荽共有。它是「花香调」最通用的一块砖",
+   "ev_label": "人体证据有限",
+   "vol_label": "中调",
+   "oil_count": 21,
+   "oils": [
+    {
+     "key": "coriander",
+     "cn": "芫荽籽",
+     "ratio": "60–80%"
+    },
+    {
+     "key": "basil",
+     "cn": "罗勒",
+     "ratio": "40–60%（甜罗勒）"
+    },
+    {
+     "key": "neroli",
+     "cn": "橙花",
+     "ratio": "30–40%"
+    },
+    {
+     "key": "petitgrain",
+     "cn": "苦橙叶",
+     "ratio": "20–30%"
+    },
+    {
+     "key": "lavender",
+     "cn": "薰衣草",
+     "ratio": "20–49%"
+    },
+    {
+     "key": "magnolia",
+     "cn": "magnolia",
+     "ratio": "20–35%"
+    },
+    {
+     "key": "ylang_ylang",
+     "cn": "依兰",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "clary_sage",
+     "cn": "快乐鼠尾草",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "jasmine",
+     "cn": "茉莉",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "bergamot",
+     "cn": "佛手柑",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "geranium",
+     "cn": "天竺葵",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "cilantro",
+     "cn": "芫荽叶",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "marjoram",
+     "cn": "马郁兰",
+     "ratio": "3–10%"
+    },
+    {
+     "key": "davana",
+     "cn": "印蒿",
+     "ratio": "1–5%"
+    },
+    {
+     "key": "litsea",
+     "cn": "山鸡椒",
+     "ratio": "1–4%"
+    },
+    {
+     "key": "rose",
+     "cn": "玫瑰",
+     "ratio": "1–5%"
+    },
+    {
+     "key": "melissa",
+     "cn": "香蜂草",
+     "ratio": "1–5%"
+    },
+    {
+     "key": "star_anise",
+     "cn": "八角",
+     "ratio": "少量"
+    },
+    {
+     "key": "thyme",
+     "cn": "百里香",
+     "ratio": "化学型差异大"
+    },
+    {
+     "key": "cinnamon",
+     "cn": "肉桂",
+     "ratio": "少量"
+    },
+    {
+     "key": "blue_lotus",
+     "cn": "blue_lotus",
+     "ratio": "少量"
+    }
+   ]
+  },
+  {
+   "id": "alpha_terpineol",
+   "cn": "α-松油醇",
+   "en": "α-Terpineol",
+   "formula": "C10H18O",
+   "cls": "单萜醇",
+   "vol": "middle",
+   "effects": "抗菌；镇静（动物）；丁香与松木气味的中间调",
+   "mech": "膜毒性；动物研究提示中枢抑制",
+   "ev": "animal",
+   "safety": "刺激性较低，但仍有致敏报告",
+   "allergen": false,
+   "note": "茶树、丝柏、快乐鼠尾草、尤加利里都有；常是「气味比成分更有存在感」的例子",
+   "ev_label": "以动物研究为主",
+   "vol_label": "中调",
+   "oil_count": 4,
+   "oils": [
+    {
+     "key": "cardamom",
+     "cn": "小豆蔻",
+     "ratio": "5–10%"
+    },
+    {
+     "key": "petitgrain",
+     "cn": "苦橙叶",
+     "ratio": "3–8%"
+    },
+    {
+     "key": "cypress",
+     "cn": "丝柏",
+     "ratio": "1–5%"
+    },
+    {
+     "key": "clary_sage",
+     "cn": "快乐鼠尾草",
+     "ratio": "1–5%"
+    }
+   ]
+  },
+  {
+   "id": "geraniol",
+   "cn": "香叶醇",
+   "en": "Geraniol",
+   "formula": "C10H18O",
+   "cls": "单萜醇",
+   "vol": "middle",
+   "effects": "抗菌、抗炎；玫瑰样的甜花香",
+   "mech": "破坏微生物膜；抑制炎症介质",
+   "ev": "vitro",
+   "safety": "**明确致敏原**，是玫瑰类精油接触性皮炎的主要元凶之一",
+   "allergen": true,
+   "note": "玫瑰、天竺葵、香茅、柠檬草里都有",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 4,
+   "oils": [
+    {
+     "key": "rose",
+     "cn": "玫瑰",
+     "ratio": "15–25%"
+    },
+    {
+     "key": "citronella",
+     "cn": "香茅",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "geranium",
+     "cn": "天竺葵",
+     "ratio": "5–20%"
+    },
+    {
+     "key": "lemongrass",
+     "cn": "柠檬草",
+     "ratio": "3–8%"
+    }
+   ]
+  },
+  {
+   "id": "citronellol",
+   "cn": "香茅醇",
+   "en": "Citronellol",
+   "formula": "C10H20O",
+   "cls": "单萜醇",
+   "vol": "middle",
+   "effects": "抗菌；驱蚊（弱于香茅醛）",
+   "mech": "膜作用；昆虫嗅觉受体干扰",
+   "ev": "vitro",
+   "safety": "致敏原之一，虽比香叶醇温和",
+   "allergen": true,
+   "note": "玫瑰与天竺葵的「甜」主要来自它和香叶醇的配比",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 4,
+   "oils": [
+    {
+     "key": "geranium",
+     "cn": "天竺葵",
+     "ratio": "20–40%"
+    },
+    {
+     "key": "rose",
+     "cn": "玫瑰",
+     "ratio": "20–40%"
+    },
+    {
+     "key": "citronella",
+     "cn": "香茅",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "lemon_eucalyptus",
+     "cn": "柠檬桉",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "terpinen_4_ol",
+   "cn": "萜品烯-4-醇",
+   "en": "Terpinen-4-ol",
+   "formula": "C10H18O",
+   "cls": "单萜醇",
+   "vol": "middle",
+   "effects": "抗菌（茶树的主力）、抗炎；相对温和",
+   "mech": "破坏微生物细胞膜通透性；抑制炎症因子释放",
+   "ev": "mixed",
+   "safety": "在茶树油中属较温和组分，但茶树油整体仍是致敏物（氧化后尤甚）",
+   "allergen": false,
+   "note": "ISO 4730 要求茶树油中 ≥30%——这是少见的、有国际标准规定含量的成分",
+   "ev_label": "人体证据有限",
+   "vol_label": "中调",
+   "oil_count": 3,
+   "oils": [
+    {
+     "key": "tea_tree",
+     "cn": "茶树",
+     "ratio": "≥30%"
+    },
+    {
+     "key": "marjoram",
+     "cn": "马郁兰",
+     "ratio": "15–30%"
+    },
+    {
+     "key": "juniper",
+     "cn": "杜松",
+     "ratio": "1–6%"
+    }
+   ]
+  },
+  {
+   "id": "sabinene_hydrate",
+   "cn": "水合桧烯",
+   "en": "Sabinene hydrate",
+   "formula": "C10H18O",
+   "cls": "单萜醇",
+   "vol": "middle",
+   "effects": "香气成分（马郁兰的木质感）；温和抗菌",
+   "mech": "膜作用；醇类的中枢抑制倾向",
+   "ev": "vitro",
+   "safety": "刺激性低",
+   "allergen": false,
+   "note": "马郁兰区别于牛至的关键成分之一，气味偏「干草」",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "marjoram",
+     "cn": "马郁兰",
+     "ratio": "10–20%"
+    }
+   ]
+  },
+  {
+   "id": "menthol",
+   "cn": "薄荷醇",
+   "en": "Menthol",
+   "formula": "C10H20O",
+   "cls": "单萜醇",
+   "vol": "middle",
+   "effects": "清凉感、外用镇痛、促渗透；薄荷脑的核心",
+   "mech": "激动 TRPM8 冷感受体；抑制感觉神经传导；促进其他成分经皮吸收",
+   "ev": "human",
+   "safety": "**婴幼儿面部与鼻周禁用**——可致喉痉挛与呼吸暂停；胃食管反流者可能加重；纯薄荷醇刺激性强",
+   "allergen": false,
+   "note": "它的「疗效」很大程度上就是「凉」——TRPM8 被激活，不是真的降温",
+   "ev_label": "有人体证据",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "peppermint",
+     "cn": "薄荷",
+     "ratio": "30–55%"
+    }
+   ]
+  },
+  {
+   "id": "alpha_santalol",
+   "cn": "α-檀香醇",
+   "en": "α-Santalol",
+   "formula": "C15H24O",
+   "cls": "倍半萜醇",
+   "vol": "base",
+   "effects": "皮肤护理、抗炎；嗅觉研究提示与警觉/平静相关（结果不一致）",
+   "mech": "未完全明确；有皮肤酪氨酸酶与炎症通路相关研究",
+   "ev": "mixed",
+   "safety": "低毒；真正风险来自**来源与掺假**，而非成分本身",
+   "allergen": false,
+   "note": "印度檀香（Santalum album）标志成分，也是濒危管控对象",
+   "ev_label": "人体证据有限",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "sandalwood",
+     "cn": "檀香",
+     "ratio": "40–70%"
+    }
+   ]
+  },
+  {
+   "id": "alpha_bisabolol",
+   "cn": "α-红没药醇",
+   "en": "α-Bisabolol",
+   "formula": "C15H26O",
+   "cls": "倍半萜醇",
+   "vol": "base",
+   "effects": "抗炎、促伤口愈合；德国洋甘菊的核心活性之一",
+   "mech": "抑制 COX 与 5-脂氧合酶通路；抑制炎症因子",
+   "ev": "mixed",
+   "safety": "刺激性很低，是少数常用于敏感肌配方的精油成分",
+   "allergen": false,
+   "note": "化妆品里常见的是合成或从 candeia 木提取的版本，未必来自洋甘菊",
+   "ev_label": "人体证据有限",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "chamomile",
+     "cn": "洋甘菊",
+     "ratio": "10–25%（德国）"
+    }
+   ]
+  },
+  {
+   "id": "beta_santalol",
+   "cn": "β-檀香醇",
+   "en": "β-Santalol",
+   "formula": "C15H24O",
+   "cls": "倍半萜醇",
+   "vol": "base",
+   "effects": "香气骨架；抗菌（体外）",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "低毒",
+   "allergen": false,
+   "note": "与 α 异构体共同构成檀香「奶木」质感",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "sandalwood",
+     "cn": "檀香",
+     "ratio": "15–25%"
+    }
+   ]
+  },
+  {
+   "id": "khusimol",
+   "cn": "岩兰草醇",
+   "en": "Khusimol",
+   "formula": "C15H26O",
+   "cls": "倍半萜醇",
+   "vol": "base",
+   "effects": "定香；抗炎（体外）",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "低毒",
+   "allergen": false,
+   "note": "岩兰草根系的「泥土甜香」主体，也是香水业最常用的定香剂之一",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "vetiver",
+     "cn": "岩兰草",
+     "ratio": "30–45%"
+    }
+   ]
+  },
+  {
+   "id": "patchoulol",
+   "cn": "广藿香醇",
+   "en": "Patchoulol",
+   "formula": "C15H26O",
+   "cls": "倍半萜醇",
+   "vol": "base",
+   "effects": "定香；抗炎（体外）",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "低毒；气味极持久",
+   "allergen": false,
+   "note": "广藿香「越陈越香」的化学基础——它挥发极慢",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "patchouli",
+     "cn": "广藿香",
+     "ratio": "30–45%"
+    }
+   ]
+  },
+  {
+   "id": "cedrol",
+   "cn": "雪松醇",
+   "en": "Cedrol",
+   "formula": "C15H26O",
+   "cls": "倍半萜醇",
+   "vol": "base",
+   "effects": "镇静（动物嗅吸研究）；香气定着",
+   "mech": "动物研究提示延长睡眠时间、降低活动量，机制未确立",
+   "ev": "animal",
+   "safety": "低毒；有轻度皮肤刺激报告",
+   "allergen": false,
+   "note": "雪松被研究最多的成分，也是「木质调留香」的关键",
+   "ev_label": "以动物研究为主",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "cedarwood",
+     "cn": "雪松",
+     "ratio": "15–25%"
+    }
+   ]
+  },
+  {
+   "id": "phytol",
+   "cn": "植醇",
+   "en": "Phytol",
+   "formula": "C20H40O",
+   "cls": "二萜醇",
+   "vol": "base",
+   "effects": "抗炎（体外）；叶绿素分解产物",
+   "mech": "抑制炎症通路；结构与维生素 E 侧链相关",
+   "ev": "vitro",
+   "safety": "低毒",
+   "allergen": false,
+   "note": "它不是「精油的活性成分」，更像是蒸馏时带出的植物残余——茉莉里检出说明原料新鲜度",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "jasmine",
+     "cn": "茉莉",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "trans_anethole",
+   "cn": "反式茴香脑",
+   "en": "trans-Anethole",
+   "formula": "C10H12O",
+   "cls": "单萜醇醚",
+   "vol": "middle",
+   "effects": "抗菌；雌激素样活性（体外，弱）；茴香与八角的甜味主体",
+   "mech": "结构与雌激素部分相似，体外可结合雌激素受体，但体内意义不明",
+   "ev": "vitro",
+   "safety": "高剂量有肝毒性报告（动物）；**孕期避免**；与草蒿脑常共存，后者争议更大",
+   "allergen": false,
+   "note": "「茴香催乳」的传统用法常被归给它，但证据很薄",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 2,
+   "oils": [
+    {
+     "key": "star_anise",
+     "cn": "八角",
+     "ratio": "80–90%"
+    },
+    {
+     "key": "fennel",
+     "cn": "茴香",
+     "ratio": "50–80%"
+    }
+   ]
+  },
+  {
+   "id": "estragole",
+   "cn": "草蒿脑",
+   "en": "Estragole (Methyl chavicol)",
+   "formula": "C10H12O",
+   "cls": "苯丙素醚",
+   "vol": "middle",
+   "effects": "香气成分（罗勒、茴香的「茴香脑样」甜味）",
+   "mech": "可经代谢活化为具有基因毒性的中间体（1'-羟基烯丙苯）",
+   "ev": "animal",
+   "safety": "**高剂量动物实验中具致癌性**，人体意义未定但按预防原则处理；孕期与婴幼儿避免；含它的精油不宜长期大量使用",
+   "allergen": false,
+   "note": "这是「天然不等于安全」最典型的例子——争议来自代谢活化，不是它本身",
+   "ev_label": "以动物研究为主",
+   "vol_label": "中调",
+   "oil_count": 4,
+   "oils": [
+    {
+     "key": "star_anise",
+     "cn": "八角",
+     "ratio": "1–10%"
+    },
+    {
+     "key": "basil",
+     "cn": "罗勒",
+     "ratio": "1–15%（品种差异）"
+    },
+    {
+     "key": "fennel",
+     "cn": "茴香",
+     "ratio": "1–10%"
+    },
+    {
+     "key": "tulsi",
+     "cn": "tulsi",
+     "ratio": "0–30%"
+    }
+   ]
+  },
+  {
+   "id": "linalyl_acetate",
+   "cn": "乙酸芳樟酯",
+   "en": "Linalyl acetate",
+   "formula": "C12H20O2",
+   "cls": "酯",
+   "vol": "middle",
+   "effects": "镇静（动物）；甜花香与「果香调」的主要来源",
+   "mech": "动物研究提示中枢抑制作用；在皮肤或存放中可水解为芳樟醇与乙酸",
+   "ev": "animal",
+   "safety": "**致敏原**；水解产生的芳樟醇进一步氧化后致敏性更强",
+   "allergen": true,
+   "note": "薰衣草、快乐鼠尾草、佛手柑共有。它与芳樟醇的比例，是判断薰衣草品质的常用指标",
+   "ev_label": "以动物研究为主",
+   "vol_label": "中调",
+   "oil_count": 7,
+   "oils": [
+    {
+     "key": "clary_sage",
+     "cn": "快乐鼠尾草",
+     "ratio": "50–75%"
+    },
+    {
+     "key": "petitgrain",
+     "cn": "苦橙叶",
+     "ratio": "40–60%"
+    },
+    {
+     "key": "bergamot",
+     "cn": "佛手柑",
+     "ratio": "20–40%"
+    },
+    {
+     "key": "lavender",
+     "cn": "薰衣草",
+     "ratio": "12–40%"
+    },
+    {
+     "key": "neroli",
+     "cn": "橙花",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "coriander",
+     "cn": "芫荽籽",
+     "ratio": "2–6%"
+    },
+    {
+     "key": "citrus",
+     "cn": "柑橘属",
+     "ratio": "橙花中较高"
+    }
+   ]
+  },
+  {
+   "id": "terpinyl_acetate",
+   "cn": "乙酸松油酯",
+   "en": "Terpinyl acetate",
+   "formula": "C12H20O2",
+   "cls": "酯",
+   "vol": "middle",
+   "effects": "柔和辛甜；香气成分",
+   "mech": "水解后释放松油醇与乙酸",
+   "ev": "vitro",
+   "safety": "致敏性低于柠檬醛类",
+   "allergen": false,
+   "note": "小豆蔻与肉豆蔻的气味分野，一部分在它身上",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 2,
+   "oils": [
+    {
+     "key": "cardamom",
+     "cn": "小豆蔻",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "arborvitae",
+     "cn": "北美香柏",
+     "ratio": "2–8%"
+    }
+   ]
+  },
+  {
+   "id": "neryl_acetate",
+   "cn": "乙酸橙花酯",
+   "en": "Neryl acetate",
+   "formula": "C12H20O2",
+   "cls": "酯",
+   "vol": "middle",
+   "effects": "香气成分（罗马洋甘菊的花果甜）；抗炎（体外）",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "致敏性低",
+   "allergen": false,
+   "note": "罗马洋甘菊与苦橙叶的特征成分，德国洋甘菊里很少",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 2,
+   "oils": [
+    {
+     "key": "helichrysum",
+     "cn": "蜡菊",
+     "ratio": "20–40%"
+    },
+    {
+     "key": "chamomile",
+     "cn": "洋甘菊",
+     "ratio": "罗马洋甘菊中较高"
+    }
+   ]
+  },
+  {
+   "id": "benzyl_acetate",
+   "cn": "乙酸苄酯",
+   "en": "Benzyl acetate",
+   "formula": "C9H10O2",
+   "cls": "酯",
+   "vol": "middle",
+   "effects": "茉莉花香主体；动物研究提示镇静",
+   "mech": "动物实验中的中枢抑制；酯键在体内水解为苯甲醇与乙酸",
+   "ev": "animal",
+   "safety": "可能有轻中度致敏；苯甲醇代谢物在极低剂量下有争议性关注",
+   "allergen": false,
+   "note": "茉莉净油里能到 20% 以上，是「茉莉味」最直接的来源",
+   "ev_label": "以动物研究为主",
+   "vol_label": "中调",
+   "oil_count": 3,
+   "oils": [
+    {
+     "key": "jasmine",
+     "cn": "茉莉",
+     "ratio": "20–35%"
+    },
+    {
+     "key": "ylang_ylang",
+     "cn": "依兰",
+     "ratio": "10–25%"
+    },
+    {
+     "key": "magnolia",
+     "cn": "magnolia",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "eugenyl_acetate",
+   "cn": "乙酸丁香酚酯",
+   "en": "Eugenyl acetate",
+   "formula": "C12H14O3",
+   "cls": "酯",
+   "vol": "middle",
+   "effects": "香气成分；比丁香酚温和",
+   "mech": "水解后释放丁香酚",
+   "ev": "vitro",
+   "safety": "比丁香酚刺激性低，但仍属丁香类，黏膜刺激需注意",
+   "allergen": false,
+   "note": "丁香油里丁香酚与它的比例，决定「冲」还是「圆」",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "clove",
+     "cn": "丁香",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "bornyl_acetate",
+   "cn": "乙酸冰片酯",
+   "en": "Bornyl acetate",
+   "formula": "C12H20O2",
+   "cls": "酯",
+   "vol": "middle",
+   "effects": "冷杉类的柔和树脂甜；香气成分",
+   "mech": "水解后释放冰片与乙酸",
+   "ev": "vitro",
+   "safety": "刺激性低；冰片类有轻微中枢作用",
+   "allergen": false,
+   "note": "西伯利亚冷杉的标志成分，也是它比其他针叶油「柔」的原因",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 2,
+   "oils": [
+    {
+     "key": "black_spruce",
+     "cn": "black_spruce",
+     "ratio": "25–40%"
+    },
+    {
+     "key": "siberian_fir",
+     "cn": "西伯利亚冷杉",
+     "ratio": "20–35%"
+    }
+   ]
+  },
+  {
+   "id": "cinnamyl_acetate",
+   "cn": "乙酸肉桂酯",
+   "en": "Cinnamyl acetate",
+   "formula": "C11H12O2",
+   "cls": "酯",
+   "vol": "middle",
+   "effects": "香气成分；比肉桂醛温和得多",
+   "mech": "水解后释放肉桂醛与乙酸",
+   "ev": "vitro",
+   "safety": "本身刺激性低于肉桂醛，但在肉桂油整体中仍无法忽视",
+   "allergen": false,
+   "note": "肉桂叶油与树皮油的差别，一部分就在这类酯的比例上",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 2,
+   "oils": [
+    {
+     "key": "cinnamon",
+     "cn": "肉桂",
+     "ratio": "1–10%"
+    },
+    {
+     "key": "cassia",
+     "cn": "cassia",
+     "ratio": "1–5%"
+    }
+   ]
+  },
+  {
+   "id": "menthyl_acetate",
+   "cn": "乙酸薄荷酯",
+   "en": "Menthyl acetate",
+   "formula": "C12H22O2",
+   "cls": "酯",
+   "vol": "middle",
+   "effects": "清凉感较薄荷醇弱，但更柔和持久；香气偏甜",
+   "mech": "在皮肤缓慢水解释放薄荷醇，故起效慢、持续久",
+   "ev": "animal",
+   "safety": "比纯薄荷醇温和，但同属薄荷类，婴幼儿仍应避免",
+   "allergen": false,
+   "note": "「缓释薄荷醇」——这也是为什么有些薄荷油闻起来更甜而非冲",
+   "ev_label": "以动物研究为主",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "peppermint",
+     "cn": "薄荷",
+     "ratio": "2–10%"
+    }
+   ]
+  },
+  {
+   "id": "lavandulyl_acetate",
+   "cn": "乙酸薰衣草酯",
+   "en": "Lavandulyl acetate",
+   "formula": "C12H20O2",
+   "cls": "酯",
+   "vol": "middle",
+   "effects": "香气层次；生物活性研究很少",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "未见明确风险报告",
+   "allergen": false,
+   "note": "真正的「薰衣草专属」成分之一，可用于区分薰衣草与醒目薰衣草",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "lavender",
+     "cn": "薰衣草",
+     "ratio": "6–16%"
+    }
+   ]
+  },
+  {
+   "id": "methyl_anthranilate",
+   "cn": "甲基邻氨基苯甲酸甲酯",
+   "en": "Methyl N-methylanthranilate",
+   "formula": "C9H11NO2",
+   "cls": "含氮酯",
+   "vol": "base",
+   "effects": "依兰与柑橘叶的「葡萄样」底调",
+   "mech": "未明确；结构上属邻氨基苯甲酸衍生物",
+   "ev": "vitro",
+   "safety": "有致敏与光敏性报告，含量虽低但值得标注",
+   "allergen": false,
+   "note": "含量常在 1% 以下，却对依兰的整体气味影响很大",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 3,
+   "oils": [
+    {
+     "key": "neroli",
+     "cn": "橙花",
+     "ratio": "1–5%"
+    },
+    {
+     "key": "mandarin",
+     "cn": "柑橘",
+     "ratio": "0.3–1%"
+    },
+    {
+     "key": "tangerine",
+     "cn": "tangerine",
+     "ratio": "微量"
+    }
+   ]
+  },
+  {
+   "id": "ethyl_salicylate",
+   "cn": "水杨酸乙酯",
+   "en": "Ethyl salicylate",
+   "formula": "C9H10O3",
+   "cls": "酚酸酯",
+   "vol": "middle",
+   "effects": "外用镇痛（弱于水杨酸甲酯）",
+   "mech": "同水杨酸甲酯，水解为水杨酸",
+   "ev": "animal",
+   "safety": "同样有口服毒性与儿童风险，只是含量通常很低",
+   "allergen": false,
+   "note": "常与水杨酸甲酯共存，冬青类精油里属微量杂质",
+   "ev_label": "以动物研究为主",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "wintergreen",
+     "cn": "冬青",
+     "ratio": "微量"
+    }
+   ]
+  },
+  {
+   "id": "methyl_salicylate",
+   "cn": "水杨酸甲酯",
+   "en": "Methyl salicylate",
+   "formula": "C8H8O3",
+   "cls": "酚酸酯",
+   "vol": "middle",
+   "effects": "外用镇痛、抗炎（类似阿司匹林的 COX 抑制）",
+   "mech": "在体内水解为水杨酸，抑制 COX；经皮吸收后可进入全身循环",
+   "ev": "human",
+   "safety": "**最危险的常见精油成分**：口服少量即可致死（历史致死量约 1 茶匙冬青油）；儿童可诱发瑞氏综合征；与抗凝药叠加增加出血；**禁止扩香**",
+   "allergen": false,
+   "note": "冬青油 90% 以上是它。它「有效」和「有毒」是同一个机制——都是水杨酸",
+   "ev_label": "有人体证据",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "wintergreen",
+     "cn": "冬青",
+     "ratio": "90–99%"
+    }
+   ]
+  },
+  {
+   "id": "citral",
+   "cn": "柠檬醛",
+   "en": "Citral (geranial + neral)",
+   "formula": "C10H16O",
+   "cls": "醛",
+   "vol": "top",
+   "effects": "抗菌（体外较强）、抗炎；柠檬草与柠檬的「柠檬味」",
+   "mech": "与微生物膜及酶系统作用；醛基易与蛋白结合",
+   "ev": "vitro",
+   "safety": "**强致敏原**，也是刺激物；不建议高浓度长期使用；氧化后致敏性增强",
+   "allergen": true,
+   "note": "柠檬草 60–85%。「闻起来像柠檬」和「柠檬」是两回事——柠檬烯是甜橙味，柠檬醛才是柠檬糖味",
+   "ev_label": "仅体外研究",
+   "vol_label": "前调",
+   "oil_count": 4,
+   "oils": [
+    {
+     "key": "litsea",
+     "cn": "山鸡椒",
+     "ratio": "60–80%"
+    },
+    {
+     "key": "lemongrass",
+     "cn": "柠檬草",
+     "ratio": "60–85%"
+    },
+    {
+     "key": "melissa",
+     "cn": "香蜂草",
+     "ratio": "30–50%"
+    },
+    {
+     "key": "ginger",
+     "cn": "姜",
+     "ratio": "1–5%"
+    }
+   ]
+  },
+  {
+   "id": "citronellal",
+   "cn": "香茅醛",
+   "en": "Citronellal",
+   "formula": "C10H18O",
+   "cls": "醛",
+   "vol": "top",
+   "effects": "柠檬青草香；驱蚊（与香茅醇协同）",
+   "mech": "昆虫嗅觉受体干扰；醛基对皮肤有刺激",
+   "ev": "vitro",
+   "safety": "致敏原之一，刺激性高于醇类",
+   "allergen": false,
+   "note": "香蜂草的柠檬感由柠檬醛与它共同构成，两者常被混谈",
+   "ev_label": "仅体外研究",
+   "vol_label": "前调",
+   "oil_count": 3,
+   "oils": [
+    {
+     "key": "lemon_eucalyptus",
+     "cn": "柠檬桉",
+     "ratio": "60–80%"
+    },
+    {
+     "key": "citronella",
+     "cn": "香茅",
+     "ratio": "25–40%"
+    },
+    {
+     "key": "melissa",
+     "cn": "香蜂草",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "decanal",
+   "cn": "癸醛",
+   "en": "Decanal",
+   "formula": "C10H20O",
+   "cls": "醛",
+   "vol": "top",
+   "effects": "气味成分；阈值极低，决定「新鲜橙皮」印象",
+   "mech": "嗅觉受体层面；醛类对皮肤有一定刺激",
+   "ev": "vitro",
+   "safety": "稀释后刺激低；纯品对皮肤有刺激",
+   "allergen": false,
+   "note": "含量常不足 0.1%，却决定了「橙皮」与「橙汁糖」的差别",
+   "ev_label": "仅体外研究",
+   "vol_label": "前调",
+   "oil_count": 2,
+   "oils": [
+    {
+     "key": "cilantro",
+     "cn": "芫荽叶",
+     "ratio": "20–40%"
+    },
+    {
+     "key": "wild_orange",
+     "cn": "甜橙",
+     "ratio": "微量"
+    }
+   ]
+  },
+  {
+   "id": "perillaldehyde",
+   "cn": "紫苏醛",
+   "en": "Perillaldehyde",
+   "formula": "C10H14O",
+   "cls": "醛",
+   "vol": "top",
+   "effects": "抗菌、抗氧化；紫苏特有香气的核心",
+   "mech": "醛基与微生物酶系统及膜蛋白结合；对皮肤蛋白同样有反应性",
+   "ev": "vitro",
+   "safety": "**明确致敏原**，氧化后更强；高浓度有刺激性；不建议高浓度长期使用",
+   "allergen": true,
+   "note": "紫苏叶可以生吃，是因为含水量高、浓度低；精油里它占一半以上，性质完全不同",
+   "ev_label": "仅体外研究",
+   "vol_label": "前调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "perilla",
+     "cn": "紫苏",
+     "ratio": "40–60%"
+    }
+   ]
+  },
+  {
+   "id": "cinnamaldehyde",
+   "cn": "肉桂醛",
+   "en": "Cinnamaldehyde",
+   "formula": "C9H8O",
+   "cls": "醛",
+   "vol": "middle",
+   "effects": "抗菌（强）、抗炎、促循环感",
+   "mech": "激活 TRPA1 通道（产生「热辣」感）；破坏微生物膜",
+   "ev": "mixed",
+   "safety": "**强刺激与强致敏**；可诱发咳嗽与支气管收缩，哮喘者避免；口服高剂量有肝毒性；不建议室内扩香",
+   "allergen": true,
+   "note": "肉桂「辣」的感觉不是温度，是 TRPA1 被激活——和辣椒素走的是不同通道",
+   "ev_label": "人体证据有限",
+   "vol_label": "中调",
+   "oil_count": 2,
+   "oils": [
+    {
+     "key": "cassia",
+     "cn": "cassia",
+     "ratio": "70–85%"
+    },
+    {
+     "key": "cinnamon",
+     "cn": "肉桂",
+     "ratio": "60–80%（树皮）"
+    }
+   ]
+  },
+  {
+   "id": "isovaleric_acid",
+   "cn": "异缬草酸",
+   "en": "Isovaleric acid",
+   "formula": "C5H10O2",
+   "cls": "羧酸",
+   "vol": "base",
+   "effects": "气味成分；游离状态时是「酸败/汗味」",
+   "mech": "未明确；作为短链脂肪酸参与气味感知",
+   "ev": "vitro",
+   "safety": "低毒，但游离酸有刺激性气味",
+   "allergen": false,
+   "note": "岩兰草里以酯的形式存在时是甜香，游离出来就变成脚臭味——同一分子两种命运",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "vetiver",
+     "cn": "岩兰草",
+     "ratio": "微量"
+    }
+   ]
+  },
+  {
+   "id": "eugenol",
+   "cn": "丁香酚",
+   "en": "Eugenol",
+   "formula": "C10H12O2",
+   "cls": "酚",
+   "vol": "base",
+   "effects": "抗菌、局部镇痛（牙科用过）、抗炎",
+   "mech": "抑制 COX；破坏微生物膜；高浓度对细胞有直接毒性（非选择性）",
+   "ev": "human",
+   "safety": "**黏膜刺激强**；致敏原；高浓度对皮肤与牙髓有细胞毒性；不建议扩香；抗凝药使用者慎用",
+   "allergen": true,
+   "note": "牙科「丁香油」就是它。镇痛与刺激是同一机制的两面",
+   "ev_label": "有人体证据",
+   "vol_label": "后调",
+   "oil_count": 5,
+   "oils": [
+    {
+     "key": "clove",
+     "cn": "丁香",
+     "ratio": "75–90%"
+    },
+    {
+     "key": "tulsi",
+     "cn": "tulsi",
+     "ratio": "30–60%"
+    },
+    {
+     "key": "cinnamon",
+     "cn": "肉桂",
+     "ratio": "5–15%（叶油偏高）"
+    },
+    {
+     "key": "basil",
+     "cn": "罗勒",
+     "ratio": "2–10%"
+    },
+    {
+     "key": "patchouli",
+     "cn": "广藿香",
+     "ratio": "少量"
+    }
+   ]
+  },
+  {
+   "id": "thymol",
+   "cn": "百里香酚",
+   "en": "Thymol",
+   "formula": "C10H14O",
+   "cls": "酚",
+   "vol": "middle",
+   "effects": "抗菌、抗真菌（体外强）",
+   "mech": "嵌入并破坏微生物细胞膜，增加通透性",
+   "ev": "vitro",
+   "safety": "刺激皮肤与黏膜；**不建议室内扩香**；纯油可致化学灼伤样反应",
+   "allergen": false,
+   "note": "百里香「酚型」与「醇型」完全是两种油——酚型才是这种冲鼻的消毒水味",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 2,
+   "oils": [
+    {
+     "key": "thyme",
+     "cn": "百里香",
+     "ratio": "20–55%（化学型）"
+    },
+    {
+     "key": "oregano",
+     "cn": "牛至",
+     "ratio": "1–10%"
+    }
+   ]
+  },
+  {
+   "id": "carvacrol",
+   "cn": "香芹酚",
+   "en": "Carvacrol",
+   "formula": "C10H14O",
+   "cls": "酚",
+   "vol": "middle",
+   "effects": "抗菌（同类中最强之一）、抗真菌",
+   "mech": "膜破坏；激活 TRPV3 通道（产生灼热感）",
+   "ev": "vitro",
+   "safety": "刺激性强；牛至油的主要风险来源；不建议扩香；孕期与婴幼儿避免",
+   "allergen": false,
+   "note": "牛至 60–80%。体外抗菌数据很漂亮，但那是培养皿里，不是人体",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 2,
+   "oils": [
+    {
+     "key": "oregano",
+     "cn": "牛至",
+     "ratio": "60–80%"
+    },
+    {
+     "key": "thyme",
+     "cn": "百里香",
+     "ratio": "1–10%"
+    }
+   ]
+  },
+  {
+   "id": "camphor",
+   "cn": "樟脑",
+   "en": "Camphor",
+   "formula": "C10H16O",
+   "cls": "酮",
+   "vol": "middle",
+   "effects": "局部刺激→镇痛、止痒；呼吸道「通窍」感",
+   "mech": "激活 TRPV1 与 TRPM8；先刺激后麻痹感觉神经",
+   "ev": "human",
+   "safety": "**可降低惊厥阈值**——癫痫者、婴幼儿禁用；误服可致惊厥；G6PD 缺乏者慎用",
+   "allergen": false,
+   "note": "迷迭香樟脑型（摩洛哥/突尼斯）含量高，桉叶素型低——买迷迭香只看「迷迭香」三个字是不够的",
+   "ev_label": "有人体证据",
+   "vol_label": "中调",
+   "oil_count": 8,
+   "oils": [
+    {
+     "key": "spanish_sage",
+     "cn": "spanish_sage",
+     "ratio": "10–20%"
+    },
+    {
+     "key": "mugwort",
+     "cn": "艾草",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "blue_tansy",
+     "cn": "蓝艾菊",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "siberian_fir",
+     "cn": "西伯利亚冷杉",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "rosemary",
+     "cn": "迷迭香",
+     "ratio": "5–25%（化学型差异）"
+    },
+    {
+     "key": "arborvitae",
+     "cn": "北美香柏",
+     "ratio": "3–10%"
+    },
+    {
+     "key": "sieversiana",
+     "cn": "大籽蒿",
+     "ratio": "3–12%"
+    },
+    {
+     "key": "black_spruce",
+     "cn": "black_spruce",
+     "ratio": "3–8%"
+    }
+   ]
+  },
+  {
+   "id": "alpha_thujone",
+   "cn": "α-侧柏酮",
+   "en": "α-Thujone",
+   "formula": "C10H16O",
+   "cls": "酮",
+   "vol": "middle",
+   "effects": "香气成分；无公认治疗用途",
+   "mech": "**拮抗 GABA_A 受体**，可降低惊厥阈值（这是苦艾酒「致幻」争论的化学基础）",
+   "ev": "animal",
+   "safety": "**癫痫者与孕期禁用**；长期高剂量有神经毒性；含它的精油（快乐鼠尾草、艾草、侧柏）不宜长期大量使用",
+   "allergen": false,
+   "note": "苦艾酒在 20 世纪初被禁，主要就是因为它。快乐鼠尾草通常含量不高，但批次差异很大",
+   "ev_label": "以动物研究为主",
+   "vol_label": "中调",
+   "oil_count": 4,
+   "oils": [
+    {
+     "key": "arborvitae",
+     "cn": "北美香柏",
+     "ratio": "40–60%"
+    },
+    {
+     "key": "sieversiana",
+     "cn": "大籽蒿",
+     "ratio": "5–15%"
+    },
+    {
+     "key": "mugwort",
+     "cn": "艾草",
+     "ratio": "5–20%"
+    },
+    {
+     "key": "clary_sage",
+     "cn": "快乐鼠尾草",
+     "ratio": "0–6%（批次差异大）"
+    }
+   ]
+  },
+  {
+   "id": "turmerone",
+   "cn": "姜黄酮",
+   "en": "Turmerone",
+   "formula": "C15H22O",
+   "cls": "酮",
+   "vol": "base",
+   "effects": "姜黄辛香与土质感；抗炎（体外）",
+   "mech": "抑制炎症介质；酮类的中枢抑制倾向",
+   "ev": "vitro",
+   "safety": "酮类低浓度使用；会染色",
+   "allergen": false,
+   "note": "与芳姜黄酮是同分异构体，常一起报告",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "turmeric",
+     "cn": "姜黄",
+     "ratio": "10–20%"
+    }
+   ]
+  },
+  {
+   "id": "fenchone",
+   "cn": "小茴香酮",
+   "en": "Fenchone",
+   "formula": "C10H16O",
+   "cls": "酮",
+   "vol": "middle",
+   "effects": "茴香的苦味与凉感来源",
+   "mech": "未明确；酮类中枢活性需注意",
+   "ev": "vitro",
+   "safety": "高浓度有神经毒性担忧（酮类共性）；孕期避免",
+   "allergen": false,
+   "note": "「茴香甜」里那一丝苦，就是它",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "fennel",
+     "cn": "茴香",
+     "ratio": "10–30%"
+    }
+   ]
+  },
+  {
+   "id": "vetivone",
+   "cn": "岩兰草酮",
+   "en": "α-Vetivone",
+   "formula": "C15H22O",
+   "cls": "酮",
+   "vol": "base",
+   "effects": "香气成分；定香",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "低毒",
+   "allergen": false,
+   "note": "岩兰草「越闻越沉」的底调来源之一",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "vetiver",
+     "cn": "岩兰草",
+     "ratio": "10–20%"
+    }
+   ]
+  },
+  {
+   "id": "isomenthone",
+   "cn": "异薄荷酮",
+   "en": "Isomenthone",
+   "formula": "C10H18O",
+   "cls": "酮",
+   "vol": "middle",
+   "effects": "香气成分；清凉感弱",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "同薄荷类一般注意",
+   "allergen": false,
+   "note": "薄荷酮的立体异构体，气味略有差别",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "geranium",
+     "cn": "天竺葵",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "perilla_ketone",
+   "cn": "紫苏酮",
+   "en": "Perilla ketone",
+   "formula": "C10H14O2",
+   "cls": "酮",
+   "vol": "middle",
+   "effects": "无公认治疗用途；是紫苏精油里最需要警惕的微量成分",
+   "mech": "对反刍动物肺上皮有选择性毒性（可致肺水肿）",
+   "ev": "animal",
+   "safety": "**动物中已证实肺毒性**；人体低剂量意义未明，按预防原则避免高浓度长期吸入",
+   "allergen": false,
+   "note": "紫苏（Perilla frutescens）与含紫苏酮的其他植物曾致牛羊死亡，这是兽医学的经典案例",
+   "ev_label": "以动物研究为主",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "perilla",
+     "cn": "紫苏",
+     "ratio": "微量"
+    }
+   ]
+  },
+  {
+   "id": "ar_turmerone",
+   "cn": "芳姜黄酮",
+   "en": "ar-Turmerone",
+   "formula": "C15H20O",
+   "cls": "酮",
+   "vol": "base",
+   "effects": "姜黄精油的主要活性；抗炎与神经相关研究（体外/动物）",
+   "mech": "抑制炎症通路；酮类对中枢有抑制作用",
+   "ev": "animal",
+   "safety": "酮类需注意神经活性；会染色，外用避开浅色衣物",
+   "allergen": false,
+   "note": "姜黄「抗炎」在精油层面主要靠它，而不是不挥发的姜黄素",
+   "ev_label": "以动物研究为主",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "turmeric",
+     "cn": "姜黄",
+     "ratio": "15–30%"
+    }
+   ]
+  },
+  {
+   "id": "menthone",
+   "cn": "薄荷酮",
+   "en": "Menthone",
+   "formula": "C10H18O",
+   "cls": "酮",
+   "vol": "middle",
+   "effects": "清凉感（弱于薄荷醇）、抗菌",
+   "mech": "部分作用于冷感受器；酮类对神经系统有一定活性",
+   "ev": "vitro",
+   "safety": "较薄荷醇温和，但同属薄荷类，婴幼儿避免",
+   "allergen": false,
+   "note": "薄荷油「放久了变味」一部分是薄荷酮与薄荷醇的比例在变",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "peppermint",
+     "cn": "薄荷",
+     "ratio": "15–30%"
+    }
+   ]
+  },
+  {
+   "id": "nootkatone",
+   "cn": "诺卡酮",
+   "en": "Nootkatone",
+   "formula": "C15H22O",
+   "cls": "酮",
+   "vol": "base",
+   "effects": "葡萄柚的苦香；驱虫（已商业化用作驱蚊/驱蜱）",
+   "mech": "作用于昆虫的嗅觉受体；对哺乳动物有 AMPK 通路相关研究",
+   "ev": "mixed",
+   "safety": "低毒；作为食品香料使用",
+   "allergen": false,
+   "note": "葡萄柚油里只有微量，却是「葡萄柚味」不可替代的一笔",
+   "ev_label": "人体证据有限",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "grapefruit",
+     "cn": "葡萄柚",
+     "ratio": "微量"
+    }
+   ]
+  },
+  {
+   "id": "carvone",
+   "cn": "香芹酮",
+   "en": "Carvone",
+   "formula": "C10H14O",
+   "cls": "酮",
+   "vol": "middle",
+   "effects": "清凉感（弱于薄荷醇）、抗菌；绿薄荷的主成分",
+   "mech": "部分作用于冷感受器；酮类有一定神经活性",
+   "ev": "vitro",
+   "safety": "刺激性低于薄荷醇，无喉痉挛报告；但酮类不宜长期高剂量",
+   "allergen": false,
+   "note": "葛缕子（caraway）与莳萝里也有，气味却是「另一种凉」——同分子不同语境",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "spearmint",
+     "cn": "绿薄荷",
+     "ratio": "55–70%"
+    }
+   ]
+  },
+  {
+   "id": "cineole",
+   "cn": "1,8-桉叶素",
+   "en": "1,8-Cineole (Eucalyptol)",
+   "formula": "C10H18O",
+   "cls": "氧化物",
+   "vol": "top",
+   "effects": "化痰、支气管舒张（有争议）、抗菌；警觉感",
+   "mech": "刺激冷感受器；抑制气道黏液分泌相关通路；体外对多种微生物有效",
+   "ev": "mixed",
+   "safety": "**2 岁以下绝对禁用**——可致喉痉挛与呼吸暂停（儿科急症经典诱因）；哮喘者可能被诱发；口服过量致中枢抑制",
+   "allergen": false,
+   "note": "尤加利 60–85%。「通鼻」的感觉真实存在，但对哮喘者是双刃的",
+   "ev_label": "人体证据有限",
+   "vol_label": "前调",
+   "oil_count": 13,
+   "oils": [
+    {
+     "key": "eucalyptus",
+     "cn": "尤加利",
+     "ratio": "60–85%"
+    },
+    {
+     "key": "cardamom",
+     "cn": "小豆蔻",
+     "ratio": "20–40%"
+    },
+    {
+     "key": "mugwort",
+     "cn": "艾草",
+     "ratio": "20–40%"
+    },
+    {
+     "key": "spanish_sage",
+     "cn": "spanish_sage",
+     "ratio": "20–35%"
+    },
+    {
+     "key": "sieversiana",
+     "cn": "大籽蒿",
+     "ratio": "15–35%"
+    },
+    {
+     "key": "tea_tree",
+     "cn": "茶树",
+     "ratio": "<15%"
+    },
+    {
+     "key": "rosemary",
+     "cn": "迷迭香",
+     "ratio": "15–55%（化学型差异）"
+    },
+    {
+     "key": "peppermint",
+     "cn": "薄荷",
+     "ratio": "3–6%"
+    },
+    {
+     "key": "manuka",
+     "cn": "麦卢卡",
+     "ratio": "3–10%"
+    },
+    {
+     "key": "lemon_eucalyptus",
+     "cn": "柠檬桉",
+     "ratio": "2–8%"
+    },
+    {
+     "key": "spearmint",
+     "cn": "绿薄荷",
+     "ratio": "2–5%"
+    },
+    {
+     "key": "basil",
+     "cn": "罗勒",
+     "ratio": "2–10%"
+    },
+    {
+     "key": "lavender",
+     "cn": "薰衣草",
+     "ratio": "少量"
+    }
+   ]
+  },
+  {
+   "id": "rose_oxide",
+   "cn": "玫瑰醚",
+   "en": "Rose oxide",
+   "formula": "C10H18O",
+   "cls": "醚",
+   "vol": "top",
+   "effects": "玫瑰「金属感/荔枝感」的关键香气",
+   "mech": "未明确（嗅觉受体层面）",
+   "ev": "vitro",
+   "safety": "致敏性低",
+   "allergen": false,
+   "note": "含量常不足 3%，却决定了玫瑰闻起来是「真玫瑰」还是「香精玫瑰」",
+   "ev_label": "仅体外研究",
+   "vol_label": "前调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "rose",
+     "cn": "玫瑰",
+     "ratio": "0.5–3%"
+    }
+   ]
+  },
+  {
+   "id": "carnosic_acid",
+   "cn": "鼠尾草酸",
+   "en": "Carnosic acid",
+   "formula": "C20H28O4",
+   "cls": "二萜酚酸",
+   "vol": "none",
+   "effects": "强抗氧化（食品工业用作抗氧化剂）",
+   "mech": "酚羟基供氢清除自由基；激活 Nrf2 通路",
+   "ev": "vitro",
+   "safety": "低毒；**非挥发**，蒸馏精油里通常只以微量残留存在",
+   "allergen": false,
+   "note": "迷迭香「抗氧化」宣称多半来自提取物里的它，而不是精油——两者的成分谱不同",
+   "ev_label": "仅体外研究",
+   "vol_label": "非挥发",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "rosemary",
+     "cn": "迷迭香",
+     "ratio": "非挥发"
+    }
+   ]
+  },
+  {
+   "id": "boswellic_acid",
+   "cn": "乳香酸",
+   "en": "Boswellic acid",
+   "formula": "C30H48O3",
+   "cls": "三萜酸",
+   "vol": "none",
+   "effects": "抗炎（5-脂氧合酶抑制）；关节相关的人体研究多用提取物",
+   "mech": "直接抑制 5-LOX，减少白三烯生成",
+   "ev": "human",
+   "safety": "低毒；**非挥发**，精油中含量极低，口服提取物与吸闻精油不是一回事",
+   "allergen": false,
+   "note": "乳香的临床研究几乎都用标准化提取物（高浓度乳香酸），而不是精油",
+   "ev_label": "有人体证据",
+   "vol_label": "非挥发",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "frankincense",
+     "cn": "乳香",
+     "ratio": "非挥发"
+    }
+   ]
+  },
+  {
+   "id": "commiphoric_acid",
+   "cn": "没药酸",
+   "en": "Commiphoric acid",
+   "cls": "三萜酸",
+   "vol": "none",
+   "effects": "抗炎（体外）",
+   "mech": "抑制炎症介质生成",
+   "ev": "vitro",
+   "safety": "低毒；**非挥发**，精油中含量极低",
+   "allergen": false,
+   "note": "树脂类精油最常见的误区：研究做的是树脂提取物，不是蒸馏精油",
+   "ev_label": "仅体外研究",
+   "vol_label": "非挥发",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "myrrh",
+     "cn": "没药",
+     "ratio": "非挥发"
+    }
+   ]
+  },
+  {
+   "id": "chamazulene",
+   "cn": "母菊薁",
+   "en": "Chamazulene",
+   "formula": "C14H16",
+   "cls": "倍半萜薁",
+   "vol": "base",
+   "effects": "抗炎（动物）；精油呈深蓝色的原因",
+   "mech": "抑制炎症通路；由母菊内酯在蒸馏过程中转化生成",
+   "ev": "animal",
+   "safety": "低毒",
+   "allergen": false,
+   "note": "**它不是植物里原有的成分**，是蒸馏时从母菊内酯转化来的——「蓝色洋甘菊」是工艺产物",
+   "ev_label": "以动物研究为主",
+   "vol_label": "后调",
+   "oil_count": 2,
+   "oils": [
+    {
+     "key": "blue_tansy",
+     "cn": "蓝艾菊",
+     "ratio": "3–15%"
+    },
+    {
+     "key": "chamomile",
+     "cn": "洋甘菊",
+     "ratio": "1–15%"
+    }
+   ]
+  },
+  {
+   "id": "indole",
+   "cn": "吲哚",
+   "en": "Indole",
+   "formula": "C8H7N",
+   "cls": "含氮杂环",
+   "vol": "base",
+   "effects": "香气成分；低浓度时是花香，高浓度时是粪臭",
+   "mech": "嗅觉受体层面的「浓度依赖反转」",
+   "ev": "vitro",
+   "safety": "低毒；纯品气味极强",
+   "allergen": false,
+   "note": "茉莉与橙花里都有。浓度差一百倍，闻起来就是两个世界",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "jasmine",
+     "cn": "茉莉",
+     "ratio": "0.5–2%"
+    }
+   ]
+  },
+  {
+   "id": "gingerol",
+   "cn": "姜辣素",
+   "en": "6-Gingerol",
+   "formula": "C17H26O4",
+   "cls": "酚类烷基",
+   "vol": "none",
+   "effects": "辛辣、止吐（口服姜的证据）、抗炎",
+   "mech": "激活 TRPV1；抑制 COX 与 5-HT3 相关通路（止吐机制之一）",
+   "ev": "human",
+   "safety": "低毒；**非挥发**，姜精油里几乎不含——所以「闻姜油止吐」和「吃姜止吐」不能互相推论",
+   "allergen": false,
+   "note": "这是整份资料里最重要的一个「途径陷阱」：姜的临床证据来自口服姜粉/提取物",
+   "ev_label": "有人体证据",
+   "vol_label": "非挥发",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "ginger",
+     "cn": "姜",
+     "ratio": "非挥发"
+    }
+   ]
+  },
+  {
+   "id": "furocoumarin",
+   "cn": "呋喃香豆素",
+   "en": "Furocoumarins (incl. bergapten)",
+   "formula": "—",
+   "cls": "香豆素类",
+   "vol": "base",
+   "effects": "**无治疗用途**，是光毒性的来源",
+   "mech": "与 DNA 形成加合物，在 UVA 照射下产生光毒性反应（红斑、水疱、色素沉着）",
+   "ev": "human",
+   "safety": "**冷压柑橘皮油的核心风险**；用后 12 小时内避免日晒与紫外线；蒸馏版本含量极低；FCF（无呋喃香豆素）版本可规避",
+   "allergen": false,
+   "note": "**只在皮肤接触＋紫外线时才成立**。扩香不涉及这条——这是「途径决定风险」的最好例子",
+   "ev_label": "有人体证据",
+   "vol_label": "后调",
+   "oil_count": 8,
+   "oils": [
+    {
+     "key": "bergamot",
+     "cn": "佛手柑",
+     "ratio": "冷压油中显著"
+    },
+    {
+     "key": "angelica",
+     "cn": "当归",
+     "ratio": "冷压/根油中较多"
+    },
+    {
+     "key": "citrus",
+     "cn": "柑橘属",
+     "ratio": "冷压油中较多"
+    },
+    {
+     "key": "lemon",
+     "cn": "柠檬",
+     "ratio": "冷压油中较多"
+    },
+    {
+     "key": "grapefruit",
+     "cn": "葡萄柚",
+     "ratio": "冷压油中显著"
+    },
+    {
+     "key": "lime",
+     "cn": "青柠",
+     "ratio": "冷压油中较多"
+    },
+    {
+     "key": "celery_seed",
+     "cn": "celery_seed",
+     "ratio": "微量"
+    },
+    {
+     "key": "green_mandarin",
+     "cn": "green_mandarin",
+     "ratio": "微量"
+    }
+   ]
+  },
+  {
+   "id": "furanoeudesma",
+   "cn": "呋喃桉叶烷",
+   "en": "Furanoeudesma-1,3-diene",
+   "formula": "C15H18O",
+   "cls": "倍半萜",
+   "vol": "base",
+   "effects": "没药苦味的来源；镇痛相关研究（动物）",
+   "mech": "动物研究提示作用于阿片受体通路（弱）",
+   "ev": "animal",
+   "safety": "低毒；苦味明显",
+   "allergen": false,
+   "note": "没药「苦」的化学来源，与乳香的甜树脂形成对比",
+   "ev_label": "以动物研究为主",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "myrrh",
+     "cn": "没药",
+     "ratio": "20–40%"
+    }
+   ]
+  },
+  {
+   "id": "davanone",
+   "cn": "印蒿酮",
+   "en": "Davanone",
+   "formula": "C15H24O2",
+   "cls": "倍半萜二酮",
+   "vol": "base",
+   "effects": "印蒿香气核心；香气在皮肤上随时间变化",
+   "mech": "未完全明确；倍半萜酮的通性是对中枢有抑制作用",
+   "ev": "vitro",
+   "safety": "酮类需注意神经活性，低浓度使用；孕期保守",
+   "allergen": false,
+   "note": "同一种油在不同人身上闻起来不同，主要与挥发速率和皮肤温度有关",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "davana",
+     "cn": "印蒿",
+     "ratio": "30–50%"
+    }
+   ]
+  },
+  {
+   "id": "italidione",
+   "cn": "意大利酮",
+   "en": "Italidione",
+   "cls": "倍半萜二酮",
+   "vol": "base",
+   "effects": "蜡菊独有的双酮类；抗炎与皮肤相关研究围绕它展开",
+   "mech": "未完全明确；酮类结构提示神经活性",
+   "ev": "vitro",
+   "safety": "酮类需注意神经活性，建议低浓度、避免长期高剂量",
+   "allergen": false,
+   "note": "蜡菊「贵」与「独特」都来自这类成分，也是掺假鑑别的标志物",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "helichrysum",
+     "cn": "蜡菊",
+     "ratio": "2–8%"
+    }
+   ]
+  },
+  {
+   "id": "piperine",
+   "cn": "胡椒碱",
+   "en": "Piperine",
+   "formula": "C17H19NO3",
+   "cls": "生物碱",
+   "vol": "none",
+   "effects": "辛辣；抑制肠道与肝的代谢酶，是「促吸收」的主角",
+   "mech": "抑制 CYP3A4 与 P-糖蛋白，提高其他成分的生物利用度",
+   "ev": "human",
+   "safety": "**非挥发，不在精油里**；与药物同服可能升高血药浓度",
+   "allergen": false,
+   "note": "「黑胡椒精油促吸收」是常见误传——促吸收的是胡椒碱，蒸馏油里几乎没有",
+   "ev_label": "有人体证据",
+   "vol_label": "非挥发",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "black_pepper",
+     "cn": "黑胡椒",
+     "ratio": "非挥发"
+    }
+   ]
+  },
+  {
+   "id": "panaxynol",
+   "cn": "人参炔醇",
+   "en": "Panaxynol (Falcarinol)",
+   "formula": "C17H24O",
+   "cls": "聚乙炔",
+   "vol": "base",
+   "effects": "抗炎、抗菌（体外）；人参「药味」的关键来源",
+   "mech": "聚乙炔结构易与蛋白与膜作用；具体靶点未确立",
+   "ev": "vitro",
+   "safety": "**已知接触性致敏原**（胡萝卜、常春藤中同类物质可致皮炎）；超临界萃取保留较多，外用需稀释",
+   "allergen": false,
+   "note": "水蒸气蒸馏很难带出它——这也是超临界人参油与蒸馏法的差别所在",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "ginseng",
+     "cn": "人参",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "ginsenoside",
+   "cn": "人参皂苷",
+   "en": "Ginsenosides",
+   "cls": "三萜皂苷",
+   "vol": "none",
+   "effects": "人参被研究最多的活性成分（免疫、代谢、认知等）；**但这些研究用的都是提取物**",
+   "mech": "皂苷类作用于多条信号通路，体内代谢复杂，口服生物利用度低",
+   "ev": "human",
+   "safety": "低毒；**非挥发**，精油中含量极低——精油的人参皂苷几乎可以忽略",
+   "allergen": false,
+   "note": "这是「提取物 ≠ 精油」最典型的一例：人参的临床证据来自标准化皂苷提取物",
+   "ev_label": "有人体证据",
+   "vol_label": "非挥发",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "ginseng",
+     "cn": "人参",
+     "ratio": "非挥发"
+    }
+   ]
+  },
+  {
+   "id": "schisandrin",
+   "cn": "五味子素",
+   "en": "Schisandrin",
+   "formula": "C24H32O7",
+   "cls": "木脂素",
+   "vol": "none",
+   "effects": "护肝、抗氧化（以提取物形式研究）",
+   "mech": "抑制 CYP3A4 与 P-糖蛋白，影响药物代谢；抗氧化通过 Nrf2 通路",
+   "ev": "human",
+   "safety": "**非挥发**，精油中含量极低；木脂素的 CYP 抑制是药物交互的主要机制",
+   "allergen": false,
+   "note": "「五味子护肝」说的是它，不是精油——所以别把两件事混着讲",
+   "ev_label": "有人体证据",
+   "vol_label": "非挥发",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "schisandra",
+     "cn": "五味子",
+     "ratio": "非挥发"
+    }
+   ]
+  },
+  {
+   "id": "ligustilide",
+   "cn": "藁本内酯",
+   "en": "Ligustilide",
+   "formula": "C12H14O2",
+   "cls": "内酯",
+   "vol": "base",
+   "effects": "当归气味的核心；解痉与血管相关研究（体外/动物）",
+   "mech": "内酯类作用于平滑肌与血管；易氧化聚合",
+   "ev": "animal",
+   "safety": "低毒但易氧化；氧化产物可能增加致敏性",
+   "allergen": false,
+   "note": "当归「药香」的主角，也是它难保存的原因——内酯会聚合",
+   "ev_label": "以动物研究为主",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "angelica",
+     "cn": "当归",
+     "ratio": "20–40%"
+    }
+   ]
+  },
+  {
+   "id": "triketones",
+   "cn": "三酮类",
+   "en": "Triketones (leptospermone, flavesone)",
+   "cls": "三酮",
+   "vol": "base",
+   "effects": "麦卢卡特有的抗菌成分；除草活性（天然除莠剂研究）",
+   "mech": "抑制羟苯基丙酮酸双加氧酶（HPPD），对微生物与植物均有作用",
+   "ev": "vitro",
+   "safety": "刺激性中等；抗菌机制与蜂蜜的 MGO 不同，不可混谈",
+   "allergen": false,
+   "note": "麦卢卡精油「抗菌」的真正依据在这里，而不是蜂蜜里的甲基乙二醛",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "manuka",
+     "cn": "麦卢卡",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "curcumin",
+   "cn": "姜黄素",
+   "en": "Curcumin",
+   "formula": "C21H20O6",
+   "cls": "二酮色素",
+   "vol": "none",
+   "effects": "姜黄最著名的活性（抗炎、抗氧化）；**但研究几乎都用提取物**",
+   "mech": "抑制 NF-κB 等多条通路；口服生物利用度极低，常需配伍胡椒碱",
+   "ev": "human",
+   "safety": "**非挥发**，蒸馏精油中几乎不含；高剂量有肝损伤报告",
+   "allergen": false,
+   "note": "「姜黄抗炎」说的是它。精油里没有它——这是全套资料里最容易被混淆的一例",
+   "ev_label": "有人体证据",
+   "vol_label": "非挥发",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "turmeric",
+     "cn": "姜黄",
+     "ratio": "非挥发"
+    }
+   ]
+  },
+  {
+   "id": "p_cresyl_methyl_ether",
+   "cn": "对甲酚甲醚",
+   "en": "p-Cresyl methyl ether",
+   "formula": "C8H10O",
+   "cls": "酚醚",
+   "vol": "middle",
+   "effects": "香气成分（依兰的「动物感/辛辣甜」）",
+   "mech": "未明确；气味阈值极低，微量即可察觉",
+   "ev": "vitro",
+   "safety": "气味强烈，高浓度可致头痛与恶心；致敏资料有限，建议低浓度使用",
+   "allergen": false,
+   "note": "依兰里含量不到 10%，却是它闻起来「浓艳」而不是「甜腻」的原因",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "ylang_ylang",
+     "cn": "依兰",
+     "ratio": "1–10%"
+    }
+   ]
+  },
+  {
+   "id": "decanol",
+   "cn": "癸醇",
+   "en": "Decanol",
+   "formula": "C10H22O",
+   "cls": "醇",
+   "vol": "middle",
+   "effects": "香气成分；柔化醛类的尖锐感",
+   "mech": "未明确",
+   "ev": "vitro",
+   "safety": "低毒；醇类刺激性低于醛类",
+   "allergen": false,
+   "note": "与癸醛成对出现：一个负责「青」，一个负责「圆」",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "cilantro",
+     "cn": "芫荽叶",
+     "ratio": "10–20%"
+    }
+   ]
+  },
+  {
+   "id": "alpha_phellandrene",
+   "cn": "α-水芹烯",
+   "en": "alpha-Phellandrene",
+   "formula": "C10H16",
+   "cls": "单萜烯",
+   "vol": "top",
+   "effects": "抗菌、驱虫；气味近似胡椒与薄荷之间",
+   "mech": "单萜烯对微生物膜的扰动；对皮肤 TRP 通道有轻度激活，产生「辛」感",
+   "ev": "vitro",
+   "safety": "对部分人有皮肤刺激，建议 1% 以下；氧化后刺激性上升",
+   "allergen": false,
+   "note": "粉红胡椒的标志成分，含量可达 30–50%。同属还有 β-水芹烯，两者气味不同",
+   "ev_label": "仅体外研究",
+   "vol_label": "前调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "pink_pepper",
+     "cn": "pink_pepper",
+     "ratio": "30–50%"
+    }
+   ]
+  },
+  {
+   "id": "beta_selinene",
+   "cn": "β-芹子烯",
+   "en": "beta-Selinene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "base",
+   "effects": "气味贡献为主，药理研究少",
+   "mech": "倍半萜，挥发性低，主要作为香气骨架",
+   "ev": "vitro",
+   "safety": "无显著刺激性报道，但研究极少",
+   "allergen": false,
+   "note": "「这就是芹菜」的辨识点。与瑟丹内酯共同构成芹菜籽的独特气息",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "celery_seed",
+     "cn": "celery_seed",
+     "ratio": "10–20%"
+    }
+   ]
+  },
+  {
+   "id": "phthalides",
+   "cn": "苯酞类（瑟丹内酯等）",
+   "en": "Phthalides (sedanolide etc.)",
+   "formula": "C12H14O2",
+   "cls": "内酯",
+   "vol": "base",
+   "effects": "解痉、镇静（传统用于消化不适）",
+   "mech": "内酯环结构，推测作用于平滑肌与中枢抑制性通路；机制研究有限",
+   "ev": "animal",
+   "safety": "未见严重不良反应报道；但易聚合，陈旧油成分会变",
+   "allergen": false,
+   "note": "芹菜籽与当归共有的关键成分。含量通常只有 1–5%，却决定了「药感」",
+   "ev_label": "以动物研究为主",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "celery_seed",
+     "cn": "celery_seed",
+     "ratio": "1–5%"
+    }
+   ]
+  },
+  {
+   "id": "coumarin",
+   "cn": "香豆素",
+   "en": "Coumarin",
+   "formula": "C9H6O2",
+   "cls": "香豆素类",
+   "vol": "none",
+   "effects": "抗凝（结构类似华法林前体）、抗菌",
+   "mech": "抑制维生素 K 环氧化物还原酶，干扰凝血因子合成",
+   "ev": "animal",
+   "safety": "**肝毒性**：欧洲食品安全局设定每日耐受摄入 0.1 mg/kg 体重；桂皮精油易超量",
+   "allergen": true,
+   "note": "桂皮与锡兰肉桂最实质的差别就在这个成分。不是风味偏好问题，是剂量安全问题",
+   "ev_label": "以动物研究为主",
+   "vol_label": "非挥发",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "cassia",
+     "cn": "cassia",
+     "ratio": "0.2–1%"
+    }
+   ]
+  },
+  {
+   "id": "benzaldehyde",
+   "cn": "苯甲醛",
+   "en": "Benzaldehyde",
+   "formula": "C7H6O",
+   "cls": "醛",
+   "vol": "top",
+   "effects": "镇静、抗菌；杏仁气味",
+   "mech": "醛基与氨基反应；气味受体激活为主",
+   "ev": "vitro",
+   "safety": "氧化生成苯甲酸；高浓度有刺激，建议低浓度使用",
+   "allergen": false,
+   "note": "极少量即有明显的「杏仁」感，过量会显得像药水",
+   "ev_label": "仅体外研究",
+   "vol_label": "前调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "cassia",
+     "cn": "cassia",
+     "ratio": "少量"
+    }
+   ]
+  },
+  {
+   "id": "ocimene",
+   "cn": "罗勒烯",
+   "en": "Ocimene",
+   "formula": "C10H16",
+   "cls": "单萜烯",
+   "vol": "top",
+   "effects": "抗菌、抗真菌；清香",
+   "mech": "单萜烯，挥发性高，主要贡献头香",
+   "ev": "vitro",
+   "safety": "刺激性低；易氧化，陈旧油致敏性上升",
+   "allergen": false,
+   "note": "圣罗勒化学型判别的标志之一。与丁香酚的比例决定这支油「像丁香」还是「像薄荷」",
+   "ev_label": "仅体外研究",
+   "vol_label": "前调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "tulsi",
+     "cn": "tulsi",
+     "ratio": "2–10%"
+    }
+   ]
+  },
+  {
+   "id": "valeranone",
+   "cn": "缬草烯酮",
+   "en": "Valeranone",
+   "formula": "C15H26O",
+   "cls": "倍半萜酮",
+   "vol": "base",
+   "effects": "镇静（与缬草同类成分）",
+   "mech": "推测作用于 GABA-A 受体调节位点，但直接证据有限",
+   "ev": "animal",
+   "safety": "未见严重毒性；气味厚重，用量宜小",
+   "allergen": false,
+   "note": "甘松镇静感的主要候选成分。与缬草的缬草烯酸结构相近但不是同一物质",
+   "ev_label": "以动物研究为主",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "spikenard",
+     "cn": "spikenard",
+     "ratio": "10–20%"
+    }
+   ]
+  },
+  {
+   "id": "jatamansone",
+   "cn": "甘松酮",
+   "en": "Jatamansone",
+   "formula": "C15H26O",
+   "cls": "倍半萜酮",
+   "vol": "base",
+   "effects": "镇静、抗惊厥（动物实验）",
+   "mech": "倍半萜酮类的中枢抑制作用，机制尚未明确",
+   "ev": "animal",
+   "safety": "无严重不良反应报道；缺乏人体数据",
+   "allergen": false,
+   "note": "甘松特有成分，是它区别于缬草的气味来源",
+   "ev_label": "以动物研究为主",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "spikenard",
+     "cn": "spikenard",
+     "ratio": "5–15%"
+    }
+   ]
+  },
+  {
+   "id": "beta_maaliene",
+   "cn": "β-马阿里烯",
+   "en": "beta-Maaliene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "base",
+   "effects": "气味贡献；药理研究极少",
+   "mech": "倍半萜骨架，主要作为留香成分",
+   "ev": "vitro",
+   "safety": "无显著风险报道，但研究不足",
+   "allergen": false,
+   "note": "甘松「沉」的骨架。这类成分几乎不做功能研究，只在香气上起作用",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "spikenard",
+     "cn": "spikenard",
+     "ratio": "5–10%"
+    }
+   ]
+  },
+  {
+   "id": "valerenic_acids",
+   "cn": "缬草酸类",
+   "en": "Valerenic acids",
+   "formula": "C15H22O2",
+   "cls": "羧酸",
+   "vol": "none",
+   "effects": "镇静、促眠（缬草的主要活性依据）",
+   "mech": "GABA-A 受体 β 亚基的正向调节，是缬草研究里机制最清楚的一条",
+   "ev": "animal",
+   "safety": "与镇静类药物叠加需谨慎；孕期数据不足",
+   "allergen": false,
+   "note": "甘松与缬草共有的一类成分。注意：机制清楚不等于临床有效，缬草本身的证据也不算强",
+   "ev_label": "以动物研究为主",
+   "vol_label": "非挥发",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "spikenard",
+     "cn": "spikenard",
+     "ratio": "少量"
+    }
+   ]
+  },
+  {
+   "id": "guaiol",
+   "cn": "愈创木醇",
+   "en": "Guaiol",
+   "formula": "C15H26O",
+   "cls": "倍半萜醇",
+   "vol": "base",
+   "effects": "抗菌、抗炎（体外）；定香",
+   "mech": "倍半萜醇，挥发性极低，主要作用是留香与稳定配方",
+   "ev": "vitro",
+   "safety": "刺激性低；质地厚重，油性肌肤需稀释",
+   "allergen": false,
+   "note": "愈创木「烟熏干木甜」的主体。与金合欢醇一起解释了「烟熏玫瑰」的错觉",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "guaiacwood",
+     "cn": "guaiacwood",
+     "ratio": "20–35%"
+    }
+   ]
+  },
+  {
+   "id": "bulnesene",
+   "cn": "愈创木烯（布藜烯）",
+   "en": "Bulnesene",
+   "formula": "C15H24",
+   "cls": "倍半萜烯",
+   "vol": "base",
+   "effects": "气味贡献；抗炎（体外）",
+   "mech": "倍半萜，主要作为香气成分",
+   "ev": "vitro",
+   "safety": "无显著风险报道",
+   "allergen": false,
+   "note": "愈创木烟熏感的来源。注意与「α-愈创木烯」（guaiene）不是同一物质",
+   "ev_label": "仅体外研究",
+   "vol_label": "后调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "guaiacwood",
+     "cn": "guaiacwood",
+     "ratio": "10–20%"
+    }
+   ]
+  },
+  {
+   "id": "farnesol",
+   "cn": "金合欢醇",
+   "en": "Farnesol",
+   "formula": "C15H26O",
+   "cls": "倍半萜醇",
+   "vol": "middle",
+   "effects": "抗菌、抑制生物膜、气味柔和",
+   "mech": "干扰细菌群体感应（quorum sensing）；亦有皮肤屏障相关研究",
+   "ev": "vitro",
+   "safety": "一般耐受良好；高浓度可能刺激，建议 1% 以下",
+   "allergen": false,
+   "note": "玫瑰、依兰、愈创木都有它。花香里的「柔甜」多半来自这类倍半萜醇",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "guaiacwood",
+     "cn": "guaiacwood",
+     "ratio": "5–10%"
+    }
+   ]
+  },
+  {
+   "id": "camphene",
+   "cn": "莰烯",
+   "en": "Camphene",
+   "formula": "C10H16",
+   "cls": "单萜烯",
+   "vol": "top",
+   "effects": "祛痰（传统）、抗菌",
+   "mech": "单萜烯，挥发性高；呼吸道分泌调节的机制不明",
+   "ev": "vitro",
+   "safety": "刺激性中等；婴幼儿避免高浓度吸入",
+   "allergen": false,
+   "note": "针叶树的「冷」感来源之一，与樟脑、乙酸龙脑酯共同构成针叶调",
+   "ev_label": "仅体外研究",
+   "vol_label": "前调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "black_spruce",
+     "cn": "black_spruce",
+     "ratio": "10–20%"
+    }
+   ]
+  },
+  {
+   "id": "methyl_heptenone",
+   "cn": "甲基庚烯酮",
+   "en": "Methyl heptenone",
+   "formula": "C8H14O",
+   "cls": "酮",
+   "vol": "top",
+   "effects": "青绿气息；抗菌（弱）",
+   "mech": "小分子酮，主要是气味受体激活",
+   "ev": "vitro",
+   "safety": "低浓度无显著风险；高浓度有刺激",
+   "allergen": false,
+   "note": "「刚摘下来的花」感的关键。极少量即有效，过量会显生青",
+   "ev_label": "仅体外研究",
+   "vol_label": "前调",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "magnolia",
+     "cn": "magnolia",
+     "ratio": "5–10%"
+    }
+   ]
+  },
+  {
+   "id": "phenylethyl_alcohol",
+   "cn": "苯乙醇",
+   "en": "Phenylethyl alcohol",
+   "formula": "C8H10O",
+   "cls": "醇",
+   "vol": "middle",
+   "effects": "抗菌；玫瑰式柔甜",
+   "mech": "芳香醇，破坏微生物膜；气味上提供「花心」",
+   "ev": "vitro",
+   "safety": "温和，一般耐受良好；偶见接触致敏",
+   "allergen": false,
+   "note": "玫瑰、玉兰、蓝莲花共有。花香调里最「安全」的一类成分",
+   "ev_label": "仅体外研究",
+   "vol_label": "中调",
+   "oil_count": 2,
+   "oils": [
+    {
+     "key": "magnolia",
+     "cn": "magnolia",
+     "ratio": "少量"
+    },
+    {
+     "key": "blue_lotus",
+     "cn": "blue_lotus",
+     "ratio": "少量"
+    }
+   ]
+  },
+  {
+   "id": "nuciferine",
+   "cn": "莲心碱类生物碱",
+   "en": "Nuciferine",
+   "formula": "C19H21NO2",
+   "cls": "生物碱",
+   "vol": "none",
+   "effects": "镇静、多巴胺受体相关活性（动物）",
+   "mech": "阿朴啡型生物碱，作用于多巴胺与 5-HT 受体；具药理活性",
+   "ev": "animal",
+   "safety": "**具药理活性，不应口服**；与精神类药物可能叠加；孕期禁用",
+   "allergen": false,
+   "note": "蓝莲花「致幻」传说的化学基础。含量低、吸收差，但正因为有活性，不能当普通香精",
+   "ev_label": "以动物研究为主",
+   "vol_label": "非挥发",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "blue_lotus",
+     "cn": "blue_lotus",
+     "ratio": "微量"
+    }
+   ]
+  },
+  {
+   "id": "aporphine",
+   "cn": "阿扑吗啡类",
+   "en": "Aporphine alkaloids",
+   "formula": "C17H17NO2",
+   "cls": "生物碱",
+   "vol": "none",
+   "effects": "多巴胺能活性（药理剂量下）",
+   "mech": "阿朴啡骨架，可作用于多巴胺 D1/D2 受体",
+   "ev": "animal",
+   "safety": "**药理剂量下有中枢作用**；精油中含量低但属活性成分，口服禁止",
+   "allergen": false,
+   "note": "20 世纪「古埃及致幻」说的化学依据。关键在于剂量与途径——传说忽略了这两点",
+   "ev_label": "以动物研究为主",
+   "vol_label": "非挥发",
+   "oil_count": 1,
+   "oils": [
+    {
+     "key": "blue_lotus",
+     "cn": "blue_lotus",
+     "ratio": "微量"
+    }
+   ]
+  }
+ ]
+}

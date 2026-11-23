@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>成分库 · 植物精油文献库</title>
+<meta name="description" content="62 种精油化学成分：生物效应、作用机制、安全边界、证据层级，以及每种成分出现在哪些精油、各占多少比例。">
+<script src="theme-init.js?v=20261124w"></script>
+<link rel="stylesheet" href="styles.css?v=20261124v">
+</head>
+<body>
+<div class="eo-page cp-page">
+
+  <div class="eo-site-head">
+    <div class="eo-site-head-inner">
+      <div class="eo-site-brand">玄牙 · 植物精油文献库</div>
+      <nav class="eo-site-tabs" aria-label="站点导航">
+        <a href="index.html">全景地图</a>
+        <a href="evidence.html">证据池</a>
+        <a href="oils.html">精油卡片</a>
+        <a href="compounds.html" class="active">成分库</a>
+        <a href="game.html">探索模式</a>
+        <a href="safety.html">安全速查</a>
+        <a href="/tools" class="eo-x2ya-back" title="返回自助工具">← 自助工具</a>
+      </nav>
+      <span class="eo-site-ver">v1.0</span>
+    </div>
+  </div>
+
+  <header class="cp-hero">
+    <div class="cp-hero-inner">
+      <div class="cp-kicker">CHEMISTRY INDEX</div>
+      <h1>成分库</h1>
+      <p class="cp-sub">换个方向查：<strong>从成分看精油</strong>。每种成分的生物效应、作用机制、安全边界，以及它出现在哪些精油里、各占多少。</p>
+      <div class="cp-stats" id="cp-stats"></div>
+    </div>
+  </header>
+
+  <main class="cp-main">
+
+    <div class="cp-toolbar">
+      <input class="cp-search" id="cp-search" type="search" placeholder="搜成分：芳樟醇 / linalool / 酚 / 醛…" autocomplete="off">
+      <div class="cp-groups" id="cp-groups"></div>
+    </div>
+
+    <div class="cp-evbar" id="cp-evbar"></div>
+
+    <div class="cp-count-row">
+      <span class="cp-count" id="cp-count"></span>
+      <span class="cp-hint-mini">点右侧目录可跳到任一类</span>
+    </div>
+
+    <div class="cp-list" id="cp-list"></div>
+
+    <div class="cp-notes">
+      <div class="cp-note">
+        <strong>比例不是固定值。</strong>表中百分比来自各精油档案里标注的文献范围值，随产地、化学型、采收期与批次波动很大。同一支「薰衣草」，芳樟醇可以是 20%，也可以是 49%——所以别把区间中位数当成产品保证值。
+      </div>
+      <div class="cp-note">
+        <strong>成分相同，不等于作用相同。</strong>体外抗菌数据几乎都建立在远高于实际使用的浓度上；「某种成分有某活性」不能直接推出「含它的精油有这个疗效」。这也是精油研究里最常见的推论错误。
+      </div>
+      <div class="cp-note warn">
+        <strong>安全一栏只写该成分本身的风险，不替代整支精油的评估。</strong>一支油里还有别的成分、浓度与协同效应。实际使用请看<a href="safety.html">安全速查</a>与具体精油的档案。
+      </div>
+    </div>
+  </main>
+
+  <nav class="cp-toc" id="cp-toc" aria-label="类别目录"></nav>
+  <nav class="cp-bnav" id="cp-bnav" aria-label="类别目录（移动端）"></nav>
+
+  <footer class="eo-footer">
+    <span>玄牙 · 成分库</span>
+    <span id="cp-time"></span>
+    <a href="index.html">← 全景地图</a>
+  </footer>
+</div>
+
+<script src="compounds.js?v=20261124v"></script>
+<script src="glossary.js?v=20261124v"></script>
+</body>
+</html>

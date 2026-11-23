@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>精油卡片 · 植物精油文献库</title>
+<meta name="description" content="76 种精油，按证据等级排列的目录，点开看每种精油的通读综述与关键文献。">
+<script src="theme-init.js?v=20261124w"></script>
+<link rel="stylesheet" href="styles.css?v=20261124v">
+</head>
+<body>
+<div class="eo-page oil-page">
+
+  <div class="eo-site-head">
+    <div class="eo-site-head-inner">
+      <div class="eo-site-brand">玄牙 · 植物精油文献库</div>
+      <nav class="eo-site-tabs" aria-label="站点导航">
+        <a href="index.html">全景地图</a>
+        <a href="evidence.html">证据池</a>
+        <a href="oils.html" class="active">精油卡片</a>
+        <a href="compounds.html">成分库</a>
+        <a href="game.html">探索模式</a>
+        <a href="safety.html">安全速查</a>
+        <a href="/tools" class="eo-x2ya-back" title="返回自助工具">← 自助工具</a>
+      </nav>
+      <span class="eo-site-ver">v1.0</span>
+    </div>
+  </div>
+
+  <header class="eo-hero oil-hero">
+    <div class="eo-hero-inner">
+      <div class="eo-brand">通读后撰写 · 证据解读</div>
+      <h1>精油卡片</h1>
+      <p class="eo-sub">左边是目录，按证据等级排好；点一个名字，右边展开这种精油的完整卡片 —— 证据画像、研究版图、落地提示、局限，附关键文献。</p>
+      <div class="eo-meta" id="oil-meta"></div>
+    </div>
+  </header>
+
+  <main class="eo-main">
+    <div class="oil-browser" id="oil-browser">
+
+      <aside class="oil-toc" aria-label="精油目录">
+        <div class="oil-toc-head">
+          <input id="oil-search" class="oil-search" type="search"
+                 placeholder="搜索精油名 / 拉丁名…" autocomplete="off" aria-label="搜索精油">
+          <div class="oil-toc-stat" id="oil-toc-stat"></div>
+        </div>
+        <div class="oil-toc-body" id="oil-toc-body"></div>
+      </aside>
+
+      <section class="oil-pane" id="oil-pane" aria-label="精油详情">
+        <button class="oil-pane-back" id="oil-pane-back" type="button">← 返回目录</button>
+        <div class="oil-pane-inner" id="oil-pane-inner"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="eo-footer">
+    <span>玄牙 · 精油卡片</span>
+    <span id="oil-foot-time"></span>
+    <a href="index.html">← 返回全景地图</a>
+  </footer>
+</div>
+<script src="oils.js?v=20261124v"></script>
+<script src="glossary.js?v=20261124v"></script>
+</body>
+</html>
