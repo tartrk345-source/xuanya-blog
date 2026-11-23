@@ -13,7 +13,7 @@
 .eo-page h1,.eo-page h2,.eo-page h3{margin:0;font-weight:600;line-height:1.3}
 
 /* Site header (shared across pages) */
-.eo-site-head{background:#C4452F;border-bottom:1px solid rgba(255,255,255,.14)}
+.eo-site-head{background:var(--eo-green-d);border-bottom:1px solid rgba(255,255,255,.14)}
 .eo-site-head-inner{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:26px;height:52px}
 .eo-site-brand{font-size:14px;font-weight:500;color:#fff;letter-spacing:.02em;white-space:nowrap}
 .eo-site-tabs{display:flex;gap:4px;flex:1}
