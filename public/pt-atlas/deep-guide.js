@@ -2,8 +2,17 @@
 (function () {
   'use strict';
   var DATA = null;
-  var ORDER = ['rct_ocd', 'sr_schizophrenia'];
-  var LABEL = { rct_ocd: 'OCD dTMS · 随机对照', sr_schizophrenia: '精分 dTMS · 系统综述' };
+  var ORDER = ['rct_ocd', 'meta_ocd', 'rct_accel_ocd', 'sr_schizophrenia', 'rct_schiz_negative', 'sr_dTMS_all', 'sr_dTMS_vs_rTMS', 'letter_tus'];
+  var LABEL = {
+    rct_ocd: 'OCD dTMS · 随机对照',
+    meta_ocd: '难治 OCD · Meta 分析',
+    rct_accel_ocd: '加速双锥线圈 · RCT',
+    sr_schizophrenia: '精分 dTMS · 系统综述',
+    rct_schiz_negative: '精分阴性症状 · RCT',
+    sr_dTMS_all: 'dTMS 全景 · 28 项综述',
+    sr_dTMS_vs_rTMS: 'H1 vs F8 · 头对头',
+    letter_tus: '经颅聚焦超声 · 前沿'
+  };
   var curKey = 'rct_ocd', cur = 0;
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]; }); }

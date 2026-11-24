@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "generated": "2026-11-24",
-    "source": "ima 玄牙的文献库 · 两篇真实文献全文",
-    "note": "AI 精读卡：精读20模块 + 全文13段 + 关键表格3 + 全站同步清单6条。数据直给，原文与翻译随行，结论以原文为准。",
-    "compliance": "AI 生成内容标识；段落为核心节选非逐字全文；翻译 AI 生成；表格仅列 OCR 可确认数值"
+    "generated": "2026-11-25",
+    "source": "ima「玄牙的文献库」· 8 篇真实文献全文（前 2 篇 + 本批 6 篇）",
+    "note": "AI 精读卡：每篇 20 模块 + 全文英中对照 8 段 + 关键表格 3 张 + 全站同步清单 6 条。数据直给，原文与翻译随行，结论以原文为准；无依据的数值不编造，推算值均显式标注。",
+    "compliance": "AI 生成内容标识；段落为核心节选非逐字全文；翻译 AI 生成；表格仅列 OCR 可确认数值，校正处已标注；PDF 全文不公开；阴性/混合结果与局限同等呈现。"
   },
   "guides": {
     "rct_ocd": {
@@ -1818,6 +1818,3912 @@
             ]
           ],
           "explain": "仅 1 项 RCT 评估认知，且只在众多指标中有 1 项阳性（P<0.05）——多重比较下极可能是偶然发现。作者用「potential」措辞保留探索性信号，网站同步时不应把它写成「dTMS 改善认知」。"
+        }
+      ]
+    },
+    "rct_schiz_negative": {
+      "type": "RCT · 假刺激对照",
+      "typeCls": "rct",
+      "title": "高频 dTMS 改善精神分裂症阴性症状：可行性随机对照研究",
+      "en": "Efficacy of Adjunctive High-Frequency Deep Transcranial Magnetic Stimulation for Improving Negative Symptoms in Schizophrenia: A Feasibility Study",
+      "author": "Gulesh Kumar, Nishant Goyal, Aniruddha Mukherjee, Pooja Sharma, Dharani Ramamoorthy",
+      "journal": "J ECT · 2025 · online ahead of print",
+      "ids": "注册号 CTRI/2021/07/035267 · ima「玄牙的文献库」",
+      "stage": "L2 读证据 · 随机对照试验（可行性）",
+      "groups": [
+        {
+          "name": "一、读懂它",
+          "tone": "purple",
+          "items": [
+            {
+              "label": "一句话定位",
+              "value": "这篇在问：用 H7 线圈 10 Hz 高频 dTMS 刺激双侧 ACC/mPFC，10 次/2 周，能否改善精神分裂症的阴性症状？"
+            },
+            {
+              "label": "背景与假设",
+              "value": [
+                "阴性症状致残且抗精神病药疗效不足；现有药物的证据并不一致。",
+                "阴性症状与 ACC、mPFC 低功能相关：ACC 低活动、ACC 变薄与社会退缩相关，mPFC 多巴胺能低功能与阴性症状/认知缺损相关。",
+                "标准 8 字线圈有效刺激深度约 1 cm；H 线圈在健康志愿者中可激活 3–4 cm 深的皮质下结构。",
+                "H7 线圈专为双侧 ACC + mPFC 设计，2018 年 8 月获 FDA 批准用于 OCD；作者假设同一机制可用于精分阴性症状，且此前无研究探索过。"
+              ]
+            },
+            {
+              "label": "PICO 详解",
+              "pico": {
+                "P": "84 例右利手住院患者筛查，18–60 岁，ICD-10 精神分裂症、以阴性症状为主（SANS>20），稳定用药 4 周、近 6 个月未接受任何脑刺激",
+                "I": "10 Hz 高频 dTMS，H7 线圈，100% 静息运动阈值，靶点双侧 ACC + mPFC，10 次 / 2 周",
+                "C": "假刺激：头盔同样佩戴，另用 8 字线圈置于头盔上产生感觉与声音，但不产生脑内电场",
+                "O": "SANS、PANSS、CGI-S，基线 / 2 周（治疗结束）/ 6 周（结束后 4 周）三点评估；次要含 CDSS、SAS 以排除继发性阴性症状",
+                "S": "单中心、假刺激对照、评定者与受试者盲的可行性研究；CTRI/2021/07/035267"
+              }
+            },
+            {
+              "label": "研究设计",
+              "value": "中央精神卫生研究所（印度 Ranchi）单中心；不透明密封信封序贯分配；受试者与评定者盲；重复测量方差分析（Greenhouse-Geisser 校正），治疗为组间因素、时间为组内因素；显著性 P<0.05（双尾）。46 例随机，43 例完成（主动 21 / 假 22），3 例脱落。",
+              "sources": [
+                {
+                  "loc": "Materials and Method—Design/Intervention",
+                  "quote": "This was a sham-controlled, rater, and subject blinded study.",
+                  "zh": "本研究为假刺激对照、评定者与受试者盲的研究。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "参数卡",
+              "value": [
+                "设备：PowerMag EEG 100（MAG & More）+ H7 dTMS 线圈（Brainsway）",
+                "频率 10 Hz；每串 3 秒，40 串/次，串间隔 20 秒；1200 脉冲/次",
+                "强度 100% 静息运动阈值（左侧 M1 用 8 字线圈定阈值，右侧第一骨间背侧肌记录 MEP）",
+                "疗程：5 次/周 × 2 周 = 10 次；全程维持原抗精神病药剂量 6 周",
+                "假刺激：头盔同样佩戴 + 8 字线圈置于头盔上模拟感觉/声音"
+              ],
+              "sources": [
+                {
+                  "loc": "Materials and Method—Design/Intervention",
+                  "quote": "Treatment was delivered at 10 Hz with a train duration of 3 seconds (for 40 trains per session), an inter train interval of 20 seconds, and a total of 1200 pulses per session.",
+                  "zh": "刺激以 10 Hz 给予，每串持续 3 秒（每次 40 串），串间隔 20 秒，每次合计 1200 个脉冲。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "术语表",
+              "value": [
+                "SANS：阴性症状评定量表，本研究主要终点",
+                "PANSS：阳性与阴性症状量表；negative subscale 为阴性症状分量表",
+                "η²（partial eta squared）：效应量，0.158 属偏小到中等",
+                "CDSS / SAS：卡尔加里抑郁量表 / Simpson-Angus 锥体外系量表，用于排除继发性阴性症状",
+                "RMT：静息运动阈值"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "二、批判它",
+          "tone": "purple",
+          "items": [
+            {
+              "label": "主要结果",
+              "value": "SANS 组间差显著（P=0.003，η²=0.158）；PANSS 阴性分量表组间差亦显著（P=0.044，η²=0.079）。两组随时间在 PANSS 各分量表、SANS、CGI-S 上均有改善（均 P<0.001），但主动组在阴性症状上改善更大。",
+              "sources": [
+                {
+                  "loc": "Abstract—Result",
+                  "quote": "active dTMS group showed significant improvement in negative symptoms as indicated by significant improvement in the Scale for Assessment of Negative Symptoms score as compared to sham dTMS group (P=0.003, eta2=0.158), further substantiated by improvement in negative subscale of Positive and Negative Syndrome Scale (P=0.044, eta2=0.079).",
+                  "zh": "与假刺激组相比，主动 dTMS 组的阴性症状显著改善，表现为 SANS 评分改善（P=0.003，η²=0.158），并得到 PANSS 阴性分量表改善的进一步佐证（P=0.044，η²=0.079）。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "终点达标",
+              "value": "是——主要终点（SANS 组×时间交互）达标。但作者明确标注为 feasibility study（可行性研究），结论为「favorable effects」「preliminary」，不宜按确证性 RCT 解读。",
+              "sources": [
+                {
+                  "loc": "Discussion",
+                  "quote": "Our findings are preliminary and should be interpreted with caution, as our study lacked a true sham stimulation and although we did general randomization, a strict randomization was not possible in our study.",
+                  "zh": "我们的发现是初步的，应谨慎解读，因为本研究缺乏真正的假刺激，且虽做了一般随机化，但无法做到严格随机化。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "盲法与假刺激",
+              "value": "受试者与评定者盲，但作者自承「未使用理想假刺激系统」：用 8 字线圈置于头盔上模拟感觉/声音，并直言「采用真正的假刺激会更好，可消除安慰剂效应」。这是本研究最大的内部效度缺口，也解释了为何两组都显著改善。"
+            },
+            {
+              "label": "偏倚与局限（RoB / GRADE）",
+              "value": [
+                "无真假日刺激 → 安慰剂效应无法排除（作者自述）。",
+                "基线阴性症状两组虽无统计学差异，但主动组数值更高；作者承认主效应可能部分来自基线偏高。",
+                "仅观察 6 周，无维持治疗与长期随访；统计能力有限，未做个体轨迹图（spaghetti plot）。",
+                "便利抽样、单中心、样本量小（43 例完成）；作者建议更大样本与更严格分析。",
+                "未做 GRADE 分级；作为可行性研究，证据确定性宜评为「低」。"
+              ],
+              "sources": [
+                {
+                  "loc": "Discussion",
+                  "quote": "Though not statistically significant, there were differences in baseline negative symptoms in both active and sham group and primary effect can be partially attributed because of this elevated baseline measures in the active group",
+                  "zh": "尽管无统计学显著性，两组基线阴性症状存在差异，主效应可能部分归因于主动组基线测量值偏高。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "结论措辞",
+              "value": "原文：「10 sessions of high-frequency dTMS over 2 weeks were effective in ameliorating negative symptoms of schizophrenia and the effect was maintained after 4 weeks of the last stimulation.」但同段前一句限定为 preliminary、should be interpreted with caution。"
+            },
+            {
+              "label": "阴性 / 混合结果",
+              "value": "两组在 PANSS 阳性、一般精神病理、CGI-S 上均随时间改善（P<0.001），组间无显著差异报告；HAM-D 类的抑郁相关指标未作为独立显著结果呈现。即「整体都有改善，只有阴性症状拉开组间差」——典型的混合结果，须诚实标注。"
+            },
+            {
+              "label": "安全性与耐受性",
+              "value": "无癫痫发作等重大不良反应。5 例主诉头皮不适（轻中度，自行缓解）；2 例主动组因头皮不适分别在第 2、4 次后退出，1 例假刺激组因提前出院在第 6 次后退出。"
+            },
+            {
+              "label": "统计与终点预设",
+              "value": "重复测量 ANOVA（处理为组间、时间为组内），Greenhouse-Geisser 校正；P<0.05 双尾。原文未明确说明主要终点的事前注册定义，仅以 SANS 与 PANSS 阴性分量表为核心指标，需注意多重比较未校正。"
+            },
+            {
+              "label": "绝对效应与 NNT",
+              "value": "原文只给效应量（η²=0.158 / 0.079）与 P 值，未给 SANS 组间差绝对值、置信区间或应答率/NNT。不能从 η² 反推临床意义大小——这是与 OCD dTMS RCT（组间差 7.80 分）相比的重要信息缺口。"
+            },
+            {
+              "label": "利益冲突与资助（待核）",
+              "value": "全文节选未见利益冲突声明与资助信息；H7 线圈由 Brainsway 生产、设备为 MAG & More，厂商关系未披露。按库内规范标注「待核」，不臆断。"
+            }
+          ]
+        },
+        {
+          "name": "三、用它",
+          "tone": "teal",
+          "items": [
+            {
+              "label": "临床可操作性",
+              "value": "10 Hz（而非 OCD 方案的 20 Hz）、100% RMT、1200 脉冲/次、10 次/2 周的短程方案，对住院依从性友好。若开展院内 feasibility 研究，须优先解决「真假日刺激」与基线阴性症状匹配两个设计缺陷。"
+            },
+            {
+              "label": "与库内证据的关系",
+              "value": "与 sr_schizophrenia（系统综述）互补：该综述指出 dTMS 对精分阴性症状证据「limited/heterogeneous」，本篇正是补上一条原始 RCT 证据；与 rct_ocd 共用 H7 线圈与 ACC/mPFC 靶点，但频率（10 vs 20 Hz）、人群（精分 vs OCD）、脉冲数（1200 vs 2000）不同，是靶点跨疾病迁移的关键对照。"
+            },
+            {
+              "label": "患者版一句话",
+              "value": "一种戴在头上的磁刺激，两周做 10 次，初步看到对「动力不足、情感淡漠」这类症状有帮助，但研究规模小、假刺激不够完美，还不能当成确定有效的治疗。"
+            },
+            {
+              "label": "我的判断（待填）",
+              "value": "［留白：结合你在徐汇区精神卫生中心的临床样本，评估 10 Hz 方案与可及性、阴性症状量表选择、是否需要功能影像终点］"
+            }
+          ]
+        }
+      ],
+      "sync": [
+        {
+          "target": "reading_plan.json · items[]",
+          "op": "新增",
+          "detail": "L2 读证据 · 1 篇精分 dTMS 可行性 RCT：tech=dtms，year=2025，journal=J ECT，types=[RCT, sham-controlled]，注册号 CTRI/2021/07/035267（不伪造 PMID）。"
+        },
+        {
+          "target": "deep_guides.json · guides[]",
+          "op": "新增",
+          "detail": "整篇精读卡（20 模块 + 8 段全文 + 3 表）作为该文献阅读导览，含数据直给与原文溯源。"
+        },
+        {
+          "target": "targets.json · ACC / mPFC",
+          "op": "补充",
+          "detail": "新增「精分阴性症状」适应证条目：H7、10 Hz、100% RMT、1200 脉冲/次、10 次/2 周；SANS P=0.003、η²=0.158。与既有 OCD 20 Hz 方案并列，标注「同一靶点不同参数」。"
+        },
+        {
+          "target": "devices.json · H7 线圈",
+          "op": "补充",
+          "detail": "H7 线圈跨适应证应用补一条：精神分裂症阴性症状（可行性 RCT，证据确定性低）；设备组合为 PowerMag EEG 100（MAG & More）+ H7（Brainsway）。"
+        },
+        {
+          "target": "tech_knowledge.json · 频率选择",
+          "op": "补充",
+          "detail": "补入「10 Hz 优于 20 Hz」的机制假说：10 Hz 落在 alpha 峰频带，与阴性症状发生及严重度相关（原文引 meta 分析）；标注为作者推论而非定论。"
+        },
+        {
+          "target": "evidence.json / matrix_counts.json",
+          "op": "待人工审核",
+          "detail": "该研究为单中心可行性 RCT、无真假日刺激，建议不直接计入高确定性证据格；如计入应标注「低确定性 / 待复核」，由管理员模式逐条确认后再更新矩阵。"
+        }
+      ],
+      "fulltext": [
+        {
+          "sec": "摘要 · Background",
+          "en": "Negative symptoms of schizophrenia are disabling and respond inadequately to antipsychotic treatment. Hypofunctioning of cortical areas such as anterior cingulate cortex and medial prefrontal cortex has been implicated in negative symptoms. Repetitive transcranial magnetic stimulation is efficacious for the negative symptoms. Deep transcranial magnetic stimulation (dTMS) has the benefits of repetitive transcranial magnetic stimulation with the advantage of stimulating deeper brain targets.",
+          "zh": "精神分裂症的阴性症状具有致残性，且对抗精神病药物治疗反应不足。前扣带回、内侧前额叶等皮质区域的功能低下被认为与阴性症状相关。重复经颅磁刺激对阴性症状有效。深部经颅磁刺激（dTMS）兼具 rTMS 的优点，并能刺激更深的脑靶点。",
+          "hard": [
+            {
+              "w": "disabling",
+              "lv": "六级",
+              "zh": "致残的"
+            },
+            {
+              "w": "inadequately",
+              "lv": "进阶",
+              "zh": "不充分地"
+            },
+            {
+              "w": "antipsychotic",
+              "lv": "专业术语",
+              "zh": "抗精神病药"
+            },
+            {
+              "w": "hypofunctioning",
+              "lv": "专业术语",
+              "zh": "功能低下"
+            },
+            {
+              "w": "anterior cingulate cortex",
+              "lv": "专业术语",
+              "zh": "前扣带回"
+            },
+            {
+              "w": "medial prefrontal cortex",
+              "lv": "专业术语",
+              "zh": "内侧前额叶"
+            },
+            {
+              "w": "implicated",
+              "lv": "六级",
+              "zh": "被认为有关"
+            },
+            {
+              "w": "efficacious",
+              "lv": "进阶",
+              "zh": "有效的"
+            }
+          ]
+        },
+        {
+          "sec": "引言 · 深度限制",
+          "en": "Standard rTMS coils induce an effective field in a depth of approximately 1 cm. It was hypothesized that deeper stimulation could improve the results. Deep transcranial magnetic stimulation (dTMS) utilizes different H-coils (Hessed coils) in activating distant brain structures, and in recent studies, it was found that subdural structures were activated at a depth of 3 – 4 cm in healthy volunteers, compared with up to 1.5 cm with standard figure-8 coil.",
+          "zh": "标准 rTMS 线圈产生的有效电场深度约 1 cm。研究者假设更深的刺激可改善结果。dTMS 使用不同的 H 线圈（Hessed 线圈）激活远处脑结构；近期研究在健康志愿者中发现，皮质下结构可在 3–4 cm 深度被激活，而标准 8 字线圈最多约 1.5 cm。",
+          "hard": [
+            {
+              "w": "induce",
+              "lv": "六级",
+              "zh": "诱导，产生"
+            },
+            {
+              "w": "approximately",
+              "lv": "四级内",
+              "zh": "大约"
+            },
+            {
+              "w": "hypothesized",
+              "lv": "进阶",
+              "zh": "假设"
+            },
+            {
+              "w": "Hessed coils",
+              "lv": "专业术语",
+              "zh": "Hessed 线圈（H 线圈）"
+            },
+            {
+              "w": "subdural",
+              "lv": "专业术语",
+              "zh": "硬膜下的"
+            },
+            {
+              "w": "figure-8 coil",
+              "lv": "专业术语",
+              "zh": "8 字形线圈"
+            }
+          ]
+        },
+        {
+          "sec": "引言 · 靶点依据",
+          "en": "Literature suggests that negative symptoms are correlated with the modified functioning of various cerebral regions, including the anterior cingulate cortex (ACC) and the medial prefrontal cortex (mPFC). Hypoactivity of ACC was found in schizophrenia with prominent negative symptoms. ACC thinning has also been postulated to be related to increased social withdrawal in patients with schizophrenia.",
+          "zh": "文献提示阴性症状与包括 ACC、mPFC 在内的多个脑区功能改变相关。在以阴性症状为主的精神分裂症中发现 ACC 活动低下；ACC 变薄也被推测与患者社会退缩加重有关。",
+          "hard": [
+            {
+              "w": "correlated",
+              "lv": "六级",
+              "zh": "相关"
+            },
+            {
+              "w": "cerebral",
+              "lv": "进阶",
+              "zh": "脑的"
+            },
+            {
+              "w": "hypoactivity",
+              "lv": "专业术语",
+              "zh": "活动低下"
+            },
+            {
+              "w": "prominent",
+              "lv": "六级",
+              "zh": "突出的"
+            },
+            {
+              "w": "postulated",
+              "lv": "进阶",
+              "zh": "推测"
+            },
+            {
+              "w": "social withdrawal",
+              "lv": "专业术语",
+              "zh": "社会退缩"
+            }
+          ]
+        },
+        {
+          "sec": "方法 · 干预参数",
+          "en": "Treatment was delivered at 10 Hz with a train duration of 3 seconds (for 40 trains per session), an inter train interval of 20 seconds, and a total of 1200 pulses per session. A total 10 number of sessions (5 sessions per week) were given per patient over 2 weeks. During the sham stimulation, the helmet was positioned in the same manner as in the active stimulation sessions. Stimulation was administered using a figure-of-8 coil over the helmet to evoke sensation and sound, while also minimizing direct stimulatory effects.",
+          "zh": "刺激以 10 Hz 给予，每串 3 秒（每次 40 串），串间隔 20 秒，每次共 1200 个脉冲。每位患者在 2 周内接受共 10 次（每周 5 次）。假刺激时头盔以与主动刺激相同的方式佩戴，并用 8 字线圈置于头盔之上以诱发感觉与声音，同时尽量减少直接的刺激效应。",
+          "hard": [
+            {
+              "w": "train",
+              "lv": "专业术语",
+              "zh": "串（刺激串）"
+            },
+            {
+              "w": "inter train interval",
+              "lv": "专业术语",
+              "zh": "串间隔"
+            },
+            {
+              "w": "pulse",
+              "lv": "专业术语",
+              "zh": "脉冲"
+            },
+            {
+              "w": "helmet",
+              "lv": "六级",
+              "zh": "头盔"
+            },
+            {
+              "w": "evoke",
+              "lv": "进阶",
+              "zh": "诱发"
+            },
+            {
+              "w": "minimizing",
+              "lv": "四级内",
+              "zh": "使最小化"
+            }
+          ]
+        },
+        {
+          "sec": "结果 · 流程与完成",
+          "en": "Forty-six patients were randomized between active and sham groups after baseline evaluation. In our study, there were a total of 3 dropouts, out of which 2 patients from the active group and 1 patient from the sham group dropped out of the study. Forty-three patients completed the 10 sessions of dTMS, of which 21 received active stimulation and 22 sham stimulation. There were no major side effects like seizure as reported with high-frequency dTMS stimulation.",
+          "zh": "46 例患者在基线评估后被随机分入主动组与假刺激组。研究共 3 例脱落，其中主动组 2 例、假刺激组 1 例。43 例完成了 10 次 dTMS，其中 21 例接受主动刺激、22 例假刺激。未报告高频 dTMS 刺激所致的癫痫发作等重大不良反应。",
+          "hard": [
+            {
+              "w": "randomized",
+              "lv": "专业术语",
+              "zh": "随机分组"
+            },
+            {
+              "w": "dropout",
+              "lv": "专业术语",
+              "zh": "脱落"
+            },
+            {
+              "w": "baseline",
+              "lv": "四级内",
+              "zh": "基线"
+            },
+            {
+              "w": "seizure",
+              "lv": "六级",
+              "zh": "癫痫发作"
+            },
+            {
+              "w": "sham",
+              "lv": "专业术语",
+              "zh": "假刺激"
+            }
+          ]
+        },
+        {
+          "sec": "结果 · 主要终点",
+          "en": "However, significant improvement was seen in the negative symptoms of schizophrenia after active dTMS as shown by means SANS score reduction of active group (P=0.003) as compared to sham group with mild effect size (eta2=0.158) and in negative syndrome subscale of PANSS (P=0.044) with mild effect size (eta2=0.079).",
+          "zh": "然而，主动 dTMS 后精神分裂症阴性症状出现显著改善：与假刺激组相比，主动组 SANS 评分下降（P=0.003），效应量偏小（η²=0.158）；PANSS 阴性综合征分量表亦然（P=0.044，η²=0.079）。",
+          "hard": [
+            {
+              "w": "significant",
+              "lv": "四级内",
+              "zh": "显著的"
+            },
+            {
+              "w": "means",
+              "lv": "四级内",
+              "zh": "均值"
+            },
+            {
+              "w": "mild",
+              "lv": "四级内",
+              "zh": "轻度的"
+            },
+            {
+              "w": "effect size",
+              "lv": "专业术语",
+              "zh": "效应量"
+            },
+            {
+              "w": "subscale",
+              "lv": "专业术语",
+              "zh": "分量表"
+            }
+          ]
+        },
+        {
+          "sec": "讨论 · 局限自述",
+          "en": "Our findings are preliminary and should be interpreted with caution, as our study lacked a true sham stimulation and although we did general randomization, a strict randomization was not possible in our study. In addition, we did not use an ideal sham stimulation system; instead, we utilized a figure-of-8 coil over the helmet coil to provide sensation and sound effects. Employing a true sham would have been preferable to eliminate the placebo effect.",
+          "zh": "我们的发现是初步的，应谨慎解读，因为本研究缺乏真正的假刺激，且虽做了一般随机化，但无法做到严格随机化。此外，我们未使用理想的假刺激系统，而是用 8 字线圈置于头盔线圈之上来提供感觉与声音效果。采用真正的假刺激本应更可取，以消除安慰剂效应。",
+          "hard": [
+            {
+              "w": "preliminary",
+              "lv": "六级",
+              "zh": "初步的"
+            },
+            {
+              "w": "interpreted",
+              "lv": "四级内",
+              "zh": "解读"
+            },
+            {
+              "w": "caution",
+              "lv": "四级内",
+              "zh": "谨慎"
+            },
+            {
+              "w": "strict",
+              "lv": "四级内",
+              "zh": "严格的"
+            },
+            {
+              "w": "ideal",
+              "lv": "四级内",
+              "zh": "理想的"
+            },
+            {
+              "w": "placebo effect",
+              "lv": "专业术语",
+              "zh": "安慰剂效应"
+            }
+          ]
+        },
+        {
+          "sec": "讨论 · 机制解释",
+          "en": "We propose that mechanism of long term potentiation and a better localized stimulation of bilateral ACC and mPFC by H7 coils alleviated the hypoactivation of ACC and mPFC and possibly their associated area and it led to improvement in negative symptoms noted in our study. High-frequency TMS increases cortical excitability, which might reverse mPFC and ACC hypoactivity noted in schizophrenia patients with negative symptoms.",
+          "zh": "我们提出，H7 线圈通过长时程增强机制以及对双侧 ACC、mPFC 更局限化的刺激，减轻了 ACC/mPFC 及相关区域的低激活，从而带来本研究中阴性症状的改善。高频 TMS 提高皮质兴奋性，可能逆转以阴性症状为主的精分患者中观察到的 mPFC、ACC 低活动。",
+          "hard": [
+            {
+              "w": "long term potentiation",
+              "lv": "专业术语",
+              "zh": "长时程增强（LTP）"
+            },
+            {
+              "w": "localized",
+              "lv": "进阶",
+              "zh": "局限化的"
+            },
+            {
+              "w": "alleviated",
+              "lv": "六级",
+              "zh": "减轻"
+            },
+            {
+              "w": "hypoactivation",
+              "lv": "专业术语",
+              "zh": "低激活"
+            },
+            {
+              "w": "cortical excitability",
+              "lv": "专业术语",
+              "zh": "皮质兴奋性"
+            },
+            {
+              "w": "reverse",
+              "lv": "四级内",
+              "zh": "逆转"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "name": "表 1 · SANS / PANSS 阴性分量表随时间变化（N=43）",
+          "note": "原文 TABLE 2（OCR 有符号错位，仅列可确认均值±SD，以原 PDF 为准）",
+          "head": [
+            "量表 / 时间点",
+            "主动组 (n=21)",
+            "假刺激组 (n=22)",
+            "组×时间 P",
+            "偏 η²"
+          ],
+          "rows": [
+            [
+              "SANS 基线",
+              "87.90 ± 16.52",
+              "82.27 ± 15.61",
+              "0.003",
+              "0.158"
+            ],
+            [
+              "SANS 第 2 周",
+              "82.90 ± 17.52",
+              "80.00 ± 16.01",
+              "—",
+              "—"
+            ],
+            [
+              "SANS 第 6 周",
+              "79.66 ± 17.21",
+              "78.00 ± 15.57",
+              "—",
+              "—"
+            ],
+            [
+              "PANSS 阴性 基线",
+              "28.14 ± 5.39",
+              "25.54 ± 5.72",
+              "0.044",
+              "0.079"
+            ],
+            [
+              "PANSS 阴性 第 2 周",
+              "25.76 ± 5.38",
+              "23.90 ± 5.52",
+              "—",
+              "—"
+            ],
+            [
+              "PANSS 阴性 第 6 周",
+              "24.28 ± 5.28",
+              "23.09 ± 5.44",
+              "—",
+              "—"
+            ],
+            [
+              "PANSS 阳性 基线",
+              "12.28 ± 2.59",
+              "12.04 ± 4.06",
+              "0.551",
+              "0.013"
+            ],
+            [
+              "CGI 基线",
+              "4.80 ± 0.74",
+              "4.45 ± 0.96",
+              "0.067",
+              "0.067"
+            ]
+          ],
+          "explain": "读法：SANS 与 PANSS 阴性分量表的「组×时间」交互显著（P=0.003 / 0.044），是本研究唯一拉开组间差的终点；PANSS 阳性、一般精神病理、CGI 的组间交互均不显著（P=0.551 / 0.149 / 0.067）。注意主动组 SANS 基线比假组高约 5.6 分，作者承认主效应可能部分来自基线不平衡。"
+        },
+        {
+          "name": "表 2 · 刺激参数（主动组）",
+          "note": "原文 Materials and Method—Design/Intervention；与库内 OCD 方案对照",
+          "head": [
+            "参数",
+            "本研究（精分阴性症状）",
+            "库内 OCD RCT（rct_ocd）"
+          ],
+          "rows": [
+            [
+              "线圈 / 靶点",
+              "H7 / 双侧 ACC + mPFC",
+              "H7 / 双侧 dACC + mPFC"
+            ],
+            [
+              "频率",
+              "10 Hz",
+              "20 Hz"
+            ],
+            [
+              "强度",
+              "100% RMT",
+              "100% RMT（腿部运动区前 4 cm 定位）"
+            ],
+            [
+              "每串 / 串数 / 间隔",
+              "3 秒 / 40 串 / 20 秒",
+              "2 秒 / 50 串 / 20 秒"
+            ],
+            [
+              "脉冲 / 次",
+              "1200",
+              "2000"
+            ],
+            [
+              "每次时长",
+              "未报告",
+              "约 18 分钟"
+            ],
+            [
+              "疗程",
+              "10 次 / 2 周（5 次/周）",
+              "10 次 / 2 周（5 次/周）"
+            ],
+            [
+              "注册号",
+              "CTRI/2021/07/035267",
+              "CTRI/2020/07/026407"
+            ]
+          ],
+          "explain": "读法：同一 H7 线圈、同一靶点、同一 10 次 / 2 周疗程，但频率与脉冲数不同。作者引 meta 分析称 10 Hz 在精分阴性症状上优于 20 Hz，理由可能是 10 Hz 落在 alpha 峰频带内——这是「同靶点、不同参数」最有价值的对照，可直接补进 targets.json 的参数栏。"
+        },
+        {
+          "name": "表 3 · 脱落与不良事件",
+          "note": "原文 RESULTS；仅列明确报告的事件",
+          "head": [
+            "项目",
+            "主动组",
+            "假刺激组",
+            "说明"
+          ],
+          "rows": [
+            [
+              "随机 / 完成",
+              "23 / 21",
+              "23 / 22",
+              "共 3 例脱落"
+            ],
+            [
+              "头皮不适退出",
+              "2 例（第 2、4 次后）",
+              "0",
+              "轻中度，自行缓解"
+            ],
+            [
+              "其他退出",
+              "0",
+              "1 例（第 6 次后提前出院）",
+              "原因未明"
+            ],
+            [
+              "头皮不适（未退出）",
+              "共 5 例报告",
+              "—",
+              "原文未分组列示"
+            ],
+            [
+              "癫痫发作",
+              "0",
+              "0",
+              "「无重大副作用如癫痫发作」"
+            ]
+          ],
+          "explain": "读法：耐受性总体良好，但主动组 2 例因头皮不适退出，提示 100% RMT 的 H7 高频方案在头皮感受上仍有依从性成本；与库内 OCD RCT 的不良事件谱（同样以头皮不适/头痛为主）一致。"
+        }
+      ]
+    },
+    "meta_ocd": {
+      "type": "Meta 分析 · 随机对照试验",
+      "typeCls": "sr",
+      "title": "dTMS 治疗难治性强迫症：随机对照试验的 meta 分析",
+      "en": "Deep transcranial magnetic stimulation for treatment-resistant obsessive-compulsive disorder: A meta-analysis of randomized-controlled trials",
+      "author": "Kun Li, Liju Qian, Chenchen Zhang, Rui Li, Jinkun Zeng, Chuang Xue, Wei Deng",
+      "journal": "J Psychiatr Res · 2024 · DOI 10.1016/j.jpsychires.2024.09.043",
+      "ids": "PROSPERO CRD42024508188 · DOI 10.1016/j.jpsychires.2024.09.043 · ima「玄牙的文献库」",
+      "stage": "L1 读综述 · 系统评价 / Meta 分析",
+      "groups": [
+        {
+          "name": "一、读懂它",
+          "tone": "purple",
+          "items": [
+            {
+              "label": "一句话定位",
+              "value": "这篇在问：把已发表的 dTMS 治疗难治性 OCD 的随机对照试验合并起来，主动 dTMS 相对假刺激的应答率到底高多少、能维持多久、安不安全？"
+            },
+            {
+              "label": "背景与假设",
+              "value": [
+                "OCD 终生患病率 2%–3%，多在 25 岁前起病（高峰约 14.5 岁）；即使 CBT + SRI 一线治疗，仍有 40%–60% 患者残留症状。",
+                "传统 rTMS 治疗 OCD 结论不一致，可能源于刺激部位、强度、疗程等参数异质性。",
+                "dTMS 用头盔式 H 线圈，磁场衰减更慢、可刺激更广更深；H7 线圈专门靶向 OCD 中过度活跃的 mPFC 与 ACC，2018 年获 FDA 批准。",
+                "此前无 dTMS 治疗 OCD 疗效与可接受性的 meta 分析；作者假设主动 dTMS 应答率更高且耐受性更好。"
+              ]
+            },
+            {
+              "label": "PICO 详解",
+              "pico": {
+                "P": "符合 DSM-IV/DSM-V 或 Y-BOCS≥20 的难治性 OCD 患者（Pallanti 标准）；4 项 RCT 共 252 例，来自以色列与土耳其",
+                "I": "主动 dTMS：3 项用 H7 线圈、1 项用双锥线圈；20 Hz、100% 运动阈值、2000 脉冲/次、5 次/周 × 5–6 周",
+                "C": "假刺激 dTMS：技术参数相同，但仅产生头皮感觉、电场不进入脑内",
+                "O": "主要＝应答率（Y-BOCS 减分≥30% 和/或 CGI≤2），治疗后与 1 个月随访两个时点；次要＝脱落率、不良事件",
+                "S": "PRISMA 系统评价 + 固定效应 meta 分析（Stata 17），PROSPERO 注册号 CRD42024508188"
+              }
+            },
+            {
+              "label": "研究设计",
+              "value": "检索 PubMed、Embase、Web of Science、Cochrane Library 至 2024-02-17；3 名研究者独立筛选提取，Cochrane Handbook 5.1.0 七条目评偏倚；效应量为 RR + 95%CI；异质性用 Cochran Q 与 I² 判定（Q 的 P≥0.1 且 I²<50% 用固定效应），并做逐篇剔除的敏感性分析。",
+              "sources": [
+                {
+                  "loc": "2. Methods",
+                  "quote": "This meta-analysis was conducted in accordance with the PRISMA guidelines for systematic reviews and meta-analyses. There is a PROSPERO record for this meta-analysis (CRD42024508188).",
+                  "zh": "本 meta 分析按 PRISMA 指南实施，并在 PROSPERO 注册（CRD42024508188）。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "参数卡",
+              "value": [
+                "纳入 4 项 RCT、252 例；3 项 H7 线圈 + 1 项双锥线圈",
+                "刺激：20 Hz、100% 运动阈值、2000 脉冲/次、5 次/周 × 5–6 周（共约 25–30 次）",
+                "应答定义：Y-BOCS 减分 ≥30%（部分研究并用 CGI≤2）",
+                "模型：固定效应（I²=0.0%，异质性不显著）",
+                "软件 Stata 17；效应量 RR"
+              ]
+            },
+            {
+              "label": "术语表",
+              "value": [
+                "RR（risk ratio）：风险比，此处为主动组应答率 ÷ 假刺激组应答率",
+                "I²：异质性统计量，0% 表示研究间一致性高",
+                "固定效应模型：假设各研究共享同一真实效应",
+                "PRISMA / PROSPERO：系统评价报告规范 / 国际前瞻注册平台",
+                "Y-BOCS：耶鲁–布朗强迫量表；CGI：临床总体印象量表"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "二、批判它",
+          "tone": "purple",
+          "items": [
+            {
+              "label": "主要结果",
+              "value": "治疗后主动 dTMS 应答率显著高于假刺激：Y-BOCS RR=3.71（95%CI 2.06–6.69），CGI RR=2.71（1.45–5.06）；1 个月随访仍显著：Y-BOCS RR=2.60（1.59–4.26），CGI RR=1.75（1.03–2.96）。",
+              "sources": [
+                {
+                  "loc": "Abstract—Results",
+                  "quote": "Active dTMS showed a notably greater rate of response on the Yale-Brown Obsessive-Compulsive Scale (Y-BOCS) in comparison to sham dTMS after treatment (Y-BOCS: RR=3.71, 95% confidence interval [CI] 2.06 to 6.69) and at the one-month follow-up (Y-BOCS: RR=2.60, 95% CI 1.59 to 4.26).",
+                  "zh": "与假刺激 dTMS 相比，主动 dTMS 在治疗后 Y-BOCS 应答率显著更高（RR=3.71，95%CI 2.06–6.69），1 个月随访时亦然（RR=2.60，95%CI 1.59–4.26）。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "终点达标",
+              "value": "是——治疗后与 1 个月随访两个时点、Y-BOCS 与 CGI 两套口径的 RR 置信区间均不含 1（CGI 随访下限 1.03，贴近临界，需注意）。"
+            },
+            {
+              "label": "亚组：线圈类型",
+              "value": "H7 线圈亚组显著（RR=3.57，95%CI 1.93–6.60）；双锥线圈亚组不显著（RR=5.36，95%CI 0.71–40.37，仅 1 项研究、权重 8.22%）。作者明确提示双锥线圈证据太少，不可据此判定无效。",
+              "sources": [
+                {
+                  "loc": "3.3.1. Response rate",
+                  "quote": "Subgroup analysis findings indicated that active dTMS using H7 coil yielded notable efficacy compared to sham dTMS (Y-BOCS: RR=3.57, 95%CI 1.93 to 6.60) post-treatment. However, no significant improvement was observed with the double-cone coil (RR=5.36, 95%CI 0.71 to 40.37).",
+                  "zh": "亚组分析显示，使用 H7 线圈的主动 dTMS 治疗后疗效显著（RR=3.57，95%CI 1.93–6.60）；而双锥线圈未见显著改善（RR=5.36，95%CI 0.71–40.37）。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "偏倚与局限（RoB / GRADE）",
+              "value": [
+                "仅 4 项 RCT、样本 252 例；3/4 项偏倚风险「unclear」，仅 Carmi 2019 为低风险。",
+                "4 项研究集中在以色列与土耳其，且多项来自同一团队（Carmi / Roth / Zangen），存在数据与团队重叠风险。",
+                "原始 RCT 评估整体症状严重度，未分别评估强迫观念与强迫行为。",
+                "20 Hz × 5–6 周方案耗时长，对学龄青少年尤其不便；缺少未用药人群的 RCT。",
+                "未做 GRADE 分级；作者自述「results should be interpreted with caution」。"
+              ],
+              "sources": [
+                {
+                  "loc": "4. Discussion—limitations",
+                  "quote": "First, there are limited RCTs and unduplicated studies to reference the efficacy and reliability of the dTMS in alleviating resistant OCD. Second, the bias risk remains unclear for three out of four studies referenced in this meta-analysis.",
+                  "zh": "首先，可供参考的、评价 dTMS 缓解难治性 OCD 疗效与可靠性的 RCT 与不重复研究有限；其次，本 meta 分析纳入的 4 项研究中有 3 项偏倚风险仍不明确。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "阴性 / 混合结果",
+              "value": "双锥线圈亚组不显著（RR=5.36，CI 0.71–40.37）；脱落率主动组与假刺激组无显著差异；作者还专门讨论了安慰剂效应：假刺激组治疗后应答率约 9%、1 个月随访约 20%，且随年份与样本量上升——这是解读 RR 时不可忽略的背景。"
+            },
+            {
+              "label": "安全性与耐受性",
+              "value": "纳入研究未报告严重不良事件。常见为头痛、疲劳、刺激部位头皮不适，均为自限性。主动刺激组脱落率 2.44%–12.5%，假刺激组 6.7%–25%，两组无显著差异。"
+            },
+            {
+              "label": "统计与终点预设",
+              "value": "固定效应模型由 I²=0.0%、Q 检验 P=0.912（治疗后）与 P=0.630（随访）支持；敏感性分析逐篇剔除后效应量未实质改变，说明结果不由单项研究驱动。森林图亚组间差异检验 Chi²=0.14, P=0.71，即线圈类型间差异本身并不显著。"
+            },
+            {
+              "label": "绝对效应与 NNT",
+              "value": "原文给的是相对效应 RR，未给绝对风险差与 NNT；但表 1 提供各研究应答率（如 Carmi 2018 主动 43.75% vs 假 7.14%，Roth 2020 主动 36.59% vs 假 11.63%）。若按合并估算，绝对获益约 25–30 个百分点，NNT 约 3–4，但这是推算值，须标注「非原文直接给出」。"
+            },
+            {
+              "label": "结论措辞",
+              "value": "原文结论：「active dTMS proves to be a successful and secure therapy for individuals suffering from treatment-resistant OCD when contrasted with sham dTMS」；同段紧接「Nevertheless, more research is needed to determine the most effective coil type」——结论强度应连同局限一并引用。"
+            },
+            {
+              "label": "利益冲突与资助（待核）",
+              "value": "作者声明无竞争性经济利益；资助来自山东省医药卫生科技发展计划、济宁市重点研发计划、杭州市生物医药与健康产业专项。原文未披露与 Brainsway（H7 线圈厂商）的关系，按库内规范标注「待核」。"
+            }
+          ]
+        },
+        {
+          "name": "三、用它",
+          "tone": "teal",
+          "items": [
+            {
+              "label": "临床可操作性",
+              "value": "标准方案 20 Hz、2000 脉冲/次、5 次/周 × 5–6 周，是目前 OCD dTMS 证据最一致的参数组合；但作者提示长疗程对依从性是负担，可关注加速方案（见本批加速双锥线圈 RCT）与低频方案的探索方向。"
+            },
+            {
+              "label": "与库内证据的关系",
+              "value": "与 rct_ocd（单中心 10 次 / 2 周短程方案）形成「短程 vs 标准长程」的证据对照；与 sr_dTMS_psych（28 项假刺激对照系统综述）相互印证 OCD 是 dTMS 证据最强的适应证之一；其纳入的 Carmi 2018/2019、Roth 2020、Ozer 2024 正好覆盖库内另外两篇精读的原始研究。"
+            },
+            {
+              "label": "患者版一句话",
+              "value": "把已有高质量研究合起来看，深部磁刺激让难治性强迫症患者症状明显减轻的机会约为不刺激的三倍多，效果一个月后仍在，但研究数量还不多、主要集中在少数几个团队。"
+            },
+            {
+              "label": "我的判断（待填）",
+              "value": "［留白：核对 4 项纳入研究是否与你已读的 Carmi / Roth / Ozer 原文一致；评估 1 个月随访是否足够支撑「疗效持久」的结论］"
+            }
+          ]
+        }
+      ],
+      "sync": [
+        {
+          "target": "reading_plan.json · items[]",
+          "op": "新增",
+          "detail": "L1 读综述 · 1 篇 meta 分析：tech=dtms，year=2024，journal=J Psychiatr Res，types=[Meta-Analysis, Systematic Review]，DOI 10.1016/j.jpsychires.2024.09.043，PROSPERO CRD42024508188。"
+        },
+        {
+          "target": "deep_guides.json · guides[]",
+          "op": "新增",
+          "detail": "整篇精读卡（20 模块 + 8 段全文 + 3 表），含合并效应量、亚组分析、安慰剂效应讨论与 GRADE 本库评估。"
+        },
+        {
+          "target": "evidence.json / cochrane_counts.json",
+          "op": "待人工审核",
+          "detail": "OCD × dTMS 格新增一条 meta 级证据：4 RCT / 252 例、RR=3.71（2.06–6.69）；标注「偏倚 3/4 unclear、中等偏低确定性」。须管理员逐条勾选后才计入矩阵计数。"
+        },
+        {
+          "target": "devices.json · 线圈比较",
+          "op": "补充",
+          "detail": "H7 线圈（3 项 RCT，RR=3.57）与双锥线圈（1 项 RCT，RR=5.36 不显著）并列；明确「不能据此判定两者疗效不同」（亚组间 P=0.71）。"
+        },
+        {
+          "target": "targets.json · mPFC / ACC",
+          "op": "补充",
+          "detail": "OCD 标准方案参数固化：20 Hz、100% MT、2000 脉冲/次、5 次/周 × 5–6 周；补 1 个月随访持久性数据（RR 由 3.71 降至 2.60）。"
+        },
+        {
+          "target": "tech_knowledge.json · 安慰剂效应",
+          "op": "补充",
+          "detail": "新增条目：dTMS 假刺激组应答率治疗后约 9%、1 个月随访约 20%，且随发表年份与样本量上升（原文引 Xu 2023, Nature Mental Health）。用于解读所有假刺激对照研究。"
+        }
+      ],
+      "fulltext": [
+        {
+          "sec": "摘要 · Methods",
+          "en": "Four randomized controlled trials were found by searching PubMed, Embase, Web of Science, and Cochrane Library up to February 2024. The fixed effects meta-analysis model was used for the purpose of data merging in Stata17. The risk ratio (RR) value was used as the measure of effect size to compare response rates and dropout rates between active and sham dTMS.",
+          "zh": "检索 PubMed、Embase、Web of Science 与 Cochrane Library 至 2024 年 2 月，纳入 4 项随机对照试验。使用 Stata 17 中的固定效应模型进行数据合并，以风险比（RR）作为效应量，比较主动与假刺激 dTMS 的应答率与脱落率。",
+          "hard": [
+            {
+              "w": "randomized controlled trials",
+              "lv": "专业术语",
+              "zh": "随机对照试验"
+            },
+            {
+              "w": "fixed effects",
+              "lv": "专业术语",
+              "zh": "固定效应"
+            },
+            {
+              "w": "data merging",
+              "lv": "进阶",
+              "zh": "数据合并"
+            },
+            {
+              "w": "risk ratio",
+              "lv": "专业术语",
+              "zh": "风险比（RR）"
+            },
+            {
+              "w": "effect size",
+              "lv": "专业术语",
+              "zh": "效应量"
+            },
+            {
+              "w": "dropout rates",
+              "lv": "专业术语",
+              "zh": "脱落率"
+            }
+          ]
+        },
+        {
+          "sec": "摘要 · Results",
+          "en": "The meta-analysis included four randomized-controlled trials involving 252 patients with treatment-resistant OCD. Active dTMS showed a notably greater rate of response on the Yale-Brown Obsessive-Compulsive Scale (Y-BOCS) in comparison to sham dTMS after treatment (RR=3.71, 95% CI 2.06 to 6.69) and at the one-month follow-up (RR=2.60, 95% CI 1.59 to 4.26).",
+          "zh": "本 meta 分析纳入 4 项随机对照试验、共 252 例难治性 OCD 患者。与假刺激相比，主动 dTMS 在治疗后 Y-BOCS 应答率显著更高（RR=3.71，95%CI 2.06–6.69），1 个月随访时亦然（RR=2.60，95%CI 1.59–4.26）。",
+          "hard": [
+            {
+              "w": "treatment-resistant",
+              "lv": "专业术语",
+              "zh": "难治性"
+            },
+            {
+              "w": "notably",
+              "lv": "四级内",
+              "zh": "显著地"
+            },
+            {
+              "w": "response",
+              "lv": "专业术语",
+              "zh": "应答"
+            },
+            {
+              "w": "follow-up",
+              "lv": "专业术语",
+              "zh": "随访"
+            },
+            {
+              "w": "confidence interval",
+              "lv": "专业术语",
+              "zh": "置信区间"
+            }
+          ]
+        },
+        {
+          "sec": "引言 · 临床缺口",
+          "en": "Regrettably, even with first-line treatment of OCD, such as cognitive behavior therapy and serotonin reuptake inhibitor antidepressants, 40–60% of patients continue to experience remaining symptoms. As a result, different methods to enhance effects, like transcranial magnetic stimulation (TMS), deep TMS (dTMS), and other physical therapies, have been extensively used in clinical settings to treat OCD.",
+          "zh": "遗憾的是，即使接受 OCD 一线治疗（如认知行为治疗与 5-羟色胺再摄取抑制剂），仍有 40%–60% 的患者持续存在残留症状。因此，经颅磁刺激（TMS）、深部 TMS（dTMS）等物理治疗作为增效手段在临床上被广泛用于 OCD。",
+          "hard": [
+            {
+              "w": "first-line",
+              "lv": "专业术语",
+              "zh": "一线（治疗）"
+            },
+            {
+              "w": "cognitive behavior therapy",
+              "lv": "专业术语",
+              "zh": "认知行为治疗"
+            },
+            {
+              "w": "serotonin reuptake inhibitor",
+              "lv": "专业术语",
+              "zh": "5-羟色胺再摄取抑制剂"
+            },
+            {
+              "w": "antidepressants",
+              "lv": "专业术语",
+              "zh": "抗抑郁药"
+            },
+            {
+              "w": "remaining",
+              "lv": "四级内",
+              "zh": "残留的"
+            },
+            {
+              "w": "extensively",
+              "lv": "六级",
+              "zh": "广泛地"
+            }
+          ]
+        },
+        {
+          "sec": "引言 · 为什么是 dTMS",
+          "en": "Unlike traditional TMS, dTMS employs a helmet with an H-coil, which enables it to stimulate a broader and deeper area of neurons due to its slower magnetic field attenuation. In addition, users can select various H coils based on treatment needs, with the H7 coil specifically targeting the overactive medial prefrontal cortex (mPFC) and anterior cingulate cortex (ACC) in OCD patients.",
+          "zh": "与传统 TMS 不同，dTMS 采用带 H 线圈的头盔，因磁场衰减更慢，可刺激更广、更深的神经元区域。此外可按治疗需要选择不同 H 线圈，其中 H7 线圈专门靶向 OCD 患者过度活跃的 mPFC 与 ACC。",
+          "hard": [
+            {
+              "w": "helmet",
+              "lv": "六级",
+              "zh": "头盔"
+            },
+            {
+              "w": "attenuation",
+              "lv": "专业术语",
+              "zh": "衰减"
+            },
+            {
+              "w": "neurons",
+              "lv": "六级",
+              "zh": "神经元"
+            },
+            {
+              "w": "overactive",
+              "lv": "进阶",
+              "zh": "过度活跃的"
+            },
+            {
+              "w": "medial prefrontal cortex",
+              "lv": "专业术语",
+              "zh": "内侧前额叶"
+            },
+            {
+              "w": "anterior cingulate cortex",
+              "lv": "专业术语",
+              "zh": "前扣带回"
+            }
+          ]
+        },
+        {
+          "sec": "方法 · 检索与筛选",
+          "en": "After deduplication, 2204 papers remained out of 3095 relevant studies in four bibliographic databases. Of the remaining 16 relevant studies, 12 were further excluded after reading full text, due to reasons such as utilizing identical data sets, non-RCT study design, or an unavailable date. In the end, four articles that satisfied the eligibility criteria were incorporated into this meta-analysis.",
+          "zh": "4 个数据库共检出 3095 篇相关研究，去重后剩余 2204 篇。剩余 16 篇相关研究中，阅读全文后又有 12 篇被排除，原因包括使用相同数据集、非 RCT 设计或数据不可获得。最终 4 篇符合标准的研究被纳入本 meta 分析。",
+          "hard": [
+            {
+              "w": "deduplication",
+              "lv": "专业术语",
+              "zh": "去重"
+            },
+            {
+              "w": "bibliographic",
+              "lv": "进阶",
+              "zh": "文献的"
+            },
+            {
+              "w": "eligibility",
+              "lv": "六级",
+              "zh": "合格性，纳入标准"
+            },
+            {
+              "w": "incorporated",
+              "lv": "六级",
+              "zh": "纳入"
+            },
+            {
+              "w": "identical",
+              "lv": "四级内",
+              "zh": "相同的"
+            }
+          ]
+        },
+        {
+          "sec": "结果 · 亚组",
+          "en": "Subgroup analysis findings indicated that active dTMS using H7 coil yielded notable efficacy compared to sham dTMS (Y-BOCS: RR=3.57, 95%CI 1.93 to 6.60) post-treatment. However, no significant improvement was observed with the double-cone coil (RR=5.36, 95%CI 0.71 to 40.37).",
+          "zh": "亚组分析显示，使用 H7 线圈的主动 dTMS 在治疗后疗效显著（Y-BOCS：RR=3.57，95%CI 1.93–6.60）；而双锥线圈未见显著改善（RR=5.36，95%CI 0.71–40.37）。",
+          "hard": [
+            {
+              "w": "subgroup",
+              "lv": "专业术语",
+              "zh": "亚组"
+            },
+            {
+              "w": "yielded",
+              "lv": "六级",
+              "zh": "产生"
+            },
+            {
+              "w": "efficacy",
+              "lv": "专业术语",
+              "zh": "疗效"
+            },
+            {
+              "w": "double-cone coil",
+              "lv": "专业术语",
+              "zh": "双锥线圈"
+            },
+            {
+              "w": "significant",
+              "lv": "四级内",
+              "zh": "显著的"
+            }
+          ]
+        },
+        {
+          "sec": "讨论 · 安慰剂效应",
+          "en": "In the four RCT studies included in this research, the control group received sham dTMS. The results showed that response rate in the sham dTMS group was 9% after treatment. During the one-month follow-up, the response rate in the sham dTMS group was approximately 20%. Previous research has explored how the placebo effect operates during TMS treatment for depression, and it has been found that the placebo effect has consistently increased with the passing years of publication.",
+          "zh": "本研究纳入的 4 项 RCT 中，对照组接受假刺激 dTMS。结果显示假刺激组治疗后应答率为 9%，1 个月随访时约 20%。既往研究探讨过 TMS 治疗抑郁时安慰剂效应的作用，发现安慰剂效应随发表年份推移持续上升。",
+          "hard": [
+            {
+              "w": "placebo effect",
+              "lv": "专业术语",
+              "zh": "安慰剂效应"
+            },
+            {
+              "w": "approximately",
+              "lv": "四级内",
+              "zh": "大约"
+            },
+            {
+              "w": "consistently",
+              "lv": "六级",
+              "zh": "持续地"
+            },
+            {
+              "w": "passing",
+              "lv": "四级内",
+              "zh": "推移的"
+            },
+            {
+              "w": "publication",
+              "lv": "四级内",
+              "zh": "发表"
+            }
+          ]
+        },
+        {
+          "sec": "结论",
+          "en": "To sum up, active dTMS proves to be a successful and secure therapy for individuals suffering from treatment-resistant OCD when contrasted with sham dTMS. Analysis of subgroups showed a more favorable trend in response with the H-coil in comparison to the double-cone coil. Nevertheless, more research is needed to determine the most effective coil type for treating OCD, as there are few RCTs on the double-cone coil.",
+          "zh": "综上，与假刺激 dTMS 相比，主动 dTMS 是治疗难治性 OCD 有效且安全的疗法。亚组分析显示 H 线圈较双锥线圈有更有利的应答趋势。然而，由于针对双锥线圈的 RCT 很少，仍需更多研究以确定治疗 OCD 最有效的线圈类型。",
+          "hard": [
+            {
+              "w": "to sum up",
+              "lv": "四级内",
+              "zh": "综上"
+            },
+            {
+              "w": "secure",
+              "lv": "四级内",
+              "zh": "安全的"
+            },
+            {
+              "w": "favorable",
+              "lv": "六级",
+              "zh": "有利的"
+            },
+            {
+              "w": "trend",
+              "lv": "四级内",
+              "zh": "趋势"
+            },
+            {
+              "w": "nevertheless",
+              "lv": "六级",
+              "zh": "然而"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "name": "表 1 · 合并效应量（4 项 RCT，252 例）",
+          "note": "原文 Abstract、3.3.1、Fig.2 / Fig.3 森林图",
+          "head": [
+            "结局 / 时点",
+            "RR",
+            "95% CI",
+            "I² / Q 检验 P",
+            "解读"
+          ],
+          "rows": [
+            [
+              "Y-BOCS 应答 · 治疗后",
+              "3.71",
+              "2.06–6.69",
+              "0.0% / 0.912",
+              "显著"
+            ],
+            [
+              "Y-BOCS 应答 · 1 个月随访",
+              "2.60",
+              "1.59–4.26",
+              "0.0% / 0.630",
+              "显著，效应较治疗后衰减"
+            ],
+            [
+              "CGI 应答 · 治疗后",
+              "2.71",
+              "1.45–5.06",
+              "—",
+              "显著"
+            ],
+            [
+              "CGI 应答 · 1 个月随访",
+              "1.75",
+              "1.03–2.96",
+              "—",
+              "临界显著（下限 1.03）"
+            ],
+            [
+              "H7 线圈亚组 · 治疗后",
+              "3.57",
+              "1.93–6.60",
+              "0.0% / 0.832",
+              "显著"
+            ],
+            [
+              "双锥线圈亚组 · 治疗后",
+              "5.36",
+              "0.71–40.37",
+              "—",
+              "不显著（仅 1 项、权重 8.22%）"
+            ],
+            [
+              "脱落率（主动 vs 假）",
+              "无显著差异",
+              "—",
+              "—",
+              "主动 2.44%–12.5%，假 6.7%–25%"
+            ]
+          ],
+          "explain": "读法：RR 是相对效应，读数时要配合绝对应答率。亚组间差异检验 Chi²=0.14、P=0.71，说明「H7 显著、双锥不显著」主要来自样本量与权重差异，并不能证明两种线圈疗效不同。随访期 RR 从 3.71 降到 2.60，提示疗效可能随时间衰减。"
+        },
+        {
+          "name": "表 2 · 纳入的 4 项 RCT 原始数据（原文 TABLE 1）",
+          "note": "OCR 有列错位，仅列可确认的应答率；以原 PDF 为准",
+          "head": [
+            "研究",
+            "线圈",
+            "应答定义",
+            "主动组应答率（治疗后 / 随访）",
+            "假刺激组应答率（治疗后 / 随访）"
+          ],
+          "rows": [
+            [
+              "Carmi 2018",
+              "H7",
+              "Y-BOCS 减分≥30%；CGI≤2",
+              "43.75% / 44.44%",
+              "7.14% / 0%"
+            ],
+            [
+              "Roth 2020",
+              "H7",
+              "Y-BOCS 减分≥30%",
+              "36.59% / 45%",
+              "11.63% / 20%"
+            ],
+            [
+              "Carmi 2019",
+              "H7",
+              "Y-BOCS 减分≥30%",
+              "38.10% / 45.24%",
+              "11.11% / 17.78%"
+            ],
+            [
+              "Ozer 2024",
+              "双锥线圈",
+              "Y-BOCS 减分≥30%",
+              "35.71% / —",
+              "6.67% / —"
+            ]
+          ],
+          "explain": "读法：4 项研究的主动组应答率稳定落在 35%–44%，假刺激组在 6%–12%（随访升至 0%–20%）。这一致性是 RR 合并值可信的基础；同时可见假刺激应答率在随访期上升，与作者讨论的安慰剂效应一致。"
+        },
+        {
+          "name": "表 3 · 偏倚与证据确定性",
+          "note": "原文 3.2、4. Discussion limitations；GRADE 为本库评估，非原文给出",
+          "head": [
+            "维度",
+            "情况",
+            "本库判断"
+          ],
+          "rows": [
+            [
+              "纳入研究数 / 样本",
+              "4 项 RCT / 252 例",
+              "偏少"
+            ],
+            [
+              "偏倚风险",
+              "1 项低风险（Carmi 2019），3 项 unclear",
+              "主要降级因素"
+            ],
+            [
+              "异质性",
+              "I²=0.0%，Q 检验 P>0.1",
+              "一致性好"
+            ],
+            [
+              "敏感性分析",
+              "逐篇剔除后效应量未实质改变",
+              "结果稳健"
+            ],
+            [
+              "地域 / 团队",
+              "以色列、土耳其；多项同一团队",
+              "外推性受限"
+            ],
+            [
+              "严重不良事件",
+              "未报告",
+              "安全性信号良好但样本有限"
+            ],
+            [
+              "GRADE（本库评估）",
+              "未做；综合限制作「中等偏低」",
+              "需管理员复核后决定是否计入矩阵"
+            ]
+          ],
+          "explain": "读法：这是库内第一篇「高等级证据但明确标注不确定性」的 meta 分析。按你定的循证规范，不能因为 RR 显著就自动升级证据格；须连同 3/4 项偏倚不明、地域集中一起呈现。"
+        }
+      ]
+    },
+    "rct_accel_ocd": {
+      "type": "RCT · 双盲安慰剂对照",
+      "typeCls": "rct",
+      "title": "加速 dTMS 双锥线圈治疗难治性强迫症：双盲安慰剂对照研究",
+      "en": "Efficacy of accelerated deep transcranial magnetic stimulation with double cone coil in obsessive-compulsive disorder: A double-blind, placebo-controlled study",
+      "author": "Ufuk Ozer, Bengu Yucens, Selim Tumkaya",
+      "journal": "J Psychiatr Res · 2024;171:325–331（2025 有勘误）· DOI 10.1016/j.jpsychires.2024.02.005",
+      "ids": "注册号 NCT06077370 · DOI 10.1016/j.jpsychires.2024.02.005 · ima「玄牙的文献库」",
+      "stage": "L2 读证据 · 随机对照试验（加速方案）",
+      "groups": [
+        {
+          "name": "一、读懂它",
+          "tone": "purple",
+          "items": [
+            {
+              "label": "一句话定位",
+              "value": "这篇在问：把 FDA 批准的 6 周 OCD dTMS 方案压缩为「每天 2 次 × 3 周」的加速方案，并换用非 H 线圈的双锥线圈，疗效与安全性还能成立吗？"
+            },
+            {
+              "label": "背景与假设",
+              "value": [
+                "FDA 2018 批准 H 线圈 20 Hz、30 次 / 6 周的难治性 OCD 方案；两年后 MagVenture D-B80 双锥线圈以「生物等效」获批同一适应证。",
+                "文献指出 H 线圈电场覆盖脑体积大于 D-B80，且此前无研究检验双锥线圈高频刺激 mPFC/ACC 治疗难治性 OCD 的疗效。",
+                "6 周疗程过长可能损害依从性、延迟起效；加速 TMS（如 Stanford SAINT 每天 10 次 / 1 周）在抑郁中已显示快速起效。",
+                "状态依赖假说：TMS 诱发的可塑性变化在被症状激发激活的脑区更明显，因此本研究在每次刺激前加入个体化症状激发。"
+              ]
+            },
+            {
+              "label": "PICO 详解",
+              "pico": {
+                "P": "43 例 DSM-5 OCD 门诊患者，18–65 岁，至少 2 种 SRI 足量 12 周反应不足；排除共病精神病性/双相/抑郁（HAM-D>17）、癫痫、近 6 个月 ECT/TMS、植入物",
+                "I": "主动组：20 Hz dTMS 双锥线圈（DDC-03-125-C），110% RMT，靶点 mPFC + ACC；每天 2 次（间隔 1 小时）× 3 周 = 30 次；每次刺激前个体化症状激发",
+                "C": "假刺激组：Neurosoft 100 mm 安慰剂线圈（AFEC-02-100-P），同部位、同参数、模拟听觉与触觉，但电场不进入脑内",
+                "O": "Y-BOCS（主要）、DOCS 四维度、HAM-D、HAM-A、CGI 疗效指数；应答＝Y-BOCS 减分≥30%，缓解＝Y-BOCS≤12",
+                "S": "单中心、双盲、安慰剂对照 RCT；NCT06077370；伦理批件 60116787-020-57080"
+              }
+            },
+            {
+              "label": "研究设计",
+              "value": "土耳其 Pamukkale 大学；Research Randomizer 1:1 随机，患者与全部研究者盲；重复测量 ANOVA 检验时间效应与「时间×组」交互；ITT 分析纳入全部随机者，缺失用 EM 算法极大似然填补，Little MCAR 检验确认缺失完全随机（χ²=34.51, P=0.787）。研究因经费耗尽提前终止。",
+              "sources": [
+                {
+                  "loc": "2.1. Participants and procedure",
+                  "quote": "The patients and all the researchers were blinded to the treatment groups. When a patient dropped out of a group, the technician included the first referred patient in the group of that patient and continued to allocate the subsequent patients according to the order of randomization.",
+                  "zh": "患者与所有研究者对治疗分组保持盲态。当某组有患者脱落时，技术员将首位转诊患者补入该组，并继续按随机顺序分配后续患者。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "参数卡",
+              "value": [
+                "线圈：DDC-03-125-C 双锥线圈（兼容 Neuro-MS/D 设备）；假刺激用 Neurosoft AFEC-02-100-P",
+                "定位：足部运动区前 4 cm，双侧 mPFC + ACC",
+                "20 Hz，110% RMT；每串 40 脉冲，50 串，串间隔 20 秒；2000 脉冲/次",
+                "每次 17 分 58 秒；每天 2 次、间隔 1 小时；工作日 × 3 周 = 30 次",
+                "每次刺激前：7 个个体化激发问题（VAS 痛苦 4–7 分），由轻到重递进"
+              ],
+              "sources": [
+                {
+                  "loc": "2.3. dTMS intervention",
+                  "quote": "The active TMS group received 20-Hz dTMS with a double-cone coil using the following protocol: 110% RMT; 40 pulses in each train with 20-s intertrain intervals, a total of 50 trains, and 2000 pulses per session. Each session lasted 17 min and 58 s.",
+                  "zh": "主动 TMS 组接受 20 Hz 双锥线圈 dTMS，方案为：110% 静息运动阈值；每串 40 个脉冲、串间隔 20 秒、共 50 串、每次 2000 个脉冲。每次治疗持续 17 分 58 秒。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "术语表",
+              "value": [
+                "DOCS：维度性强迫量表，含污染、责任、不可接受想法、对称/完整四维度",
+                "症状激发（symptom provocation）：刺激前用个体化问题诱发中等痛苦，利用状态依赖性增强可塑性",
+                "双锥线圈（double-cone coil）：两线圈成角度，电场较 8 字线圈更深",
+                "ITT / EM / MCAR：意向性治疗 / 期望最大化填补 / 完全随机缺失检验"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "二、批判它",
+          "tone": "purple",
+          "items": [
+            {
+              "label": "主要结果",
+              "value": "Y-BOCS 主动组 25.36±5.4 → 18.43±6.86，假刺激组 25.33±5.46 → 24.67±7.13；「时间×组」交互对 Y-BOCS 总分、强迫观念、强迫行为均显著。HAM-A 主动组 10.6±3.5 → 6.7±2.7，交互显著；HAM-D 交互不显著。",
+              "sources": [
+                {
+                  "loc": "Abstract",
+                  "quote": "Following treatment, the active TMS group exhibited a more significant reduction in Yale-Brown Obsessive-Compulsive Scale scores (pre-treatment: 25.36±5.4, post-treatment: 18.43±6.86) and Hamilton Anxiety Rating Scale scores (pre-treatment: 10.6±3.5, post-treatment: 6.7±2.7) compared to the sham TMS group.",
+                  "zh": "治疗后，与假刺激组相比，主动 TMS 组的 Y-BOCS 评分（治疗前 25.36±5.4，治疗后 18.43±6.86）与汉密尔顿焦虑量表评分（治疗前 10.6±3.5，治疗后 6.7±2.7）下降更显著。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "终点达标",
+              "value": "是——主要终点 Y-BOCS 显著。应答率主动组 5 例（35%）vs 假刺激组 1 例（6.7%）；缓解（Y-BOCS≤12）主动组 2 例、假刺激组 0 例。注意应答率绝对数偏低，与 meta 分析中 Ozer 2024 的 35.71% 一致。"
+            },
+            {
+              "label": "阴性 / 混合结果（重要）",
+              "value": "对称/完整维度（DOCS symmetry）改善不显著：时间效应与「时间×组」交互均不显著（交互 F(1,27)=0.57, P=0.450, η²=0.021）。HAM-D 时间效应亦不显著（P=0.054）。作者解释可能为 II 型错误或基线对称分偏低的地板效应，并提示该维度患者起病更早、遗传倾向更强、治疗反应更差。",
+              "sources": [
+                {
+                  "loc": "Abstract",
+                  "quote": "However, there was no statistically significant reduction in symmetry-related obsessive-compulsive symptoms in the TMS group compared to the sham TMS group.",
+                  "zh": "然而，与假刺激组相比，TMS 组对称相关的强迫症状未见统计学显著下降。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "盲法与假刺激",
+              "value": "患者与全部研究者盲；使用专用安慰剂线圈模拟听觉/触觉，盲法质量优于本批精分阴性症状 RCT（后者用 8 字线圈置于头盔上，作者自承不理想）。但脱落补位由技术员按随机顺序执行，作者承认「随机化被部分破坏」。"
+            },
+            {
+              "label": "偏倚与局限（RoB / GRADE）",
+              "value": [
+                "样本小：完成 14 vs 15 例，ITT 36 例；效能分析按 d≈1.0 估算需 28 例，实际接近下限。",
+                "无治疗后纵向随访，无法判断疗效维持时间；OCD 已知为迟发反应者，可能低估晚期疗效。",
+                "脱落不均衡（主动 2 例 / 假 5 例），且补位破坏了严格随机化。",
+                "研究因经费耗尽提前终止；单一中心、单一线圈型号。",
+                "DOI 对应文章有 2025 年勘误（Corrigendum），仅补充资助信息，不影响结果。"
+              ],
+              "sources": [
+                {
+                  "loc": "4. Discussion—limitations",
+                  "quote": "The most important limitation of this study is the relatively small sample size in each group. Another limitation can be considered the absence of longitudinal follow-up of patients after the treatment was completed.",
+                  "zh": "本研究最重要的局限是每组样本量相对较小；另一局限是治疗结束后缺乏对患者的纵向随访。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "安全性与耐受性",
+              "value": "CGI 疗效指数显示主动组 10 例（71%）、假刺激组 14 例（93.3%）无副作用；头皮不适与头痛主动组 4 例（28.6%）、假刺激组 1 例（6.7%），组间无显著差异（χ²=2.435, P=0.169），均自行缓解，无因副作用停药。"
+            },
+            {
+              "label": "统计与终点预设",
+              "value": "重复测量 ANOVA；Y-BOCS 时间效应 F(1,27)=15.83, P=0.001；HAM-A「时间×组」F(1,27)=24.60, P=0.001, η²=0.47；DOCS 对称维度交互 P=0.450。ITT 用 EM 填补，填补前后结果一致。多维度、多量表未报告多重比较校正。"
+            },
+            {
+              "label": "绝对效应与 NNT",
+              "value": "Y-BOCS 主动组降约 6.93 分、假刺激组降约 0.66 分，组间差约 6.3 分（原文未直接给组间差与 CI）。应答率 35% vs 6.7%，绝对差约 28 个百分点，NNT≈4（推算值，须标注非原文给出）。"
+            },
+            {
+              "label": "效能与样本量估算",
+              "value": "作者据 Carmi 2018 的效应量 d=1.11，保守取约 0.9 倍（d≈1.0）做效能分析：在 95% 置信水平下达到 80% power 至少需要 28 例（每组 14 例）。实际完成 14 / 15 例，恰在效能下限附近——这是解读「对称维度阴性结果」时必须考虑的前提（作者亦自承 II 型错误可能）。",
+              "sources": [
+                {
+                  "loc": "2.1. Participants and procedure",
+                  "quote": "The reference study indicated a substantial effect size (d=1.11). Therefore, power analysis was undertaken by taking into account the possibility of a smaller effect size, and it was determined that 80% power could be obtained at a 95% confidence level if at least 28 individuals (minimum 14 in each group) were included in the study.",
+                  "zh": "参考研究显示较大效应量（d=1.11）。因此考虑到效应量可能更小而进行效能分析，确定在 95% 置信水平下若要达到 80% 效能，至少需纳入 28 人（每组最少 14 人）。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "利益冲突与资助（待核）",
+              "value": "作者声明无利益冲突；勘误补充资助来自 Pamukkale 大学科研项目（2021TIPF029、2022HZDP023），资助方不参与设计/数据/分析/撰稿。未披露线圈厂商关系，标注「待核」。"
+            }
+          ]
+        },
+        {
+          "name": "三、用它",
+          "tone": "teal",
+          "items": [
+            {
+              "label": "临床可操作性",
+              "value": "3 周 / 30 次（每天 2 次）比 FDA 6 周方案缩短一半，对在职患者依从性更友好；但每次 17 分 58 秒 + 症状激发 + 每天两次，实际门诊资源占用并不低。若引入，需评估「对称/完整」维度患者可能获益有限。"
+            },
+            {
+              "label": "与库内证据的关系",
+              "value": "这是 OCD meta 分析中唯一的双锥线圈 RCT（Ozer 2024，RR=5.36 但 CI 0.71–40.37），本精读卡补全其原始设计细节；与 rct_ocd（H7、10 次 / 2 周）构成「线圈类型 × 加速程度」二维对照，是 devices.json 线圈比较页最需要的一组数据。"
+            },
+            {
+              "label": "患者版一句话",
+              "value": "把六周的治疗压到三周、每天做两次，用另一种更深的线圈，结果症状明显减轻的人更多；但对「什么东西都必须摆对称、做到完整」这类症状似乎帮助不大，而且研究人数不多。"
+            },
+            {
+              "label": "我的判断（待填）",
+              "value": "［留白：对比 H7 与 DDC-03-125-C 的电场深度差异（可查 Tzirini 2022 / Lu & Ueno 2017）；评估症状激发流程在门诊的可执行性］"
+            }
+          ]
+        }
+      ],
+      "sync": [
+        {
+          "target": "reading_plan.json · items[]",
+          "op": "新增",
+          "detail": "L2 读证据 · 1 篇加速方案 RCT：tech=dtms，year=2024，journal=J Psychiatr Res，types=[RCT, double-blind, placebo-controlled]，NCT06077370，DOI 10.1016/j.jpsychires.2024.02.005。"
+        },
+        {
+          "target": "deep_guides.json · guides[]",
+          "op": "新增",
+          "detail": "整篇精读卡（20 模块 + 8 段全文 + 3 表），含对称维度阴性结果与三方案横向对照。"
+        },
+        {
+          "target": "devices.json · 线圈比较",
+          "op": "补充",
+          "detail": "新增双锥线圈 DDC-03-125-C（Neuro-MS/D 兼容）与 MagVenture D-B80 的区分；补「H 线圈覆盖脑体积大于 D-B80，但 DDC 深度已足够产生疗效」原文结论（Tzirini 2022 / Lu & Ueno 2017 引文）。"
+        },
+        {
+          "target": "targets.json · mPFC / ACC",
+          "op": "补充",
+          "detail": "新增加速方案条目：2 次/天 × 3 周、110% RMT、20 Hz、症状激发前置；标注对称/完整维度无显著改善（P=0.450）。"
+        },
+        {
+          "target": "tech_knowledge.json · 加速方案",
+          "op": "新增",
+          "detail": "新增「加速 TMS」条目：3 周 30 次 vs FDA 6 周 30 次；引 Stanford SAINT（10 次/天 × 1 周）与 Williams 2021、Reddy 2023 的 OCD 加速探索。"
+        },
+        {
+          "target": "evidence.json / matrix_counts.json",
+          "op": "待人工审核",
+          "detail": "OCD × dTMS 格补一条加速/双锥线圈 RCT；因样本小、无随访、随机化部分破坏，建议标「低确定性」并由管理员逐条确认后计入。"
+        }
+      ],
+      "fulltext": [
+        {
+          "sec": "摘要 · Methods",
+          "en": "In this study, patients in the active TMS group (n=14) underwent stimulation of the mPFC and ACC twice daily at a frequency of 20 Hz for three weeks, using a double-cone coil. The same procedure was applied to the control group (n=15) using a placebo coil. Throughout the study, the patients continued their antidepressant and/or antipsychotic treatments at the same dose.",
+          "zh": "本研究中，主动 TMS 组（n=14）使用双锥线圈，以 20 Hz 频率对 mPFC 与 ACC 进行刺激，每天两次、持续三周。对照组（n=15）使用安慰剂线圈接受相同流程。研究期间患者维持原有抗抑郁药和/或抗精神病药剂量不变。",
+          "hard": [
+            {
+              "w": "underwent",
+              "lv": "六级",
+              "zh": "接受"
+            },
+            {
+              "w": "twice daily",
+              "lv": "四级内",
+              "zh": "每天两次"
+            },
+            {
+              "w": "placebo coil",
+              "lv": "专业术语",
+              "zh": "安慰剂线圈"
+            },
+            {
+              "w": "double-cone coil",
+              "lv": "专业术语",
+              "zh": "双锥线圈"
+            },
+            {
+              "w": "antipsychotic",
+              "lv": "专业术语",
+              "zh": "抗精神病药"
+            },
+            {
+              "w": "throughout",
+              "lv": "四级内",
+              "zh": "贯穿整个"
+            }
+          ]
+        },
+        {
+          "sec": "摘要 · Results",
+          "en": "Following treatment, the active TMS group exhibited a more significant reduction in Yale-Brown Obsessive-Compulsive Scale scores (pre-treatment: 25.36±5.4, post-treatment: 18.43±6.86) and Hamilton Anxiety Rating Scale scores (pre-treatment: 10.6±3.5, post-treatment: 6.7±2.7) compared to the sham TMS group. However, there was no statistically significant reduction in symmetry-related obsessive-compulsive symptoms.",
+          "zh": "治疗后，与假刺激组相比，主动 TMS 组的 Y-BOCS 评分（治疗前 25.36±5.4，治疗后 18.43±6.86）与汉密尔顿焦虑量表评分（治疗前 10.6±3.5，治疗后 6.7±2.7）下降更显著。然而，对称相关的强迫症状未见统计学显著下降。",
+          "hard": [
+            {
+              "w": "exhibited",
+              "lv": "六级",
+              "zh": "表现出"
+            },
+            {
+              "w": "significant",
+              "lv": "四级内",
+              "zh": "显著的"
+            },
+            {
+              "w": "reduction",
+              "lv": "四级内",
+              "zh": "下降"
+            },
+            {
+              "w": "symmetry",
+              "lv": "六级",
+              "zh": "对称"
+            },
+            {
+              "w": "statistically",
+              "lv": "进阶",
+              "zh": "统计学上"
+            }
+          ]
+        },
+        {
+          "sec": "引言 · 线圈争议",
+          "en": "Two years later, the MagVenture D-B80 double-cone coil received FDA approval, demonstrating bioequivalence with the H-coil for the same indication. It is known that a double-cone coil delivers the magnetic field deeper than a figure-eight coil. Nonetheless, studies have reported that the magnetic field of the H-coil encompasses a higher brain-volume than the D-B80 double-cone coil and suggested that randomized controlled studies are required.",
+          "zh": "两年后，MagVenture D-B80 双锥线圈获 FDA 批准用于同一适应证，证明与 H 线圈生物等效。已知双锥线圈产生的磁场比 8 字线圈更深。尽管如此，有研究报道 H 线圈的磁场覆盖脑体积大于 D-B80，并建议仍需随机对照研究加以验证。",
+          "hard": [
+            {
+              "w": "bioequivalence",
+              "lv": "专业术语",
+              "zh": "生物等效"
+            },
+            {
+              "w": "indication",
+              "lv": "专业术语",
+              "zh": "适应证"
+            },
+            {
+              "w": "figure-eight coil",
+              "lv": "专业术语",
+              "zh": "8 字线圈"
+            },
+            {
+              "w": "encompasses",
+              "lv": "进阶",
+              "zh": "覆盖，包含"
+            },
+            {
+              "w": "nonetheless",
+              "lv": "六级",
+              "zh": "尽管如此"
+            }
+          ]
+        },
+        {
+          "sec": "引言 · 加速方案理由",
+          "en": "In the FDA-approved protocol, the treatment lasts for six weeks since there is one session per day. If this period is long, it may impair the patient adherence to treatment or prolong the duration of the onset of effect. Therefore, accelerated TMS protocols have recently gained prominence. For instance, the Stanford accelerated intelligent neuromodulation therapy, which includes 10 sessions of TMS per day, has demonstrated rapid results within one week for depression treatment.",
+          "zh": "在 FDA 批准的方案中，因每天一次治疗，疗程持续六周。若疗程过长，可能损害患者依从性或延迟起效时间。因此加速 TMS 方案近年受到重视。例如 Stanford 加速智能神经调控疗法每天 10 次 TMS，已在抑郁治疗中显示一周内快速起效。",
+          "hard": [
+            {
+              "w": "adherence",
+              "lv": "专业术语",
+              "zh": "依从性"
+            },
+            {
+              "w": "prolong",
+              "lv": "六级",
+              "zh": "延长"
+            },
+            {
+              "w": "onset",
+              "lv": "专业术语",
+              "zh": "起效"
+            },
+            {
+              "w": "prominence",
+              "lv": "进阶",
+              "zh": "受重视"
+            },
+            {
+              "w": "neuromodulation",
+              "lv": "专业术语",
+              "zh": "神经调控"
+            },
+            {
+              "w": "demonstrated",
+              "lv": "四级内",
+              "zh": "显示"
+            }
+          ]
+        },
+        {
+          "sec": "方法 · 干预参数",
+          "en": "The active TMS group received 20-Hz dTMS with a double-cone coil using the following protocol: 110% RMT; 40 pulses in each train with 20-s intertrain intervals, a total of 50 trains, and 2000 pulses per session. Each session lasted 17 min and 58 s. The sham TMS group received treatment with identical technical parameters without penetration of the electric field into the brain.",
+          "zh": "主动 TMS 组接受 20 Hz 双锥线圈 dTMS：110% 静息运动阈值；每串 40 个脉冲、串间隔 20 秒、共 50 串、每次 2000 个脉冲，每次持续 17 分 58 秒。假刺激组以完全相同的技术参数接受治疗，但电场不穿透进入脑内。",
+          "hard": [
+            {
+              "w": "RMT",
+              "lv": "专业术语",
+              "zh": "静息运动阈值"
+            },
+            {
+              "w": "intertrain interval",
+              "lv": "专业术语",
+              "zh": "串间隔"
+            },
+            {
+              "w": "identical",
+              "lv": "六级",
+              "zh": "完全相同的"
+            },
+            {
+              "w": "penetration",
+              "lv": "进阶",
+              "zh": "穿透"
+            },
+            {
+              "w": "electric field",
+              "lv": "专业术语",
+              "zh": "电场"
+            }
+          ]
+        },
+        {
+          "sec": "方法 · 个体化症状激发",
+          "en": "Immediately after being directed provocative questions about their obsessions, the patients were asked to score their distress levels between 0 and 10 using the Visual Analog Scale. According to this scoring, seven questions that provoked the patients distress level between 4 and 7 were determined as provocative questions to be asked during TMS treatment. The questions selected for provocation were posed in an order starting with the least disturbing and advancing to the more distressing.",
+          "zh": "在被问及关于其强迫观念的激发性问题后，患者立即用视觉模拟量表在 0–10 分之间评定痛苦程度。据此选出 7 个使痛苦程度落在 4–7 分之间的问题，作为 TMS 治疗期间的激发问题。所选问题按从最轻到更令人痛苦的顺序提出。",
+          "hard": [
+            {
+              "w": "provocative",
+              "lv": "进阶",
+              "zh": "激发性的"
+            },
+            {
+              "w": "obsessions",
+              "lv": "专业术语",
+              "zh": "强迫观念"
+            },
+            {
+              "w": "distress",
+              "lv": "六级",
+              "zh": "痛苦，困扰"
+            },
+            {
+              "w": "Visual Analog Scale",
+              "lv": "专业术语",
+              "zh": "视觉模拟量表（VAS）"
+            },
+            {
+              "w": "determined",
+              "lv": "四级内",
+              "zh": "确定"
+            }
+          ]
+        },
+        {
+          "sec": "结果 · 应答与安全性",
+          "en": "According to the response criterion, five patients (35%) in the active TMS group and one patient (6.7%) in the sham group responded to treatment. Based on the remission criterion, two patients in the TMS group entered remission after treatment, while there was no patient who achieved remission in the placebo group. According to the efficacy index of the CGI scale, 10 patients (71%) in the TMS group and 14 patients (93.3%) in the sham group did not report any side effects.",
+          "zh": "按应答标准，主动组 5 例（35%）、假刺激组 1 例（6.7%）达到应答。按缓解标准，主动组 2 例治疗后进入缓解，安慰剂组无人缓解。按 CGI 疗效指数，主动组 10 例（71%）、假刺激组 14 例（93.3%）未报告任何副作用。",
+          "hard": [
+            {
+              "w": "criterion",
+              "lv": "六级",
+              "zh": "标准"
+            },
+            {
+              "w": "responded",
+              "lv": "四级内",
+              "zh": "达到应答"
+            },
+            {
+              "w": "remission",
+              "lv": "专业术语",
+              "zh": "缓解"
+            },
+            {
+              "w": "placebo",
+              "lv": "专业术语",
+              "zh": "安慰剂"
+            },
+            {
+              "w": "efficacy index",
+              "lv": "专业术语",
+              "zh": "疗效指数"
+            }
+          ]
+        },
+        {
+          "sec": "讨论 · 对称维度阴性结果",
+          "en": "Another important finding of this study is that the application of high-frequency dTMS to the mPFC and ACC was not as effective in improving patients obsessive-compulsive symptoms related to symmetry and completeness. However, it is essential to interpret this finding with caution, given the relatively small sample size in this study, which introduces the possibility of a type 2 error. Furthermore, when evaluating this finding, the possibility of a floor effect must be considered due to the low average symmetry scores at the baseline point.",
+          "zh": "本研究另一重要发现是，对 mPFC 与 ACC 施加高频 dTMS 在改善与对称、完整相关的强迫症状方面效果不佳。然而，鉴于样本量相对较小、存在 II 型错误的可能，必须谨慎解读；此外由于基线对称维度平均分较低，还须考虑地板效应。",
+          "hard": [
+            {
+              "w": "essential",
+              "lv": "四级内",
+              "zh": "必要的"
+            },
+            {
+              "w": "caution",
+              "lv": "四级内",
+              "zh": "谨慎"
+            },
+            {
+              "w": "type 2 error",
+              "lv": "专业术语",
+              "zh": "II 型错误"
+            },
+            {
+              "w": "floor effect",
+              "lv": "专业术语",
+              "zh": "地板效应"
+            },
+            {
+              "w": "baseline",
+              "lv": "四级内",
+              "zh": "基线"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "name": "表 1 · Y-BOCS 与 HAM-A 治疗前后（原文 TABLE 3/5）",
+          "note": "OCR 有符号错位，仅列可确认均值±SD；以原 PDF 为准",
+          "head": [
+            "量表",
+            "主动组 治疗前",
+            "主动组 治疗后",
+            "假刺激组 治疗前",
+            "假刺激组 治疗后",
+            "时间×组"
+          ],
+          "rows": [
+            [
+              "Y-BOCS 总分",
+              "25.3 ± 5.4",
+              "18.4 ± 6.8",
+              "25.33 ± 5.46",
+              "24.67 ± 7.13",
+              "显著"
+            ],
+            [
+              "Y-BOCS 强迫观念",
+              "12.86 ± 3.03",
+              "9.29 ± 3.91",
+              "13.07 ± 3.26",
+              "12.13 ± 4.21",
+              "显著"
+            ],
+            [
+              "Y-BOCS 强迫行为",
+              "12.5 ± 2.9",
+              "9.1 ± 3.16",
+              "12.2 ± 2.52",
+              "12.5 ± 3.48",
+              "显著"
+            ],
+            [
+              "HAM-A",
+              "10.6 ± 3.5",
+              "6.7 ± 2.7",
+              "9.8 ± 4.4",
+              "11.0 ± 4.2",
+              "P=0.001, η²=0.47"
+            ],
+            [
+              "HAM-D",
+              "7.2 ± 3.3",
+              "5.3 ± 2.5",
+              "6.1 ± 2.5",
+              "—",
+              "不显著（P=0.054）"
+            ],
+            [
+              "DOCS 对称/完整",
+              "—",
+              "—",
+              "—",
+              "—",
+              "不显著（P=0.450）"
+            ]
+          ],
+          "explain": "读法：Y-BOCS 三个分数在主动组下降约 3–7 分，假刺激组几乎不变；HAM-A 改善而 HAM-D 不改善，说明效应相对特异地落在焦虑/强迫而非抑郁。最值得注意的是「对称/完整」维度完全无组间差——这是本研究的阴性结果，必须与阳性结果同等呈现。"
+        },
+        {
+          "name": "表 2 · 三种 OCD 方案横向对照（本库整理）",
+          "note": "横向对照由本库依据三篇原文参数整理，非单篇原文表格",
+          "head": [
+            "维度",
+            "本研究的加速双锥方案",
+            "库内 rct_ocd（H7 短程）",
+            "FDA / meta 标准方案"
+          ],
+          "rows": [
+            [
+              "线圈",
+              "DDC-03-125-C 双锥",
+              "H7（Brainsway）",
+              "H7（多数）/ D-B80"
+            ],
+            [
+              "频率",
+              "20 Hz",
+              "20 Hz",
+              "20 Hz"
+            ],
+            [
+              "强度",
+              "110% RMT",
+              "100% RMT",
+              "100% MT"
+            ],
+            [
+              "脉冲/次",
+              "2000",
+              "2000",
+              "2000"
+            ],
+            [
+              "频次 / 总次数",
+              "2 次/天 × 3 周 = 30 次",
+              "5 次/周 × 2 周 = 10 次",
+              "5 次/周 × 5–6 周 = 25–30 次"
+            ],
+            [
+              "疗程长度",
+              "3 周",
+              "2 周",
+              "5–6 周"
+            ],
+            [
+              "症状激发",
+              "有（每次 7 问，VAS 4–7）",
+              "原文未强调",
+              "Carmi 方案含激发"
+            ],
+            [
+              "应答率",
+              "35% vs 6.7%",
+              "75% vs 5%",
+              "36%–44% vs 7%–11%"
+            ]
+          ],
+          "explain": "读法：三项方案都锚定 mPFC/ACC + 20 Hz + 2000 脉冲，差异主要在「线圈 × 频次 × 总次数」。本研究的应答率 35% 与 meta 中其他研究相当，但低于库内 rct_ocd 的 75%（后者人群非难治、疗程更短且 Y-BOCS 组间差 7.80 分）——人群难度与假刺激质量都可能是原因，不能简单横向比高低。"
+        },
+        {
+          "name": "表 3 · 脱落与不良事件",
+          "note": "原文 Fig.1 CONSORT、3. Results；ITT 36 例",
+          "head": [
+            "项目",
+            "主动组",
+            "假刺激组",
+            "备注"
+          ],
+          "rows": [
+            [
+              "随机 / 完成 / 分析",
+              "16 / 14 / 14",
+              "20 / 15 / 15",
+              "随机不均衡"
+            ],
+            [
+              "脱落",
+              "2 例",
+              "5 例",
+              "交通困难、工作冲突、搬离、流感等"
+            ],
+            [
+              "无任何副作用",
+              "10 例（71%）",
+              "14 例（93.3%）",
+              "CGI 疗效指数"
+            ],
+            [
+              "头皮不适 / 头痛",
+              "4 例（28.6%）",
+              "1 例（6.7%）",
+              "χ²=2.435, P=0.169，无显著差异"
+            ],
+            [
+              "因副作用停药",
+              "0",
+              "0",
+              "均自行缓解"
+            ]
+          ],
+          "explain": "读法：假刺激组脱落更多（5 例 vs 2 例），且因经费耗尽提前终止，是本研究的实施层面弱点。不良事件组间无显著差异，支持加速方案总体耐受。"
+        }
+      ]
+    },
+    "letter_tus": {
+      "type": "方法学通讯 · 早期经验",
+      "typeCls": "case",
+      "title": "经颅聚焦超声在动态临床场景的初始策略：精神分裂症与癫痫持续状态",
+      "en": "Transcranial Focused Ultrasound Stimulation in Dynamic Clinical Settings: Initial Strategy in Schizophrenia and Status Epilepticus",
+      "author": "Spencer T. Brinker, Wei Qi, David King-Stephens, Shy Shoham",
+      "journal": "Ultrasound Med Biol · 2025 · Letter to the Editor · DOI 10.1016/j.ultrasmedbio.2024.12.019",
+      "ids": "注册号 NCT05643196（SCZ）/ NCT05784805（SE）· DOI 10.1016/j.ultrasmedbio.2024.12.019 · ima「玄牙的文献库」",
+      "stage": "L3 读前沿 · 新技术方法学（非疗效研究）",
+      "groups": [
+        {
+          "name": "一、读懂它",
+          "tone": "purple",
+          "items": [
+            {
+              "label": "一句话定位",
+              "value": "这不是疗效试验，而是一封方法学通讯：报告在精神分裂症门诊与 ICU 癫痫持续状态两种「动态临床场景」中，长时间经颅超声刺激（TUS）怎么落地、参数怎么设、遇到什么问题。"
+            },
+            {
+              "label": "背景与假设",
+              "value": [
+                "领域正在建立人类 TUS 的剂量标准与报告规范（ITRUSST 共识，Brain Stimul 2024）。",
+                "近期综述统计：TUS 用于中枢神经系统疾病 22 项研究、健康受试者实验室条件 42 项研究。",
+                "在精神科急性期、ICU 癫痫持续状态这类动态、有挑战的临床场景中开展实验性 TUS 的公开知识有限。",
+                "作者是少数探索延长声照时间或多次主动声照的团队之一，目的是给监管机构制定标准提供参数与实践依据。"
+              ]
+            },
+            {
+              "label": "PICO 详解",
+              "pico": {
+                "P": "7 例精神分裂症伴当前精神病性症状（门诊）+ 1 例非惊厥性癫痫持续状态（ICU）；合计 8 例",
+                "I": "神经导航引导的单元素聚焦换能器（350 kHz、85 mm 孔径、定制），焦距 65 mm（深部）/ 25 mm（皮质）；SCZ 靶点右侧苍白球（GP），SE 靶点癫痫皮质区或丘脑",
+                "C": "无对照组（方法学报告，非疗效比较）",
+                "O": "SCZ：幻听分量表变化 + 离线 GPi 功能连接（fMRI）；SE：表面 EEG 的癫痫样放电变化。本通讯主要报告可行性与安全性，未给疗效结果",
+                "S": "两项独立 IRB 批准的正在进行的试点研究：NYU Langone（SCZ，NCT05643196）、Yale（SE，NCT05784805）"
+              }
+            },
+            {
+              "label": "研究设计",
+              "value": "两台独立试点研究的方法学经验汇总；主动声照时长 10 分钟、脉冲参数；自由场校准设定空间峰值脉冲平均强度 I_sppa=60 W/cm²，等效空间峰值时间平均强度 I_spta=3 W/cm²（占空比 5%）。定位采用 T2 加权 MRI 标志点的神经导航，不做计算辅助的空间校正（直线对准）。",
+              "sources": [
+                {
+                  "loc": "正文第 2 段",
+                  "quote": "We use neuronavigation-guided single-element focused transducers (350 kHz, 85 mm aperture, custom) designed to penetrate into deep brain structures or the cortex with focal lengths of 65 and 25 mm, respectively.",
+                  "zh": "我们使用神经导航引导的单元素聚焦换能器（350 kHz、85 mm 孔径、定制），设计焦距分别为 65 mm（深部脑结构）与 25 mm（皮质）。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "参数卡",
+              "value": [
+                "换能器：350 kHz、85 mm 孔径、单元素聚焦、定制",
+                "焦距：深部 65 mm / 皮质 25 mm",
+                "SCZ：右侧苍白球（GP），1 次主动声照；SE：癫痫皮质区或丘脑，1–2 次连续主动声照",
+                "声照时长 10 分钟，脉冲式；I_sppa=60 W/cm²，I_spta=3 W/cm²，占空比 5%",
+                "颅骨衰减预估 50%–85%（基于离体人颅骨样本测试）",
+                "头固定：可调 Velcro 泡沫头枕（不用全头约束/绑带，避免诱发应激）"
+              ],
+              "sources": [
+                {
+                  "loc": "正文第 2 段",
+                  "quote": "All free-field calibrations were set to spatial peak pulse average intensity = 60 W/cm2, or an equivalent spatial peak temporal average intensity of 3 W/cm2 using 5% duty cycle.",
+                  "zh": "所有自由场校准设定为空间峰值脉冲平均强度 60 W/cm²，或以 5% 占空比计等效的空间峰值时间平均强度 3 W/cm²。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "术语表",
+              "value": [
+                "TUS / tFUS：经颅超声刺激 / 经颅聚焦超声刺激",
+                "I_sppa / I_spta：空间峰值脉冲平均 / 时间平均声强，TUS 剂量核心指标",
+                "占空比（duty cycle）：脉冲发射时间占周期比例，此处 5%",
+                "ITRUSST：国际经颅超声刺激安全与标准共识组",
+                "神经元导航（neuronavigation）：基于个体 MRI 的定位系统"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "二、批判它",
+          "tone": "purple",
+          "items": [
+            {
+              "label": "主要结果",
+              "value": "本通讯不报告疗效数值。核心结果是可行性：8 例受试者（7 SCZ + 1 非惊厥性 SE）中未发生任何不良事件；所有受试者耐受 15 分钟的部分头部固定与头发中涂耦合凝胶；头–换能器对准与水囊耦合在 10 分钟声照期间保持稳定。",
+              "sources": [
+                {
+                  "loc": "正文第 2 段",
+                  "quote": "No adverse events have occurred in participants across both studies (7 SCZ and 1 nonconvulsive SE). All participants tolerated partial head stabilization with gel in their hair for 15-min periods.",
+                  "zh": "两项研究的所有受试者（7 例精神分裂症、1 例非惊厥性癫痫持续状态）均未发生不良事件。所有受试者均能耐受 15 分钟的部分头部固定及头发中的耦合凝胶。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "终点达标",
+              "value": "不适用——这是方法学通讯而非疗效试验，主要终点（幻听/GPi 功能连接、EEG 癫痫样放电）属于正在进行的试点研究，结果尚未发表。按库内规范明确标注「无疗效结论」。"
+            },
+            {
+              "label": "阴性 / 混合结果",
+              "value": "无疗效数据可比。但作者诚实列出多项实施失败与限制：SE 在 ICU 中因影像数据不足或生命支持设备阻挡定位装置，改为手持换能器置于已移除 EEG 电极的位置；枕叶声照受头固定器角度限制；团队在重症/精神科复杂场景中承受额外操作压力。"
+            },
+            {
+              "label": "偏倚与局限（RoB / GRADE）",
+              "value": [
+                "无对照、无随机、无盲法；样本 8 例且为便利性试点。",
+                "未做计算辅助的经颅波束空间校正，定位为「直线对准」；作者建议可用伪 CT 驱动的仿真进一步评估组织温度与波束行为。",
+                "颅骨衰减 50%–85% 为基于离体颅骨样本的估计，个体实际到达靶点的剂量不确定。",
+                "疗效终点未报告，不能据此判断 TUS 对精分或癫痫是否有效。",
+                "证据等级：方法学经验，不进入疗效证据矩阵。"
+              ],
+              "sources": [
+                {
+                  "loc": "正文第 2 段",
+                  "quote": "we expect the skull attenuates this ultrasound intensity by 50%–85% before reaching brain targets in any given participant",
+                  "zh": "我们预计在任何受试者中，超声强度到达脑靶点前会被颅骨衰减 50%–85%。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "安全性与耐受性",
+              "value": "8 例均无不良事件；未使用全头约束或绑带以避免诱发受试者应激；SE 场景中因设备阻挡改用徒手持换能器。作者特别强调重症环境与精神科复杂受试者对操作团队的额外压力，属于「人的因素」层面的安全考量。"
+            },
+            {
+              "label": "剂量与标准化",
+              "value": "本文最重要的价值是给出可复现的剂量参数（350 kHz、I_sppa 60 W/cm²、I_spta 3 W/cm²、5% 占空比、10 分钟、颅骨衰减估计），并明确指向 ITRUSST 标准化报告共识。对建立库内「超声神经调控」技术档案是第一手锚点。"
+            },
+            {
+              "label": "结论措辞",
+              "value": "原文定位为「report our initial strategy and experiences」「provide pertinent insights for those considering implementing TUS therapeutic investigations」，并「discuss our sonication parameters to inform any regulatory bodies pursuing TUS standards」——是方法与监管输入，不是疗效宣称。"
+            },
+            {
+              "label": "盲法与对照（不适用）",
+              "value": "本研究无对照组、无随机、无盲法，两项均为正在进行的单臂试点研究。因此不能计算效应量、不能做组间比较，也不能据此判断 TUS 是否有效。按库内规范，此篇归入「方法学 / 前沿技术」而非疗效证据。"
+            },
+            {
+              "label": "疗效终点与统计（尚未报告）",
+              "value": "两项试点已预设终点但结果未发表：SCZ（NCT05643196）为幻听分量表变化与离线 GPi 功能连接（fMRI）；SE（NCT05784805）为表面 EEG 癫痫样活动变化。本通讯未做任何统计检验，也未报告疗效数值。追踪这两个注册号是该方向下一步最具体的动作。",
+              "sources": [
+                {
+                  "loc": "正文末段",
+                  "quote": "Clinical outcomes for SCZ (NCT05643196) are changes in auditory hallucinations subscale with offline GPi functional connectivity changes measured via functional MRI. SE outcomes (NCT05784805) are epileptiform activity changes measured with surface EEG.",
+                  "zh": "SCZ 研究（NCT05643196）的临床结局为幻听分量表变化及通过功能 MRI 测量的离线 GPi 功能连接变化；SE 研究（NCT05784805）的结局为表面 EEG 测得的癫痫样活动变化。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "利益冲突与资助（待核）",
+              "value": "作者声明无利益冲突；资助为 Doris Duke Fund to Retain Clinical Scientists 与 Swebilius Foundation。两项研究分别经 NYU Langone Health IRB 与 Yale School of Medicine IRB 批准，受试者均签署书面知情同意。"
+            }
+          ]
+        },
+        {
+          "name": "三、用它",
+          "tone": "teal",
+          "items": [
+            {
+              "label": "临床可操作性",
+              "value": "若未来在院内开展 TUS 研究，可直接复用其参数框架与头固定方案；但必须补做个体化经颅波束仿真与温度评估。对精神科急性期患者，「不用绑带、只做部分固定」是兼顾安全与耐受的关键设计细节。"
+            },
+            {
+              "label": "与库内证据的关系",
+              "value": "这是库中第一篇非 TMS 物理治疗文献，为「超声神经调控」技术档案提供起点；与你的长期方向（BCI、大健康、神经调控新模态）直接相关。注意：它不能与 rTMS/dTMS 的疗效证据并列比较，应单列为「前沿技术 / 方法学」。"
+            },
+            {
+              "label": "患者版一句话",
+              "value": "这是一份「怎么做」的早期经验报告：用聚焦超声从体外照射脑内深部靶点，8 位参与者没有出现不良反应，但还没到能说「有没有效」的阶段。"
+            },
+            {
+              "label": "我的判断（待填）",
+              "value": "［留白：跟踪 NCT05643196 与 NCT05784805 的结果发表；对照 Zhai 2023（低强度 TUS 治疗精分阴性症状双盲 RCT）与 ITRUSST 共识，评估超声方向的证据成熟度］"
+            }
+          ]
+        }
+      ],
+      "sync": [
+        {
+          "target": "reading_plan.json · items[]",
+          "op": "新增",
+          "detail": "L3 读前沿 · 1 篇 TUS 方法学通讯：tech=tus（需新增技术标签），year=2025，journal=Ultrasound Med Biol，types=[Letter, Methods Paper]，NCT05643196 / NCT05784805，DOI 10.1016/j.ultrasmedbio.2024.12.019。"
+        },
+        {
+          "target": "tech_dossiers.json / tech_knowledge.json",
+          "op": "新增",
+          "detail": "新建「超声神经调控（TUS / tFUS）」技术条目：350 kHz、I_sppa 60 W/cm²、I_spta 3 W/cm²、5% 占空比、10 分钟、颅骨衰减 50%–85%；标注「无疗效结论 / 方法学阶段」。"
+        },
+        {
+          "target": "targets.json · 深部靶点",
+          "op": "新增",
+          "detail": "补入苍白球（GP，精分幻听/治疗反应）与丘脑（癫痫环路）两个深部超声靶点，与既有 MNI/10–20 EEG 皮质靶点区分，明确标注「深部核团 · 超声可达」。"
+        },
+        {
+          "target": "scenes.json / 行业动态速览",
+          "op": "新增",
+          "detail": "补一条合规范畴的技术进展：ITRUSST 共识（Brain Stimul 2024）推动 TUS 剂量标准化；仅陈述标准化进展，不作疗效或投资推介。"
+        },
+        {
+          "target": "devices.json",
+          "op": "新增",
+          "detail": "新增设备类别「经颅聚焦超声换能器」：单元素聚焦、350 kHz、85 mm 孔径、定制，配神经导航与水囊耦合；与 TMS 线圈类目并列。"
+        },
+        {
+          "target": "evidence.json / matrix_counts.json",
+          "op": "不纳入",
+          "detail": "明确不计入疗效证据矩阵：无对照、无疗效终点、样本 8 例。仅作为技术档案与前沿跟踪资料，遵守「不把方法学通讯当疗效证据」的库内规范。"
+        }
+      ],
+      "fulltext": [
+        {
+          "sec": "开篇 · 目的",
+          "en": "The intent of this letter is to report our initial strategy and experiences delivering Transcranial Ultrasound Stimulation (TUS) for extended periods of time to Schizophrenia (SCZ) and Status Epilepticus (SE) participants. This report is notable since there are ongoing efforts in the field to classify specific ultrasound dose standards and guidelines for human TUS.",
+          "zh": "本通讯旨在报告我们在较长时间内对精神分裂症（SCZ）与癫痫持续状态（SE）受试者实施经颅超声刺激（TUS）的初始策略与经验。之所以值得报告，是因为该领域正在推进人类 TUS 特定超声剂量标准与指南的分类工作。",
+          "hard": [
+            {
+              "w": "intent",
+              "lv": "四级内",
+              "zh": "目的"
+            },
+            {
+              "w": "extended",
+              "lv": "六级",
+              "zh": "延长的"
+            },
+            {
+              "w": "Status Epilepticus",
+              "lv": "专业术语",
+              "zh": "癫痫持续状态"
+            },
+            {
+              "w": "notable",
+              "lv": "六级",
+              "zh": "值得注意的"
+            },
+            {
+              "w": "dose",
+              "lv": "专业术语",
+              "zh": "剂量"
+            },
+            {
+              "w": "guidelines",
+              "lv": "四级内",
+              "zh": "指南"
+            }
+          ]
+        },
+        {
+          "sec": "背景 · 研究基数",
+          "en": "According to a recent review of the field, the effects of TUS on central nervous system diseases have been investigated in 22 studies and on healthy subjects under controlled lab conditions in 42 studies. Both custom-made focused ultrasound systems and commercial research units have been used to deliver sonication.",
+          "zh": "据该领域近期一篇综述，TUS 对中枢神经系统疾病的作用已在 22 项研究中考察，在受控实验室条件下的健康受试者中有 42 项研究。实施声照既使用定制聚焦超声系统，也使用商用研究设备。",
+          "hard": [
+            {
+              "w": "central nervous system",
+              "lv": "专业术语",
+              "zh": "中枢神经系统"
+            },
+            {
+              "w": "investigated",
+              "lv": "四级内",
+              "zh": "考察"
+            },
+            {
+              "w": "controlled",
+              "lv": "四级内",
+              "zh": "受控的"
+            },
+            {
+              "w": "custom-made",
+              "lv": "进阶",
+              "zh": "定制的"
+            },
+            {
+              "w": "commercial",
+              "lv": "四级内",
+              "zh": "商用的"
+            },
+            {
+              "w": "sonication",
+              "lv": "专业术语",
+              "zh": "声照"
+            }
+          ]
+        },
+        {
+          "sec": "方法 · 换能器与靶点",
+          "en": "We use neuronavigation-guided single-element focused transducers (350 kHz, 85 mm aperture, custom) designed to penetrate into deep brain structures or the cortex with focal lengths of 65 and 25 mm, respectively. SCZ subjects receive right Globus Pallidus (GP) sonication (1 active session) given its association with psychosis and treatment response. SE patient sonication is delivered to any epileptic cortical location or to the thalamus.",
+          "zh": "我们使用神经导航引导的单元素聚焦换能器（350 kHz、85 mm 孔径、定制），设计焦距分别为 65 mm 与 25 mm，以穿透至深部脑结构或皮质。SCZ 受试者接受右侧苍白球（GP）声照（1 次主动声照），因其与精神病性症状及治疗反应相关；SE 患者则针对任一癫痫皮质部位或丘脑进行声照。",
+          "hard": [
+            {
+              "w": "transducer",
+              "lv": "专业术语",
+              "zh": "换能器"
+            },
+            {
+              "w": "aperture",
+              "lv": "专业术语",
+              "zh": "孔径"
+            },
+            {
+              "w": "focal lengths",
+              "lv": "专业术语",
+              "zh": "焦距"
+            },
+            {
+              "w": "Globus Pallidus",
+              "lv": "专业术语",
+              "zh": "苍白球"
+            },
+            {
+              "w": "psychosis",
+              "lv": "专业术语",
+              "zh": "精神病性症状"
+            },
+            {
+              "w": "thalamus",
+              "lv": "专业术语",
+              "zh": "丘脑"
+            }
+          ]
+        },
+        {
+          "sec": "方法 · 剂量参数",
+          "en": "All free-field calibrations were set to spatial peak pulse average intensity = 60 W/cm2, or an equivalent spatial peak temporal average intensity of 3 W/cm2 using 5% duty cycle. Given relevant literature ranges and from our previous experience testing sonication through ex vivo human skull samples, we expect the skull attenuates this ultrasound intensity by 50%–85% before reaching brain targets in any given participant.",
+          "zh": "所有自由场校准设定为空间峰值脉冲平均强度 60 W/cm²，或以 5% 占空比计等效空间峰值时间平均强度 3 W/cm²。结合相关文献范围及我们此前经离体人颅骨样本测试声照的经验，我们预计在任何受试者中，超声强度到达脑靶点前会被颅骨衰减 50%–85%。",
+          "hard": [
+            {
+              "w": "calibration",
+              "lv": "专业术语",
+              "zh": "校准"
+            },
+            {
+              "w": "spatial peak",
+              "lv": "专业术语",
+              "zh": "空间峰值"
+            },
+            {
+              "w": "equivalent",
+              "lv": "六级",
+              "zh": "等效的"
+            },
+            {
+              "w": "duty cycle",
+              "lv": "专业术语",
+              "zh": "占空比"
+            },
+            {
+              "w": "ex vivo",
+              "lv": "专业术语",
+              "zh": "离体"
+            },
+            {
+              "w": "attenuates",
+              "lv": "专业术语",
+              "zh": "衰减"
+            }
+          ]
+        },
+        {
+          "sec": "方法 · 头部固定",
+          "en": "One of our most challenging tasks was establishing a method for prolonged head stabilization, as we did not use full head restraint or straps to avoid catalyzing subject stress. A very useful solution was using adjustable Velcro Styrofoam head immobilizers. Multiple Styrofoam blocks were used to achieve head stabilization during sitting or supine, while still allowing transducer coupling.",
+          "zh": "我们最具挑战的任务之一是建立长时间头部固定的方法，因为我们未使用全头约束或绑带，以免诱发受试者应激。一个非常有用的方案是使用可调式 Velcro 泡沫头固定器：在坐位或仰卧位下用多块泡沫实现头部稳定，同时仍允许换能器耦合。",
+          "hard": [
+            {
+              "w": "prolonged",
+              "lv": "六级",
+              "zh": "长时间的"
+            },
+            {
+              "w": "restraint",
+              "lv": "进阶",
+              "zh": "约束"
+            },
+            {
+              "w": "straps",
+              "lv": "六级",
+              "zh": "绑带"
+            },
+            {
+              "w": "catalyzing",
+              "lv": "进阶",
+              "zh": "诱发，催化"
+            },
+            {
+              "w": "immobilizer",
+              "lv": "专业术语",
+              "zh": "固定器"
+            },
+            {
+              "w": "supine",
+              "lv": "专业术语",
+              "zh": "仰卧位"
+            },
+            {
+              "w": "coupling",
+              "lv": "专业术语",
+              "zh": "耦合"
+            }
+          ]
+        },
+        {
+          "sec": "结果 · 安全性",
+          "en": "No adverse events have occurred in participants across both studies (7 SCZ and 1 nonconvulsive SE). All participants tolerated partial head stabilization with gel in their hair for 15-min periods. Head-transducer alignment and water bag coupling remained stable over 10-min sonication periods with the target accuracy ensured by using landmarked T2-weighted magnetic resonance imaging (MRI) guided neuronavigation.",
+          "zh": "两项研究的所有受试者（7 例 SCZ、1 例非惊厥性 SE）均未发生不良事件。所有受试者均能耐受 15 分钟的部分头部固定及头发中的耦合凝胶。在以 T2 加权 MRI 标志点引导的神经导航确保靶点精度下，头–换能器对准与水囊耦合在 10 分钟声照期间保持稳定。",
+          "hard": [
+            {
+              "w": "adverse events",
+              "lv": "专业术语",
+              "zh": "不良事件"
+            },
+            {
+              "w": "nonconvulsive",
+              "lv": "专业术语",
+              "zh": "非惊厥性"
+            },
+            {
+              "w": "tolerated",
+              "lv": "六级",
+              "zh": "耐受"
+            },
+            {
+              "w": "alignment",
+              "lv": "进阶",
+              "zh": "对准"
+            },
+            {
+              "w": "landmarked",
+              "lv": "专业术语",
+              "zh": "以标志点定位的"
+            },
+            {
+              "w": "neuronavigation",
+              "lv": "专业术语",
+              "zh": "神经导航"
+            }
+          ]
+        },
+        {
+          "sec": "讨论 · 人的因素",
+          "en": "Lastly, it is important to consider increased operator and research team stresses in these dynamic working environments. The extra layer of awareness required to set up and operate ultrasound systems in critical care suites or when administering sonication to psychologically complicated subjects can impose unforeseen challenges when executing the lower level technical tasks during sonication.",
+          "zh": "最后，重要的是要考虑在这些动态工作环境中操作者与研究团队承受的额外压力。在重症监护室中安装与操作超声系统，或为心理状况复杂的受试者实施声照时所需的额外警觉，可能在声照过程中执行较低层级技术任务时带来预料之外的挑战。",
+          "hard": [
+            {
+              "w": "operator",
+              "lv": "四级内",
+              "zh": "操作者"
+            },
+            {
+              "w": "dynamic",
+              "lv": "四级内",
+              "zh": "动态的"
+            },
+            {
+              "w": "critical care",
+              "lv": "专业术语",
+              "zh": "重症监护"
+            },
+            {
+              "w": "psychologically",
+              "lv": "进阶",
+              "zh": "心理上"
+            },
+            {
+              "w": "impose",
+              "lv": "六级",
+              "zh": "带来，施加"
+            },
+            {
+              "w": "unforeseen",
+              "lv": "进阶",
+              "zh": "预料之外的"
+            }
+          ]
+        },
+        {
+          "sec": "注册与终点",
+          "en": "Clinical outcomes for SCZ (NCT05643196) are changes in auditory hallucinations subscale with offline GPi functional connectivity changes measured via functional MRI. SE outcomes (NCT05784805) are epileptiform activity changes measured with surface EEG.",
+          "zh": "SCZ 研究（NCT05643196）的临床结局为幻听分量表变化，以及通过功能 MRI 测量的离线 GPi 功能连接变化；SE 研究（NCT05784805）的结局为表面 EEG 测得的癫痫样活动变化。",
+          "hard": [
+            {
+              "w": "clinical outcomes",
+              "lv": "专业术语",
+              "zh": "临床结局"
+            },
+            {
+              "w": "auditory hallucinations",
+              "lv": "专业术语",
+              "zh": "幻听"
+            },
+            {
+              "w": "subscale",
+              "lv": "专业术语",
+              "zh": "分量表"
+            },
+            {
+              "w": "offline",
+              "lv": "进阶",
+              "zh": "离线的"
+            },
+            {
+              "w": "functional connectivity",
+              "lv": "专业术语",
+              "zh": "功能连接"
+            },
+            {
+              "w": "epileptiform",
+              "lv": "专业术语",
+              "zh": "癫痫样的"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "name": "表 1 · TUS 剂量与设备参数（本库首个超声技术锚点）",
+          "note": "原文正文第 2–3 段；为本库「超声神经调控」技术档案基线参数",
+          "head": [
+            "参数",
+            "数值",
+            "备注"
+          ],
+          "rows": [
+            [
+              "换能器类型",
+              "单元素聚焦，定制",
+              "神经导航引导"
+            ],
+            [
+              "中心频率",
+              "350 kHz",
+              "低强度经颅聚焦超声"
+            ],
+            [
+              "孔径",
+              "85 mm",
+              "—"
+            ],
+            [
+              "焦距",
+              "65 mm（深部）/ 25 mm（皮质）",
+              "按靶点选择"
+            ],
+            [
+              "I_sppa",
+              "60 W/cm²",
+              "自由场校准"
+            ],
+            [
+              "I_spta",
+              "3 W/cm²",
+              "占空比 5% 等效"
+            ],
+            [
+              "占空比 / 单次时长",
+              "5% / 10 分钟",
+              "SCZ 1 次；SE 1–2 次连续"
+            ],
+            [
+              "颅骨衰减估计",
+              "50%–85%",
+              "基于离体人颅骨样本，个体差异大"
+            ],
+            [
+              "头部固定",
+              "可调 Velcro 泡沫块，15 分钟",
+              "不用全头约束/绑带"
+            ],
+            [
+              "定位",
+              "T2 加权 MRI 标志点神经导航",
+              "未做计算辅助空间校正"
+            ]
+          ],
+          "explain": "读法：这张表是本库超声方向的第一个可复现参数锚点。特别注意 I_sppa 是「自由场」校准值，实际到达脑靶点的强度因颅骨衰减只剩 15%–50%，因此不同研究间不能直接按自由场数值比较剂量。"
+        },
+        {
+          "name": "表 2 · 两项在研试验与靶点",
+          "note": "原文末段；结果尚未发表，仅登记结局指标",
+          "head": [
+            "项目",
+            "SCZ 试点",
+            "SE 试点"
+          ],
+          "rows": [
+            [
+              "注册号",
+              "NCT05643196",
+              "NCT05784805"
+            ],
+            [
+              "机构 / IRB",
+              "NYU Langone Health",
+              "Yale School of Medicine"
+            ],
+            [
+              "场景",
+              "门诊，伴当前精神病性症状",
+              "ICU，实时癫痫活动"
+            ],
+            [
+              "受试者",
+              "7 例",
+              "1 例非惊厥性 SE"
+            ],
+            [
+              "靶点",
+              "右侧苍白球（GP）",
+              "癫痫皮质区或丘脑"
+            ],
+            [
+              "主要结局",
+              "幻听分量表 + 离线 GPi 功能连接（fMRI）",
+              "表面 EEG 癫痫样活动变化"
+            ],
+            [
+              "状态",
+              "进行中，结果未发表",
+              "进行中，结果未发表"
+            ]
+          ],
+          "explain": "读法：两个注册号是后续追踪的锚点。SE 场景因影像数据有限或生命支持设备阻挡，作者改为手持换能器置于已移除 EEG 电极的位置——这是「理想方案让位于临床现实」的典型例子。"
+        },
+        {
+          "name": "表 3 · 与 TMS 类技术的定位对照（本库整理）",
+          "note": "本库依据该文与既有 dTMS 参数整理，非原文表格",
+          "head": [
+            "维度",
+            "经颅聚焦超声 TUS（本文）",
+            "深部 TMS dTMS（库内）"
+          ],
+          "rows": [
+            [
+              "物理载体",
+              "机械声波（350 kHz）",
+              "脉冲磁场（约 1–20 Hz 重复率）"
+            ],
+            [
+              "深部可达性",
+              "可聚焦至深部核团（如苍白球、丘脑）",
+              "H 线圈约 3–6 cm，主要 cortical/近皮质下"
+            ],
+            [
+              "空间精度",
+              "毫米级焦点，依赖个体影像与仿真",
+              "厘米级，电场分布较弥散"
+            ],
+            [
+              "剂量指标",
+              "I_sppa / I_spta / 占空比 / 时长",
+              "频率 / %RMT / 脉冲数 / 串间隔"
+            ],
+            [
+              "标准化程度",
+              "ITRUSST 共识刚起步",
+              "已有 FDA 批准方案与成熟参数"
+            ],
+            [
+              "证据阶段",
+              "可行性与安全性，疗效未报告",
+              "多项 RCT 与 meta 分析"
+            ]
+          ],
+          "explain": "读法：TUS 的优势是深部核团可达性与空间精度，短板是颅骨衰减不确定、剂量标准化未成熟。按你的 5 年学习路径，它属于「跟踪前沿」而非「临床可落地」，建议在技术档案中单列，不与 dTMS 疗效证据混排。"
+        }
+      ]
+    },
+    "sr_dTMS_all": {
+      "type": "系统综述 · 假刺激对照试验",
+      "typeCls": "sr",
+      "title": "dTMS 在精神与认知障碍中的临床疗效：28 项假刺激对照试验系统综述",
+      "en": "Clinical efficacy of deep transcranial magnetic stimulation (dTMS) in psychiatric and cognitive disorders: A systematic review",
+      "author": "Anne-Marie Di Passa, Shelby Prokop-Millar, Horodjei Yaya, Melissa Dabir, Carly McIntyre-Wood, Allan Fein, Emily MacKillop, James MacKillop, Dante Duarte",
+      "journal": "McMaster University 团队系统综述 · 2024（刊名待核）",
+      "ids": "系统综述 · 28 项假刺激对照临床试验 · ima「玄牙的文献库」（原文节选未见 DOI，标注待核）",
+      "stage": "L1 读综述 · 全景系统评价",
+      "groups": [
+        {
+          "name": "一、读懂它",
+          "tone": "purple",
+          "items": [
+            {
+              "label": "一句话定位",
+              "value": "这篇在问：把所有「主动 dTMS vs 假刺激/对照」的临床试验放在一起，dTMS 在各类精神与认知障碍中到底哪些适应证证据一致、哪些不一致？"
+            },
+            {
+              "label": "背景与假设",
+              "value": [
+                "精神与认知障碍是全球致残与疾病负担主因；1990–2019 年相关 DALY 从 8080 万升至 1.253 亿。",
+                "约 20%–60% 的精神障碍患者对常规治疗抵抗，物理治疗作为替代或增效手段受到关注。",
+                "dTMS 作为传统 TMS 的增强形式，可靶向更广、更深的脑区，但此前缺乏跨适应证、只纳入假刺激对照试验的综合评估。",
+                "目标：刻画 dTMS 跨多种精神与认知障碍的疗效图谱，并梳理线圈设计、靶点、参数、不良反应与偏倚。"
+              ]
+            },
+            {
+              "label": "PICO 详解",
+              "pico": {
+                "P": "精神或认知障碍患者（涵盖 11 类：AD、ADHD、ASD、BD、BD/MDD、MDD、OCD、PTSD、精分及相关障碍、物质使用障碍、共病）",
+                "I": "主动 dTMS（H 线圈，H1/H2/H7 等），各研究参数不一",
+                "C": "假刺激 / 对照条件（sham-controlled）",
+                "O": "各疾病的临床结局量表、不良反应、严重不良事件、脱落率、耐久性、疗效调节因素",
+                "S": "系统综述，检索 APA PsycINFO、Cochrane、Embase、Medline、PubMed，最终纳入 28 项临床试验"
+              }
+            },
+            {
+              "label": "研究设计",
+              "value": "PRISMA 流程：7717 篇检出 → OVID 自动化工具剔除 7095 篇（限英语、人类、临床试验/RCT）+ 59 篇重复 → 563 篇摘要筛选剔除 499 → 64 篇全文评估剔除 40 → 最终纳入 28 项。用 GRADE 相关清单做偏倚评级；两名研究者独立提取国家、研究类型、样本量、性别、年龄、H 线圈类型、靶区、疗程等。",
+              "sources": [
+                {
+                  "loc": "3.1. Studies retrieved",
+                  "quote": "The search rendered a total of 28 eligible articles following the article screening and full-text assessment of eligibility as depicted in the PRISMA Flow Chart. A search of the APA PsycINFO, Embase, and MEDLINE databases yielded 7717 articles.",
+                  "zh": "经文章筛选与全文合格性评估（见 PRISMA 流程图），检索最终得到 28 篇合格文献。APA PsycINFO、Embase 与 MEDLINE 数据库检索共获得 7717 篇文章。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "参数卡",
+              "value": [
+                "纳入 28 项假刺激对照临床试验",
+                "线圈：H1（双侧 DLPFC 为主）、H2、H7（mPFC/ACC）等，按适应证选择",
+                "疗程与频率各研究异质性大（正文按 3.6–3.8 分节汇总）",
+                "偏倚评级：按 GRADE 清单整体为低风险",
+                "不良反应：28 项中 19 项（67.86%）报告头痛、12 项报告疼痛/不适；4 项未报告不良反应"
+              ]
+            },
+            {
+              "label": "术语表",
+              "value": [
+                "GRADE：证据确定性分级框架（此处用于偏倚评级清单）",
+                "H1 / H2 / H7：不同 H 线圈型号，靶区与电场分布不同",
+                "Heterogeneous（异质性）：各研究结果不一致，无法简单合并",
+                "SAE：严重不良事件（本综述提及癫痫发作、自杀意念/企图）",
+                "Durability：疗效耐久性，作者点名的重要缺口"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "二、批判它",
+          "tone": "purple",
+          "items": [
+            {
+              "label": "主要结果",
+              "value": "证据最强且一致的是三类：OCD（n=2 项）、物质使用障碍 SUD（n=8 项）、抑郁发作（MDD 或 BD，n=6 项）。而以「多动/高唤醒」为特征的障碍——ADHD、PTSD、精神分裂症——结果异质（heterogeneous）。",
+              "sources": [
+                {
+                  "loc": "Abstract",
+                  "quote": "Predominant evidence supports dTMS efficacy in patients with obsessive-compulsive disorder (OCD; n=2), substance use disorders (SUDs; n=8), and in those experiencing depressive episodes with major depressive disorder (MDD) or bipolar disorder (BD; n=6). However, the clinical efficacy of dTMS in psychiatric disorders characterized by hyperactivity or hyperarousal (i.e., attention-deficit/hyperactivity disorder, posttraumatic stress disorder, and schizophrenia) was heterogeneous.",
+                  "zh": "主要证据支持 dTMS 对强迫症（n=2）、物质使用障碍（n=8）以及重性抑郁障碍或双相障碍的抑郁发作（n=6）有效；然而，对以多动或高唤醒为特征的精神障碍（即 ADHD、PTSD 与精神分裂症），dTMS 的临床疗效结果不一致。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "终点达标",
+              "value": "不适用单一终点。作为全景综述，结论是「分适应证的证据强弱图谱」而非一个合并效应量；作者明确未按适应证做 meta 合并。"
+            },
+            {
+              "label": "阴性 / 混合结果（核心）",
+              "value": "精神分裂症部分尤其值得你注意：H1 线圈靶向左颞顶联合区（TPJ）治疗幻听的试验（Rosenberg 2012）中，两组幻听均改善但主动 dTMS 不优于假刺激；Rabany 2014 的 PANSS 仅趋势性改善、组间差不显著；Moeller 2022 刺激 PFC/岛叶后阳性症状显著下降（P=0.011）而假刺激组无（P=0.84）。阴性症状证据被作者评为「limited」。",
+              "sources": [
+                {
+                  "loc": "3.12.9. Schizophrenia and related disorders—Positive symptoms",
+                  "quote": "One clinical trial (Rosenberg et al., 2012) included in our review aimed to target this region using the H1-coil in patients with schizophrenia. Though improvements in auditory hallucinations were found in both groups, active dTMS was not superior to sham.",
+                  "zh": "本综述纳入的一项临床试验（Rosenberg 2012）试图用 H1 线圈在精分患者中靶向该区域。虽然两组幻听均有改善，但主动 dTMS 并不优于假刺激。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "偏倚与局限（RoB / GRADE）",
+              "value": [
+                "作者自述按 GRADE 清单整体偏倚风险「collectively low」，但各适应证纳入试验数少（OCD 仅 2 项）。",
+                "各研究在刺激参数、线圈、靶点、疗程上高度异质，无法做合并分析。",
+                "作者点名两大缺口：疗效耐久性（durability）与疗效调节因素（moderators）几乎未被系统研究。",
+                "OCD 的长期维持证据矛盾：Carmi 2018 在 1 个月随访时组间显著性消失；Harmelech 2022 报告平均耐久性 ≥1.98（±0.13）年，但未比较主动 vs 假刺激。",
+                "仅纳入英文、人类、临床试验/RCT，存在语言与发表偏倚。"
+              ]
+            },
+            {
+              "label": "安全性与耐受性",
+              "value": "最常见为头痛与刺激部位疼痛/不适：28 项中 19 项（67.86%）报告头痛、12 项报告疼痛/不适；4 项未报告任何不良反应信息。少见但严重的不良事件包括癫痫发作与自杀意念/企图。部分研究仅假刺激组报告头痛，甚至有研究报告假刺激组头痛/恶心多于主动组——提示不良事件归因需谨慎。"
+            },
+            {
+              "label": "统计与终点预设",
+              "value": "本综述为定性综合，未做 meta 分析；偏倚评估用 Meader 2014 版 GRADE 清单。因未做合并，不给 RR/效应量，也不做异质性量化——这是它与本批 OCD meta 分析的方法学差别。"
+            },
+            {
+              "label": "绝对效应与 NNT",
+              "value": "原文未给合并绝对效应或 NNT。但提供了可用于后续估算的原始线索：OCD 长期随访组间显著性消失、SUD 与抑郁发作证据较强、精分 H1-TPJ 试验为阴性。按库内规范，不就此推算 NNT。"
+            },
+            {
+              "label": "结论措辞",
+              "value": "原文：「Literature suggests promise for dTMS as a beneficial alternative or add-on treatment for patients who do not respond well to traditional treatment, particularly for depressive episodes, OCD, and SUDs. Mixed evidence and limited clinical trials for other psychiatric and cognitive disorders suggest more extensive research is warranted.」——注意用的是 promise（有前景）而非 proved。"
+            },
+            {
+              "label": "纳入研究分布与证据不均衡",
+              "value": "摘要仅给出三项适应证的试验数：OCD n=2、SUD n=8、抑郁发作（MDD/BD）n=6，合计 16 项；其余 12 项分布在 AD、ADHD、ASD、PTSD、精分、共病等，原文摘要未逐项给数字。也就是说「证据一致」的三类占了已知数量的绝大多数，而精分等恰恰是试验少、结果杂的领域——这本身就是一个重要的证据偏斜信号，本库不臆造缺失数字。",
+              "sources": [
+                {
+                  "loc": "Abstract",
+                  "quote": "Predominant evidence supports dTMS efficacy in patients with obsessive-compulsive disorder (OCD; n=2), substance use disorders (SUDs; n=8), and in those experiencing depressive episodes with major depressive disorder (MDD) or bipolar disorder (BD; n=6).",
+                  "zh": "主要证据支持 dTMS 对强迫症（n=2）、物质使用障碍（n=8）以及 MDD 或 BD 抑郁发作（n=6）的疗效。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "利益冲突与资助（待核）",
+              "value": "全文节选未见利益冲突与资助声明；作者来自 McMaster 大学及 Peter Boris 成瘾研究中心等。按库内规范标注「待核」，不臆断厂商关系。"
+            }
+          ]
+        },
+        {
+          "name": "三、用它",
+          "tone": "teal",
+          "items": [
+            {
+              "label": "临床可操作性",
+              "value": "对「哪些病人可能从 dTMS 获益」给出优先级：抑郁发作、OCD、物质使用障碍证据较一致；ADHD、PTSD、精神分裂症仍属探索性。对精分尤其要区分症状域与线圈型号——H1 靶向 DLPFC 可能不足以覆盖左 TPJ 幻听回路。"
+            },
+            {
+              "label": "与库内证据的关系",
+              "value": "这是全库的「证据地图」：本批另外 5 篇精读可逐一对号入座（OCD 的 rct_ocd / meta / 加速 RCT 落在「证据强」区；精分阴性症状 RCT 与 sr_schizophrenia 落在「异质/有限」区；TUS 则在本综述范围之外）。建议把它作为 evidence.html 矩阵页的综述级引用。"
+            },
+            {
+              "label": "患者版一句话",
+              "value": "综合已发表研究看，深部磁刺激对抑郁、强迫症和成瘾的帮助证据比较一致；对精神分裂症、多动症和创伤后应激的结果还不统一，需要更多研究。"
+            },
+            {
+              "label": "我的判断（待填）",
+              "value": "［留白：结合你在徐汇区精神卫生中心的病种结构，判断哪些适应证值得优先建立 dTMS 临床路径；核对 H1/H7 线圈与靶点匹配关系是否已完整进入 targets.json］"
+            }
+          ]
+        }
+      ],
+      "sync": [
+        {
+          "target": "reading_plan.json · items[]",
+          "op": "新增",
+          "detail": "L1 读综述 · 1 篇跨适应证系统综述：tech=dtms，year=2024，types=[Systematic Review]，28 项 sham 对照试验；DOI 原文节选未见，标注待核。"
+        },
+        {
+          "target": "evidence.html / matrix_counts.json",
+          "op": "待人工审核",
+          "detail": "作为证据矩阵的综述级索引：OCD(2)/SUD(8)/抑郁(6) 标「证据一致」，ADHD/PTSD/精分标「异质」。仅作定性标注，不自动改计数。"
+        },
+        {
+          "target": "tech_knowledge.json · 适应证图谱",
+          "op": "补充",
+          "detail": "新增「dTMS 跨适应证证据强弱」条目，含 28 项试验分布与「多动/高唤醒类障碍结果异质」的原文判断。"
+        },
+        {
+          "target": "targets.json · H1 / TPJ",
+          "op": "补充",
+          "detail": "补入 H1 线圈主要靶向双侧 DLPFC、可能不足以覆盖左 TPJ 幻听回路的原文解释；与 H7（mPFC/ACC）区分。"
+        },
+        {
+          "target": "tech_knowledge.json · 耐久性",
+          "op": "新增",
+          "detail": "新增「durability / moderators」研究缺口条目：Carmi 2018 随访显著性消失 vs Harmelech 2022 平均 1.98 年，明确标注证据矛盾。"
+        },
+        {
+          "target": "scenes.json / 行业动态速览",
+          "op": "补充",
+          "detail": "可引用「ITRUSST 式标准化」之外的 TMS 领域标准化进展，但按合规要求只陈述研究现状，不作疗效宣称。"
+        }
+      ],
+      "fulltext": [
+        {
+          "sec": "摘要 · 目的",
+          "en": "We systematically reviewed 28 clinical trials comparing active dTMS to a sham/controlled condition to characterize dTMS efficacy across diverse psychiatric and cognitive disorders. A comprehensive search of APA PsycINFO, Cochrane, Embase, Medline, and PubMed databases was conducted.",
+          "zh": "我们系统综述了 28 项将主动 dTMS 与假刺激/对照条件比较的临床试验，以刻画 dTMS 在多种精神与认知障碍中的疗效。检索覆盖 APA PsycINFO、Cochrane、Embase、Medline 与 PubMed 数据库。",
+          "hard": [
+            {
+              "w": "systematically",
+              "lv": "进阶",
+              "zh": "系统地"
+            },
+            {
+              "w": "sham",
+              "lv": "专业术语",
+              "zh": "假刺激"
+            },
+            {
+              "w": "characterize",
+              "lv": "进阶",
+              "zh": "刻画"
+            },
+            {
+              "w": "diverse",
+              "lv": "四级内",
+              "zh": "多样的"
+            },
+            {
+              "w": "comprehensive",
+              "lv": "六级",
+              "zh": "全面的"
+            },
+            {
+              "w": "databases",
+              "lv": "四级内",
+              "zh": "数据库"
+            }
+          ]
+        },
+        {
+          "sec": "摘要 · 主要发现",
+          "en": "Predominant evidence supports dTMS efficacy in patients with obsessive-compulsive disorder (OCD; n=2), substance use disorders (SUDs; n=8), and in those experiencing depressive episodes with major depressive disorder (MDD) or bipolar disorder (BD; n=6). However, the clinical efficacy of dTMS in psychiatric disorders characterized by hyperactivity or hyperarousal was heterogeneous.",
+          "zh": "主要证据支持 dTMS 对强迫症（n=2）、物质使用障碍（n=8）以及 MDD 或 BD 抑郁发作（n=6）的疗效。然而，对以多动或高唤醒为特征的精神障碍，dTMS 的临床疗效结果不一致。",
+          "hard": [
+            {
+              "w": "predominant",
+              "lv": "六级",
+              "zh": "主要的"
+            },
+            {
+              "w": "substance use disorders",
+              "lv": "专业术语",
+              "zh": "物质使用障碍"
+            },
+            {
+              "w": "depressive episodes",
+              "lv": "专业术语",
+              "zh": "抑郁发作"
+            },
+            {
+              "w": "hyperactivity",
+              "lv": "专业术语",
+              "zh": "多动"
+            },
+            {
+              "w": "hyperarousal",
+              "lv": "专业术语",
+              "zh": "高唤醒"
+            },
+            {
+              "w": "heterogeneous",
+              "lv": "专业术语",
+              "zh": "异质的"
+            }
+          ]
+        },
+        {
+          "sec": "摘要 · 安全性与结论",
+          "en": "Common side effects included headaches and pain/discomfort, with rare but serious adverse events such as seizures and suicidal ideation/attempts. Risk of bias ratings indicated a collectively low risk according to the GRADE checklist. Literature suggests promise for dTMS as a beneficial alternative or add-on treatment for patients who do not respond well to traditional treatment.",
+          "zh": "常见副作用包括头痛与疼痛/不适，少见但严重的不良事件有癫痫发作与自杀意念/企图。按 GRADE 清单，偏倚评级整体为低风险。文献提示 dTMS 作为传统治疗反应不佳患者的替代或增效治疗具有前景。",
+          "hard": [
+            {
+              "w": "side effects",
+              "lv": "专业术语",
+              "zh": "副作用"
+            },
+            {
+              "w": "seizures",
+              "lv": "六级",
+              "zh": "癫痫发作"
+            },
+            {
+              "w": "suicidal ideation",
+              "lv": "专业术语",
+              "zh": "自杀意念"
+            },
+            {
+              "w": "collectively",
+              "lv": "进阶",
+              "zh": "整体上"
+            },
+            {
+              "w": "add-on treatment",
+              "lv": "专业术语",
+              "zh": "增效治疗"
+            },
+            {
+              "w": "promise",
+              "lv": "四级内",
+              "zh": "前景"
+            }
+          ]
+        },
+        {
+          "sec": "引言 · 疾病负担",
+          "en": "Psychiatric and cognitive disorders are leading causes of disability and burden worldwide and are associated with poorer quality of life. From 1990 to 2019, the number of disability-adjusted life-years due to psychiatric disorders has increased globally from 80.8 million to 125.3 million.",
+          "zh": "精神与认知障碍是全球致残与疾病负担的主要原因，并与生活质量下降相关。1990 年至 2019 年间，全球因精神障碍导致的伤残调整生命年从 8080 万上升至 1.253 亿。",
+          "hard": [
+            {
+              "w": "disability",
+              "lv": "六级",
+              "zh": "致残"
+            },
+            {
+              "w": "burden",
+              "lv": "四级内",
+              "zh": "负担"
+            },
+            {
+              "w": "associated",
+              "lv": "四级内",
+              "zh": "相关"
+            },
+            {
+              "w": "disability-adjusted life-years",
+              "lv": "专业术语",
+              "zh": "伤残调整生命年（DALY）"
+            },
+            {
+              "w": "globally",
+              "lv": "四级内",
+              "zh": "全球范围"
+            }
+          ]
+        },
+        {
+          "sec": "结果 · 检索流程",
+          "en": "A search of the APA PsycINFO, Embase, and MEDLINE databases yielded 7717 articles. A total of 7095 articles were removed by OVID automation tools, which limited articles to English, human participants, clinical trials, and RCTs. Additionally, 59 duplicate records were removed by automation tools. After screening the abstracts of the remaining 563 articles, 499 were excluded.",
+          "zh": "APA PsycINFO、Embase 与 MEDLINE 检索共获得 7717 篇文章。OVID 自动化工具剔除了 7095 篇（限定为英语、人类受试者、临床试验与 RCT），另有 59 篇重复记录被自动剔除。对剩余 563 篇摘要筛选后，又排除 499 篇。",
+          "hard": [
+            {
+              "w": "yielded",
+              "lv": "六级",
+              "zh": "产生，获得"
+            },
+            {
+              "w": "automation",
+              "lv": "四级内",
+              "zh": "自动化"
+            },
+            {
+              "w": "duplicate",
+              "lv": "六级",
+              "zh": "重复的"
+            },
+            {
+              "w": "screening",
+              "lv": "专业术语",
+              "zh": "筛选"
+            },
+            {
+              "w": "excluded",
+              "lv": "四级内",
+              "zh": "排除"
+            }
+          ]
+        },
+        {
+          "sec": "结果 · 精神分裂症阳性症状",
+          "en": "One clinical trial (Rosenberg et al., 2012) included in our review aimed to target this region using the H1-coil in patients with schizophrenia. Though improvements in auditory hallucinations were found in both groups, active dTMS was not superior to sham. The H1-coil primarily targets the bilateral DLPFC, and thus, it is possible that such coil may not result in adequate stimulation of the left TPJ.",
+          "zh": "本综述纳入的一项临床试验（Rosenberg 2012）试图用 H1 线圈在精分患者中靶向该区域。虽然两组幻听均有改善，但主动 dTMS 并不优于假刺激。H1 线圈主要靶向双侧 DLPFC，因此该线圈可能不足以充分刺激左颞顶联合区。",
+          "hard": [
+            {
+              "w": "auditory hallucinations",
+              "lv": "专业术语",
+              "zh": "幻听"
+            },
+            {
+              "w": "superior",
+              "lv": "六级",
+              "zh": "优于"
+            },
+            {
+              "w": "bilateral",
+              "lv": "专业术语",
+              "zh": "双侧的"
+            },
+            {
+              "w": "DLPFC",
+              "lv": "专业术语",
+              "zh": "背外侧前额叶"
+            },
+            {
+              "w": "TPJ",
+              "lv": "专业术语",
+              "zh": "颞顶联合区"
+            },
+            {
+              "w": "adequate",
+              "lv": "六级",
+              "zh": "充分的"
+            }
+          ]
+        },
+        {
+          "sec": "结果 · OCD 耐久性",
+          "en": "Two clinical trials (Carmi et al., 2018, 2019) supported dTMS as a clinically effective OCD treatment compared to sham. However, the durability or long-term sustainability of dTMS remains uncertain. Significance between groups was lost at the 1-month follow-up in the study by Carmi et al. (2018). In contrast, a long-term analysis (Harmelech et al., 2022) reported an average dTMS durability of 1.98 (±0.13) years post-treatment.",
+          "zh": "两项临床试验（Carmi 2018、2019）支持 dTMS 相对假刺激是临床有效的 OCD 治疗。然而 dTMS 的耐久性或长期维持仍不确定：Carmi 2018 在 1 个月随访时组间显著性消失；相反，Harmelech 2022 的长期分析报告治疗后平均耐久性为 1.98（±0.13）年。",
+          "hard": [
+            {
+              "w": "clinically",
+              "lv": "四级内",
+              "zh": "临床上"
+            },
+            {
+              "w": "durability",
+              "lv": "专业术语",
+              "zh": "耐久性"
+            },
+            {
+              "w": "sustainability",
+              "lv": "进阶",
+              "zh": "可持续性"
+            },
+            {
+              "w": "uncertain",
+              "lv": "四级内",
+              "zh": "不确定的"
+            },
+            {
+              "w": "follow-up",
+              "lv": "专业术语",
+              "zh": "随访"
+            },
+            {
+              "w": "post-treatment",
+              "lv": "专业术语",
+              "zh": "治疗后"
+            }
+          ]
+        },
+        {
+          "sec": "结论 · 未来方向",
+          "en": "Future research should examine the durability of dTMS interventions and identify moderators of clinical efficacy. Mixed evidence and limited clinical trials for other psychiatric and cognitive disorders suggest more extensive research is warranted.",
+          "zh": "未来研究应考察 dTMS 干预的耐久性并识别临床疗效的调节因素。其他精神与认知障碍证据不一致且临床试验有限，提示需要更广泛的研究。",
+          "hard": [
+            {
+              "w": "moderators",
+              "lv": "专业术语",
+              "zh": "调节因素"
+            },
+            {
+              "w": "mixed",
+              "lv": "四级内",
+              "zh": "混合的，不一致的"
+            },
+            {
+              "w": "extensive",
+              "lv": "六级",
+              "zh": "广泛的"
+            },
+            {
+              "w": "warranted",
+              "lv": "进阶",
+              "zh": "有必要的"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "name": "表 1 · 28 项试验的证据图谱（按适应证）",
+          "note": "原文 Abstract + 3.12 各分节；n 为该适应证纳入试验数（原文摘要给出）",
+          "head": [
+            "适应证",
+            "试验数",
+            "证据一致性",
+            "本库备注"
+          ],
+          "rows": [
+            [
+              "强迫症 OCD",
+              "2",
+              "一致支持",
+              "本批另有 meta（4 RCT）与加速 RCT 佐证"
+            ],
+            [
+              "物质使用障碍 SUD",
+              "8",
+              "一致支持",
+              "纳入试验数最多"
+            ],
+            [
+              "抑郁发作（MDD / BD）",
+              "6",
+              "一致支持",
+              "含 H1 线圈 L-DLPFC 方案"
+            ],
+            [
+              "ADHD",
+              "未给",
+              "异质",
+              "归入「多动/高唤醒」类"
+            ],
+            [
+              "PTSD",
+              "未给",
+              "异质",
+              "同上"
+            ],
+            [
+              "精神分裂症及相关障碍",
+              "未给",
+              "异质 / 阴性症状证据有限",
+              "H1-TPJ 幻听试验为阴性；详见本批精分 RCT"
+            ],
+            [
+              "阿尔茨海默病 / ASD / 共病等",
+              "未给",
+              "试验有限",
+              "作者评为需更多研究"
+            ]
+          ],
+          "explain": "读法：这张表是 evidence.html 证据矩阵的「综述级索引」。注意摘要只给了 OCD/SUD/抑郁三项的试验数，其余适应证原文未给数字，本库不臆造填补。"
+        },
+        {
+          "name": "表 2 · 安全性汇总（28 项试验）",
+          "note": "原文 3.9–3.11；比例按 28 项换算",
+          "head": [
+            "项目",
+            "数量 / 比例",
+            "说明"
+          ],
+          "rows": [
+            [
+              "报告头痛",
+              "19 项（67.86%）",
+              "部分研究仅假刺激组报告"
+            ],
+            [
+              "报告疼痛/不适",
+              "12 项（约 42.86%）",
+              "原文 OCR 为 742.86%，按 12/28 校正为 42.86%"
+            ],
+            [
+              "未报告不良反应信息",
+              "4 项",
+              "Addolorato 2017、Ceccanti 2015、Girardi 2015、Rabany 2014"
+            ],
+            [
+              "严重不良事件",
+              "少见但存在",
+              "癫痫发作、自杀意念/企图"
+            ],
+            [
+              "偏倚评级",
+              "整体低风险",
+              "按 GRADE 清单（Meader 2014）"
+            ]
+          ],
+          "explain": "读法：不良事件报告本身不完整（4 项完全未报告），且部分研究中假刺激组头痛更多，说明「不良事件率」不能简单等同于设备风险。原文 OCR 把 42.86% 识别成 742.86%，本库按 12/28 校正并标注，遵守「不臆造但可标注校正」的规范。"
+        },
+        {
+          "name": "表 3 · 耐久性证据的矛盾",
+          "note": "原文 3.12.7 OCD；本库整理",
+          "head": [
+            "来源",
+            "结果",
+            "局限"
+          ],
+          "rows": [
+            [
+              "Carmi 2018",
+              "1 个月随访时组间显著性消失",
+              "提示疗效可能衰减"
+            ],
+            [
+              "Harmelech 2022（长期分析）",
+              "平均耐久性 ≥1.98（±0.13）年",
+              "未比较主动 vs 假刺激"
+            ],
+            [
+              "本批 OCD meta 分析",
+              "Y-BOCS 应答 RR 由 3.71（治疗后）降至 2.60（1 个月）",
+              "仍显著但衰减"
+            ],
+            [
+              "综述结论",
+              "durability 与 moderators 为两大研究缺口",
+              "作者明确点名"
+            ]
+          ],
+          "explain": "读法：三处证据方向一致——短期疗效较可靠，长期维持证据不足且相互矛盾。这是你设计随访方案时最该记住的一点，也解释了为何本批 meta 分析把随访 RR 单独列行。"
+        }
+      ]
+    },
+    "sr_dTMS_vs_rTMS": {
+      "type": "系统综述 · 头对头设备比较",
+      "typeCls": "sr",
+      "title": "dTMS 对比高频 rTMS 治疗抑郁症：系统综述",
+      "en": "Efficacy and Safety of Deep Transcranial Magnetic Stimulation Versus High-Frequency Repetitive Transcranial Magnetic Stimulation for Major Depressive Disorder: A Systematic Review",
+      "author": "Nan Zhang, Yu Mo, Xian-Jun Lan, Qi-Man Liu, Wen-Xiu Li, Xing-Bing Huang, Hua-Wang Wu, Shi-Chao Xu, Shu-Yun Li, Xin-Hu Yang, Wei Zheng",
+      "journal": "Springer · 2024-08-05 在线发表（刊名待核）· 广州 / 中国团队",
+      "ids": "系统综述 · 2 项 RCT / 203 例 · ima「玄牙的文献库」（原文节选未见 DOI，标注待核）",
+      "stage": "L2 读证据 · 头对头设备 / 线圈比较",
+      "groups": [
+        {
+          "name": "一、读懂它",
+          "tone": "purple",
+          "items": [
+            {
+              "label": "一句话定位",
+              "value": "这篇在问：同样治抑郁症，深部 H 线圈（dTMS）与常规 8 字线圈高频 rTMS 直接头对头比，谁的应答率更高、安全性有何差别？"
+            },
+            {
+              "label": "背景与假设",
+              "value": [
+                "抑郁是全球疾病负担主因，12 个月患病率约 4.7%；MDD 患者自杀死亡约为一般人群 20 倍；初始抗抑郁药治疗后仅约 1/3 达到缓解。",
+                "2008 年 FDA 批准首个 8 字线圈（F8）rTMS 设备用于 MDD；2013 年批准第二个采用 H 线圈的 dTMS 设备。",
+                "H1 线圈产生的电场比 F8 更宽，深部磁场可能增强白质募集并促进向皮质下传播，理论上可改善抗抑郁应答。",
+                "既往两项头对头 RCT 结论不一致（Filipčić 2019 支持 dTMS 更优；Yang 2023 未见差异），此前无系统综述；作者假设 dTMS 应答率显著更高。"
+              ]
+            },
+            {
+              "label": "PICO 详解",
+              "pico": {
+                "P": "成人（≥18 岁）MDD 患者；2 项 RCT 共 203 例（dTMS 100 / HF-rTMS 103），男性 43.3%，中位年龄 23–51 岁",
+                "I": "dTMS：H 线圈 + 抗抑郁药，18 Hz，平均 1980 脉冲/次，总量 19,800–39,600 脉冲，左 DLPFC，2 或 4 周",
+                "C": "HF-rTMS（≥10 Hz）：F8 线圈 + 抗抑郁药，10 Hz，1400–3000 脉冲/次，总量 14,000–60,000 脉冲，左 DLPFC",
+                "O": "共同主要结局＝抗抑郁应答率与缓解率；次要＝HAMD/MADRS 症状变化、脱落率、不良事件",
+                "S": "系统综述，检索 6 个数据库（含中国知网、万方）至 2023-07-06；PRISMA；Cochrane RoB 工具 + Jadad 量表"
+              }
+            },
+            {
+              "label": "研究设计",
+              "value": "两名研究者独立检索中英文 6 库（CNKI、万方、PubMed、Cochrane Library、PsycINFO、EMBASE）并手工追溯参考文献；1025 篇检出 → 去重 737 → 排除 723 → 14 篇全文评估 → 排除 12（会议 1、方案 10、综述 1）→ 纳入 2 项 RCT。Jadad 评分 3 与 4，均为高质量。因显著异质性未做 meta 分析，仅定性综合。",
+              "sources": [
+                {
+                  "loc": "Methods—Assessment of Study Quality",
+                  "quote": "The Cochrane risk of bias tool and the Jadad scale were independently applied by the two investigators to assess study quality. Studies scoring 3 points on the Jadad scale were considered high quality.",
+                  "zh": "两名研究者独立应用 Cochrane 偏倚风险工具与 Jadad 量表评估研究质量；Jadad 量表得分 3 分及以上被视为高质量。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "参数卡",
+              "value": [
+                "dTMS：H1 线圈，18 Hz，1980 脉冲/次，总 19,800–39,600 脉冲",
+                "HF-rTMS：F8 线圈，10 Hz，1400–3000 脉冲/次，总 14,000–60,000 脉冲",
+                "两者均靶向左侧 DLPFC，疗程 2 或 4 周",
+                "应答定义：HAMD-17 或 MADRS 较基线减少 ≥50%；缓解：HAMD-17≤7 或 MADRS≤10",
+                "纳入研究：Filipčić 2019（克罗地亚）、Yang 2023（中国，中文发表）"
+              ]
+            },
+            {
+              "label": "术语表",
+              "value": [
+                "F8 线圈 / H1 线圈：8 字形标准线圈 / Hesed（H）深部线圈",
+                "HF-rTMS：高频重复经颅磁刺激（本文定义 ≥10 Hz）",
+                "Jadad 量表：RCT 质量评分（随机化、盲法、脱落），≥3 为高质量",
+                "HAMD-17 / MADRS：17 项汉密尔顿抑郁量表 / Montgomery-Åsberg 抑郁量表",
+                "L-DLPFC：左侧背外侧前额叶，两者共同靶点"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "二、批判它",
+          "tone": "purple",
+          "items": [
+            {
+              "label": "主要结果",
+              "value": "总体抗抑郁应答率 dTMS 60.0% 显著高于 HF-rTMS 41.7%。但两项 RCT 结果不一致：Filipčić 2019 中 dTMS 66.7%（48/72）vs rTMS 44.0%（33/75）显著更优；Yang 2023 未见显著差异。仅 Filipčić 报告缓解率（dTMS 59.7% vs HF-rTMS 42.7%，P>0.05，无显著差异）。",
+              "sources": [
+                {
+                  "loc": "Abstract—Results",
+                  "quote": "Among the two RCTs, the overall antidepressant response rate was significantly higher in the dTMS (60.0%) than in the HF-rTMS group (41.7%). Only one RCT reported the antidepressant remission rates, demonstrating no significant difference between the two TMS groups.",
+                  "zh": "在两项 RCT 中，dTMS 组的总体抗抑郁应答率（60.0%）显著高于 HF-rTMS 组（41.7%）。仅一项 RCT 报告了抗抑郁缓解率，显示两种 TMS 组之间无显著差异。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "终点达标",
+              "value": "共同主要结局之一（应答率）达标；另一（缓解率）未达显著差异，且仅有 1 项研究报告。按「共同主要结局」的严格解读，只能说部分达标，须诚实标注。"
+            },
+            {
+              "label": "阴性 / 混合结果",
+              "value": "缓解率无显著差异；HAMD-17 症状改善在两项 RCT 中不一致（Filipčić 支持 dTMS 更优，Yang 未证实）；因异质性显著，作者明确放弃 meta 分析。这是「头对头比较结论依赖疗程长度」的典型案例。"
+            },
+            {
+              "label": "偏倚与局限（RoB / GRADE）",
+              "value": [
+                "仅 2 项 RCT、203 例；作者自述需更多 RCT。",
+                "因显著异质性无法做 meta 分析，也未做 GRADE 分级。",
+                "未纳入未发表研究，可能存在发表偏倚。",
+                "本系统综述未注册（our systematic review was unregistered）——与 OCD meta 有 PROSPERO 注册形成对照。",
+                "纳入研究之一为中文文献，语言与检索覆盖面是其优势，但也是异质性来源之一。"
+              ],
+              "sources": [
+                {
+                  "loc": "Discussion—limitations",
+                  "quote": "Second, a meta-analysis could not be conducted due to significant heterogeneity among the included RCTs. Third, other unpublished studies with smaller (non-significant) effect sizes may be present because we did not incorporate unpublished data in this systematic review, leading to the possibility of publication bias. Finally, our systematic review was unregistered.",
+                  "zh": "其次，因纳入 RCT 间存在显著异质性，无法进行 meta 分析。第三，由于未纳入未发表数据，可能存在效应量更小（不显著）的未发表研究，从而带来发表偏倚的可能。最后，本系统综述未进行注册。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "安全性与耐受性",
+              "value": "dTMS 肌肉抽动/痉挛或下颌痛发生率更高（Filipčić 2019：12% vs 0%，P 显著）。其他不良事件（头痛、头晕、应用部位疼痛/不适、失眠、焦虑）及脱落率（dTMS 12% vs HF-rTMS 5%）两组无显著差异。",
+              "sources": [
+                {
+                  "loc": "Results—Adverse Events",
+                  "quote": "Filipcic et al. showed that compared to HF-rTMS (0%), dTMS (12%) caused more muscle twitching/spasms or jaw pain incidences. Other adverse events (e.g., headaches and dizziness) and discontinuation rates were not significantly different between the two TMS groups (dTMS group: 12% versus HF-rTMS group: 5%).",
+                  "zh": "Filipčić 等显示，与 HF-rTMS（0%）相比，dTMS（12%）引起更多肌肉抽动/痉挛或下颌痛。其他不良事件（如头痛、头晕）与脱落率在两组间无显著差异（dTMS 组 12% 对 HF-rTMS 组 5%）。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "统计与终点预设",
+              "value": "仅定性综合，未合并效应量；Cochrane RoB 工具显示两项 RCT 在随机序列生成、结局评定盲法、不完整结局数据、选择性报告上均为低风险；Jadad 3 / 4 分。应答与缓解定义由各研究自定义（HAMD-17 减分≥50% / HAMD-17≤7）。"
+            },
+            {
+              "label": "绝对效应与 NNT",
+              "value": "应答率 60.0% vs 41.7%，绝对差约 18.3 个百分点，NNT≈6（推算值，非原文给出）；Filipčić 单项 66.7% vs 44.0%，绝对差 22.7 个百分点。原文未给置信区间，不宜过度解读。"
+            },
+            {
+              "label": "结论措辞",
+              "value": "原文：「dTMS leads to a better antidepressant response than HF-rTMS, although both interventions have favorable safety profiles. However, more RCTs using rigorous methodologies are warranted.」——结论后紧跟「需要更多 RCT」，与 2 项研究的证据体量相称。"
+            },
+            {
+              "label": "两项 RCT 不一致的可能解释",
+              "value": "作者给出的解释是疗程长度：既往 meta 分析显示无论 dTMS 还是 HF-rTMS，20 次后抑郁严重度下降都大于 10 次；Filipčić 2019 在 20 次后见 dTMS 显著更优，而 Yang 2023 在 10 次后未见组间差异。因此「dTMS 更优」可能部分由疗程而非线圈本身驱动，作者据此推论急性期 MDD 至少需 20 次治疗。这是观察性解释，未经本综述直接检验。",
+              "sources": [
+                {
+                  "loc": "Discussion",
+                  "quote": "In the included RCT by Filipcic et al., dTMS resulted in a significantly greater response rate than HF-rTMS after 20 sessions. In contrast, Yang et al. found that the response rates were not statistically different after 10 sessions of dTMS versus HF-rTMS.",
+                  "zh": "在纳入的 Filipčić 等 RCT 中，20 次治疗后 dTMS 的应答率显著高于 HF-rTMS；相反，Yang 等发现 10 次治疗后 dTMS 与 HF-rTMS 的应答率无统计学差异。",
+                  "conf": "high"
+                }
+              ]
+            },
+            {
+              "label": "利益冲突与资助（待核）",
+              "value": "作者声明无利益冲突；资助来自国家自然科学基金（82101609）及广州市多项科技/卫生项目（含广州市重点医学学科、高水平临床重点专科等）。原文明确「资助方不参与设计、数据、分析、发表决定或撰稿」。未披露与线圈厂商关系，标注「待核」。"
+            }
+          ]
+        },
+        {
+          "name": "三、用它",
+          "tone": "teal",
+          "items": [
+            {
+              "label": "临床可操作性",
+              "value": "作者给出一个很实用的推论：20 次疗程后 dTMS 显著优于 rTMS，10 次时则无差异，提示「至少 20 次才可能获得有临床意义的效应」，无论哪种技术。H1 线圈的代价是更多下颌/肌肉不适，需在知情同意时说明。"
+            },
+            {
+              "label": "与库内证据的关系",
+              "value": "这是 devices.json「同种治疗不同设备比较」最直接的头对头证据；与全景系统综述（28 项）中「抑郁发作证据一致」相互印证；与本批 OCD meta 的 H7 vs 双锥线圈亚组共同构成「线圈类型是否影响疗效」的两条独立线索，且两者都提醒不能过度解读亚组差异。"
+            },
+            {
+              "label": "患者版一句话",
+              "value": "两种磁刺激机器直接比，深部线圈让更多抑郁患者症状明显减轻（约六成对四成），但「完全缓解」的比例没差别，而且深部线圈更容易引起下颌或肌肉抽动；研究只有两项，还需更多验证。"
+            },
+            {
+              "label": "我的判断（待填）",
+              "value": "［留白：核对 Filipčić 2019 与 Yang 2023 的疗程差异（20 次 vs 10 次）是否足以解释结论不一致；评估院内现有设备是 F8 还是 H 线圈］"
+            }
+          ]
+        }
+      ],
+      "sync": [
+        {
+          "target": "reading_plan.json · items[]",
+          "op": "新增",
+          "detail": "L2 读证据 · 1 篇头对头设备比较系统综述：tech=dtms/rtms，year=2024，types=[Systematic Review, Head-to-Head]，2 RCT / 203 例；含中国团队与中文数据库检索。"
+        },
+        {
+          "target": "devices.json · 线圈比较",
+          "op": "补充",
+          "detail": "新增 H1 vs F8 头对头条目：应答 60.0% vs 41.7%、缓解无显著差异、下颌痛 12% vs 0%；补 FDA 批准年份 2013 / 2008 与参数对照表。"
+        },
+        {
+          "target": "tech_knowledge.json · 疗程剂量",
+          "op": "补充",
+          "detail": "新增「至少 20 次才可能获得有临床意义效应」条目，并标注其来源为作者基于两项 RCT 不一致结果的推论，非直接验证结论。"
+        },
+        {
+          "target": "targets.json · L-DLPFC",
+          "op": "补充",
+          "detail": "在 L-DLPFC 靶点下并列 H1（18 Hz，1980 脉冲）与 F8（10 Hz，1400–3000 脉冲）两种方案，标注「同靶点不同线圈」。"
+        },
+        {
+          "target": "evidence.json / matrix_counts.json",
+          "op": "待人工审核",
+          "detail": "MDD × dTMS / rTMS 格补一条头对头系统综述；因仅 2 项 RCT、无法 meta、未注册，建议标「中等偏低确定性」，由管理员逐条确认。"
+        },
+        {
+          "target": "tech_knowledge.json · 循证规范",
+          "op": "补充",
+          "detail": "新增「系统综述是否注册」作为库内质量标记：本篇未注册 vs 本批 OCD meta 有 PROSPERO CRD42024508188，用于训练你在读综述时先看注册状态。"
+        }
+      ],
+      "fulltext": [
+        {
+          "sec": "摘要 · 目的",
+          "en": "This systematic review aimed to evaluate and compare the safety and effectiveness of dTMS with that of high-frequency rTMS (HF-rTMS; >=10 Hz) in individuals diagnosed with major depressive disorder (MDD).",
+          "zh": "本系统综述旨在评估并比较 dTMS 与高频 rTMS（HF-rTMS，≥10 Hz）在重性抑郁障碍（MDD）患者中的安全性与有效性。",
+          "hard": [
+            {
+              "w": "evaluate",
+              "lv": "四级内",
+              "zh": "评估"
+            },
+            {
+              "w": "effectiveness",
+              "lv": "四级内",
+              "zh": "有效性"
+            },
+            {
+              "w": "high-frequency",
+              "lv": "专业术语",
+              "zh": "高频"
+            },
+            {
+              "w": "individuals",
+              "lv": "四级内",
+              "zh": "个体"
+            },
+            {
+              "w": "diagnosed",
+              "lv": "六级",
+              "zh": "被诊断为"
+            }
+          ]
+        },
+        {
+          "sec": "摘要 · 结果",
+          "en": "Two RCTs (n=203) investigating the efficacy and safety of dTMS (n=100) versus HF-rTMS (n=103) in adult patients with MDD met the inclusion criteria. The two included studies were of high quality, with a Jadad score of >=3. Among the two RCTs, the overall antidepressant response rate was significantly higher in the dTMS (60.0%) than in the HF-rTMS group (41.7%).",
+          "zh": "2 项比较 dTMS（n=100）与 HF-rTMS（n=103）治疗成人 MDD 疗效与安全性的 RCT（共 203 例）符合纳入标准，均为高质量研究（Jadad 评分 ≥3）。两项 RCT 中，dTMS 组总体抗抑郁应答率（60.0%）显著高于 HF-rTMS 组（41.7%）。",
+          "hard": [
+            {
+              "w": "met the inclusion criteria",
+              "lv": "专业术语",
+              "zh": "符合纳入标准"
+            },
+            {
+              "w": "Jadad score",
+              "lv": "专业术语",
+              "zh": "Jadad 评分"
+            },
+            {
+              "w": "antidepressant",
+              "lv": "专业术语",
+              "zh": "抗抑郁的"
+            },
+            {
+              "w": "response rate",
+              "lv": "专业术语",
+              "zh": "应答率"
+            },
+            {
+              "w": "significantly",
+              "lv": "四级内",
+              "zh": "显著地"
+            }
+          ]
+        },
+        {
+          "sec": "引言 · 临床缺口",
+          "en": "Although medication has demonstrated greater effectiveness in treating MDD than placebo, it is associated with side effects. Further, only one-third of the patients with MDD achieve remission after initial antidepressant therapy. Consequently, a key strategy to manage MDD is developing and testing novel therapies, such as high-frequency repetitive transcranial magnetic stimulation (HF-rTMS), deep TMS (dTMS), transcranial direct current stimulation (tDCS), and transcranial alternating current stimulation (tACS).",
+          "zh": "尽管药物治疗 MDD 优于安慰剂，但伴随副作用；而且初始抗抑郁治疗后仅三分之一患者达到缓解。因此，管理 MDD 的关键策略是开发与检验新疗法，如高频 rTMS、深部 TMS、经颅直流电刺激（tDCS）与经颅交流电刺激（tACS）。",
+          "hard": [
+            {
+              "w": "placebo",
+              "lv": "专业术语",
+              "zh": "安慰剂"
+            },
+            {
+              "w": "remission",
+              "lv": "专业术语",
+              "zh": "缓解"
+            },
+            {
+              "w": "initial",
+              "lv": "四级内",
+              "zh": "初始的"
+            },
+            {
+              "w": "consequently",
+              "lv": "六级",
+              "zh": "因此"
+            },
+            {
+              "w": "transcranial direct current stimulation",
+              "lv": "专业术语",
+              "zh": "经颅直流电刺激"
+            },
+            {
+              "w": "transcranial alternating current stimulation",
+              "lv": "专业术语",
+              "zh": "经颅交流电刺激"
+            }
+          ]
+        },
+        {
+          "sec": "引言 · 线圈差异",
+          "en": "In the case of coil types, the Hesed coil (H1-coil) generates a wider electric field than the F8-coil, thereby addressing concerns over target localization in clinical practice. Moreover, the deep magnetic field created by dTMS has been suggested to enhance white matter recruitment and facilitate propagation to the subcortical areas, potentially improving antidepressant response to TMS.",
+          "zh": "在线圈类型方面，Hesed 线圈（H1）产生的电场比 F8 线圈更宽，从而缓解临床实践中对靶点定位的顾虑。此外，dTMS 产生的深部磁场被认为可增强白质募集并促进向皮质下区域传播，可能改善 TMS 的抗抑郁应答。",
+          "hard": [
+            {
+              "w": "Hesed coil",
+              "lv": "专业术语",
+              "zh": "Hesed 线圈（H1）"
+            },
+            {
+              "w": "generates",
+              "lv": "四级内",
+              "zh": "产生"
+            },
+            {
+              "w": "localization",
+              "lv": "专业术语",
+              "zh": "定位"
+            },
+            {
+              "w": "white matter",
+              "lv": "专业术语",
+              "zh": "白质"
+            },
+            {
+              "w": "recruitment",
+              "lv": "专业术语",
+              "zh": "募集"
+            },
+            {
+              "w": "propagation",
+              "lv": "进阶",
+              "zh": "传播"
+            },
+            {
+              "w": "subcortical",
+              "lv": "专业术语",
+              "zh": "皮质下的"
+            }
+          ]
+        },
+        {
+          "sec": "方法 · 检索",
+          "en": "Two independent investigators systematically searched six online databases (Chinese Journal Net, WanFang, PubMed, the Cochrane Library, PsycINFO, and EMBASE) up to July 6, 2023. Additionally, hand-searching of the references from the included studies and the relevant reviews was conducted independently by two investigators to identify any additional studies.",
+          "zh": "两名研究者独立系统检索 6 个在线数据库（中国知网、万方、PubMed、Cochrane Library、PsycINFO、EMBASE）至 2023 年 7 月 6 日；并独立手工追溯纳入研究与相关综述的参考文献，以识别其他研究。",
+          "hard": [
+            {
+              "w": "independent",
+              "lv": "四级内",
+              "zh": "独立的"
+            },
+            {
+              "w": "investigators",
+              "lv": "六级",
+              "zh": "研究者"
+            },
+            {
+              "w": "databases",
+              "lv": "四级内",
+              "zh": "数据库"
+            },
+            {
+              "w": "hand-searching",
+              "lv": "专业术语",
+              "zh": "手工检索"
+            },
+            {
+              "w": "references",
+              "lv": "四级内",
+              "zh": "参考文献"
+            },
+            {
+              "w": "identify",
+              "lv": "四级内",
+              "zh": "识别"
+            }
+          ]
+        },
+        {
+          "sec": "结果 · 样本与参数",
+          "en": "A total of 203 patients with MDD were enrolled in the two RCTs that compared dTMS (n=100) with HF-rTMS (n=103). Among them, 43.3% of the patients were male, with a median age of 23–51 years. All patients received treatment at the left dorsolateral prefrontal cortex (L-DLPFC) for 2 or 4 weeks. In the included RCTs, dTMS (18Hz) was administered at an average dose of 1,980 pulses per session, whereas HF-rTMS (10 Hz) was provided at 1,400–3,000 pulses per session.",
+          "zh": "两项比较 dTMS（n=100）与 HF-rTMS（n=103）的 RCT 共纳入 203 例 MDD 患者，其中 43.3% 为男性，中位年龄 23–51 岁。所有患者均在左侧背外侧前额叶（L-DLPFC）接受 2 或 4 周治疗。dTMS 为 18 Hz、平均每次 1980 个脉冲；HF-rTMS 为 10 Hz、每次 1400–3000 个脉冲。",
+          "hard": [
+            {
+              "w": "enrolled",
+              "lv": "六级",
+              "zh": "纳入"
+            },
+            {
+              "w": "median",
+              "lv": "专业术语",
+              "zh": "中位"
+            },
+            {
+              "w": "dorsolateral prefrontal cortex",
+              "lv": "专业术语",
+              "zh": "背外侧前额叶"
+            },
+            {
+              "w": "administered",
+              "lv": "进阶",
+              "zh": "给予"
+            },
+            {
+              "w": "pulses per session",
+              "lv": "专业术语",
+              "zh": "每次脉冲数"
+            }
+          ]
+        },
+        {
+          "sec": "讨论 · 疗程解释",
+          "en": "According to previous meta-analyses, depression severity demonstrated greater reduction after 20 sessions than after 10 sessions of dTMS or HF-rTMS. In the included RCT by Filipcic et al., dTMS resulted in a significantly greater response rate than HF-rTMS after 20 sessions. In contrast, Yang et al. found that the response rates were not statistically different after 10 sessions of dTMS versus HF-rTMS. Therefore, at least 20 sessions may be required to obtain clinically meaningful effects in patients with acute MDD.",
+          "zh": "据既往 meta 分析，无论 dTMS 还是 HF-rTMS，20 次治疗后抑郁严重度的下降大于 10 次。Filipčić 的 RCT 中，20 次后 dTMS 应答率显著高于 HF-rTMS；而 Yang 等在 10 次后未发现两者有统计学差异。因此，急性期 MDD 患者可能至少需要 20 次治疗才能获得有临床意义的效应。",
+          "hard": [
+            {
+              "w": "severity",
+              "lv": "六级",
+              "zh": "严重度"
+            },
+            {
+              "w": "demonstrated",
+              "lv": "四级内",
+              "zh": "显示"
+            },
+            {
+              "w": "sessions",
+              "lv": "专业术语",
+              "zh": "治疗次数"
+            },
+            {
+              "w": "statistically",
+              "lv": "进阶",
+              "zh": "统计学上"
+            },
+            {
+              "w": "clinically meaningful",
+              "lv": "专业术语",
+              "zh": "有临床意义的"
+            },
+            {
+              "w": "acute",
+              "lv": "专业术语",
+              "zh": "急性期"
+            }
+          ]
+        },
+        {
+          "sec": "结论",
+          "en": "dTMS is associated with a better antidepressant response than HF-rTMS in adult patients with MDD, although both treatment modalities have favorable safety profiles. However, additional RCTs employing rigorous methodologies are warranted.",
+          "zh": "在成人 MDD 患者中，dTMS 的抗抑郁应答优于 HF-rTMS，尽管两种治疗方式的安全性均良好。然而，仍需更多采用严谨方法的 RCT。",
+          "hard": [
+            {
+              "w": "associated",
+              "lv": "四级内",
+              "zh": "相关"
+            },
+            {
+              "w": "modalities",
+              "lv": "专业术语",
+              "zh": "治疗方式"
+            },
+            {
+              "w": "favorable",
+              "lv": "六级",
+              "zh": "良好的"
+            },
+            {
+              "w": "profiles",
+              "lv": "进阶",
+              "zh": "（安全性）特征"
+            },
+            {
+              "w": "rigorous",
+              "lv": "进阶",
+              "zh": "严谨的"
+            },
+            {
+              "w": "warranted",
+              "lv": "进阶",
+              "zh": "有必要的"
+            }
+          ]
+        }
+      ],
+      "tables": [
+        {
+          "name": "表 1 · dTMS vs HF-rTMS 头对头结果（2 项 RCT，203 例）",
+          "note": "原文 Abstract、Table 2、Table 3",
+          "head": [
+            "结局",
+            "dTMS (n=100)",
+            "HF-rTMS (n=103)",
+            "显著性",
+            "备注"
+          ],
+          "rows": [
+            [
+              "总体应答率",
+              "60.0%",
+              "41.7%",
+              "显著",
+              "共同主要结局"
+            ],
+            [
+              "Filipčić 2019 应答率",
+              "66.7% (48/72)",
+              "44.0% (33/75)",
+              "显著",
+              "20 次疗程"
+            ],
+            [
+              "缓解率",
+              "59.7%",
+              "42.7%",
+              "P>0.05 不显著",
+              "仅 1 项研究报告"
+            ],
+            [
+              "HAMD-17 症状改善",
+              "Filipčić 中更优",
+              "Yang 中未证实差异",
+              "不一致",
+              "两项 RCT 结论相反"
+            ],
+            [
+              "肌肉抽动/痉挛或下颌痛",
+              "12% (8 例)",
+              "0%",
+              "显著",
+              "dTMS 特有不适"
+            ],
+            [
+              "头痛",
+              "29%",
+              "20%",
+              "不显著",
+              "Filipčić 2019"
+            ],
+            [
+              "头晕 / 失眠 / 应用部位疼痛",
+              "6% / 7% / 7%",
+              "3% / 7% / 0%",
+              "均不显著",
+              "Filipčić 2019"
+            ],
+            [
+              "脱落率",
+              "12%",
+              "5%",
+              "不显著",
+              "两组相近"
+            ]
+          ],
+          "explain": "读法：应答率显著但缓解率不显著，说明 dTMS 带来的是「更多患者明显好转」而非「更多患者完全缓解」。安全性上唯一稳定差异是下颌/肌肉不适，这与 H1 线圈电场更宽、更易累及面部/咀嚼肌一致。"
+        },
+        {
+          "name": "表 2 · 两种设备参数对照",
+          "note": "原文 Results—Characteristics of Study Samples / Table 1",
+          "head": [
+            "维度",
+            "dTMS（H1 线圈）",
+            "HF-rTMS（F8 线圈）"
+          ],
+          "rows": [
+            [
+              "线圈",
+              "Hesed H1",
+              "8 字形 F8"
+            ],
+            [
+              "频率",
+              "18 Hz",
+              "10 Hz"
+            ],
+            [
+              "脉冲/次",
+              "平均 1980",
+              "1400–3000"
+            ],
+            [
+              "总脉冲量",
+              "19,800–39,600",
+              "14,000–60,000"
+            ],
+            [
+              "靶点",
+              "左侧 DLPFC",
+              "左侧 DLPFC"
+            ],
+            [
+              "疗程",
+              "2 或 4 周",
+              "2 或 4 周"
+            ],
+            [
+              "FDA 批准年份（MDD）",
+              "2013",
+              "2008"
+            ],
+            [
+              "主要不适",
+              "肌肉抽动/下颌痛 12%",
+              "0%"
+            ]
+          ],
+          "explain": "读法：两者靶点相同、疗程相同，差异集中在「线圈电场形态 + 频率 + 脉冲剂量」。这正好是 devices.json 设备比较页需要的结构化字段：同一靶点下，换线圈带来的疗效与耐受性权衡。"
+        },
+        {
+          "name": "表 3 · 证据确定性与局限",
+          "note": "原文 Discussion limitations；GRADE 为本库评估，非原文给出",
+          "head": [
+            "维度",
+            "情况",
+            "本库判断"
+          ],
+          "rows": [
+            [
+              "纳入研究",
+              "2 项 RCT / 203 例",
+              "体量小"
+            ],
+            [
+              "研究质量",
+              "Jadad 3 与 4；Cochrane RoB 多项低风险",
+              "质量较好"
+            ],
+            [
+              "异质性",
+              "显著，未能做 meta 分析",
+              "主要降级因素"
+            ],
+            [
+              "注册",
+              "本系统综述未注册",
+              "与 OCD meta（PROSPERO）形成对照"
+            ],
+            [
+              "发表偏倚",
+              "未纳入未发表研究",
+              "可能存在"
+            ],
+            [
+              "共同主要结局",
+              "应答达标、缓解未达标",
+              "仅部分达标"
+            ],
+            [
+              "GRADE（本库评估）",
+              "未做；综合为「中等偏低」",
+              "需管理员复核"
+            ]
+          ],
+          "explain": "读法：研究本身质量不差，但数量与异质性限制了结论强度。「dTMS 更优」应理解为基于 2 项 RCT 的初步结论，且很可能受疗程长度（20 次 vs 10 次）调节。"
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
   "generated": "2026-11-24 22:50",
   "source": "data/evidence.json（真实 PMID，可到 PubMed 核对）",
-  "note": "每级台阶挑选题名匹配的真实文献；读懂后按阅读卡片沉淀，卡片内容由人填写、AI 只做整理。 另有 2 篇来自 ima 知识库的深度精读样板（注册号/DOI 标识，非 PMID），带 20 模块 + 全文英中对照 + 关键表格 + 全站同步清单。",
+  "note": "27 条：19 篇真实 PMID 分级书单 + 8 篇 ima 文献深度精读（2 篇样板 + 6 篇本批新增）。带 deepKey 的条目在阅读页显示「▤ 深度精读」入口。ima 文献不伪造 PMID，以注册号/DOI 标识，未查到 DOI 或期刊的标注「待核」。",
   "items": [
     {
       "stage": "L1",
@@ -280,6 +280,126 @@
       ],
       "doi": "",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42115366/"
+    },
+    {
+      "stage": "L2",
+      "goal": "精读：精分阴性症状的 H7 dTMS 可行性 RCT（10 Hz 而非 20 Hz）",
+      "tech": "dtms",
+      "pmid": "ima-schiz-neg",
+      "idType": "注册号",
+      "idLabel": "CTRI/2021/07/035267",
+      "year": "2025",
+      "title": "Efficacy of Adjunctive High-Frequency Deep Transcranial Magnetic Stimulation for Improving Negative Symptoms in Schizophrenia: A Feasibility Study",
+      "titleCn": "高频 dTMS 改善精神分裂症阴性症状：可行性随机对照研究",
+      "journal": "J ECT",
+      "types": [
+        "Randomized Controlled Trial",
+        "Sham-Controlled"
+      ],
+      "doi": "",
+      "url": "https://www.ncbi.nlm.nih.gov/pubmed/?term=High-Frequency+Deep+Transcranial+Magnetic+Stimulation+Negative+Symptoms+Schizophrenia+Gulesh+Kumar",
+      "deepKey": "rct_schiz_negative",
+      "source": "ima 玄牙的文献库"
+    },
+    {
+      "stage": "L1",
+      "goal": "精读：难治性 OCD dTMS 的合并证据（4 RCT / 252 例，RR=3.71）",
+      "tech": "dtms",
+      "pmid": "ima-meta-ocd",
+      "idType": "DOI",
+      "idLabel": "10.1016/j.jpsychires.2024.09.043",
+      "year": "2024",
+      "title": "Deep transcranial magnetic stimulation for treatment-resistant obsessive-compulsive disorder: A meta-analysis of randomized-controlled trials",
+      "titleCn": "dTMS 治疗难治性强迫症：随机对照试验的 meta 分析",
+      "journal": "J Psychiatr Res",
+      "types": [
+        "Meta-Analysis",
+        "Systematic Review"
+      ],
+      "doi": "10.1016/j.jpsychires.2024.09.043",
+      "url": "https://doi.org/10.1016/j.jpsychires.2024.09.043",
+      "deepKey": "meta_ocd",
+      "source": "ima 玄牙的文献库"
+    },
+    {
+      "stage": "L2",
+      "goal": "精读：加速方案 + 双锥线圈，与 H7 方案做设备/参数对照",
+      "tech": "dtms",
+      "pmid": "ima-accel-ocd",
+      "idType": "注册号",
+      "idLabel": "NCT06077370",
+      "year": "2024",
+      "title": "Efficacy of accelerated deep transcranial magnetic stimulation with double cone coil in obsessive-compulsive disorder: A double-blind, placebo-controlled study",
+      "titleCn": "加速 dTMS 双锥线圈治疗难治性强迫症：双盲安慰剂对照研究",
+      "journal": "J Psychiatr Res",
+      "types": [
+        "Randomized Controlled Trial",
+        "Double-Blind",
+        "Placebo-Controlled"
+      ],
+      "doi": "10.1016/j.jpsychires.2024.02.005",
+      "url": "https://doi.org/10.1016/j.jpsychires.2024.02.005",
+      "deepKey": "rct_accel_ocd",
+      "source": "ima 玄牙的文献库"
+    },
+    {
+      "stage": "L1",
+      "goal": "精读：跨 11 类适应证的 dTMS 证据地图，识别哪些适应证证据一致",
+      "tech": "dtms",
+      "pmid": "ima-sr-all",
+      "idType": "其他",
+      "idLabel": "28 项假刺激对照试验（DOI 待核）",
+      "year": "2024",
+      "title": "Clinical efficacy of deep transcranial magnetic stimulation (dTMS) in psychiatric and cognitive disorders: A systematic review",
+      "titleCn": "dTMS 在精神与认知障碍中的临床疗效：28 项假刺激对照试验系统综述",
+      "journal": "McMaster University 团队综述（原文节选未给刊名，待核）",
+      "types": [
+        "Systematic Review"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Clinical+efficacy+deep+transcranial+magnetic+stimulation+psychiatric+cognitive+disorders+Di+Passa",
+      "deepKey": "sr_dTMS_all",
+      "source": "ima 玄牙的文献库"
+    },
+    {
+      "stage": "L2",
+      "goal": "精读：H1 线圈 vs F8 线圈头对头，理解「同靶点不同设备」的权衡",
+      "tech": "rtms",
+      "pmid": "ima-dvsr",
+      "idType": "其他",
+      "idLabel": "2 项 RCT / 203 例（DOI 待核）",
+      "year": "2024",
+      "title": "Efficacy and Safety of Deep Transcranial Magnetic Stimulation Versus High-Frequency Repetitive Transcranial Magnetic Stimulation for Major Depressive Disorder: A Systematic Review",
+      "titleCn": "dTMS 对比高频 rTMS 治疗抑郁症：系统综述",
+      "journal": "Springer 期刊（原文节选未给刊名，待核）",
+      "types": [
+        "Systematic Review",
+        "Head-to-Head Comparison"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Deep+Transcranial+Magnetic+Stimulation+Versus+High-Frequency+Repetitive+Transcranial+Magnetic+Stimulation+Major+Depressive+Disorder+Wei+Zheng",
+      "deepKey": "sr_dTMS_vs_rTMS",
+      "source": "ima 玄牙的文献库"
+    },
+    {
+      "stage": "L3",
+      "goal": "前沿：经颅聚焦超声（TUS）的剂量参数与动态临床场景落地经验",
+      "tech": "tus",
+      "pmid": "ima-tus",
+      "idType": "注册号",
+      "idLabel": "NCT05643196 / NCT05784805",
+      "year": "2025",
+      "title": "Transcranial Focused Ultrasound Stimulation in Dynamic Clinical Settings: Initial Strategy in Schizophrenia and Status Epilepticus",
+      "titleCn": "经颅聚焦超声在动态临床场景的初始策略：精神分裂症与癫痫持续状态",
+      "journal": "Ultrasound Med Biol",
+      "types": [
+        "Letter",
+        "Methods Paper"
+      ],
+      "doi": "10.1016/j.ultrasmedbio.2024.12.019",
+      "url": "https://doi.org/10.1016/j.ultrasmedbio.2024.12.019",
+      "deepKey": "letter_tus",
+      "source": "ima 玄牙的文献库"
     },
     {
       "stage": "L2",

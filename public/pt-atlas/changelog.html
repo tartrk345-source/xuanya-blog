@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>修订记录 · 精神科物理治疗</title>
 <meta name="description" content="网站与数据的公开修订时间线。">
-<link rel="stylesheet" href="styles.css?v=20261124k">
+<link rel="stylesheet" href="styles.css?v=20261125a">
 </head>
 <body>
 <div class="pt-page">
@@ -30,6 +30,11 @@
   <main class="pt-main">
     <div class="doc">
       <ul class="tl">
+        <li>
+          <time>2026-11-25 · v1.0</time>
+          <b>ima 文献批量精读（6 篇）+ 修正阿里云部署</b>
+          <p><strong>新增 6 篇深度精读</strong>（总数 2 → 8 篇），全部来自 ima「玄牙的文献库」PDF 全文，按同一规格生成：每篇 20 模块 + 全文 8 段英中对照 + 关键表格 3 张 + 全站同步清单 6 条。覆盖：精分阴性症状 10 Hz dTMS 可行性 RCT（CTRI/2021/07/035267）、难治性 OCD meta 分析（4 RCT / 252 例，RR=3.71）、加速双锥线圈 OCD 双盲 RCT（NCT06077370）、dTMS 跨适应证 28 项试验系统综述、H1 vs F8 线圈头对头系统综述、经颅聚焦超声 TUS 方法学通讯（NCT05643196 / NCT05784805）。阴性/混合结果（精分 H1-TPJ 阴性、OCD 对称维度无效、缓解率不显著）与局限同等呈现；无依据数值不编造，推算 NNT 均标注「非原文给出」，未见 DOI/刊名标「待核」；TUS 因无对照、无疗效终点，明确不计入证据矩阵。阅读页精读入口由 2 张扩为 8 张，书单挂载 6 条 deepKey（共 27 条）。<strong>部署修正</strong>：线上为阿里云 ECS（123.56.8.140）nginx，此前仅同步本地并推送 GitHub 未上传服务器，导致 /pt-atlas/ 被 SPA fallback 成首页「显示不出来」；本次重新构建并上传至 <code>/www/wwwroot/x2ya/dist</code>，工具页入口卡随新 bundle 生效，已验证线上返回真实页面内容。</p>
+        </li>
         <li>
           <time>2026-11-24 · v0.9</time>
           <b>精读卡字体放大 + 接入 x2ya.com</b>
@@ -86,6 +91,6 @@
   </footer>
 </div>
 <script>window.PT_SITE={ver:'v0.3'};</script>
-<script src="site.js?v=20261124h"></script>
+<script src="site.js?v=20261125a"></script>
 </body>
 </html>
