@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
@@ -21,6 +21,13 @@ export default function ToolResourcesPage() {
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [done, setDone] = useState(false);
   const [copied, setCopied] = useState(false);
+  const answersRef = useRef<Record<number, number>>({});
+  /** 题号存 ref：键盘连按不经过 DOM 按钮，不能依赖渲染闭包 */
+  const indexRef = useRef(0);
+  const chooseRef = useRef<(v: number) => void>(() => {});
+  const goPrevRef = useRef<() => void>(() => {});
+  const goNextRef = useRef<() => void>(() => {});
+  const setIdx = (i: number) => { indexRef.current = i; setIndex(i); };
 
   const current = ALL_QUESTIONS[index];
   const answeredCount = Object.keys(answers).length;
@@ -30,18 +37,65 @@ export default function ToolResourcesPage() {
   const allAnswered = answeredCount === RESOURCE_TOTAL;
 
   const choose = (value: number) => {
-    const next = { ...answers, [index]: value };
+    const cur = indexRef.current;
+    // 答案与题号全部走 ref：键盘/鼠标极速连按不丢题
+    const next = { ...answersRef.current, [cur]: value };
+    answersRef.current = next;
     setAnswers(next);
-    if (index < RESOURCE_TOTAL - 1) {
-      window.setTimeout(() => setIndex(i => Math.min(i + 1, RESOURCE_TOTAL - 1)), 150);
-    } else if (Object.keys(next).length === RESOURCE_TOTAL) {
-      window.setTimeout(() => setDone(true), 200);
+    if (Object.keys(next).length === RESOURCE_TOTAL) {
+      setDone(true);
+      return;
+    }
+    if (cur < RESOURCE_TOTAL - 1) {
+      setIdx(cur + 1);
+    } else {
+      // 最后一题却仍有未答（跳过过）→ 回到第一道未答题
+      const firstMissing = ALL_QUESTIONS.findIndex((_, i) => next[i] === undefined);
+      if (firstMissing >= 0) setIdx(firstMissing);
     }
   };
 
+  const goPrev = () => setIdx(Math.max(0, indexRef.current - 1));
+
+  const goNext = () => {
+    if (indexRef.current < RESOURCE_TOTAL - 1) {
+      setIdx(indexRef.current + 1);
+      return;
+    }
+    if (Object.keys(answersRef.current).length === RESOURCE_TOTAL) setDone(true);
+  };
+
+  // 每次渲染把最新实现写进 ref，键盘监听只绑一次也能拿到最新状态
+  chooseRef.current = choose;
+  goPrevRef.current = goPrev;
+  goNextRef.current = goNext;
+
+  /* 键盘：1–5 选五档，← → 翻题 */
+  useEffect(() => {
+    if (done) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const tag = (e.target as HTMLElement | null)?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+      if (e.key >= '1' && e.key <= '5') {
+        e.preventDefault();
+        chooseRef.current(Number(e.key) - 1);
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        goPrevRef.current();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        goNextRef.current();
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [done]);
+
   const restart = () => {
+    answersRef.current = {};
     setAnswers({});
-    setIndex(0);
+    setIdx(0);
     setDone(false);
     setCopied(false);
   };
@@ -152,7 +206,7 @@ export default function ToolResourcesPage() {
 
               <div className="flex items-center justify-between mt-6">
                 <button
-                  onClick={() => setIndex(i => Math.max(0, i - 1))}
+                  onClick={goPrev}
                   disabled={index === 0}
                   className="text-sm text-[#767693] dark:text-[#94A3B8] disabled:opacity-30 hover:text-[#DA583F] dark:hover:text-[#60A5FA] transition-colors"
                 >
@@ -168,7 +222,7 @@ export default function ToolResourcesPage() {
                   </button>
                 ) : (
                   <button
-                    onClick={() => setIndex(i => Math.min(RESOURCE_TOTAL - 1, i + 1))}
+                    onClick={goNext}
                     disabled={answers[index] === undefined}
                     className="text-sm text-[#767693] dark:text-[#94A3B8] disabled:opacity-30 hover:text-[#DA583F] dark:hover:text-[#60A5FA] transition-colors"
                   >
@@ -178,6 +232,7 @@ export default function ToolResourcesPage() {
               </div>
 
               <p className="text-[12px] text-[#B8B4B0] dark:text-[#64748B] mt-10 leading-relaxed">
+                电脑上可用键盘 <span className="font-mono">1–5</span> 直接选五档、<span className="font-mono">← →</span> 翻题，连按也能逐题作答。
                 本工具为自省用，无信效度验证，不是诊断。作答只在本页内存里计算，刷新即清空。
               </p>
             </>

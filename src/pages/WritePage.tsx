@@ -9,7 +9,7 @@ import type { CategoryKey } from '../types/article';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 import Navigation from '../components/Navigation';
 import AdminLogin from '../components/AdminLogin';
-import { syncToGist } from '../utils/gistSync';
+import { createServerBackup } from '../utils/backupSync';
 
 /** 标签输入组件 */
 function TagInput({ tags, onChange }: { tags: string[]; onChange: (tags: string[]) => void }) {
@@ -207,14 +207,14 @@ export default function WritePage() {
       };
       if (isEditing && id) {
         await updateArticle(id, articleData);
-        await syncToGist().catch(() => {});
+        await createServerBackup().catch(() => {});
         setSaving(false);
         // 清除草稿
         localStorage.removeItem(`draft-${id}`);
         navigate(`/article/${id}`);
       } else {
         const newArticle = await createArticle(articleData);
-        await syncToGist().catch(() => {});
+        await createServerBackup().catch(() => {});
         setSaving(false);
         localStorage.removeItem('draft-new-draft');
         navigate(`/article/${newArticle.id}`);

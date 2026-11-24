@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学习阶梯 · 精神科物理治疗</title>
+<meta name="description" content="四级台阶：认识、读证据、懂机制、会产出，含分级阅读计划与 AI 阅读导览。">
+<link rel="stylesheet" href="styles.css?v=20261124k">
+</head>
+<body>
+<div class="pt-page">
+
+  <header class="pt-head">
+    <div class="pt-head-inner">
+      <div class="pt-brand">玄牙 · 精神科物理治疗</div>
+      <nav class="pt-tabs"></nav>
+      <span class="pt-ver">v0.3</span>
+    </div>
+  </header>
+
+  <section class="pt-hero">
+    <div class="pt-hero-inner">
+      <div class="pt-kicker">LEARNING PATH</div>
+      <h1>学习阶梯</h1>
+      <p class="pt-sub">
+        这个库首先是我的学习系统。四级台阶对应四次能力跃迁：<strong>从知道，到判断，到解释，到创造</strong>。
+        库升一级，我就升一级。进度只存在本机浏览器里，不上传。
+      </p>
+    </div>
+  </section>
+
+  <main class="pt-main">
+
+    <div class="pt-subtabs" data-group="learn">
+      <a href="learn.html">四级台阶</a>
+      <a href="reading.html">阅读计划 · AI 导览</a>
+    </div>
+
+    <section class="pt-section">
+      <div class="pt-section-h"><h2>四级台阶</h2><span class="pt-sub-inline">点「完成」标记进度 · 存本机</span></div>
+      <div class="step-list" id="step-list">
+
+        <div class="step-card" data-step="l1">
+          <div class="step-h">
+            <span class="step-lv">L1</span><b>认识 · 说清有哪些技术、各治什么</b>
+            <button class="step-done" type="button" data-step="l1">标记完成</button>
+          </div>
+          <div class="step-cols">
+            <div class="step-col"><span>学什么</span><p>技术全谱、适应症、术语、安全性。</p></div>
+            <div class="step-col"><span>库里看什么</span><p><a href="index.html">全景地图</a>、<a href="quick.html">术语与安全速查</a>、技术档案目录。</p></div>
+            <div class="step-col"><span>我要产出</span><p>能说清「有哪些技术、各治什么」。</p></div>
+          </div>
+        </div>
+
+        <div class="step-card l2" data-step="l2">
+          <div class="step-h">
+            <span class="step-lv">L2</span><b>读证据 · 判断这个证据有多强</b>
+            <button class="step-done" type="button" data-step="l2">标记完成</button>
+          </div>
+          <div class="step-cols">
+            <div class="step-col"><span>学什么</span><p>GRADE、Cochrane、阴性结果、偏倚。</p></div>
+            <div class="step-col"><span>库里看什么</span><p><a href="reading.html">阅读计划 · AI 导览</a>、<a href="evidence.html">证据池</a>、Cochrane 结论卡、阴性结果标注、<a href="method.html">检索方法页</a>。</p></div>
+            <div class="step-col"><span>我要产出</span><p>能判断一篇研究的主终点是否达标。</p></div>
+          </div>
+        </div>
+
+        <div class="step-card l3" data-step="l3">
+          <div class="step-h">
+            <span class="step-lv">L3</span><b>懂机制 · 解释为什么这样刺激、刺激哪里</b>
+            <button class="step-done" type="button" data-step="l3">标记完成</button>
+          </div>
+          <div class="step-cols">
+            <div class="step-col"><span>学什么</span><p>靶点、参数、影像、闭环、干预时机。</p></div>
+            <div class="step-col"><span>库里看什么</span><p><a href="tech.html">技术档案</a>的参数卡、靶点脑图、超声靶点图、BCI 闭环图。</p></div>
+            <div class="step-col"><span>我要产出</span><p>能为一个靶点写出刺激参数与依据。</p></div>
+          </div>
+        </div>
+
+        <div class="step-card l4" data-step="l4">
+          <div class="step-h">
+            <span class="step-lv">L4</span><b>会产出 · 写出综述 / Meta</b>
+            <button class="step-done" type="button" data-step="l4">标记完成</button>
+          </div>
+          <div class="step-cols">
+            <div class="step-col"><span>学什么</span><p>研究设计、Meta 方法、文献计量。</p></div>
+            <div class="step-col"><span>库里看什么</span><p><a href="evidence.html">结构化证据池</a> + 趋势数据 + 可回溯字段。</p></div>
+            <div class="step-col"><span>我要产出</span><p>第一篇文献计量论文（最现实的起步）。</p></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="pt-section">
+      <div class="pt-section-h"><h2>五年节奏</h2></div>
+      <div class="doc">
+        <ul>
+          <li><strong>第 1 年（站稳）</strong>：可靠性地基 + L1 全景/术语/安全；建立技术全景认知，选定综述方向。</li>
+          <li><strong>第 2 年（精读）</strong>：L2 证据层；系统精读某一技术族，写出第一篇叙述性综述。</li>
+          <li><strong>第 3 年（机制）</strong>：L3 机制层；做一篇系统综述 + Meta。</li>
+          <li><strong>第 4 年（聚焦）</strong>：BCI + 超声 + 大健康数据补齐；形成自己的研究问题。</li>
+          <li><strong>第 5 年（收获）</strong>：库对外 + 科普视图完善；多篇论文、课题申报。</li>
+        </ul>
+        <div class="warn" style="margin-top:14px">核心原则：<strong>临床是主线，库是杠杆</strong>。绝不因为建库影响临床积累；反过来，临床里遇到的每个问题，都是库里该补的一条证据。</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pt-foot">
+    <span>进度仅存本机 localStorage · v0.6</span>
+    <a href="reading.html">阅读计划 · AI 导览 →</a>
+  </footer>
+</div>
+<script>window.PT_SITE={ver:'v0.6'};</script>
+<script src="site.js?v=20261124h"></script>
+<script src="learn.js?v=20261124c"></script>
+</body>
+</html>

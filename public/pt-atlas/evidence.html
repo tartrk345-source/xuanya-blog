@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>证据池 · 精神科物理治疗</title>
+<meta name="description" content="2103 篇精神科物理治疗文献，按技术、适应症、研究类型与年份筛选。">
+<link rel="stylesheet" href="styles.css?v=20261124k">
+</head>
+<body>
+<div class="pt-page">
+
+  <header class="pt-head">
+    <div class="pt-head-inner">
+      <div class="pt-brand">玄牙 · 精神科物理治疗</div>
+      <nav class="pt-tabs"></nav>
+      <span class="pt-ver">v0.3</span>
+    </div>
+  </header>
+
+  <section class="pt-hero">
+    <div class="pt-hero-inner">
+      <div class="pt-kicker">EVIDENCE POOL</div>
+      <h1>证据池</h1>
+      <p class="pt-sub">
+        <strong>2,103 篇</strong>文献，PubMed E-utilities 检索，每格优先 Cochrane &gt; SR/MA &gt; RCT。
+        每条带 PMID，可回溯原文。研究类型与年份可筛选；GRADE 徽章与「待核验」标记按学习阶梯逐条补。
+      </p>
+    </div>
+  </section>
+
+  <main class="pt-main">
+
+    <section class="pt-section">
+      <div class="pt-section-h"><h2>筛选</h2><span class="pt-sub-inline" id="ev-count">加载中…</span></div>
+      <div class="ev-bar">
+        <input type="text" id="ev-q" placeholder="搜索题名 / 摘要 / 期刊…">
+        <select id="ev-year"><option value="">全部年份</option></select>
+        <select id="ev-type"><option value="">全部研究类型</option></select>
+      </div>
+      <div class="ev-table" id="ev-table"><div class="ev-empty">加载中…</div></div>
+    </section>
+
+    <section class="pt-note">
+      <h3>怎么读证据池</h3>
+      <ul>
+        <li><strong>有文献≠有效</strong>：这里收的是「有人研究过」，不是「证明有用」。</li>
+        <li><strong>看研究类型</strong>：Cochrane / SR / RCT / 观察性研究的证据强度不同，别把病例报告当成结论。</li>
+        <li><strong>PMID 可回溯</strong>：每条都有 PMID，到 PubMed 核对原文——AI 只做提取，判断由人做。</li>
+        <li><strong>阴性结果也要看</strong>：主终点未达标的研究同样重要，别只看阳性结论。</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="pt-foot">
+    <span>数据生成 <span id="ev-gen"></span></span>
+    <a href="method.html">检索方法 →</a>
+  </footer>
+</div>
+<script>window.PT_SITE={ver:'v0.3'};</script>
+<script src="site.js?v=20261124h"></script>
+<script src="evidence.js?v=20261124c"></script>
+</body>
+</html>

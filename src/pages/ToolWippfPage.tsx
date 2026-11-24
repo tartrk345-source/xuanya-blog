@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
@@ -225,6 +225,15 @@ export default function ToolWippfPage() {
   const [paAns, setPaAns] = useState<Record<string, number>>({});
   const [copied, setCopied] = useState(false);
   const [copiedCode, setCopiedCode] = useState(false);
+  const answersRef = useRef<Record<string, number>>({});
+  const finishingRef = useRef(false);
+  /** 题号也存一份 ref：键盘连按不经过 DOM 按钮，React 来不及重渲染时不能读闭包旧值 */
+  const indexRef = useRef(0);
+  /** latest-ref：键盘监听只绑定一次，始终调用最新的 choose / 翻题逻辑 */
+  const chooseRef = useRef<(v: number) => void>(() => {});
+  const goPrevRef = useRef<() => void>(() => {});
+  const goNextRef = useRef<() => void>(() => {});
+  const setIdx = (i: number) => { indexRef.current = i; setIndex(i); };
 
   const pairActive = mode !== 'single';
   const myLabel = meName.trim() || '我';
@@ -271,7 +280,9 @@ export default function ToolWippfPage() {
     }
     setCodeError('');
     setTurn('me');
-    setIndex(0);
+    setIdx(0);
+    answersRef.current = {};
+    finishingRef.current = false;
     if (mode === 'code' && myLoaded) {
       // 两份答案码都齐了：跳过答题，直接出双人对照
       setMeAns(digitsToAnswers(myLoaded.digits));
@@ -296,41 +307,59 @@ export default function ToolWippfPage() {
 
   const startPartner = () => {
     setTurn('pa');
-    setIndex(0);
+    setIdx(0);
+    answersRef.current = { ...paAns };
+    finishingRef.current = false;
     setStage('quiz');
     window.scrollTo({ top: 0 });
   };
 
-  /** 选完一档：记下答案，稍作停顿后自动进入下一题（最后一题答满则出结果） */
+  /** 选完一档：记下答案并同步进入下一题（最后一题答满则出结果） */
   const choose = (value: number) => {
-    const item = WIPPF_ITEMS[index];
-    if (!item) return;
-    const nextAns = { ...answers, [item.code]: value };
+    const cur = indexRef.current;
+    const item = WIPPF_ITEMS[cur];
+    if (!item || finishingRef.current) return;
+    // 题号与答案全部走 ref：键盘/鼠标极速连按也不会读到过期的渲染闭包
+    const nextAns = { ...answersRef.current, [item.code]: value };
+    answersRef.current = nextAns;
     setAnswers(nextAns);
     const complete = WIPPF_ITEMS.every(it => nextAns[it.code] !== undefined);
-    if (index < total - 1) {
-      window.setTimeout(() => setIndex(i => (i === index ? index + 1 : i)), 160);
-    } else if (complete) {
-      window.setTimeout(() => finishTurn(), 280);
-    }
-  };
-
-  const goPrev = () => setIndex(i => Math.max(0, i - 1));
-
-  const goNext = () => {
-    if (index < total - 1) {
-      setIndex(index + 1);
-      return;
-    }
-    if (allDone) {
+    if (complete) {
+      finishingRef.current = true;
       finishTurn();
       return;
     }
-    const firstMissing = WIPPF_ITEMS.findIndex(it => answers[it.code] === undefined);
-    if (firstMissing >= 0) setIndex(firstMissing);
+    // 当前是最后一题却仍有未答（用户跳过过）→ 回到第一道未答题；否则顺延一题
+    const firstMissing = WIPPF_ITEMS.findIndex(it => nextAns[it.code] === undefined);
+    if (cur < total - 1) {
+      setIdx(cur === total - 1 && firstMissing >= 0 ? firstMissing : cur + 1);
+    } else if (firstMissing >= 0) {
+      setIdx(firstMissing);
+    }
   };
 
-  /* 键盘：1–4 直接选，← → 翻题 */
+  const goPrev = () => setIdx(Math.max(0, indexRef.current - 1));
+
+  const goNext = () => {
+    if (indexRef.current < total - 1) {
+      setIdx(indexRef.current + 1);
+      return;
+    }
+    const done = WIPPF_ITEMS.every(it => answersRef.current[it.code] !== undefined);
+    if (done) {
+      finishTurn();
+      return;
+    }
+    const firstMissing = WIPPF_ITEMS.findIndex(it => answersRef.current[it.code] === undefined);
+    if (firstMissing >= 0) setIdx(firstMissing);
+  };
+
+  // 每次渲染把最新实现写进 ref：键盘监听只绑一次也能拿到最新题号与答案
+  chooseRef.current = choose;
+  goPrevRef.current = goPrev;
+  goNextRef.current = goNext;
+
+  /* 键盘：1–4 直接选，← → 翻题；监听器只在 stage 变化时重绑，避免快按期间反复解绑 */
   useEffect(() => {
     if (stage !== 'quiz') return;
     const onKey = (e: KeyboardEvent) => {
@@ -339,18 +368,18 @@ export default function ToolWippfPage() {
       if (tag === 'INPUT' || tag === 'TEXTAREA') return;
       if (e.key >= '1' && e.key <= '4') {
         e.preventDefault();
-        choose(Number(e.key));
+        chooseRef.current(Number(e.key));
       } else if (e.key === 'ArrowLeft') {
         e.preventDefault();
-        goPrev();
+        goPrevRef.current();
       } else if (e.key === 'ArrowRight') {
         e.preventDefault();
-        goNext();
+        goNextRef.current();
       }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  });
+  }, [stage]);
 
   const restart = () => {
     setStage('intro');
@@ -362,7 +391,9 @@ export default function ToolWippfPage() {
     setPaAns({});
     setPaName('');
     setTurn('me');
-    setIndex(0);
+    setIdx(0);
+    answersRef.current = {};
+    finishingRef.current = false;
     setCopied(false);
     setCopiedCode(false);
     setMyCodeInput('');

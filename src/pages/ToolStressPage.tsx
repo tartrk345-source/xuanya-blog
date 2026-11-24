@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Navigation from '../components/Navigation';
@@ -26,6 +26,13 @@ export default function ToolStressPage() {
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [done, setDone] = useState(false);
   const [copied, setCopied] = useState(false);
+  const answersRef = useRef<Record<number, number>>({});
+  /** 题号存 ref：键盘连按不经过 DOM 按钮，不能依赖渲染闭包 */
+  const indexRef = useRef(0);
+  const chooseRef = useRef<(v: number) => void>(() => {});
+  const goPrevRef = useRef<() => void>(() => {});
+  const goNextRef = useRef<() => void>(() => {});
+  const setIdx = (i: number) => { indexRef.current = i; setIndex(i); };
 
   const current = STRESS_ITEMS[index];
   const answeredCount = Object.keys(answers).length;
@@ -34,18 +41,66 @@ export default function ToolStressPage() {
   const result = useMemo(() => scoreStress(answers), [answers]);
 
   const choose = (value: number) => {
-    const next = { ...answers, [current.id]: value };
+    const cur = indexRef.current;
+    const qid = STRESS_ITEMS[cur].id;
+    // 答案与题号全部走 ref：键盘/鼠标极速连按不丢题
+    const next = { ...answersRef.current, [qid]: value };
+    answersRef.current = next;
     setAnswers(next);
-    if (index < STRESS_ITEMS.length - 1) {
-      window.setTimeout(() => setIndex(i => Math.min(i + 1, STRESS_ITEMS.length - 1)), 180);
-    } else if (Object.keys(next).length === STRESS_ITEMS.length) {
-      window.setTimeout(() => setDone(true), 220);
+    if (Object.keys(next).length === STRESS_ITEMS.length) {
+      setDone(true);
+      return;
+    }
+    if (cur < STRESS_ITEMS.length - 1) {
+      setIdx(cur + 1);
+    } else {
+      // 最后一题却仍有未答（跳过过）→ 回到第一道未答题
+      const firstMissing = STRESS_ITEMS.findIndex(it => next[it.id] === undefined);
+      if (firstMissing >= 0) setIdx(firstMissing);
     }
   };
 
+  const goPrev = () => setIdx(Math.max(0, indexRef.current - 1));
+
+  const goNext = () => {
+    if (indexRef.current < STRESS_ITEMS.length - 1) {
+      setIdx(indexRef.current + 1);
+      return;
+    }
+    if (Object.keys(answersRef.current).length === STRESS_ITEMS.length) setDone(true);
+  };
+
+  // 每次渲染把最新实现写进 ref，键盘监听只绑一次也能拿到最新状态
+  chooseRef.current = choose;
+  goPrevRef.current = goPrev;
+  goNextRef.current = goNext;
+
+  /* 键盘：1–4 直接选，← → 翻题 */
+  useEffect(() => {
+    if (done) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const tag = (e.target as HTMLElement | null)?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+      if (e.key >= '1' && e.key <= '4') {
+        e.preventDefault();
+        chooseRef.current(Number(e.key));
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        goPrevRef.current();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        goNextRef.current();
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [done]);
+
   const restart = () => {
+    answersRef.current = {};
     setAnswers({});
-    setIndex(0);
+    setIdx(0);
     setDone(false);
     setCopied(false);
   };
@@ -149,7 +204,7 @@ export default function ToolStressPage() {
 
               <div className="flex items-center justify-between mt-6">
                 <button
-                  onClick={() => setIndex(i => Math.max(0, i - 1))}
+                  onClick={goPrev}
                   disabled={index === 0}
                   className="text-sm text-[#767693] dark:text-[#94A3B8] disabled:opacity-30 hover:text-[#DA583F] dark:hover:text-[#60A5FA] transition-colors"
                 >
@@ -165,7 +220,7 @@ export default function ToolStressPage() {
                   </button>
                 ) : (
                   <button
-                    onClick={() => setIndex(i => Math.min(STRESS_ITEMS.length - 1, i + 1))}
+                    onClick={goNext}
                     disabled={answers[current.id] === undefined}
                     className="text-sm text-[#767693] dark:text-[#94A3B8] disabled:opacity-30 hover:text-[#DA583F] dark:hover:text-[#60A5FA] transition-colors"
                   >
@@ -175,6 +230,7 @@ export default function ToolStressPage() {
               </div>
 
               <p className="text-[12px] text-[#B8B4B0] dark:text-[#64748B] mt-10 leading-relaxed">
+                电脑上可用键盘 <span className="font-mono">1–4</span> 直接选、<span className="font-mono">← →</span> 翻题，连按也能逐题作答。
                 量表来源：压力应对测评量表（积极心理治疗版），依照 N. Peseschkian 平衡模型四领域编制。
                 作答只在本页内存里计算，刷新即清空。
               </p>

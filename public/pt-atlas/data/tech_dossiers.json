@@ -1,0 +1,4886 @@
+{
+ "generated": "2026-11-24 22:39",
+ "source": "data/evidence.json（PubMed E-utilities 精选证据池 2103 篇）",
+ "note": "统计按证据池去重 PMID 计；cell 全量检索计数见 matrix_counts.json，两者口径不同。",
+ "tech": {
+  "acup": {
+   "key": "acup",
+   "cn": "针刺/电针",
+   "en": "Acupuncture",
+   "cat": "其他物理手段",
+   "stats": {
+    "papers": 158,
+    "cochrane": 29,
+    "rct": 83,
+    "sr": 109,
+    "ma": 69,
+    "nma": 4
+   },
+   "inds": [
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 29
+    },
+    {
+     "key": "insomnia",
+     "cn": "失眠",
+     "n": 25
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 24
+    },
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 20
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 19
+    },
+    {
+     "key": "ppd",
+     "cn": "围产期抑郁",
+     "n": 17
+    },
+    {
+     "key": "sud",
+     "cn": "物质使用障碍",
+     "n": 14
+    },
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 11
+    },
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 9
+    },
+    {
+     "key": "ocd",
+     "cn": "强迫症",
+     "n": 7
+    },
+    {
+     "key": "scz_pos",
+     "cn": "精分·阳性症状",
+     "n": 5
+    },
+    {
+     "key": "bd_dep",
+     "cn": "双相抑郁",
+     "n": 4
+    },
+    {
+     "key": "adhd",
+     "cn": "注意缺陷多动",
+     "n": 3
+    },
+    {
+     "key": "asd",
+     "cn": "孤独症谱系",
+     "n": 3
+    },
+    {
+     "key": "scz_cog",
+     "cn": "精分·认知症状",
+     "n": 2
+    },
+    {
+     "key": "trd",
+     "cn": "难治性抑郁",
+     "n": 2
+    },
+    {
+     "key": "scz_neg",
+     "cn": "精分·阴性症状",
+     "n": 2
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 2
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "17636800",
+     "title": "Acupuncture for insomnia.",
+     "year": "2007",
+     "doi": "",
+     "conclusion": "The small number of randomised controlled trials, together with the poor methodological quality and significant clinical heterogeneity, means that the current evidence is not sufficiently extensive or rigorous to support the use of any form of acupuncture for the treatment of insomnia.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "20091556",
+     "title": "Acupuncture for depression.",
+     "year": "2010",
+     "doi": "",
+     "conclusion": "We found insufficient evidence to recommend the use of acupuncture for people with depression. The results are limited by the high risk of bias in the majority of trials meeting inclusion criteria.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "22972087",
+     "title": "Acupuncture for insomnia.",
+     "year": "2012",
+     "doi": "",
+     "conclusion": "Due to poor methodological quality, high levels of heterogeneity and publication bias, the current evidence is not sufficiently rigorous to support or refute acupuncture for treating insomnia. Larger high-quality clinical trials are required.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "17636800",
+     "title": "Acupuncture for insomnia.",
+     "year": "2007",
+     "doi": "",
+     "conclusion": "The small number of randomised controlled trials, together with the poor methodological quality and significant clinical heterogeneity, means that the current evidence is not sufficiently extensive or rigorous to support the use of any form of acupuncture for the treatment of insomnia.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "insomnia",
+     "ind_cn": "失眠"
+    },
+    {
+     "pmid": "22972087",
+     "title": "Acupuncture for insomnia.",
+     "year": "2012",
+     "doi": "",
+     "conclusion": "Due to poor methodological quality, high levels of heterogeneity and publication bias, the current evidence is not sufficiently rigorous to support or refute acupuncture for treating insomnia. Larger high-quality clinical trials are required.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "insomnia",
+     "ind_cn": "失眠"
+    },
+    {
+     "pmid": "31721146",
+     "title": "Management of gag reflex for patients undergoing dental treatment.",
+     "year": "2019",
+     "doi": "",
+     "conclusion": "We found very low-certainty evidence from four trials that was insufficient to conclude if there is any benefit of acupuncture, acupressure or laser at P6 point in reducing gagging and allowing successful completion of dental procedures. We did not find any evidence on any other interventions for managing the gag reflex during dental treatment. More well-designed and well-reported trials evaluating different interventions are needed.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    },
+    {
+     "pmid": "28990665",
+     "title": "Transcutaneous electrical nerve stimulation (TENS) for fibromyalgia in adults.",
+     "year": "2017",
+     "doi": "",
+     "conclusion": "There was insufficient high-quality evidence to support or refute the use of TENS for fibromyalgia. We found a small number of inadequately powered studies with incomplete reporting of methodologies and treatment interventions.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "pain",
+     "ind_cn": "慢性疼痛/纤维肌痛"
+    },
+    {
+     "pmid": "20091554",
+     "title": "Placebo interventions for all clinical conditions.",
+     "year": "2010",
+     "doi": "",
+     "conclusion": "We did not find that placebo interventions have important clinical effects in general. However, in certain settings placebo interventions can influence patient-reported outcomes, especially pain and nausea, though it is difficult to distinguish patient-reported effects of placebo from biased reporting. The effect on pain varied, even among trials with low risk of bias, from negligible to clinically important.",
+     "hint": "结论摘要见英文原文；中文要点待人工核验",
+     "cautious": 0,
+     "ind": "insomnia",
+     "ind_cn": "失眠"
+    },
+    {
+     "pmid": "18843730",
+     "title": "Interventions (other than pharmacological, psychosocial or psychological) for treating antenatal depression.",
+     "year": "2008",
+     "doi": "",
+     "conclusion": "The evidence is inconclusive to allow us to make any recommendations for massage therapy or depression-specific acupuncture for the treatment of antenatal depression. The included trial was too small with a non-generalisable sample, to make any recommendations.",
+     "hint": "结论摘要见英文原文；中文要点待人工核验",
+     "cautious": 0,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    },
+    {
+     "pmid": "25306866",
+     "title": "Acupuncture for functional dyspepsia.",
+     "year": "2014",
+     "doi": "",
+     "conclusion": "It remains unknown whether manual acupuncture or electroacupuncture is more effective or safer than other treatments for patients with FD.",
+     "hint": "作者报告阳性结果；仍需结合 GRADE 与偏倚风险判断·待核验",
+     "cautious": 0,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "41347621",
+     "title": "Acupuncture for insomnia in people with cancer.",
+     "year": "2025",
+     "inds": [
+      "失眠",
+      "*"
+     ]
+    },
+    {
+     "pmid": "36148895",
+     "title": "Acupuncture for treating overactive bladder in adults.",
+     "year": "2022",
+     "inds": [
+      "焦虑障碍",
+      "*"
+     ]
+    },
+    {
+     "pmid": "34196963",
+     "title": "Non-pharmacological interventions for spatial neglect or inattention following stroke and other non-progressive brain injury.",
+     "year": "2021",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "32871021",
+     "title": "Complementary and alternative therapies for post-caesarean pain.",
+     "year": "2020",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "31721146",
+     "title": "Management of gag reflex for patients undergoing dental treatment.",
+     "year": "2019",
+     "inds": [
+      "焦虑障碍",
+      "*"
+     ]
+    },
+    {
+     "pmid": "29502347",
+     "title": "Acupuncture for depression.",
+     "year": "2018",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "29589380",
+     "title": "Massage, reflexology and other manual methods for pain management in labour.",
+     "year": "2018",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "29757454",
+     "title": "Non-pharmacological interventions for treating chronic prostatitis/chronic pelvic pain syndrome.",
+     "year": "2018",
+     "inds": [
+      "焦虑障碍",
+      "*"
+     ]
+    },
+    {
+     "pmid": "28050900",
+     "title": "Planned early birth versus expectant management (waiting) for prelabour rupture of membranes at term (37 weeks or more).",
+     "year": "2017",
+     "inds": [
+      "围产期抑郁",
+      "围产期抑郁",
+      "*"
+     ]
+    },
+    {
+     "pmid": "28116777",
+     "title": "Pharmacological treatment for antipsychotic-related constipation.",
+     "year": "2017",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "28990665",
+     "title": "Transcutaneous electrical nerve stimulation (TENS) for fibromyalgia in adults.",
+     "year": "2017",
+     "inds": [
+      "慢性疼痛/纤维肌痛",
+      "*"
+     ]
+    },
+    {
+     "pmid": "27349639",
+     "title": "Acupuncture and related interventions for symptoms of chronic kidney disease.",
+     "year": "2016",
+     "inds": [
+      "失眠",
+      "*"
+     ]
+    }
+   ]
+  },
+  "exercise": {
+   "key": "exercise",
+   "cn": "运动干预",
+   "en": "Exercise",
+   "cat": "其他物理手段",
+   "stats": {
+    "papers": 353,
+    "cochrane": 106,
+    "rct": 162,
+    "sr": 269,
+    "ma": 185,
+    "nma": 5
+   },
+   "inds": [
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 100
+    },
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 26
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 26
+    },
+    {
+     "key": "ppd",
+     "cn": "围产期抑郁",
+     "n": 26
+    },
+    {
+     "key": "insomnia",
+     "cn": "失眠",
+     "n": 25
+    },
+    {
+     "key": "sud",
+     "cn": "物质使用障碍",
+     "n": 25
+    },
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 25
+    },
+    {
+     "key": "scz_cog",
+     "cn": "精分·认知症状",
+     "n": 21
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 21
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 20
+    },
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 20
+    },
+    {
+     "key": "bd_dep",
+     "cn": "双相抑郁",
+     "n": 20
+    },
+    {
+     "key": "scz_pos",
+     "cn": "精分·阳性症状",
+     "n": 19
+    },
+    {
+     "key": "scz_neg",
+     "cn": "精分·阴性症状",
+     "n": 19
+    },
+    {
+     "key": "adhd",
+     "cn": "注意缺陷多动",
+     "n": 18
+    },
+    {
+     "key": "ocd",
+     "cn": "强迫症",
+     "n": 18
+    },
+    {
+     "key": "bd_man",
+     "cn": "双相躁狂",
+     "n": 12
+    },
+    {
+     "key": "asd",
+     "cn": "孤独症谱系",
+     "n": 11
+    },
+    {
+     "key": "trd",
+     "cn": "难治性抑郁",
+     "n": 9
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "23235643",
+     "title": "Mobile phone messaging for preventive health care.",
+     "year": "2012",
+     "doi": "",
+     "conclusion": "We found very limited evidence that in certain cases mobile phone messaging interventions may support preventive health care, to improve health status and health behaviour outcomes. However, because of the low number of participants in three of the included studies, combined with study limitations of risk of bias and lack of demonstrated causality, the evidence for these effects is of low to moderate quality.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "23633361",
+     "title": "Physical exercise training interventions for children and young adults during and after treatment for childhood cancer.",
+     "year": "2013",
+     "doi": "",
+     "conclusion": "The effects of physical exercise training interventions for childhood cancer participants are not yet convincing due to small numbers of participants and insufficient study methodology. Despite that, first results show a trend towards an improved physical fitness in the intervention group compared to the control group. Changes in physical fitness were seen by improved body composition, flexibility, and cardiorespiratory fitness.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "24302466",
+     "title": "Exercise programs for people with dementia.",
+     "year": "2013",
+     "doi": "",
+     "conclusion": "There is promising evidence that exercise programs can have a significant impact in improving ability to perform ADLs and possibly in improving cognition in people with dementia, although some caution is advised in interpreting these findings. The programs revealed no significant effect on challenging behaviours or depression. There was little or no evidence regarding the remaining outcomes of interest.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "28990665",
+     "title": "Transcutaneous electrical nerve stimulation (TENS) for fibromyalgia in adults.",
+     "year": "2017",
+     "doi": "",
+     "conclusion": "There was insufficient high-quality evidence to support or refute the use of TENS for fibromyalgia. We found a small number of inadequately powered studies with incomplete reporting of methodologies and treatment interventions.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "pain",
+     "ind_cn": "慢性疼痛/纤维肌痛"
+    },
+    {
+     "pmid": "24302466",
+     "title": "Exercise programs for people with dementia.",
+     "year": "2013",
+     "doi": "",
+     "conclusion": "There is promising evidence that exercise programs can have a significant impact in improving ability to perform ADLs and possibly in improving cognition in people with dementia, although some caution is advised in interpreting these findings. The programs revealed no significant effect on challenging behaviours or depression. There was little or no evidence regarding the remaining outcomes of interest.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "mci",
+     "ind_cn": "认知障碍/痴呆"
+    },
+    {
+     "pmid": "23235643",
+     "title": "Mobile phone messaging for preventive health care.",
+     "year": "2012",
+     "doi": "",
+     "conclusion": "We found very limited evidence that in certain cases mobile phone messaging interventions may support preventive health care, to improve health status and health behaviour outcomes. However, because of the low number of participants in three of the included studies, combined with study limitations of risk of bias and lack of demonstrated causality, the evidence for these effects is of low to moderate quality.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "sud",
+     "ind_cn": "物质使用障碍"
+    },
+    {
+     "pmid": "17253540",
+     "title": "Interventions to reduce weight gain in schizophrenia.",
+     "year": "2007",
+     "doi": "",
+     "conclusion": "Modest weight loss can be achieved with selective pharmacological and non pharmacological interventions. However, interpretation is limited by the small number of studies, small sample size, short study duration and by variability of the interventions themselves, their intensity and duration.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "scz_cog",
+     "ind_cn": "精分·认知症状"
+    },
+    {
+     "pmid": "22786489",
+     "title": "Exercise for depression.",
+     "year": "2012",
+     "doi": "",
+     "conclusion": "Exercise seems to improve depressive symptoms in people with a diagnosis of depression when compared with no treatment or control intervention, however since analyses of methodologically robust trials show a much smaller effect in favour of exercise, some caution is required in interpreting these results.",
+     "hint": "结论摘要见英文原文；中文要点待人工核验",
+     "cautious": 0,
+     "ind": "ppd",
+     "ind_cn": "围产期抑郁"
+    },
+    {
+     "pmid": "24026850",
+     "title": "Exercise for depression.",
+     "year": "2013",
+     "doi": "",
+     "conclusion": "Exercise is moderately more effective than a control intervention for reducing symptoms of depression, but analysis of methodologically robust trials only shows a smaller effect in favour of exercise. When compared to psychological or pharmacological therapies, exercise appears to be no more effective, though this conclusion is based on a few small trials.",
+     "hint": "作者报告阳性结果；仍需结合 GRADE 与偏倚风险判断·待核验",
+     "cautious": 0,
+     "ind": "ppd",
+     "ind_cn": "围产期抑郁"
+    },
+    {
+     "pmid": "24026850",
+     "title": "Exercise for depression.",
+     "year": "2013",
+     "doi": "",
+     "conclusion": "Exercise is moderately more effective than a control intervention for reducing symptoms of depression, but analysis of methodologically robust trials only shows a smaller effect in favour of exercise. When compared to psychological or pharmacological therapies, exercise appears to be no more effective, though this conclusion is based on a few small trials.",
+     "hint": "作者报告阳性结果；仍需结合 GRADE 与偏倚风险判断·待核验",
+     "cautious": 0,
+     "ind": "ppd",
+     "ind_cn": "围产期抑郁"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "41500513",
+     "title": "Exercise for depression.",
+     "year": "2026",
+     "inds": [
+      "焦虑障碍",
+      "围产期抑郁",
+      "围产期抑郁",
+      "*"
+     ]
+    },
+    {
+     "pmid": "41700575",
+     "title": "Interventions for fatigue management after traumatic brain injury.",
+     "year": "2026",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "42117563",
+     "title": "Pharmacological treatments for Friedreich ataxia.",
+     "year": "2026",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "42663176",
+     "title": "Physical exercise training to increase cardiorespiratory fitness in people with spinal cord injury.",
+     "year": "2026",
+     "inds": [
+      "失眠",
+      "*"
+     ]
+    },
+    {
+     "pmid": "42680183",
+     "title": "Assistive technologies (lumbar supports and other devices) for treating chronic low back pain.",
+     "year": "2026",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "39976199",
+     "title": "Cardiovascular training for fatigue in people with cancer.",
+     "year": "2025",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "40421669",
+     "title": "Yoga for fatigue in people with cancer.",
+     "year": "2025",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "40792483",
+     "title": "Telerehabilitation for neck pain.",
+     "year": "2025",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "40990160",
+     "title": "Service delivery, behavioural, and self-management interventions for adults with epilepsy.",
+     "year": "2025",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "39606939",
+     "title": "Resistance training for fatigue in people with cancer.",
+     "year": "2024",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "39697147",
+     "title": "Exercise therapy for chronic fatigue syndrome.",
+     "year": "2024",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "33822364",
+     "title": "Exercise training for bronchiectasis.",
+     "year": "2021",
+     "inds": [
+      "*"
+     ]
+    }
+   ]
+  },
+  "tdcs": {
+   "key": "tdcs",
+   "cn": "经颅直流电刺激",
+   "en": "tDCS",
+   "cat": "无创神经调控",
+   "stats": {
+    "papers": 266,
+    "cochrane": 23,
+    "rct": 163,
+    "sr": 149,
+    "ma": 103,
+    "nma": 11
+   },
+   "inds": [
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 24
+    },
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 23
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 19
+    },
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 19
+    },
+    {
+     "key": "adhd",
+     "cn": "注意缺陷多动",
+     "n": 18
+    },
+    {
+     "key": "asd",
+     "cn": "孤独症谱系",
+     "n": 18
+    },
+    {
+     "key": "ocd",
+     "cn": "强迫症",
+     "n": 18
+    },
+    {
+     "key": "sud",
+     "cn": "物质使用障碍",
+     "n": 18
+    },
+    {
+     "key": "insomnia",
+     "cn": "失眠",
+     "n": 18
+    },
+    {
+     "key": "bd_dep",
+     "cn": "双相抑郁",
+     "n": 18
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 18
+    },
+    {
+     "key": "scz_cog",
+     "cn": "精分·认知症状",
+     "n": 18
+    },
+    {
+     "key": "scz_neg",
+     "cn": "精分·阴性症状",
+     "n": 18
+    },
+    {
+     "key": "avh",
+     "cn": "听幻觉",
+     "n": 18
+    },
+    {
+     "key": "scz_pos",
+     "cn": "精分·阳性症状",
+     "n": 18
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 16
+    },
+    {
+     "key": "trd",
+     "cn": "难治性抑郁",
+     "n": 16
+    },
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 14
+    },
+    {
+     "key": "bd_man",
+     "cn": "双相躁狂",
+     "n": 3
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "30567012",
+     "title": "Non-pharmacological interventions for chronic pain in multiple sclerosis.",
+     "year": "2018",
+     "doi": "",
+     "conclusion": "Despite the use of a wide range of non-pharmacological interventions for the treatment of chronic pain in pwMS, the evidence for these interventions is still limited or insufficient, or both. More studies with robust methodology and greater numbers of participants are needed to justify the effect of these interventions for the management of chronic pain in pwMS.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "30567012",
+     "title": "Non-pharmacological interventions for chronic pain in multiple sclerosis.",
+     "year": "2018",
+     "doi": "",
+     "conclusion": "Despite the use of a wide range of non-pharmacological interventions for the treatment of chronic pain in pwMS, the evidence for these interventions is still limited or insufficient, or both. More studies with robust methodology and greater numbers of participants are needed to justify the effect of these interventions for the management of chronic pain in pwMS.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "pain",
+     "ind_cn": "慢性疼痛/纤维肌痛"
+    },
+    {
+     "pmid": "20824873",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2010",
+     "doi": "",
+     "conclusion": "Single doses of high-frequency rTMS of the motor cortex may have small short-term effects on chronic pain. The effects do not clearly exceed the predetermined threshold of minimal clinical significance. Low-frequency rTMS is not effective in the treatment of chronic pain. There is insufficient evidence from which to draw firm conclusions regarding the efficacy of CES or tDCS.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "23076886",
+     "title": "Interventions for dysphagia and nutritional support in acute and subacute stroke.",
+     "year": "2012",
+     "doi": "",
+     "conclusion": "There remains insufficient data on the effect of swallowing therapy, feeding, and nutritional and fluid supplementation on functional outcome and death in dysphagic patients with acute or subacute stroke. Behavioural interventions and acupuncture reduced dysphagia, and pharyngeal electrical stimulation reduced pharyngeal transit time.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "20824873",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2010",
+     "doi": "",
+     "conclusion": "Single doses of high-frequency rTMS of the motor cortex may have small short-term effects on chronic pain. The effects do not clearly exceed the predetermined threshold of minimal clinical significance. Low-frequency rTMS is not effective in the treatment of chronic pain. There is insufficient evidence from which to draw firm conclusions regarding the efficacy of CES or tDCS.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "pain",
+     "ind_cn": "慢性疼痛/纤维肌痛"
+    },
+    {
+     "pmid": "25432061",
+     "title": "Non-pharmacological interventions for chronic pain in people with spinal cord injury.",
+     "year": "2014",
+     "doi": "",
+     "conclusion": "Evidence is insufficient to suggest that non-pharmacological treatments are effective in reducing chronic pain in people living with SCI. The benefits and harms of commonly used non-pharmacological pain treatments should be investigated in randomised controlled trials with adequate sample size and study methodology.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "pain",
+     "ind_cn": "慢性疼痛/纤维肌痛"
+    },
+    {
+     "pmid": "34844288",
+     "title": "Interventions for the management of abdominal pain in Crohn's disease and inflammatory bowel disease.",
+     "year": "2021",
+     "doi": "",
+     "conclusion": "We found low certainty evidence that transcranial direct current stimulation may improve pain intensity compared to sham stimulation. We could not reach any conclusions on the efficacy of any other interventions on pain intensity, pain frequency, and treatment success. The certainty of the evidence was very low due to the low numbers of studies and participants in each comparison and clinical heterogeneity amongst the studies.",
+     "hint": "结论摘要见英文原文；中文要点待人工核验",
+     "cautious": 0,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    },
+    {
+     "pmid": "38808659",
+     "title": "Non-pharmacological interventions for improving language and communication in people with primary progressive aphasia.",
+     "year": "2024",
+     "doi": "",
+     "conclusion": "There is currently no high-certainty evidence to inform clinical decision-making regarding non-pharmacological treatment selection for people with PPA. Preliminary evidence suggests that the combination of active tDCS with specific language therapy may improve impaired word retrieval for specifically trained items beyond the effects of behavioural treatment alone.",
+     "hint": "结论摘要见英文原文；中文要点待人工核验",
+     "cautious": 0,
+     "ind": "mci",
+     "ind_cn": "认知障碍/痴呆"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "41562412",
+     "title": "Rehabilitation interventions for oropharyngeal dysphagia in people with Parkinson's disease.",
+     "year": "2026",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "42573047",
+     "title": "Swallowing therapy for dysphagia in acute and subacute stroke.",
+     "year": "2026",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "38837237",
+     "title": "Interventions for postburn pruritus.",
+     "year": "2024",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "33175411",
+     "title": "Transcranial direct current stimulation (tDCS) for improving activities of daily living, and physical and cognitive functioning, in people after stroke.",
+     "year": "2020",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "29547226",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2018",
+     "inds": [
+      "慢性疼痛/纤维肌痛",
+      "*"
+     ]
+    },
+    {
+     "pmid": "29652088",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2018",
+     "inds": [
+      "慢性疼痛/纤维肌痛",
+      "*"
+     ]
+    },
+    {
+     "pmid": "30376602",
+     "title": "Swallowing therapy for dysphagia in acute and subacute stroke.",
+     "year": "2018",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "30567012",
+     "title": "Non-pharmacological interventions for chronic pain in multiple sclerosis.",
+     "year": "2018",
+     "inds": [
+      "慢性疼痛/纤维肌痛",
+      "*"
+     ]
+    },
+    {
+     "pmid": "26996760",
+     "title": "Transcranial direct current stimulation (tDCS) for improving activities of daily living, and physical and cognitive functioning, in people after stroke.",
+     "year": "2016",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "27425786",
+     "title": "Transcranial direct current stimulation (tDCS) for idiopathic Parkinson's disease.",
+     "year": "2016",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "25929694",
+     "title": "Transcranial direct current stimulation (tDCS) for improving aphasia in patients with aphasia after stroke.",
+     "year": "2015",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "24729198",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2014",
+     "inds": [
+      "慢性疼痛/纤维肌痛",
+      "*"
+     ]
+    }
+   ]
+  },
+  "rtms": {
+   "key": "rtms",
+   "cn": "重复经颅磁刺激",
+   "en": "rTMS",
+   "cat": "无创神经调控",
+   "stats": {
+    "papers": 289,
+    "cochrane": 29,
+    "rct": 177,
+    "sr": 171,
+    "ma": 103,
+    "nma": 14
+   },
+   "inds": [
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 29
+    },
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 23
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 22
+    },
+    {
+     "key": "scz_pos",
+     "cn": "精分·阳性症状",
+     "n": 20
+    },
+    {
+     "key": "ocd",
+     "cn": "强迫症",
+     "n": 19
+    },
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 19
+    },
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 19
+    },
+    {
+     "key": "scz_cog",
+     "cn": "精分·认知症状",
+     "n": 19
+    },
+    {
+     "key": "avh",
+     "cn": "听幻觉",
+     "n": 19
+    },
+    {
+     "key": "insomnia",
+     "cn": "失眠",
+     "n": 18
+    },
+    {
+     "key": "adhd",
+     "cn": "注意缺陷多动",
+     "n": 18
+    },
+    {
+     "key": "asd",
+     "cn": "孤独症谱系",
+     "n": 18
+    },
+    {
+     "key": "sud",
+     "cn": "物质使用障碍",
+     "n": 18
+    },
+    {
+     "key": "bd_dep",
+     "cn": "双相抑郁",
+     "n": 18
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 18
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 18
+    },
+    {
+     "key": "trd",
+     "cn": "难治性抑郁",
+     "n": 18
+    },
+    {
+     "key": "scz_neg",
+     "cn": "精分·阴性症状",
+     "n": 18
+    },
+    {
+     "key": "bd_man",
+     "cn": "双相躁狂",
+     "n": 11
+    },
+    {
+     "key": "ppd",
+     "cn": "围产期抑郁",
+     "n": 6
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "28072907",
+     "title": "Symptomatic treatments for amyotrophic lateral sclerosis/motor neuron disease.",
+     "year": "2017",
+     "doi": "",
+     "conclusion": "This overview has highlighted the lack of robust evidence in Cochrane Systematic Reviews on interventions to manage symptoms resulting from MND. It is important to recognise that clinical trials may fail to demonstrate efficacy of an intervention for reasons other than a true lack of efficacy, for example because of insufficient statistical power, the wrong choice of dose, insensitive outcome measures or inappropriate participant eligibility.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "20824873",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2010",
+     "doi": "",
+     "conclusion": "Single doses of high-frequency rTMS of the motor cortex may have small short-term effects on chronic pain. The effects do not clearly exceed the predetermined threshold of minimal clinical significance. Low-frequency rTMS is not effective in the treatment of chronic pain. There is insufficient evidence from which to draw firm conclusions regarding the efficacy of CES or tDCS.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "21975776",
+     "title": "Repetitive transcranial magnetic stimulation for tinnitus.",
+     "year": "2011",
+     "doi": "",
+     "conclusion": "There is very limited support for the use of low-frequency rTMS for the treatment of patients with tinnitus. When considering the impact of tinnitus on patients' quality of life, support is from a single study with a low risk of bias based on a single outcome measure at a single point in time. When considering the impact on tinnitus loudness, this is based on the analysis of pooled data with a large confidence interval.",
+     "hint": "结论含局限性提示（样本量小/质量不一）；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "20824873",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2010",
+     "doi": "",
+     "conclusion": "Single doses of high-frequency rTMS of the motor cortex may have small short-term effects on chronic pain. The effects do not clearly exceed the predetermined threshold of minimal clinical significance. Low-frequency rTMS is not effective in the treatment of chronic pain. There is insufficient evidence from which to draw firm conclusions regarding the efficacy of CES or tDCS.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "pain",
+     "ind_cn": "慢性疼痛/纤维肌痛"
+    },
+    {
+     "pmid": "25432061",
+     "title": "Non-pharmacological interventions for chronic pain in people with spinal cord injury.",
+     "year": "2014",
+     "doi": "",
+     "conclusion": "Evidence is insufficient to suggest that non-pharmacological treatments are effective in reducing chronic pain in people living with SCI. The benefits and harms of commonly used non-pharmacological pain treatments should be investigated in randomised controlled trials with adequate sample size and study methodology.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "pain",
+     "ind_cn": "慢性疼痛/纤维肌痛"
+    },
+    {
+     "pmid": "24729198",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2014",
+     "doi": "",
+     "conclusion": "Single doses of high-frequency rTMS of the motor cortex may have small short-term effects on chronic pain. It is likely that multiple sources of bias may exaggerate this observed effect. The effects do not meet the predetermined threshold of minimal clinical significance and multiple-dose studies do not consistently demonstrate effectiveness.",
+     "hint": "作者报告阳性结果；仍需结合 GRADE 与偏倚风险判断·待核验",
+     "cautious": 0,
+     "ind": "pain",
+     "ind_cn": "慢性疼痛/纤维肌痛"
+    },
+    {
+     "pmid": "25230088",
+     "title": "Repetitive transcranial magnetic stimulation (rTMS) for panic disorder in adults.",
+     "year": "2014",
+     "doi": "",
+     "conclusion": "Only two RCTs of rTMS were available and their sample sizes were small. The available data were insufficient for us to draw any conclusions about the efficacy of rTMS for PD. Further trials with large sample sizes and adequate methodology are needed to confirm the effectiveness of rTMS for PD.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    },
+    {
+     "pmid": "29293261",
+     "title": "Treatment of fatigue in amyotrophic lateral sclerosis/motor neuron disease.",
+     "year": "2018",
+     "doi": "",
+     "conclusion": "It is impossible to draw firm conclusions about the effectiveness of interventions to improve fatigue for people with ALS/MND as there are few randomised studies, and the quality of available evidence is very low.",
+     "hint": "作者报告阳性结果；仍需结合 GRADE 与偏倚风险判断·待核验",
+     "cautious": 0,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    },
+    {
+     "pmid": "39092744",
+     "title": "Repetitive transcranial magnetic stimulation for post-traumatic stress disorder in adults.",
+     "year": "2024",
+     "doi": "",
+     "conclusion": "Based on moderate-certainty evidence, our review suggests that active rTMS probably makes little to no difference to PTSD severity immediately following treatment compared to sham stimulation. However, significant heterogeneity in efficacy was detected when we included a larger number of studies in sensitivity analysis. We observed considerable variety in participant and protocol characteristics across studies included in this review.",
+     "hint": "结论混合（部分阳性+局限性）；须读原文判断·待核验",
+     "cautious": 0,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    },
+    {
+     "pmid": "26289586",
+     "title": "Transcranial magnetic stimulation (TMS) for schizophrenia.",
+     "year": "2015",
+     "doi": "",
+     "conclusion": "Based on this review, there is insufficient evidence to support or refute the use of TMS to treat symptoms of schizophrenia. Although some evidence suggests that TMS, and in particular temporoparietal TMS, may improve certain symptoms (such as auditory hallucinations and positive symptoms of schizophrenia) compared to sham TMS, the results were not robust enough to be unequivocal across the assessment measures used.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "scz_pos",
+     "ind_cn": "精分·阳性症状"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "41562412",
+     "title": "Rehabilitation interventions for oropharyngeal dysphagia in people with Parkinson's disease.",
+     "year": "2026",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "42573047",
+     "title": "Swallowing therapy for dysphagia in acute and subacute stroke.",
+     "year": "2026",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "39092744",
+     "title": "Repetitive transcranial magnetic stimulation for post-traumatic stress disorder in adults.",
+     "year": "2024",
+     "inds": [
+      "焦虑障碍",
+      "创伤后应激",
+      "*"
+     ]
+    },
+    {
+     "pmid": "29547226",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2018",
+     "inds": [
+      "慢性疼痛/纤维肌痛",
+      "*"
+     ]
+    },
+    {
+     "pmid": "29652088",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2018",
+     "inds": [
+      "慢性疼痛/纤维肌痛",
+      "*"
+     ]
+    },
+    {
+     "pmid": "30376602",
+     "title": "Swallowing therapy for dysphagia in acute and subacute stroke.",
+     "year": "2018",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "28121021",
+     "title": "Interventions for dysarthria due to stroke and other adult-acquired, non-progressive brain injury.",
+     "year": "2017",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "26289586",
+     "title": "Transcranial magnetic stimulation (TMS) for schizophrenia.",
+     "year": "2015",
+     "inds": [
+      "听幻觉",
+      "精分·认知症状",
+      "精分·阳性症状",
+      "*"
+     ]
+    },
+    {
+     "pmid": "26663136",
+     "title": "Non-pharmacological interventions for depression in adults and children with traumatic brain injury.",
+     "year": "2015",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "24729198",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2014",
+     "inds": [
+      "慢性疼痛/纤维肌痛",
+      "*"
+     ]
+    },
+    {
+     "pmid": "25230088",
+     "title": "Repetitive transcranial magnetic stimulation (rTMS) for panic disorder in adults.",
+     "year": "2014",
+     "inds": [
+      "焦虑障碍",
+      "*"
+     ]
+    },
+    {
+     "pmid": "25387001",
+     "title": "Interventions for improving upper limb function after stroke.",
+     "year": "2014",
+     "inds": [
+      "*"
+     ]
+    }
+   ]
+  },
+  "vns": {
+   "key": "vns",
+   "cn": "迷走神经刺激",
+   "en": "VNS/taVNS",
+   "cat": "无创/植入",
+   "stats": {
+    "papers": 114,
+    "cochrane": 6,
+    "rct": 78,
+    "sr": 65,
+    "ma": 27,
+    "nma": 3
+   },
+   "inds": [
+    {
+     "key": "trd",
+     "cn": "难治性抑郁",
+     "n": 18
+    },
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 18
+    },
+    {
+     "key": "insomnia",
+     "cn": "失眠",
+     "n": 18
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 18
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 17
+    },
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 14
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 8
+    },
+    {
+     "key": "bd_dep",
+     "cn": "双相抑郁",
+     "n": 7
+    },
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 6
+    },
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 6
+    },
+    {
+     "key": "asd",
+     "cn": "孤独症谱系",
+     "n": 4
+    },
+    {
+     "key": "ocd",
+     "cn": "强迫症",
+     "n": 4
+    },
+    {
+     "key": "sud",
+     "cn": "物质使用障碍",
+     "n": 4
+    },
+    {
+     "key": "scz_neg",
+     "cn": "精分·阴性症状",
+     "n": 3
+    },
+    {
+     "key": "ppd",
+     "cn": "围产期抑郁",
+     "n": 2
+    },
+    {
+     "key": "adhd",
+     "cn": "注意缺陷多动",
+     "n": 1
+    },
+    {
+     "key": "scz_pos",
+     "cn": "精分·阳性症状",
+     "n": 1
+    },
+    {
+     "key": "scz_cog",
+     "cn": "精分·认知症状",
+     "n": 1
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "41823357",
+     "title": "Vagus nerve stimulation to improve post-stroke motor function and activity.",
+     "year": "2026",
+     "doi": "",
+     "conclusion": "Comparing VNS paired with rehabilitation to rehabilitation alone, we found very uncertain evidence for the effects on UE motor function, UE activity, and quality of life in the short-term. VNS may result in little to no increased risk of SAEs. The body of evidence on the benefits and harms of VNS is limited by the risk of bias in the included studies, the small number of included studies, and the relatively small sample sizes.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "25835947",
+     "title": "Vagus nerve stimulation for partial seizures.",
+     "year": "2015",
+     "doi": "",
+     "conclusion": "VNS for partial seizures appears to be an effective and well tolerated treatment in 439 included participants from five trials. Results of the overall efficacy analysis show that VNS stimulation using the high stimulation paradigm was significantly better than low stimulation in reducing frequency of seizures. Results for the outcome \"withdrawal of allocated treatment\" suggest that VNS is well tolerated as withdrawals were rare.",
+     "hint": "作者报告阳性结果；仍需结合 GRADE 与偏倚风险判断·待核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "28718878",
+     "title": "Deep brain and cortical stimulation for epilepsy.",
+     "year": "2017",
+     "doi": "",
+     "conclusion": "Except for one very small RCT, only short-term RCTs on intracranial neurostimulation for epilepsy are available. Compared to sham stimulation, one to three months of anterior thalamic DBS ((multi)focal epilepsy), responsive ictal onset zone stimulation ((multi)focal epilepsy) and hippocampal DBS (temporal lobe epilepsy) moderately reduce seizure frequency in refractory epilepsy patients.",
+     "hint": "结论摘要见英文原文；中文要点待人工核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "41823357",
+     "title": "Vagus nerve stimulation to improve post-stroke motor function and activity.",
+     "year": "2026",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "42573047",
+     "title": "Swallowing therapy for dysphagia in acute and subacute stroke.",
+     "year": "2026",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "28718878",
+     "title": "Deep brain and cortical stimulation for epilepsy.",
+     "year": "2017",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "25835947",
+     "title": "Vagus nerve stimulation for partial seizures.",
+     "year": "2015",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "35833911",
+     "title": "Vagus nerve stimulation for focal seizures.",
+     "year": "2022",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "11869641",
+     "title": "Vagus nerve stimulation for partial seizures.",
+     "year": "2002",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "41074616",
+     "title": "Seizure outcomes in persons with autism spectrum disorder undergoing epilepsy surgery: A systematic review and meta-analysis.",
+     "year": "2026",
+     "inds": [
+      "孤独症谱系"
+     ]
+    },
+    {
+     "pmid": "41762189",
+     "title": "Vagal Nerve Stimulation for Chronic Constipation: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+     "year": "2026",
+     "inds": [
+      "焦虑障碍"
+     ]
+    },
+    {
+     "pmid": "42202384",
+     "title": "Transcutaneous vagus nerve stimulation influences sleep quality and insomnia: A systematic review and meta-analysis.",
+     "year": "2026",
+     "inds": [
+      "失眠"
+     ]
+    },
+    {
+     "pmid": "43021851",
+     "title": "Transcutaneous auricular vagus nerve stimulation in perioperative neurocognitive disorders: clinical evidence and mechanistic perspectives.",
+     "year": "2026",
+     "inds": [
+      "认知障碍/痴呆"
+     ]
+    },
+    {
+     "pmid": "38471473",
+     "title": "Complications of Implanted Vagus Nerve Stimulation: A Systematic Review and Meta-Analysis.",
+     "year": "2025",
+     "inds": [
+      "慢性疼痛/纤维肌痛"
+     ]
+    },
+    {
+     "pmid": "40323248",
+     "title": "Transcutaneous Auricular Vagus Nerve Stimulation in Insomnia: A Systematic Review and Meta-Analysis.",
+     "year": "2025",
+     "inds": [
+      "失眠"
+     ]
+    }
+   ]
+  },
+  "ect": {
+   "key": "ect",
+   "cn": "电抽搐治疗",
+   "en": "ECT/MECT",
+   "cat": "抽搐治疗",
+   "stats": {
+    "papers": 170,
+    "cochrane": 25,
+    "rct": 83,
+    "sr": 152,
+    "ma": 54,
+    "nma": 9
+   },
+   "inds": [
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 25
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 22
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 21
+    },
+    {
+     "key": "scz_cog",
+     "cn": "精分·认知症状",
+     "n": 21
+    },
+    {
+     "key": "trd",
+     "cn": "难治性抑郁",
+     "n": 20
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 20
+    },
+    {
+     "key": "bd_dep",
+     "cn": "双相抑郁",
+     "n": 18
+    },
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 17
+    },
+    {
+     "key": "scz_pos",
+     "cn": "精分·阳性症状",
+     "n": 12
+    },
+    {
+     "key": "ocd",
+     "cn": "强迫症",
+     "n": 11
+    },
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 11
+    },
+    {
+     "key": "asd",
+     "cn": "孤独症谱系",
+     "n": 10
+    },
+    {
+     "key": "bd_man",
+     "cn": "双相躁狂",
+     "n": 10
+    },
+    {
+     "key": "insomnia",
+     "cn": "失眠",
+     "n": 8
+    },
+    {
+     "key": "scz_neg",
+     "cn": "精分·阴性症状",
+     "n": 8
+    },
+    {
+     "key": "sud",
+     "cn": "物质使用障碍",
+     "n": 5
+    },
+    {
+     "key": "adhd",
+     "cn": "注意缺陷多动",
+     "n": 4
+    },
+    {
+     "key": "ppd",
+     "cn": "围产期抑郁",
+     "n": 4
+    },
+    {
+     "key": "avh",
+     "cn": "听幻觉",
+     "n": 2
+    },
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 2
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "15846720",
+     "title": "Physical measures for treating depression in dialysis patients.",
+     "year": "2005",
+     "doi": "",
+     "conclusion": "Firm conclusions on the efficacy of physical methods of treatment cannot be made as we identified only one small RCT that was of short duration. More larger and longer term RCTs are needed in this area. Current screening tools for depression are recognised to have poor specificity in the medically ill due to overlap of somatic symptoms of the medical illness. The development of a valid diagnostic tool would be helpful.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "26395901",
+     "title": "Ketamine and other glutamate receptor modulators for depression in adults.",
+     "year": "2015",
+     "doi": "",
+     "conclusion": "We found limited evidence for ketamine's efficacy over placebo at time points up to one week in terms of the primary outcome, response rate. The effects were less certain at two weeks post-treatment. No significant results were found for the remaining ten glutamate receptor modulators, except for sarcosine being more effective than citalopram at four weeks.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "34131914",
+     "title": "Magnetic seizure therapy for treatment-resistant depression.",
+     "year": "2021",
+     "doi": "",
+     "conclusion": "Evidence regarding effects of MST on patients with TRD is currently insufficient. Our analyses of available data did not reveal clearly different effects between MST and ECT. We are uncertain about these findings because of risk of bias and imprecision of estimates. Large, long, well-designed, and well-reported trials are needed to further examine the effects of MST.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "37272857",
+     "title": "Magnetic seizure therapy for people with schizophrenia.",
+     "year": "2023",
+     "doi": "",
+     "conclusion": "Due to the paucity of data, we cannot draw any conclusion on the efficacy and tolerability of MST for people with schizophrenia. Well-designed RCTs are warranted to answer the question.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "scz_cog",
+     "ind_cn": "精分·认知症状"
+    },
+    {
+     "pmid": "37272857",
+     "title": "Magnetic seizure therapy for people with schizophrenia.",
+     "year": "2023",
+     "doi": "",
+     "conclusion": "Due to the paucity of data, we cannot draw any conclusion on the efficacy and tolerability of MST for people with schizophrenia. Well-designed RCTs are warranted to answer the question.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "scz_cog",
+     "ind_cn": "精分·认知症状"
+    },
+    {
+     "pmid": "26395901",
+     "title": "Ketamine and other glutamate receptor modulators for depression in adults.",
+     "year": "2015",
+     "doi": "",
+     "conclusion": "We found limited evidence for ketamine's efficacy over placebo at time points up to one week in terms of the primary outcome, response rate. The effects were less certain at two weeks post-treatment. No significant results were found for the remaining ten glutamate receptor modulators, except for sarcosine being more effective than citalopram at four weeks.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    },
+    {
+     "pmid": "37272857",
+     "title": "Magnetic seizure therapy for people with schizophrenia.",
+     "year": "2023",
+     "doi": "",
+     "conclusion": "Due to the paucity of data, we cannot draw any conclusion on the efficacy and tolerability of MST for people with schizophrenia. Well-designed RCTs are warranted to answer the question.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "scz_pos",
+     "ind_cn": "精分·阳性症状"
+    },
+    {
+     "pmid": "37272857",
+     "title": "Magnetic seizure therapy for people with schizophrenia.",
+     "year": "2023",
+     "doi": "",
+     "conclusion": "Due to the paucity of data, we cannot draw any conclusion on the efficacy and tolerability of MST for people with schizophrenia. Well-designed RCTs are warranted to answer the question.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "scz_pos",
+     "ind_cn": "精分·阳性症状"
+    },
+    {
+     "pmid": "26395901",
+     "title": "Ketamine and other glutamate receptor modulators for depression in adults.",
+     "year": "2015",
+     "doi": "",
+     "conclusion": "We found limited evidence for ketamine's efficacy over placebo at time points up to one week in terms of the primary outcome, response rate. The effects were less certain at two weeks post-treatment. No significant results were found for the remaining ten glutamate receptor modulators, except for sarcosine being more effective than citalopram at four weeks.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "suicide",
+     "ind_cn": "自杀意念"
+    },
+    {
+     "pmid": "34131914",
+     "title": "Magnetic seizure therapy for treatment-resistant depression.",
+     "year": "2021",
+     "doi": "",
+     "conclusion": "Evidence regarding effects of MST on patients with TRD is currently insufficient. Our analyses of available data did not reveal clearly different effects between MST and ECT. We are uncertain about these findings because of risk of bias and imprecision of estimates. Large, long, well-designed, and well-reported trials are needed to further examine the effects of MST.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "suicide",
+     "ind_cn": "自杀意念"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "30888709",
+     "title": "Electroconvulsive therapy for treatment-resistant schizophrenia.",
+     "year": "2019",
+     "inds": [
+      "精分·认知症状",
+      "*"
+     ]
+    },
+    {
+     "pmid": "29552749",
+     "title": "Miscellaneous treatments for antipsychotic-induced tardive dyskinesia.",
+     "year": "2018",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "26395901",
+     "title": "Ketamine and other glutamate receptor modulators for depression in adults.",
+     "year": "2015",
+     "inds": [
+      "焦虑障碍",
+      "重性抑郁",
+      "自杀意念",
+      "*"
+     ]
+    },
+    {
+     "pmid": "24723301",
+     "title": "Different regimens of intravenous sedatives or hypnotics for electroconvulsive therapy (ECT) in adult patients with depression.",
+     "year": "2014",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "25230088",
+     "title": "Repetitive transcranial magnetic stimulation (rTMS) for panic disorder in adults.",
+     "year": "2014",
+     "inds": [
+      "焦虑障碍",
+      "*"
+     ]
+    },
+    {
+     "pmid": "25330045",
+     "title": "Acupuncture for schizophrenia.",
+     "year": "2014",
+     "inds": [
+      "失眠",
+      "失眠",
+      "*"
+     ]
+    },
+    {
+     "pmid": "18843644",
+     "title": "Interventions for treating depression after stroke.",
+     "year": "2008",
+     "inds": [
+      "焦虑障碍",
+      "*"
+     ]
+    },
+    {
+     "pmid": "15846598",
+     "title": "Electroconvulsive therapy for schizophrenia.",
+     "year": "2005",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "12804479",
+     "title": "Electroconvulsive therapy for the depressed elderly.",
+     "year": "2003",
+     "inds": [
+      "认知障碍/痴呆",
+      "*"
+     ]
+    },
+    {
+     "pmid": "37272857",
+     "title": "Magnetic seizure therapy for people with schizophrenia.",
+     "year": "2023",
+     "inds": [
+      "精分·认知症状",
+      "精分·认知症状",
+      "精分·阴性症状",
+      "精分·阴性症状"
+     ]
+    },
+    {
+     "pmid": "35844143",
+     "title": "Antipsychotics for schizophrenia spectrum disorders with catatonic symptoms.",
+     "year": "2022",
+     "inds": [
+      "精分·阳性症状",
+      "精分·阳性症状",
+      "*"
+     ]
+    },
+    {
+     "pmid": "34131914",
+     "title": "Magnetic seizure therapy for treatment-resistant depression.",
+     "year": "2021",
+     "inds": [
+      "自杀意念",
+      "难治性抑郁",
+      "*"
+     ]
+    }
+   ]
+  },
+  "ces": {
+   "key": "ces",
+   "cn": "颅电刺激",
+   "en": "CES",
+   "cat": "无创神经调控",
+   "stats": {
+    "papers": 44,
+    "cochrane": 9,
+    "rct": 31,
+    "sr": 33,
+    "ma": 21,
+    "nma": 1
+   },
+   "inds": [
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 19
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 14
+    },
+    {
+     "key": "insomnia",
+     "cn": "失眠",
+     "n": 12
+    },
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 9
+    },
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 4
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 3
+    },
+    {
+     "key": "sud",
+     "cn": "物质使用障碍",
+     "n": 2
+    },
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 1
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "25000907",
+     "title": "Alternating current cranial electrotherapy stimulation (CES) for depression.",
+     "year": "2014",
+     "doi": "",
+     "conclusion": "There are insufficient methodologically rigorous studies of CES in treatment of acute depression. There is a need for double-blind randomized controlled trials of CES in the treatment of acute depression.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "25000907",
+     "title": "Alternating current cranial electrotherapy stimulation (CES) for depression.",
+     "year": "2014",
+     "doi": "",
+     "conclusion": "There are insufficient methodologically rigorous studies of CES in treatment of acute depression. There is a need for double-blind randomized controlled trials of CES in the treatment of acute depression.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    },
+    {
+     "pmid": "25000907",
+     "title": "Alternating current cranial electrotherapy stimulation (CES) for depression.",
+     "year": "2014",
+     "doi": "",
+     "conclusion": "There are insufficient methodologically rigorous studies of CES in treatment of acute depression. There is a need for double-blind randomized controlled trials of CES in the treatment of acute depression.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    },
+    {
+     "pmid": "20824873",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2010",
+     "doi": "",
+     "conclusion": "Single doses of high-frequency rTMS of the motor cortex may have small short-term effects on chronic pain. The effects do not clearly exceed the predetermined threshold of minimal clinical significance. Low-frequency rTMS is not effective in the treatment of chronic pain. There is insufficient evidence from which to draw firm conclusions regarding the efficacy of CES or tDCS.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "pain",
+     "ind_cn": "慢性疼痛/纤维肌痛"
+    },
+    {
+     "pmid": "20824873",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2010",
+     "doi": "",
+     "conclusion": "Single doses of high-frequency rTMS of the motor cortex may have small short-term effects on chronic pain. The effects do not clearly exceed the predetermined threshold of minimal clinical significance. Low-frequency rTMS is not effective in the treatment of chronic pain. There is insufficient evidence from which to draw firm conclusions regarding the efficacy of CES or tDCS.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "pain",
+     "ind_cn": "慢性疼痛/纤维肌痛"
+    },
+    {
+     "pmid": "25432061",
+     "title": "Non-pharmacological interventions for chronic pain in people with spinal cord injury.",
+     "year": "2014",
+     "doi": "",
+     "conclusion": "Evidence is insufficient to suggest that non-pharmacological treatments are effective in reducing chronic pain in people living with SCI. The benefits and harms of commonly used non-pharmacological pain treatments should be investigated in randomised controlled trials with adequate sample size and study methodology.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "pain",
+     "ind_cn": "慢性疼痛/纤维肌痛"
+    },
+    {
+     "pmid": "19370632",
+     "title": "Interventions for apathy after traumatic brain injury.",
+     "year": "2009",
+     "doi": "",
+     "conclusion": "No evidence was provided to support the use of CES treatment for inertia, a component of apathy. Between-group statistical analyses were not conducted and it was therefore not possible to determine the efficacy of the treatment relative to no treatment or sham treatment. Results regarding the effectiveness of treatment can only be inferred, and this evidence is based on only one trial with a small sample size.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "20824873",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2010",
+     "doi": "",
+     "conclusion": "Single doses of high-frequency rTMS of the motor cortex may have small short-term effects on chronic pain. The effects do not clearly exceed the predetermined threshold of minimal clinical significance. Low-frequency rTMS is not effective in the treatment of chronic pain. There is insufficient evidence from which to draw firm conclusions regarding the efficacy of CES or tDCS.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "12917999",
+     "title": "Transcutaneous electrical nerve stimulation (TENS) for dementia.",
+     "year": "2003",
+     "doi": "",
+     "conclusion": "",
+     "hint": "无明确结论段；待读原文",
+     "cautious": 0,
+     "ind": "mci",
+     "ind_cn": "认知障碍/痴呆"
+    },
+    {
+     "pmid": "12917999",
+     "title": "Transcutaneous electrical nerve stimulation (TENS) for dementia.",
+     "year": "2003",
+     "doi": "",
+     "conclusion": "",
+     "hint": "无明确结论段；待读原文",
+     "cautious": 0,
+     "ind": "mci",
+     "ind_cn": "认知障碍/痴呆"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "29547226",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2018",
+     "inds": [
+      "慢性疼痛/纤维肌痛",
+      "慢性疼痛/纤维肌痛",
+      "*"
+     ]
+    },
+    {
+     "pmid": "29652088",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2018",
+     "inds": [
+      "慢性疼痛/纤维肌痛",
+      "慢性疼痛/纤维肌痛",
+      "*"
+     ]
+    },
+    {
+     "pmid": "24729198",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2014",
+     "inds": [
+      "慢性疼痛/纤维肌痛",
+      "慢性疼痛/纤维肌痛",
+      "*"
+     ]
+    },
+    {
+     "pmid": "25432061",
+     "title": "Non-pharmacological interventions for chronic pain in people with spinal cord injury.",
+     "year": "2014",
+     "inds": [
+      "慢性疼痛/纤维肌痛",
+      "慢性疼痛/纤维肌痛",
+      "*"
+     ]
+    },
+    {
+     "pmid": "20824873",
+     "title": "Non-invasive brain stimulation techniques for chronic pain.",
+     "year": "2010",
+     "inds": [
+      "慢性疼痛/纤维肌痛",
+      "慢性疼痛/纤维肌痛",
+      "*"
+     ]
+    },
+    {
+     "pmid": "12917999",
+     "title": "Transcutaneous electrical nerve stimulation (TENS) for dementia.",
+     "year": "2003",
+     "inds": [
+      "认知障碍/痴呆",
+      "认知障碍/痴呆",
+      "*"
+     ]
+    },
+    {
+     "pmid": "25000907",
+     "title": "Alternating current cranial electrotherapy stimulation (CES) for depression.",
+     "year": "2014",
+     "inds": [
+      "焦虑障碍",
+      "焦虑障碍",
+      "*"
+     ]
+    },
+    {
+     "pmid": "19370632",
+     "title": "Interventions for apathy after traumatic brain injury.",
+     "year": "2009",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "15266458",
+     "title": "Non-invasive physical treatments for chronic/recurrent headache.",
+     "year": "2004",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "42054578",
+     "title": "Nonpharmacological interventions to improve the sleep of informal caregivers of people with dementia: a systematic review and meta-analysis.",
+     "year": "2026",
+     "inds": [
+      "失眠",
+      "认知障碍/痴呆"
+     ]
+    },
+    {
+     "pmid": "21494222",
+     "title": "Non-invasive brain stimulation techniques for chronic pain. A report of a Cochrane systematic review and meta-analysis.",
+     "year": "2011",
+     "inds": [
+      "慢性疼痛/纤维肌痛"
+     ]
+    },
+    {
+     "pmid": "42040599",
+     "title": "Noninvasive electrical stimulation on pain and function in knee osteoarthritis in middle-aged and older adults: systematic review and meta-analysis of randomized clinical trials.",
+     "year": "2026",
+     "inds": [
+      "慢性疼痛/纤维肌痛"
+     ]
+    }
+   ]
+  },
+  "bfb": {
+   "key": "bfb",
+   "cn": "生物反馈",
+   "en": "Biofeedback",
+   "cat": "其他物理手段",
+   "stats": {
+    "papers": 86,
+    "cochrane": 14,
+    "rct": 51,
+    "sr": 56,
+    "ma": 27,
+    "nma": 0
+   },
+   "inds": [
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 24
+    },
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 17
+    },
+    {
+     "key": "adhd",
+     "cn": "注意缺陷多动",
+     "n": 15
+    },
+    {
+     "key": "insomnia",
+     "cn": "失眠",
+     "n": 14
+    },
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 14
+    },
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 11
+    },
+    {
+     "key": "sud",
+     "cn": "物质使用障碍",
+     "n": 4
+    },
+    {
+     "key": "ocd",
+     "cn": "强迫症",
+     "n": 3
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 3
+    },
+    {
+     "key": "asd",
+     "cn": "孤独症谱系",
+     "n": 2
+    },
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 2
+    },
+    {
+     "key": "scz_cog",
+     "cn": "精分·认知症状",
+     "n": 1
+    },
+    {
+     "key": "ppd",
+     "cn": "围产期抑郁",
+     "n": 1
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 1
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "16437509",
+     "title": "Meditation therapy for anxiety disorders.",
+     "year": "2006",
+     "doi": "",
+     "conclusion": "The small number of studies included in this review do not permit any conclusions to be drawn on the effectiveness of meditation therapy for anxiety disorders. Transcendental meditation is comparable with other kinds of relaxation therapies in reducing anxiety, and Kundalini Yoga did not show significant effectiveness in treating obsessive-compulsive disorders compared with Relaxation/Meditation.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "21735413",
+     "title": "Mind-body interventions during pregnancy for preventing or treating women's anxiety.",
+     "year": "2011",
+     "doi": "",
+     "conclusion": "Mind-body interventions might benefit women's anxiety during pregnancy. Based on individual studies, there is some but no strong evidence for the effectiveness of mind-body interventions for the management of anxiety during pregnancy. The main limitations of the studies were the lack of blinding and insufficient details on the methods used for randomization.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "30110718",
+     "title": "E-Health interventions for anxiety and depression in children and adolescents with long-term physical conditions.",
+     "year": "2018",
+     "doi": "",
+     "conclusion": "At present, the field of e-health interventions for the treatment of anxiety or depression in children and adolescents with long-term physical conditions is limited to five low quality trials. The very low-quality of the evidence means the effects of e-health interventions are uncertain at this time, especially in children aged under 10 years.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "16437509",
+     "title": "Meditation therapy for anxiety disorders.",
+     "year": "2006",
+     "doi": "",
+     "conclusion": "The small number of studies included in this review do not permit any conclusions to be drawn on the effectiveness of meditation therapy for anxiety disorders. Transcendental meditation is comparable with other kinds of relaxation therapies in reducing anxiety, and Kundalini Yoga did not show significant effectiveness in treating obsessive-compulsive disorders compared with Relaxation/Meditation.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    },
+    {
+     "pmid": "30110718",
+     "title": "E-Health interventions for anxiety and depression in children and adolescents with long-term physical conditions.",
+     "year": "2018",
+     "doi": "",
+     "conclusion": "At present, the field of e-health interventions for the treatment of anxiety or depression in children and adolescents with long-term physical conditions is limited to five low quality trials. The very low-quality of the evidence means the effects of e-health interventions are uncertain at this time, especially in children aged under 10 years.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    },
+    {
+     "pmid": "30110718",
+     "title": "E-Health interventions for anxiety and depression in children and adolescents with long-term physical conditions.",
+     "year": "2018",
+     "doi": "",
+     "conclusion": "At present, the field of e-health interventions for the treatment of anxiety or depression in children and adolescents with long-term physical conditions is limited to five low quality trials. The very low-quality of the evidence means the effects of e-health interventions are uncertain at this time, especially in children aged under 10 years.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "pain",
+     "ind_cn": "慢性疼痛/纤维肌痛"
+    },
+    {
+     "pmid": "30110718",
+     "title": "E-Health interventions for anxiety and depression in children and adolescents with long-term physical conditions.",
+     "year": "2018",
+     "doi": "",
+     "conclusion": "At present, the field of e-health interventions for the treatment of anxiety or depression in children and adolescents with long-term physical conditions is limited to five low quality trials. The very low-quality of the evidence means the effects of e-health interventions are uncertain at this time, especially in children aged under 10 years.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "pain",
+     "ind_cn": "慢性疼痛/纤维肌痛"
+    },
+    {
+     "pmid": "16437509",
+     "title": "Meditation therapy for anxiety disorders.",
+     "year": "2006",
+     "doi": "",
+     "conclusion": "The small number of studies included in this review do not permit any conclusions to be drawn on the effectiveness of meditation therapy for anxiety disorders. Transcendental meditation is comparable with other kinds of relaxation therapies in reducing anxiety, and Kundalini Yoga did not show significant effectiveness in treating obsessive-compulsive disorders compared with Relaxation/Meditation.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "ocd",
+     "ind_cn": "强迫症"
+    },
+    {
+     "pmid": "16437509",
+     "title": "Meditation therapy for anxiety disorders.",
+     "year": "2006",
+     "doi": "",
+     "conclusion": "The small number of studies included in this review do not permit any conclusions to be drawn on the effectiveness of meditation therapy for anxiety disorders. Transcendental meditation is comparable with other kinds of relaxation therapies in reducing anxiety, and Kundalini Yoga did not show significant effectiveness in treating obsessive-compulsive disorders compared with Relaxation/Meditation.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "ocd",
+     "ind_cn": "强迫症"
+    },
+    {
+     "pmid": "18646087",
+     "title": "Psychological interventions for people with cystic fibrosis and their families.",
+     "year": "2008",
+     "doi": "",
+     "conclusion": "Currently no clear evidence exists on the best psychological interventions to help people with CF and their carers manage the disease. Trials of interventions to improve adherence to treatment are needed. Multicentre approaches, with consequent funding implications, will increase the sample size of trials and enhance the power and precision of their findings.",
+     "hint": "结论摘要见英文原文；中文要点待人工核验",
+     "cautious": 0,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "41700575",
+     "title": "Interventions for fatigue management after traumatic brain injury.",
+     "year": "2026",
+     "inds": [
+      "焦虑障碍",
+      "*"
+     ]
+    },
+    {
+     "pmid": "31713856",
+     "title": "Biofeedback for treatment of irritable bowel syndrome.",
+     "year": "2019",
+     "inds": [
+      "焦虑障碍",
+      "*"
+     ]
+    },
+    {
+     "pmid": "30110718",
+     "title": "E-Health interventions for anxiety and depression in children and adolescents with long-term physical conditions.",
+     "year": "2018",
+     "inds": [
+      "焦虑障碍",
+      "慢性疼痛/纤维肌痛",
+      "慢性疼痛/纤维肌痛",
+      "*"
+     ]
+    },
+    {
+     "pmid": "24941199",
+     "title": "Psychological interventions for individuals with cystic fibrosis and their families.",
+     "year": "2014",
+     "inds": [
+      "焦虑障碍",
+      "*"
+     ]
+    },
+    {
+     "pmid": "22071849",
+     "title": "Psychosocial interventions for the management of chronic orofacial pain.",
+     "year": "2011",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "18646087",
+     "title": "Psychological interventions for people with cystic fibrosis and their families.",
+     "year": "2008",
+     "inds": [
+      "焦虑障碍",
+      "*"
+     ]
+    },
+    {
+     "pmid": "34870330",
+     "title": "Pre-deployment programmes for building resilience in military and frontline emergency service personnel.",
+     "year": "2021",
+     "inds": [
+      "失眠",
+      "失眠",
+      "创伤后应激",
+      "创伤后应激"
+     ]
+    },
+    {
+     "pmid": "21735413",
+     "title": "Mind-body interventions during pregnancy for preventing or treating women's anxiety.",
+     "year": "2011",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "18646083",
+     "title": "Psychological treatments for epilepsy.",
+     "year": "2008",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "16437509",
+     "title": "Meditation therapy for anxiety disorders.",
+     "year": "2006",
+     "inds": [
+      "焦虑障碍",
+      "强迫症",
+      "强迫症",
+      "*"
+     ]
+    },
+    {
+     "pmid": "16235293",
+     "title": "Psychological treatments for epilepsy.",
+     "year": "2005",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "12917948",
+     "title": "Psychological interventions for cystic fibrosis.",
+     "year": "2003",
+     "inds": [
+      "*"
+     ]
+    }
+   ]
+  },
+  "sdt": {
+   "key": "sdt",
+   "cn": "睡眠剥夺疗法",
+   "en": "Wake therapy",
+   "cat": "其他物理手段",
+   "stats": {
+    "papers": 57,
+    "cochrane": 1,
+    "rct": 48,
+    "sr": 26,
+    "ma": 15,
+    "nma": 0
+   },
+   "inds": [
+    {
+     "key": "insomnia",
+     "cn": "失眠",
+     "n": 18
+    },
+    {
+     "key": "bd_dep",
+     "cn": "双相抑郁",
+     "n": 15
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 14
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 13
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 4
+    },
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 2
+    },
+    {
+     "key": "bd_man",
+     "cn": "双相躁狂",
+     "n": 2
+    },
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 2
+    },
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 2
+    },
+    {
+     "key": "adhd",
+     "cn": "注意缺陷多动",
+     "n": 1
+    },
+    {
+     "key": "trd",
+     "cn": "难治性抑郁",
+     "n": 1
+    },
+    {
+     "key": "ocd",
+     "cn": "强迫症",
+     "n": 1
+    },
+    {
+     "key": "sud",
+     "cn": "物质使用障碍",
+     "n": 1
+    },
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 1
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "15106233",
+     "title": "Light therapy for non-seasonal depression.",
+     "year": "2004",
+     "doi": "",
+     "conclusion": "",
+     "hint": "无明确结论段；待读原文",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "15106233",
+     "title": "Light therapy for non-seasonal depression.",
+     "year": "2004",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "43024947",
+     "title": "Efficacy of Digital Health Interventions for Insomnia: Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+     "year": "2026",
+     "inds": [
+      "失眠"
+     ]
+    },
+    {
+     "pmid": "39739275",
+     "title": "Sleep disorders in functional neurological disorder - a systematic review and meta-analysis.",
+     "year": "2025",
+     "inds": [
+      "失眠"
+     ]
+    },
+    {
+     "pmid": "38127505",
+     "title": "Sleep loss and emotion: A systematic review and meta-analysis of over 50 years of experimental research.",
+     "year": "2024",
+     "inds": [
+      "焦虑障碍"
+     ]
+    },
+    {
+     "pmid": "34871635",
+     "title": "Psychological and behavioural interventions in bipolar disorder that target sleep and circadian rhythms: A systematic review of randomised controlled trials.",
+     "year": "2022",
+     "inds": [
+      "双相抑郁",
+      "双相躁狂",
+      "失眠"
+     ]
+    },
+    {
+     "pmid": "35700677",
+     "title": "Sleep deprivation as a treatment for major depressive episodes: A systematic review and meta-analysis.",
+     "year": "2022",
+     "inds": [
+      "双相抑郁"
+     ]
+    },
+    {
+     "pmid": "33145770",
+     "title": "Sleep deprivation as treatment for depression: Systematic review and meta-analysis.",
+     "year": "2021",
+     "inds": [
+      "双相抑郁",
+      "失眠"
+     ]
+    },
+    {
+     "pmid": "33190220",
+     "title": "Meta-analysis of sleep deprivation in the acute treatment of bipolar depression.",
+     "year": "2021",
+     "inds": [
+      "双相抑郁"
+     ]
+    },
+    {
+     "pmid": "33034127",
+     "title": "Adjunctive bright light therapy for treating bipolar depression: A systematic review and meta-analysis of randomized controlled trials.",
+     "year": "2020",
+     "inds": [
+      "双相抑郁"
+     ]
+    },
+    {
+     "pmid": "26993616",
+     "title": "Light therapy in the treatment of patients with bipolar depression: A meta-analytic study.",
+     "year": "2016",
+     "inds": [
+      "双相抑郁"
+     ]
+    },
+    {
+     "pmid": "27486153",
+     "title": "Canadian Network for Mood and Anxiety Treatments (CANMAT) 2016 Clinical Guidelines for the Management of Adults with Major Depressive Disorder: Section 5. Complementary and Alternative Medicine Treatments.",
+     "year": "2016",
+     "inds": [
+      "焦虑障碍",
+      "重性抑郁"
+     ]
+    },
+    {
+     "pmid": "41535530",
+     "title": "The Intersection of Sleep and Hair Loss: A Systematic Review.",
+     "year": "2026",
+     "inds": [
+      "焦虑障碍",
+      "失眠"
+     ]
+    }
+   ]
+  },
+  "blt": {
+   "key": "blt",
+   "cn": "光照治疗",
+   "en": "BLT",
+   "cat": "其他物理手段",
+   "stats": {
+    "papers": 205,
+    "cochrane": 89,
+    "rct": 89,
+    "sr": 177,
+    "ma": 118,
+    "nma": 3
+   },
+   "inds": [
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 89
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 26
+    },
+    {
+     "key": "insomnia",
+     "cn": "失眠",
+     "n": 26
+    },
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 26
+    },
+    {
+     "key": "ppd",
+     "cn": "围产期抑郁",
+     "n": 19
+    },
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 18
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 18
+    },
+    {
+     "key": "bd_dep",
+     "cn": "双相抑郁",
+     "n": 18
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 11
+    },
+    {
+     "key": "bd_man",
+     "cn": "双相躁狂",
+     "n": 7
+    },
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 6
+    },
+    {
+     "key": "adhd",
+     "cn": "注意缺陷多动",
+     "n": 5
+    },
+    {
+     "key": "sud",
+     "cn": "物质使用障碍",
+     "n": 2
+    },
+    {
+     "key": "asd",
+     "cn": "孤独症谱系",
+     "n": 1
+    },
+    {
+     "key": "ocd",
+     "cn": "强迫症",
+     "n": 1
+    },
+    {
+     "key": "scz_cog",
+     "cn": "精分·认知症状",
+     "n": 1
+    },
+    {
+     "key": "scz_neg",
+     "cn": "精分·阴性症状",
+     "n": 1
+    },
+    {
+     "key": "trd",
+     "cn": "难治性抑郁",
+     "n": 1
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "19821317",
+     "title": "Light therapy for managing cognitive, sleep, functional, behavioural, or psychiatric disturbances in dementia.",
+     "year": "2009",
+     "doi": "",
+     "conclusion": "There is insufficient evidence to assess the value of light therapy for people with dementia. Most of the available studies are not of high methodological quality and further research is required.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "22161433",
+     "title": "Second-generation antidepressants for seasonal affective disorder.",
+     "year": "2011",
+     "doi": "",
+     "conclusion": "Evidence for the effectiveness of SGAs is limited to one small trial of fluoxetine compared with placebo, which shows a non-significant effect in favour of fluoxetine, and two small trials comparing fluoxetine against light therapy, which suggest equivalence between the two interventions. The lack of available evidence precludes the ability to draw any overall conclusions on the use of SGAs for SAD.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "23235669",
+     "title": "Clofibrate in combination with phototherapy for unconjugated neonatal hyperbilirubinaemia.",
+     "year": "2012",
+     "doi": "",
+     "conclusion": "There are insufficient data from different countries on the use of clofibrate in combination with phototherapy for hyperbilirubinaemia to make recommendations for practice. There is a need for larger trials to determine how effective clofibrate is in reducing the need for, and duration of, phototherapy in term and preterm infants with hyperbilirubinaemia.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "19821317",
+     "title": "Light therapy for managing cognitive, sleep, functional, behavioural, or psychiatric disturbances in dementia.",
+     "year": "2009",
+     "doi": "",
+     "conclusion": "There is insufficient evidence to assess the value of light therapy for people with dementia. Most of the available studies are not of high methodological quality and further research is required.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "mci",
+     "ind_cn": "认知障碍/痴呆"
+    },
+    {
+     "pmid": "24574061",
+     "title": "Light therapy for improving cognition, activities of daily living, sleep, challenging behaviour, and psychiatric disturbances in dementia.",
+     "year": "2014",
+     "doi": "",
+     "conclusion": "There is insufficient evidence to justify the use of bright light therapy in dementia. Further research should concentrate on replicating the suggested effect on ADLs, and establishing the biological mechanism for how light therapy improves these important outcomes.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "mci",
+     "ind_cn": "认知障碍/痴呆"
+    },
+    {
+     "pmid": "24659320",
+     "title": "Pharmacotherapies for sleep disturbances in Alzheimer's disease.",
+     "year": "2014",
+     "doi": "",
+     "conclusion": "We discovered a distinct lack of evidence to help guide drug treatment of sleep problems in AD. In particular, we found no RCTs of many drugs that are widely prescribed for sleep problems in AD, including the benzodiazepine and non-benzodiazepine hypnotics, although there is considerable uncertainty about the balance of benefits and risks associated with these common treatments.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "mci",
+     "ind_cn": "认知障碍/痴呆"
+    },
+    {
+     "pmid": "27851868",
+     "title": "Pharmacotherapies for sleep disturbances in dementia.",
+     "year": "2016",
+     "doi": "",
+     "conclusion": "We discovered a distinct lack of evidence to help guide drug treatment of sleep problems in dementia. In particular, we found no RCTs of many drugs that are widely prescribed for sleep problems in dementia, including the benzodiazepine and non-benzodiazepine hypnotics, although there is considerable uncertainty about the balance of benefits and risks associated with these common treatments.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "insomnia",
+     "ind_cn": "失眠"
+    },
+    {
+     "pmid": "33189083",
+     "title": "Pharmacotherapies for sleep disturbances in dementia.",
+     "year": "2020",
+     "doi": "",
+     "conclusion": "We discovered a distinct lack of evidence to guide decisions about drug treatment of sleep problems in dementia. In particular, we found no RCTs of many widely prescribed drugs, including the benzodiazepine and non-benzodiazepine hypnotics, although there is considerable uncertainty about the balance of benefits and risks for these common treatments. We found no evidence for beneficial effects of melatonin (up to 10 mg) or a melatonin receptor agonist.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "insomnia",
+     "ind_cn": "失眠"
+    },
+    {
+     "pmid": "33189083",
+     "title": "Pharmacotherapies for sleep disturbances in dementia.",
+     "year": "2020",
+     "doi": "",
+     "conclusion": "We discovered a distinct lack of evidence to guide decisions about drug treatment of sleep problems in dementia. In particular, we found no RCTs of many widely prescribed drugs, including the benzodiazepine and non-benzodiazepine hypnotics, although there is considerable uncertainty about the balance of benefits and risks for these common treatments. We found no evidence for beneficial effects of melatonin (up to 10 mg) or a melatonin receptor agonist.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "insomnia",
+     "ind_cn": "失眠"
+    },
+    {
+     "pmid": "24026850",
+     "title": "Exercise for depression.",
+     "year": "2013",
+     "doi": "",
+     "conclusion": "Exercise is moderately more effective than a control intervention for reducing symptoms of depression, but analysis of methodologically robust trials only shows a smaller effect in favour of exercise. When compared to psychological or pharmacological therapies, exercise appears to be no more effective, though this conclusion is based on a few small trials.",
+     "hint": "作者报告阳性结果；仍需结合 GRADE 与偏倚风险判断·待核验",
+     "cautious": 0,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "41500513",
+     "title": "Exercise for depression.",
+     "year": "2026",
+     "inds": [
+      "焦虑障碍",
+      "焦虑障碍",
+      "围产期抑郁",
+      "围产期抑郁"
+     ]
+    },
+    {
+     "pmid": "41700575",
+     "title": "Interventions for fatigue management after traumatic brain injury.",
+     "year": "2026",
+     "inds": [
+      "焦虑障碍",
+      "*"
+     ]
+    },
+    {
+     "pmid": "41784088",
+     "title": "High- versus low-dose phototherapy for neonatal jaundice.",
+     "year": "2026",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "42813499",
+     "title": "Interventions for treatment of herpes labialis (cold sores on the lips).",
+     "year": "2026",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "38804265",
+     "title": "Transcutaneous bilirubinometry for detecting jaundice in term or late preterm neonates.",
+     "year": "2024",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "39699174",
+     "title": "Cycled light in the intensive care unit for preterm and low birth weight infants.",
+     "year": "2024",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "33634465",
+     "title": "Interventions for bacterial folliculitis and boils (furuncles and carbuncles).",
+     "year": "2021",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "33661528",
+     "title": "Second-generation antidepressants for treatment of seasonal affective disorder.",
+     "year": "2021",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "34228352",
+     "title": "Sunlight for the prevention and treatment of hyperbilirubinemia in term and late preterm neonates.",
+     "year": "2021",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "31958161",
+     "title": "Interventions for chronic palmoplantar pustulosis.",
+     "year": "2020",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "31981369",
+     "title": "Interventions for chronic pruritus of unknown origin.",
+     "year": "2020",
+     "inds": [
+      "失眠",
+      "*"
+     ]
+    },
+    {
+     "pmid": "32368795",
+     "title": "Indoor salt water baths followed by artificial ultraviolet B light for chronic plaque psoriasis.",
+     "year": "2020",
+     "inds": [
+      "*"
+     ]
+    }
+   ]
+  },
+  "itbs": {
+   "key": "itbs",
+   "cn": "间歇θ爆发刺激",
+   "en": "iTBS",
+   "cat": "无创神经调控",
+   "stats": {
+    "papers": 189,
+    "cochrane": 3,
+    "rct": 147,
+    "sr": 99,
+    "ma": 39,
+    "nma": 21
+   },
+   "inds": [
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 18
+    },
+    {
+     "key": "trd",
+     "cn": "难治性抑郁",
+     "n": 18
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 18
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 18
+    },
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 18
+    },
+    {
+     "key": "bd_dep",
+     "cn": "双相抑郁",
+     "n": 17
+    },
+    {
+     "key": "ocd",
+     "cn": "强迫症",
+     "n": 16
+    },
+    {
+     "key": "scz_cog",
+     "cn": "精分·认知症状",
+     "n": 16
+    },
+    {
+     "key": "sud",
+     "cn": "物质使用障碍",
+     "n": 15
+    },
+    {
+     "key": "scz_neg",
+     "cn": "精分·阴性症状",
+     "n": 15
+    },
+    {
+     "key": "asd",
+     "cn": "孤独症谱系",
+     "n": 14
+    },
+    {
+     "key": "scz_pos",
+     "cn": "精分·阳性症状",
+     "n": 14
+    },
+    {
+     "key": "avh",
+     "cn": "听幻觉",
+     "n": 13
+    },
+    {
+     "key": "insomnia",
+     "cn": "失眠",
+     "n": 12
+    },
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 11
+    },
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 9
+    },
+    {
+     "key": "adhd",
+     "cn": "注意缺陷多动",
+     "n": 3
+    },
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 3
+    },
+    {
+     "key": "bd_man",
+     "cn": "双相躁狂",
+     "n": 1
+    },
+    {
+     "key": "ppd",
+     "cn": "围产期抑郁",
+     "n": 1
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "23450612",
+     "title": "Non pharmacological interventions for spasticity in multiple sclerosis.",
+     "year": "2013",
+     "doi": "",
+     "conclusion": "There is 'low level' evidence for non pharmacological interventions such as physical activities given in conjunction with other interventions, and for magnetic stimulation and electromagnetic therapies for beneficial effects on spasticity outcomes in people with MS. A wide range of non pharmacological interventions are used for the treatment of spasticity in MS, but more robust trials are needed to build evidence about these interventions.",
+     "hint": "作者报告阳性结果；仍需结合 GRADE 与偏倚风险判断·待核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "26289586",
+     "title": "Transcranial magnetic stimulation (TMS) for schizophrenia.",
+     "year": "2015",
+     "doi": "",
+     "conclusion": "Based on this review, there is insufficient evidence to support or refute the use of TMS to treat symptoms of schizophrenia. Although some evidence suggests that TMS, and in particular temporoparietal TMS, may improve certain symptoms (such as auditory hallucinations and positive symptoms of schizophrenia) compared to sham TMS, the results were not robust enough to be unequivocal across the assessment measures used.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "42573047",
+     "title": "Swallowing therapy for dysphagia in acute and subacute stroke.",
+     "year": "2026",
+     "doi": "",
+     "conclusion": "Conclusions from our analyses are limited by small trials at high or unclear risk of bias, publication bias and inconsistent results. Large high-quality trials on specific interventions are needed. FUNDING: No dedicated funding. REGISTRATION: Protocol (1997), DOI not available Original review (1999) DOI 10.1002/14651858.CD000323 First update (2012) DOI 10.1002/14651858.CD000323.pub2 Second update (2018) DOI 10.1002/14651858.CD000323.pub3.",
+     "hint": "结论含局限性提示（样本量小/质量不一）；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "26289586",
+     "title": "Transcranial magnetic stimulation (TMS) for schizophrenia.",
+     "year": "2015",
+     "doi": "",
+     "conclusion": "Based on this review, there is insufficient evidence to support or refute the use of TMS to treat symptoms of schizophrenia. Although some evidence suggests that TMS, and in particular temporoparietal TMS, may improve certain symptoms (such as auditory hallucinations and positive symptoms of schizophrenia) compared to sham TMS, the results were not robust enough to be unequivocal across the assessment measures used.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "avh",
+     "ind_cn": "听幻觉"
+    },
+    {
+     "pmid": "26289586",
+     "title": "Transcranial magnetic stimulation (TMS) for schizophrenia.",
+     "year": "2015",
+     "doi": "",
+     "conclusion": "Based on this review, there is insufficient evidence to support or refute the use of TMS to treat symptoms of schizophrenia. Although some evidence suggests that TMS, and in particular temporoparietal TMS, may improve certain symptoms (such as auditory hallucinations and positive symptoms of schizophrenia) compared to sham TMS, the results were not robust enough to be unequivocal across the assessment measures used.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "avh",
+     "ind_cn": "听幻觉"
+    },
+    {
+     "pmid": "26289586",
+     "title": "Transcranial magnetic stimulation (TMS) for schizophrenia.",
+     "year": "2015",
+     "doi": "",
+     "conclusion": "Based on this review, there is insufficient evidence to support or refute the use of TMS to treat symptoms of schizophrenia. Although some evidence suggests that TMS, and in particular temporoparietal TMS, may improve certain symptoms (such as auditory hallucinations and positive symptoms of schizophrenia) compared to sham TMS, the results were not robust enough to be unequivocal across the assessment measures used.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "scz_cog",
+     "ind_cn": "精分·认知症状"
+    },
+    {
+     "pmid": "26289586",
+     "title": "Transcranial magnetic stimulation (TMS) for schizophrenia.",
+     "year": "2015",
+     "doi": "",
+     "conclusion": "Based on this review, there is insufficient evidence to support or refute the use of TMS to treat symptoms of schizophrenia. Although some evidence suggests that TMS, and in particular temporoparietal TMS, may improve certain symptoms (such as auditory hallucinations and positive symptoms of schizophrenia) compared to sham TMS, the results were not robust enough to be unequivocal across the assessment measures used.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "scz_cog",
+     "ind_cn": "精分·认知症状"
+    },
+    {
+     "pmid": "26289586",
+     "title": "Transcranial magnetic stimulation (TMS) for schizophrenia.",
+     "year": "2015",
+     "doi": "",
+     "conclusion": "Based on this review, there is insufficient evidence to support or refute the use of TMS to treat symptoms of schizophrenia. Although some evidence suggests that TMS, and in particular temporoparietal TMS, may improve certain symptoms (such as auditory hallucinations and positive symptoms of schizophrenia) compared to sham TMS, the results were not robust enough to be unequivocal across the assessment measures used.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "scz_pos",
+     "ind_cn": "精分·阳性症状"
+    },
+    {
+     "pmid": "26289586",
+     "title": "Transcranial magnetic stimulation (TMS) for schizophrenia.",
+     "year": "2015",
+     "doi": "",
+     "conclusion": "Based on this review, there is insufficient evidence to support or refute the use of TMS to treat symptoms of schizophrenia. Although some evidence suggests that TMS, and in particular temporoparietal TMS, may improve certain symptoms (such as auditory hallucinations and positive symptoms of schizophrenia) compared to sham TMS, the results were not robust enough to be unequivocal across the assessment measures used.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "scz_pos",
+     "ind_cn": "精分·阳性症状"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "42573047",
+     "title": "Swallowing therapy for dysphagia in acute and subacute stroke.",
+     "year": "2026",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "26289586",
+     "title": "Transcranial magnetic stimulation (TMS) for schizophrenia.",
+     "year": "2015",
+     "inds": [
+      "听幻觉",
+      "听幻觉",
+      "精分·认知症状",
+      "精分·认知症状"
+     ]
+    },
+    {
+     "pmid": "23450612",
+     "title": "Non pharmacological interventions for spasticity in multiple sclerosis.",
+     "year": "2013",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "40397262",
+     "title": "Effects of continuous theta burst stimulation on patients with obsessive‒compulsive disorder (OCD): A systematic review and meta-analysis of randomized sham controlled trials.",
+     "year": "2026",
+     "inds": [
+      "焦虑障碍",
+      "强迫症"
+     ]
+    },
+    {
+     "pmid": "41091455",
+     "title": "Efficacy and safety of intermittent theta burst stimulation versus repetitive transcranial magnetic stimulation for patients with schizophrenia: a systematic review and meta-analysis.",
+     "year": "2026",
+     "inds": [
+      "精分·认知症状",
+      "精分·阴性症状",
+      "精分·阳性症状"
+     ]
+    },
+    {
+     "pmid": "41172156",
+     "title": "Effects of repetitive transcranial magnetic stimulation on obsessive-compulsive disorder: a systematic review, meta-analysis, and meta-regression.",
+     "year": "2026",
+     "inds": [
+      "强迫症"
+     ]
+    },
+    {
+     "pmid": "41421054",
+     "title": "Treatment of depressive episodes with mixed features: A systematic review and meta-analysis.",
+     "year": "2026",
+     "inds": [
+      "自杀意念"
+     ]
+    },
+    {
+     "pmid": "41478176",
+     "title": "Efficacy and safety of continuous theta burst stimulation for auditory hallucinations: A GRADE-assessed meta-analysis of randomized sham-controlled trials.",
+     "year": "2026",
+     "inds": [
+      "听幻觉",
+      "精分·阳性症状"
+     ]
+    },
+    {
+     "pmid": "42155351",
+     "title": "Theta burst stimulation for suicidal ideation in depression: A systematic review and meta-analysis of efficacy and protocol moderators.",
+     "year": "2026",
+     "inds": [
+      "自杀意念"
+     ]
+    },
+    {
+     "pmid": "42503875",
+     "title": "The Effects of Transcranial Magnetic Stimulation on Alcohol Craving, Efficacy, Emotion, and Cognitive Function in Patients With Alcohol Use Disorders: A Systematic Review and Meta-Analysis of Randomized Controlled Trial.",
+     "year": "2026",
+     "inds": [
+      "焦虑障碍",
+      "物质使用障碍"
+     ]
+    },
+    {
+     "pmid": "42620660",
+     "title": "Efficacy of intermittent theta-burst stimulation for substance use disorders: a systematic review and meta-analysis of randomized sham-controlled trials.",
+     "year": "2026",
+     "inds": [
+      "物质使用障碍"
+     ]
+    },
+    {
+     "pmid": "42705844",
+     "title": "Efficacy and Durability of Repetitive Transcranial Magnetic Stimulation on Cognitive Function in Patients With Mild-to-Moderate Alzheimer's Disease: A Systematic Review and Meta-Analysis.",
+     "year": "2026",
+     "inds": [
+      "认知障碍/痴呆"
+     ]
+    }
+   ]
+  },
+  "dbs": {
+   "key": "dbs",
+   "cn": "脑深部电刺激",
+   "en": "DBS",
+   "cat": "侵入性神经调控",
+   "stats": {
+    "papers": 131,
+    "cochrane": 7,
+    "rct": 75,
+    "sr": 90,
+    "ma": 32,
+    "nma": 5
+   },
+   "inds": [
+    {
+     "key": "ocd",
+     "cn": "强迫症",
+     "n": 19
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 18
+    },
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 18
+    },
+    {
+     "key": "trd",
+     "cn": "难治性抑郁",
+     "n": 18
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 18
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 17
+    },
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 16
+    },
+    {
+     "key": "insomnia",
+     "cn": "失眠",
+     "n": 11
+    },
+    {
+     "key": "sud",
+     "cn": "物质使用障碍",
+     "n": 10
+    },
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 8
+    },
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 7
+    },
+    {
+     "key": "asd",
+     "cn": "孤独症谱系",
+     "n": 6
+    },
+    {
+     "key": "bd_dep",
+     "cn": "双相抑郁",
+     "n": 4
+    },
+    {
+     "key": "adhd",
+     "cn": "注意缺陷多动",
+     "n": 2
+    },
+    {
+     "key": "scz_neg",
+     "cn": "精分·阴性症状",
+     "n": 1
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "15674941",
+     "title": "Botulinum toxin type B for cervical dystonia.",
+     "year": "2005",
+     "doi": "",
+     "conclusion": "A single injection of BtB was effective and safe for treating cervical dystonia. Long-term uncontrolled studies suggested that further injection cycles continue to work for most patients. Future research should explore technical factors such as the optimum treatment intervals and use of image or electromyographic guidance for administration.",
+     "hint": "作者报告阳性结果；仍需结合 GRADE 与偏倚风险判断·待核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "24937707",
+     "title": "Deep brain and cortical stimulation for epilepsy.",
+     "year": "2014",
+     "doi": "",
+     "conclusion": "Only short term RCTs on intracranial neurostimulation for epilepsy are available. Compared to sham stimulation, one to three months of anterior thalamic DBS ((multi)focal epilepsy), responsive ictal onset zone stimulation ((multi)focal epilepsy) and hippocampal DBS (temporal lobe epilepsy) moderately reduce seizure frequency in refractory epilepsy patients.",
+     "hint": "结论摘要见英文原文；中文要点待人工核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "28718878",
+     "title": "Deep brain and cortical stimulation for epilepsy.",
+     "year": "2017",
+     "doi": "",
+     "conclusion": "Except for one very small RCT, only short-term RCTs on intracranial neurostimulation for epilepsy are available. Compared to sham stimulation, one to three months of anterior thalamic DBS ((multi)focal epilepsy), responsive ictal onset zone stimulation ((multi)focal epilepsy) and hippocampal DBS (temporal lobe epilepsy) moderately reduce seizure frequency in refractory epilepsy patients.",
+     "hint": "结论摘要见英文原文；中文要点待人工核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "25267890",
+     "title": "Interventions for obsessive compulsive symptoms in people with schizophrenia.",
+     "year": "2005",
+     "doi": "",
+     "conclusion": "",
+     "hint": "无明确结论段；待读原文",
+     "cautious": 0,
+     "ind": "ocd",
+     "ind_cn": "强迫症"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "41562412",
+     "title": "Rehabilitation interventions for oropharyngeal dysphagia in people with Parkinson's disease.",
+     "year": "2026",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "30629283",
+     "title": "Deep brain stimulation for dystonia.",
+     "year": "2019",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "28718878",
+     "title": "Deep brain and cortical stimulation for epilepsy.",
+     "year": "2017",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "24937707",
+     "title": "Deep brain and cortical stimulation for epilepsy.",
+     "year": "2014",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "15674941",
+     "title": "Botulinum toxin type B for cervical dystonia.",
+     "year": "2005",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "41074616",
+     "title": "Seizure outcomes in persons with autism spectrum disorder undergoing epilepsy surgery: A systematic review and meta-analysis.",
+     "year": "2026",
+     "inds": [
+      "孤独症谱系"
+     ]
+    },
+    {
+     "pmid": "41511668",
+     "title": "Effects of deep brain stimulation on non-motor symptoms in Parkinson's disease: insights from longitudinal studies using consistent evaluation scales.",
+     "year": "2026",
+     "inds": [
+      "失眠"
+     ]
+    },
+    {
+     "pmid": "41702753",
+     "title": "Deep brain stimulation beyond Motor control: A systematic review and meta-analysis of sleep outcomes in Parkinson's disease.",
+     "year": "2026",
+     "inds": [
+      "失眠"
+     ]
+    },
+    {
+     "pmid": "39647323",
+     "title": "Subthalamic nucleus versus globus pallidus internus deep brain stimulation in the treatment of dystonia: A systematic review and meta-analysis of safety and efficacy.",
+     "year": "2025",
+     "inds": [
+      "焦虑障碍"
+     ]
+    },
+    {
+     "pmid": "38086901",
+     "title": "A systematic review and meta-analysis of neuromodulation therapies for substance use disorders.",
+     "year": "2024",
+     "inds": [
+      "物质使用障碍"
+     ]
+    },
+    {
+     "pmid": "38296058",
+     "title": "Outcome differences between males and females undergoing deep brain stimulation for treatment-resistant depression: systematic review and individual patient data meta-analysis.",
+     "year": "2024",
+     "inds": [
+      "重性抑郁",
+      "难治性抑郁"
+     ]
+    },
+    {
+     "pmid": "38688785",
+     "title": "Efficacy of deep brain stimulation for Tourette syndrome and its comorbidities: A meta-analysis.",
+     "year": "2024",
+     "inds": [
+      "焦虑障碍"
+     ]
+    }
+   ]
+  },
+  "tpbm": {
+   "key": "tpbm",
+   "cn": "经颅光生物调节",
+   "en": "tPBM",
+   "cat": "其他物理手段",
+   "stats": {
+    "papers": 82,
+    "cochrane": 22,
+    "rct": 40,
+    "sr": 49,
+    "ma": 21,
+    "nma": 2
+   },
+   "inds": [
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 22
+    },
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 18
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 12
+    },
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 12
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 11
+    },
+    {
+     "key": "insomnia",
+     "cn": "失眠",
+     "n": 7
+    },
+    {
+     "key": "adhd",
+     "cn": "注意缺陷多动",
+     "n": 2
+    },
+    {
+     "key": "asd",
+     "cn": "孤独症谱系",
+     "n": 2
+    },
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 1
+    },
+    {
+     "key": "ocd",
+     "cn": "强迫症",
+     "n": 1
+    },
+    {
+     "key": "sud",
+     "cn": "物质使用障碍",
+     "n": 1
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 1
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "16625582",
+     "title": "Low level laser therapy for treating tuberculosis.",
+     "year": "2006",
+     "doi": "",
+     "conclusion": "The use of low level laser therapy for treating tuberculosis is still not supported by reliable evidence. Researchers need to focus on conducting well-designed randomized controlled trials to justify the continued participation of volunteers for studies of this experimental intervention.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "17443572",
+     "title": "Low level laser therapy for nonspecific low-back pain.",
+     "year": "2007",
+     "doi": "",
+     "conclusion": "No side effects were reported. However, we conclude that there are insufficient data to draw firm conclusions. There is a need for further methodologically rigorous RCTs to evaluate the effects of LLLT compared to other treatments, different lengths of treatment, different wavelengths and different dosages. Comparison of different LLLT treatments will be more reasonable if dose calculation methods are harmonized.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "17943838",
+     "title": "WITHDRAWN: Low level laser therapy for nonspecific low-back pain.",
+     "year": "2007",
+     "doi": "",
+     "conclusion": "No side effects were reported. However, we conclude that there are insufficient data to draw firm conclusions. There is a need for further methodologically rigorous RCTs to evaluate the effects of LLLT compared to other treatments, different lengths of treatment, different wavelengths and different dosages. Comparison of different LLLT treatments will be more reasonable if dose calculation methods are harmonized.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "40704566",
+     "title": "Transcranial laser therapy for acute ischaemic stroke.",
+     "year": "2025",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "27225981",
+     "title": "Interventions for female pattern hair loss.",
+     "year": "2016",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "28009052",
+     "title": "Non-pharmacological interventions for alleviating pain during orthodontic treatment.",
+     "year": "2016",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "26252373",
+     "title": "Interventions for prevention of herpes simplex labialis (cold sores on the lips).",
+     "year": "2015",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "25271097",
+     "title": "Electrotherapy modalities for adhesive capsulitis (frozen shoulder).",
+     "year": "2014",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "23543580",
+     "title": "Therapeutic ultrasound for carpal tunnel syndrome.",
+     "year": "2013",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "22259004",
+     "title": "Therapeutic ultrasound for carpal tunnel syndrome.",
+     "year": "2012",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "18425909",
+     "title": "Low level laser therapy for nonspecific low-back pain.",
+     "year": "2008",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "17443572",
+     "title": "Low level laser therapy for nonspecific low-back pain.",
+     "year": "2007",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "16235295",
+     "title": "Low level laser therapy (Classes I, II and III) for treating rheumatoid arthritis.",
+     "year": "2005",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "12804422",
+     "title": "Low level laser therapy (Classes I, II and III) for treating osteoarthritis.",
+     "year": "2003",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "37339352",
+     "title": "Non-surgical adjunctive interventions for accelerating tooth movement in patients undergoing orthodontic treatment.",
+     "year": "2023",
+     "inds": [
+      "*"
+     ]
+    }
+   ]
+  },
+  "tacs": {
+   "key": "tacs",
+   "cn": "经颅交流电刺激",
+   "en": "tACS",
+   "cat": "无创神经调控",
+   "stats": {
+    "papers": 74,
+    "cochrane": 3,
+    "rct": 59,
+    "sr": 36,
+    "ma": 17,
+    "nma": 0
+   },
+   "inds": [
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 18
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 15
+    },
+    {
+     "key": "insomnia",
+     "cn": "失眠",
+     "n": 9
+    },
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 7
+    },
+    {
+     "key": "scz_pos",
+     "cn": "精分·阳性症状",
+     "n": 6
+    },
+    {
+     "key": "scz_cog",
+     "cn": "精分·认知症状",
+     "n": 6
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 5
+    },
+    {
+     "key": "avh",
+     "cn": "听幻觉",
+     "n": 5
+    },
+    {
+     "key": "adhd",
+     "cn": "注意缺陷多动",
+     "n": 4
+    },
+    {
+     "key": "ocd",
+     "cn": "强迫症",
+     "n": 4
+    },
+    {
+     "key": "scz_neg",
+     "cn": "精分·阴性症状",
+     "n": 4
+    },
+    {
+     "key": "sud",
+     "cn": "物质使用障碍",
+     "n": 3
+    },
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 3
+    },
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 2
+    },
+    {
+     "key": "bd_dep",
+     "cn": "双相抑郁",
+     "n": 2
+    },
+    {
+     "key": "asd",
+     "cn": "孤独症谱系",
+     "n": 1
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 1
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "23450607",
+     "title": "Gamma aminobutyric acid (GABA) receptor agonists for acute stroke.",
+     "year": "2013",
+     "doi": "",
+     "conclusion": "This review does not provide the evidence to support the use of GABA receptor agonists (chlormethiazole or diazepam) for the treatment of patients with acute ischemic or hemorrhagic stroke. Chlormethiazole appeared to be beneficial in improving functional independence in patients with TACS according to the subgroup analysis, but this result must be interpreted with great caution.",
+     "hint": "作者报告阳性结果；仍需结合 GRADE 与偏倚风险判断·待核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "25097101",
+     "title": "Gamma aminobutyric acid (GABA) receptor agonists for acute stroke.",
+     "year": "2014",
+     "doi": "",
+     "conclusion": "This review does not provide the evidence to support the use of GABA receptor agonists (chlormethiazole or diazepam) for the treatment of patients with acute ischemic or hemorrhagic stroke. Chlormethiazole appeared to be beneficial in improving functional independence in patients with TACS according to the subgroup analysis, but this result must be interpreted with great caution.",
+     "hint": "作者报告阳性结果；仍需结合 GRADE 与偏倚风险判断·待核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "30376593",
+     "title": "Gamma aminobutyric acid (GABA) receptor agonists for acute stroke.",
+     "year": "2018",
+     "doi": "",
+     "conclusion": "This review provides moderate-quality evidence that fails to support the use of GABA receptor agonists (chlormethiazole or diazepam) for the treatment of people with acute stroke. More well-designed RCTs with large samples of participants with total anterior circulation syndrome are required to determine if there are benefits for this subgroup. Somnolence and rhinitis are frequent adverse events related to chlormethiazole.",
+     "hint": "结论含局限性提示（样本量小/质量不一）；系统标注·待人工核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "30376593",
+     "title": "Gamma aminobutyric acid (GABA) receptor agonists for acute stroke.",
+     "year": "2018",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "25097101",
+     "title": "Gamma aminobutyric acid (GABA) receptor agonists for acute stroke.",
+     "year": "2014",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "23450607",
+     "title": "Gamma aminobutyric acid (GABA) receptor agonists for acute stroke.",
+     "year": "2013",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "42880603",
+     "title": "Transcranial alternating current stimulation for major depressive disorder: An updated systematic review and meta-analysis of randomized trials with GRADE assessment.",
+     "year": "2027",
+     "inds": [
+      "重性抑郁"
+     ]
+    },
+    {
+     "pmid": "41520839",
+     "title": "A systematic review of transcranial electrical stimulation and meta-analysis of transcranial direct current stimulation RCTs in unipolar and bipolar depression.",
+     "year": "2026",
+     "inds": [
+      "双相抑郁",
+      "重性抑郁"
+     ]
+    },
+    {
+     "pmid": "41714994",
+     "title": "Transcranial alternating current stimulation for chronic insomnia: a meta-analytic evaluation of sleep restoration and safety in adults.",
+     "year": "2026",
+     "inds": [
+      "失眠"
+     ]
+    },
+    {
+     "pmid": "42575228",
+     "title": "Efficacy of transcranial alternating current stimulation for musculoskeletal pain and sleep quality: a systematic review and meta-analysis.",
+     "year": "2026",
+     "inds": [
+      "失眠",
+      "慢性疼痛/纤维肌痛"
+     ]
+    },
+    {
+     "pmid": "42809063",
+     "title": "Efficacy of transcranial alternating current stimulation on cognitive function in patients with dementia: a systematic review and meta-analysis of randomized controlled trials.",
+     "year": "2026",
+     "inds": [
+      "认知障碍/痴呆"
+     ]
+    },
+    {
+     "pmid": "42957087",
+     "title": "Transcranial alternating current stimulation as psychiatric intervention: A meta-analytic primer.",
+     "year": "2026",
+     "inds": [
+      "焦虑障碍",
+      "强迫症",
+      "创伤后应激"
+     ]
+    },
+    {
+     "pmid": "40531534",
+     "title": "Transcranial Electrical Stimulation in Treatment of Depression: A Systematic Review and Meta-Analysis.",
+     "year": "2025",
+     "inds": [
+      "重性抑郁"
+     ]
+    },
+    {
+     "pmid": "38779808",
+     "title": "Can non-invasive brain stimulation modulate peak alpha frequency in the human brain? A systematic review and meta-analysis.",
+     "year": "2024",
+     "inds": [
+      "慢性疼痛/纤维肌痛"
+     ]
+    },
+    {
+     "pmid": "39573866",
+     "title": "The safety and effectiveness of 40 Hz γ-tACS in Alzheimer's disease: A meta-analysis.",
+     "year": "2024",
+     "inds": [
+      "认知障碍/痴呆"
+     ]
+    }
+   ]
+  },
+  "dtms": {
+   "key": "dtms",
+   "cn": "深部经颅磁刺激",
+   "en": "dTMS",
+   "cat": "无创神经调控",
+   "stats": {
+    "papers": 65,
+    "cochrane": 0,
+    "rct": 52,
+    "sr": 38,
+    "ma": 11,
+    "nma": 5
+   },
+   "inds": [
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 18
+    },
+    {
+     "key": "sud",
+     "cn": "物质使用障碍",
+     "n": 12
+    },
+    {
+     "key": "ocd",
+     "cn": "强迫症",
+     "n": 11
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 11
+    },
+    {
+     "key": "trd",
+     "cn": "难治性抑郁",
+     "n": 10
+    },
+    {
+     "key": "bd_dep",
+     "cn": "双相抑郁",
+     "n": 6
+    },
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 5
+    },
+    {
+     "key": "scz_cog",
+     "cn": "精分·认知症状",
+     "n": 5
+    },
+    {
+     "key": "adhd",
+     "cn": "注意缺陷多动",
+     "n": 4
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 3
+    },
+    {
+     "key": "scz_neg",
+     "cn": "精分·阴性症状",
+     "n": 3
+    },
+    {
+     "key": "scz_pos",
+     "cn": "精分·阳性症状",
+     "n": 2
+    },
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 2
+    },
+    {
+     "key": "avh",
+     "cn": "听幻觉",
+     "n": 1
+    }
+   ],
+   "cochrane_cards": [],
+   "top_evidence": [
+    {
+     "pmid": "40204236",
+     "title": "Beyond the Surface: Deep Transcranial Magnetic Stimulation Efficacy in Reducing Craving in Addictive Disorders: A Systematic Review and Meta-Analysis.",
+     "year": "2025",
+     "inds": [
+      "物质使用障碍"
+     ]
+    },
+    {
+     "pmid": "38574492",
+     "title": "Deep transcranial magnetic stimulation for treatment-resistant depression: A systematic review and meta-analysis of randomized controlled studies.",
+     "year": "2024",
+     "inds": [
+      "难治性抑郁"
+     ]
+    },
+    {
+     "pmid": "31863873",
+     "title": "Efficacy and tolerability of deep transcranial magnetic stimulation for treatment-resistant depression: A systematic review and meta-analysis.",
+     "year": "2020",
+     "inds": [
+      "焦虑障碍",
+      "难治性抑郁"
+     ]
+    },
+    {
+     "pmid": "31064328",
+     "title": "Antidepressant outcomes of high-frequency repetitive transcranial magnetic stimulation (rTMS) with F8-coil and deep transcranial magnetic stimulation (DTMS) with H1-coil in major depression: a systematic review and meta-analysis.",
+     "year": "2019",
+     "inds": [
+      "重性抑郁"
+     ]
+    },
+    {
+     "pmid": "31328353",
+     "title": "Effects of repetitive transcranial magnetic stimulation (rTMS) on craving and substance consumption in patients with substance dependence: a systematic review and meta-analysis.",
+     "year": "2019",
+     "inds": [
+      "物质使用障碍"
+     ]
+    },
+    {
+     "pmid": "26321258",
+     "title": "Deep transcranial magnetic stimulation (DTMS) in the treatment of major depression: An exploratory systematic review and meta-analysis.",
+     "year": "2015",
+     "inds": [
+      "重性抑郁"
+     ]
+    },
+    {
+     "pmid": "26616303",
+     "title": "Acute reduction in anxiety after deep transcranial magnetic stimulation (DTMS) in unipolar major depression- a systematic review and meta-analysis.",
+     "year": "2015",
+     "inds": [
+      "重性抑郁"
+     ]
+    },
+    {
+     "pmid": "38528368",
+     "title": "Where alcohol use disorder meets interoception: A meta-analytic view on structural and functional neuroimaging data.",
+     "year": "2024",
+     "inds": [
+      "物质使用障碍"
+     ]
+    },
+    {
+     "pmid": "39383715",
+     "title": "Deep transcranial magnetic stimulation for treatment-resistant obsessive-compulsive disorder: A meta-analysis of randomized-controlled trials.",
+     "year": "2024",
+     "inds": [
+      "强迫症"
+     ]
+    },
+    {
+     "pmid": "33834408",
+     "title": "Current Updates on Newer Forms of Transcranial Magnetic Stimulation in Major Depression.",
+     "year": "2021",
+     "inds": [
+      "重性抑郁"
+     ]
+    },
+    {
+     "pmid": "41491448",
+     "title": "Optimizing non-invasive brain stimulation for obsessive-compulsive disorder: a systematic review of protocol heterogeneity, personalized targets, and adjunctive efficacy.",
+     "year": "2026",
+     "inds": [
+      "强迫症"
+     ]
+    },
+    {
+     "pmid": "42383744",
+     "title": "Repetitive Transcranial Magnetic Stimulation for Major Depressive Disorder: A Systematic Review and Network Meta-Analysis.",
+     "year": "2026",
+     "inds": [
+      "难治性抑郁"
+     ]
+    }
+   ]
+  },
+  "tfus": {
+   "key": "tfus",
+   "cn": "经颅聚焦超声",
+   "en": "tFUS",
+   "cat": "无创神经调控",
+   "stats": {
+    "papers": 12,
+    "cochrane": 0,
+    "rct": 6,
+    "sr": 8,
+    "ma": 2,
+    "nma": 0
+   },
+   "inds": [
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 4
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 3
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 3
+    },
+    {
+     "key": "trd",
+     "cn": "难治性抑郁",
+     "n": 2
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 1
+    },
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 1
+    }
+   ],
+   "cochrane_cards": [],
+   "top_evidence": [
+    {
+     "pmid": "41217021",
+     "title": "Comparison of multiple non-invasive neuromodulation strategies for depressive episodes in major depressive disorder and bipolar disorder: A systematic review and network meta-analysis of randomized controlled trials.",
+     "year": "2026",
+     "inds": [
+      "重性抑郁",
+      "难治性抑郁"
+     ]
+    },
+    {
+     "pmid": "41105071",
+     "title": "Ultrasound Applications in the Treatment of Major Depressive Disorder: A Systematic Review of Techniques and Therapeutic Potentials in Clinical Trials and Animal Model Studies.",
+     "year": "2026",
+     "inds": [
+      "重性抑郁"
+     ]
+    },
+    {
+     "pmid": "41871637",
+     "title": "Transcranial focused ultrasound for emotion regulation: A systematic review and quantitative summary of human studies.",
+     "year": "2026",
+     "inds": [
+      "焦虑障碍"
+     ]
+    },
+    {
+     "pmid": "42014673",
+     "title": "Subcallosal cingulate functional connectivity in depression: a systematic review of brain stimulation-induced changes and pretreatment connectivity predictors.",
+     "year": "2026",
+     "inds": [
+      "自杀意念"
+     ]
+    },
+    {
+     "pmid": "40599994",
+     "title": "Low-intensity focused ultrasound of the spine in the treatment of chronic pain and movement disorder: a scoping review.",
+     "year": "2025",
+     "inds": [
+      "慢性疼痛/纤维肌痛"
+     ]
+    },
+    {
+     "pmid": "41316352",
+     "title": "Neuromodulation effects of low-intensity transcranial focused ultrasound in human, a systematic review focusing on motor and sensory functions.",
+     "year": "2025",
+     "inds": [
+      "慢性疼痛/纤维肌痛"
+     ]
+    },
+    {
+     "pmid": "39165269",
+     "title": "Focused ultrasound therapy for Alzheimer's disease: exploring the potential for targeted amyloid disaggregation.",
+     "year": "2024",
+     "inds": [
+      "认知障碍/痴呆"
+     ]
+    },
+    {
+     "pmid": "40999237",
+     "title": "Reversible modulation of a deep white matter surgical target for depression with low-intensity focused ultrasound.",
+     "year": "2026",
+     "inds": [
+      "重性抑郁",
+      "难治性抑郁"
+     ]
+    },
+    {
+     "pmid": "40241493",
+     "title": "Ultrasound Neuromodulation (Low-Intensity Focused Ultrasound) to Treat Knee Osteoarthritis Pain: A Randomized, Observer- and Participant-Masked, Sham-Controlled, Human-Subjects Pilot Study.",
+     "year": "2025",
+     "inds": [
+      "慢性疼痛/纤维肌痛"
+     ]
+    },
+    {
+     "pmid": "40275098",
+     "title": "Low-intensity transcranial focused ultrasound amygdala neuromodulation: a double-blind sham-controlled target engagement study and unblinded single-arm clinical trial.",
+     "year": "2025",
+     "inds": [
+      "焦虑障碍"
+     ]
+    },
+    {
+     "pmid": "38447773",
+     "title": "Transcranial focused ultrasound of the amygdala modulates fear network activation and connectivity.",
+     "year": "2024",
+     "inds": [
+      "焦虑障碍"
+     ]
+    },
+    {
+     "pmid": "39073370",
+     "title": "Noninvasive targeted modulation of pain circuits with focused ultrasonic waves.",
+     "year": "2024",
+     "inds": [
+      "慢性疼痛/纤维肌痛"
+     ]
+    }
+   ]
+  },
+  "mst": {
+   "key": "mst",
+   "cn": "磁惊厥治疗",
+   "en": "MST",
+   "cat": "抽搐治疗",
+   "stats": {
+    "papers": 32,
+    "cochrane": 2,
+    "rct": 22,
+    "sr": 30,
+    "ma": 11,
+    "nma": 2
+   },
+   "inds": [
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 15
+    },
+    {
+     "key": "trd",
+     "cn": "难治性抑郁",
+     "n": 11
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 9
+    },
+    {
+     "key": "bd_dep",
+     "cn": "双相抑郁",
+     "n": 7
+    },
+    {
+     "key": "scz_cog",
+     "cn": "精分·认知症状",
+     "n": 5
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 3
+    },
+    {
+     "key": "scz_neg",
+     "cn": "精分·阴性症状",
+     "n": 2
+    },
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 2
+    },
+    {
+     "key": "bd_man",
+     "cn": "双相躁狂",
+     "n": 1
+    },
+    {
+     "key": "mci",
+     "cn": "认知障碍/痴呆",
+     "n": 1
+    },
+    {
+     "key": "ocd",
+     "cn": "强迫症",
+     "n": 1
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "34131914",
+     "title": "Magnetic seizure therapy for treatment-resistant depression.",
+     "year": "2021",
+     "doi": "",
+     "conclusion": "Evidence regarding effects of MST on patients with TRD is currently insufficient. Our analyses of available data did not reveal clearly different effects between MST and ECT. We are uncertain about these findings because of risk of bias and imprecision of estimates. Large, long, well-designed, and well-reported trials are needed to further examine the effects of MST.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "suicide",
+     "ind_cn": "自杀意念"
+    },
+    {
+     "pmid": "34131914",
+     "title": "Magnetic seizure therapy for treatment-resistant depression.",
+     "year": "2021",
+     "doi": "",
+     "conclusion": "Evidence regarding effects of MST on patients with TRD is currently insufficient. Our analyses of available data did not reveal clearly different effects between MST and ECT. We are uncertain about these findings because of risk of bias and imprecision of estimates. Large, long, well-designed, and well-reported trials are needed to further examine the effects of MST.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "suicide",
+     "ind_cn": "自杀意念"
+    },
+    {
+     "pmid": "34131914",
+     "title": "Magnetic seizure therapy for treatment-resistant depression.",
+     "year": "2021",
+     "doi": "",
+     "conclusion": "Evidence regarding effects of MST on patients with TRD is currently insufficient. Our analyses of available data did not reveal clearly different effects between MST and ECT. We are uncertain about these findings because of risk of bias and imprecision of estimates. Large, long, well-designed, and well-reported trials are needed to further examine the effects of MST.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "trd",
+     "ind_cn": "难治性抑郁"
+    },
+    {
+     "pmid": "34131914",
+     "title": "Magnetic seizure therapy for treatment-resistant depression.",
+     "year": "2021",
+     "doi": "",
+     "conclusion": "Evidence regarding effects of MST on patients with TRD is currently insufficient. Our analyses of available data did not reveal clearly different effects between MST and ECT. We are uncertain about these findings because of risk of bias and imprecision of estimates. Large, long, well-designed, and well-reported trials are needed to further examine the effects of MST.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "trd",
+     "ind_cn": "难治性抑郁"
+    },
+    {
+     "pmid": "34131914",
+     "title": "Magnetic seizure therapy for treatment-resistant depression.",
+     "year": "2021",
+     "doi": "",
+     "conclusion": "Evidence regarding effects of MST on patients with TRD is currently insufficient. Our analyses of available data did not reveal clearly different effects between MST and ECT. We are uncertain about these findings because of risk of bias and imprecision of estimates. Large, long, well-designed, and well-reported trials are needed to further examine the effects of MST.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "37272857",
+     "title": "Magnetic seizure therapy for people with schizophrenia.",
+     "year": "2023",
+     "doi": "",
+     "conclusion": "Due to the paucity of data, we cannot draw any conclusion on the efficacy and tolerability of MST for people with schizophrenia. Well-designed RCTs are warranted to answer the question.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "37272857",
+     "title": "Magnetic seizure therapy for people with schizophrenia.",
+     "year": "2023",
+     "doi": "",
+     "conclusion": "Due to the paucity of data, we cannot draw any conclusion on the efficacy and tolerability of MST for people with schizophrenia. Well-designed RCTs are warranted to answer the question.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "scz_cog",
+     "ind_cn": "精分·认知症状"
+    },
+    {
+     "pmid": "37272857",
+     "title": "Magnetic seizure therapy for people with schizophrenia.",
+     "year": "2023",
+     "doi": "",
+     "conclusion": "Due to the paucity of data, we cannot draw any conclusion on the efficacy and tolerability of MST for people with schizophrenia. Well-designed RCTs are warranted to answer the question.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "scz_cog",
+     "ind_cn": "精分·认知症状"
+    },
+    {
+     "pmid": "37272857",
+     "title": "Magnetic seizure therapy for people with schizophrenia.",
+     "year": "2023",
+     "doi": "",
+     "conclusion": "Due to the paucity of data, we cannot draw any conclusion on the efficacy and tolerability of MST for people with schizophrenia. Well-designed RCTs are warranted to answer the question.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "scz_neg",
+     "ind_cn": "精分·阴性症状"
+    },
+    {
+     "pmid": "37272857",
+     "title": "Magnetic seizure therapy for people with schizophrenia.",
+     "year": "2023",
+     "doi": "",
+     "conclusion": "Due to the paucity of data, we cannot draw any conclusion on the efficacy and tolerability of MST for people with schizophrenia. Well-designed RCTs are warranted to answer the question.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "scz_neg",
+     "ind_cn": "精分·阴性症状"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "37272857",
+     "title": "Magnetic seizure therapy for people with schizophrenia.",
+     "year": "2023",
+     "inds": [
+      "精分·认知症状",
+      "精分·认知症状",
+      "精分·阴性症状",
+      "精分·阴性症状"
+     ]
+    },
+    {
+     "pmid": "34131914",
+     "title": "Magnetic seizure therapy for treatment-resistant depression.",
+     "year": "2021",
+     "inds": [
+      "自杀意念",
+      "自杀意念",
+      "难治性抑郁",
+      "难治性抑郁"
+     ]
+    },
+    {
+     "pmid": "39654297",
+     "title": "Magnetic Seizure Therapy in Refractory Psychiatric Disorders: A Systematic Review and Meta-Analysis: La thérapie par convulsions magnétiques pour la prise en charge des troubles psychiatriques réfractaires : revue systématique et méta-analyse.",
+     "year": "2025",
+     "inds": [
+      "双相抑郁",
+      "强迫症",
+      "精分·认知症状",
+      "自杀意念"
+     ]
+    },
+    {
+     "pmid": "34762330",
+     "title": "Pharmacological and somatic treatment effects on suicide in adults: A systematic review and meta-analysis.",
+     "year": "2022",
+     "inds": [
+      "双相抑郁",
+      "自杀意念"
+     ]
+    },
+    {
+     "pmid": "34420033",
+     "title": "Comparative efficacy and cognitive function of magnetic seizure therapy vs. electroconvulsive therapy for major depressive disorder: a systematic review and meta-analysis.",
+     "year": "2021",
+     "inds": [
+      "重性抑郁"
+     ]
+    },
+    {
+     "pmid": "33834408",
+     "title": "Current Updates on Newer Forms of Transcranial Magnetic Stimulation in Major Depression.",
+     "year": "2021",
+     "inds": [
+      "重性抑郁"
+     ]
+    },
+    {
+     "pmid": "27486154",
+     "title": "Canadian Network for Mood and Anxiety Treatments (CANMAT) 2016 Clinical Guidelines for the Management of Adults with Major Depressive Disorder: Section 4. Neurostimulation Treatments.",
+     "year": "2016",
+     "inds": [
+      "焦虑障碍",
+      "重性抑郁",
+      "难治性抑郁"
+     ]
+    },
+    {
+     "pmid": "42389389",
+     "title": "Comparative efficacy and cognitive safety of magnetic seizure therapy and electroconvulsive therapy in major depressive disorder: a systematic review and meta-analysis.",
+     "year": "2026",
+     "inds": [
+      "重性抑郁"
+     ]
+    },
+    {
+     "pmid": "39710605",
+     "title": "Magnetic seizure therapy for unipolar and bipolar depression: An up to date systematic review.",
+     "year": "2025",
+     "inds": [
+      "双相抑郁",
+      "难治性抑郁"
+     ]
+    },
+    {
+     "pmid": "41249146",
+     "title": "Neurophysiological biomarkers of treatment response in suicidal ideation: a systematic review.",
+     "year": "2025",
+     "inds": [
+      "自杀意念"
+     ]
+    },
+    {
+     "pmid": "41437758",
+     "title": "Rethinking Treatment-Resistant Depression: A Systematic Review of Novel Therapeutic Strategies and Precision Medicine Approaches.",
+     "year": "2025",
+     "inds": [
+      "难治性抑郁"
+     ]
+    },
+    {
+     "pmid": "33610609",
+     "title": "Clinical effectiveness of non-TMS neurostimulation in depression: Clinical trials from 2010 to 2020.",
+     "year": "2021",
+     "inds": [
+      "重性抑郁",
+      "难治性抑郁"
+     ]
+    }
+   ]
+  },
+  "hbot": {
+   "key": "hbot",
+   "cn": "高压氧",
+   "en": "HBOT",
+   "cat": "其他物理手段",
+   "stats": {
+    "papers": 38,
+    "cochrane": 3,
+    "rct": 27,
+    "sr": 33,
+    "ma": 15,
+    "nma": 1
+   },
+   "inds": [
+    {
+     "key": "ptsd",
+     "cn": "创伤后应激",
+     "n": 17
+    },
+    {
+     "key": "anxiety",
+     "cn": "焦虑障碍",
+     "n": 15
+    },
+    {
+     "key": "insomnia",
+     "cn": "失眠",
+     "n": 12
+    },
+    {
+     "key": "asd",
+     "cn": "孤独症谱系",
+     "n": 6
+    },
+    {
+     "key": "suicide",
+     "cn": "自杀意念",
+     "n": 4
+    },
+    {
+     "key": "*",
+     "cn": "*",
+     "n": 3
+    },
+    {
+     "key": "mdd",
+     "cn": "重性抑郁",
+     "n": 2
+    },
+    {
+     "key": "pain",
+     "cn": "慢性疼痛/纤维肌痛",
+     "n": 2
+    }
+   ],
+   "cochrane_cards": [
+    {
+     "pmid": "27737490",
+     "title": "Hyperbaric oxygen therapy for people with autism spectrum disorder (ASD).",
+     "year": "2016",
+     "doi": "",
+     "conclusion": "To date, there is no evidence that hyperbaric oxygen therapy improves core symptoms and associated symptoms of ASD. It is important to note that adverse effects (minor-grade ear barotrauma events) can occur. Given the absence of evidence of effectiveness and the limited biological plausibility and possible adverse effects, the need for future RCTs of hyperbaric oxygen therapy must be carefully considered.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "27737490",
+     "title": "Hyperbaric oxygen therapy for people with autism spectrum disorder (ASD).",
+     "year": "2016",
+     "doi": "",
+     "conclusion": "To date, there is no evidence that hyperbaric oxygen therapy improves core symptoms and associated symptoms of ASD. It is important to note that adverse effects (minor-grade ear barotrauma events) can occur. Given the absence of evidence of effectiveness and the limited biological plausibility and possible adverse effects, the need for future RCTs of hyperbaric oxygen therapy must be carefully considered.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    },
+    {
+     "pmid": "27737490",
+     "title": "Hyperbaric oxygen therapy for people with autism spectrum disorder (ASD).",
+     "year": "2016",
+     "doi": "",
+     "conclusion": "To date, there is no evidence that hyperbaric oxygen therapy improves core symptoms and associated symptoms of ASD. It is important to note that adverse effects (minor-grade ear barotrauma events) can occur. Given the absence of evidence of effectiveness and the limited biological plausibility and possible adverse effects, the need for future RCTs of hyperbaric oxygen therapy must be carefully considered.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "anxiety",
+     "ind_cn": "焦虑障碍"
+    },
+    {
+     "pmid": "27737490",
+     "title": "Hyperbaric oxygen therapy for people with autism spectrum disorder (ASD).",
+     "year": "2016",
+     "doi": "",
+     "conclusion": "To date, there is no evidence that hyperbaric oxygen therapy improves core symptoms and associated symptoms of ASD. It is important to note that adverse effects (minor-grade ear barotrauma events) can occur. Given the absence of evidence of effectiveness and the limited biological plausibility and possible adverse effects, the need for future RCTs of hyperbaric oxygen therapy must be carefully considered.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "asd",
+     "ind_cn": "孤独症谱系"
+    },
+    {
+     "pmid": "27737490",
+     "title": "Hyperbaric oxygen therapy for people with autism spectrum disorder (ASD).",
+     "year": "2016",
+     "doi": "",
+     "conclusion": "To date, there is no evidence that hyperbaric oxygen therapy improves core symptoms and associated symptoms of ASD. It is important to note that adverse effects (minor-grade ear barotrauma events) can occur. Given the absence of evidence of effectiveness and the limited biological plausibility and possible adverse effects, the need for future RCTs of hyperbaric oxygen therapy must be carefully considered.",
+     "hint": "证据不足/样本有限，作者结论谨慎；系统标注·待人工核验",
+     "cautious": 1,
+     "ind": "asd",
+     "ind_cn": "孤独症谱系"
+    },
+    {
+     "pmid": "23235612",
+     "title": "Hyperbaric oxygen therapy for the adjunctive treatment of traumatic brain injury.",
+     "year": "2012",
+     "doi": "",
+     "conclusion": "In people with traumatic brain injury, while the addition of HBOT may reduce the risk of death and improve the final GCS, there is little evidence that the survivors have a good outcome. The improvement of 2.68 points in GCS is difficult to interpret.",
+     "hint": "结论摘要见英文原文；中文要点待人工核验",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    },
+    {
+     "pmid": "23235612",
+     "title": "Hyperbaric oxygen therapy for the adjunctive treatment of traumatic brain injury.",
+     "year": "2012",
+     "doi": "",
+     "conclusion": "In people with traumatic brain injury, while the addition of HBOT may reduce the risk of death and improve the final GCS, there is little evidence that the survivors have a good outcome. The improvement of 2.68 points in GCS is difficult to interpret.",
+     "hint": "结论摘要见英文原文；中文要点待人工核验",
+     "cautious": 0,
+     "ind": "suicide",
+     "ind_cn": "自杀意念"
+    },
+    {
+     "pmid": "23235612",
+     "title": "Hyperbaric oxygen therapy for the adjunctive treatment of traumatic brain injury.",
+     "year": "2012",
+     "doi": "",
+     "conclusion": "In people with traumatic brain injury, while the addition of HBOT may reduce the risk of death and improve the final GCS, there is little evidence that the survivors have a good outcome. The improvement of 2.68 points in GCS is difficult to interpret.",
+     "hint": "结论摘要见英文原文；中文要点待人工核验",
+     "cautious": 0,
+     "ind": "suicide",
+     "ind_cn": "自杀意念"
+    },
+    {
+     "pmid": "15495120",
+     "title": "Hyperbaric oxygen therapy for the adjunctive treatment of traumatic brain injury.",
+     "year": "2004",
+     "doi": "",
+     "conclusion": "",
+     "hint": "无明确结论段；待读原文",
+     "cautious": 0,
+     "ind": "*",
+     "ind_cn": "综合/未分型"
+    }
+   ],
+   "top_evidence": [
+    {
+     "pmid": "23235612",
+     "title": "Hyperbaric oxygen therapy for the adjunctive treatment of traumatic brain injury.",
+     "year": "2012",
+     "inds": [
+      "自杀意念",
+      "自杀意念",
+      "*"
+     ]
+    },
+    {
+     "pmid": "15495120",
+     "title": "Hyperbaric oxygen therapy for the adjunctive treatment of traumatic brain injury.",
+     "year": "2004",
+     "inds": [
+      "*"
+     ]
+    },
+    {
+     "pmid": "27737490",
+     "title": "Hyperbaric oxygen therapy for people with autism spectrum disorder (ASD).",
+     "year": "2016",
+     "inds": [
+      "焦虑障碍",
+      "焦虑障碍",
+      "孤独症谱系",
+      "孤独症谱系"
+     ]
+    },
+    {
+     "pmid": "42086508",
+     "title": "Non-pharmacologic therapies for sleep disturbances after traumatic brain injury: a systematic review and meta-analysis.",
+     "year": "2026",
+     "inds": [
+      "失眠"
+     ]
+    },
+    {
+     "pmid": "42169234",
+     "title": "Effectiveness and safety of hyperbaric oxygen therapy for psychiatric disorders: A systematic review and meta-analysis.",
+     "year": "2026",
+     "inds": [
+      "焦虑障碍",
+      "重性抑郁",
+      "创伤后应激"
+     ]
+    },
+    {
+     "pmid": "42575227",
+     "title": "Effectiveness of hyperbaric oxygen in traumatic brain injury patients: A systematic review and meta-analysis.",
+     "year": "2026",
+     "inds": [
+      "失眠",
+      "创伤后应激"
+     ]
+    },
+    {
+     "pmid": "39571556",
+     "title": "Hyperbaric Oxygen Therapy Improves Motor Symptoms, Sleep, and Cognitive Dysfunctions in Parkinson's Disease.",
+     "year": "2025",
+     "inds": [
+      "失眠"
+     ]
+    },
+    {
+     "pmid": "39763449",
+     "title": "Effect of hyperbaric oxygen therapy for non-motor symptoms among patients with Parkinson's disease: A systematic review and meta-analysis.",
+     "year": "2025",
+     "inds": [
+      "焦虑障碍",
+      "失眠"
+     ]
+    },
+    {
+     "pmid": "39826608",
+     "title": "The effectiveness of hyperbaric oxygen therapy in children and adolescents and with autism spectrum disorders: A systematic review and meta-analysis.",
+     "year": "2025",
+     "inds": [
+      "孤独症谱系"
+     ]
+    },
+    {
+     "pmid": "26746238",
+     "title": "Hyperbaric oxygen therapy for the treatment of traumatic brain injury: a meta-analysis.",
+     "year": "2016",
+     "inds": [
+      "创伤后应激"
+     ]
+    },
+    {
+     "pmid": "41851059",
+     "title": "Treatment of Sleep Disorders Following Traumatic Brain Injury: A Systematic Review and Network Meta-Analysis.",
+     "year": "2026",
+     "inds": [
+      "失眠"
+     ]
+    },
+    {
+     "pmid": "38266762",
+     "title": "Effectiveness of Behavioral and Pharmacologic Interventions for Depressive Symptoms After Spinal Cord Injury: Findings From a Systematic Review.",
+     "year": "2024",
+     "inds": [
+      "重性抑郁"
+     ]
+    }
+   ]
+  }
+ }
+}

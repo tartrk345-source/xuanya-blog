@@ -55,6 +55,15 @@ const TOOLS: ToolMeta[] = [
     meta: ['76 种', '3,240 篇', '十关探索'],
     external: true,
   },
+  {
+    to: '/pt-atlas/index.html',
+    title: '精神科物理治疗文献库',
+    subtitle: '神经调控的证据，一张一张读明白',
+    icon: '🧠',
+    desc: '18 种物理治疗技术的证据矩阵、靶点地图、设备线圈比较；两篇真实文献的深度精读卡——20 模块、全文英中对照、关键表格，边读边核对原文。',
+    meta: ['18 技术', '2,103 篇', '深度精读'],
+    external: true,
+  },
 ];
 
 export default function ToolsPage() {
@@ -62,7 +71,7 @@ export default function ToolsPage() {
     <div className="min-h-screen bg-[#FEFAF9] dark:bg-[#0A0E1A] text-[#313131] dark:text-[#E2E8F0] font-['PingFang_SC','Microsoft_YaHei','Noto_Sans_SC',sans-serif] transition-colors duration-300">
       <Helmet>
         <title>自助工具 — 玄牙</title>
-        <meta name="description" content="基于积极心理治疗的自助测评工具：压力应对测评、平衡模型自评、资源图谱（十种能力）、WIPPF 威斯巴登问卷；另含植物精油文献库（76 种精油、3,240 篇中英文文献）。可在线使用，即时出结果，数据不上传。" />
+        <meta name="description" content="基于积极心理治疗的自助测评工具：压力应对测评、平衡模型自评、资源图谱（十种能力）、WIPPF 威斯巴登问卷；另含植物精油文献库与精神科物理治疗文献库（含真实文献深度精读卡）。可在线使用，即时出结果，数据不上传。" />
         <meta property="og:title" content="自助工具 — 玄牙" />
         <meta property="og:description" content="基于积极心理治疗的自助测评工具，可在线填写并即时出结果。" />
         <meta property="og:url" content="https://www.x2ya.com/tools" />
@@ -90,7 +99,7 @@ export default function ToolsPage() {
             所有作答只留在你自己的浏览器里，不上传、不保存。
           </p>
           <p className="text-sm text-[#B8B4B0] dark:text-[#94A3B8] max-w-[620px] leading-relaxed mb-12">
-            最后一个「植物精油文献库」是另一个方向：不填表，用来查证据——每种精油有多少篇文献、证据强不强。
+            最后两个是「文献库」方向：不填表，用来查证据——植物精油每种有多少篇文献、证据强不强；精神科物理治疗则按技术与靶点整理证据，还能逐张翻阅真实文献的深度精读卡。
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">

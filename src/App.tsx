@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
-import { getGistId } from './utils/gistSync';
 import { ArticleImageLightbox } from './components/CodeBlock';
 import ErrorBoundary from './components/ErrorBoundary';
 
@@ -20,16 +19,18 @@ const ToolWippfPage = lazy(() => import('./pages/ToolWippfPage'));
 import RssFeedPage from './pages/RssPage';
 
 /**
- * 应用启动时检查 Gist 配置状态（不再自动恢复，避免覆盖数据库）
+ * 应用启动：清理旧版 GitHub Gist 同步遗留的本地凭据
+ * 备份已改为服务器本地备份（src/utils/backupSync.ts），这里只做一次性清场
  */
 function SyncInitializer({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    // 仅检查 Gist 是否已配置，不执行恢复
-    // 恢复操作由用户在设置中手动触发
-    if (getGistId()) {
-      console.log('[AutoSync] 检测到云端备份配置，如需恢复请在设置中手动操作');
+    try {
+      localStorage.removeItem('xuanya-blog-github-pat');
+      localStorage.removeItem('xuanya-blog-gist-id');
+    } catch {
+      /* 隐私模式或 localStorage 不可用时忽略 */
     }
     setReady(true);
   }, []);

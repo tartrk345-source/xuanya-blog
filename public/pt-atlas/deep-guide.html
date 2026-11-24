@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 深度精读卡 · 精神科物理治疗</title>
+<meta name="description" content="真实文献的 AI 精读卡：20 模块数据直给 + 原文溯源 + 全文英中对照 + 关键表格 + 全站同步清单。">
+<link rel="stylesheet" href="styles.css?v=20261124k">
+<style>
+/* 深度精读卡专用样式（类名前缀 dg-，与站点 pt- 隔离） */
+.dg-wrap{max-width:860px;margin:0 auto;padding:0 18px 60px}
+.dg-switcher{display:flex;gap:8px;margin:20px 0 14px;flex-wrap:wrap}
+.dg-switcher button{font-family:inherit;font-size:12.5px;padding:8px 16px;border:1px solid var(--line);border-radius:8px;background:var(--white);color:var(--mid);cursor:pointer;transition:.15s}
+.dg-switcher button:hover{border-color:var(--green);color:var(--green-d)}
+.dg-switcher button.on{background:var(--green-d);color:#fff;border-color:var(--green-d)}
+
+.dg-paper{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:15px 18px;margin-bottom:14px}
+.dg-paper-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:7px}
+.dg-pill{font-size:10.5px;font-weight:600;padding:3px 9px;border-radius:20px}
+.dg-pill.rct{background:var(--green-l);color:var(--green-d)}
+.dg-pill.sr{background:var(--purple-l,#f0edfa);color:var(--purple,#6b5bb5)}
+.dg-pill.stage{background:#eef3f0;color:var(--mid)}
+.dg-paper h1{font-size:16px;margin:0 0 5px;line-height:1.45;color:var(--ink)}
+.dg-paper .en{font-size:11.5px;color:var(--soft);margin:0 0 8px;line-height:1.45}
+.dg-paper .meta{font-size:11px;color:var(--mid);line-height:1.7}
+.dg-paper .meta b{color:var(--ink)}
+
+.dg-deck{background:var(--white);border:1px solid var(--line);border-radius:12px;box-shadow:0 3px 14px rgba(31,92,67,.06);overflow:hidden}
+.dg-tabs{display:flex;gap:4px;background:var(--green-l);padding:6px 8px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.dg-tab{font-family:inherit;font-size:12px;color:var(--mid);background:transparent;border:none;border-radius:6px;padding:7px 13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.15s}
+.dg-tab:hover{background:rgba(255,255,255,.6);color:var(--green-d)}
+.dg-tab.active{background:var(--white);color:var(--green-d);font-weight:600;box-shadow:0 1px 3px rgba(31,92,67,.12)}
+.dg-tab span{font-size:9.5px;background:#dbe6e0;color:var(--mid);border-radius:10px;padding:0 6px;font-weight:600}
+.dg-tab.active span{background:var(--green);color:#fff}
+.dg-card{padding:22px 26px 20px;min-height:230px;animation:dgfade .22s ease}
+@keyframes dgfade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.dg-card-h{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.dg-idx{font-size:10.5px;font-weight:600;color:var(--green-d);background:var(--green-l);border-radius:5px;padding:3px 9px;font-variant-numeric:tabular-nums}
+.dg-group{font-size:10.5px;color:var(--soft)}
+.dg-title{font-size:18px;color:var(--ink);margin:0 0 16px;font-weight:650;line-height:1.5;display:flex;align-items:baseline;gap:10px}
+.dg-title .cn{flex:none;font-size:12px;color:var(--green);font-weight:600;border:1px solid #cfe4d8;border-radius:5px;padding:1px 7px}
+.dg-body{padding-left:2px}
+.dg-val{font-size:13.5px;color:var(--ink);line-height:1.85}
+.dg-val ul{margin:0;padding-left:20px}
+.dg-val li{margin-bottom:7px}
+.dg-val li::marker{color:var(--green)}
+.dg-pico{display:flex;flex-direction:column;gap:7px}
+.dg-pico-row{display:flex;gap:12px;align-items:flex-start;padding:9px 12px;background:var(--bg);border:1px solid var(--line);border-radius:7px}
+.dg-pico-k{flex:none;font-size:11px;font-weight:600;color:var(--green-d);min-width:78px}
+.dg-pico-v{font-size:13px;color:var(--ink);line-height:1.7}
+.dg-fill{background:var(--amber-l);border-left:3px solid var(--amber);border-radius:7px;padding:12px 14px}
+.dg-fill .dg-val{color:#7a5a20}
+
+.dg-src-btn{display:inline-flex;align-items:center;gap:5px;font-family:inherit;font-size:11.5px;color:var(--green-d);background:var(--green-l);border:1px solid #cfe4d8;border-radius:6px;padding:5px 12px;cursor:pointer;margin:16px 0 0;transition:.15s}
+.dg-src-btn:hover{background:var(--green);color:#fff;border-color:var(--green)}
+.dg-src-btn.open{background:var(--green-d);color:#fff}
+.dg-src-panel{margin-top:10px;border-left:3px solid var(--green);background:var(--bg);border-radius:0 8px 8px 0;padding:13px 16px}
+.dg-src-row{margin-bottom:12px}
+.dg-src-row:last-child{margin-bottom:0}
+.dg-src-loc{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--soft);margin-bottom:6px;flex-wrap:wrap}
+.dg-conf{font-size:10px;font-weight:600;padding:1px 7px;border-radius:4px}
+.dg-conf.high{background:#e4f2ea;color:#1f6b45}
+.dg-conf.mid{background:var(--amber-l);color:#8a6318}
+.dg-conf.low{background:#fbe9e7;color:#a63a2b}
+.dg-src-en{font-size:12.5px;color:var(--mid);font-style:italic;line-height:1.65;margin:0 0 6px;padding-left:10px;border-left:2px solid #dbe6e0}
+.dg-src-zh{font-size:12.5px;color:var(--ink);line-height:1.7;margin:0}
+.dg-src-zh b{color:var(--green-d)}
+
+.dg-ft-sec{display:inline-block;font-size:10.5px;font-weight:600;color:var(--green-d);background:var(--green-l);border-radius:5px;padding:3px 10px;margin-bottom:12px}
+.dg-ft-en{font-size:13.5px;color:var(--ink);line-height:1.9;background:#fbfdfc;border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.dg-ft-zh{font-size:13px;color:var(--mid);line-height:1.85;padding:12px 16px;background:var(--bg);border-left:3px solid var(--green);border-radius:0 8px 8px 0}
+.dg-ft-zh b{color:var(--green-d);font-size:11px;margin-right:6px}
+.dg-hw{border-bottom:2px dotted;cursor:help;padding:0 1px}
+.dg-hw.l6{color:#8a6318;border-color:var(--amber)}
+.dg-hw.adv{color:#a2561f;border-color:#d98a4a}
+.dg-hw.term{color:#6b5bb5;border-color:var(--purple,#6b5bb5)}
+.dg-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:10.5px;color:var(--soft);margin-top:14px;padding-top:10px;border-top:1px dashed var(--line)}
+.dg-legend span{display:inline-flex;align-items:center;gap:5px}
+.dg-legend i{width:12px;height:0;border-bottom:2px dotted}
+.dg-legend .i6{border-color:var(--amber)}
+.dg-legend .iadv{border-color:#d98a4a}
+.dg-legend .iterm{border-color:var(--purple,#6b5bb5)}
+.dg-hardlist{margin-top:12px}
+.dg-hardlist summary{font-size:11.5px;color:var(--green-d);cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px}
+.dg-hardlist summary::-webkit-details-marker{display:none}
+.dg-hardlist summary::before{content:'▸';transition:.15s}
+.dg-hardlist[open] summary::before{transform:rotate(90deg)}
+.dg-hard-items{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.dg-hard-item{font-size:10.5px;border-radius:5px;padding:3px 8px;border:1px solid var(--line);background:var(--white)}
+.dg-hard-item b{font-weight:600}
+.dg-hard-item.l6{color:#8a6318;border-color:#ecd6a4;background:#fbf2e2}
+.dg-hard-item.adv{color:#a2561f;border-color:#f0d5bd;background:#fdf3eb}
+.dg-hard-item.term{color:#6b5bb5;border-color:#dcd6f2;background:var(--purple-l,#f0edfa)}
+
+.dg-tb-note{font-size:11px;color:var(--soft);margin-bottom:10px}
+.dg-tb-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+.dg-tb{width:100%;border-collapse:collapse;font-size:12px;min-width:420px}
+.dg-tb th{background:var(--green-d);color:#fff;font-weight:600;font-size:11px;text-align:left;padding:9px 11px;white-space:nowrap}
+.dg-tb td{padding:9px 11px;border-top:1px solid var(--line);color:var(--mid);vertical-align:top;line-height:1.6}
+.dg-tb tr:nth-child(even) td{background:#fafcfb}
+.dg-tb td:first-child{color:var(--ink);font-weight:600}
+.dg-tb-explain{margin-top:12px;background:var(--amber-l);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:12px 14px;font-size:12.5px;color:#7a5a20;line-height:1.75}
+.dg-tb-explain b{color:#7a4f16}
+
+.dg-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 20px;border-top:1px solid var(--line);background:var(--bg);flex-wrap:wrap}
+.dg-foot button{font-family:inherit;font-size:12.5px;padding:8px 16px;border:1px solid var(--line);border-radius:6px;background:var(--white);color:var(--green-d);cursor:pointer;min-width:92px}
+.dg-foot button:hover:not(:disabled){background:var(--green-l)}
+.dg-foot button:disabled{opacity:.4;cursor:not-allowed}
+.dg-foot .next{background:var(--green-d);color:#fff;border-color:var(--green-d)}
+.dg-foot .next:hover{background:var(--green)}
+.dg-progress{font-size:11px;color:var(--mid);text-align:center;flex:1;font-variant-numeric:tabular-nums}
+.dg-progress em{font-style:normal;color:var(--soft);margin-left:8px}
+.dg-dots{display:flex;gap:4px;justify-content:center;margin:12px 0 0;flex-wrap:wrap}
+.dg-dots i{width:7px;height:7px;border-radius:50%;background:#dbe6e0;cursor:pointer;display:block}
+.dg-dots i.on{background:var(--green-d);transform:scale(1.25)}
+
+.dg-sync{margin-top:16px;background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.dg-sync summary{font-size:12.5px;color:var(--green-d);font-weight:600;padding:13px 16px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px}
+.dg-sync summary::-webkit-details-marker{display:none}
+.dg-sync summary::before{content:'▸';font-size:11px;transition:.15s}
+.dg-sync[open] summary::before{transform:rotate(90deg)}
+.dg-sync-body{padding:0 16px 16px}
+.dg-sync-lead{font-size:11.5px;color:var(--soft);line-height:1.7;margin:0 0 12px}
+.dg-sync-t{width:100%;border-collapse:collapse;font-size:11.5px}
+.dg-sync-t th{text-align:left;font-size:10.5px;color:var(--soft);font-weight:600;padding:7px 9px;background:var(--bg);border-bottom:1px solid var(--line)}
+.dg-sync-t td{padding:9px;border-bottom:1px solid var(--line);color:var(--mid);line-height:1.65;vertical-align:top}
+.dg-sync-t td:first-child{white-space:nowrap;color:var(--ink);font-weight:600;font-family:ui-monospace,Consolas,monospace;font-size:10.5px}
+.dg-sync-t td:nth-child(2){white-space:nowrap}
+.dg-op{font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;background:var(--green-l);color:var(--green-d)}
+.dg-op.mod{background:var(--amber-l);color:#8a6318}
+.dg-note{font-size:11px;color:var(--soft);text-align:center;margin-top:20px;line-height:1.8}
+@media(max-width:640px){
+  .dg-wrap{padding:0 12px 40px}
+  .dg-paper{padding:13px 14px}
+  .dg-paper h1{font-size:15px}
+  .dg-card{padding:18px 16px}
+  .dg-title{font-size:16px}
+  .dg-foot button{min-width:0;flex:1;padding:9px 8px}
+  .dg-progress{order:-1;flex-basis:100%;margin-bottom:2px}
+  .dg-pico-row{flex-direction:column;gap:3px}
+  .dg-sync-t td:first-child{white-space:normal}
+  .dg-ft-en{font-size:13px;padding:12px 13px}
+}
+
+/* ===== v0.9 字体放大：精读卡阅读字号整体 +15~20% ===== */
+.dg-card{min-height:270px}
+.dg-title{font-size:21px}
+.dg-title .cn{font-size:13px}
+.dg-val,.dg-ft-en{font-size:16px}
+.dg-ft-zh,.dg-pico-v,.dg-src-en,.dg-src-zh,.dg-tb-explain{font-size:15px}
+.dg-paper h1{font-size:18px}
+.dg-paper .en{font-size:13px}
+.dg-paper .meta{font-size:12px}
+.dg-pill{font-size:11.5px}
+.dg-tab{font-size:13.5px}
+.dg-tab span,.dg-idx,.dg-group{font-size:12px}
+.dg-switcher button{font-size:14px}
+.dg-pico-k,.dg-ft-sec,.dg-progress,.dg-sync-lead,.dg-sync-t{font-size:12.5px}
+.dg-src-btn,.dg-hardlist summary,.dg-sync summary,.dg-foot button{font-size:13.5px}
+.dg-src-loc,.dg-tb-note,.dg-sync-t th,.dg-note{font-size:12px}
+.dg-conf,.dg-op,.dg-legend,.dg-hard-item{font-size:11.5px}
+.dg-tb{font-size:13.5px}
+.dg-tb th{font-size:12.5px}
+.dg-note{line-height:2}
+@media(max-width:640px){
+  .dg-title{font-size:19px}
+  .dg-val,.dg-ft-en{font-size:15.5px}
+  .dg-ft-zh,.dg-src-en,.dg-src-zh{font-size:14.5px}
+  .dg-tab{font-size:12.5px}
+  .dg-paper h1{font-size:16px}
+  .dg-tb-explain{font-size:14px}
+}
+</style>
+</head>
+<body>
+<div class="pt-page">
+
+  <header class="pt-head">
+    <div class="pt-head-inner">
+      <div class="pt-brand">玄牙 · 精神科物理治疗</div>
+      <nav class="pt-tabs"></nav>
+      <span class="pt-ver">v0.9</span>
+    </div>
+  </header>
+
+  <section class="pt-hero">
+    <div class="pt-hero-inner">
+      <div class="pt-kicker">DEEP READING / 精读 · 学习阶梯</div>
+      <h1>AI 深度精读卡</h1>
+      <p class="pt-sub">两篇真实文献的完整精读：<strong>20 模块数据直给</strong>，每条可展开原文位置 / 英文原句 / 中文翻译；再加<strong>全文英中对照</strong>（超四级词标注）与<strong>关键表格</strong>。一次一张，点「下一张」或按 ← → 翻页。</p>
+    </div>
+  </section>
+
+  <main class="pt-main">
+
+    <div class="pt-subtabs" data-group="learn">
+      <a href="learn.html">四级台阶</a>
+      <a href="reading.html">阅读计划 · AI 导览</a>
+      <a href="deep-guide.html">深度精读卡</a>
+    </div>
+
+    <div class="ai-disclose" style="margin-bottom:18px">
+      <span class="ai-badge">AI 生成内容</span>
+      <p>精读数据由 AI 依据文献原文整理，<strong>结论与数值以原文为准</strong>；段落是覆盖主要章节的核心节选（非逐字全文），翻译由 AI 生成，表格仅列可确认数值（以原 PDF 为准）。引用遵循合理使用，原文仅供你核对。</p>
+    </div>
+
+    <div class="dg-switcher" id="dg-switcher"></div>
+    <div id="dg-app"><div class="ev-empty">加载中…</div></div>
+
+    <p class="dg-note">一次一张 · 点「下一张」或按 ← → 翻页 · 全文英文超纲词可悬停看难度与释义<br>书单内点「深度精读」可直接定位到对应文献</p>
+
+  </main>
+
+  <footer class="pt-foot">
+    <span>深度精读卡 v0.9 · 数据来自 ima 知识库真实文献</span>
+    <a href="reading.html">← 阅读计划</a>
+  </footer>
+</div>
+
+<script>window.PT_SITE={ver:'v0.9'};</script>
+<script src="site.js?v=20261124h"></script>
+<script src="deep-guide.js?v=20261124b"></script>
+</body>
+</html>

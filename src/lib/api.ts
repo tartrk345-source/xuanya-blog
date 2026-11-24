@@ -6,6 +6,7 @@
  */
 
 import { SUPABASE_ANON_KEY, buildUrl } from './config';
+import { readAdminToken } from './adminToken';
 const ANON_KEY = SUPABASE_ANON_KEY;
 
 // ----------------------------------------------------------------
@@ -78,6 +79,11 @@ class QueryBuilder {
     try {
       const h: Record<string,string> = { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}`, ...this.extra };
       if (this.body) h['Content-Type'] = 'application/json';
+      // 写操作附加管理员 token（服务端强制校验）
+      if (['POST', 'PATCH', 'DELETE'].includes(this.method)) {
+        const t = readAdminToken();
+        if (t) h['X-Admin-Token'] = t;
+      }
       const res = await fetch(url, { method: this.method, headers: h, body: this.body });
       const cr = res.headers.get('content-range');
       const count = cr ? parseInt(cr.split('/')[1], 10) : undefined;
@@ -109,6 +115,8 @@ class StorageBucket {
         apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}`,
         'Content-Type': opts?.contentType || file.type || 'application/octet-stream',
       };
+      const t = readAdminToken();
+      if (t) h['X-Admin-Token'] = t;
       if (opts?.cacheControl) h['Cache-Control'] = `max-age=${opts.cacheControl}`;
       if (opts?.upsert !== false) h['x-upsert'] = 'true';
       const res = await fetch(buildUrl(`/storage/v1/object/${this.bucket}/${path}`), { method: 'POST', headers: h, body: await file.arrayBuffer() });

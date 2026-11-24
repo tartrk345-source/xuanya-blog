@@ -5,7 +5,7 @@ import type { Article, CategoryKey } from '../types/article';
 import { getPublishedArticles, getAllTags } from '../storage/articleStore';
 import { getCategories, addCategory, updateCategory, deleteCategory, onCategoriesChange, type CategoryItem } from '../storage/categoryStore';
 import { downloadBackup, importArticles, parseBackupFile, hasExportedToday, markExportedToday } from '../utils/export';
-import { syncToGist, restoreFromGist } from '../utils/gistSync';
+import { createServerBackup, restoreFromServerBackup } from '../utils/backupSync';
 import { formatDate, getExcerpt, CATEGORY_ICON_PRESETS, EMOJI_MEANINGS } from '../utils/helpers';
 import { useAdminAuth } from '../hooks/useAdminAuth';
 import Navigation from '../components/Navigation';
@@ -102,22 +102,22 @@ export default function BlogPage() {
     setActiveCategory(prev => (prev === key ? null : key));
   };
 
-  // 管理员：同步/导出/导入
+  // 管理员：备份/导出/导入
   const handleSync = useCallback(async () => {
     setIsSyncing(true); setSyncMessage(null);
     try {
-      const result = await syncToGist();
+      const result = await createServerBackup();
       setSyncMessage({ type: 'success', text: result });
     } catch (e: any) {
-      setSyncMessage({ type: 'error', text: e.message || '同步失败' });
+      setSyncMessage({ type: 'error', text: e.message || '备份失败' });
     } finally { setIsSyncing(false); }
   }, []);
 
   const handleRestore = useCallback(async () => {
-    if (!confirm('将从云端恢复文章，本地新增的文章会被合并，确定继续？')) return;
+    if (!confirm('将从服务器上最新一份备份恢复文章，现有文章会被合并，确定继续？')) return;
     setIsSyncing(true); setSyncMessage(null);
     try {
-      const result = await restoreFromGist();
+      const result = await restoreFromServerBackup();
       setSyncMessage({ type: 'success', text: result });
       refreshArticles();
     } catch (e: any) {
@@ -247,10 +247,10 @@ export default function BlogPage() {
                     ↑ 导入
                   </button>
                   <button onClick={handleSync} disabled={isSyncing} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] hover:border-[#DA583F] transition-all disabled:opacity-40 whitespace-nowrap">
-                    {isSyncing ? '同步中…' : '☁ 同步'}
+                    {isSyncing ? '备份中…' : '💾 备份'}
                   </button>
                   <button onClick={handleRestore} disabled={isSyncing} className="px-3 py-2 text-sm font-medium text-[#4F4F4F] dark:text-[#94A3B8] bg-white dark:bg-[#1E293B] border border-[#ECD8D9] dark:border-[#334155] rounded-lg hover:bg-[#FEF3F0] dark:hover:bg-[#1E293B] hover:border-[#DA583F] transition-all disabled:opacity-40 whitespace-nowrap">
-                    ↳ 恢复
+                    ↺ 恢复
                   </button>
                 </div>
               )}

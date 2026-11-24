@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全景地图 · 精神科物理治疗</title>
+<meta name="description" content="精神科物理治疗证据地图：18 种技术 × 19 个适应症，含技术全景、学习阶梯、证据池与科普导览。">
+<link rel="stylesheet" href="styles.css?v=20261124k">
+</head>
+<body>
+<div class="pt-page">
+
+  <header class="pt-head">
+    <div class="pt-head-inner">
+      <div class="pt-brand">玄牙 · 精神科物理治疗</div>
+      <nav class="pt-tabs"></nav>
+      <span class="pt-ver">v0.3</span>
+    </div>
+  </header>
+
+  <section class="pt-hero">
+    <div class="pt-hero-inner">
+      <div class="pt-kicker">EVIDENCE ATLAS</div>
+      <h1>精神科物理治疗 · 全景地图</h1>
+      <p class="pt-sub">
+        一张给同行、也给我自己用的证据地图。技术按<strong>三圈层</strong>铺开，学习按<strong>四级台阶</strong>逐级深入；
+        颜色深浅只表示文献量，<strong>不代表证据强弱</strong>——判断要往下看证据、看 Cochrane、看阴性结果。
+      </p>
+      <div class="pt-stats" id="pt-stats"></div>
+    </div>
+  </section>
+
+  <main class="pt-main">
+
+    <!-- 三圈层技术地图 -->
+    <section class="pt-section">
+      <div class="pt-section-h">
+        <h2>技术全景 · 三圈层</h2>
+        <span class="pt-sub-inline">不局限 dTMS，BCI 与超声为两大战略主轴</span>
+      </div>
+      <div class="map-wrap">
+        <div class="map-ring strategy">
+          <div class="map-ring-h"><b>未来两大主轴</b><span>脑机接口 ⟷ 超声神经调控（彼此天然耦合）</span></div>
+          <div class="map-chips">
+            <span class="map-chip em">脑机接口 BCI</span>
+            <span class="map-chip">EEG / fNIRS</span>
+            <span class="map-chip">神经反馈</span>
+            <span class="map-chip">解码—调控闭环</span>
+            <span class="map-chip em">超声神经调控</span>
+            <span class="map-chip">tFUS / LIFU / TUS</span>
+            <span class="map-chip">深部核团 · 影像导航</span>
+          </div>
+          <a class="map-link" href="tech.html">查看技术档案 →</a>
+        </div>
+        <div class="map-ring core">
+          <div class="map-ring-h"><b>核心治疗圈</b><span>18 种已建库技术</span></div>
+          <div class="map-chips">
+            <span class="map-chip">rTMS / iTBS / dTMS</span>
+            <span class="map-chip">tDCS / tACS</span>
+            <span class="map-chip">ECT / MST</span>
+            <span class="map-chip">VNS / DBS / CES</span>
+            <span class="map-chip">光照 / 睡眠剥夺</span>
+            <span class="map-chip">运动 / 光生物调节</span>
+            <span class="map-chip">生物反馈 / 针刺 / 高压氧</span>
+          </div>
+        </div>
+        <div class="map-ring health">
+          <div class="map-ring-h"><b>大健康圈</b><span>产业出口 · 数字疗法/可穿戴/睡眠/营养·待逐条补</span></div>
+          <div class="map-chips">
+            <span class="map-chip">运动</span>
+            <span class="map-chip">睡眠</span>
+            <span class="map-chip">营养</span>
+            <span class="map-chip">数字疗法</span>
+            <span class="map-chip">可穿戴监测</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 学习阶梯入口 -->
+    <section class="pt-section">
+      <div class="pt-section-h">
+        <h2>学习阶梯 · 从这里开始</h2>
+        <span class="pt-sub-inline">认识 → 读证据 → 懂机制 → 会产出</span>
+      </div>
+      <div class="pt-grid">
+        <div class="pt-card"><div class="pt-card-kicker">L1 · 认识</div><h3>有哪些技术、各治什么</h3><p>全景地图、术语、安全速查、技术档案目录。</p><a href="learn.html">进入 →</a></div>
+        <div class="pt-card"><div class="pt-card-kicker">L2 · 读证据</div><h3>这个证据有多强</h3><p>分级书单 + AI 阅读导览 + 精读卡片；GRADE、Cochrane、阴性结果。</p><a href="reading.html">进入 →</a></div>
+        <div class="pt-card"><div class="pt-card-kicker">L3 · 懂机制</div><h3>为什么这样刺激、刺激哪里</h3><p>技术档案内的靶点地图（10–20 标准定位）+ 设备线圈比较。</p><a href="targets.html">进入 →</a></div>
+        <div class="pt-card"><div class="pt-card-kicker">L4 · 会产出</div><h3>写出综述 / Meta</h3><p>结构化证据池 + 趋势数据 + 可回溯字段。</p><a href="evidence.html">进入 →</a></div>
+      </div>
+    </section>
+
+    <!-- 趋势雷达 -->
+    <section class="pt-section">
+      <div class="pt-section-h">
+        <h2>趋势雷达</h2>
+        <span class="pt-sub-inline">PubMed 年发文量 · 2005 → 2025 · 文献量≠证据强度</span>
+      </div>
+      <div class="pt-card">
+        <div class="trend-list" id="trend-list"></div>
+        <p style="font-size:11px;color:var(--soft);margin:12px 0 0">数据来自 <code>trend.json</code>（18 技术 × 22 年，396 个数据点）。聚焦超声 tfUS 从 2005 年 1 篇增至 2025 年 201 篇，是增速最快的新兴方向之一。</p>
+      </div>
+    </section>
+
+    <!-- 证据矩阵 -->
+    <section class="pt-section">
+      <div class="pt-section-h">
+        <h2>证据矩阵</h2>
+        <span class="pt-sub-inline">点任意格子看详情 · 表头可横向滚动</span>
+      </div>
+    </section>
+
+    <div class="pt-toolbar">
+      <div class="pt-views" id="pt-views">
+        <button class="pt-view active" type="button" data-view="all">文献量</button>
+        <button class="pt-view" type="button" data-view="cochrane">Cochrane 数</button>
+      </div>
+      <div class="pt-legend" id="pt-legend">
+        <span class="pt-legend-label">文献量</span>
+        <span class="pt-lg" data-lv="0">0</span>
+        <span class="pt-lg" data-lv="1">1–9</span>
+        <span class="pt-lg" data-lv="2">10–49</span>
+        <span class="pt-lg" data-lv="3">50–199</span>
+        <span class="pt-lg" data-lv="4">200+</span>
+      </div>
+      <div class="pt-hint">表头从上到下阅读 · 点击格子看详情</div>
+    </div>
+
+    <div class="pt-table-wrap" id="pt-wrap">
+      <table class="pt-matrix" id="pt-matrix">
+        <thead id="pt-thead"></thead>
+        <tbody id="pt-tbody"></tbody>
+      </table>
+    </div>
+
+    <div class="pt-detail" id="pt-detail" hidden>
+      <div class="pt-detail-head">
+        <div>
+          <div class="pt-detail-kicker" id="pt-d-kicker"></div>
+          <h2 id="pt-d-title"></h2>
+        </div>
+        <button class="pt-detail-close" id="pt-d-close" type="button">关闭</button>
+      </div>
+      <div class="pt-detail-body" id="pt-d-body"></div>
+    </div>
+
+    <section class="pt-note">
+      <h3>怎么读这张表</h3>
+      <ul>
+        <li><strong>技术有包含关系</strong>：iTBS 是 rTMS 的一种模式，两个都看，取更具体的那个。</li>
+        <li><strong>数字不是证据等级</strong>：运动干预-焦虑有七千多篇，是因为两个词都常见，不代表证据更强。</li>
+        <li><strong>空白也是信息</strong>：0 篇可能是没人做、做了没发表、或做了发现没效果——三种情况分开看。</li>
+        <li><strong>「相关」不等于「有效」</strong>：这一列是「有人研究过」，不是「证明有用」。</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="pt-foot">
+    <span>数据源 PubMed / MEDLINE · E-utilities</span>
+    <span id="pt-time"></span>
+    <a href="method.html">检索方法与可靠性 →</a>
+  </footer>
+</div>
+<script>window.PT_SITE={ver:'v0.3'};</script>
+<script src="site.js?v=20261124h"></script>
+<script src="matrix.js?v=20261124c"></script>
+<script src="trend.js?v=20261124c"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'x2ya-v4';
+const CACHE_NAME = 'x2ya-v6';
 const STATIC_ASSETS = [
   '/',
   '/blog',

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>速查工具 · 精神科物理治疗</title>
+<meta name="description" content="术语词典与安全速查，查房门诊即取即用。">
+<link rel="stylesheet" href="styles.css?v=20261124k">
+</head>
+<body>
+<div class="pt-page">
+
+  <header class="pt-head">
+    <div class="pt-head-inner">
+      <div class="pt-brand">玄牙 · 精神科物理治疗</div>
+      <nav class="pt-tabs"></nav>
+      <span class="pt-ver">v0.3</span>
+    </div>
+  </header>
+
+  <section class="pt-hero">
+    <div class="pt-hero-inner">
+      <div class="pt-kicker">QUICK REFERENCE</div>
+      <h1>速查工具</h1>
+      <p class="pt-sub">
+        查房门诊即取即用。<strong>术语层对齐 2025-09 药监局《BCI 医疗器械术语》</strong>；
+        安全速查覆盖 18 种技术，对接 2026 TMS 飞检现实。设备类别与支付类别以当地注册证和医保目录为准。
+      </p>
+    </div>
+  </section>
+
+  <main class="pt-main">
+
+    <section class="pt-section">
+      <div class="pt-section-h"><h2>术语词典</h2><span class="pt-sub-inline">术语 + 英文 + 出处</span></div>
+      <div class="ev-bar"><input type="text" id="qk-q" placeholder="搜索术语…"></div>
+      <div class="qk-grid" id="qk-terms"></div>
+    </section>
+
+    <section class="pt-section">
+      <div class="pt-section-h"><h2>安全速查</h2><span class="pt-sub-inline">禁忌 · 不良事件 · 设备合规 · 支付类别</span></div>
+      <div class="qk-grid" id="qk-safety"></div>
+      <div class="warn" style="margin-top:12px;background:#fbf2e2;border-left:3px solid #b5822f;border-radius:6px;padding:10px 13px;font-size:12px;color:#7a5a20;line-height:1.7">
+        2026-02 起 TMS 进入医保飞检重点；含「磁刺激」注册证百余条但三类证稀少，精神疾病治疗资质有限。
+        支付类别各省差异明显（如辽宁丙类、浙江甲类），以当地医保部门口径为准。本表仅作学习索引，不构成合规结论。
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pt-foot">
+    <span>术语出处：药监局 BCI 术语标准 / 公开文献</span>
+    <a href="scenes.html">← 场景导览</a>
+  </footer>
+</div>
+<script>window.PT_SITE={ver:'v0.3'};</script>
+<script src="site.js?v=20261124h"></script>
+<script src="quick.js?v=20261124d"></script>
+</body>
+</html>

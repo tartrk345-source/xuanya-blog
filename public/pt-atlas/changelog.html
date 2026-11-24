@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>修订记录 · 精神科物理治疗</title>
+<meta name="description" content="网站与数据的公开修订时间线。">
+<link rel="stylesheet" href="styles.css?v=20261124k">
+</head>
+<body>
+<div class="pt-page">
+
+  <header class="pt-head">
+    <div class="pt-head-inner">
+      <div class="pt-brand">玄牙 · 精神科物理治疗</div>
+      <nav class="pt-tabs"></nav>
+      <span class="pt-ver">v0.3</span>
+    </div>
+  </header>
+
+  <section class="pt-hero">
+    <div class="pt-hero-inner">
+      <div class="pt-kicker">CHANGELOG</div>
+      <h1>修订记录</h1>
+      <p class="pt-sub">所有改动公开时间线，不静默修改。发现错误请反馈，核验后更新本页。</p>
+    </div>
+  </section>
+
+  <main class="pt-main">
+    <div class="doc">
+      <ul class="tl">
+        <li>
+          <time>2026-11-24 · v0.9</time>
+          <b>精读卡字体放大 + 接入 x2ya.com</b>
+          <p>精读卡阅读字号整体放大 15–20%（正文 16px、标题 21px、全文英中对照 16/15px，移动端同步放大），两端无溢出。按植物精油文献库模式把本站接入玄牙网站：静态文件部署到 <code>/pt-atlas/</code>（public 与 dist 均已就位），工具页新增「精神科物理治疗文献库」入口卡（<code>external: true</code> 走 <code>&lt;a&gt;</code> 跨应用跳转），页面描述同步更新。</p>
+        </li>
+        <li>
+          <time>2026-11-24 · v0.8</time>
+          <b>深度精读卡正式整合进文献库</b>
+          <p>把 ima 知识库两篇真实文献（OCD dTMS 随机对照、精分 dTMS 系统综述）的完整精读从样例转为正式功能：新增独立页 <code>deep-guide.html</code>（站点统一导航），数据落到 <code>data/deep_guides.json</code>。每篇 <strong>20 模块数据直给</strong>（每条可展开原文位置 / 英文原句 / 中文翻译 / 置信度）+ <strong>全文 13 段英中对照</strong>（超四级词三级配色标注、可展开难词表）+ <strong>关键表格 3 张</strong>（含读表提示）+ <strong>全站同步清单 6 条</strong>。一次一张翻页，分组 tab 跳组、键盘 ← → 翻页、URL 深链定位。书单加入这两篇（注册号/DOI 标识，不伪造 PMID）并新增「深度精读」入口卡。保留原有 19 篇的五步导览不变。按《人工智能生成合成内容标识办法》标注，段落为核心节选非逐字全文、翻译 AI 生成。</p>
+        </li>
+        <li>
+          <time>2026-11-24 · v0.7</time>
+          <b>设备与线圈页排版重做</b>
+          <p>修复分组容器的嵌套网格错位（此前分组标题被拉成超高、卡片挤单列、右侧大片空白）。改为分组标题占满整行（进口绿 / 国产红徽章 + 说明 + 数量），设备卡片均匀铺成多列并等高对齐、顶部色条区分产地，线圈表加斑马纹与更清晰的深度条。桌面 3 列、移动端单列无溢出。</p>
+        </li>
+        <li>
+          <time>2026-11-24 · v0.6</time>
+          <b>布局重构 + 标准靶点图 + 国产设备 + AI 阅读导览</b>
+          <p><strong>布局</strong>：主导航从 10 项收敛为 7 项——阅读计划并入「学习阶梯」、靶点地图与设备线圈并入「技术档案」，各页加页内子视图条切换。<strong>靶点图</strong>：弃用不标准的矢状面手绘图，改用国际 10–20 EEG 头皮定位系统（21 电极 + F3/F4/C3/C4/T3-P3 靶点投影），深部靶点单列。<strong>设备</strong>：新增 5 家国产厂商（武汉奥赛福、深圳艾利特、石家庄渡康、河北格美、深圳英智）与 4 类国产线圈，进口/国产分组陈列，如实标注国产注册范围为「辅助治疗」。<strong>AI 阅读导览</strong>：19 篇文献各配一份五步导览（讲什么/框问题 PICO/盯什么/术语/下判断），弹层交互、可带入精读卡片，按《人工智能生成合成内容标识办法》标注 AI 生成、不编造论文结果。</p>
+        </li>
+        <li>
+          <time>2026-11-24 · v0.5</time>
+          <b>新增阅读计划、靶点地图与设备线圈比较</b>
+          <p>阅读计划：19 条真实 PMID 分级书单 + 精读卡片模板（草稿存本机）+「读一篇长一格」更新机制，操作见 READING_WORKFLOW.md。靶点地图：脑区 SVG 对照图（10 靶点交互）+ 分靶点陈列（18 方案，靶点→技术→参数→疾病）。设备线圈：8 种线圈（含 H1/H4/H7 深度体积）与 5 类设备比较。导航扩为 10 项。</p>
+        </li>
+        <li>
+          <time>2026-11-24 · v0.4</time>
+          <b>内容填充：技术档案从占位变真实数据</b>
+          <p>技术详情页 8 字段全部填充：机制/靶点/参数（18 技术知识库）、真实证据统计（去重 PMID）、Cochrane 结论卡（英文原文 + 系统标注）、安全质控、三层表达、上海叙事线、可靠性字段。速查页扩至 20 术语 + 18 技术安全卡；方法页补 PRISMA 流程；场景技术标签可点入档案；dTMS/tFUS 如实标注「0 篇 Cochrane」证据空白。</p>
+        </li>
+        <li>
+          <time>2026-11-24 · v0.3</time>
+          <b>搭起全站框架</b>
+          <p>新增全景地图首页（三圈层 + 趋势雷达）、学习阶梯、技术档案目录与详情、证据池、速查工具、方法说明、修订记录、我的笔记。证据矩阵表头改为从上到下竖排阅读。</p>
+        </li>
+        <li>
+          <time>2026-11-24 · v0.2</time>
+          <b>新增场景导览，内嵌行业动态索引</b>
+          <p>6 个场景 × 四层表达；政策/产业内容降级为「行业动态速览」小文章板块，非独立新闻栏目。24 条索引均标 AI 辅助整理、来源分级与待核验状态。</p>
+        </li>
+        <li>
+          <time>2026-11-24 · v0.1</time>
+          <b>证据矩阵上线</b>
+          <p>18 技术 × 19 适应症矩阵，双视图（文献量 / Cochrane 数）。证据池 2,103 篇，Cochrane 328 篇，趋势数据 396 点。</p>
+        </li>
+      </ul>
+      <div class="warn" style="margin-top:16px">本页记录的是站点结构与数据的实质性变更。文字润色、样式微调不逐条列出。</div>
+    </div>
+  </main>
+
+  <footer class="pt-foot">
+    <span>公开修订 · 可追溯</span>
+    <a href="method.html">← 方法说明</a>
+  </footer>
+</div>
+<script>window.PT_SITE={ver:'v0.3'};</script>
+<script src="site.js?v=20261124h"></script>
+</body>
+</html>

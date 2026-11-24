@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>场景导览 · 精神科物理治疗</title>
+<meta name="description" content="按常见问题组织的科普导览，四层表达；附行业动态资料索引。">
+<link rel="stylesheet" href="styles.css?v=20261124k">
+</head>
+<body>
+<div class="pt-page">
+
+  <header class="pt-head">
+    <div class="pt-head-inner">
+      <div class="pt-brand">玄牙 · 精神科物理治疗</div>
+      <nav class="pt-tabs"></nav>
+      <span class="pt-ver">v0.2</span>
+    </div>
+  </header>
+
+  <section class="pt-hero">
+    <div class="pt-hero-inner">
+      <div class="pt-kicker">SCENE GUIDE</div>
+      <h1>场景导览</h1>
+      <p class="pt-sub">
+        按你真正会遇到的问题组织。<strong>同一个问题分四层说清</strong>：专业层给同行、临床一句话给医生查房、患者一句话给患者与家属，并注明什么时候该就医。
+        所有表述只转述证据，不改写结论、不作疗效承诺。
+      </p>
+    </div>
+  </section>
+
+  <main class="pt-main">
+
+    <!-- 场景导览主体 -->
+    <div class="sc-layout">
+      <aside class="sc-rail" id="sc-rail"></aside>
+      <div class="sc-content">
+        <div class="sc-headline">
+          <h2 id="sc-title">睡不着怎么办</h2>
+          <p id="sc-group"></p>
+        </div>
+        <div class="sc-layers" id="sc-layers"></div>
+        <div class="sc-tech" id="sc-tech"></div>
+      </div>
+    </div>
+
+    <!-- 行业动态索引（次级板块，非新闻） -->
+    <section class="sc-news" id="sc-news">
+      <div class="sc-news-head">
+        <div>
+          <div class="pt-detail-kicker">RESOURCE INDEX · 资料索引</div>
+          <h2>行业动态速览</h2>
+        </div>
+        <span class="sc-news-tag">次级板块 · 非新闻报道</span>
+      </div>
+
+      <p class="sc-news-note" id="news-note"></p>
+
+      <div class="sc-news-toolbar">
+        <div class="sc-news-filters" id="news-cats"></div>
+        <div class="sc-sort">
+          <button type="button" class="pt-view active" data-sort="date">按时间</button>
+          <button type="button" class="pt-view" data-sort="source">按来源分级</button>
+        </div>
+      </div>
+
+      <div class="sc-news-grid" id="news-grid"></div>
+      <p class="sc-news-disclaimer" id="news-disclaimer"></p>
+    </section>
+
+  </main>
+
+  <footer class="pt-foot">
+    <span>数据源 PubMed / MEDLINE · 公开政策与行业资料</span>
+    <span>AI 辅助整理 · 人工核验 · 不构成诊疗或投资建议</span>
+    <a href="index.html">← 证据矩阵</a>
+  </footer>
+</div>
+<script>window.PT_SITE={ver:'v0.3'};</script>
+<script src="site.js?v=20261124h"></script>
+<script src="scenes.js?v=20261124d"></script>
+</body>
+</html>

@@ -22,11 +22,17 @@ export default function ReadingProgress() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-[3px] z-[100]">
+    <div
+      className={`fixed top-0 left-0 w-full h-[4px] z-[200] transition-opacity duration-300 ${
+        progress > 0 ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
       <div
-        className="h-full bg-gradient-to-r from-[#DA583F] to-[#E77B61] transition-[width] duration-150 ease-out"
+        className="relative h-full bg-gradient-to-r from-[#DA583F] to-[#E77B61] transition-[width] duration-150 ease-out"
         style={{ width: `${progress}%` }}
-      />
+      >
+        <span className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-2 h-2 rounded-full bg-[#DA583F] ring-2 ring-[#FEFAF9] dark:ring-[#0A0E1A]" />
+      </div>
     </div>
   );
 }

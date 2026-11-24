@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>检索方法与可靠性 · 精神科物理治疗</title>
+<meta name="description" content="检索流程、AI 人机分工、可靠性规则与免责声明。">
+<link rel="stylesheet" href="styles.css?v=20261124k">
+</head>
+<body>
+<div class="pt-page">
+
+  <header class="pt-head">
+    <div class="pt-head-inner">
+      <div class="pt-brand">玄牙 · 精神科物理治疗</div>
+      <nav class="pt-tabs"></nav>
+      <span class="pt-ver">v0.3</span>
+    </div>
+  </header>
+
+  <section class="pt-hero">
+    <div class="pt-hero-inner">
+      <div class="pt-kicker">METHOD & TRUST</div>
+      <h1>检索方法与可靠性</h1>
+      <p class="pt-sub">
+        这个库的生命线是可信。<strong>冷门窄主题里近三成 AI 生成引用可能是假的</strong>——所以每条结论都要能溯源，
+        每一步检索都要留痕。本页说明怎么检索、AI 做什么、人做什么。
+      </p>
+    </div>
+  </section>
+
+  <main class="pt-main">
+    <div class="doc">
+
+      <h3>一、检索来源与流程</h3>
+      <ul>
+        <li><strong>数据源</strong>：PubMed / MEDLINE，经 NCBI E-utilities 检索；Cochrane 系统综述单独抓取并本地归类。</li>
+        <li><strong>检索式</strong>：每技术一条独立检索式，采用 tiab 字段限定避免宽泛污染；技术与适应症允许重叠（如 iTBS ⊂ rTMS），矩阵标注包含关系。</li>
+        <li><strong>证据优先级</strong>：每格优先 Cochrane &gt; SR/MA &gt; RCT &gt; 观察性研究；补抓 Cochrane 后证据池共 2,103 篇，含 328 篇 Cochrane。</li>
+        <li><strong>趋势数据</strong>：18 技术 × 22 年（2005–2026）共 396 个数据点，逐点调用 E-utilities count。</li>
+        <li><strong>流程留痕</strong>：遵循 PRISMA 2020 思路记录检索、去重、纳入过程（流程图见下）。</li>
+      </ul>
+
+      <h3>检索流程（PRISMA 2020 思路）</h3>
+      <div class="prisma">
+        <div class="prisma-step"><span class="ps-n">1 · 识别</span><b>18 技术 × 19 适应症 = 342 格组合</b>
+          <p>逐格经 PubMed E-utilities 检索，实际执行 281 格；Cochrane 单独抓取并本地归类，补抓 221 篇。</p></div>
+        <div class="prisma-step"><span class="ps-n">2 · 筛选</span><b>按证据等级优先取</b>
+          <p>每格优先 Cochrane &gt; SR/MA &gt; RCT &gt; 观察性研究；技术与适应症允许重叠（如 iTBS ⊂ rTMS）。</p></div>
+        <div class="prisma-step"><span class="ps-n">3 · 合格</span><b>去重后 2,103 篇纳入证据池</b>
+          <p>按 PMID 去重；其中 328 篇 Cochrane、1,044 篇 RCT、964 篇系统综述、546 篇 Meta 分析。</p></div>
+        <div class="prisma-step"><span class="ps-n">4 · 纳入</span><b>呈现于证据池与技术档案</b>
+          <p>带 PMID/DOI 可回溯；中文要点与核验状态逐条补，未核验不进结论性表述。</p></div>
+      </div>
+      <p class="prisma-note">说明：本库为「检索辅助 + 人工核验」的学习型索引，非严格系统综述；上表记录已实现的真实环节，逐条排除理由与完整 PRISMA 计数尚在积累，标为未完整记录，不予编造。</p>
+
+      <h3>二、AI 与人分工（红线）</h3>
+      <div class="warn">
+        AI 只做：PICO 拆解、去重、格式整理、摘要初稿、字段提取。<br>
+        <strong>以下五件事必须由人做</strong>：文献筛选、偏倚风险判断、证据等级评定、结论下判、对外发布。
+      </div>
+      <ul style="margin-top:12px">
+        <li><strong>可回溯</strong>：每条文献带 PMID / DOI，可直接到 PubMed 核对原文。</li>
+        <li><strong>不编造</strong>：拿不到的数据标「待补」，无系统综述写「暂无」，绝不为填满格子而生成文献。</li>
+        <li><strong>抽检</strong>：AI 提取结果按 ≥5% 人工抽检；一致性不足则整批重查。</li>
+        <li><strong>中文文献</strong>：系统性盲区，人工核验前不进正式证据池。</li>
+      </ul>
+
+      <h3>三、AI 使用披露</h3>
+      <p>本站摘要初稿与整理工作由 AI 辅助完成，已经人工核验。按照《人工智能生成合成内容标识办法》（2025-09-01 施行），相关条目标注「AI辅助整理 · 人工核验」。责任由站点维护者承担。</p>
+
+      <h3>四、阴性结果与证据诚实</h3>
+      <ul>
+        <li>标注研究主终点是否达标、是否做多重比较校正、安慰剂效应、盲法成败。</li>
+        <li>阴性/混合结果用中性色标注，不用红勾绿叉表示「有效/无效」。</li>
+        <li>宣传口径与证据字段严格分离；科普层只能转述专业层结论，不能改写。</li>
+      </ul>
+
+      <h3>五、免责声明</h3>
+      <p>本站内容仅供精神卫生专业学习与科普参考，<strong>不构成诊疗建议</strong>，不能替代精神科医师面诊。涉及治疗决策请遵临床医师意见。市场与政策信息仅供行业参考，<strong>不构成投资依据</strong>。如涉版权问题请联系作者删除。</p>
+
+      <h3>六、纠错闭环</h3>
+      <p>发现错误可通过页面报错入口反馈 → 人工核验 → 更新 <a href="changelog.html">修订记录</a>。所有修订公开时间线，不静默改动。</p>
+
+    </div>
+  </main>
+
+  <footer class="pt-foot">
+    <span>方法学参考：PRISMA 2020 · GRADE · Cochrane</span>
+    <a href="changelog.html">修订记录 →</a>
+  </footer>
+</div>
+<script>window.PT_SITE={ver:'v0.3'};</script>
+<script src="site.js?v=20261124h"></script>
+</body>
+</html>

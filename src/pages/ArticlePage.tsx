@@ -13,7 +13,7 @@ import BackToTop from '../components/BackToTop';
 import TableOfContents from '../components/TableOfContents';
 import { ArticleImageLightbox, useCodeBlockCopy } from '../components/CodeBlock';
 import { useAdminAuth } from '../hooks/useAdminAuth';
-import { syncToGist } from '../utils/gistSync';
+import { createServerBackup } from '../utils/backupSync';
 import { getCategoryInfo, formatDate, getExcerpt, EMOJI_MEANINGS, estimateReadingTime } from '../utils/helpers';
 import { recordPageView, getPageViews } from '../storage/pageViews';
 
@@ -146,7 +146,7 @@ export default function ArticlePage() {
     if (!id) return;
     await deleteArticle(id);
     setShowDeleteConfirm(false);
-    syncToGist().catch(() => {});
+    createServerBackup().catch(() => {});
     navigate('/blog', { replace: true });
   };
 
@@ -272,17 +272,17 @@ export default function ArticlePage() {
           </div>
         )}
 
-        {/* 正文 + TOC 布局 */}
-        <div className="flex gap-8 relative">
-          {/* 目录（桌面端粘性侧栏） */}
+        {/* 正文（宽度固定居中，目录不参与布局） */}
+        <div className="relative">
+          {/* 目录：滚动后悬浮在左侧留白，不挤压正文 */}
           {tocVisible && (
-            <aside className="hidden lg:block w-[200px] flex-shrink-0 sticky top-24 self-start animate-[fadeIn_0.3s_ease-out]">
+            <aside className="toc-float hidden xl:block animate-[fadeIn_0.3s_ease-out]">
               <TableOfContents content={article.content} />
             </aside>
           )}
 
           {/* 正文 */}
-          <div ref={articleRef} className="prose-container flex-1 min-w-0">
+          <div ref={articleRef} className="prose-container">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
             >

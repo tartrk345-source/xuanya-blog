@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的笔记 · 精神科物理治疗</title>
+<meta name="description" content="本地学习笔记，仅存本机浏览器。">
+<link rel="stylesheet" href="styles.css?v=20261124k">
+</head>
+<body>
+<div class="pt-page">
+
+  <header class="pt-head">
+    <div class="pt-head-inner">
+      <div class="pt-brand">玄牙 · 精神科物理治疗</div>
+      <nav class="pt-tabs"></nav>
+      <span class="pt-ver">v0.3</span>
+    </div>
+  </header>
+
+  <section class="pt-hero">
+    <div class="pt-hero-inner">
+      <div class="pt-kicker">MY NOTES</div>
+      <h1>我的笔记</h1>
+      <p class="pt-sub">读文献时的随手记录。<strong>只存在这台设备的浏览器里</strong>，不上传、不公开、不导出——避免把学习变成对外输出。</p>
+    </div>
+  </section>
+
+  <main class="pt-main">
+    <section class="pt-section">
+      <div class="pt-section-h"><h2>随手记</h2><span class="pt-sub-inline" id="nt-status">自动保存到本机</span></div>
+      <div class="doc">
+        <textarea id="nt-area" placeholder="例如：今天读到一篇 rTMS 治难治性抑郁的 RCT，主终点达标，但样本量小……"></textarea>
+        <div><button class="nt-save" type="button" id="nt-save">保存</button><span class="nt-msg" id="nt-msg"></span></div>
+      </div>
+    </section>
+    <section class="pt-section">
+      <div class="pt-note">
+        <h3>用法建议</h3>
+        <ul>
+          <li>每读一条证据，逼自己回答：<strong>主要终点是什么、达标否、有无多重比较校正、安慰剂效应多大</strong>。</li>
+          <li>看到「抑郁」先问：单相还是双相？看到「精分」先问：阳性、阴性还是认知症状？</li>
+          <li>把结论写成「给患者的一句话」——这是最好的表达训练。</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pt-foot">
+    <span>数据仅存本机 localStorage</span>
+    <a href="learn.html">← 学习阶梯</a>
+  </footer>
+</div>
+<script>window.PT_SITE={ver:'v0.3'};</script>
+<script src="site.js?v=20261124h"></script>
+<script src="notes.js?v=20261124c"></script>
+</body>
+</html>

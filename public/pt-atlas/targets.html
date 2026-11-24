@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>靶点地图 · 技术档案 · 精神科物理治疗</title>
+<meta name="description" content="标准 10–20 EEG 头皮定位图 + 分靶点陈列：不同靶点对应的治疗方法、方案参数与疾病。">
+<link rel="stylesheet" href="styles.css?v=20261124k">
+</head>
+<body>
+<div class="pt-page">
+
+  <header class="pt-head">
+    <div class="pt-head-inner">
+      <div class="pt-brand">玄牙 · 精神科物理治疗</div>
+      <nav class="pt-tabs"></nav>
+      <span class="pt-ver">v0.6</span>
+    </div>
+  </header>
+
+  <section class="pt-hero">
+    <div class="pt-hero-inner">
+      <div class="pt-kicker">TECH DOSSIER / TARGET MAP · 技术档案</div>
+      <h1>靶点地图</h1>
+      <p class="pt-sub">同一个疾病可刺激不同靶点，同一个靶点可治不同疾病。采用<strong>国际 10–20 EEG 头皮定位系统</strong>（F3≈左 DLPFC、F4≈右 DLPFC、C3/C4≈M1、T3–P3≈听皮层），点选靶点看对应的<strong>治疗方法 · 方案参数 · 疾病 · 证据量</strong>。深部靶点单列，头皮无法精确投影。</p>
+    </div>
+  </section>
+
+  <main class="pt-main">
+
+    <div class="pt-subtabs" data-group="tech">
+      <a href="tech.html">技术目录</a>
+      <a href="targets.html">靶点地图</a>
+      <a href="devices.html">设备线圈</a>
+    </div>
+
+    <section class="pt-section">
+      <div class="pt-section-h"><h2>标准 10–20 头皮定位图</h2><span class="pt-sub-inline">俯视 · 鼻朝上 · 点击彩色编号查看靶点</span></div>
+      <div class="tg-layout">
+        <div class="tg-brain-wrap">
+          <svg id="tg-brain" viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="国际 10-20 EEG 头皮电极定位图，彩色编号为神经调控靶点">
+            <g id="tg-electrodes"></g>
+            <g id="tg-points"></g>
+          </svg>
+          <div class="tg-legend" id="tg-legend"></div>
+          <p class="tg-fig-note">电极按 10%/20% 间距命名：奇数=左、偶数=右、z=中线。彩色编号为靶点在头皮的<strong>概略投影</strong>，用于学习索引；脑内真实靶点须以个体影像（MRI/功能连接）导航为准。Beam F3 法用鼻枕、双耳与头围比例快速定位 F3。</p>
+        </div>
+        <div class="tg-detail" id="tg-detail">
+          <div class="tg-empty">点击左侧彩色编号，查看靶点详情。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt-section">
+      <div class="pt-section-h"><h2>分靶点陈列</h2><span class="pt-sub-inline">靶点 → 治疗方法 → 方案 → 疾病</span></div>
+      <div class="tg-list" id="tg-list"></div>
+    </section>
+
+    <section class="pt-note">
+      <h3>边界与免责</h3>
+      <ul>
+        <li>靶点与参数是指南/共识层面的通识整理，标注来源级别；个体化治疗须由有资质医师结合影像导航与临床判断决定。</li>
+        <li>证据数为 PubMed 检索命中量，反映研究热度而非疗效等级；结论请以 Cochrane 与 GRADE 为准。</li>
+        <li>10–20 电极位置为头皮投影的概略对应；脑岛、sgACC、深部核团等无法由头皮精确定位，已单列为「深部/功能连接靶点」。</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="pt-foot">
+    <span>靶点地图 v0.6 · 采用 10–20 标准定位 · 数据可回溯</span>
+    <a href="devices.html">设备与线圈比较 →</a>
+  </footer>
+</div>
+<script>window.PT_SITE={ver:'v0.6'};</script>
+<script src="site.js?v=20261124h"></script>
+<script src="targets.js?v=20261124g"></script>
+</body>
+</html>

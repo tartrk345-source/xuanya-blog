@@ -1,0 +1,185 @@
+{
+  "_meta": {
+    "generated": "2026-11-24",
+    "scope": "精神科神经调控常用脑区靶点 → 治疗方案 → 对应疾病",
+    "source": "头皮靶点采用国际 10–20 EEG 电极定位系统（Jasper 1958）与 Beam F3 法（Beam 2009）；定位规则综合 Indian J Psychiatry 2023 rTMS 临床实践指南、Danish Psychiatric Society TMS Guidelines 2025、Polish Psychiatric Association 立场声明、IFCN/Clinical TMS Society 2024 共识、Frontiers in Psychiatry 2025 综述；证据数为 matrix_counts.json 的 PubMed 全量检索命中数。",
+    "locator_note": "10–20 系统：头皮电极以鼻根(nasion)—枕骨隆突(inion)与左右耳前点连线为基准，按 10%/20% 间距命名。奇数=左侧、偶数=右侧、z=中线。TMS 常用：F3≈左 DLPFC、F4≈右 DLPFC、Fp1/Fp2≈眶额、C3/C4≈初级运动皮层、T3–P3 中点≈左颞顶/听皮层、Cz 前≈SMA。Beam F3 用矢状/冠状/头围比例快速定位 F3。",
+    "disclaimer": "靶点定位与参数为指南层面的通识整理，个体化治疗须由有资质医师结合影像导航与临床判断决定；证据数为检索命中量，不等于疗效等级。10–20 电极位置为头皮投影的概略对应，脑内真实靶点须以个体影像导航为准；深部靶点（脑岛、sgACC、深部核团）无法由头皮电极精确投影，单独列出。"
+  },
+  "electrodes": {
+    "note": "标准 10–20 电极在俯视头皮图上的坐标（viewBox 0 0 460 460，头中心 230,232，鼻朝上）。供靶点投影示意，不代表脑内坐标。",
+    "points": [
+      { "name": "Fp1", "x": 188, "y": 92, "side": "左" },
+      { "name": "Fpz", "x": 230, "y": 82, "side": "中" },
+      { "name": "Fp2", "x": 272, "y": 92, "side": "右" },
+      { "name": "F7",  "x": 136, "y": 132, "side": "左" },
+      { "name": "F3",  "x": 177, "y": 128, "side": "左" },
+      { "name": "Fz",  "x": 230, "y": 120, "side": "中" },
+      { "name": "F4",  "x": 283, "y": 128, "side": "右" },
+      { "name": "F8",  "x": 324, "y": 132, "side": "右" },
+      { "name": "T3",  "x": 132, "y": 214, "side": "左" },
+      { "name": "C3",  "x": 174, "y": 206, "side": "左" },
+      { "name": "Cz",  "x": 230, "y": 198, "side": "中" },
+      { "name": "C4",  "x": 286, "y": 206, "side": "右" },
+      { "name": "T4",  "x": 328, "y": 214, "side": "右" },
+      { "name": "T5",  "x": 140, "y": 296, "side": "左" },
+      { "name": "P3",  "x": 180, "y": 290, "side": "左" },
+      { "name": "Pz",  "x": 230, "y": 284, "side": "中" },
+      { "name": "P4",  "x": 280, "y": 290, "side": "右" },
+      { "name": "T6",  "x": 320, "y": 296, "side": "右" },
+      { "name": "O1",  "x": 192, "y": 358, "side": "左" },
+      { "name": "Oz",  "x": 230, "y": 350, "side": "中" },
+      { "name": "O2",  "x": 268, "y": 358, "side": "右" }
+    ]
+  },
+  "targets": [
+    {
+      "id": "ldlpfc",
+      "cn": "左背外侧前额叶",
+      "en": "Left dorsolateral prefrontal cortex (L-DLPFC)",
+      "eeg": ["F3"],
+      "plane": "surface",
+      "loc": "BA 9/46 · 10-20 系统 F3",
+      "color": "#2f7d5b",
+      "summary": "精神科神经调控最常用的兴奋性靶点，抑郁、阴性症状、成瘾、认知的主力刺激区。",
+      "localization": "5cm/5.5cm 法（运动热点前 5–5.5cm）或 Beam F3 法（按头围三测量定位 F3）；影像导航可基于个体 MRI 或功能连接（如与膝下扣带 sgACC 负连接最强点）个体化定位。",
+      "protocols": [
+        { "tech": "rTMS", "type": "高频", "params": "10 Hz · 120% rMT · 3000 脉冲/次 · 20–30 次", "diseases": ["重性抑郁", "难治性抑郁"], "evidence": "rTMS×抑郁 1761 · 难治性抑郁 869", "note": "FDA 批准的经典方案；起效需 4–6 周。", "level": "指南推荐" },
+        { "tech": "iTBS", "type": "θ爆发", "params": "50Hz 三连脉冲@5Hz · 120% rMT · 600 脉冲/次 · 约 3 分钟", "diseases": ["难治性抑郁"], "evidence": "iTBS×难治性抑郁 186", "note": "对经典 10Hz 方案非劣效，疗程大幅缩短。", "level": "指南推荐" },
+        { "tech": "rTMS", "type": "高频", "params": "10 Hz · >100% AMT · ≥10 次 · 每周>7500 脉冲", "diseases": ["精分·阴性症状"], "evidence": "rTMS×精分阴性 190", "note": "中等效应量（SMD 0.49–0.64），有效但有限。", "level": "指南推荐" },
+        { "tech": "rTMS", "type": "高频", "params": "高频刺激 L-DLPFC", "diseases": ["物质使用障碍"], "evidence": "rTMS×成瘾 498", "note": "戒烟/甲基苯丙胺渴求有证据，尚无统一方案。", "level": "证据积累中" },
+        { "tech": "dTMS", "type": "H1 线圈高频", "params": "18–20 Hz · 120% rMT · 20 次", "diseases": ["重性抑郁", "难治性抑郁"], "evidence": "dTMS×抑郁 60", "note": "H1 线圈 Broad 刺激双侧前额叶、偏左 DLPFC，深约 1.8cm。", "level": "FDA 批准" }
+      ]
+    },
+    {
+      "id": "rdlpfc",
+      "cn": "右背外侧前额叶",
+      "en": "Right dorsolateral prefrontal cortex (R-DLPFC)",
+      "eeg": ["F4"],
+      "plane": "surface",
+      "loc": "BA 9/46 · F4 附近",
+      "color": "#4a7fa8",
+      "summary": "抑制性靶点：低频用于抑郁、PTSD、强迫，作为左侧高频的替代或补充。",
+      "localization": "F4 附近，或运动热点前 5–5.5cm 的右侧对应点。",
+      "protocols": [
+        { "tech": "rTMS", "type": "低频", "params": "1 Hz · 右侧 DLPFC", "diseases": ["重性抑郁"], "evidence": "见 rTMS×抑郁", "note": "耐受性较好，疗效证据弱于左侧高频经典方案。", "level": "指南备选" },
+        { "tech": "rTMS", "type": "高频/低频", "params": "右侧 DLPFC 高频或低频", "diseases": ["创伤后应激"], "evidence": "rTMS×PTSD", "note": "两类频率均见改善，无明显差异（效应量 0.68–1.16）。", "level": "指南推荐" },
+        { "tech": "rTMS", "type": "低频", "params": "1 Hz 或更低 · 右侧 DLPFC", "diseases": ["强迫症"], "evidence": "rTMS×强迫 481", "note": "OCD 首选靶点之一（另两个为双侧 DLPFC 高频、SMA 低频）。", "level": "指南推荐" }
+      ]
+    },
+    {
+      "id": "tp",
+      "cn": "左颞顶皮层 / 听皮层",
+      "en": "Left temporoparietal cortex (TPC) / auditory cortex",
+      "eeg": ["T3", "P3"],
+      "plane": "surface",
+      "loc": "颞上回 · T3–P3 连线中点 · 初级听皮层",
+      "color": "#8a63ab",
+      "summary": "难治性听幻觉的抑制靶点，通过降低语言/听皮层过度激活发挥作用。",
+      "localization": "国际 10-20 系统 T3–P3 连线中点，对应左颞顶皮层。",
+      "protocols": [
+        { "tech": "rTMS", "type": "低频", "params": "1 Hz · 左 TPC · 4–40 次", "diseases": ["听幻觉"], "evidence": "rTMS×听幻觉 234", "note": "对难治性幻听有中等证据（SMD 0.24–0.51），效果不持久，常需维持治疗。", "level": "指南推荐" },
+        { "tech": "cTBS", "type": "连续θ爆发", "params": "cTBS 作用于 TPC", "diseases": ["听幻觉"], "evidence": "个案/小样本", "note": "个案报告有效，证据弱于 1Hz rTMS。", "level": "证据积累中" }
+      ]
+    },
+    {
+      "id": "ofc",
+      "cn": "眶额皮质 / 内侧前额叶-前扣带",
+      "en": "Orbitofrontal cortex (OFC) / medial PFC–anterior cingulate",
+      "eeg": ["Fp1", "Fp2"],
+      "plane": "deep",
+      "loc": "OFC 腹侧面前额叶 · mPFC/ACC（约 Fp1/Fp2 深部）",
+      "color": "#b5822f",
+      "summary": "强迫症环路（皮质-纹状体-丘脑-皮质 CSTC）的关键入口；位置较深，常需深部线圈。",
+      "localization": "OFC 位置较深，8 字线圈难以到达；双锥线圈（double cone）或 H7 线圈更适配。",
+      "protocols": [
+        { "tech": "dTMS", "type": "H7 线圈", "params": "H7 深部线圈 · 内侧前额叶 + 前扣带 · 症状诱发后刺激", "diseases": ["强迫症"], "evidence": "FDA 批准", "note": "H7 深约 3.0cm、约 40.3cm³，覆盖 CSTC 环路皮层入口；FDA 批准用于 OCD。", "level": "FDA 批准" },
+        { "tech": "rTMS", "type": "低频", "params": "low-frequency · OFC", "diseases": ["强迫症"], "evidence": "rTMS×强迫 481", "note": "右 OFC cTBS 有阴性结果报道（Liu 等），左 OFC cTBS 见改善（Dutta 等）——结果不一致，如实呈现。", "level": "结论混合" }
+      ]
+    },
+    {
+      "id": "insula",
+      "cn": "脑岛",
+      "en": "Insula",
+      "eeg": [],
+      "plane": "deep",
+      "loc": "外侧沟深部 · 双侧岛叶（头皮电极无法精确投影）",
+      "color": "#c2683f",
+      "summary": "成瘾与渴求网络的核心区，深部线圈可同时覆盖脑岛与前额叶。",
+      "localization": "位置深在，需 H4 等深部线圈；H4 覆盖双侧脑岛及腹外侧/背外侧前额叶。",
+      "protocols": [
+        { "tech": "dTMS", "type": "H4 线圈高频", "params": "H4 线圈 · 双侧脑岛 + 外侧前额叶", "diseases": ["物质使用障碍"], "evidence": "FDA 批准（戒烟）", "note": "H4 深约 1.5cm、约 15.2cm³；CBT 联合 dTMS 戒烟 44% 成功率报道。", "level": "FDA 批准" }
+      ]
+    },
+    {
+      "id": "sma",
+      "cn": "辅助运动区",
+      "en": "Supplementary motor area (SMA)",
+      "eeg": ["Fz"],
+      "plane": "surface",
+      "loc": "额叶内侧面 · Cz 前约 2cm（FCz 附近）",
+      "color": "#5a8a72",
+      "summary": "强迫症的第三个常用靶点，低频抑制运动准备环路。",
+      "localization": "矢状中线附近、中央区前方（约 Cz 前 15% 鼻枕距离 / FCz）；年轻患者与双侧 SMA 刺激预示更好疗效。",
+      "protocols": [
+        { "tech": "rTMS", "type": "低频", "params": "低频 · SMA · 800–1200 脉冲/次", "diseases": ["强迫症"], "evidence": "rTMS×强迫 481", "note": "TBS 治疗 OCD 证据不足；低频 SMA 为指南首选靶点之一。", "level": "指南推荐" }
+      ]
+    },
+    {
+      "id": "m1",
+      "cn": "初级运动皮层",
+      "en": "Primary motor cortex (M1)",
+      "eeg": ["C3", "C4"],
+      "plane": "surface",
+      "loc": "中央前回 · 手区（C3/C4 附近）",
+      "color": "#7a8c83",
+      "summary": "运动阈值测定与定位的参考点（运动热点）；也是疼痛等适应症的刺激区。",
+      "localization": "对手拇指短展肌/第一骨间背侧肌诱发 MEP 的头皮热点，是 5cm 法与 Beam F3 法的起算参照。",
+      "protocols": [
+        { "tech": "rTMS", "type": "定位参考", "params": "测定静息运动阈值 rMT（引出 MEP 的最小强度）", "diseases": ["定位必需的参考点"], "evidence": "方法学", "note": "多数方案以 120% rMT 作为刺激强度；M1 本身更多是定位锚点而非精神科治疗靶点。", "level": "定位基准" }
+      ]
+    },
+    {
+      "id": "sacc",
+      "cn": "膝下前扣带 / 网络靶点",
+      "en": "Subgenual anterior cingulate (sgACC) / network target",
+      "eeg": [],
+      "plane": "deep",
+      "loc": "前扣带膝下部 · 功能连接导航（深部）",
+      "color": "#3a6b8a",
+      "summary": "个体化功能连接靶点：定位与 sgACC 负连接最强的 DLPFC 位点，代表精准调控方向。",
+      "localization": "静息态 fMRI 计算与 sgACC 功能连接最负相关的左 DLPFC 位点；亦有用右侧前岛负连接位点。sgACC 本身为深部结构，通过功能连接反推头皮刺激点。",
+      "protocols": [
+        { "tech": "rTMS", "type": "影像导航个体化", "params": "功能连接导航选择 DLPFC 靶点", "diseases": ["重性抑郁"], "evidence": "前沿方向", "note": "Cole 等报道连接指导靶点改善抑郁；但静息态结果重复性较差，待大样本验证。", "level": "前沿·待验证" }
+      ]
+    },
+    {
+      "id": "cerebellum",
+      "cn": "小脑",
+      "en": "Cerebellum",
+      "eeg": ["Oz"],
+      "plane": "surface",
+      "loc": "后颅窝 · 小脑半球（Oz 下、枕骨下）",
+      "color": "#96764f",
+      "summary": "小脑-前额叶环路靶点，iTBS 刺激小脑改善阴性症状的新方向。",
+      "localization": "小脑半球与前额叶连接的 crus 区，经影像导航定位；头皮投影约在枕骨隆突下方。",
+      "protocols": [
+        { "tech": "iTBS", "type": "小脑 iTBS", "params": "iTBS 刺激小脑-前额叶连接位点", "diseases": ["精分·阴性症状"], "evidence": "前沿方向", "note": "近期研究显示小脑 iTBS 可增强阴性症状疗效，是有希望的新方向（Frontiers 2025）。", "level": "前沿·待验证" }
+      ]
+    },
+    {
+      "id": "deep",
+      "cn": "深部核团（丘脑/内囊/伏核）",
+      "en": "Deep nuclei (thalamus / internal capsule / nucleus accumbens)",
+      "eeg": [],
+      "plane": "deep",
+      "loc": "基底节-丘脑环路（头皮电极无法投影）",
+      "color": "#6b6b8a",
+      "summary": "侵入性 DBS 靶点，用于高度难治性强迫与抑郁，需神经外科团队。",
+      "localization": "影像导航 + 立体定向，靶点因适应症而异（内囊/伏核用于 OCD）。",
+      "protocols": [
+        { "tech": "dbs", "type": "植入式", "params": "立体定向植入电极，体外程控", "diseases": ["强迫症", "难治性抑郁"], "evidence": "rTMS 指南提及 DBS 对高度难治性 OCD 有一定疗效", "note": "我国尚未批准 DBS 用于精神科适应症；存在感染、出血等风险，须严格筛选。", "level": "严格限定" }
+      ]
+    }
+  ]
+}

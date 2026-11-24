@@ -1,0 +1,324 @@
+{
+  "generated": "2026-11-24 22:50",
+  "source": "data/evidence.json（真实 PMID，可到 PubMed 核对）",
+  "note": "每级台阶挑选题名匹配的真实文献；读懂后按阅读卡片沉淀，卡片内容由人填写、AI 只做整理。 另有 2 篇来自 ima 知识库的深度精读样板（注册号/DOI 标识，非 PMID），带 20 模块 + 全文英中对照 + 关键表格 + 全站同步清单。",
+  "items": [
+    {
+      "stage": "L1",
+      "goal": "认识 rTMS：它是什么、治什么",
+      "tech": "rtms",
+      "pmid": "39092744",
+      "year": "2024",
+      "title": "Repetitive transcranial magnetic stimulation for post-traumatic stress disorder in adults.",
+      "journal": "The Cochrane database of systematic reviews",
+      "types": [
+        "Systematic Review",
+        "Meta-Analysis"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39092744/"
+    },
+    {
+      "stage": "L1",
+      "goal": "认识 rTMS：它是什么、治什么",
+      "tech": "rtms",
+      "pmid": "26289586",
+      "year": "2015",
+      "title": "Transcranial magnetic stimulation (TMS) for schizophrenia.",
+      "journal": "The Cochrane database of systematic reviews",
+      "types": [
+        "Meta-Analysis",
+        "Systematic Review"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26289586/"
+    },
+    {
+      "stage": "L1",
+      "goal": "认识 ECT：最有效的物理治疗",
+      "tech": "ect",
+      "pmid": "30888709",
+      "year": "2019",
+      "title": "Electroconvulsive therapy for treatment-resistant schizophrenia.",
+      "journal": "The Cochrane database of systematic reviews",
+      "types": [
+        "Meta-Analysis",
+        "Systematic Review"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30888709/"
+    },
+    {
+      "stage": "L1",
+      "goal": "认识 ECT：最有效的物理治疗",
+      "tech": "ect",
+      "pmid": "25330045",
+      "year": "2014",
+      "title": "Acupuncture for schizophrenia.",
+      "journal": "The Cochrane database of systematic reviews",
+      "types": [
+        "Meta-Analysis",
+        "Systematic Review"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25330045/"
+    },
+    {
+      "stage": "L1",
+      "goal": "认识超声神经调控：新兴方向",
+      "tech": "tfus",
+      "pmid": "41871637",
+      "year": "2026",
+      "title": "Transcranial focused ultrasound for emotion regulation: A systematic review and quantitative summary of human studies.",
+      "journal": "Journal of affective disorders",
+      "types": [
+        "Systematic Review"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41871637/"
+    },
+    {
+      "stage": "L1",
+      "goal": "认识超声神经调控：新兴方向",
+      "tech": "tfus",
+      "pmid": "41105071",
+      "year": "2026",
+      "title": "Ultrasound Applications in the Treatment of Major Depressive Disorder: A Systematic Review of Techniques and Therapeutic Potentials in Clinical Trials and Animal Model Studies.",
+      "journal": "Neuromodulation : journal of the International Neuromodulation Society",
+      "types": [
+        "Systematic Review"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41105071/"
+    },
+    {
+      "stage": "L2",
+      "goal": "读一篇系统综述：看结论与局限",
+      "tech": "rtms",
+      "pmid": "26663136",
+      "year": "2015",
+      "title": "Non-pharmacological interventions for depression in adults and children with traumatic brain injury.",
+      "journal": "The Cochrane database of systematic reviews",
+      "types": [
+        "Meta-Analysis",
+        "Systematic Review"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26663136/"
+    },
+    {
+      "stage": "L2",
+      "goal": "读一篇系统综述：看结论与局限",
+      "tech": "rtms",
+      "pmid": "12076483",
+      "year": "2002",
+      "title": "Transcranial magnetic stimulation for treating depression.",
+      "journal": "The Cochrane database of systematic reviews",
+      "types": [
+        "Systematic Review"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12076483/"
+    },
+    {
+      "stage": "L2",
+      "goal": "读 iTBS 非劣效研究：看主要终点",
+      "tech": "itbs",
+      "pmid": "40397262",
+      "year": "2026",
+      "title": "Effects of continuous theta burst stimulation on patients with obsessive‒compulsive disorder (OCD): A systematic review and meta-analysis of randomized sham controlled trials.",
+      "journal": "The Psychiatric quarterly",
+      "types": [
+        "Meta-Analysis",
+        "Systematic Review"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40397262/"
+    },
+    {
+      "stage": "L2",
+      "goal": "读 iTBS 非劣效研究：看主要终点",
+      "tech": "itbs",
+      "pmid": "41478176",
+      "year": "2026",
+      "title": "Efficacy and safety of continuous theta burst stimulation for auditory hallucinations: A GRADE-assessed meta-analysis of randomized sham-controlled trials.",
+      "journal": "Asian journal of psychiatry",
+      "types": [
+        "Meta-Analysis",
+        "Systematic Review"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41478176/"
+    },
+    {
+      "stage": "L2",
+      "goal": "读 dTMS 综述：识别证据空白",
+      "tech": "dtms",
+      "pmid": "40204236",
+      "year": "2025",
+      "title": "Beyond the Surface: Deep Transcranial Magnetic Stimulation Efficacy in Reducing Craving in Addictive Disorders: A Systematic Review and Meta-Analysis.",
+      "journal": "Biological psychiatry. Cognitive neuroscience and neuroimaging",
+      "types": [
+        "Systematic Review",
+        "Meta-Analysis"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40204236/"
+    },
+    {
+      "stage": "L2",
+      "goal": "读 dTMS 综述：识别证据空白",
+      "tech": "dtms",
+      "pmid": "38574492",
+      "year": "2024",
+      "title": "Deep transcranial magnetic stimulation for treatment-resistant depression: A systematic review and meta-analysis of randomized controlled studies.",
+      "journal": "Asian journal of psychiatry",
+      "types": [
+        "Systematic Review",
+        "Meta-Analysis"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38574492/"
+    },
+    {
+      "stage": "L2",
+      "goal": "读运动干预 Cochrane：看阴性结果表述",
+      "tech": "exercise",
+      "pmid": "41500513",
+      "year": "2026",
+      "title": "Exercise for depression.",
+      "journal": "The Cochrane database of systematic reviews",
+      "types": [
+        "Systematic Review",
+        "Meta-Analysis"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41500513/"
+    },
+    {
+      "stage": "L2",
+      "goal": "读运动干预 Cochrane：看阴性结果表述",
+      "tech": "exercise",
+      "pmid": "24026850",
+      "year": "2013",
+      "title": "Exercise for depression.",
+      "journal": "The Cochrane database of systematic reviews",
+      "types": [
+        "Meta-Analysis",
+        "Systematic Review"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24026850/"
+    },
+    {
+      "stage": "L3",
+      "goal": "读超声机制：靶点与参数",
+      "tech": "tfus",
+      "pmid": "42014673",
+      "year": "2026",
+      "title": "Subcallosal cingulate functional connectivity in depression: a systematic review of brain stimulation-induced changes and pretreatment connectivity predictors.",
+      "journal": "Translational psychiatry",
+      "types": [
+        "Systematic Review"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42014673/"
+    },
+    {
+      "stage": "L3",
+      "goal": "读 MST：机制与认知副作用",
+      "tech": "ect",
+      "pmid": "37272857",
+      "year": "2023",
+      "title": "Magnetic seizure therapy for people with schizophrenia.",
+      "journal": "The Cochrane database of systematic reviews",
+      "types": [
+        "Systematic Review"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37272857/"
+    },
+    {
+      "stage": "L3",
+      "goal": "读 MST：机制与认知副作用",
+      "tech": "ect",
+      "pmid": "34131914",
+      "year": "2021",
+      "title": "Magnetic seizure therapy for treatment-resistant depression.",
+      "journal": "The Cochrane database of systematic reviews",
+      "types": [
+        "Systematic Review"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34131914/"
+    },
+    {
+      "stage": "L3",
+      "goal": "读靶点定位：从 5cm 到功能连接",
+      "tech": "rtms",
+      "pmid": "40701403",
+      "year": "2026",
+      "title": "Noninvasive Brain Stimulation in Attention-Deficit/Hyperactivity Disorder: A Systematic Review and Meta-Analysis of Treatment Efficacy and Targeting Strategies.",
+      "journal": "Journal of the American Academy of Child and Adolescent Psychiatry",
+      "types": [
+        "Systematic Review",
+        "Meta-Analysis"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40701403/"
+    },
+    {
+      "stage": "L3",
+      "goal": "读靶点定位：从 5cm 到功能连接",
+      "tech": "rtms",
+      "pmid": "42115366",
+      "year": "2026",
+      "title": "Comparison of the clinical efficacy, safety and EEG functional connectivity changes between 18-Hz rTMS and iTBS of accelerated dTMS treatment for major depressive disorder: a randomized controlled trial.",
+      "journal": "Molecular psychiatry",
+      "types": [
+        "Randomized Controlled Trial"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42115366/"
+    },
+    {
+      "stage": "L2",
+      "goal": "精读样板：数据直给 + 原文溯源 + 全文英中对照（20模块）",
+      "tech": "dtms",
+      "pmid": "ima-rct-ocd",
+      "idType": "注册号",
+      "idLabel": "CTRI/2020/07/026407",
+      "year": "2025",
+      "title": "Efficacy of Adjunctive Deep Transcranial Magnetic Stimulation in Obsessive-Compulsive Disorder: A Randomized Sham-Controlled Study",
+      "titleCn": "dTMS 辅助治疗强迫症：随机假刺激对照研究",
+      "journal": "J ECT",
+      "types": [
+        "Randomized Controlled Trial",
+        "Sham-Controlled"
+      ],
+      "doi": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=Adjunctive+Deep+Transcranial+Magnetic+Stimulation+Obsessive-Compulsive+Reddy",
+      "deepKey": "rct_ocd",
+      "source": "ima 玄牙的文献库"
+    },
+    {
+      "stage": "L2",
+      "goal": "精读样板：系统综述 + 阴性结果诚实标注 + 全文英中对照（20模块）",
+      "tech": "dtms",
+      "pmid": "ima-sr-schiz",
+      "idType": "DOI",
+      "idLabel": "10.3389/fpsyt.2024.1390913",
+      "year": "2024",
+      "title": "Deep transcranial magnetic stimulation for schizophrenia: a systematic review",
+      "titleCn": "dTMS 治疗精神分裂症：系统综述",
+      "journal": "Front Psychiatry",
+      "types": [
+        "Systematic Review"
+      ],
+      "doi": "10.3389/fpsyt.2024.1390913",
+      "url": "https://doi.org/10.3389/fpsyt.2024.1390913",
+      "deepKey": "sr_schizophrenia",
+      "source": "ima 玄牙的文献库"
+    }
+  ]
+}
